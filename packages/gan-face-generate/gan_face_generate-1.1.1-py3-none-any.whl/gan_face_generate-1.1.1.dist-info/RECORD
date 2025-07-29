@@ -1,0 +1,12 @@
+gan_face_generate/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gan_face_generate/dataset.py,sha256=F9J2uHnON8wMY1tSUctppe6nO1CHFlGGYcULzpNUQ4A,3791
+gan_face_generate/inference.py,sha256=slVXrAK7Wdw-AqgskBR3mXHkrB3f_ydsC3sluRacXII,3354
+gan_face_generate/models.py,sha256=oojoeRALTEGEkrJGxSNGKnUrgE3WHDGLSuOZrZYk6sQ,3104
+gan_face_generate/train.py,sha256=zFGmMXnKHGq6dj6c5smsagclk4GZWGrbDBSlHmxnFR0,14035
+gan_face_generate/weights.tar,sha256=DDuQsTjPxOinMxC5_VziqPHzpUKgN94ndBIwf80odx8,14322251
+gan_face_generate-1.1.1.dist-info/licenses/LICENSE,sha256=Yu0xVnJQyjNDLR_qIFhEqsXMhVWfS0Q0L5HTVaEvNuM,1054
+gan_face_generate-1.1.1.dist-info/METADATA,sha256=cSikxwtVcrmmGDkaNUkMPF-TcUiGpxAc8IqPLrRj5fE,4339
+gan_face_generate-1.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gan_face_generate-1.1.1.dist-info/entry_points.txt,sha256=ipbm143eUXmXM0gqvyZYreJF1sH8N2qIoeIhOByogRg,71
+gan_face_generate-1.1.1.dist-info/top_level.txt,sha256=oicgn75im0pWY89zsf-sgqfq6THVfL2Mh67kFbDnbE8,18
+gan_face_generate-1.1.1.dist-info/RECORD,,
