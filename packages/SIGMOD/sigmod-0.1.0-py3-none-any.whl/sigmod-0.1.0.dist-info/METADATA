@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: SIGMOD
+Version: 0.1.0
+Summary: Deciphering microenvironment using Scalable niche guided module discovery
+Author-email: liuchang <liu-chan20@mails.tsinghua.edu.cn>
+Project-URL: Homepage, https://github.com/Boxedpig/SIGMOD
+Project-URL: Bug Tracker, https://github.com/Boxedpig/SIGMOD/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scanpy~=1.11
+Requires-Dist: anndata~=0.11
+Requires-Dist: torch~=2.5
+Requires-Dist: entmax~=1.3
+Requires-Dist: scikit-learn~=1.5
+Requires-Dist: statsmodels~=0.14
+Requires-Dist: numpy~=2.1
+Requires-Dist: numba~=0.61.2
+Requires-Dist: scipy~=1.15
+Requires-Dist: pandas~=2.2
+Requires-Dist: matplotlib~=3.10
+Requires-Dist: seaborn~=0.13
+Requires-Dist: h5py~=3.13
+Requires-Dist: tqdm~=4.67
+Requires-Dist: natsort~=8.4
+Requires-Dist: pynndescent~=0.5
+Requires-Dist: pyro-api~=0.1.2
+Requires-Dist: pyro-ppl~=1.9.1
+Requires-Dist: umap-learn~=0.5
+Requires-Dist: networkx~=3.3
+Requires-Dist: joblib~=1.5
+Requires-Dist: patsy~=1.0
+Requires-Dist: pillow~=11.0
+Dynamic: license-file
+
+# Deciphering microenvironment heterogeneity by Scalable Niche Guided Module Discovery (SIGMOD)
+
+## Description
+
+SIGMOD comprises two key steps: niche construction and gene module inference. In this study, the niche is defined as the local microenvironment surrounding each cell or spot. SIGMOD offers two primary approaches for niche construction: spatially variable ligand–receptor interaction analysis and proximity-based cell enrichment.
+
+To construct a niche defined by spatially variable ligand–receptor interactions, SIGMOD identifies co-localized ligand–receptor pairs by assuming that relatively high expression of a receptor in a specific spatial region, coupled with relatively high expression of its corresponding ligand in the same region, indicates co-localization of the pair and potential biologically relevant interactions. To achieve this, SIGMOD partitions the space into a grid of unannotated regions (or uses annotated regions if provided), evaluates enriched ligand–receptor pairs across regions, and calculates the probability of interactions to identify those with significant spatial specificity. Each interaction is characterized by both co-localization enrichment and spatial specificity.
+
+To perform niche construction using proximity-based cell enrichment, SIGMOD defines a cell’s niche based on the number and types of neighboring cells within a specified distance. Specifically, for imaging-based data with single-cell resolution (e.g., Xenium), SIGMOD quantifies the interaction strength of specific ligand–receptor pairs within a defined spatial radius and integrates this information into the niche model to guide gene module discovery.
+
+![SIGMOD Workflow](./images/SIGMOD_V3.svg)
+
+## Installation
+
+```bash
+pip install SIGMOD
+```

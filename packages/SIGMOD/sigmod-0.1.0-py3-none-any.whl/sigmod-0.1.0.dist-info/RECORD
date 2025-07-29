@@ -1,0 +1,11 @@
+SIGMOD/SIGMOD_CCI.py,sha256=B3FfjVVd04J_0OARN_SqsyedyYobEfKYSNfSFbW59Gg,16592
+SIGMOD/SIGMOD_SVLR.py,sha256=yphYn77229NghShsDQKFmuwnQG7mwE-KWTlH4Qv5-yM,20825
+SIGMOD/SIGMOD_main.py,sha256=m2kAaTfCQAjcTNH2oMQ-AniH1O1N5R44yJyD8ZENbLU,17626
+SIGMOD/SIGMOD_plot.py,sha256=xzQJx438LJDpUdTh_44sfWOaTTbsSdykWeS-e_Pi8AI,10740
+SIGMOD/SIGMOD_utils.py,sha256=blqU3yKrpaE76S0gQkBj8RjIXu1nA5oMjdbLqCHC2DU,2693
+SIGMOD/__init__.py,sha256=dqcfvvioM5_Lyv-Mmq37hcg0vDzAwHBppeuy7qPZDWg,2
+sigmod-0.1.0.dist-info/licenses/LICENSE,sha256=pAZXnNE2dxxwXFIduGyn1gpvPefJtUYOYZOi3yeGG94,1068
+sigmod-0.1.0.dist-info/METADATA,sha256=SEbWDGxzyHxD8N8MwIyTaA-cawmPN95NBvf3lctwBzM,3009
+sigmod-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sigmod-0.1.0.dist-info/top_level.txt,sha256=eRFTY5PVUMw43cnuRxsIzgdkuDlOFw3mxfLyMzo_tHE,7
+sigmod-0.1.0.dist-info/RECORD,,
