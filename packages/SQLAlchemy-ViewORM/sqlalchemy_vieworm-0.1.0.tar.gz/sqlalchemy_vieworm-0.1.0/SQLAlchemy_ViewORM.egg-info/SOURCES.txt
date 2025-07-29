@@ -1,0 +1,15 @@
+LICENSE
+README.md
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+SQLAlchemy_ViewORM.egg-info/PKG-INFO
+SQLAlchemy_ViewORM.egg-info/SOURCES.txt
+SQLAlchemy_ViewORM.egg-info/dependency_links.txt
+SQLAlchemy_ViewORM.egg-info/requires.txt
+SQLAlchemy_ViewORM.egg-info/top_level.txt
+sqlalchemy_view_orm/__init__.py
+sqlalchemy_view_orm/base.py
+sqlalchemy_view_orm/py.typed
+tests/test_basic.py
