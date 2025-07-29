@@ -1,0 +1,351 @@
+from unittest import mock
+
+from federated_foreign_key.checks import check_model_name_lengths
+from federated_foreign_key.fields import FederatedRelation as GenericRelation
+from federated_foreign_key.fields import FederatedForeignKey as GenericForeignKey
+from federated_foreign_key.models import GenericContentType as ContentType
+from django.core import checks
+from django.db import models
+from django.test import SimpleTestCase, override_settings
+from django.test.utils import isolate_apps
+from django.utils.translation import gettext_lazy as _
+
+
+@isolate_apps("contenttypes_tests", attr_name="apps")
+class GenericForeignKeyTests(SimpleTestCase):
+    databases = "__all__"
+
+    def test_missing_content_type_field(self):
+        class TaggedItem(models.Model):
+            # no content_type field
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey()
+
+        expected = [
+            checks.Error(
+                "The GenericForeignKey content type references the nonexistent "
+                "field 'TaggedItem.content_type'.",
+                obj=TaggedItem.content_object,
+                id="contenttypes.E002",
+            )
+        ]
+        self.assertEqual(TaggedItem.content_object.check(), expected)
+
+    def test_invalid_content_type_field(self):
+        class Model(models.Model):
+            content_type = models.IntegerField(
+                help_text=_("Should be a ForeignKey to GenericContentType."),
+            )  # should be ForeignKey
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey("content_type", "object_id")
+
+        self.assertEqual(
+            Model.content_object.check(),
+            [
+                checks.Error(
+                    "'Model.content_type' is not a ForeignKey.",
+                    hint=(
+                        "GenericForeignKeys must use a ForeignKey to "
+                        "'federated_foreign_key.GenericContentType' as the 'content_type' field."
+                    ),
+                    obj=Model.content_object,
+                    id="contenttypes.E003",
+                )
+            ],
+        )
+
+    def test_content_type_field_pointing_to_wrong_model(self):
+        class Model(models.Model):
+            content_type = models.ForeignKey(
+                "self",
+                models.CASCADE,
+                help_text=_("Should reference GenericContentType."),
+            )  # should point to ContentType
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey("content_type", "object_id")
+
+        self.assertEqual(
+            Model.content_object.check(),
+            [
+                checks.Error(
+                    "'Model.content_type' is not a ForeignKey to "
+                    "'federated_foreign_key.GenericContentType'.",
+                    hint=(
+                        "GenericForeignKeys must use a ForeignKey to "
+                        "'federated_foreign_key.GenericContentType' as the 'content_type' field."
+                    ),
+                    obj=Model.content_object,
+                    id="contenttypes.E004",
+                )
+            ],
+        )
+
+    def test_missing_object_id_field(self):
+        class TaggedItem(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            # missing object_id field
+            content_object = GenericForeignKey()
+
+        self.assertEqual(
+            TaggedItem.content_object.check(),
+            [
+                checks.Error(
+                    "The GenericForeignKey object ID references the nonexistent "
+                    "field 'object_id'.",
+                    obj=TaggedItem.content_object,
+                    id="contenttypes.E001",
+                )
+            ],
+        )
+
+    def test_field_name_ending_with_underscore(self):
+        class Model(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object_ = GenericForeignKey("content_type", "object_id")
+
+        self.assertEqual(
+            Model.content_object_.check(),
+            [
+                checks.Error(
+                    "Field names must not end with an underscore.",
+                    obj=Model.content_object_,
+                    id="fields.E001",
+                )
+            ],
+        )
+
+    @override_settings(
+        INSTALLED_APPS=[
+            "django.contrib.auth",
+            "django.contrib.contenttypes",
+            "contenttypes_tests",
+        ]
+    )
+    def test_generic_foreign_key_checks_are_performed(self):
+        class Model(models.Model):
+            content_object = GenericForeignKey()
+
+        with mock.patch.object(GenericForeignKey, "check") as check:
+            checks.run_checks(app_configs=self.apps.get_app_configs())
+        check.assert_called_once_with()
+
+
+@isolate_apps("contenttypes_tests")
+class GenericRelationTests(SimpleTestCase):
+    def test_valid_generic_relationship(self):
+        class TaggedItem(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the tagged object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the tagged object."),
+            )
+            content_object = GenericForeignKey()
+
+        class Bookmark(models.Model):
+            tags = GenericRelation(
+                "TaggedItem",
+                help_text=_("Generic relation to TaggedItem."),
+            )
+
+        self.assertEqual(Bookmark.tags.field.check(), [])
+
+    def test_valid_generic_relationship_with_explicit_fields(self):
+        class TaggedItem(models.Model):
+            custom_content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Custom content type field."),
+            )
+            custom_object_id = models.PositiveIntegerField(
+                help_text=_("Custom object identifier."),
+            )
+            content_object = GenericForeignKey(
+                "custom_content_type", "custom_object_id"
+            )
+
+        class Bookmark(models.Model):
+            tags = GenericRelation(
+                "TaggedItem",
+                content_type_field="custom_content_type",
+                object_id_field="custom_object_id",
+                help_text=_("Generic relation using explicit fields."),
+            )
+
+        self.assertEqual(Bookmark.tags.field.check(), [])
+
+    def test_pointing_to_missing_model(self):
+        class Model(models.Model):
+            rel = GenericRelation(
+                "MissingModel",
+                help_text=_("Relation pointing to a missing model."),
+            )
+
+        self.assertEqual(
+            Model.rel.field.check(),
+            [
+                checks.Error(
+                    "Field defines a relation with model 'MissingModel', "
+                    "which is either not installed, or is abstract.",
+                    obj=Model.rel.field,
+                    id="fields.E300",
+                )
+            ],
+        )
+
+    def test_valid_self_referential_generic_relationship(self):
+        class Model(models.Model):
+            rel = GenericRelation(
+                "Model",
+                help_text=_("Self-referential generic relation."),
+            )
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey("content_type", "object_id")
+
+        self.assertEqual(Model.rel.field.check(), [])
+
+    def test_missing_generic_foreign_key(self):
+        class TaggedItem(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+
+        class Bookmark(models.Model):
+            tags = GenericRelation(
+                "TaggedItem",
+                help_text=_("Relation to TaggedItem without a GenericForeignKey."),
+            )
+
+        self.assertEqual(
+            Bookmark.tags.field.check(),
+            [
+                checks.Error(
+                    "The GenericRelation defines a relation with the model "
+                    "'contenttypes_tests.TaggedItem', but that model does not have a "
+                    "GenericForeignKey.",
+                    obj=Bookmark.tags.field,
+                    id="contenttypes.E004",
+                )
+            ],
+        )
+
+    @override_settings(TEST_SWAPPED_MODEL="contenttypes_tests.Replacement")
+    def test_pointing_to_swapped_model(self):
+        class Replacement(models.Model):
+            pass
+
+        class SwappedModel(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey()
+
+            class Meta:
+                swappable = "TEST_SWAPPED_MODEL"
+
+        class Model(models.Model):
+            rel = GenericRelation(
+                "SwappedModel",
+                help_text=_("Relation to a swapped model."),
+            )
+
+        self.assertEqual(
+            Model.rel.field.check(),
+            [
+                checks.Error(
+                    "Field defines a relation with the model "
+                    "'contenttypes_tests.SwappedModel', "
+                    "which has been swapped out.",
+                    hint=(
+                        "Update the relation to point at 'settings.TEST_SWAPPED_MODEL'."
+                    ),
+                    obj=Model.rel.field,
+                    id="fields.E301",
+                )
+            ],
+        )
+
+    def test_field_name_ending_with_underscore(self):
+        class TaggedItem(models.Model):
+            content_type = models.ForeignKey(
+                ContentType,
+                models.CASCADE,
+                help_text=_("Content type of the related object."),
+            )
+            object_id = models.PositiveIntegerField(
+                help_text=_("Primary key of the related object."),
+            )
+            content_object = GenericForeignKey()
+
+        class InvalidBookmark(models.Model):
+            tags_ = GenericRelation(
+                "TaggedItem",
+                help_text=_("Relation with invalid field name."),
+            )
+
+        self.assertEqual(
+            InvalidBookmark.tags_.field.check(),
+            [
+                checks.Error(
+                    "Field names must not end with an underscore.",
+                    obj=InvalidBookmark.tags_.field,
+                    id="fields.E001",
+                )
+            ],
+        )
+
+
+@isolate_apps("contenttypes_tests", attr_name="apps")
+class ModelCheckTests(SimpleTestCase):
+    def test_model_name_too_long(self):
+        model = type("A" * 101, (models.Model,), {"__module__": self.__module__})
+        self.assertEqual(
+            check_model_name_lengths(self.apps.get_app_configs()),
+            [
+                checks.Error(
+                    "Model names must be at most 100 characters (got 101).",
+                    obj=model,
+                    id="contenttypes.E005",
+                )
+            ],
+        )
+
+    def test_model_name_max_length(self):
+        type("A" * 100, (models.Model,), {"__module__": self.__module__})
+        self.assertEqual(check_model_name_lengths(self.apps.get_app_configs()), [])
