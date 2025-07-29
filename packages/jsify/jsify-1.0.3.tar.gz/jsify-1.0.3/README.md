@@ -1,0 +1,265 @@
+# Jsify Library
+
+Jsify is a blazing-fast Python library (with a C extension) that brings JavaScript-style dot access, safe deep traversal, lazy wrapping, and flexible mutation to your Python structures. Jsify is designed for working with deeply nested, unpredictable, or messy JSON-like data—whether from APIs, configs, or external sources. Dictionaries, lists, tuples, and iterators can be wrapped to support dot notation (`obj.key`), robust handling of missing attributes (with a special `Undefined` singleton), and both reference-based and copy-based mutation.
+
+---
+
+## Features
+
+* **Dot Notation Everywhere**: Access dictionary keys, list indices, tuple elements, and even iterators using dot notation (`obj.key`, `obj[0]`), making your code clean and expressive. Top-level or deeply nested data—dot access just works.
+* **SimplifiedObject: Safe, Shallow Dot Access**: Instantly enables dot access for the top level of your data. Keys become attributes, and missing keys return a special `Undefined` object instead of raising errors.
+* **Jsify Object: Deep, Lazy Wrapping**: Wraps your data structure deeply and on-the-fly. All nested dictionaries, lists, tuples, and iterators support dot notation, and you get live views on the original data (reference-based unless copied).
+* **Seamless Handling of Missing Data**: Missing attributes or items never raise errors—always return the singleton `Undefined` (which is falsy and comparable to `None`).
+* **Tuple & Iterator Wrapping**: Native support for tuples and iterators, so even non-dict/list data is fully traversable and dot-accessible.
+* **C Extension for Speed**: Extremely fast, even on very large or highly nested structures.
+* **Reference-Based Mutation**: By default, changes to wrapped data are instantly reflected both ways—modify via the jsified object or the original and always stay in sync (unless you create a copy).
+* **Custom JSON Serialization**: Full control over how `Undefined` is represented (omit or as `null`) during JSON dumps.
+* **Full Tooling API**: Includes high-level helpers for safe mutation, popping, updating, setting defaults, retrieving keys/items/values, shallow and deep copy, and full serialization.
+* **Singleton `Undefined`**: Works like JavaScript's `undefined`—all attribute/item access returns itself, always falsy, compares equal to itself and `None`.
+* **Bidirectional Conversion**: Convert back to pure Python objects (`unjsify`, `unjsify_deepcopy`).
+* **Explicit Wrappers**: Use low-level wrappers like `Dict`, `List`, `Tuple`, `Iterator`, `Object` directly if needed.
+
+---
+
+## Installation
+
+```bash
+pip install jsify
+```
+
+---
+
+## Quickstart & API Examples
+
+### 1. Safe, Shallow Dot Access (SimplifiedObject)
+
+*Shows the difference between full recursive loading with `loads_simplified` (all dicts become dot-accessible) and manual use of `SimplifiedObject` (only top-level dot access, nested dicts remain dicts).*
+
+```python
+from jsify.simplify import loads_simplified, SimplifiedObject, Undefined
+
+# Using loads_simplified (recursive, all dicts)
+obj = loads_simplified('{"user": {"profile": null}}')
+print(type(obj))          # <class 'jsify.simplify.SimplifiedObject'>
+print(type(obj.user))     # <class 'jsify.simplify.SimplifiedObject'>
+print(obj.user.profile)   # None
+print(obj.not_found)      # Undefined
+print(obj.user.missing)   # Undefined
+
+# Manual wrapping (top-level only)
+plain_dict = {"profile": None}
+top = SimplifiedObject(**plain_dict)
+print(type(top))          # <class 'jsify.simplify.SimplifiedObject'>
+print(top.profile)        # None
+print(top.missing)        # Undefined
+
+obj2 = SimplifiedObject(user={"profile": None})
+print(type(obj2.user))    # <class 'dict'>
+# Dot access doesn't work for nested dicts unless wrapped:
+nested = SimplifiedObject(**obj2.user)
+print(nested.profile)     # None
+print(nested.missing)     # Undefined
+```
+
+---
+
+### 2. Serialization of Undefined in SimplifiedObject
+
+*Demonstrates that `Undefined` attributes are included as `null` in JSON serialization, not omitted.*
+
+```python
+from jsify.simplify import SimplifiedObject, simplified_dumps, Undefined
+
+obj = SimplifiedObject(a=1, b=None, c=Undefined)
+json_str = simplified_dumps(obj)
+print(json_str)  # Output: {"a": 1, "b": null, "c": null}
+```
+
+---
+
+### 3. Deep Jsified Wrapping (full dot access, recursive)
+
+*Shows that `jsify()` wraps dicts, lists, tuples, and iterators recursively for dot access at any depth.*
+
+```python
+from jsify import jsify
+
+data = {'user': {'name': 'Alice', 'profile': {'age': 30}}}
+obj = jsify(data)
+print(obj.user.name)            # Alice
+print(obj.user.profile.age)     # 30
+
+lst = {'numbers': [10, 20, 30], 'coords': (1, 2, 3)}
+w = jsify(lst)
+print(w.numbers[1])             # 20
+print(w.coords[2])              # 3
+
+it = jsify(iter([100, 200, 300]))
+print(next(it))                 # 100
+print(next(it))                 # 200
+print(next(it))                 # 300
+```
+
+---
+
+### 4. Handling Missing Properties with `Undefined`
+
+*Illustrates that any missing attribute or key, at any depth, always returns the singleton `Undefined` (never raises).*
+
+```python
+from jsify import jsify, Undefined
+
+obj = jsify({'user': {}})
+print(obj.user.profile.name.something.deep)   # Undefined
+
+if obj.user.profile is Undefined:
+    print("Profile missing!")
+
+assert not Undefined
+assert Undefined == None
+assert Undefined == Undefined
+```
+
+---
+
+### 5. Safe Deep Chaining
+
+*Demonstrates that chained attribute access never crashes and always returns `Undefined` for missing paths; also, `Undefined` is falsy.*
+
+```python
+deep_obj = jsify({'a': {}})
+print(deep_obj.a.b.c.d.e.f.g)     # Undefined
+print(bool(deep_obj.a.b.c.d.e.f.g))  # False
+```
+
+---
+
+### 6. Reference-Based Mutation
+
+*Any changes via the jsified object are reflected in the original data, and vice versa.*
+
+```python
+data = {'config': {'value': 10}}
+obj = jsify(data)
+
+print(obj.config.value)         # 10
+
+data['config']['value'] = 42
+print(obj.config.value)         # 42
+
+obj.config.value = 100
+print(data['config']['value'])  # 100
+```
+
+---
+
+### 7. Full Tooling API
+
+*Use high-level helpers to manipulate jsified objects; all return jsified results.*
+
+```python
+from jsify import jsify, jsified_get, jsified_pop, jsified_setdefault, jsified_update, jsified_items, jsified_keys, jsified_values
+
+obj = jsify({'a': 1, 'b': 2})
+print(jsified_get(obj, 'a'))        # 1
+print(jsified_pop(obj, 'a'))        # 1 (removed)
+print(jsified_setdefault(obj, 'c', 99))  # 99 (added)
+jsified_update(obj, {'d': 4})       # adds 'd': 4
+print([k for k in jsified_keys(obj)])    # ['b', 'c', 'd']
+print([v for v in jsified_values(obj)])  # [2, 99, 4]
+print([pair for pair in jsified_items(obj)]) # [('b', 2), ('c', 99), ('d', 4)]
+```
+
+---
+
+### 8. Shallow and Deep Copy
+
+*Create independent (shallow or deep) jsified copies of objects, with the same dot access.*
+
+```python
+from jsify import jsify, jsified_copy, jsified_deepcopy
+
+obj = jsify({'x': [1, 2]})
+shallow = jsified_copy(obj)
+deep = jsified_deepcopy(obj)
+
+# Mutating shallow copy affects original nested object
+shallow.x.append(3)
+print(3 in obj.x)  # True
+
+# Mutating deep copy does not affect original
+deep.x.append(4)
+print(4 in obj.x)  # False
+```
+
+---
+
+### 9. Bidirectional Conversion
+
+*Convert jsified objects back to pure Python structures; can be shallow (reference) or deep (copied).*
+
+```python
+from jsify import jsify, unjsify, unjsify_deepcopy
+
+obj = jsify({'hello': 123, 'nested': {'x': 1}})
+raw = unjsify(obj)                # reference to original or unwrapped
+print(isinstance(raw, dict))      # True
+deep_raw = unjsify_deepcopy(obj)  # deep copy, not the same reference
+print(isinstance(deep_raw, dict)) # True
+```
+
+---
+
+### 10. Custom JSON Serialization
+
+*Demonstrates how to serialize jsified objects with or without omitting `Undefined` (omit by default, or serialize as `null`).*
+
+```python
+from jsify import jsify, Undefined
+from jsify.json import jsified_dumps
+
+data = {'name': 'Alice', 'details': {'age': 30, 'nickname': Undefined}}
+obj = jsify(data)
+
+print(jsified_dumps(obj))  # {"name": "Alice", "details": {"age": 30}}
+print(jsified_dumps(obj, omit_undefined=False))  # {"name": "Alice", "details": {"age": 30, "nickname": null}}
+```
+
+---
+
+### 11. Explicit Wrappers
+
+*Directly use jsify wrapper types (`Dict`, `List`, `Tuple`, `Iterator`, `Object`, `Undefined`) for explicit control.*
+
+```python
+from jsify import Dict, List, Tuple, Iterator, Object, Undefined
+
+d = Dict({'x': 1, 'y': 2})
+l = List([1, 2, 3])
+t = Tuple((1, 2, 3))
+it = Iterator(iter([1, 2, 3]))
+print(d.x)      # 1
+print(l[1])     # 2
+print(t[2])     # 3
+print(next(it)) # 1
+print(next(it)) # 2
+print(next(it)) # 3
+```
+
+---
+
+## Documentation
+
+For full API reference, see [official documentation](https://citsystems.github.io/jsify/).
+
+## License
+
+MIT License. See the [LICENSE](LICENSE) file.
+
+---
+
+## Summary
+
+Jsify makes working with nested, unpredictable, or mixed-type data in Python safe, fast, and intuitive—while staying Pythonic. It’s ideal for API clients, configs, ETL pipelines, and any scenario with complex or partial data structures.
+
+**Try it today—stop worrying about KeyError and start working with data like in JavaScript, but better.**

@@ -1,0 +1,2 @@
+include meta.py
+include source/cjsify/*.h

@@ -1,0 +1,4 @@
+
+[dev]
+pytest>=3.7
+sphinx>=3.5.3
