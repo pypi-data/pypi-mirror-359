@@ -1,0 +1,13 @@
+aipr/__init__.py,sha256=PW5IiHykwROknlAhWnyBPW5oPI01M3SwgKXrRX_oAv0,386
+aipr/commit.py,sha256=JB7yJyO-Kw3qOdZ0qsg1KzRgPJEYE86hf93mtMyjKjE,19482
+aipr/main.py,sha256=j2xurluZgPrkgZfkwHeGkkTp-w7SiXpZhyq5tmz1SJ4,43624
+aipr/providers.py,sha256=WupxmPox4bPQ3SDv8FVVjh9Bxsv6mqosFTJ-U7sxE3o,8664
+aipr/prompts/__init__.py,sha256=VR8pQpDV0l-929daoPTAWa5zTdXfZ-_dmV2rZXhOu3s,140
+aipr/prompts/commit.xml,sha256=KxpNVWz7btX8dl3OFuXmbKuyJf0slYpRCRJMbDu6PlI,9580
+aipr/prompts/meta.xml,sha256=hPeIySseDd3f--_k6mZFZWnm-_8ICTiCqcStzqXc_dg,2053
+aipr/prompts/prompts.py,sha256=PBLFx1gwxMf-i4ctWKCJ3FIQLiYkx7HMMTQCrCbw7gY,11366
+pr_generator_agent-1.4.0.dist-info/METADATA,sha256=cp-5-Z4XgGU66HV1zUr8y7JV_F2R5OpLGERQiUE-lMQ,9677
+pr_generator_agent-1.4.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pr_generator_agent-1.4.0.dist-info/entry_points.txt,sha256=Nx7jYZTtBlWrDKhHkPYD-UBs4xA-rr4Q-KTDzcpeIFU,40
+pr_generator_agent-1.4.0.dist-info/licenses/LICENSE,sha256=Yksm2UeNa600bQ2AjDANJHI16fmXEydAUlAQylUQOxA,1070
+pr_generator_agent-1.4.0.dist-info/RECORD,,
