@@ -1,0 +1,8 @@
+cloudregion/__init__.py,sha256=P3E3LPjWdq45qlaEy5q6FZxQlK_yRKs6xr7oNfu3m4Y,1468
+cloudregion/integrations.py,sha256=8L5VxYIUEGYVYOXCpTzbA56x0RYghtZmOTLbn77XStA,3865
+cloudregion/region.py,sha256=k_pz0HmMM-TW58geZcigeRq22ky3V-zx9VvprF3r0zY,3323
+cloudregion/region_data.py,sha256=l9NCwv6jbxIfBoTFwNyY37SLtvB1HqaJNm4LgNkzh_c,2995
+cloudregion-0.0.1.dist-info/METADATA,sha256=IY7szU4nUiLBkq0GNNmcw07BO-3_LnzFtd7ERzDxXdk,7639
+cloudregion-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cloudregion-0.0.1.dist-info/licenses/LICENSE,sha256=UI35eG4x6myOEL933vCWspf3TWo5LGbobz5rWXV62SA,1081
+cloudregion-0.0.1.dist-info/RECORD,,
