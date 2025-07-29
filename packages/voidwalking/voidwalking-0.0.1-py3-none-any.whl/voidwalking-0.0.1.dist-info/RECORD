@@ -1,0 +1,11 @@
+testing/minflux.py,sha256=6YjJ9Cxefn9zVQ_JFz8ypSiunvJCZyYky5V5IJ6F5wc,2053
+testing/polygons_2d.py,sha256=733NOPgAlgPAh0vmrhWEFr1ij6SDxfr-6AfTGOQbGEY,2812
+testing/test_voidwalker.py,sha256=VVGvxkPAEbXahC8CFzsc1O0GrMK7Zqv9h8OIIAOHVqY,4552
+testing/toy_2d.py,sha256=Ah-zZGNaR_Wei8YariJ15OzE5ptDvoTg7vd2PhLCkN8,1654
+voidwalker/__init__.py,sha256=GTgEY8cSsfQmtzjDDNG7VPpArIN7OOPkgDwatOnKmnQ,99
+voidwalker/void.py,sha256=yyO3qQxTcBoXYi5dXXHlhkanJkWm0gs-8PGrRVCLHgU,8503
+voidwalking-0.0.1.dist-info/licenses/LICENCE,sha256=-J9N8NfRgE_LZxyhaeDr6AhDM3o70Eo-g2MFXyKgl0I,1071
+voidwalking-0.0.1.dist-info/METADATA,sha256=YpFweMfE8UkQgRgzuU1bA0dKrgG77vXr4MU8SFzWtEA,1577
+voidwalking-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+voidwalking-0.0.1.dist-info/top_level.txt,sha256=0omzxBL2Yb03VsTwbs-qSsxnfPhOqlY2Y0g4NaCknZ4,19
+voidwalking-0.0.1.dist-info/RECORD,,
