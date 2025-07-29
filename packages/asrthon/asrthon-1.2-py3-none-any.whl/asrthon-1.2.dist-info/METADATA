@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: asrthon
+Version: 1.2
+Summary: The redest, loudest, most emotional Python interface in the world 🔥🟥
+Author: Aser
+Author-email: Aser <aserah411@gmail.com>
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: requires-python
+
+# Asrthon 🔥🟥
+
+**Asrthon** is the loudest and most emotional Python package ever created.
+
+- 🔇 No more boring print.
+- 🥀 whisper your pain.
+- 🔊 scream your code.
+- ❤️ cry if needed.
+
+## Install
+
+```bash
+pip install asrthon
