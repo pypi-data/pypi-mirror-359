@@ -1,0 +1,6 @@
+import os
+
+DEFAULT_PACKAGE_ENDPOINT = "https://api.cyborgdb.co/v1/packages/download"
+PACKAGE_ENDPOINT = os.getenv("CYBORGDB_PACKAGE_ENDPOINT", DEFAULT_PACKAGE_ENDPOINT)
+
+__all__ = ["DEFAULT_PACKAGE_ENDPOINT", "PACKAGE_ENDPOINT"]

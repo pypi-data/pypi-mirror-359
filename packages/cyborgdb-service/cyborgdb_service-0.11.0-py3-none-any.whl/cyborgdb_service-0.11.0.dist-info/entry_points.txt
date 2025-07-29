@@ -1,0 +1,2 @@
+[console_scripts]
+cyborgdb-service = cyborgdb_service.main:main
