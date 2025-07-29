@@ -1,0 +1,15 @@
+[project]
+name = "aethernet"
+version = "0.1.0"
+description = "Redis based IPC"
+license = "MIT OR Apache-2.0"
+authors = [
+    { name = "Matt Campbell", email = "matt@farixembedded.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
