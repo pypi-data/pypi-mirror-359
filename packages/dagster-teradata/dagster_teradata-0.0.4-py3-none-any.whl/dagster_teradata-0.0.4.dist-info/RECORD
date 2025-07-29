@@ -1,0 +1,8 @@
+dagster_teradata/__init__.py,sha256=4YRQD8WCA4MO8owumK10KmoSPh7277Rz9Qz8pMrO9Ck,625
+dagster_teradata/constants.py,sha256=MPDqzUWQKgf2N3UX9aX5JPFYeu6wuCJb0DVNgbWGMr8,1089
+dagster_teradata/resources.py,sha256=ofKb4pfGK7BlkioPhQ-osXzShGVzWCZeIjB-QzsOxSg,35802
+dagster_teradata/teradata_compute_cluster_manager.py,sha256=Y9QFwQjEex5TQ_eZkyGi6PYlCwCkmSp6xqAiGv_19p8,15675
+dagster_teradata-0.0.4.dist-info/METADATA,sha256=gikJviLsRBMROSoufKga2ih6k6bYrigahlmqe9KdMM4,8917
+dagster_teradata-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dagster_teradata-0.0.4.dist-info/top_level.txt,sha256=q5a-La5crAo0sKsPxSsd-AnnvevGsGsPYA-ha7xFGtQ,17
+dagster_teradata-0.0.4.dist-info/RECORD,,
