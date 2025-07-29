@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rigeo.multibody &mdash; rigeo 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=525cde36"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            rigeo
+          </a>
+              <div class="version">
+                0.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Module Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Closest Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.constraint">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.geodesic">Geodesic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.identify">Identification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.inertial">Inertial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.multibody">Multibody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.polydd">Polyhedron Double Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.random">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.rigidbody">Rigid Bodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.shape">Shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.util">Utilities</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">rigeo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">rigeo.multibody</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for rigeo.multibody</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">hppfcl</span>
+<span class="kn">import</span> <span class="nn">pinocchio</span>
+
+<span class="kn">from</span> <span class="nn">rigeo.shape</span> <span class="kn">import</span> <span class="n">Box</span><span class="p">,</span> <span class="n">Ellipsoid</span><span class="p">,</span> <span class="n">Cylinder</span>
+<span class="kn">from</span> <span class="nn">rigeo.inertial</span> <span class="kn">import</span> <span class="n">I2H</span><span class="p">,</span> <span class="n">InertialParameters</span>
+<span class="kn">from</span> <span class="nn">rigeo.rigidbody</span> <span class="kn">import</span> <span class="n">RigidBody</span>
+
+
+<span class="n">RF</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">ReferenceFrame</span>
+
+
+<span class="k">def</span> <span class="nf">_hppfcl_to_shape</span><span class="p">(</span><span class="n">geom</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert an HPP-FCL shape to the equivalent rigeo shape.&quot;&quot;&quot;</span>
+    <span class="n">type_</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">getNodeType</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">hppfcl</span><span class="o">.</span><span class="n">hppfcl</span><span class="o">.</span><span class="n">NODE_TYPE</span><span class="o">.</span><span class="n">GEOM_CONVEX</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Mesh is not yet supported.&quot;</span><span class="p">)</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">hppfcl</span><span class="o">.</span><span class="n">hppfcl</span><span class="o">.</span><span class="n">NODE_TYPE</span><span class="o">.</span><span class="n">GEOM_BOX</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Box</span><span class="p">(</span><span class="n">half_extents</span><span class="o">=</span><span class="n">geom</span><span class="o">.</span><span class="n">halfSide</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">hppfcl</span><span class="o">.</span><span class="n">hppfcl</span><span class="o">.</span><span class="n">NODE_TYPE</span><span class="o">.</span><span class="n">GEOM_SPHERE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Ellipsoid</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">geom</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">hppfcl</span><span class="o">.</span><span class="n">hppfcl</span><span class="o">.</span><span class="n">NODE_TYPE</span><span class="o">.</span><span class="n">GEOM_CYLINDER</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">geom</span><span class="o">.</span><span class="n">halfLength</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">geom</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unrecognized shape.&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_pin_to_shape</span><span class="p">(</span><span class="n">geom_obj</span><span class="p">):</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">_hppfcl_to_shape</span><span class="p">(</span><span class="n">geom_obj</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">shape</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+        <span class="n">rotation</span><span class="o">=</span><span class="n">geom_obj</span><span class="o">.</span><span class="n">placement</span><span class="o">.</span><span class="n">rotation</span><span class="p">,</span> <span class="n">translation</span><span class="o">=</span><span class="n">geom_obj</span><span class="o">.</span><span class="n">placement</span><span class="o">.</span><span class="n">translation</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="MultiBody"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody">[docs]</a><span class="k">class</span> <span class="nc">MultiBody</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A connected set of rigid bodies.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">geom_model</span><span class="p">,</span> <span class="n">tool_link_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">createData</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nj</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">njoints</span>  <span class="c1"># number of joints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nq</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">nq</span>  <span class="c1"># number of joint positions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nv</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">nv</span>  <span class="c1"># number of joint velocities</span>
+
+        <span class="c1"># tool</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tool_link_name</span> <span class="o">=</span> <span class="n">tool_link_name</span>
+        <span class="k">if</span> <span class="n">tool_link_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tool_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_frame_index</span><span class="p">(</span><span class="n">tool_link_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tool_idx</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># gravity</span>
+        <span class="k">if</span> <span class="n">gravity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">gravity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gravity</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">gravity</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">gravity</span><span class="o">.</span><span class="n">linear</span> <span class="o">=</span> <span class="n">gravity</span>
+
+        <span class="c1"># geometric model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geom_model</span> <span class="o">=</span> <span class="n">geom_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geom_data</span> <span class="o">=</span> <span class="n">geom_model</span><span class="o">.</span><span class="n">createData</span><span class="p">()</span>
+
+        <span class="c1"># bodies is a mapping of joint indices to the rigid bodies composing the</span>
+        <span class="c1"># multibody</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bodies</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">geom_model</span><span class="o">.</span><span class="n">ngeoms</span><span class="p">):</span>
+            <span class="n">geom</span> <span class="o">=</span> <span class="n">geom_model</span><span class="o">.</span><span class="n">geometryObjects</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">joint_idx</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">parentJoint</span>
+            <span class="n">inertia</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">inertias</span><span class="p">[</span><span class="n">joint_idx</span><span class="p">]</span>
+
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">_pin_to_shape</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">joint_idx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bodies</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">bodies</span><span class="p">[</span><span class="n">joint_idx</span><span class="p">]</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="n">InertialParameters</span><span class="p">(</span>
+                    <span class="n">mass</span><span class="o">=</span><span class="n">inertia</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span>
+                    <span class="n">com</span><span class="o">=</span><span class="n">inertia</span><span class="o">.</span><span class="n">lever</span><span class="p">,</span>
+                    <span class="n">I</span><span class="o">=</span><span class="n">inertia</span><span class="o">.</span><span class="n">inertia</span><span class="p">,</span>
+                    <span class="n">translate_from_com</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">bodies</span><span class="p">[</span><span class="n">joint_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">RigidBody</span><span class="p">(</span><span class="n">shapes</span><span class="o">=</span><span class="p">[</span><span class="n">shape</span><span class="p">],</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MultiBody.from_urdf_string"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.from_urdf_string">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_urdf_string</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">urdf_str</span><span class="p">,</span> <span class="n">root_joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tool_link_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the model from a URDF string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        urdf_str : str</span>
+<span class="sd">            The string representing the URDF.</span>
+<span class="sd">        root_joint : pinocchio.JointModel or None</span>
+<span class="sd">            The root joint of the model (optional).</span>
+<span class="sd">        tool_name : str or None</span>
+<span class="sd">            The name of the robot&#39;s tool.</span>
+<span class="sd">        gravity : np.ndarray, shape (3,) or None</span>
+<span class="sd">            The gravity vector. If ``None``, defaults to pinocchio&#39;s ``[0, 0,</span>
+<span class="sd">            -9.81]``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">root_joint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">buildModelFromXML</span><span class="p">(</span><span class="n">urdf_str</span><span class="p">,</span> <span class="n">root_joint</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">buildModelFromXML</span><span class="p">(</span><span class="n">urdf_str</span><span class="p">)</span>
+        <span class="n">geom_model</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">buildGeomFromUrdfString</span><span class="p">(</span>
+            <span class="n">model</span><span class="p">,</span> <span class="n">urdf_str</span><span class="p">,</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">COLLISION</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">geom_model</span><span class="p">,</span> <span class="n">tool_link_name</span><span class="o">=</span><span class="n">tool_link_name</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="n">gravity</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MultiBody.from_urdf_file"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.from_urdf_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_urdf_file</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">urdf_file_path</span><span class="p">,</span> <span class="n">root_joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tool_link_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the model directly from a URDF file.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">urdf_file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">urdf_str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_urdf_string</span><span class="p">(</span>
+            <span class="n">urdf_str</span><span class="p">,</span> <span class="n">root_joint</span><span class="p">,</span> <span class="n">tool_link_name</span><span class="o">=</span><span class="n">tool_link_name</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="n">gravity</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_joint_index"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_joint_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_joint_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the index of a joint by name.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The name of the joint.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : int</span>
+<span class="sd">            The index of the joint.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the joint does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">existJointName</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model has no joint named </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getJointId</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_frame_index"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_frame_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the index of a frame by name.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The name of the frame.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : int</span>
+<span class="sd">            The index of the frame.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the frame does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">existFrame</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model has no frame named </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getFrameId</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_resolve_joint_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">joint</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert joint index or name to index.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">joint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_joint_index</span><span class="p">(</span><span class="n">joint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">joint</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_frame_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert frame index or name to index.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">frame</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_idx</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frame</span>
+
+<div class="viewcode-block" id="MultiBody.get_bodies"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_bodies">[docs]</a>    <span class="k">def</span> <span class="nf">get_bodies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">joints</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the rigid bodies corresponding to the given joints.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        joints : Iterable[str or int]</span>
+<span class="sd">            Joints to get the bodies for. Can either be specified by name or</span>
+<span class="sd">            index.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : list[RigidBody]</span>
+<span class="sd">            A list of rigid bodies corresponding to the joints.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_resolve_joint_index</span><span class="p">(</span><span class="n">joint</span><span class="p">)</span> <span class="k">for</span> <span class="n">joint</span> <span class="ow">in</span> <span class="n">joints</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">bodies</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="MultiBody.is_realizable"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.is_realizable">[docs]</a>    <span class="k">def</span> <span class="nf">is_realizable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if (a subset of) the multibody is density realizable.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        joints : Iterable[str or int] or None</span>
+<span class="sd">            If not ``None``, only check density realizability on the bodies</span>
+<span class="sd">            corresponding to these joints.</span>
+<span class="sd">            index.</span>
+<span class="sd">        solver : str or None</span>
+<span class="sd">            If checking realizability requires solving an optimization problem,</span>
+<span class="sd">            one can optionally be specified.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : bool</span>
+<span class="sd">            ``True`` if the given joints are realizable, ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">joints</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">bodies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bodies</span><span class="p">(</span><span class="n">joints</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bodies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bodies</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">body</span><span class="o">.</span><span class="n">is_realizable</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">solver</span><span class="p">)</span> <span class="k">for</span> <span class="n">body</span> <span class="ow">in</span> <span class="n">bodies</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="MultiBody.compute_forward_kinematics"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.compute_forward_kinematics">[docs]</a>    <span class="k">def</span> <span class="nf">compute_forward_kinematics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute forward kinematics.</span>
+
+<span class="sd">        This must be called before any calls to obtain task-space quantities,</span>
+<span class="sd">        such as ``get_frame_pose``, ``get_frame_velocity``, etc.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        q : np.ndarray, shape (self.nq,)</span>
+<span class="sd">            The joint positions.</span>
+<span class="sd">        v : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint velocities.</span>
+<span class="sd">        a : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint accelerations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nq</span><span class="p">,)</span>
+        <span class="k">assert</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,)</span>
+        <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,)</span>
+
+        <span class="n">pinocchio</span><span class="o">.</span><span class="n">forwardKinematics</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">pinocchio</span><span class="o">.</span><span class="n">updateFramePlacements</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MultiBody.compute_joint_torques"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.compute_joint_torques">[docs]</a>    <span class="k">def</span> <span class="nf">compute_joint_torques</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the joint torques corresponding to a given motion.</span>
+
+<span class="sd">        This takes ``model.gravity`` into account.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        q : np.ndarray, shape (self.nq,)</span>
+<span class="sd">            The joint positions.</span>
+<span class="sd">        v : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint velocities.</span>
+<span class="sd">        a : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint accelerations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The corresponding joint torques.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nq</span><span class="p">,)</span>
+        <span class="k">assert</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,)</span>
+        <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,)</span>
+
+        <span class="k">return</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">rnea</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MultiBody.compute_joint_torque_regressor"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.compute_joint_torque_regressor">[docs]</a>    <span class="k">def</span> <span class="nf">compute_joint_torque_regressor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the joint torque regressor matrix for the multibody.</span>
+
+<span class="sd">        The joint torque regressor matrix maps the stacked vector of link</span>
+<span class="sd">        inertial parameters to the joint torques.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        q : np.ndarray, shape (self.nq,)</span>
+<span class="sd">            The joint positions.</span>
+<span class="sd">        v : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint velocities.</span>
+<span class="sd">        a : np.ndarray, shape (self.nv,)</span>
+<span class="sd">            The joint accelerations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : np.ndarray, shape (self.nv, 10 * self.nlinks)</span>
+<span class="sd">            The joint torque regressor matrix.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Y_pin</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">computeJointTorqueRegressor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="c1"># pinocchio stores inertial parameter vector as</span>
+        <span class="c1">#   θ = [m, hx, hy, hz, Ixx, Ixy, Iyy, Ixz, Iyz, Izz],</span>
+        <span class="c1"># but I prefer to store them</span>
+        <span class="c1">#   θ = [m, hx, hy, hz, Ixx, Ixy, Ixz, Iyy, Iyz, Izz]</span>
+        <span class="c1"># (i.e, Ixz and Iyy are swapped)</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">Y_pin</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">nv</span><span class="p">):</span>
+            <span class="n">Y</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y_pin</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">7</span><span class="p">]</span>
+            <span class="n">Y</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y_pin</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Y</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_frame_pose"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_frame_pose">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the pose of a frame.</span>
+
+<span class="sd">        Note that ``compute_forward_kinematics(q, ...)`` must be called first.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        frame : int or str or None</span>
+<span class="sd">            If ``int``, this is interpreted as the frame index. If ``str``,</span>
+<span class="sd">            interpreted as the name of a frame. If ``None``, defaults to</span>
+<span class="sd">            ``self.tool_idx``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : tuple</span>
+<span class="sd">            Returns a tuple (position, orientation). ``position`` is a</span>
+<span class="sd">            np.ndarray of shape (3,) and ``orientation`` is a rotation matrix</span>
+<span class="sd">            represented by an np.ndarray of shape (3, 3).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">oMf</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pose</span><span class="o">.</span><span class="n">rotation</span><span class="p">,</span> <span class="n">pose</span><span class="o">.</span><span class="n">translation</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_frame_velocity"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_frame_velocity">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expressed_in</span><span class="o">=</span><span class="n">RF</span><span class="o">.</span><span class="n">LOCAL</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get velocity of link at index link_idx&quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">getFrameVelocity</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">idx</span><span class="p">,</span>
+            <span class="n">expressed_in</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">V</span><span class="o">.</span><span class="n">linear</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">angular</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_frame_classical_acceleration"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_frame_classical_acceleration">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_classical_acceleration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expressed_in</span><span class="o">=</span><span class="n">RF</span><span class="o">.</span><span class="n">LOCAL</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the classical acceleration of a link.&quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">getFrameClassicalAcceleration</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">idx</span><span class="p">,</span>
+            <span class="n">expressed_in</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">.</span><span class="n">linear</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">angular</span></div>
+
+<div class="viewcode-block" id="MultiBody.get_frame_spatial_acceleration"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.get_frame_spatial_acceleration">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_spatial_acceleration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expressed_in</span><span class="o">=</span><span class="n">RF</span><span class="o">.</span><span class="n">LOCAL</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the spatial acceleration of a link.&quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">getFrameAcceleration</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">idx</span><span class="p">,</span>
+            <span class="n">expressed_in</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">.</span><span class="n">linear</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">angular</span></div>
+
+<div class="viewcode-block" id="MultiBody.compute_frame_jacobian"><a class="viewcode-back" href="../../modules.html#rigeo.multibody.MultiBody.compute_frame_jacobian">[docs]</a>    <span class="k">def</span> <span class="nf">compute_frame_jacobian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expressed_in</span><span class="o">=</span><span class="n">RF</span><span class="o">.</span><span class="n">LOCAL</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the robot geometric Jacobian.&quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_frame_index</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pinocchio</span><span class="o">.</span><span class="n">computeFrameJacobian</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">q</span><span class="p">,</span>
+            <span class="n">idx</span><span class="p">,</span>
+            <span class="n">expressed_in</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Adam Heins.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

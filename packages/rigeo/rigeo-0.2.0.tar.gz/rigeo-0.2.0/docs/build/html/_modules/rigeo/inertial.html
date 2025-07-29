@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rigeo.inertial &mdash; rigeo 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=525cde36"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            rigeo
+          </a>
+              <div class="version">
+                0.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Module Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Closest Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.constraint">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.geodesic">Geodesic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.identify">Identification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.inertial">Inertial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.multibody">Multibody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.polydd">Polyhedron Double Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.random">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.rigidbody">Rigid Bodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.shape">Shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.util">Utilities</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">rigeo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">rigeo.inertial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for rigeo.inertial</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">rigeo.util</span> <span class="k">as</span> <span class="nn">util</span>
+<span class="kn">from</span> <span class="nn">rigeo.random</span> <span class="kn">import</span> <span class="n">random_psd_matrix</span>
+
+
+<div class="viewcode-block" id="H2I"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.H2I">[docs]</a><span class="k">def</span> <span class="nf">H2I</span><span class="p">(</span><span class="n">H</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert second moment matrix to inertia matrix.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">H</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">H</span></div>
+
+
+<div class="viewcode-block" id="I2H"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.I2H">[docs]</a><span class="k">def</span> <span class="nf">I2H</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert inertia matrix to second moment matrix.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">I</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">I</span></div>
+
+
+<div class="viewcode-block" id="InertialParameters"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters">[docs]</a><span class="k">class</span> <span class="nc">InertialParameters</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Inertial parameters of a rigid body.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mass : float</span>
+<span class="sd">        Mass of the body.</span>
+<span class="sd">    h : np.ndarry, shape (3,)</span>
+<span class="sd">        First moment of mass.</span>
+<span class="sd">    H : np.ndarray, shape (3, 3)</span>
+<span class="sd">        Second moment matrix.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">com</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">translate_from_com</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">mass</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Mass must be non-negative but is </span><span class="si">{</span><span class="n">mass</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+
+        <span class="k">if</span> <span class="n">h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">com</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both h and com.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">com</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">h</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">com</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">com</span>
+
+        <span class="k">if</span> <span class="n">H</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">I</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both H and I.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">H</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">I</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">translate_from_com</span><span class="p">:</span>
+                    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">H</span> <span class="o">=</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">com</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">H</span> <span class="o">=</span> <span class="n">I2H</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+
+        <span class="c1"># translate the second moment matrix from CoM reference point to the</span>
+        <span class="c1"># origin</span>
+        <span class="k">if</span> <span class="n">translate_from_com</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">com</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">H</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;InertialParameters(mass=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="si">}</span><span class="s2">, com=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="si">}</span><span class="s2">, H=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="InertialParameters.zero"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.zero">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">zero</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">com</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">H</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Inertial parameter vector.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">util</span><span class="o">.</span><span class="n">vech</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">)])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">I</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Inertia matrix.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">H2I</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Hc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;H matrix about the CoM.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Ic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Inertia matrix about the CoM.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">H2I</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Hc</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">J</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Pseudo-inertia matrix.&quot;&quot;&quot;</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="n">J</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span>
+        <span class="n">J</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span>
+        <span class="n">J</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span>
+        <span class="k">return</span> <span class="n">J</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">M</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Spatial mass matrix.&quot;&quot;&quot;</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">skew3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="n">S</span><span class="p">],</span> <span class="p">[</span><span class="n">S</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">]])</span>
+
+<div class="viewcode-block" id="InertialParameters.from_vec"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.from_vec">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_vec</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vec</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct from a parameter vector.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">vec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">10</span><span class="p">,)</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="c1"># fmt: off</span>
+        <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+            <span class="p">[</span><span class="n">vec</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">6</span><span class="p">]],</span>
+            <span class="p">[</span><span class="n">vec</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">8</span><span class="p">]],</span>
+            <span class="p">[</span><span class="n">vec</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">9</span><span class="p">]]</span>
+        <span class="p">])</span>
+        <span class="c1"># fmt: on</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="n">mass</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="n">I</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InertialParameters.from_pim"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.from_pim">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_pim</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">J</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct from a pseudo-inertia matrix.</span>
+
+<span class="sd">        The pseudo-inertia matrix is</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            \\boldsymbol{J} = \\begin{bmatrix}</span>
+<span class="sd">                \\boldsymbol{H} &amp; m\\boldsymbol{c} \\\\</span>
+<span class="sd">                m\\boldsymbol{c}^T &amp; m</span>
+<span class="sd">            \\end{bmatrix}</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        J : np.ndarray (4, 4)</span>
+<span class="sd">            The pseudo-inertia matrix.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">J</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">J</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="n">mass</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InertialParameters.from_point_masses"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.from_point_masses">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_point_masses</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">masses</span><span class="p">,</span> <span class="n">points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct from a system of point masses.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        masses : np.ndarray, shape (n,)</span>
+<span class="sd">            The masses at each point.</span>
+<span class="sd">        points : np.ndarray, shape (n, 3)</span>
+<span class="sd">            The locations of each mass.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">masses</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">masses</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># homogeneous representation</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">points</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))))</span>
+
+        <span class="n">J</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">masses</span><span class="p">,</span> <span class="n">P</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_pim</span><span class="p">(</span><span class="n">J</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InertialParameters.random"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.random">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">random</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generate a random set of physically consistent inertial parameters.</span>
+
+<span class="sd">        Useful for testing purposes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.9</span>
+        <span class="n">com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">random_psd_matrix</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">com</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="n">mass</span><span class="p">,</span> <span class="n">com</span><span class="o">=</span><span class="n">com</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InertialParameters.is_same"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.is_same">[docs]</a>    <span class="k">def</span> <span class="nf">is_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if this set of inertial parameters is the same as another.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : InertialParameters</span>
+<span class="sd">            The other set of inertial parameters to check.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : bool</span>
+<span class="sd">            ``True`` if they are the same, ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">J</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">J</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InertialParameters.consistent"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.consistent">[docs]</a>    <span class="k">def</span> <span class="nf">consistent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the inertial parameters are fully physically consistent.</span>
+
+<span class="sd">        This means that there exists a physical rigid body that can have these</span>
+<span class="sd">        parameters; a necessary and sufficient condition is that the</span>
+<span class="sd">        pseudo-inertia matrix is positive semidefinite.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        tol : float, non-negative</span>
+<span class="sd">            The parameters will be considered consistent if all of the</span>
+<span class="sd">            eigenvalues of the pseudo-inertia matrix are greater than or equal</span>
+<span class="sd">            to ``-tol``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : bool</span>
+<span class="sd">            ``True`` if the parameters are consistent, ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">tol</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Numerical tolerance cannot be negative.&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">J</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">tol</span></div>
+
+<div class="viewcode-block" id="InertialParameters.transform"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">translation</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">rotation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rotation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">translation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">translation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">com</span> <span class="o">=</span> <span class="n">rotation</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">+</span> <span class="n">translation</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">rotation</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">Hc</span> <span class="o">@</span> <span class="n">rotation</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">com</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">InertialParameters</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span> <span class="n">com</span><span class="o">=</span><span class="n">com</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">InertialParameters</span><span class="p">(</span>
+            <span class="n">mass</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">H</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<div class="viewcode-block" id="InertialParameters.body_wrench"><a class="viewcode-back" href="../../modules.html#rigeo.inertial.InertialParameters.body_wrench">[docs]</a>    <span class="k">def</span> <span class="nf">body_wrench</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the body-frame wrench about the reference point.&quot;&quot;&quot;</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">M</span>
+        <span class="k">return</span> <span class="n">M</span> <span class="o">@</span> <span class="n">A</span> <span class="o">+</span> <span class="n">util</span><span class="o">.</span><span class="n">skew6</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">@</span> <span class="n">M</span> <span class="o">@</span> <span class="n">V</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Adam Heins.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+[project]
+name = "rigeo"
+version = "0.2.0"
+description = "Rigid body geometry and inertial parameters."
+authors = [
+  {name = "Adam Heins", email = "mail@adamheins.com"}
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "numpy>=1.23.0",
+  "scipy>=1.10.0",
+  "cvxpy[MOSEK]>=1.4.2, !=1.5.0, !=1.5.1, !=1.5.2, !=1.5.3, !=1.5.4",  # 1.5.* breaks stuff because it claims it needs Python >=3.8 but actually needs >=3.9
+  "pycddlib>=2.1.6,<3.0.0",  # 3.0 has breaking API changes
+  "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=7.4.0",
+  "spatialmath-python>=1.1.10",
+  "pin>=2.7.0,<3.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 80

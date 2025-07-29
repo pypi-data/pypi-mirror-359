@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rigeo.polydd &mdash; rigeo 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=525cde36"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            rigeo
+          </a>
+              <div class="version">
+                0.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Module Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Closest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.constraint">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.geodesic">Geodesic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.identify">Identify</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.inertial">Inertial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.multibody">Multibody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.polydd">Polyhedron Double Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.random">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.rigidbody">Rigid body</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.shape">Shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#module-rigeo.util">Util</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">rigeo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">rigeo.polydd</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for rigeo.polydd</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Double description of convex polyhedra.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cdd</span>
+
+
+<div class="viewcode-block" id="SpanForm"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm">[docs]</a><span class="k">class</span> <span class="nc">SpanForm</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Span form (V-rep) of a convex polyhedron.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    vertices : np.ndarray, shape (self.nv, self.dim) or None</span>
+<span class="sd">        The vertices of the polyhedron.</span>
+<span class="sd">    rays : np.ndarray, shape (self.nr, self.dim) or None</span>
+<span class="sd">        The rays of the polyhedron.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rays</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">span</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">vertices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rays</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="o">=</span> <span class="n">rays</span>
+
+        <span class="c1"># if we also have some linspan generators, convert these to rays</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">span_rays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">span</span><span class="p">,</span> <span class="o">-</span><span class="n">span</span><span class="p">))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="o">=</span> <span class="n">span_rays</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">rays</span><span class="p">,</span> <span class="n">span_rays</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;SpanForm(vertices=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vertices</span><span class="si">}</span><span class="s2">, rays=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">rays</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Number of vertices.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Number of rays.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Dimension of the ambient space.&quot;&quot;&quot;</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dim</span>
+
+<div class="viewcode-block" id="SpanForm.from_cdd_matrix"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.from_cdd_matrix">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_cdd_matrix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct from a CDD matrix.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        mat : cdd.Matrix</span>
+<span class="sd">            The CDD matrix representing the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">row_size</span><span class="p">)])</span>
+        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">row_size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="n">M</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">v_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">r_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">s_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">r_mask</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+        <span class="c1"># handle linear spans</span>
+        <span class="n">lin_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">lin_set</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lin_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">lin_idx</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">s_mask</span><span class="p">[</span><span class="n">lin_idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">r_mask</span><span class="p">[</span><span class="n">lin_idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">vertices</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">v_mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">v_mask</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">rays</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">r_mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">r_mask</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">s_mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">s_mask</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="n">vertices</span><span class="p">,</span> <span class="n">rays</span><span class="o">=</span><span class="n">rays</span><span class="p">,</span> <span class="n">span</span><span class="o">=</span><span class="n">span</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SpanForm.bounded"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.bounded">[docs]</a>    <span class="k">def</span> <span class="nf">bounded</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the polyhedron is bounded.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : bool</span>
+<span class="sd">            ``True`` if the polyhedron is bounded, ``False`` otherwise.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SpanForm.is_cone"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.is_cone">[docs]</a>    <span class="k">def</span> <span class="nf">is_cone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the polyhedron is a cone.</span>
+
+<span class="sd">        This means that for any point :math:`x` in the polyhedron, then</span>
+<span class="sd">        :math:`\\alpha x` is also in the polyhedron for any :math:`\\alpha&gt;0`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : bool</span>
+<span class="sd">            ``True`` if the polyhedron is a cone, ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="ow">is</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SpanForm.to_cdd_matrix"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.to_cdd_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_cdd_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to a CDD matrix.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : cdd.Matrix</span>
+<span class="sd">            A CDD matrix representing the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">nr</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">S</span><span class="p">[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="n">S</span><span class="p">[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">S</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">S</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rays</span>
+        <span class="n">Smat</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+        <span class="n">Smat</span><span class="o">.</span><span class="n">rep_type</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">RepType</span><span class="o">.</span><span class="n">GENERATOR</span>
+        <span class="k">return</span> <span class="n">Smat</span></div>
+
+<div class="viewcode-block" id="SpanForm.canonical"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.canonical">[docs]</a>    <span class="k">def</span> <span class="nf">canonical</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to canonical non-redundant representation.</span>
+
+<span class="sd">        In other words, take the convex hull of the vertices.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : SpanForm</span>
+<span class="sd">            A canonicalized version of the span form.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_cdd_matrix</span><span class="p">()</span>
+        <span class="n">mat</span><span class="o">.</span><span class="n">canonicalize</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">SpanForm</span><span class="o">.</span><span class="n">from_cdd_matrix</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SpanForm.to_face_form"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.SpanForm.to_face_form">[docs]</a>    <span class="k">def</span> <span class="nf">to_face_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to face form.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : FaceForm</span>
+<span class="sd">            The equivalent face form of the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Smat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_cdd_matrix</span><span class="p">()</span>
+        <span class="n">poly</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">Polyhedron</span><span class="p">(</span><span class="n">Smat</span><span class="p">)</span>
+        <span class="n">Fmat</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">get_inequalities</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">FaceForm</span><span class="o">.</span><span class="n">from_cdd_matrix</span><span class="p">(</span><span class="n">Fmat</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="FaceForm"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm">[docs]</a><span class="k">class</span> <span class="nc">FaceForm</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Face form (H-rep) of a convex polyhedron.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A_ineq</span><span class="p">,</span> <span class="n">b_ineq</span><span class="p">,</span> <span class="n">A_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># we use an inequality-only representation, where equalities are</span>
+        <span class="c1"># represented by two-sided inequalities</span>
+        <span class="k">if</span> <span class="n">A_eq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">A_eq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">b_eq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">A_ineq</span><span class="p">,</span> <span class="n">A_eq</span><span class="p">,</span> <span class="o">-</span><span class="n">A_eq</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">b_ineq</span><span class="p">,</span> <span class="n">b_eq</span><span class="p">,</span> <span class="o">-</span><span class="n">b_eq</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A_ineq</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b_ineq</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;FaceForm(A=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="FaceForm.from_cdd_matrix"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm.from_cdd_matrix">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_cdd_matrix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct from a CDD matrix.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        mat : cdd.Matrix</span>
+<span class="sd">            The CDD matrix representing the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">row_size</span><span class="p">)])</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">M</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="n">M</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+
+        <span class="n">ineq_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">row_size</span><span class="p">)</span> <span class="k">if</span> <span class="n">idx</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">lin_set</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">eq_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">lin_set</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">A_ineq</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">ineq_idx</span><span class="p">,</span> <span class="p">:],</span>
+            <span class="n">b_ineq</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">ineq_idx</span><span class="p">],</span>
+            <span class="n">A_eq</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">eq_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">eq_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">b_eq</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">eq_idx</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">eq_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Number of faces.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The dimension of the ambient space.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="viewcode-block" id="FaceForm.to_cdd_matrix"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm.to_cdd_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_cdd_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to a CDD matrix.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : cdd.Matrix</span>
+<span class="sd">            A CDD matrix representing the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># face form is Ax &lt;= b, which cdd stores as one matrix [b -A]</span>
+        <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">))</span>
+        <span class="n">Fmat</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+        <span class="n">Fmat</span><span class="o">.</span><span class="n">rep_type</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">RepType</span><span class="o">.</span><span class="n">INEQUALITY</span>
+        <span class="k">return</span> <span class="n">Fmat</span></div>
+
+<div class="viewcode-block" id="FaceForm.canonical"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm.canonical">[docs]</a>    <span class="k">def</span> <span class="nf">canonical</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to canonical non-redundant representation.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : FaceForm</span>
+<span class="sd">            A canonicalized version of the face form.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_cdd_matrix</span><span class="p">()</span>
+        <span class="n">mat</span><span class="o">.</span><span class="n">canonicalize</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">FaceForm</span><span class="o">.</span><span class="n">from_cdd_matrix</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FaceForm.stack"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm.stack">[docs]</a>    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Combine two face forms together.</span>
+
+<span class="sd">        The corresponds to an intersection of polyhedra.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : FaceForm</span>
+<span class="sd">            The other face form to combine with this one.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : FaceForm</span>
+<span class="sd">            The combined face form representing the intersection.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">A</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">FaceForm</span><span class="p">(</span><span class="n">A_ineq</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ineq</span><span class="o">=</span><span class="n">b</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FaceForm.to_span_form"><a class="viewcode-back" href="../../modules.html#rigeo.polydd.FaceForm.to_span_form">[docs]</a>    <span class="k">def</span> <span class="nf">to_span_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to span form (V-rep).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        : SpanForm</span>
+<span class="sd">            The equivalent span form of the polyhedron.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Fmat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_cdd_matrix</span><span class="p">()</span>
+        <span class="n">poly</span> <span class="o">=</span> <span class="n">cdd</span><span class="o">.</span><span class="n">Polyhedron</span><span class="p">(</span><span class="n">Fmat</span><span class="p">)</span>
+        <span class="n">Smat</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">get_generators</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">SpanForm</span><span class="o">.</span><span class="n">from_cdd_matrix</span><span class="p">(</span><span class="n">Smat</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Adam Heins.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
