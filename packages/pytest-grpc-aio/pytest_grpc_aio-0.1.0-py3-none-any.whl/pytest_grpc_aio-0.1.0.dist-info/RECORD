@@ -1,0 +1,13 @@
+example/README.md,sha256=E_J9-eL2xz5xCsk3cT-hHIwMSaNeHwE_eT70RmeSMog,227
+example/test_example.py,sha256=C_5J9gTuGRnWY3_LlDlRIJ5TI3DApC262mFfKt2VHCs,1249
+example/src/servicer.py,sha256=io7fuGMFl0l33gA6tZZW17oiN09bE5CdQ2xPASk_PY4,720
+example/src/test.proto,sha256=rkwi_o_BQpZuM1ZgI2Y2Dc5YaYMfROswkgRiOXjQT7Q,402
+example/src/stub/.keepdir,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_grpc_aio/__init__.py,sha256=27YY3zFpeaDh6JoC40AqkjBrn68SqFlsWZzjZtw5jwU,22
+pytest_grpc_aio/plugin.py,sha256=eqUyutovL-TfVZaXSe7WE2-FHpnK9Qc8Z7OUmcyDerE,8842
+pytest_grpc_aio-0.1.0.dist-info/licenses/LICENSE,sha256=E0V1HgI1r5OzBlyFUtTgmv1ELdLwkHxaslfBEFDFQHY,1069
+pytest_grpc_aio-0.1.0.dist-info/METADATA,sha256=ERPjmOXo46COr50WceTSDaL0njUSfA-ZEXIgdrcPnkQ,9656
+pytest_grpc_aio-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pytest_grpc_aio-0.1.0.dist-info/entry_points.txt,sha256=L6ArfVeJJi-svys7_xXheNbVjaqBvJ2Wysr4FBC53i4,52
+pytest_grpc_aio-0.1.0.dist-info/top_level.txt,sha256=WXEWV5ejzSzJ_ynhm9hMw4R7LEUiWLoCi3UaZHyo27c,24
+pytest_grpc_aio-0.1.0.dist-info/RECORD,,

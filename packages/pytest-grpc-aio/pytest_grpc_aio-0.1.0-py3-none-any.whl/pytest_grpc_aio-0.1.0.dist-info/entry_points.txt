@@ -1,0 +1,2 @@
+[pytest11]
+pytest-grpc-aio = pytest_grpc_aio.plugin
