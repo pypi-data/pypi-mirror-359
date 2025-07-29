@@ -1,0 +1,8 @@
+lockss/debugpanel/__init__.py,sha256=8UWFBu8lRFojQ67OQahKGEvanUy80q_bnjFPyieuXVg,11298
+lockss/debugpanel/__main__.py,sha256=Urbp9MHk2pPVP5Rb8yaPOkCM6cMKC-kEfTd834MGbsk,1610
+lockss/debugpanel/cli.py,sha256=B_LwzDMwGQE5O91mTOiRVaj3o9RGeZf_V0BhAz0aIXs,14827
+lockss_debugpanel-0.8.0.dev1.dist-info/LICENSE,sha256=O9ONND4uDxY_jucI4jZDf2liAk05ScEJaYu-Al7EOdQ,1506
+lockss_debugpanel-0.8.0.dev1.dist-info/METADATA,sha256=NF2YmyJjmp3cHxje02LnvefQ6CYMLSSF0cWv5iGdgVE,37798
+lockss_debugpanel-0.8.0.dev1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+lockss_debugpanel-0.8.0.dev1.dist-info/entry_points.txt,sha256=GuLRH8NaRxFwHAYSrH8J57t-c45qslpHnTMrRPXrjfM,57
+lockss_debugpanel-0.8.0.dev1.dist-info/RECORD,,
