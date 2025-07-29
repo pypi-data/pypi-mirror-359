@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pycondoranalytics.egg-info/PKG-INFO
+pycondoranalytics.egg-info/SOURCES.txt
+pycondoranalytics.egg-info/dependency_links.txt
+pycondoranalytics.egg-info/top_level.txt
