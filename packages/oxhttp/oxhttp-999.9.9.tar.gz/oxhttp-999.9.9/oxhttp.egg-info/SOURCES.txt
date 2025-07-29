@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+oxhttp.egg-info/PKG-INFO
+oxhttp.egg-info/SOURCES.txt
+oxhttp.egg-info/dependency_links.txt
+oxhttp.egg-info/top_level.txt
