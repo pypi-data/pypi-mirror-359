@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: jsoncompat
+Version: 0.1.1
+Summary: JSON Schema Compatibility Checker
+License: MIT
+Project-URL: Source Code, https://github.com/ostrowr/jsoncompat
