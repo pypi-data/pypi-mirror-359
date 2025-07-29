@@ -1,0 +1,21 @@
+Metadata-Version: 2.3
+Name: georeport
+Version: 0.1.0
+Summary: Python wrapper for the Open311 GeoReport v2 API
+License: Apache-2.0
+Author: Pramod Anandarao
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: requests (>=2.32.4,<3.0.0)
+Requires-Dist: xmltodict (>=0.14.2,<0.15.0)
+Description-Content-Type: text/markdown
+
+# georeport
+Python wrapper for the Open311 GeoReport v2 API
+
