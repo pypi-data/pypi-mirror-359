@@ -1,0 +1,10 @@
+logs/*
+.env
+.venv
+.python-version
+/dist
+/wheel_contents
+uv.lock
+src/mcp_snowflake_server/__pycache__
+**/.DS_Store
+# dist
