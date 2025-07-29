@@ -1,0 +1,10 @@
+piqp/__init__.py,sha256=Wjb2QcsWaVeit-n248L7l7u603eEeamLdQOmJPjiE2Q,965
+piqp/__init__.pyi,sha256=bmDasThSlMcRpZqoBN8JLz5nKQWr18w_GClQGI7j7Bg,10475
+piqp/instruction_set.cpython-311-x86_64-linux-gnu.so,sha256=pTPwHFfIbdEvugjwb4eNxCjIqZ13da-c8I4s9HLAWb8,208840
+piqp/piqp_python.cpython-311-x86_64-linux-gnu.so,sha256=7lIu3GaTv-hty9xFP0cbO2CAPeWMpMH7Jkjr_afDslU,1399816
+piqp/piqp_python_avx2.cpython-311-x86_64-linux-gnu.so,sha256=6pdvzjMHyRuudUjdcLW84vWaqWWWVaWW4KFLnTEIVF4,1875784
+piqp/piqp_python_avx512.cpython-311-x86_64-linux-gnu.so,sha256=-z0V3gUzS89PAjHaL4QEBckftVy7icx6Y33Ynd1qeVs,1776296
+piqp-0.6.0.dist-info/METADATA,sha256=gh_S37pCJgfpG-B0N8we1V4soU0wi_9K8tszjlhGygk,6804
+piqp-0.6.0.dist-info/WHEEL,sha256=6Dxtid-NXEnR7jvm4_GvErwSb88e3UzL8AWq9MWuAAE,156
+piqp-0.6.0.dist-info/RECORD,,
+piqp-0.6.0.dist-info/licenses/LICENSE,sha256=Ql0WXOWsYrw_0c74NzT6Z4C8hEZYv8XpBMpFoBHf7HA,1313
