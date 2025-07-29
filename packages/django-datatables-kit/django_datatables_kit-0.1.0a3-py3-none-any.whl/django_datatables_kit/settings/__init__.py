@@ -1,0 +1,7 @@
+from .config import DJDTK_DATATABLES_CONFIG
+from .defaults import DJDTK_DATATABLES_DEFAULTS
+
+__all__ = [
+    "DJDTK_DATATABLES_CONFIG",
+    "DJDTK_DATATABLES_DEFAULTS",
+]
