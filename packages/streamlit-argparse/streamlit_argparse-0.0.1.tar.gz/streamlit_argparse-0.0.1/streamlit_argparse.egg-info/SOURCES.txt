@@ -1,0 +1,11 @@
+README.md
+setup.py
+streamlit_argparse/__init__.py
+streamlit_argparse/argparse_patch.py
+streamlit_argparse.egg-info/PKG-INFO
+streamlit_argparse.egg-info/SOURCES.txt
+streamlit_argparse.egg-info/dependency_links.txt
+streamlit_argparse.egg-info/requires.txt
+streamlit_argparse.egg-info/top_level.txt
+tests/test_examples.py
+tests/test_release.py
