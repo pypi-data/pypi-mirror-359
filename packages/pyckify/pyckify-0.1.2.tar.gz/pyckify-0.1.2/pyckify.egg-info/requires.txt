@@ -1,0 +1,4 @@
+rich>=13.0.0
+
+[:platform_system == "Windows"]
+windows-curses>=2.2.0
