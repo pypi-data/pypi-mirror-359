@@ -1,0 +1,2 @@
+execo>=2.6.5
+walt-client==10.0

@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: walt-client-g5k
+Version: 10.0
+Summary: WalT control tool -- Grid'5000 plugin.
+Home-page: https://walt-project.liglab.fr
+Author: WalT developers
+Author-email: walt-contact@univ-grenoble-alpes.fr
+License: 3-Clause BSD
+Keywords: WalT testbed
+Requires-Dist: execo>=2.6.5
+Requires-Dist: walt-client==10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
