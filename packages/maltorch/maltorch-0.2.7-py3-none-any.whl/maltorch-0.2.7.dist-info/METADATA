@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: maltorch
+Version: 0.2.7
+Summary: Pytorch-based library for creating Adversarial EXEmples against Windows Malware detectors.
+Home-page: 
+Author: Luca Demetrio, Daniel Gibert, Andrea Ponte, Maura Pintor
+Author-email: luca.demetrio@unige.it
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: secml-torch
+Requires-Dist: lightgbm
+Requires-Dist: lief
+Requires-Dist: nevergrad
+Requires-Dist: joblib>=1.3.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+ # Maltorch: Pentesting of AI-based Windows Malware Detectors
+
+## Installation
+```bash
+pip install maltorch
+pip install git+https://github.com/zangobot/ember.git
+```
