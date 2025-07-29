@@ -1,0 +1,10 @@
+system_info_mcp/__init__.py,sha256=FZ-ZcAvxBIWQ1AK5fGDpiKvn1rTZjEAKsHWUr1NezyA,68
+system_info_mcp/config.py,sha256=_4NQX9T3eSHn-cVmXG0xGpoK-EmoZxLvvzL60KnuWMQ,2137
+system_info_mcp/resources.py,sha256=gjINXOLvNZULTPhSoxyZLWzuSIuV6Rl7b7srtA4zlgw,4769
+system_info_mcp/server.py,sha256=XYoy4z5Wb20njW9gyvgxdbtRNSZ5F84YRmrSClWqm5s,3990
+system_info_mcp/tools.py,sha256=LoB4fMkuLstKBm7KdRzjNpC6yREV3H643rc5hViQOsc,14669
+system_info_mcp/utils.py,sha256=FjW6k8XevYoXxPCJhEB_WWVjdSSYTJTefbL_irtgQI4,5899
+mcp_system_info-0.1.0.dist-info/METADATA,sha256=yWh60wWAWopwy0J_7dA_P8jAa4fZM60y5Elut1LwFFA,10723
+mcp_system_info-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_system_info-0.1.0.dist-info/entry_points.txt,sha256=Ktes6WnFx2QZo53aFDIP-YFwJlozOjJhWcTGht9kQvM,64
+mcp_system_info-0.1.0.dist-info/RECORD,,
