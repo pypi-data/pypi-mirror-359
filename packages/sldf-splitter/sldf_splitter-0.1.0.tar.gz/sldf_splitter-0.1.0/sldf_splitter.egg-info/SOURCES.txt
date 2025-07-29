@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+sldf_splitter/__init__.py
+sldf_splitter/core.py
+sldf_splitter.egg-info/PKG-INFO
+sldf_splitter.egg-info/SOURCES.txt
+sldf_splitter.egg-info/dependency_links.txt
+sldf_splitter.egg-info/requires.txt
+sldf_splitter.egg-info/top_level.txt
