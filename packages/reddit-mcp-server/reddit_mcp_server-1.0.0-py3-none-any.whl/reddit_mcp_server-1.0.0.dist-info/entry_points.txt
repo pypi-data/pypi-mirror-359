@@ -1,0 +1,2 @@
+[console_scripts]
+reddit-mcp-server = reddit_mcp_server.server:main
