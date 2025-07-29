@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wiki-fmt"
+version = "1.0.0"
+description = "一个 Confluence 文档自动排版工具，支持 LLM 智能排版优化"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "water", email = "yywater68@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.28.0",
+    "python-dotenv>=0.19.0",
+    "beautifulsoup4>=4.11.0",
+    "openai>=1.0.0",
+    "atlassian-python-api>=3.41.0",
+    "lxml>=4.9.0",
+    "markdown>=3.4.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/water/wiki-fmt"
+Issues = "https://github.com/water/wiki-fmt/issues"
+Repository = "https://github.com/water/wiki-fmt.git"
+
+[project.scripts]
+wiki-fmt = "wiki_fmt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wiki_fmt*"]
+
+[tool.setuptools.package-data]
+wiki_fmt = ["*.md"] 

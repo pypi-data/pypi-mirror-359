@@ -1,0 +1,2 @@
+[console_scripts]
+wiki-fmt = wiki_fmt.cli:main

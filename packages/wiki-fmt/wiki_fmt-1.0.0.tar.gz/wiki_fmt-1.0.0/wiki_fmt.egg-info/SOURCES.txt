@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+wiki_fmt/__init__.py
+wiki_fmt/cli.py
+wiki_fmt/formatter.py
+wiki_fmt.egg-info/PKG-INFO
+wiki_fmt.egg-info/SOURCES.txt
+wiki_fmt.egg-info/dependency_links.txt
+wiki_fmt.egg-info/entry_points.txt
+wiki_fmt.egg-info/requires.txt
+wiki_fmt.egg-info/top_level.txt
