@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: pyequa
+Version: 0.0.1
+Summary: Exercises from equations and relations.
+Project-URL: Homepage, https://github.com/jpedroan/pyequa
+Project-URL: Issues, https://github.com/jpedroan/pyequa/issues
+Author-email: Pedro Cruz <pedrocruz@ua.pt>
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Education :: Computer Aided Instruction (CAI)
+Requires-Dist: markdown
+Requires-Dist: matplotlib
+Requires-Dist: networkx
+Requires-Dist: openpyxl
+Requires-Dist: pandas
+Requires-Dist: pyyaml
+Requires-Dist: sympy
+Description-Content-Type: text/markdown
+
+# pyequa
+
+ Equations on the move
+
