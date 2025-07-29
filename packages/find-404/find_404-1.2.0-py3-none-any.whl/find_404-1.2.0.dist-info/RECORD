@@ -1,0 +1,7 @@
+scripts/bump_version.py,sha256=GHDj1N1BqEZ8ojDLHJOpRsRM9CImyC-PrIn9VgSqtHY,3673
+find_404/cli.py,sha256=xac02o8pkCksbrYZ_NBK-rR7Fp82OBecKpbIW_q2Jl4,2842
+find_404/crawler.py,sha256=tw3iXqZT7WyYPi-lcCqWdjFlZqGEVzC4-zdrilaEUa8,8593
+find_404-1.2.0.dist-info/METADATA,sha256=HbQubhWF6O-kLX8bRatUpETMxGc3RSIblQDK0192t_c,2476
+find_404-1.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+find_404-1.2.0.dist-info/entry_points.txt,sha256=BBWQyGGoUi7LVqTDMpIOxKirCkpGiIJpaV1bH09z0ik,88
+find_404-1.2.0.dist-info/RECORD,,
