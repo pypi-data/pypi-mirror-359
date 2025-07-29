@@ -1,0 +1,9 @@
+android_xml_converter-0.1.0.dist-info/licenses/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+main/__init__.py,sha256=ubn_IQqw3s7YTQotba7g_gZgxgTt8xwLwx86eInAH8o,1088
+main/abx2xml.py,sha256=4HdR8TRXXJ7HmNivBegb9VNU7lx9Rd9d-cZPMIwGolo,13291
+main/xml2abx.py,sha256=xqhPe358L8vsFLaiIIV2M48k_aJQS6DkYzK-maQ4exg,19686
+android_xml_converter-0.1.0.dist-info/METADATA,sha256=Wu5S_iMewoogPF2HYIboSg3zqgPLKkJz66dGi8HjBZs,1826
+android_xml_converter-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+android_xml_converter-0.1.0.dist-info/entry_points.txt,sha256=cABC8R6pazxojigJIW-SO4wAVUeNhefZZYqFNQNWSz4,74
+android_xml_converter-0.1.0.dist-info/top_level.txt,sha256=ZAMgPdWghn6xTRBO6Kc3ML1y3ZrZLnjZlqbboKXc_AE,5
+android_xml_converter-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,3 @@
+[console_scripts]
+abx2xml = main.abx2xml:main
+xml2abx = main.xml2abx:main
