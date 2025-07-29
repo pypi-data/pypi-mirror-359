@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: ultrachatapp
+Version: 0.1.0
+Summary: A chat app using FastAPI
+Author: Yuvraj Thakur
+Author-email: Yuvraj Thakur <yt0979717@gmail.com>
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pydantic
+Requires-Dist: cryptography
+Requires-Dist: pymongo
+Requires-Dist: sqlalchemy
+Requires-Dist: boto3
+Requires-Dist: python-dotenv
+Requires-Dist: python-multipart
+Requires-Dist: rapidfuzz
+Requires-Dist: requests
+Dynamic: author

@@ -1,0 +1,18 @@
+[project]
+name = "ultrachatapp"
+version = "0.1.0"
+description = "A chat app using FastAPI"
+authors = [{ name = "Yuvraj Thakur", email = "yt0979717@gmail.com" }]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "cryptography",
+    "pymongo",
+    "sqlalchemy",
+    "boto3",
+    "python-dotenv",
+    "python-multipart",
+    "rapidfuzz",
+    "requests",
+]
