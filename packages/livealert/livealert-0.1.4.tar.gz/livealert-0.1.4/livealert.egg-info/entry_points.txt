@@ -1,0 +1,4 @@
+[console_scripts]
+livealert = livealert.cli:main
+news = livealert.cli:news
+weather = livealert.cli:weather
