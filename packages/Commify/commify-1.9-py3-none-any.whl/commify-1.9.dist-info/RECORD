@@ -1,0 +1,12 @@
+commify/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+commify/apikeymanager.py,sha256=cSaDmttpisk-rf3yZix6uKxkLETuIIbCoCWqQB4J0pU,2978
+commify/git.py,sha256=UhhXfEh0vZFW-uRaYJQ8Kaqdpxo0X0xWOt2wi21PpkI,459
+commify/main.py,sha256=2ykTWt4e5nHSvuOoGD7Tl7NmAXV1kM58swJMFk5ZtEQ,10597
+commify/utils.py,sha256=b76N3pB2Go1ookIgszXiBa0s_k1baOsR_8flqGDzp9E,4041
+commify/version.py,sha256=NZ_2Ub5SOO19Bt0TWcMlU6JRZaLuqU5_KFvIPOVpJ24,937
+commify-1.9.dist-info/licenses/LICENSE,sha256=zvK2BwLp_dZFFEKSCsdlx5Zg3HpR9nlikYcPtP32NT0,2572
+commify-1.9.dist-info/METADATA,sha256=Ruz_9GhtgAcQ12nothmyJl2BPgWoYekUEbUY4HcVsoo,11938
+commify-1.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+commify-1.9.dist-info/entry_points.txt,sha256=d958-u7rGRVcS9OCDHIBck_wKKkM2oVggYGI95ax4NM,46
+commify-1.9.dist-info/top_level.txt,sha256=rpzIUTPUY8kxztKz3xDKri4vqz3GGXof1nhVNtvOPK4,8
+commify-1.9.dist-info/RECORD,,
