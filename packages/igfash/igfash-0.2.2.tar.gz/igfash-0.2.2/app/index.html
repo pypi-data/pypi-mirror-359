@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <style>svg {font-size: 14px; background-color: black;}</style>
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_79cec475c696159f61c9f8849bf09fb5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <script>
+                var slider = L.DomUtil.create('input', 'opacity-slider');
+                slider.type = 'range';
+                slider.min = 0;
+                slider.max = 1;
+                slider.step = 0.1;
+                slider.value = 0.5;
+                slider.style.position = 'absolute';
+                slider.style.top = '50px';
+                slider.style.right = '50px';
+                slider.style.zIndex = 1000;
+            
+                slider.oninput = function() {
+                    var overlayLayer = this._map._layers;
+                    for (var key in overlayLayer) {
+                        if (overlayLayer[key] instanceof L.ImageOverlay) {
+                            overlayLayer[key].setOpacity(this.value);
+                        }
+                    }
+                };
+            
+                document.body.appendChild(slider);
+            </script>
+            
+    
+            <div class="folium-map" id="map_79cec475c696159f61c9f8849bf09fb5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_79cec475c696159f61c9f8849bf09fb5 = L.map(
+                "map_79cec475c696159f61c9f8849bf09fb5",
+                {
+                    center: [51.55346787599515, 16.11889333669881],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_54b67f5cfe46962b968aa5b1ba5c4517 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_54b67f5cfe46962b968aa5b1ba5c4517.addTo(map_79cec475c696159f61c9f8849bf09fb5);
+        
+    
+            var tile_layer_2ff59f03fda8f39b35bbc2089a925ec2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_2ff59f03fda8f39b35bbc2089a925ec2.addTo(map_79cec475c696159f61c9f8849bf09fb5);
+        
+    
+            var tile_layer_f0b786d8469675def83ec11d15e16bc3 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=s\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Google Satellite", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f0b786d8469675def83ec11d15e16bc3.addTo(map_79cec475c696159f61c9f8849bf09fb5);
+        
+    
+            var image_overlay_d99ba672f12747d88be7643d3b20bfa7 = L.imageOverlay(
+                "data:image/png;base64,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JgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQE5kAgCQE5kAAOREJgAAOZEJAEBOZAIAkBOZAADkRCYAADmRCQBATmQCAJATmQAA5EQmAAA5kQkAQO6/9F+h4o/3gUcAAAAASUVORK5CYII=",
+                [[51.36708539017551, 15.861897050563162], [51.73985036181479, 16.375889622834464]],
+                {"interactive": true, "opacity": 0.6}
+            );
+        
+    
+            image_overlay_d99ba672f12747d88be7643d3b20bfa7.addTo(map_79cec475c696159f61c9f8849bf09fb5);
+        
+    
+    var color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c = {};
+
+    
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.color = d3.scale.threshold()
+              .domain([0.3029193732131681, 0.30337308191644663, 0.3038267906197252, 0.30428049932300366, 0.3047342080262822, 0.30518791672956075, 0.3056416254328393, 0.30609533413611784, 0.3065490428393963, 0.30700275154267487, 0.3074564602459534, 0.30791016894923195, 0.3083638776525105, 0.308817586355789, 0.30927129505906753, 0.3097250037623461, 0.3101787124656246, 0.3106324211689031, 0.31108612987218165, 0.3115398385754602, 0.31199354727873874, 0.3124472559820173, 0.31290096468529577, 0.3133546733885743, 0.31380838209185286, 0.3142620907951314, 0.31471579949840994, 0.31516950820168843, 0.315623216904967, 0.3160769256082455, 0.31653063431152406, 0.3169843430148026, 0.3174380517180811, 0.31789176042135964, 0.3183454691246382, 0.3187991778279167, 0.3192528865311952, 0.31970659523447376, 0.3201603039377523, 0.32061401264103084, 0.3210677213443094, 0.3215214300475879, 0.3219751387508664, 0.32242884745414496, 0.3228825561574235, 0.32333626486070205, 0.32378997356398054, 0.3242436822672591, 0.3246973909705376, 0.32515109967381617, 0.3256048083770947, 0.3260585170803732, 0.32651222578365174, 0.3269659344869303, 0.32741964319020883, 0.3278733518934874, 0.32832706059676586, 0.3287807693000444, 0.32923447800332295, 0.3296881867066015, 0.33014189540988004, 0.3305956041131585, 0.33104931281643707, 0.3315030215197156, 0.33195673022299416, 0.33241043892627264, 0.3328641476295512, 0.33331785633282973, 0.3337715650361083, 0.3342252737393868, 0.33467898244266536, 0.33513269114594385, 0.3355863998492224, 0.33604010855250094, 0.3364938172557794, 0.33694752595905797, 0.3374012346623365, 0.33785494336561506, 0.3383086520688936, 0.33876236077217214, 0.33921606947545063, 0.3396697781787292, 0.3401234868820077, 0.34057719558528626, 0.34103090428856475, 0.3414846129918433, 0.34193832169512184, 0.3423920303984004, 0.3428457391016789, 0.34329944780495747, 0.34375315650823596, 0.3442068652115145, 0.34466057391479304, 0.3451142826180716, 0.3455679913213501, 0.3460217000246286, 0.34647540872790716, 0.3469291174311857, 0.34738282613446425, 0.34783653483774274, 0.3482902435410213, 0.3487439522442998, 0.34919766094757837, 0.34965136965085686, 0.3501050783541354, 0.35055878705741395, 0.3510124957606925, 0.35146620446397103, 0.3519199131672496, 0.35237362187052806, 0.3528273305738066, 0.35328103927708515, 0.3537347479803637, 0.3541884566836422, 0.3546421653869207, 0.35509587409019927, 0.3555495827934778, 0.35600329149675636, 0.3564570002000349, 0.3569107089033134, 0.35736441760659193, 0.3578181263098705, 0.35827183501314896, 0.3587255437164275, 0.35917925241970605, 0.3596329611229846, 0.36008666982626314, 0.3605403785295417, 0.36099408723282017, 0.3614477959360987, 0.36190150463937726, 0.3623552133426558, 0.3628089220459343, 0.36326263074921283, 0.3637163394524914, 0.3641700481557699, 0.36462375685904846, 0.365077465562327, 0.3655311742656055, 0.36598488296888404, 0.3664385916721626, 0.36689230037544107, 0.3673460090787196, 0.36779971778199816, 0.3682534264852767, 0.36870713518855525, 0.3691608438918338, 0.36961455259511233, 0.3700682612983908, 0.37052197000166937, 0.3709756787049479, 0.3714293874082264, 0.37188309611150494, 0.3723368048147835, 0.372790513518062, 0.37324422222134057, 0.3736979309246191, 0.3741516396278976, 0.37460534833117615, 0.3750590570344547, 0.37551276573773323, 0.3759664744410117, 0.37642018314429027, 0.3768738918475688, 0.37732760055084735, 0.3777813092541259, 0.37823501795740444, 0.37868872666068293, 0.37914243536396147, 0.37959614406724, 0.3800498527705185, 0.38050356147379705, 0.3809572701770756, 0.38141097888035413, 0.3818646875836327, 0.3823183962869112, 0.3827721049901897, 0.38322581369346825, 0.3836795223967468, 0.38413323110002534, 0.38458693980330383, 0.3850406485065824, 0.3854943572098609, 0.38594806591313946, 0.386401774616418, 0.38685548331969655, 0.38730919202297504, 0.3877629007262536, 0.3882166094295321, 0.3886703181328106, 0.38912402683608915, 0.3895777355393677, 0.39003144424264624, 0.3904851529459248, 0.39093886164920333, 0.3913925703524818, 0.39184627905576036, 0.3922999877590389, 0.39275369646231745, 0.39320740516559594, 0.3936611138688745, 0.394114822572153, 0.39456853127543157, 0.3950222399787101, 0.39547594868198865, 0.39592965738526714, 0.3963833660885457, 0.39683707479182423, 0.3972907834951028, 0.39774449219838126, 0.3981982009016598, 0.39865190960493835, 0.3991056183082169, 0.39955932701149544, 0.400013035714774, 0.40046674441805247, 0.400920453121331, 0.40137416182460955, 0.40182787052788804, 0.4022815792311666, 0.40273528793444513, 0.4031889966377237, 0.4036427053410022, 0.40409641404428076, 0.40455012274755925, 0.4050038314508378, 0.40545754015411634, 0.4059112488573949, 0.40636495756067337, 0.4068186662639519, 0.40727237496723045, 0.407726083670509, 0.40817979237378754, 0.4086335010770661, 0.4090872097803446, 0.4095409184836231, 0.40999462718690166, 0.41044833589018015, 0.4109020445934587, 0.41135575329673724, 0.4118094620000158, 0.4122631707032943, 0.41271687940657287, 0.41317058810985136, 0.4136242968131299, 0.41407800551640844, 0.414531714219687, 0.4149854229229655, 0.415439131626244, 0.41589284032952256, 0.4163465490328011, 0.41680025773607965, 0.4172539664393582, 0.4177076751426367, 0.4181613838459152, 0.41861509254919377, 0.4190688012524723, 0.4195225099557508, 0.41997621865902934, 0.4204299273623079, 0.42088363606558643, 0.421337344768865, 0.4217910534721435, 0.422244762175422, 0.42269847087870055, 0.4231521795819791, 0.4236058882852576, 0.4240595969885361, 0.42451330569181467, 0.4249670143950932, 0.42542072309837176, 0.4258744318016503, 0.4263281405049288, 0.42678184920820733, 0.4272355579114859, 0.4276892666147644, 0.4281429753180429, 0.42859668402132145, 0.4290503927246, 0.42950410142787854, 0.4299578101311571, 0.4304115188344356, 0.4308652275377141, 0.43131893624099266, 0.43177264494427114, 0.43222635364754974, 0.43268006235082823, 0.4331337710541068, 0.4335874797573853, 0.43404118846066386, 0.4344948971639424, 0.4349486058672209, 0.4354023145704995, 0.435856023273778, 0.4363097319770565, 0.436763440680335, 0.43721714938361356, 0.4376708580868921, 0.43812456679017064, 0.4385782754934492, 0.43903198419672773, 0.4394856929000063, 0.43993940160328476, 0.44039311030656325, 0.44084681900984185, 0.44130052771312034, 0.4417542364163989, 0.4422079451196774, 0.44266165382295597, 0.4431153625262345, 0.443569071229513, 0.4440227799327916, 0.4444764886360701, 0.44493019733934863, 0.4453839060426271, 0.44583761474590566, 0.4462913234491842, 0.44674503215246275, 0.4471987408557413, 0.44765244955901984, 0.4481061582622984, 0.44855986696557687, 0.44901357566885536, 0.4494672843721339, 0.44992099307541245, 0.450374701778691, 0.45082841048196953, 0.4512821191852481, 0.4517358278885266, 0.4521895365918051, 0.4526432452950837, 0.4530969539983622, 0.45355066270164074, 0.4540043714049192, 0.45445808010819777, 0.4549117888114763, 0.45536549751475486, 0.4558192062180334, 0.45627291492131195, 0.4567266236245905, 0.457180332327869, 0.4576340410311475, 0.458087749734426, 0.45854145843770455, 0.4589951671409831, 0.45944887584426164, 0.4599025845475402, 0.4603562932508187, 0.46081000195409727, 0.4612637106573758, 0.4617174193606543, 0.46217112806393285, 0.46262483676721133, 0.4630785454704899, 0.4635322541737684, 0.46398596287704696, 0.4644396715803255, 0.46489338028360405, 0.4653470889868826, 0.4658007976901611, 0.4662545063934396, 0.4667082150967181, 0.4671619237999967, 0.4676156325032752, 0.46806934120655375, 0.4685230499098323, 0.46897675861311083, 0.4694304673163894, 0.4698841760196679, 0.47033788472294646, 0.47079159342622495, 0.47124530212950344, 0.471699010832782, 0.47215271953606053, 0.47260642823933907, 0.4730601369426176, 0.47351384564589616, 0.4739675543491747, 0.4744212630524532, 0.47487497175573173, 0.4753286804590102, 0.4757823891622888, 0.4762360978655673, 0.47668980656884585, 0.4771435152721244, 0.47759722397540294, 0.4780509326786815, 0.47850464138195997, 0.47895835008523857, 0.47941205878851706, 0.47986576749179555, 0.4803194761950741, 0.48077318489835263, 0.4812268936016312, 0.4816806023049097, 0.48213431100818827, 0.4825880197114668, 0.4830417284147453, 0.48349543711802384, 0.48394914582130233, 0.4844028545245809, 0.4848565632278594, 0.48531027193113796, 0.4857639806344165, 0.48621768933769505, 0.4866713980409736, 0.4871251067442521, 0.4875788154475307, 0.48803252415080917, 0.4884862328540877, 0.4889399415573662, 0.48939365026064474, 0.4898473589639233, 0.49030106766720183, 0.4907547763704804, 0.4912084850737589, 0.49166219377703746, 0.49211590248031595, 0.49256961118359444, 0.493023319886873, 0.4934770285901515, 0.49393073729343007, 0.4943844459967086, 0.49483815469998715, 0.4952918634032657, 0.4957455721065442, 0.4961992808098228, 0.4966529895131013, 0.4971066982163798, 0.4975604069196583, 0.49801411562293685, 0.4984678243262154, 0.49892153302949394, 0.4993752417327725, 0.499828950436051, 0.5002826591393296, 0.500736367842608, 0.5011900765458865, 0.5016437852491651, 0.5020974939524436, 0.5025512026557222, 0.5030049113590007, 0.5034586200622793, 0.5039123287655578, 0.5043660374688363, 0.5048197461721149, 0.5052734548753934, 0.505727163578672, 0.5061808722819504, 0.506634580985229, 0.5070882896885075, 0.507541998391786, 0.5079957070950646, 0.5084494157983431, 0.5089031245016217, 0.5093568332049001, 0.5098105419081786, 0.5102642506114572, 0.5107179593147357, 0.5111716680180143, 0.5116253767212928, 0.5120790854245714, 0.5125327941278499, 0.5129865028311285, 0.513440211534407, 0.5138939202376855, 0.5143476289409641, 0.5148013376442425, 0.5152550463475211, 0.5157087550507996, 0.5161624637540781, 0.5166161724573567, 0.5170698811606352, 0.5175235898639138, 0.5179772985671922, 0.5184310072704708, 0.5188847159737493, 0.5193384246770278, 0.5197921333803064, 0.5202458420835849, 0.5206995507868635, 0.521153259490142, 0.5216069681934206, 0.5220606768966991, 0.5225143855999776, 0.5229680943032562, 0.5234218030065346, 0.5238755117098132, 0.5243292204130917, 0.5247829291163703, 0.5252366378196488, 0.5256903465229273, 0.5261440552262059, 0.5265977639294843, 0.5270514726327629, 0.5275051813360414, 0.52795889003932, 0.5284125987425985, 0.528866307445877, 0.5293200161491556])
+              .range(['#440154ff', '#440154ff', '#440255ff', '#440255ff', '#430356ff', '#430456ff', '#430456ff', '#430557ff', '#430657ff', '#430658ff', '#430758ff', '#430859ff', '#430859ff', '#43095aff', '#430a5aff', '#430a5aff', '#430b5bff', '#430c5bff', '#420c5cff', '#420d5cff', '#420e5dff', '#420e5dff', '#420f5eff', '#420f5eff', '#42105eff', '#42115fff', '#42115fff', '#421260ff', '#421360ff', '#421361ff', '#421461ff', '#421562ff', '#411562ff', '#411662ff', '#411763ff', '#411763ff', '#411864ff', '#411964ff', '#411965ff', '#411a65ff', '#411b66ff', '#411b66ff', '#411c66ff', '#411d67ff', '#411d67ff', '#411e68ff', '#401e68ff', '#401f69ff', '#402069ff', '#40206aff', '#40216aff', '#40226aff', '#40226bff', '#40236bff', '#40246cff', '#40246cff', '#40256dff', '#40266dff', '#40266eff', '#3f276eff', '#3f286eff', '#3f286fff', '#3f296fff', '#3f2a70ff', '#3f2a70ff', '#3f2b71ff', '#3f2c71ff', '#3f2c71ff', '#3f2d72ff', '#3f2d72ff', '#3f2e73ff', '#3f2f73ff', '#3f2f74ff', '#3e3074ff', '#3e3175ff', '#3e3175ff', '#3e3275ff', '#3e3376ff', '#3e3376ff', '#3e3477ff', '#3e3577ff', '#3e3578ff', '#3e3678ff', '#3e3779ff', '#3e3779ff', '#3e3879ff', '#3e397aff', '#3d397aff', '#3d3a7bff', '#3d3b7bff', '#3d3b7cff', '#3d3c7cff', '#3d3c7dff', '#3d3d7dff', '#3d3e7dff', '#3d3e7eff', '#3d3f7eff', '#3d407fff', '#3d407fff', '#3d4180ff', '#3d4280ff', '#3c4281ff', '#3c4381ff', '#3c4481ff', '#3c4482ff', '#3c4582ff', '#3c4683ff', '#3c4683ff', '#3c4784ff', '#3c4884ff', '#3c4885ff', '#3c4985ff', '#3c4a85ff', '#3c4a86ff', '#3c4b86ff', '#3b4b87ff', '#3b4c87ff', '#3b4d88ff', '#3b4d88ff', '#3b4e89ff', '#3b4f89ff', '#3b4f89ff', '#3b508aff', '#3b518aff', '#3b518bff', '#3b528bff', '#3a528bff', '#3a538bff', '#3a538bff', '#3a548bff', '#3a548bff', '#39558bff', '#39558bff', '#39568bff', '#39568bff', '#39578bff', '#38578bff', '#38588bff', '#38588bff', '#38598bff', '#38598bff', '#375a8bff', '#375a8bff', '#375b8bff', '#375b8bff', '#365c8bff', '#365c8bff', '#365d8bff', '#365d8bff', '#365e8bff', '#355e8bff', '#355f8bff', '#355f8bff', '#35608bff', '#35608bff', '#34618bff', '#34618bff', '#34628bff', '#34628bff', '#34638bff', '#33638bff', '#33648bff', '#33648bff', '#33658bff', '#33658bff', '#32668bff', '#32668bff', '#32678bff', '#32678bff', '#31688bff', '#31688bff', '#31698bff', '#31698bff', '#316a8bff', '#306a8bff', '#306b8bff', '#306b8bff', '#306c8bff', '#306c8bff', '#2f6d8bff', '#2f6d8bff', '#2f6e8bff', '#2f6e8cff', '#2f6f8cff', '#2e6f8cff', '#2e708cff', '#2e708cff', '#2e718cff', '#2d718cff', '#2d728cff', '#2d728cff', '#2d738cff', '#2d738cff', '#2c748cff', '#2c748cff', '#2c758cff', '#2c758cff', '#2c768cff', '#2b768cff', '#2b778cff', '#2b778cff', '#2b788cff', '#2b788cff', '#2a798cff', '#2a798cff', '#2a7a8cff', '#2a7a8cff', '#2a7b8cff', '#297b8cff', '#297c8cff', '#297c8cff', '#297d8cff', '#287d8cff', '#287e8cff', '#287e8cff', '#287f8cff', '#287f8cff', '#27808cff', '#27808cff', '#27818cff', '#27818cff', '#27828cff', '#26828cff', '#26838cff', '#26838cff', '#26848cff', '#26848cff', '#25858cff', '#25858cff', '#25868cff', '#25868cff', '#25878cff', '#24878cff', '#24888cff', '#24888cff', '#24898cff', '#23898cff', '#238a8cff', '#238a8cff', '#238b8cff', '#238b8cff', '#228c8cff', '#228c8cff', '#228d8cff', '#228d8cff', '#228e8cff', '#218e8cff', '#218f8cff', '#218f8cff', '#21908cff', '#21908cff', '#21918cff', '#22918bff', '#22928bff', '#23928bff', '#23938aff', '#24938aff', '#24938aff', '#259489ff', '#259489ff', '#269589ff', '#269588ff', '#279688ff', '#279688ff', '#289787ff', '#289787ff', '#299887ff', '#299886ff', '#2a9886ff', '#2a9986ff', '#2b9985ff', '#2b9a85ff', '#2b9a85ff', '#2c9b84ff', '#2c9b84ff', '#2d9c84ff', '#2d9c83ff', '#2e9c83ff', '#2e9d83ff', '#2f9d82ff', '#2f9e82ff', '#309e82ff', '#309f81ff', '#319f81ff', '#31a081ff', '#32a080ff', '#32a180ff', '#33a180ff', '#33a17fff', '#34a27fff', '#34a27fff', '#35a37eff', '#35a37eff', '#36a47eff', '#36a47dff', '#37a57dff', '#37a57dff', '#38a57cff', '#38a67cff', '#39a67cff', '#39a77bff', '#39a77bff', '#3aa87bff', '#3aa87aff', '#3ba97aff', '#3ba97aff', '#3caa79ff', '#3caa79ff', '#3daa79ff', '#3dab78ff', '#3eab78ff', '#3eac78ff', '#3fac77ff', '#3fad77ff', '#40ad77ff', '#40ae76ff', '#41ae76ff', '#41ae76ff', '#42af75ff', '#42af75ff', '#43b075ff', '#43b074ff', '#44b174ff', '#44b174ff', '#45b273ff', '#45b273ff', '#46b373ff', '#46b372ff', '#47b372ff', '#47b472ff', '#47b471ff', '#48b571ff', '#48b571ff', '#49b670ff', '#49b670ff', '#4ab770ff', '#4ab770ff', '#4bb76fff', '#4bb86fff', '#4cb86fff', '#4cb96eff', '#4db96eff', '#4dba6eff', '#4eba6dff', '#4ebb6dff', '#4fbb6dff', '#4fbc6cff', '#50bc6cff', '#50bc6cff', '#51bd6bff', '#51bd6bff', '#52be6bff', '#52be6aff', '#53bf6aff', '#53bf6aff', '#54c069ff', '#54c069ff', '#55c169ff', '#55c168ff', '#56c168ff', '#56c268ff', '#56c267ff', '#57c367ff', '#57c367ff', '#58c466ff', '#58c466ff', '#59c566ff', '#59c565ff', '#5ac565ff', '#5ac665ff', '#5bc664ff', '#5bc764ff', '#5cc764ff', '#5cc863ff', '#5dc863ff', '#5ec863ff', '#5fc962ff', '#60c962ff', '#62c961ff', '#63c961ff', '#64ca60ff', '#66ca60ff', '#67ca5fff', '#68ca5fff', '#69cb5eff', '#6bcb5eff', '#6ccb5dff', '#6dcb5dff', '#6fcc5cff', '#70cc5cff', '#71cc5bff', '#72cc5bff', '#74cd5aff', '#75cd5aff', '#76cd59ff', '#78cd59ff', '#79ce58ff', '#7ace58ff', '#7bce57ff', '#7dce57ff', '#7ecf56ff', '#7fcf56ff', '#81cf55ff', '#82cf55ff', '#83d054ff', '#84d054ff', '#86d053ff', '#87d053ff', '#88d152ff', '#8ad152ff', '#8bd151ff', '#8cd151ff', '#8dd250ff', '#8fd250ff', '#90d24fff', '#91d24fff', '#93d34eff', '#94d34eff', '#95d34dff', '#96d34dff', '#98d44cff', '#99d44cff', '#9ad44bff', '#9cd44bff', '#9dd54aff', '#9ed54aff', '#9fd549ff', '#a1d549ff', '#a2d648ff', '#a3d648ff', '#a5d647ff', '#a6d647ff', '#a7d746ff', '#a9d746ff', '#aad745ff', '#abd745ff', '#acd844ff', '#aed844ff', '#afd843ff', '#b0d843ff', '#b2d942ff', '#b3d942ff', '#b4d941ff', '#b5d941ff', '#b7da40ff', '#b8da40ff', '#b9da3fff', '#bbda3fff', '#bcdb3eff', '#bddb3eff', '#bedb3dff', '#c0db3dff', '#c1dc3cff', '#c2dc3cff', '#c4dc3bff', '#c5dc3bff', '#c6dd3aff', '#c7dd3aff', '#c9dd39ff', '#cadd39ff', '#cbde38ff', '#cdde38ff', '#cede37ff', '#cfde37ff', '#d0df36ff', '#d2df36ff', '#d3df35ff', '#d4df35ff', '#d6e034ff', '#d7e034ff', '#d8e033ff', '#d9e033ff', '#dbe132ff', '#dce132ff', '#dde131ff', '#dfe131ff', '#e0e230ff', '#e1e230ff', '#e2e22fff', '#e4e22fff', '#e5e32eff', '#e6e32eff', '#e8e32dff', '#e9e32dff', '#eae42cff', '#ebe42cff', '#ede42bff', '#eee42bff', '#efe52aff', '#f1e52aff', '#f2e529ff', '#f3e529ff', '#f4e628ff', '#f6e628ff', '#f7e627ff', '#f8e627ff', '#fae726ff', '#fbe726ff', '#fce725ff', '#fde725ff']);
+    
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x = d3.scale.linear()
+              .domain([0.3029193732131681, 0.5293200161491556])
+              .range([0, 450 - 50]);
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.legend = L.control({position: 'topright'});
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.legend.addTo(map_79cec475c696159f61c9f8849bf09fb5);
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.xAxis = d3.svg.axis()
+        .scale(color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([0.3029193732131681, 0.35951953394716496, 0.41611969468116183, 0.4727198554151587, 0.5293200161491556]);
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.g = color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "white")
+        .attr("transform", "translate(25,16)");
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.g.selectAll("rect")
+        .data(color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x(color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.color.domain()[i - 1]) : color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x.range()[0],
+            x1: i < color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.color.domain().length ? color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x(color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.color.domain()[i]) : color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.g.call(color_map_2cef4fcd10b1843b1ad3c83e19ff7e6c.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "white")
+        .text("PGA (g)");
+    
+            var layer_control_eb6b089ccce4305b7e0112ca7ca278dc_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_54b67f5cfe46962b968aa5b1ba5c4517,
+                    "Cartodb dark matter" : tile_layer_2ff59f03fda8f39b35bbc2089a925ec2,
+                    "Satellite" : tile_layer_f0b786d8469675def83ec11d15e16bc3,
+                },
+                overlays :  {
+                    "Estimated PGA" : image_overlay_d99ba672f12747d88be7643d3b20bfa7,
+                },
+            };
+            let layer_control_eb6b089ccce4305b7e0112ca7ca278dc = L.control.layers(
+                layer_control_eb6b089ccce4305b7e0112ca7ca278dc_layers.base_layers,
+                layer_control_eb6b089ccce4305b7e0112ca7ca278dc_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_79cec475c696159f61c9f8849bf09fb5);
+
+        
+</script>
+</html>

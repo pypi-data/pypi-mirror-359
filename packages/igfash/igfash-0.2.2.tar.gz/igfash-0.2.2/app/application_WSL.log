@@ -1,0 +1,922 @@
+10:51:32,570 igfash.io DEBUG Looking for magnitudes with label Mw
+10:51:32,730 igfash INFO M mode - Magnitude distribution modeling
+10:51:32,731 igfash WARNING Must be either CTL or CNE for windowing. Use all events in catalog.
+10:51:32,756 igfash INFO Magnitude KDE Computation time: 0.0 seconds
+10:51:32,793 igfash INFO L mode - Location distribution modeling
+10:51:32,794 igfash INFO Computing KDE of each window...
+10:51:32,997 igfash INFO 2D KDE Computation time: 0.2 seconds
+10:51:37,241 igfash INFO R mode - activity Rate modeling
+10:51:37,242 igfash.io DEBUG Looking for magnitudes with label Mw
+10:51:39,162 igfash DEBUG Activity rates [4.96666667 4.66666667] with percentages [0.5 0.5]
+10:51:39,162 igfash INFO Forecast mode - seismic hazard asssessment
+10:51:39,163 igfash DEBUG Verification that f(x,y) is normalized; Sum of all f(x,y) values = 1.0
+10:51:39,192 igfash INFO Estimating ground motion at 265 grid points...
+10:54:11,102 igfash.gm INFO Receiver: 169
+10:54:11,103 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+10:54:11,103 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999969766
+10:54:11,104 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+10:54:11,104 igfash.gm DEBUG Now trying Scipy brenth
+11:04:03,353 igfash.gm INFO Ground motion estimation computation time: 543.9 seconds
+11:04:03,355 igfash.gm INFO Estimated PGA: 0.1541271707277636
+11:04:03,355 igfash INFO Estimated PGA at rx 169 is 0.1541271707277636
+11:06:34,704 igfash.gm INFO Receiver: 170
+11:06:34,704 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+11:06:34,704 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999606505
+11:06:34,705 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+11:06:34,706 igfash.gm DEBUG Now trying Scipy brenth
+11:18:08,17 igfash.gm INFO Ground motion estimation computation time: 639.7 seconds
+11:18:08,20 igfash.gm INFO Estimated PGA: 0.16961746171591807
+11:18:08,20 igfash INFO Estimated PGA at rx 170 is 0.16961746171591807
+11:20:36,996 igfash.gm INFO Receiver: 171
+11:20:36,997 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+11:20:36,997 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999694525
+11:20:36,997 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+11:20:36,998 igfash.gm DEBUG Now trying Scipy brenth
+11:30:12,83 igfash.gm INFO Ground motion estimation computation time: 526.9 seconds
+11:30:12,83 igfash.gm INFO Estimated PGA: 0.15503481697738258
+11:30:12,84 igfash INFO Estimated PGA at rx 171 is 0.15503481697738258
+11:32:39,104 igfash.gm INFO Receiver: 205
+11:32:39,104 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+11:32:39,105 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999677844
+11:32:39,105 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+11:32:39,106 igfash.gm DEBUG Now trying Scipy brenth
+11:44:09,900 igfash.gm INFO Ground motion estimation computation time: 680.6 seconds
+11:44:09,900 igfash.gm INFO Estimated PGA: 0.15762502740599904
+11:44:09,901 igfash INFO Estimated PGA at rx 205 is 0.15762502740599904
+11:46:32,270 igfash.gm INFO Receiver: 206
+11:46:32,271 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+11:46:32,271 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999943213
+11:46:32,272 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+11:46:32,272 igfash.gm DEBUG Now trying Scipy brenth
+11:57:07,993 igfash.gm INFO Ground motion estimation computation time: 635.7 seconds
+11:57:07,994 igfash.gm INFO Estimated PGA: 0.19056651267651217
+11:57:07,994 igfash INFO Estimated PGA at rx 206 is 0.19056651267651217
+11:59:33,543 igfash.gm INFO Receiver: 207
+11:59:33,543 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+11:59:33,544 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999404444
+11:59:33,544 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+11:59:33,544 igfash.gm DEBUG Now trying Scipy brenth
+12:09:24,0 igfash.gm INFO Ground motion estimation computation time: 590.5 seconds
+12:09:24,1 igfash.gm INFO Estimated PGA: 0.19305924989922646
+12:09:24,2 igfash INFO Estimated PGA at rx 207 is 0.19305924989922646
+12:11:48,191 igfash.gm INFO Receiver: 208
+12:11:48,191 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+12:11:48,192 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999962086
+12:11:48,192 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+12:11:48,192 igfash.gm DEBUG Now trying Scipy brenth
+12:21:19,480 igfash.gm INFO Ground motion estimation computation time: 571.3 seconds
+12:21:19,480 igfash.gm INFO Estimated PGA: 0.168197715325925
+12:21:19,481 igfash INFO Estimated PGA at rx 208 is 0.168197715325925
+12:23:41,564 igfash.gm INFO Receiver: 235
+12:23:41,564 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+12:23:41,565 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999757704
+12:23:41,565 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+12:23:41,565 igfash.gm DEBUG Now trying Scipy brenth
+12:33:29,326 igfash.gm INFO Ground motion estimation computation time: 587.8 seconds
+12:33:29,326 igfash.gm INFO Estimated PGA: 0.1409672357124181
+12:33:29,327 igfash INFO Estimated PGA at rx 235 is 0.1409672357124181
+12:35:55,536 igfash.gm INFO Receiver: 241
+12:35:55,536 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+12:35:55,537 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999973237
+12:35:55,537 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+12:35:55,537 igfash.gm DEBUG Now trying Scipy brenth
+12:45:29,645 igfash.gm INFO Ground motion estimation computation time: 574.1 seconds
+12:45:29,645 igfash.gm INFO Estimated PGA: 0.14680510730991878
+12:45:29,645 igfash INFO Estimated PGA at rx 241 is 0.14680510730991878
+12:47:53,620 igfash.gm INFO Receiver: 242
+12:47:53,620 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+12:47:53,621 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999937385
+12:47:53,621 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+12:47:53,621 igfash.gm DEBUG Now trying Scipy brenth
+12:57:40,233 igfash.gm INFO Ground motion estimation computation time: 586.6 seconds
+12:57:40,234 igfash.gm INFO Estimated PGA: 0.19422825959962958
+12:57:40,235 igfash INFO Estimated PGA at rx 242 is 0.19422825959962958
+13:00:05,967 igfash.gm INFO Receiver: 243
+13:00:05,969 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+13:00:05,969 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999910665
+13:00:05,969 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+13:00:05,970 igfash.gm DEBUG Now trying Scipy brenth
+13:09:38,414 igfash.gm INFO Ground motion estimation computation time: 572.4 seconds
+13:09:38,414 igfash.gm INFO Estimated PGA: 0.21103286122953446
+13:09:38,415 igfash INFO Estimated PGA at rx 243 is 0.21103286122953446
+13:12:03,788 igfash.gm INFO Receiver: 244
+13:12:03,788 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+13:12:03,789 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999924342
+13:12:03,789 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+13:12:03,789 igfash.gm DEBUG Now trying Scipy brenth
+13:22:34,670 igfash.gm INFO Ground motion estimation computation time: 630.9 seconds
+13:22:34,671 igfash.gm INFO Estimated PGA: 0.20519519486425888
+13:22:34,671 igfash INFO Estimated PGA at rx 244 is 0.20519519486425888
+13:24:57,443 igfash.gm INFO Receiver: 245
+13:24:57,444 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+13:24:57,444 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999602376
+13:24:57,445 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+13:24:57,445 igfash.gm DEBUG Now trying Scipy brenth
+13:34:32,459 igfash.gm INFO Ground motion estimation computation time: 575.0 seconds
+13:34:32,460 igfash.gm INFO Estimated PGA: 0.1706769253488265
+13:34:32,460 igfash INFO Estimated PGA at rx 245 is 0.1706769253488265
+13:36:54,320 igfash.gm INFO Receiver: 270
+13:36:54,320 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+13:36:54,321 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999973044
+13:36:54,321 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+13:36:54,322 igfash.gm DEBUG Now trying Scipy brenth
+13:46:17,527 igfash.gm INFO Ground motion estimation computation time: 563.2 seconds
+13:46:17,527 igfash.gm INFO Estimated PGA: 0.1474311461542325
+13:46:17,528 igfash INFO Estimated PGA at rx 270 is 0.1474311461542325
+13:48:38,805 igfash.gm INFO Receiver: 271
+13:48:38,806 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+13:48:38,806 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999554845
+13:48:38,807 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+13:48:38,807 igfash.gm DEBUG Now trying Scipy brenth
+13:58:53,902 igfash.gm INFO Ground motion estimation computation time: 615.1 seconds
+13:58:53,903 igfash.gm INFO Estimated PGA: 0.17729931447582287
+13:58:53,904 igfash INFO Estimated PGA at rx 271 is 0.17729931447582287
+14:01:15,287 igfash.gm INFO Receiver: 272
+14:01:15,287 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+14:01:15,287 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999951778
+14:01:15,288 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+14:01:15,288 igfash.gm DEBUG Now trying Scipy brenth
+14:11:32,995 igfash.gm INFO Ground motion estimation computation time: 617.7 seconds
+14:11:32,995 igfash.gm INFO Estimated PGA: 0.18040419261411267
+14:11:32,996 igfash INFO Estimated PGA at rx 272 is 0.18040419261411267
+14:13:53,138 igfash.gm INFO Receiver: 273
+14:13:53,139 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+14:13:53,139 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999968604
+14:13:53,139 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+14:13:53,140 igfash.gm DEBUG Now trying Scipy brenth
+14:23:12,829 igfash.gm INFO Ground motion estimation computation time: 559.7 seconds
+14:23:12,830 igfash.gm INFO Estimated PGA: 0.15712039756037646
+14:23:12,830 igfash INFO Estimated PGA at rx 273 is 0.15712039756037646
+14:25:34,611 igfash.gm INFO Receiver: 278
+14:25:34,612 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+14:25:34,613 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999476054
+14:25:34,613 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+14:25:34,614 igfash.gm DEBUG Now trying Scipy brenth
+14:34:58,860 igfash.gm INFO Ground motion estimation computation time: 564.2 seconds
+14:34:58,861 igfash.gm INFO Estimated PGA: 0.18554276727805763
+14:34:58,861 igfash INFO Estimated PGA at rx 278 is 0.18554276727805763
+14:37:18,932 igfash.gm INFO Receiver: 279
+14:37:18,933 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+14:37:18,934 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999989858
+14:37:18,936 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+14:37:18,937 igfash.gm DEBUG Now trying Scipy brenth
+14:46:50,475 igfash.gm INFO Ground motion estimation computation time: 571.5 seconds
+14:46:50,476 igfash.gm INFO Estimated PGA: 0.21734662943072927
+14:46:50,476 igfash INFO Estimated PGA at rx 279 is 0.21734662943072927
+14:49:18,110 igfash.gm INFO Receiver: 280
+14:49:18,110 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+14:49:18,111 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999883449
+14:49:18,111 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+14:49:18,111 igfash.gm DEBUG Now trying Scipy brenth
+14:58:06,170 igfash.gm INFO Ground motion estimation computation time: 528.1 seconds
+14:58:06,171 igfash.gm INFO Estimated PGA: 0.22140786233167517
+14:58:06,171 igfash INFO Estimated PGA at rx 280 is 0.22140786233167517
+15:00:28,107 igfash.gm INFO Receiver: 281
+15:00:28,107 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+15:00:28,108 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999198325
+15:00:28,108 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+15:00:28,108 igfash.gm DEBUG Now trying Scipy brenth
+15:11:04,497 igfash.gm INFO Ground motion estimation computation time: 636.4 seconds
+15:11:04,498 igfash.gm INFO Estimated PGA: 0.20556856943565507
+15:11:04,498 igfash INFO Estimated PGA at rx 281 is 0.20556856943565507
+15:13:26,446 igfash.gm INFO Receiver: 282
+15:13:26,446 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+15:13:26,447 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999650886
+15:13:26,447 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+15:13:26,447 igfash.gm DEBUG Now trying Scipy brenth
+15:25:21,526 igfash.gm INFO Ground motion estimation computation time: 715.1 seconds
+15:25:21,527 igfash.gm INFO Estimated PGA: 0.16313853437914091
+15:25:21,528 igfash INFO Estimated PGA at rx 282 is 0.16313853437914091
+15:27:48,771 igfash.gm INFO Receiver: 306
+15:27:48,772 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+15:27:48,772 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999759466
+15:27:48,772 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+15:27:48,772 igfash.gm DEBUG Now trying Scipy brenth
+15:37:29,957 igfash.gm INFO Ground motion estimation computation time: 581.2 seconds
+15:37:29,958 igfash.gm INFO Estimated PGA: 0.14020731015333956
+15:37:29,958 igfash INFO Estimated PGA at rx 306 is 0.14020731015333956
+15:39:50,574 igfash.gm INFO Receiver: 307
+15:39:50,574 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+15:39:50,575 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999945706
+15:39:50,575 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+15:39:50,575 igfash.gm DEBUG Now trying Scipy brenth
+15:50:38,998 igfash.gm INFO Ground motion estimation computation time: 648.4 seconds
+15:50:38,999 igfash.gm INFO Estimated PGA: 0.18640669116627206
+15:50:38,999 igfash INFO Estimated PGA at rx 307 is 0.18640669116627206
+15:53:03,622 igfash.gm INFO Receiver: 308
+15:53:03,623 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+15:53:03,623 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999157635
+15:53:03,623 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+15:53:03,624 igfash.gm DEBUG Now trying Scipy brenth
+16:03:36,926 igfash.gm INFO Ground motion estimation computation time: 633.3 seconds
+16:03:36,927 igfash.gm INFO Estimated PGA: 0.20888033585511157
+16:03:36,928 igfash INFO Estimated PGA at rx 308 is 0.20888033585511157
+16:06:03,141 igfash.gm INFO Receiver: 309
+16:06:03,141 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+16:06:03,142 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999921879
+16:06:03,142 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+16:06:03,142 igfash.gm DEBUG Now trying Scipy brenth
+16:15:56,439 igfash.gm INFO Ground motion estimation computation time: 593.3 seconds
+16:15:56,440 igfash.gm INFO Estimated PGA: 0.20540989187170097
+16:15:56,440 igfash INFO Estimated PGA at rx 309 is 0.20540989187170097
+16:18:25,696 igfash.gm INFO Receiver: 310
+16:18:25,696 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+16:18:25,697 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999956311
+16:18:25,697 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+16:18:25,697 igfash.gm DEBUG Now trying Scipy brenth
+16:30:14,7 igfash.gm INFO Ground motion estimation computation time: 708.3 seconds
+16:30:14,7 igfash.gm INFO Estimated PGA: 0.17561251770387
+16:30:14,8 igfash INFO Estimated PGA at rx 310 is 0.17561251770387
+16:32:47,935 igfash.gm INFO Receiver: 314
+16:32:47,935 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+16:32:47,936 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999965694
+16:32:47,936 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+16:32:47,936 igfash.gm DEBUG Now trying Scipy brenth
+16:44:49,795 igfash.gm INFO Ground motion estimation computation time: 721.9 seconds
+16:44:49,796 igfash.gm INFO Estimated PGA: 0.16230682686860512
+16:44:49,796 igfash INFO Estimated PGA at rx 314 is 0.16230682686860512
+16:47:17,648 igfash.gm INFO Receiver: 315
+16:47:17,648 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+16:47:17,648 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999914797
+16:47:17,648 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+16:47:17,649 igfash.gm DEBUG Now trying Scipy brenth
+16:58:02,261 igfash.gm INFO Ground motion estimation computation time: 644.6 seconds
+16:58:02,262 igfash.gm INFO Estimated PGA: 0.20949314726002452
+16:58:02,262 igfash INFO Estimated PGA at rx 315 is 0.20949314726002452
+17:00:29,820 igfash.gm INFO Receiver: 316
+17:00:29,821 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+17:00:29,821 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999865969
+17:00:29,822 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+17:00:29,822 igfash.gm DEBUG Now trying Scipy brenth
+17:10:36,748 igfash.gm INFO Ground motion estimation computation time: 606.5 seconds
+17:10:36,748 igfash.gm INFO Estimated PGA: 0.22699895568159104
+17:10:36,749 igfash INFO Estimated PGA at rx 316 is 0.22699895568159104
+17:13:07,153 igfash.gm INFO Receiver: 317
+17:13:07,154 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+17:13:07,154 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998755484
+17:13:07,155 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+17:13:07,155 igfash.gm DEBUG Now trying Scipy brenth
+17:24:05,444 igfash.gm INFO Ground motion estimation computation time: 649.8 seconds
+17:24:05,445 igfash.gm INFO Estimated PGA: 0.22548362287782614
+17:24:05,445 igfash INFO Estimated PGA at rx 317 is 0.22548362287782614
+17:26:35,615 igfash.gm INFO Receiver: 318
+17:26:35,616 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+17:26:35,616 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999930025
+17:26:35,617 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+17:26:35,617 igfash.gm DEBUG Now trying Scipy brenth
+17:37:55,299 igfash.gm INFO Ground motion estimation computation time: 669.1 seconds
+17:37:55,300 igfash.gm INFO Estimated PGA: 0.19907908060523727
+17:37:55,300 igfash INFO Estimated PGA at rx 318 is 0.19907908060523727
+17:40:17,454 igfash.gm INFO Receiver: 319
+17:40:17,455 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+17:40:17,455 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999746476
+17:40:17,455 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+17:40:17,455 igfash.gm DEBUG Now trying Scipy brenth
+17:49:47,277 igfash.gm INFO Ground motion estimation computation time: 568.0 seconds
+17:49:47,278 igfash.gm INFO Estimated PGA: 0.14386757672450684
+17:49:47,279 igfash INFO Estimated PGA at rx 319 is 0.14386757672450684
+17:52:10,707 igfash.gm INFO Receiver: 343
+17:52:10,708 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+17:52:10,708 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999955746
+17:52:10,708 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+17:52:10,709 igfash.gm DEBUG Now trying Scipy brenth
+18:01:43,954 igfash.gm INFO Ground motion estimation computation time: 573.2 seconds
+18:01:43,955 igfash.gm INFO Estimated PGA: 0.17684141475095194
+18:01:43,956 igfash INFO Estimated PGA at rx 343 is 0.17684141475095194
+18:04:05,509 igfash.gm INFO Receiver: 344
+18:04:05,510 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+18:04:05,510 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999024075
+18:04:05,510 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+18:04:05,511 igfash.gm DEBUG Now trying Scipy brenth
+18:13:32,783 igfash.gm INFO Ground motion estimation computation time: 567.3 seconds
+18:13:32,784 igfash.gm INFO Estimated PGA: 0.21385574737151034
+18:13:32,784 igfash INFO Estimated PGA at rx 344 is 0.21385574737151034
+18:15:54,947 igfash.gm INFO Receiver: 345
+18:15:54,948 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+18:15:54,948 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998697045
+18:15:54,948 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+18:15:54,949 igfash.gm DEBUG Now trying Scipy brenth
+18:25:25,573 igfash.gm INFO Ground motion estimation computation time: 570.6 seconds
+18:25:25,574 igfash.gm INFO Estimated PGA: 0.22652050666758647
+18:25:25,574 igfash INFO Estimated PGA at rx 345 is 0.22652050666758647
+18:27:48,602 igfash.gm INFO Receiver: 346
+18:27:48,603 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+18:27:48,603 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999989756
+18:27:48,603 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+18:27:48,603 igfash.gm DEBUG Now trying Scipy brenth
+18:37:19,970 igfash.gm INFO Ground motion estimation computation time: 571.4 seconds
+18:37:19,970 igfash.gm INFO Estimated PGA: 0.21801595393496628
+18:37:19,971 igfash INFO Estimated PGA at rx 346 is 0.21801595393496628
+18:39:41,710 igfash.gm INFO Receiver: 347
+18:39:41,711 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+18:39:41,711 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999948144
+18:39:41,712 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+18:39:41,712 igfash.gm DEBUG Now trying Scipy brenth
+18:49:11,227 igfash.gm INFO Ground motion estimation computation time: 569.5 seconds
+18:49:11,227 igfash.gm INFO Estimated PGA: 0.184636292764191
+18:49:11,228 igfash INFO Estimated PGA at rx 347 is 0.184636292764191
+18:51:32,356 igfash.gm INFO Receiver: 351
+18:51:32,356 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+18:51:32,357 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999945984
+18:51:32,357 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+18:51:32,358 igfash.gm DEBUG Now trying Scipy brenth
+19:01:51,986 igfash.gm INFO Ground motion estimation computation time: 619.6 seconds
+19:01:51,987 igfash.gm INFO Estimated PGA: 0.185998365675364
+19:01:51,987 igfash INFO Estimated PGA at rx 351 is 0.185998365675364
+19:04:15,192 igfash.gm INFO Receiver: 352
+19:04:15,192 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+19:04:15,193 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999888204
+19:04:15,193 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+19:04:15,193 igfash.gm DEBUG Now trying Scipy brenth
+19:12:53,219 igfash.gm INFO Ground motion estimation computation time: 518.0 seconds
+19:12:53,220 igfash.gm INFO Estimated PGA: 0.2198674529061191
+19:12:53,220 igfash INFO Estimated PGA at rx 352 is 0.2198674529061191
+19:15:15,404 igfash.gm INFO Receiver: 353
+19:15:15,405 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+19:15:15,405 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999857583
+19:15:15,406 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+19:15:15,406 igfash.gm DEBUG Now trying Scipy brenth
+19:23:50,148 igfash.gm INFO Ground motion estimation computation time: 514.7 seconds
+19:23:50,149 igfash.gm INFO Estimated PGA: 0.22933024377351416
+19:23:50,150 igfash INFO Estimated PGA at rx 353 is 0.22933024377351416
+19:26:11,653 igfash.gm INFO Receiver: 354
+19:26:11,654 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+19:26:11,655 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999892575
+19:26:11,655 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+19:26:11,655 igfash.gm DEBUG Now trying Scipy brenth
+19:34:45,866 igfash.gm INFO Ground motion estimation computation time: 514.2 seconds
+19:34:45,866 igfash.gm INFO Estimated PGA: 0.217769141973285
+19:34:45,866 igfash INFO Estimated PGA at rx 354 is 0.217769141973285
+19:37:08,192 igfash.gm INFO Receiver: 355
+19:37:08,193 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+19:37:08,193 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999995019
+19:37:08,194 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+19:37:08,194 igfash.gm DEBUG Now trying Scipy brenth
+19:47:31,734 igfash.gm INFO Ground motion estimation computation time: 623.5 seconds
+19:47:31,734 igfash.gm INFO Estimated PGA: 0.18340502296258587
+19:47:31,735 igfash INFO Estimated PGA at rx 355 is 0.18340502296258587
+19:49:52,240 igfash.gm INFO Receiver: 379
+19:49:52,241 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+19:49:52,241 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999752805
+19:49:52,242 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+19:49:52,243 igfash.gm DEBUG Now trying Scipy brenth
+20:00:12,190 igfash.gm INFO Ground motion estimation computation time: 619.9 seconds
+20:00:12,191 igfash.gm INFO Estimated PGA: 0.14259122938867141
+20:00:12,191 igfash INFO Estimated PGA at rx 379 is 0.14259122938867141
+20:02:33,670 igfash.gm INFO Receiver: 380
+20:02:33,671 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+20:02:33,671 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999249305
+20:02:33,671 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+20:02:33,672 igfash.gm DEBUG Now trying Scipy brenth
+20:11:59,503 igfash.gm INFO Ground motion estimation computation time: 565.8 seconds
+20:11:59,503 igfash.gm INFO Estimated PGA: 0.20463545478016662
+20:11:59,504 igfash INFO Estimated PGA at rx 380 is 0.20463545478016662
+20:14:21,744 igfash.gm INFO Receiver: 381
+20:14:21,745 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+20:14:21,745 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998553264
+20:14:21,745 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+20:14:21,746 igfash.gm DEBUG Now trying Scipy brenth
+20:23:54,383 igfash.gm INFO Ground motion estimation computation time: 572.6 seconds
+20:23:54,383 igfash.gm INFO Estimated PGA: 0.22983443243759286
+20:23:54,384 igfash INFO Estimated PGA at rx 381 is 0.22983443243759286
+20:26:16,483 igfash.gm INFO Receiver: 382
+20:26:16,484 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+20:26:16,484 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999983663
+20:26:16,485 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+20:26:16,485 igfash.gm DEBUG Now trying Scipy brenth
+20:34:51,214 igfash.gm INFO Ground motion estimation computation time: 514.7 seconds
+20:34:51,215 igfash.gm INFO Estimated PGA: 0.23463141088472805
+20:34:51,216 igfash INFO Estimated PGA at rx 382 is 0.23463141088472805
+20:37:20,294 igfash.gm INFO Receiver: 383
+20:37:20,294 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+20:37:20,295 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999887523
+20:37:20,295 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+20:37:20,296 igfash.gm DEBUG Now trying Scipy brenth
+20:46:10,999 igfash.gm INFO Ground motion estimation computation time: 530.7 seconds
+20:46:10,999 igfash.gm INFO Estimated PGA: 0.22025672946819053
+20:46:11,0 igfash INFO Estimated PGA at rx 383 is 0.22025672946819053
+20:48:33,231 igfash.gm INFO Receiver: 384
+20:48:33,232 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+20:48:33,232 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999943531
+20:48:33,233 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+20:48:33,233 igfash.gm DEBUG Now trying Scipy brenth
+20:58:53,774 igfash.gm INFO Ground motion estimation computation time: 620.5 seconds
+20:58:53,775 igfash.gm INFO Estimated PGA: 0.19059750971593126
+20:58:53,775 igfash INFO Estimated PGA at rx 384 is 0.19059750971593126
+21:01:16,96 igfash.gm INFO Receiver: 385
+21:01:16,97 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+21:01:16,98 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999970739
+21:01:16,98 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+21:01:16,98 igfash.gm DEBUG Now trying Scipy brenth
+21:11:39,920 igfash.gm INFO Ground motion estimation computation time: 623.8 seconds
+21:11:39,921 igfash.gm INFO Estimated PGA: 0.1520417180757546
+21:11:39,921 igfash INFO Estimated PGA at rx 385 is 0.1520417180757546
+21:14:02,214 igfash.gm INFO Receiver: 387
+21:14:02,214 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+21:14:02,215 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999996891
+21:14:02,215 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+21:14:02,216 igfash.gm DEBUG Now trying Scipy brenth
+21:24:21,784 igfash.gm INFO Ground motion estimation computation time: 619.6 seconds
+21:24:21,785 igfash.gm INFO Estimated PGA: 0.15714147230471193
+21:24:21,785 igfash INFO Estimated PGA at rx 387 is 0.15714147230471193
+21:26:45,501 igfash.gm INFO Receiver: 388
+21:26:45,501 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+21:26:45,502 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999931065
+21:26:45,502 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+21:26:45,502 igfash.gm DEBUG Now trying Scipy brenth
+21:37:14,147 igfash.gm INFO Ground motion estimation computation time: 628.6 seconds
+21:37:14,147 igfash.gm INFO Estimated PGA: 0.19890061557261868
+21:37:14,148 igfash INFO Estimated PGA at rx 388 is 0.19890061557261868
+21:39:35,573 igfash.gm INFO Receiver: 389
+21:39:35,574 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+21:39:35,574 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999883126
+21:39:35,575 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+21:39:35,575 igfash.gm DEBUG Now trying Scipy brenth
+21:48:10,831 igfash.gm INFO Ground motion estimation computation time: 515.3 seconds
+21:48:10,832 igfash.gm INFO Estimated PGA: 0.22220920747056788
+21:48:10,832 igfash INFO Estimated PGA at rx 389 is 0.22220920747056788
+21:50:33,213 igfash.gm INFO Receiver: 390
+21:50:33,214 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+21:50:33,215 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999879377
+21:50:33,215 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+21:50:33,215 igfash.gm DEBUG Now trying Scipy brenth
+21:59:09,419 igfash.gm INFO Ground motion estimation computation time: 516.2 seconds
+21:59:09,419 igfash.gm INFO Estimated PGA: 0.22417527963255526
+21:59:09,420 igfash INFO Estimated PGA at rx 390 is 0.22417527963255526
+22:01:31,819 igfash.gm INFO Receiver: 391
+22:01:31,820 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+22:01:31,820 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999992551
+22:01:31,820 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+22:01:31,821 igfash.gm DEBUG Now trying Scipy brenth
+22:11:07,253 igfash.gm INFO Ground motion estimation computation time: 575.4 seconds
+22:11:07,253 igfash.gm INFO Estimated PGA: 0.2040308724983273
+22:11:07,254 igfash INFO Estimated PGA at rx 391 is 0.2040308724983273
+22:13:29,177 igfash.gm INFO Receiver: 392
+22:13:29,177 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+22:13:29,178 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999971104
+22:13:29,178 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+22:13:29,179 igfash.gm DEBUG Now trying Scipy brenth
+22:22:58,960 igfash.gm INFO Ground motion estimation computation time: 569.8 seconds
+22:22:58,961 igfash.gm INFO Estimated PGA: 0.1518766217121996
+22:22:58,961 igfash INFO Estimated PGA at rx 392 is 0.1518766217121996
+22:25:20,944 igfash.gm INFO Receiver: 416
+22:25:20,945 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+22:25:20,945 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999961196
+22:25:20,946 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+22:25:20,946 igfash.gm DEBUG Now trying Scipy brenth
+22:36:38,780 igfash.gm INFO Ground motion estimation computation time: 677.8 seconds
+22:36:38,781 igfash.gm INFO Estimated PGA: 0.1684199934249176
+22:36:38,781 igfash INFO Estimated PGA at rx 416 is 0.1684199934249176
+22:39:02,787 igfash.gm INFO Receiver: 417
+22:39:02,788 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+22:39:02,788 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999893138
+22:39:02,789 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+22:39:02,789 igfash.gm DEBUG Now trying Scipy brenth
+22:47:44,927 igfash.gm INFO Ground motion estimation computation time: 522.1 seconds
+22:47:44,927 igfash.gm INFO Estimated PGA: 0.2174310149135606
+22:47:44,928 igfash INFO Estimated PGA at rx 417 is 0.2174310149135606
+22:50:07,141 igfash.gm INFO Receiver: 418
+22:50:07,142 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+22:50:07,142 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999824864
+22:50:07,143 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+22:50:07,143 igfash.gm DEBUG Now trying Scipy brenth
+22:59:37,188 igfash.gm INFO Ground motion estimation computation time: 570.0 seconds
+22:59:37,189 igfash.gm INFO Estimated PGA: 0.2365853971356735
+22:59:37,189 igfash INFO Estimated PGA at rx 418 is 0.2365853971356735
+23:01:59,623 igfash.gm INFO Receiver: 419
+23:01:59,623 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+23:01:59,623 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999828952
+23:01:59,624 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+23:01:59,624 igfash.gm DEBUG Now trying Scipy brenth
+23:11:31,627 igfash.gm INFO Ground motion estimation computation time: 572.0 seconds
+23:11:31,627 igfash.gm INFO Estimated PGA: 0.23533531848801603
+23:11:31,628 igfash INFO Estimated PGA at rx 419 is 0.23533531848801603
+23:13:52,834 igfash.gm INFO Receiver: 420
+23:13:52,835 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+23:13:52,835 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998899716
+23:13:52,836 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+23:13:52,836 igfash.gm DEBUG Now trying Scipy brenth
+23:22:24,952 igfash.gm INFO Ground motion estimation computation time: 512.1 seconds
+23:22:24,952 igfash.gm INFO Estimated PGA: 0.21933239231169957
+23:22:24,952 igfash INFO Estimated PGA at rx 420 is 0.21933239231169957
+23:24:46,916 igfash.gm INFO Receiver: 421
+23:24:46,916 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+23:24:46,917 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999940615
+23:24:46,917 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+23:24:46,918 igfash.gm DEBUG Now trying Scipy brenth
+23:34:17,565 igfash.gm INFO Ground motion estimation computation time: 570.6 seconds
+23:34:17,566 igfash.gm INFO Estimated PGA: 0.19289200352924007
+23:34:17,566 igfash INFO Estimated PGA at rx 421 is 0.19289200352924007
+23:36:42,638 igfash.gm INFO Receiver: 422
+23:36:42,639 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+23:36:42,639 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999654585
+23:36:42,640 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+23:36:42,640 igfash.gm DEBUG Now trying Scipy brenth
+23:47:17,296 igfash.gm INFO Ground motion estimation computation time: 634.7 seconds
+23:47:17,297 igfash.gm INFO Estimated PGA: 0.16252062863473013
+23:47:17,297 igfash INFO Estimated PGA at rx 422 is 0.16252062863473013
+23:49:39,302 igfash.gm INFO Receiver: 423
+23:49:39,303 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+23:49:39,304 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999737074
+23:49:39,304 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+23:49:39,305 igfash.gm DEBUG Now trying Scipy brenth
+00:01:00,819 igfash.gm INFO Ground motion estimation computation time: 681.5 seconds
+00:01:00,819 igfash.gm INFO Estimated PGA: 0.1465113827020799
+00:01:00,820 igfash INFO Estimated PGA at rx 423 is 0.1465113827020799
+00:03:23,92 igfash.gm INFO Receiver: 424
+00:03:23,92 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+00:03:23,93 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999962436
+00:03:23,93 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+00:03:23,93 igfash.gm DEBUG Now trying Scipy brenth
+00:12:53,522 igfash.gm INFO Ground motion estimation computation time: 570.4 seconds
+00:12:53,523 igfash.gm INFO Estimated PGA: 0.16822017035726455
+00:12:53,523 igfash INFO Estimated PGA at rx 424 is 0.16822017035726455
+00:15:15,976 igfash.gm INFO Receiver: 425
+00:15:15,977 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+00:15:15,977 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999292354
+00:15:15,978 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+00:15:15,978 igfash.gm DEBUG Now trying Scipy brenth
+00:26:30,861 igfash.gm INFO Ground motion estimation computation time: 674.9 seconds
+00:26:30,861 igfash.gm INFO Estimated PGA: 0.1999488701897055
+00:26:30,862 igfash INFO Estimated PGA at rx 425 is 0.1999488701897055
+00:28:52,342 igfash.gm INFO Receiver: 426
+00:28:52,343 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+00:28:52,343 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999902818
+00:28:52,344 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+00:28:52,344 igfash.gm DEBUG Now trying Scipy brenth
+00:40:11,150 igfash.gm INFO Ground motion estimation computation time: 678.8 seconds
+00:40:11,151 igfash.gm INFO Estimated PGA: 0.2142233316429006
+00:40:11,152 igfash INFO Estimated PGA at rx 426 is 0.2142233316429006
+00:42:35,496 igfash.gm INFO Receiver: 427
+00:42:35,497 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+00:42:35,497 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999991859
+00:42:35,498 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+00:42:35,498 igfash.gm DEBUG Now trying Scipy brenth
+00:53:07,496 igfash.gm INFO Ground motion estimation computation time: 632.0 seconds
+00:53:07,497 igfash.gm INFO Estimated PGA: 0.20545648716553136
+00:53:07,497 igfash INFO Estimated PGA at rx 427 is 0.20545648716553136
+00:55:30,218 igfash.gm INFO Receiver: 428
+00:55:30,219 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+00:55:30,219 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999958345
+00:55:30,220 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+00:55:30,220 igfash.gm DEBUG Now trying Scipy brenth
+01:05:01,533 igfash.gm INFO Ground motion estimation computation time: 571.3 seconds
+01:05:01,534 igfash.gm INFO Estimated PGA: 0.1733350926086507
+01:05:01,535 igfash INFO Estimated PGA at rx 428 is 0.1733350926086507
+01:07:25,214 igfash.gm INFO Receiver: 453
+01:07:25,215 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+01:07:25,215 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999947012
+01:07:25,216 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+01:07:25,216 igfash.gm DEBUG Now trying Scipy brenth
+01:16:58,560 igfash.gm INFO Ground motion estimation computation time: 573.3 seconds
+01:16:58,560 igfash.gm INFO Estimated PGA: 0.18654619376757586
+01:16:58,561 igfash INFO Estimated PGA at rx 453 is 0.18654619376757586
+01:19:20,684 igfash.gm INFO Receiver: 454
+01:19:20,684 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+01:19:20,685 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999874145
+01:19:20,685 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+01:19:20,685 igfash.gm DEBUG Now trying Scipy brenth
+01:29:42,61 igfash.gm INFO Ground motion estimation computation time: 621.4 seconds
+01:29:42,61 igfash.gm INFO Estimated PGA: 0.22619836191770018
+01:29:42,61 igfash INFO Estimated PGA at rx 454 is 0.22619836191770018
+01:32:05,544 igfash.gm INFO Receiver: 455
+01:32:05,545 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+01:32:05,546 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998217366
+01:32:05,546 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+01:32:05,547 igfash.gm DEBUG Now trying Scipy brenth
+01:41:40,717 igfash.gm INFO Ground motion estimation computation time: 575.2 seconds
+01:41:40,717 igfash.gm INFO Estimated PGA: 0.2375277231309095
+01:41:40,718 igfash INFO Estimated PGA at rx 455 is 0.2375277231309095
+01:44:04,757 igfash.gm INFO Receiver: 456
+01:44:04,757 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+01:44:04,758 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999842136
+01:44:04,758 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+01:44:04,759 igfash.gm DEBUG Now trying Scipy brenth
+01:52:47,373 igfash.gm INFO Ground motion estimation computation time: 522.6 seconds
+01:52:47,373 igfash.gm INFO Estimated PGA: 0.2331722348308194
+01:52:47,374 igfash INFO Estimated PGA at rx 456 is 0.2331722348308194
+01:55:10,30 igfash.gm INFO Receiver: 457
+01:55:10,31 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+01:55:10,33 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998985634
+01:55:10,33 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+01:55:10,33 igfash.gm DEBUG Now trying Scipy brenth
+02:04:44,782 igfash.gm INFO Ground motion estimation computation time: 574.7 seconds
+02:04:44,783 igfash.gm INFO Estimated PGA: 0.21736168446762255
+02:04:44,783 igfash INFO Estimated PGA at rx 457 is 0.21736168446762255
+02:07:06,464 igfash.gm INFO Receiver: 458
+02:07:06,464 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+02:07:06,465 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999405645
+02:07:06,465 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+02:07:06,465 igfash.gm DEBUG Now trying Scipy brenth
+02:16:40,723 igfash.gm INFO Ground motion estimation computation time: 574.3 seconds
+02:16:40,724 igfash.gm INFO Estimated PGA: 0.1929505422432158
+02:16:40,724 igfash INFO Estimated PGA at rx 458 is 0.1929505422432158
+02:19:03,668 igfash.gm INFO Receiver: 459
+02:19:03,668 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+02:19:03,669 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999963638
+02:19:03,669 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+02:19:03,670 igfash.gm DEBUG Now trying Scipy brenth
+02:28:32,904 igfash.gm INFO Ground motion estimation computation time: 569.2 seconds
+02:28:32,905 igfash.gm INFO Estimated PGA: 0.16579543104691793
+02:28:32,905 igfash INFO Estimated PGA at rx 459 is 0.16579543104691793
+02:30:55,196 igfash.gm INFO Receiver: 460
+02:30:55,197 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+02:30:55,197 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999971435
+02:30:55,197 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+02:30:55,198 igfash.gm DEBUG Now trying Scipy brenth
+02:41:21,262 igfash.gm INFO Ground motion estimation computation time: 626.1 seconds
+02:41:21,262 igfash.gm INFO Estimated PGA: 0.15204039991763887
+02:41:21,263 igfash INFO Estimated PGA at rx 460 is 0.15204039991763887
+02:43:44,252 igfash.gm INFO Receiver: 461
+02:43:44,253 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+02:43:44,253 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999961541
+02:43:44,254 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+02:43:44,254 igfash.gm DEBUG Now trying Scipy brenth
+02:53:17,677 igfash.gm INFO Ground motion estimation computation time: 573.4 seconds
+02:53:17,678 igfash.gm INFO Estimated PGA: 0.16926756393995182
+02:53:17,678 igfash INFO Estimated PGA at rx 461 is 0.16926756393995182
+02:55:40,10 igfash.gm INFO Receiver: 462
+02:55:40,10 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+02:55:40,11 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999405305
+02:55:40,11 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+02:55:40,11 igfash.gm DEBUG Now trying Scipy brenth
+03:05:09,763 igfash.gm INFO Ground motion estimation computation time: 569.8 seconds
+03:05:09,764 igfash.gm INFO Estimated PGA: 0.1929524460970271
+03:05:09,765 igfash INFO Estimated PGA at rx 462 is 0.1929524460970271
+03:07:33,118 igfash.gm INFO Receiver: 463
+03:07:33,119 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+03:07:33,120 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999934757
+03:07:33,120 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+03:07:33,121 igfash.gm DEBUG Now trying Scipy brenth
+03:17:58,7 igfash.gm INFO Ground motion estimation computation time: 624.9 seconds
+03:17:58,8 igfash.gm INFO Estimated PGA: 0.19733250359277832
+03:17:58,8 igfash INFO Estimated PGA at rx 463 is 0.19733250359277832
+03:20:21,63 igfash.gm INFO Receiver: 464
+03:20:21,64 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+03:20:21,65 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999955597
+03:20:21,65 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+03:20:21,66 igfash.gm DEBUG Now trying Scipy brenth
+03:30:44,69 igfash.gm INFO Ground motion estimation computation time: 623.0 seconds
+03:30:44,69 igfash.gm INFO Estimated PGA: 0.17708619296518524
+03:30:44,69 igfash INFO Estimated PGA at rx 464 is 0.17708619296518524
+03:33:07,304 igfash.gm INFO Receiver: 490
+03:33:07,305 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+03:33:07,305 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999938817
+03:33:07,305 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+03:33:07,306 igfash.gm DEBUG Now trying Scipy brenth
+03:43:35,421 igfash.gm INFO Ground motion estimation computation time: 628.1 seconds
+03:43:35,422 igfash.gm INFO Estimated PGA: 0.19305502966588078
+03:43:35,422 igfash INFO Estimated PGA at rx 490 is 0.19305502966588078
+03:45:59,165 igfash.gm INFO Receiver: 491
+03:45:59,166 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+03:45:59,166 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998737284
+03:45:59,166 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+03:45:59,167 igfash.gm DEBUG Now trying Scipy brenth
+03:56:29,672 igfash.gm INFO Ground motion estimation computation time: 630.5 seconds
+03:56:29,673 igfash.gm INFO Estimated PGA: 0.2264089878586745
+03:56:29,673 igfash INFO Estimated PGA at rx 491 is 0.2264089878586745
+03:58:53,270 igfash.gm INFO Receiver: 492
+03:58:53,270 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+03:58:53,271 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998397715
+03:58:53,271 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+03:58:53,271 igfash.gm DEBUG Now trying Scipy brenth
+04:07:32,804 igfash.gm INFO Ground motion estimation computation time: 519.5 seconds
+04:07:32,805 igfash.gm INFO Estimated PGA: 0.23357866462285998
+04:07:32,805 igfash INFO Estimated PGA at rx 492 is 0.23357866462285998
+04:09:54,769 igfash.gm INFO Receiver: 493
+04:09:54,770 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+04:09:54,770 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999865175
+04:09:54,770 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+04:09:54,771 igfash.gm DEBUG Now trying Scipy brenth
+04:19:24,956 igfash.gm INFO Ground motion estimation computation time: 570.2 seconds
+04:19:24,956 igfash.gm INFO Estimated PGA: 0.22733669539941245
+04:19:24,957 igfash INFO Estimated PGA at rx 493 is 0.22733669539941245
+04:21:49,355 igfash.gm INFO Receiver: 494
+04:21:49,356 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+04:21:49,356 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999911282
+04:21:49,357 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+04:21:49,357 igfash.gm DEBUG Now trying Scipy brenth
+04:31:32,301 igfash.gm INFO Ground motion estimation computation time: 582.9 seconds
+04:31:32,301 igfash.gm INFO Estimated PGA: 0.21057174686110935
+04:31:32,302 igfash INFO Estimated PGA at rx 494 is 0.21057174686110935
+04:33:54,894 igfash.gm INFO Receiver: 495
+04:33:54,894 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+04:33:54,895 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999457055
+04:33:54,895 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+04:33:54,895 igfash.gm DEBUG Now trying Scipy brenth
+04:44:18,195 igfash.gm INFO Ground motion estimation computation time: 623.3 seconds
+04:44:18,195 igfash.gm INFO Estimated PGA: 0.18639907410255835
+04:44:18,196 igfash INFO Estimated PGA at rx 495 is 0.18639907410255835
+04:46:41,374 igfash.gm INFO Receiver: 496
+04:46:41,375 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+04:46:41,375 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999965655
+04:46:41,375 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+04:46:41,376 igfash.gm DEBUG Now trying Scipy brenth
+04:58:03,959 igfash.gm INFO Ground motion estimation computation time: 682.6 seconds
+04:58:03,960 igfash.gm INFO Estimated PGA: 0.16235432230073388
+04:58:03,960 igfash INFO Estimated PGA at rx 496 is 0.16235432230073388
+05:00:27,211 igfash.gm INFO Receiver: 497
+05:00:27,211 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+05:00:27,212 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999971216
+05:00:27,212 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+05:00:27,212 igfash.gm DEBUG Now trying Scipy brenth
+05:10:56,281 igfash.gm INFO Ground motion estimation computation time: 629.1 seconds
+05:10:56,281 igfash.gm INFO Estimated PGA: 0.15206244061034638
+05:10:56,281 igfash INFO Estimated PGA at rx 497 is 0.15206244061034638
+05:13:18,987 igfash.gm INFO Receiver: 498
+05:13:18,988 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+05:13:18,989 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999641095
+05:13:18,989 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+05:13:18,990 igfash.gm DEBUG Now trying Scipy brenth
+05:24:41,232 igfash.gm INFO Ground motion estimation computation time: 682.2 seconds
+05:24:41,233 igfash.gm INFO Estimated PGA: 0.16448561934763392
+05:24:41,233 igfash INFO Estimated PGA at rx 498 is 0.16448561934763392
+05:27:06,200 igfash.gm INFO Receiver: 499
+05:27:06,201 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+05:27:06,201 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999561257
+05:27:06,202 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+05:27:06,202 igfash.gm DEBUG Now trying Scipy brenth
+05:38:31,189 igfash.gm INFO Ground motion estimation computation time: 685.0 seconds
+05:38:31,190 igfash.gm INFO Estimated PGA: 0.17597596053257164
+05:38:31,191 igfash INFO Estimated PGA at rx 499 is 0.17597596053257164
+05:40:54,61 igfash.gm INFO Receiver: 500
+05:40:54,62 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+05:40:54,62 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999962603
+05:40:54,63 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+05:40:54,63 igfash.gm DEBUG Now trying Scipy brenth
+05:50:25,582 igfash.gm INFO Ground motion estimation computation time: 571.5 seconds
+05:50:25,583 igfash.gm INFO Estimated PGA: 0.16770890287983098
+05:50:25,584 igfash INFO Estimated PGA at rx 500 is 0.16770890287983098
+05:52:48,67 igfash.gm INFO Receiver: 527
+05:52:48,68 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+05:52:48,68 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999938723
+05:52:48,69 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+05:52:48,69 igfash.gm DEBUG Now trying Scipy brenth
+06:03:12,358 igfash.gm INFO Ground motion estimation computation time: 624.3 seconds
+06:03:12,359 igfash.gm INFO Estimated PGA: 0.1931722576070779
+06:03:12,359 igfash INFO Estimated PGA at rx 527 is 0.1931722576070779
+06:05:36,626 igfash.gm INFO Receiver: 528
+06:05:36,627 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+06:05:36,627 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999887271
+06:05:36,627 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+06:05:36,627 igfash.gm DEBUG Now trying Scipy brenth
+06:14:17,403 igfash.gm INFO Ground motion estimation computation time: 520.8 seconds
+06:14:17,404 igfash.gm INFO Estimated PGA: 0.21929525794197496
+06:14:17,405 igfash INFO Estimated PGA at rx 528 is 0.21929525794197496
+06:16:40,914 igfash.gm INFO Receiver: 529
+06:16:40,915 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+06:16:40,915 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999998680496
+06:16:40,916 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+06:16:40,916 igfash.gm DEBUG Now trying Scipy brenth
+06:26:11,105 igfash.gm INFO Ground motion estimation computation time: 570.2 seconds
+06:26:11,106 igfash.gm INFO Estimated PGA: 0.22724377397830758
+06:26:11,106 igfash INFO Estimated PGA at rx 529 is 0.22724377397830758
+06:28:35,597 igfash.gm INFO Receiver: 530
+06:28:35,598 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+06:28:35,598 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999892522
+06:28:35,599 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+06:28:35,600 igfash.gm DEBUG Now trying Scipy brenth
+06:37:21,679 igfash.gm INFO Ground motion estimation computation time: 526.1 seconds
+06:37:21,679 igfash.gm INFO Estimated PGA: 0.21780482498437734
+06:37:21,680 igfash INFO Estimated PGA at rx 530 is 0.21780482498437734
+06:39:44,342 igfash.gm INFO Receiver: 531
+06:39:44,344 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+06:39:44,345 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999928256
+06:39:44,346 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+06:39:44,346 igfash.gm DEBUG Now trying Scipy brenth
+06:51:05,309 igfash.gm INFO Ground motion estimation computation time: 681.0 seconds
+06:51:05,310 igfash.gm INFO Estimated PGA: 0.20106001249341438
+06:51:05,310 igfash INFO Estimated PGA at rx 531 is 0.20106001249341438
+06:53:27,926 igfash.gm INFO Receiver: 532
+06:53:27,926 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+06:53:27,927 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999546206
+06:53:27,927 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+06:53:27,927 igfash.gm DEBUG Now trying Scipy brenth
+07:03:48,631 igfash.gm INFO Ground motion estimation computation time: 620.7 seconds
+07:03:48,633 igfash.gm INFO Estimated PGA: 0.17926595696173472
+07:03:48,633 igfash INFO Estimated PGA at rx 532 is 0.17926595696173472
+07:06:10,381 igfash.gm INFO Receiver: 533
+07:06:10,382 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+07:06:10,382 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999968259
+07:06:10,383 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+07:06:10,383 igfash.gm DEBUG Now trying Scipy brenth
+07:16:33,107 igfash.gm INFO Ground motion estimation computation time: 622.7 seconds
+07:16:33,108 igfash.gm INFO Estimated PGA: 0.15704943190849247
+07:16:33,108 igfash INFO Estimated PGA at rx 533 is 0.15704943190849247
+07:18:56,340 igfash.gm INFO Receiver: 534
+07:18:56,340 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+07:18:56,341 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999969112
+07:18:56,342 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+07:18:56,343 igfash.gm DEBUG Now trying Scipy brenth
+07:29:22,73 igfash.gm INFO Ground motion estimation computation time: 625.7 seconds
+07:29:22,74 igfash.gm INFO Estimated PGA: 0.1563645664327628
+07:29:22,75 igfash INFO Estimated PGA at rx 534 is 0.1563645664327628
+07:31:47,599 igfash.gm INFO Receiver: 535
+07:31:47,599 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+07:31:47,599 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999642886
+07:31:47,600 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+07:31:47,600 igfash.gm DEBUG Now trying Scipy brenth
+07:43:16,143 igfash.gm INFO Ground motion estimation computation time: 688.5 seconds
+07:43:16,143 igfash.gm INFO Estimated PGA: 0.16396508736616852
+07:43:16,144 igfash INFO Estimated PGA at rx 535 is 0.16396508736616852
+07:45:41,618 igfash.gm INFO Receiver: 536
+07:45:41,618 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+07:45:41,618 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999996657
+07:45:41,619 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+07:45:41,619 igfash.gm DEBUG Now trying Scipy brenth
+07:55:19,609 igfash.gm INFO Ground motion estimation computation time: 578.0 seconds
+07:55:19,609 igfash.gm INFO Estimated PGA: 0.16044552918675206
+07:55:19,610 igfash INFO Estimated PGA at rx 536 is 0.16044552918675206
+07:57:42,808 igfash.gm INFO Receiver: 564
+07:57:42,809 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+07:57:42,809 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999944849
+07:57:42,809 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+07:57:42,810 igfash.gm DEBUG Now trying Scipy brenth
+08:08:06,30 igfash.gm INFO Ground motion estimation computation time: 623.2 seconds
+08:08:06,31 igfash.gm INFO Estimated PGA: 0.1876560987943232
+08:08:06,32 igfash INFO Estimated PGA at rx 564 is 0.1876560987943232
+08:10:28,815 igfash.gm INFO Receiver: 565
+08:10:28,816 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+08:10:28,817 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999908277
+08:10:28,817 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+08:10:28,818 igfash.gm DEBUG Now trying Scipy brenth
+08:20:02,636 igfash.gm INFO Ground motion estimation computation time: 573.8 seconds
+08:20:02,636 igfash.gm INFO Estimated PGA: 0.21285697979414522
+08:20:02,637 igfash INFO Estimated PGA at rx 565 is 0.21285697979414522
+08:22:25,731 igfash.gm INFO Receiver: 566
+08:22:25,731 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+08:22:25,732 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999900329
+08:22:25,732 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+08:22:25,732 igfash.gm DEBUG Now trying Scipy brenth
+08:31:56,226 igfash.gm INFO Ground motion estimation computation time: 570.5 seconds
+08:31:56,227 igfash.gm INFO Estimated PGA: 0.2163388976457056
+08:31:56,227 igfash INFO Estimated PGA at rx 566 is 0.2163388976457056
+08:34:19,592 igfash.gm INFO Receiver: 567
+08:34:19,593 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+08:34:19,594 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999921095
+08:34:19,594 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+08:34:19,595 igfash.gm DEBUG Now trying Scipy brenth
+08:43:53,440 igfash.gm INFO Ground motion estimation computation time: 573.8 seconds
+08:43:53,441 igfash.gm INFO Estimated PGA: 0.2055211080579351
+08:43:53,441 igfash INFO Estimated PGA at rx 567 is 0.2055211080579351
+08:46:17,877 igfash.gm INFO Receiver: 568
+08:46:17,877 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+08:46:17,878 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999945634
+08:46:17,878 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+08:46:17,878 igfash.gm DEBUG Now trying Scipy brenth
+08:56:47,751 igfash.gm INFO Ground motion estimation computation time: 629.9 seconds
+08:56:47,752 igfash.gm INFO Estimated PGA: 0.18651321142786123
+08:56:47,752 igfash INFO Estimated PGA at rx 568 is 0.18651321142786123
+08:59:12,212 igfash.gm INFO Receiver: 569
+08:59:12,212 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+08:59:12,213 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999961651
+08:59:12,213 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+08:59:12,213 igfash.gm DEBUG Now trying Scipy brenth
+09:08:48,659 igfash.gm INFO Ground motion estimation computation time: 576.4 seconds
+09:08:48,659 igfash.gm INFO Estimated PGA: 0.16904468956377539
+09:08:48,660 igfash INFO Estimated PGA at rx 569 is 0.16904468956377539
+09:11:12,886 igfash.gm INFO Receiver: 570
+09:11:12,887 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+09:11:12,887 igfash.gm INFO Function value at PGA = 1.0 : -0.049999999999657006
+09:11:12,887 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+09:11:12,888 igfash.gm DEBUG Now trying Scipy brenth
+09:22:34,899 igfash.gm INFO Ground motion estimation computation time: 682.0 seconds
+09:22:34,899 igfash.gm INFO Estimated PGA: 0.16224048954833642
+09:22:34,900 igfash INFO Estimated PGA at rx 570 is 0.16224048954833642
+09:24:59,67 igfash.gm INFO Receiver: 571
+09:24:59,67 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+09:24:59,68 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999959766
+09:24:59,68 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+09:24:59,69 igfash.gm DEBUG Now trying Scipy brenth
+09:34:38,302 igfash.gm INFO Ground motion estimation computation time: 579.2 seconds
+09:34:38,302 igfash.gm INFO Estimated PGA: 0.1718011986741412
+09:34:38,303 igfash INFO Estimated PGA at rx 571 is 0.1718011986741412
+09:37:02,728 igfash.gm INFO Receiver: 572
+09:37:02,728 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+09:37:02,729 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999957549
+09:37:02,729 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+09:37:02,729 igfash.gm DEBUG Now trying Scipy brenth
+09:46:41,80 igfash.gm INFO Ground motion estimation computation time: 578.4 seconds
+09:46:41,80 igfash.gm INFO Estimated PGA: 0.1747264711241183
+09:46:41,81 igfash INFO Estimated PGA at rx 572 is 0.1747264711241183
+09:49:03,362 igfash.gm INFO Receiver: 573
+09:49:03,363 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+09:49:03,363 igfash.gm INFO Function value at PGA = 1.0 : -0.0499999999996864
+09:49:03,363 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+09:49:03,364 igfash.gm DEBUG Now trying Scipy brenth
+09:58:34,420 igfash.gm INFO Ground motion estimation computation time: 571.1 seconds
+09:58:34,423 igfash.gm INFO Estimated PGA: 0.1570373761907738
+09:58:34,423 igfash INFO Estimated PGA at rx 573 is 0.1570373761907738
+10:01:02,241 igfash.gm INFO Receiver: 601
+10:01:02,241 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+10:01:02,241 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999954581
+10:01:02,242 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+10:01:02,242 igfash.gm DEBUG Now trying Scipy brenth
+10:11:59,447 igfash.gm INFO Ground motion estimation computation time: 657.2 seconds
+10:11:59,447 igfash.gm INFO Estimated PGA: 0.17934334956265174
+10:11:59,448 igfash INFO Estimated PGA at rx 601 is 0.17934334956265174
+10:14:23,282 igfash.gm INFO Receiver: 602
+10:14:23,283 igfash.gm INFO Function value at PGA = 0.0 : 84.84575591822195
+10:14:23,283 igfash.gm INFO Function value at PGA = 1.0 : -0.04999999999931929
+10:14:23,284 igfash.gm INFO Function value at PGA = 2.0 : -0.05
+10:14:23,284 igfash.gm DEBUG Now trying Scipy brenth

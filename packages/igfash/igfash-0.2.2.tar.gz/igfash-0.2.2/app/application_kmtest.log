@@ -1,0 +1,63 @@
+15:15:01,595 igfash DEBUG Number of physical cores: 14
+15:15:01,595 igfash.io DEBUG Looking for magnitudes with label Mw
+15:15:01,845 igfash INFO M mode - Magnitude distribution modeling
+15:15:01,845 igfash WARNING Must be either CTL or CNE for windowing. Use all events in catalog.
+15:15:09,116 igfash INFO Magnitude KDE Computation time: 7.3 seconds
+15:15:09,316 igfash INFO L mode - Location distribution modeling
+15:15:09,316 igfash INFO Computing KDE of each window...
+15:15:09,582 igfash INFO 2D KDE Computation time: 0.3 seconds
+15:15:11,316 igfash INFO R mode - activity Rate modeling
+15:15:11,316 igfash.io DEBUG Looking for magnitudes with label Mw
+15:15:18,802 igfash DEBUG Activity rates [6.1        5.06666667] with percentages [0.5 0.5]
+15:15:18,802 igfash INFO Forecast mode - seismic hazard asssessment
+15:15:18,802 igfash DEBUG Verification that f(x,y) is normalized; Sum of all f(x,y) values = 1.0
+15:15:18,902 igfash INFO Estimating ground motion at 6 grid points...
+15:15:18,902 igfash INFO Estimating SA(5)
+15:15:33,943 igfash DEBUG Number of physical cores: 14
+15:15:33,943 igfash.io DEBUG Looking for magnitudes with label Mw
+15:15:34,280 igfash INFO M mode - Magnitude distribution modeling
+15:15:34,280 igfash WARNING Must be either CTL or CNE for windowing. Use all events in catalog.
+15:15:41,229 igfash INFO Magnitude KDE Computation time: 6.9 seconds
+15:15:41,411 igfash INFO L mode - Location distribution modeling
+15:15:41,411 igfash INFO Computing KDE of each window...
+15:15:41,411 igfash INFO 2D KDE Computation time: 0.0 seconds
+15:15:43,62 igfash INFO R mode - activity Rate modeling
+15:15:43,62 igfash.io DEBUG Looking for magnitudes with label Mw
+15:15:51,172 igfash DEBUG Activity rates [6.1        5.06666667] with percentages [0.5 0.5]
+15:15:51,172 igfash INFO Forecast mode - seismic hazard asssessment
+15:15:51,172 igfash DEBUG Verification that f(x,y) is normalized; Sum of all f(x,y) values = 1.0
+15:15:51,282 igfash INFO Estimating ground motion at 6 grid points...
+15:15:51,282 igfash INFO Estimating PGA
+15:16:57,75 igfash INFO Ground motion exceedance computation time: 65.8 seconds
+15:20:49,735 igfash DEBUG Number of physical cores: 14
+15:20:49,735 igfash.io DEBUG Looking for magnitudes with label Mw
+15:20:49,965 igfash INFO M mode - Magnitude distribution modeling
+15:20:49,965 igfash WARNING Must be either CTL or CNE for windowing. Use all events in catalog.
+15:20:56,542 igfash INFO Magnitude KDE Computation time: 6.6 seconds
+15:20:56,742 igfash INFO L mode - Location distribution modeling
+15:20:56,742 igfash INFO Computing KDE of each window...
+15:20:56,742 igfash INFO 2D KDE Computation time: 0.0 seconds
+15:20:58,343 igfash INFO R mode - activity Rate modeling
+15:20:58,343 igfash.io DEBUG Looking for magnitudes with label Mw
+15:21:05,863 igfash DEBUG Activity rates [6.1        5.06666667] with percentages [0.5 0.5]
+15:21:05,863 igfash INFO Forecast mode - seismic hazard asssessment
+15:21:05,863 igfash DEBUG Verification that f(x,y) is normalized; Sum of all f(x,y) values = 1.0
+15:21:05,963 igfash INFO Estimating ground motion at 6 grid points...
+15:21:05,963 igfash INFO Estimating 1.0
+15:23:08,184 igfash INFO Ground motion exceedance computation time: 122.2 seconds
+15:31:32,549 igfash DEBUG Number of physical cores: 14
+15:31:32,551 igfash.io DEBUG Looking for magnitudes with label Mw
+15:31:32,806 igfash INFO M mode - Magnitude distribution modeling
+15:31:32,806 igfash WARNING Must be either CTL or CNE for windowing. Use all events in catalog.
+15:31:39,343 igfash INFO Magnitude KDE Computation time: 6.5 seconds
+15:31:39,527 igfash INFO L mode - Location distribution modeling
+15:31:39,542 igfash INFO Computing KDE of each window...
+15:31:39,544 igfash INFO 2D KDE Computation time: 0.0 seconds
+15:31:41,310 igfash INFO R mode - activity Rate modeling
+15:31:41,310 igfash.io DEBUG Looking for magnitudes with label Mw
+15:31:48,896 igfash DEBUG Activity rates [6.1        5.06666667] with percentages [0.5 0.5]
+15:31:48,896 igfash INFO Forecast mode - seismic hazard asssessment
+15:31:48,896 igfash DEBUG Verification that f(x,y) is normalized; Sum of all f(x,y) values = 1.0
+15:31:48,996 igfash INFO Estimating ground motion at 6 grid points...
+15:31:48,996 igfash INFO Estimating PGA
+15:32:53,196 igfash INFO Ground motion exceedance computation time: 64.2 seconds
