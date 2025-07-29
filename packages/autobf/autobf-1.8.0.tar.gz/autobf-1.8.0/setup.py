@@ -1,0 +1,23 @@
+import setuptools
+# 若Discription.md中有中文 須加上 encoding="utf-8"
+with open("README.md", "r",encoding="utf-8") as f:
+    long_description = f.read()
+# numpy 不要放進去安裝!! 會和其它的衝到
+install_requires=["opencv-contrib-python","pyautogui","pydirectinput"]
+setuptools.setup(
+    name = "autobf",
+    version = " 1.8.0",
+    author = "KuoYuanLi",
+    author_email="funny4875@gmail.com",
+    description="roblox blox fruit tool",
+    install_requires=install_requires,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://pypi.org/project/autobf/",                                         packages=setuptools.find_packages(),     
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6'
+    )
