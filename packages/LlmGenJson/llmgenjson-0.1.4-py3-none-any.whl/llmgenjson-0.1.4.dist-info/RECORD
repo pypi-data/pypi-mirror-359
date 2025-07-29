@@ -1,0 +1,11 @@
+test_CLlmGenJson.py,sha256=WU51AN8m3KjVUnWHNg_uxzWx39E9O8PAmOu1OKFCwak,2404
+test_LlmGenJson.py,sha256=t0DAW7_NzBh1QWmQGGlxlWvJ1khOQS3uUmFsdAwI2gY,931
+LlmGenJson/CLlmGenJson.py,sha256=SCEOdjsh9mySQebkszRxr5POJLlX1uDERQ7Gzb1m4oY,4219
+LlmGenJson/LlmGenJson.py,sha256=bb4FL-zbsMXpvlnnIXL0OEMiLYp4_FE-YZoqGoU4SeE,8790
+LlmGenJson/__init__.py,sha256=XL_Yp5HIWEKR-tuk80zORDkP8laf18HEmcxuRSmGm5I,94
+LlmGenJson/funcStrictJson.py,sha256=3Rg71LkOhBGAKp_PV9MJwyGyRE-NfHHp9Q3TkMyrISs,4816
+LlmGenJson/wyf_strict_json.py,sha256=E5IHJVlOJUJWNpxIO8qVfVQDYO7nfI2KchNY4xarJH0,27843
+llmgenjson-0.1.4.dist-info/METADATA,sha256=CZjpTtJ_QkMyl1_kPUHvpxo2tVkVRkpE_LNeSQkt_JY,300
+llmgenjson-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+llmgenjson-0.1.4.dist-info/top_level.txt,sha256=iws_keUD3zIuH_A3Lt4YCwXiu7cHx3eDgqcFlZqQH9E,44
+llmgenjson-0.1.4.dist-info/RECORD,,
