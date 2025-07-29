@@ -1,0 +1,14 @@
+CMakeLists.txt
+LICENSE
+MANIFEST.in
+README.md
+freenect.c
+freenect.cython0.pyx
+freenect.pyx
+pyproject.toml
+setup.py
+freenect.egg-info/PKG-INFO
+freenect.egg-info/SOURCES.txt
+freenect.egg-info/dependency_links.txt
+freenect.egg-info/requires.txt
+freenect.egg-info/top_level.txt
