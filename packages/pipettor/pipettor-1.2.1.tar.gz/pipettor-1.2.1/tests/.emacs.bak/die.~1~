@@ -1,0 +1,2 @@
+#!/bin/bash -ex
+PYTHONPATH=../lib: python3 -W always -m pytest --tb=native -rsx  test_pipettor.py::PipelineTests::testBogusStdout >&log

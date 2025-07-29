@@ -1,0 +1,7 @@
+#!/bin/bash -ex
+
+#test=::PipelineTests::testBogusStdout
+test=::PipelineTests::testStderrPipeRedir
+#test=
+
+PYTHONPATH=../lib: python3 -W always -m pytest --tb=native -rsx  test_pipettor.py${test}
