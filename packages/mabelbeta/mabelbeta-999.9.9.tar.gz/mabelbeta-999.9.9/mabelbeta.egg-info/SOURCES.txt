@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+mabelbeta.egg-info/PKG-INFO
+mabelbeta.egg-info/SOURCES.txt
+mabelbeta.egg-info/dependency_links.txt
+mabelbeta.egg-info/top_level.txt
