@@ -1,0 +1,11 @@
+pandas
+numpy
+sympy
+geopy
+matplotlib
+scipy
+geopy
+rasterio
+sympy
+scikit-learn
+gdal
