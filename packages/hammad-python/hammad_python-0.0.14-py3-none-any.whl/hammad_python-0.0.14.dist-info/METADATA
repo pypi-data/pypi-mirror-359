@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: hammad-python
+Version: 0.0.14
+Summary: hammad - *Nightly* hyper-fast opinionated resources and modules built for quick development.
+Author-email: Hammad Saeed <hammadaidev@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: docstring-parser>=0.16
+Requires-Dist: duckduckgo-search>=8.0.4
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: msgspec>=0.19.0
+Requires-Dist: prompt-toolkit>=3.0.51
+Requires-Dist: pydantic>=2.11.5
+Requires-Dist: python-dotenv>=1.1.0
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: rich>=13.9.4
+Requires-Dist: selectolax>=0.3.30
+Requires-Dist: sqlalchemy>=2.0.41
+Requires-Dist: tantivy>=0.24.0
+Requires-Dist: tenacity>=9.0.0
+Requires-Dist: typing-inspect>=0.9.0
+Requires-Dist: uvloop>=0.21.0
+Provides-Extra: ai
+Requires-Dist: instructor>=1.9.0; extra == 'ai'
+Requires-Dist: litellm>=1.72.4; extra == 'ai'
+Requires-Dist: openai-agents>=0.0.19; extra == 'ai'
+Requires-Dist: qdrant-client>=1.14.3; extra == 'ai'
+Provides-Extra: fastembed
+Requires-Dist: fastembed; extra == 'fastembed'
+Provides-Extra: serve
+Requires-Dist: fastapi>=0.115.8; extra == 'serve'
+Requires-Dist: python-multipart>=0.0.19; extra == 'serve'
+Requires-Dist: sse-starlette>=1.1.0; extra == 'serve'
+Requires-Dist: uvicorn>=0.34.0; extra == 'serve'
+Description-Content-Type: text/markdown
+
+## hammad-python
+
+> __Happily Accelerated Micro-Modules (_for_) Application Development__
+
+## Introduction
+
+The `hammad-python` library, is a mix of a love letter and collection of mixed resources for
+developing Python applications. This library is meant to be used for rapid prototyping and
+development, and is focused on providing styled placeholder tools for common patterns, tasks
+and workflows.
+
+The package is currently built into the following structures:
+
+- `hammad-python` : Contains most core functionality and resources.
+- `hammad-python[ai]` : Contains easy to use resources for Generative AI related tasks such as
+   generating completions with language models, or creating embeddings.
+
+## Installation
+
+You can install the package using `pip` or `uv`:
+
+```bash
+pip install hammad-python
+
+# or install the `ai` extension
+# pip install 'hammad-python[ai]'
+```
+
+```bash
+uv pip install hammad-python
+
+# or install the `ai` extension
+# uv pip install 'hammad-python[ai]'
+```
