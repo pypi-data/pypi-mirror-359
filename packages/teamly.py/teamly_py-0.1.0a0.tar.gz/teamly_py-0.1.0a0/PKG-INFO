@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: teamly.py
+Version: 0.1.0a0
+Summary: Teamly API wrapper for bots and automation
+Author: MrFatihLD
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/MrFatihLD/teamly.py.git
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: loguru>=0.7.0
+Dynamic: license-file
+
+# Teamly.py
+
+A modern, asynchronous Python library for interacting with the Teamly API.
+
+> 🚧 **This project is still under development, and not all features are implemented yet.**
+
+---
+
+## ✨ Features (Planned and Available)
+
+- ✅ Fetching and sending data via the HTTP API
+- ✅ Listening to real-time events via an asynchronous WebSocket connection
+- ⏳ Automatic reconnection and error handling
+- ⏳ Rate limit management
+- ⏳ Command system / Bot architecture
+- ⏳ Type safety and automatic JSON conversions
+- ⏳ More coming soon...
+
+---
+
+## 🔧 Installation
+
+> The project is not feature-complete yet, but you can install it via pip:
+
+```bash
+pip install teamly.py
