@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: radiochart
+Version: 0.2.0
+Summary: CLI tool to generate Arma 3 radio frequency hierarchy charts
+Author-email: KingCharlesVII <viikingcharles@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: graphviz
+
+# radio-chart-cli
+

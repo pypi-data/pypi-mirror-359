@@ -1,0 +1,18 @@
+[project]
+name = "radiochart"
+version = "0.2.0"
+description = "CLI tool to generate Arma 3 radio frequency hierarchy charts"
+authors = [
+    { name="KingCharlesVII", email="viikingcharles@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = ["graphviz"]
+
+[project.scripts]
+radiochart = "radiochart.cli:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
