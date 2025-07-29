@@ -1,0 +1,69 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": [],
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T02:46:16.178437",
+  "project_id": null,
+  "branch_status": {},
+  "user_personas_and_journeys": [],
+  "core_functional_modules": [],
+  "data_model_and_storage": [],
+  "technology_stack_and_non_functional": [],
+  "ui_ux_design_principles": [],
+  "security_and_payment_solutions": [],
+  "business_model_and_operations": [],
+  "requirement_blueprint": {
+    "project_title": "二手交易平台",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "用户画像与核心旅程",
+        "storage_key": "user_personas_and_journeys",
+        "status": "pending"
+      },
+      {
+        "branch_name": "核心功能模块拆解",
+        "storage_key": "core_functional_modules",
+        "status": "pending"
+      },
+      {
+        "branch_name": "数据模型与存储方案",
+        "storage_key": "data_model_and_storage",
+        "status": "pending"
+      },
+      {
+        "branch_name": "技术栈选型与非功能性需求",
+        "storage_key": "technology_stack_and_non_functional",
+        "status": "pending"
+      },
+      {
+        "branch_name": "UI/UX设计原则",
+        "storage_key": "ui_ux_design_principles",
+        "status": "pending"
+      },
+      {
+        "branch_name": "安全与支付方案",
+        "storage_key": "security_and_payment_solutions",
+        "status": "pending"
+      },
+      {
+        "branch_name": "运营与商业模式",
+        "storage_key": "business_model_and_operations",
+        "status": "pending"
+      }
+    ]
+  }
+}
