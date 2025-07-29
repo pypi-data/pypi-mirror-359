@@ -1,0 +1,59 @@
+{
+  "organization": {
+    "name": "Space Grenade"
+  },
+  "seasons": [
+    {
+      "name": "One Season"
+    },
+    {
+      "name": "Two Season"
+    }
+  ],
+  "leagues": [
+    {
+      "name": "Men's 11v11 Over 30A"
+    },
+    {
+      "name": "Men's 11v11 Over 30B"
+    },
+    {
+      "name": "Coed 7v7 Over 30A"
+    },
+    {
+      "name": "Coed 7v7 Over 30B"
+    },
+    {
+      "name": "Men's 7v7 Over 40"
+    },
+    {
+      "name": "Men's 7v7 Open"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Loro"
+    },
+    {
+      "name": "June"
+    },
+    {
+      "name": "Tripoli"
+    },
+    {
+      "name": "Tres"
+    },
+    {
+      "name": "Sender"
+    },
+    {
+      "name": "Fortress"
+    },
+    {
+      "name": "AFK"
+    },
+    {
+      "name": "Barnes"
+    }
+  ]
+}
