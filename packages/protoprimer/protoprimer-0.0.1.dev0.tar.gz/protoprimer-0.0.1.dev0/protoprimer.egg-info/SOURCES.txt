@@ -1,0 +1,15 @@
+pyproject.toml
+setup.py
+main/protoprimer/__init__.py
+main/protoprimer/primer_kernel.py
+main/repo_support/__init__.py
+main/repo_support/cmd_bootstrap_env.py
+main/repo_support/cmd_dev_shell.py
+main/repo_support/cmd_install_pre_commit.py
+main/repo_support/cmd_pre_commit_for_all.py
+main/test_support/__init__.py
+protoprimer.egg-info/PKG-INFO
+protoprimer.egg-info/SOURCES.txt
+protoprimer.egg-info/dependency_links.txt
+protoprimer.egg-info/requires.txt
+protoprimer.egg-info/top_level.txt
