@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+kairix_devtools/__init__.py
+kairix_devtools/__main__.py
+kairix_devtools.egg-info/PKG-INFO
+kairix_devtools.egg-info/SOURCES.txt
+kairix_devtools.egg-info/dependency_links.txt
+kairix_devtools.egg-info/entry_points.txt
+kairix_devtools.egg-info/requires.txt
+kairix_devtools.egg-info/top_level.txt
