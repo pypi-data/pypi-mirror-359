@@ -1,0 +1,75 @@
+Metadata-Version: 2.4
+Name: pipettor
+Version: 1.2.0
+Summary: pipettor - robust, easy to use Unix process pipelines
+Home-page: https://github.com/diekhans/pipettor
+Author: Mark Diekhans
+Author-email: markd@ucsc.edu
+License: MIT
+Keywords: Unix,process,pipe
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+License-File: AUTHORS.rst
+Provides-Extra: dev
+Requires-Dist: bumpversion>=0.5.3; extra == "dev"
+Requires-Dist: wheel>=0.23.0; extra == "dev"
+Requires-Dist: flake8>=2.4.1; extra == "dev"
+Requires-Dist: tox>=2.1.1; extra == "dev"
+Requires-Dist: coverage>=4.0; extra == "dev"
+Requires-Dist: Sphinx>=8.1.0; extra == "dev"
+Requires-Dist: cryptography>=1.0.1; extra == "dev"
+Requires-Dist: PyYAML>=3.11; extra == "dev"
+Requires-Dist: twine>=1.11; extra == "dev"
+Requires-Dist: pytest>=5.3; extra == "dev"
+Requires-Dist: pytest-xdist>=3.6; extra == "dev"
+Requires-Dist: vulture>=2.1; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=5.3; extra == "test"
+Requires-Dist: pytest-xdist>=3.6; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-python
+Dynamic: summary
+
+Pipettor Overview
+=================
+
+pipettor - robust, easy to use Python package for running Unix process pipelines
+
+Features
+--------
+
+* Creating process pipelines in Python is either complex (e.g. ``subprocess``),
+  or not robust (e.g. ``os.system()``).  This package aims to address these shortcomings.
+* Command pipelines are simply specified as a sequence of commands, with each
+  command represented as a sequence of arguments.
+* Failure of any process in the pipeline results in an exception, with ``stderr``
+  included in the exception.
+* Pipeline ``stdin/stdout/stderr`` can be passed through from parent process,
+  redirected to a file, or read/written by the parent process.
+* Asynchronous reading and writing to and from the pipeline maybe done without risk of
+  deadlock.
+* Pipeline can run asynchronously or block until completion.
+* Popen-style File-like objects for reading or writing a pipeline.
+* Documentation: https://pipettor.readthedocs.org.
+
