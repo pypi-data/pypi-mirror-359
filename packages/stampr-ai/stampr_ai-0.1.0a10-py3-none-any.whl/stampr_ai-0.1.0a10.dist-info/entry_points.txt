@@ -1,0 +1,2 @@
+[console_scripts]
+stampr = stampr_ai.cli:main
