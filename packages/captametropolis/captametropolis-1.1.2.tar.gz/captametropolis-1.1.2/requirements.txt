@@ -1,0 +1,12 @@
+moviepy<2.0.0
+pillow
+openai
+setuptools-rust
+torch
+numpy
+ffmpeg-python
+opencv-python
+fonttools
+lxml
+typer
+rich
