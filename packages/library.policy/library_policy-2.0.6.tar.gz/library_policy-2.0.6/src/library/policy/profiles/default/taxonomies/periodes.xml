@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="fr">
+  <vocabName>
+    <langstring language="fr">Périodes</langstring>
+  </vocabName>
+  <vocabIdentifier>periodes</vocabIdentifier>
+  <term>
+    <termIdentifier>okeupfnu89</termIdentifier>
+    <caption>
+      <langstring language="fr">20ème siècle</langstring>
+    </caption>
+    <term>
+      <termIdentifier>o8r0uc5aek</termIdentifier>
+      <caption>
+        <langstring language="fr">1990 - 1999</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>1534ckcbfe</termIdentifier>
+      <caption>
+        <langstring language="fr">1980 - 1989</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>vvjb9uwegw</termIdentifier>
+      <caption>
+        <langstring language="fr">1970 - 1979</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>2felcd1pni</termIdentifier>
+      <caption>
+        <langstring language="fr">1960 - 1969</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>hbv97p3csa</termIdentifier>
+      <caption>
+        <langstring language="fr">1950 - 1959</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>way782yc8r</termIdentifier>
+      <caption>
+        <langstring language="fr">1940 - 1949</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>ft9pwpchva</termIdentifier>
+      <caption>
+        <langstring language="fr">1930 - 1939</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>8b6c6ne6mr</termIdentifier>
+      <caption>
+        <langstring language="fr">1920 - 1929</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>8frgng12k3</termIdentifier>
+      <caption>
+        <langstring language="fr">1910 - 1919</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>sfbj7pw1cf</termIdentifier>
+      <caption>
+        <langstring language="fr">1900 - 1909</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>p5wlv8ist0</termIdentifier>
+    <caption>
+      <langstring language="fr">19ème siècle</langstring>
+    </caption>
+    <term>
+      <termIdentifier>vnjkorucbb</termIdentifier>
+      <caption>
+        <langstring language="fr">1890 - 1899</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>k1hqhomwgs</termIdentifier>
+      <caption>
+        <langstring language="fr">1880 - 1889</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>kp4bmf26c9</termIdentifier>
+      <caption>
+        <langstring language="fr">1870 - 1879</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>fiw5ubfer9</termIdentifier>
+      <caption>
+        <langstring language="fr">1860 - 1869</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>csf37ubu3n</termIdentifier>
+      <caption>
+        <langstring language="fr">1850 - 1859</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>4jyilgpbhi</termIdentifier>
+      <caption>
+        <langstring language="fr">1840 - 1849</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>4ohgvn8k11</termIdentifier>
+      <caption>
+        <langstring language="fr">1830 - 1839</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>67lheprndl</termIdentifier>
+      <caption>
+        <langstring language="fr">1820 - 1829</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>pd5nc73tu8</termIdentifier>
+      <caption>
+        <langstring language="fr">1810 - 1819</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>krx7xgot08</termIdentifier>
+      <caption>
+        <langstring language="fr">1800 - 1809</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>wr0mlt3m8v</termIdentifier>
+    <caption>
+      <langstring language="fr">Inconnu</langstring>
+    </caption>
+  </term>
+</vdex>

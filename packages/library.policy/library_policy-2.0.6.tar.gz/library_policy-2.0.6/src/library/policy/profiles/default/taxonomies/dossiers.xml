@@ -1,0 +1,919 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="fr">
+  <vocabName>
+    <langstring language="fr">Thématiques</langstring>
+  </vocabName>
+  <vocabIdentifier>dossiers</vocabIdentifier>
+  <term>
+    <termIdentifier>wh8lrw4d51</termIdentifier>
+    <caption>
+      <langstring language="fr">Culture</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>0en2myxvpk</termIdentifier>
+    <caption>
+      <langstring language="fr">Economie</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>6e3urnikhl</termIdentifier>
+    <caption>
+      <langstring language="fr">Enseignement</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>avdqytii5j</termIdentifier>
+    <caption>
+      <langstring language="fr">Folklore</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>o9t3qs91ik</termIdentifier>
+    <caption>
+      <langstring language="fr">Histoire</langstring>
+    </caption>
+    <term>
+      <termIdentifier>2v7n43mr20</termIdentifier>
+      <caption>
+        <langstring language="fr">1ère Guerre mondiale 1914-1918</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>oe74e7027b</termIdentifier>
+      <caption>
+        <langstring language="fr">2ème Guerre mondiale 1940-1945</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>gt5c16e51i</termIdentifier>
+      <caption>
+        <langstring language="fr">Distinctions honorifiques</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>g91n84xxkq</termIdentifier>
+      <caption>
+        <langstring language="fr">Militaire</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>ye9tilf2ih</termIdentifier>
+    <caption>
+      <langstring language="fr">Petit Patrimoine Populaire Wallon</langstring>
+    </caption>
+    <term>
+      <termIdentifier>44esebgd57</termIdentifier>
+      <caption>
+        <langstring language="fr">01. Point d'eau</langstring>
+      </caption>
+      <term>
+        <termIdentifier>r24ci8hgm0</termIdentifier>
+        <caption>
+          <langstring language="fr">01.01. Fontaines</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>mpy56j22dd</termIdentifier>
+        <caption>
+          <langstring language="fr">01.02. Perrons-fontaines</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>m4c95mupru</termIdentifier>
+        <caption>
+          <langstring language="fr">01.03. Pompes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>bmqul9bmhs</termIdentifier>
+        <caption>
+          <langstring language="fr">01.04. Puits</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>v0ljtyply0</termIdentifier>
+        <caption>
+          <langstring language="fr">01.05. Lavoirs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>5oag5986ym</termIdentifier>
+        <caption>
+          <langstring language="fr">01.06. Abreuvoirs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>owk9u1aoen</termIdentifier>
+        <caption>
+          <langstring language="fr">01.07. Sources</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>wbjs4yb0oe</termIdentifier>
+        <caption>
+          <langstring language="fr">01.08. Roue à aubes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>rdp8n2w4vh</termIdentifier>
+        <caption>
+          <langstring language="fr">01.09. Gargouilles et cracheurs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>3ltqtk71qn</termIdentifier>
+        <caption>
+          <langstring language="fr">01.10. Retenue d'eau</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>xpfocxmulc</termIdentifier>
+      <caption>
+        <langstring language="fr">02. Petit patrimoine sacré</langstring>
+      </caption>
+      <term>
+        <termIdentifier>axehibphh2</termIdentifier>
+        <caption>
+          <langstring language="fr">02.01.Croix</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>u7h2rcyjou</termIdentifier>
+        <caption>
+          <langstring language="fr">02.02. Calvaires</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>twubrbxuly</termIdentifier>
+        <caption>
+          <langstring language="fr">02.03. Potales</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ho9fnwoigy</termIdentifier>
+        <caption>
+          <langstring language="fr">02.04. Bornes-potales</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>wnjam91hsp</termIdentifier>
+        <caption>
+          <langstring language="fr">02.05. Reposoirs fixes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>s2r5imi1tw</termIdentifier>
+        <caption>
+          <langstring language="fr">02.06. Clochetons d'appel</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>xtfk52owyb</termIdentifier>
+        <caption>
+          <langstring language="fr">02.07. Cloches</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ftaphqyxjf</termIdentifier>
+        <caption>
+          <langstring language="fr">02.08. Carillons</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>x0yck4ydxu</termIdentifier>
+        <caption>
+          <langstring language="fr">02.09. Orgues</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>2m3ti9d1kq</termIdentifier>
+        <caption>
+          <langstring language="fr">02.10. Chars de procession</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>0xvavadenl</termIdentifier>
+      <caption>
+        <langstring language="fr">03. Ouvertures</langstring>
+      </caption>
+      <term>
+        <termIdentifier>7nfiy3telk</termIdentifier>
+        <caption>
+          <langstring language="fr">03.01. Portes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>krokjw0bht</termIdentifier>
+        <caption>
+          <langstring language="fr">03.02. Portails</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>f7bfq20d08</termIdentifier>
+        <caption>
+          <langstring language="fr">03.03. Portiques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>xkvuqirrb9</termIdentifier>
+        <caption>
+          <langstring language="fr">03.04. Préaux</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>nilydhk8pt</termIdentifier>
+        <caption>
+          <langstring language="fr">03.05. Balcons</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>2f9du687w9</termIdentifier>
+        <caption>
+          <langstring language="fr">03.06. Loggias et oriels</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>38qykwmtqj</termIdentifier>
+        <caption>
+          <langstring language="fr">03.07. Marquises et auvents</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>5t5dwmn2mo</termIdentifier>
+        <caption>
+          <langstring language="fr">03.08. Anciennes boîtes aux lettres</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>28uslebxbf</termIdentifier>
+      <caption>
+        <langstring language="fr">04. Signalisation</langstring>
+      </caption>
+      <term>
+        <termIdentifier>v9i53ux27e</termIdentifier>
+        <caption>
+          <langstring language="fr">04.01. Enseignes suspendues</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>lj6q1iykx3</termIdentifier>
+        <caption>
+          <langstring language="fr">04.02. Enseignes en pierre</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>otdcf8rqkw</termIdentifier>
+        <caption>
+          <langstring language="fr">04.03. Colonnes Morris</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>b08g0x9c0m</termIdentifier>
+        <caption>
+          <langstring language="fr">04.04. Panneaux de signalisation</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>qggctr8urr</termIdentifier>
+        <caption>
+          <langstring language="fr">04.05. Balises</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>96llj04wbi</termIdentifier>
+        <caption>
+          <langstring language="fr">04.06. Anciennes devantures de magasin</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>l8e4cuvj5s</termIdentifier>
+        <caption>
+          <langstring language="fr">04.07. Anciennes publicités de marques disparues</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>pdliyn60ns</termIdentifier>
+      <caption>
+        <langstring language="fr">05. Délimitations</langstring>
+      </caption>
+      <term>
+        <termIdentifier>at3o6i4rjv</termIdentifier>
+        <caption>
+          <langstring language="fr">05.01. Bornes-frontières</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ri88mf42ve</termIdentifier>
+        <caption>
+          <langstring language="fr">05.02. Bornes de limite</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>pyl6lk31cc</termIdentifier>
+        <caption>
+          <langstring language="fr">05.03. Bornes topographiques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>xhfgv4c4lj</termIdentifier>
+        <caption>
+          <langstring language="fr">05.04. Bornes géodésiques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>kcut4ue163</termIdentifier>
+        <caption>
+          <langstring language="fr">05.05. Bornes postales</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>1melrhgyvy</termIdentifier>
+        <caption>
+          <langstring language="fr">05.06. Chasse-roues</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>6xgd3lvhov</termIdentifier>
+      <caption>
+        <langstring language="fr">06. Eclairage</langstring>
+      </caption>
+      <term>
+        <termIdentifier>19vqdji1xh</termIdentifier>
+        <caption>
+          <langstring language="fr">06.01. Réverbères</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>jygpjlo4dc</termIdentifier>
+        <caption>
+          <langstring language="fr">06.02. Candélabres</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>gdkmgv90s8</termIdentifier>
+        <caption>
+          <langstring language="fr">06.03. Consoles appliquées</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>qax6kfa765</termIdentifier>
+        <caption>
+          <langstring language="fr">06.04. Lanternes anciennes</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>s40gvog5oe</termIdentifier>
+      <caption>
+        <langstring language="fr">07. Mesure du temps et de l'espace</langstring>
+      </caption>
+      <term>
+        <termIdentifier>kbkb59o1i0</termIdentifier>
+        <caption>
+          <langstring language="fr">07.01. Horloges</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>yy8yg0wcwm</termIdentifier>
+        <caption>
+          <langstring language="fr">07.02. Cadrans solaires</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>h43p7vg55p</termIdentifier>
+        <caption>
+          <langstring language="fr">07.03. Tables d'orientation</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>4gmgx34fgd</termIdentifier>
+        <caption>
+          <langstring language="fr">07.04. Appareils extérieurs et fixes de mesure météorologique</langstring>
+        </caption>
+        <term>
+          <termIdentifier>2s9o6p2sw8</termIdentifier>
+          <caption>
+            <langstring language="fr">07.04.01. Baromètre</langstring>
+          </caption>
+        </term>
+        <term>
+          <termIdentifier>4nmeafb4hv</termIdentifier>
+          <caption>
+            <langstring language="fr">07.04.02. Thermomètre</langstring>
+          </caption>
+        </term>
+        <term>
+          <termIdentifier>9woulyub80</termIdentifier>
+          <caption>
+            <langstring language="fr">07.04.03. Anémomètre</langstring>
+          </caption>
+        </term>
+      </term>
+      <term>
+        <termIdentifier>j2vv5c0ma1</termIdentifier>
+        <caption>
+          <langstring language="fr">07.05. Girouettes</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>wl5qx5lcpa</termIdentifier>
+      <caption>
+        <langstring language="fr">08. Justice et libertés</langstring>
+      </caption>
+      <term>
+        <termIdentifier>6id28pvdr8</termIdentifier>
+        <caption>
+          <langstring language="fr">08.01. Perrons</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>en4a0knag9</termIdentifier>
+        <caption>
+          <langstring language="fr">08.02. Croix de justice</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0f4mj0uwnb</termIdentifier>
+        <caption>
+          <langstring language="fr">08.03. Piloris</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>wpubq86jt6</termIdentifier>
+      <caption>
+        <langstring language="fr">09. Repos</langstring>
+      </caption>
+      <term>
+        <termIdentifier>76slvii847</termIdentifier>
+        <caption>
+          <langstring language="fr">09.01. Anciens petits abris de bus, de tram, de train</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>q8u4ogrfjd</termIdentifier>
+        <caption>
+          <langstring language="fr">09.02. Fabriques de jardin</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>u8neapxssk</termIdentifier>
+        <caption>
+          <langstring language="fr">09.03. Gloriettes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>1rnwbsgrl2</termIdentifier>
+        <caption>
+          <langstring language="fr">09.04. Kiosques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>eo9yr9r792</termIdentifier>
+        <caption>
+          <langstring language="fr">09.05. Vespasiennes et empêche-pipis sur voie publique</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>c6cq5urqag</termIdentifier>
+      <caption>
+        <langstring language="fr">10. Ornementation en fer</langstring>
+      </caption>
+      <term>
+        <termIdentifier>pq8jvtb95r</termIdentifier>
+        <caption>
+          <langstring language="fr">10.01. Pièces ouvragées de consolidation, de soutien et de rotation</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>3ofu9cyxq8</termIdentifier>
+        <caption>
+          <langstring language="fr">10.02. Pièces ouvragées de protection</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>q0iixixnu3</termIdentifier>
+        <caption>
+          <langstring language="fr">10.03. Pièces ouvragées de sécurité</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>edrk81qq4l</termIdentifier>
+      <caption>
+        <langstring language="fr">11. Patrimoine militaire et la commémoration</langstring>
+      </caption>
+      <term>
+        <termIdentifier>74u4jqr6bm</termIdentifier>
+        <caption>
+          <langstring language="fr">11.01. Postes et tours de guet</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>cv7bmcxxgk</termIdentifier>
+        <caption>
+          <langstring language="fr">11.02. Monuments aux morts</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>7cwgr3dd7s</termIdentifier>
+        <caption>
+          <langstring language="fr">11.03. Témoins d’événements du passé</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>kqa5x62jvo</termIdentifier>
+        <caption>
+          <langstring language="fr">11.04. Sépultures d'importance historique locale</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>no6wtpioea</termIdentifier>
+      <caption>
+        <langstring language="fr">12. Arbres remarquables</langstring>
+      </caption>
+      <term>
+        <termIdentifier>3nwxvry0b6</termIdentifier>
+        <caption>
+          <langstring language="fr">12.01. Arbres liés à des croyances populaires ou des pratiques religieuses</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>7o7ymcebv4</termIdentifier>
+        <caption>
+          <langstring language="fr">12.02. Arbres liés au folklore, à des légendes ou à des traditions</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>hylq11plle</termIdentifier>
+        <caption>
+          <langstring language="fr">12.03. Arbres limites et les arbres repères</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>2k7y73qx0o</termIdentifier>
+        <caption>
+          <langstring language="fr">12.04. Arbres de justice</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>73h7e9k4y5</termIdentifier>
+        <caption>
+          <langstring language="fr">12.05. Arbres commémoratifs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ajmkjdnfci</termIdentifier>
+        <caption>
+          <langstring language="fr">12.06. Arbres présentant un intérêt dendrologique particulier</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>rlxonj5m1x</termIdentifier>
+      <caption>
+        <langstring language="fr">13.Outils anciens</langstring>
+      </caption>
+      <term>
+        <termIdentifier>6c2iq6sioi</termIdentifier>
+        <caption>
+          <langstring language="fr">13.01. Alambics</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0v5vn600vo</termIdentifier>
+        <caption>
+          <langstring language="fr">13.02. Meules</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>jwmq1nf0v2</termIdentifier>
+        <caption>
+          <langstring language="fr">13.03. Pressoirs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>2vlqkld2e4</termIdentifier>
+        <caption>
+          <langstring language="fr">13.04. Machines à tordre</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>lbyqltj0ys</termIdentifier>
+        <caption>
+          <langstring language="fr">13.05. Moulins à vent dans leur ensemble</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>fspckdeato</termIdentifier>
+        <caption>
+          <langstring language="fr">13.06. Fours (à pain, à boulets, à chaux, à chanvre, ...)</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>cvlt3iin61</termIdentifier>
+        <caption>
+          <langstring language="fr">13.07. Travails à ferrer</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>rqvrc24d0n</termIdentifier>
+        <caption>
+          <langstring language="fr">13.08. Gabarits</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>7cynbiiqy0</termIdentifier>
+      <caption>
+        <langstring language="fr">14. Art décoratif</langstring>
+      </caption>
+      <term>
+        <termIdentifier>yixha6sf8w</termIdentifier>
+        <caption>
+          <langstring language="fr">14.01. Mosaïques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>8xufosimf2</termIdentifier>
+        <caption>
+          <langstring language="fr">14.02. Peintures murales</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>6j77ttj43w</termIdentifier>
+        <caption>
+          <langstring language="fr">14.03. Vitraux</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0my9es03h7</termIdentifier>
+        <caption>
+          <langstring language="fr">14.04. Rosaces</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>bgvdf53smn</termIdentifier>
+        <caption>
+          <langstring language="fr">14.05. Trompe-l’œil</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>aidvp3pscy</termIdentifier>
+        <caption>
+          <langstring language="fr">14.06. Panneaux décoratifs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>fh9l6ygbef</termIdentifier>
+        <caption>
+          <langstring language="fr">14.07. Scraffites</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>so40c38ggu</termIdentifier>
+      <caption>
+        <langstring language="fr">15. Biens relatifs à la faune, la flore et aux minéraux</langstring>
+      </caption>
+      <term>
+        <termIdentifier>pvatx1g826</termIdentifier>
+        <caption>
+          <langstring language="fr">15.01. Nichoirs</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0fb5pq8coy</termIdentifier>
+        <caption>
+          <langstring language="fr">15.02. Pigeonniers</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>62ywtl5c4b</termIdentifier>
+        <caption>
+          <langstring language="fr">15.03. Colombiers</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>koc841hodq</termIdentifier>
+        <caption>
+          <langstring language="fr">15.04. Poulaillers</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>b9um0mmvwa</termIdentifier>
+        <caption>
+          <langstring language="fr">15.05. Volières publiques</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>uypfi2l5yx</termIdentifier>
+        <caption>
+          <langstring language="fr">15.06. Canardières</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>g9sfo0ao6p</termIdentifier>
+        <caption>
+          <langstring language="fr">15.07. Pédiluves</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>j35d5ia9dm</termIdentifier>
+        <caption>
+          <langstring language="fr">15.08. Petites serres anciennes</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>pj49fh9tle</termIdentifier>
+        <caption>
+          <langstring language="fr">15.09. Pergolas</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>jmwtroidx6</termIdentifier>
+        <caption>
+          <langstring language="fr">15.10. Murs de jardin clos</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>o6h0cnv9v0</termIdentifier>
+        <caption>
+          <langstring language="fr">15.11. Murs en pierre sèches</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>20blr0xr6h</termIdentifier>
+      <caption>
+        <langstring language="fr">16. Transport</langstring>
+      </caption>
+      <term>
+        <termIdentifier>wixwnwg1vu</termIdentifier>
+        <caption>
+          <langstring language="fr">16.01. Petits éléments du patrimoine ferroviaire et vicinal</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>tfi8lilhvy</termIdentifier>
+        <caption>
+          <langstring language="fr">16.02. Ponts-bascules</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>84ij9r7sby</termIdentifier>
+        <caption>
+          <langstring language="fr">16.03. Petits embarcadères</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>2hednweoul</termIdentifier>
+        <caption>
+          <langstring language="fr">16.04. Tourniquets</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>cxt6p1ucun</termIdentifier>
+        <caption>
+          <langstring language="fr">16.05. Barrières</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>1626f65krh</termIdentifier>
+      <caption>
+        <langstring language="fr">17. Ateliers</langstring>
+      </caption>
+      <term>
+        <termIdentifier>07j8e8vtds</termIdentifier>
+        <caption>
+          <langstring language="fr">17.01. Bergeries</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0gqo4lx5vp</termIdentifier>
+        <caption>
+          <langstring language="fr">17.02. Petites briqueteries</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>yw9pi47brn</termIdentifier>
+        <caption>
+          <langstring language="fr">17.03. Ardoisières</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>4qlwedhsld</termIdentifier>
+        <caption>
+          <langstring language="fr">17.04. Cabanes de cantonniers</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>cn9197xkkd</termIdentifier>
+        <caption>
+          <langstring language="fr">17.05. Cabanes en pierre sèches</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>dhvfcjr9c5</termIdentifier>
+        <caption>
+          <langstring language="fr">17.06. Petites forges (les "Macas")</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ueyuaxu80q</termIdentifier>
+        <caption>
+          <langstring language="fr">17.07. Glacières</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ih0oyacdbg</termIdentifier>
+        <caption>
+          <langstring language="fr">17.08. Faïenceries</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>axow3906v2</termIdentifier>
+        <caption>
+          <langstring language="fr">17.09. Saboteries</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>ya1spkccny</termIdentifier>
+        <caption>
+          <langstring language="fr">17.10. Ateliers de vanniers</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>0ky3hutf9x</termIdentifier>
+        <caption>
+          <langstring language="fr">17.11. Ateliers de tonneliers</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>3wpcwf78yj</termIdentifier>
+      <caption>
+        <langstring language="fr">18. Autres</langstring>
+      </caption>
+      <term>
+        <termIdentifier>xxl3axqpmk</termIdentifier>
+        <caption>
+          <langstring language="fr">18.01. Teuté</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>bc2y9mb8fi</termIdentifier>
+        <caption>
+          <langstring language="fr">18.02. Entrée de caves</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>viyvgu47t4</termIdentifier>
+        <caption>
+          <langstring language="fr">18.03. Divers</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>0ts8swtot6</termIdentifier>
+      <caption>
+        <langstring language="fr">Autres patrimoine</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>yne0evc0l7</termIdentifier>
+    <caption>
+      <langstring language="fr">Sports</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>e5ddlluei7</termIdentifier>
+    <caption>
+      <langstring language="fr">Territoire</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>r3v7fivimh</termIdentifier>
+    <caption>
+      <langstring language="fr">Vie associative</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>4arccv51ro</termIdentifier>
+    <caption>
+      <langstring language="fr">Vie communale</langstring>
+    </caption>
+  </term>
+</vdex>
