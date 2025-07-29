@@ -1,0 +1,8 @@
+core_extract_and_load/__init__.py,sha256=36HfOrWr8uBK4n5ziR2naSS8ejGGgftNr1Y-pjrLw1w,402
+core_extract_and_load/cleaning_and_saving_s3.py,sha256=oulvv6SL3Gd012C10XSMrwk6cFqGGCz21HKRULFuFec,3489
+core_extract_and_load/demo.py,sha256=HpK655XUBOC5uML0ffLtOGry0Qck_ddTWedRJcF1aIY,695
+core_extract_and_load/main.py,sha256=O1K6aVZVhQ0L_06v8JivChyrNVxq88Rfd01sbyC5qss,2975
+core_extract_and_load-0.1.8.dist-info/METADATA,sha256=j55wNrUbBNJk9t1sSWs6e48eoNf5BlO72MMvz3AM0CQ,1391
+core_extract_and_load-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+core_extract_and_load-0.1.8.dist-info/top_level.txt,sha256=MnwWoCNlK5Mex8x0pAuigxXCcJojGufyBLVVQRMsWmQ,22
+core_extract_and_load-0.1.8.dist-info/RECORD,,
