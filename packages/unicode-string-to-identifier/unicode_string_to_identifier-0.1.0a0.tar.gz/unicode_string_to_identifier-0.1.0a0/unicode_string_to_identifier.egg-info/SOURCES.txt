@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.cfg
+unicode_string_to_identifier.py
+unicode_string_to_identifier.egg-info/PKG-INFO
+unicode_string_to_identifier.egg-info/SOURCES.txt
+unicode_string_to_identifier.egg-info/dependency_links.txt
+unicode_string_to_identifier.egg-info/top_level.txt

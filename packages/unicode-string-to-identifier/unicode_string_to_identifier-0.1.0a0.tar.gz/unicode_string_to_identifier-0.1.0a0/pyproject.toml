@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unicode-string-to-identifier"
+version = "0.1.0a0"
+description = "A tool that converts arbitrary text (like user input or file names) into valid Python identifiers while preserving as much of the original meaning as possible."
+readme = "README.md"
+requires-python = ">=2"
+license = "MIT"
+authors = [
+  { name="Jifeng Wu", email="jifengwu2k@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/jifengwu2k/unicode-string-to-identifier"
+"Bug Tracker" = "https://github.com/jifengwu2k/unicode-string-to-identifier/issues"
