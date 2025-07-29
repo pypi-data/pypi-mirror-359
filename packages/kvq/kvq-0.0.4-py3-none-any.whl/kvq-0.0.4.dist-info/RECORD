@@ -1,0 +1,10 @@
+kvq/KVQ.py,sha256=pUtyWXCkdxbF2za0N2OOFoPitj4tHYsvDhoLo9BoOhM,5555
+kvq/KVQConfig.py,sha256=JlGEnyaWlHUf6IQQvLrmizWxIogowxFDOo10ZS5gABg,4491
+kvq/__init__.py,sha256=NlVFEkeecbERkAxgDgsbEcUukhzhH7BHH8f50mBAmcU,124
+kvq/bit_pattern.py,sha256=20rEJ6SFamkv6tlGdZJJdaM_A2kffwozYaHjfp0vAcE,3700
+kvq/const.py,sha256=cXk28XyV0BXr9xGWNbSKj-UR_khsmZjbLvc6wmtH3zY,4753
+kvq-0.0.4.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+kvq-0.0.4.dist-info/METADATA,sha256=94qNmOm4owk5bLggEPY68RpvfPsX8iHGd5tPpMqyt6Q,3280
+kvq-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kvq-0.0.4.dist-info/top_level.txt,sha256=zW_gx5KRysKuHhykJTz5t4uvgBeFcSgc7gwWByyE_0g,4
+kvq-0.0.4.dist-info/RECORD,,
