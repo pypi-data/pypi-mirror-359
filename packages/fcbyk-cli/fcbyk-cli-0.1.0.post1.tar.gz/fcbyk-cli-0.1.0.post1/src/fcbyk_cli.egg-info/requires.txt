@@ -1,0 +1,11 @@
+click
+flask
+pyperclip
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[test]
+pytest
+pytest-cov
+beautifulsoup4<4.11
