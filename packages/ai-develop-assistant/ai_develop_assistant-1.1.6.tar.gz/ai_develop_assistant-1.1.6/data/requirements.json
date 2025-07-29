@@ -1,0 +1,196 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": [],
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T10:57:33.745367",
+  "project_id": null,
+  "branch_status": {},
+  "user_personas_and_journeys": [
+    {
+      "timestamp": "2025-07-01T10:49:15.227744",
+      "content": "iOS开发者、设计师和技术爱好者 18岁以上",
+      "source": "USER_ANSWER",
+      "question_id": "USER_Q1"
+    },
+    {
+      "timestamp": "2025-07-01T10:49:38.224909",
+      "content": "技术讨论、社交交流",
+      "source": "USER_ANSWER",
+      "question_id": "USER_Q2"
+    },
+    {
+      "timestamp": "2025-07-01T10:50:02.914149",
+      "content": "启动app → 浏览热门话题 → 搜索/筛选感兴趣内容 → 阅读帖子/回复 → 发布新话题/提问 → 收藏/关注 → 个人中心管理",
+      "source": "USER_ANSWER",
+      "question_id": "USER_Q3"
+    },
+    {
+      "timestamp": "2025-07-01T10:50:39.827464",
+      "content": "分层权限体系：\n1. 新手用户（0-100积分）：浏览、发帖、回复、点赞，每日发帖限制5篇\n2. 普通用户（100-500积分）：基础功能 + 创建投票、上传图片/代码片段\n3. 活跃用户（500-1000积分）：额外功能 + 创建专题讨论、邀请好友、私信功能\n4. 资深用户（1000-3000积分）：高级功能 + 申请版主、技术认证申请、优先展示\n5. 专家用户（3000+积分或认证）：专家标识、专家问答区、技术文章推荐权\n6. 版主：内容管理、用户管理、版块设置、违规处理\n7. 超级版主：跨版块管理、用户等级调整\n8. 管理员：全局管理、系统设置、数据统计、用户封禁",
+      "source": "USER_ANSWER",
+      "question_id": "USER_Q4"
+    },
+    {
+      "timestamp": "2025-07-01T10:51:08.113163",
+      "content": "优质内容推荐、专家答疑",
+      "source": "USER_ANSWER",
+      "question_id": "USER_Q5"
+    }
+  ],
+  "core_functional_modules": [
+    {
+      "timestamp": "2025-07-01T10:52:54.516561",
+      "content": "核心功能模块完整方案：\n\n1. 用户系统模块\n- 注册/登录（邮箱、手机号、第三方登录）\n- 用户资料管理（头像、个人简介、技能标签）\n- 用户等级系统（新手→普通→活跃→资深→专家）\n- 关注/粉丝系统\n\n2. 帖子管理模块\n- 发布帖子（支持Markdown、图片、代码片段）\n- 帖子编辑/删除\n- 帖子分类（iOS开发、UI设计、工具推荐、求职招聘）\n- 帖子状态管理（草稿、发布、置顶、精华）\n\n3. 内容形式支持\n- 文字帖（Markdown格式，代码语法高亮）\n- 图片帖（多图上传，图片压缩）\n- 代码分享帖（Swift、Objective-C等语法高亮）\n- 问答帖（Q&A格式，最佳答案标记）\n- 投票帖（单选/多选投票）\n- 资源分享帖（链接预览、文件上传）\n\n4. 用户互动模块\n- 点赞/点踩系统\n- 评论回复（支持嵌套回复）\n- 收藏功能\n- 分享功能（系统分享、复制链接）\n- @提及功能\n- 私信聊天\n- 举报功能\n\n5. 搜索与分类模块\n- 全文搜索（标题、内容、用户名）\n- 标签系统（技术标签、难度标签）\n- 分类筛选（按版块、时间、热度、作者）\n- 高级搜索（多条件组合）\n- 搜索历史和热门搜索\n\n6. 通知系统模块\n- 系统通知（新功能、公告）\n- 互动通知（点赞、评论、关注）\n- 私信通知\n- @提及通知\n- 推送设置管理\n\n7. 管理后台模块\n- 内容审核（自动+人工审核）\n- 用户管理（查看、禁言、封禁）\n- 举报处理工作流\n- 数据统计仪表板\n- 系统日志管理\n- 备份与恢复功能",
+      "source": "USER_ANSWER",
+      "question_id": "FUNC_Q1"
+    }
+  ],
+  "data_model_and_storage": [],
+  "technology_stack_and_non_functional": [],
+  "ui_ux_design_principles": [],
+  "requirement_blueprint": {
+    "project_title": "iOS论坛App",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "用户画像与核心旅程",
+        "storage_key": "user_personas_and_journeys",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "USER_Q1",
+            "question_text": "您的iOS论坛app主要面向哪些用户群体？请描述目标用户的基本特征（年龄、职业、技术水平等）",
+            "ai_suggestion": "建议定位为iOS开发者、设计师和技术爱好者，年龄25-40岁，具备中高级技术水平，关注iOS生态系统的最新动态和技术分享",
+            "status": "completed",
+            "user_answer": "iOS开发者、设计师和技术爱好者 18岁以上"
+          },
+          {
+            "question_id": "USER_Q2",
+            "question_text": "用户使用论坛的主要目的是什么？（技术讨论、问题求助、资源分享、社交交流等）",
+            "ai_suggestion": "建议以技术讨论和问题求助为核心，辅以资源分享功能，打造专业的iOS技术交流平台",
+            "status": "completed",
+            "user_answer": "技术讨论、社交交流"
+          },
+          {
+            "question_id": "USER_Q3",
+            "question_text": "用户在论坛中的典型使用流程是什么？从进入app到完成主要任务的完整路径",
+            "ai_suggestion": "建议流程：启动app → 浏览热门话题 → 搜索/筛选感兴趣内容 → 阅读帖子/回复 → 发布新话题/提问 → 收藏/关注 → 个人中心管理",
+            "status": "completed",
+            "user_answer": "启动app → 浏览热门话题 → 搜索/筛选感兴趣内容 → 阅读帖子/回复 → 发布新话题/提问 → 收藏/关注 → 个人中心管理"
+          },
+          {
+            "question_id": "USER_Q4",
+            "question_text": "不同类型用户（新手、专家、版主等）的权限和功能需求有何差异？",
+            "ai_suggestion": "建议分层设计：普通用户（浏览、发帖、回复）、活跃用户（额外积分奖励）、专家用户（技术认证标识）、版主（内容管理）、管理员（全局管理）",
+            "status": "completed",
+            "user_answer": "分层权限体系：\n1. 新手用户（0-100积分）：浏览、发帖、回复、点赞，每日发帖限制5篇\n2. 普通用户（100-500积分）：基础功能 + 创建投票、上传图片/代码片段\n3. 活跃用户（500-1000积分）：额外功能 + 创建专题讨论、邀请好友、私信功能\n4. 资深用户（1000-3000积分）：高级功能 + 申请版主、技术认证申请、优先展示\n5. 专家用户（3000+积分或认证）：专家标识、专家问答区、技术文章推荐权\n6. 版主：内容管理、用户管理、版块设置、违规处理\n7. 超级版主：跨版块管理、用户等级调整\n8. 管理员：全局管理、系统设置、数据统计、用户封禁"
+          },
+          {
+            "question_id": "USER_Q5",
+            "question_text": "用户参与论坛的激励机制是什么？如何提高用户活跃度和留存率？",
+            "ai_suggestion": "建议采用积分系统、技术等级认证、优质内容推荐、专家答疑、线下活动邀请等多元化激励机制",
+            "status": "completed",
+            "user_answer": "优质内容推荐、专家答疑"
+          }
+        ]
+      },
+      {
+        "branch_name": "核心功能模块拆解",
+        "storage_key": "core_functional_modules",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "FUNC_Q1",
+            "question_text": "论坛的核心功能模块有哪些？（帖子管理、用户系统、搜索功能、通知系统等）",
+            "ai_suggestion": "建议包含：用户系统（注册/登录/资料）、帖子管理（发布/编辑/删除）、回复系统、搜索功能、通知系统、私信功能、个人中心、管理后台",
+            "status": "completed",
+            "user_answer": "核心功能模块完整方案：\n\n1. 用户系统模块\n- 注册/登录（邮箱、手机号、第三方登录）\n- 用户资料管理（头像、个人简介、技能标签）\n- 用户等级系统（新手→普通→活跃→资深→专家）\n- 关注/粉丝系统\n\n2. 帖子管理模块\n- 发布帖子（支持Markdown、图片、代码片段）\n- 帖子编辑/删除\n- 帖子分类（iOS开发、UI设计、工具推荐、求职招聘）\n- 帖子状态管理（草稿、发布、置顶、精华）\n\n3. 内容形式支持\n- 文字帖（Markdown格式，代码语法高亮）\n- 图片帖（多图上传，图片压缩）\n- 代码分享帖（Swift、Objective-C等语法高亮）\n- 问答帖（Q&A格式，最佳答案标记）\n- 投票帖（单选/多选投票）\n- 资源分享帖（链接预览、文件上传）\n\n4. 用户互动模块\n- 点赞/点踩系统\n- 评论回复（支持嵌套回复）\n- 收藏功能\n- 分享功能（系统分享、复制链接）\n- @提及功能\n- 私信聊天\n- 举报功能\n\n5. 搜索与分类模块\n- 全文搜索（标题、内容、用户名）\n- 标签系统（技术标签、难度标签）\n- 分类筛选（按版块、时间、热度、作者）\n- 高级搜索（多条件组合）\n- 搜索历史和热门搜索\n\n6. 通知系统模块\n- 系统通知（新功能、公告）\n- 互动通知（点赞、评论、关注）\n- 私信通知\n- @提及通知\n- 推送设置管理\n\n7. 管理后台模块\n- 内容审核（自动+人工审核）\n- 用户管理（查看、禁言、封禁）\n- 举报处理工作流\n- 数据统计仪表板\n- 系统日志管理\n- 备份与恢复功能"
+          },
+          {
+            "question_id": "FUNC_Q2",
+            "question_text": "帖子类型和内容形式有何要求？（文字、图片、代码、视频、投票等）",
+            "ai_suggestion": "建议支持：文字帖子（Markdown格式）、图片帖子、代码分享（语法高亮）、投票贴、问答贴（Q&A格式）、资源分享贴",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q3",
+            "question_text": "用户互动功能需要包含哪些？（点赞、评论、关注、私信、分享等）",
+            "ai_suggestion": "建议包含：点赞/点踩、评论回复、关注用户、收藏帖子、分享功能、私信聊天、@提及功能、举报功能",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q4",
+            "question_text": "搜索和分类功能的具体需求是什么？（关键词搜索、标签系统、分类筛选等）",
+            "ai_suggestion": "建议包含：全文搜索、标签系统、分类目录（iOS开发/UI设计/工具推荐等）、高级筛选（时间/作者/热度）、热门搜索推荐",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q5",
+            "question_text": "管理和审核功能需要哪些特性？（内容审核、用户管理、数据统计等）",
+            "ai_suggestion": "建议包含：内容审核系统、用户禁言/封禁、举报处理、数据统计仪表板、日志管理、系统设置、备份恢复",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "数据模型与存储方案",
+        "storage_key": "data_model_and_storage",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "DATA_Q1",
+            "question_text": "数据模型与存储方案完整设计",
+            "ai_suggestion": "",
+            "status": "completed",
+            "user_answer": "数据模型与存储方案完整设计：\n\n## 核心数据模型设计\n\n### 1. 用户相关表\n**Users表**\n- user_id (主键)\n- username (用户名，唯一)\n- email (邮箱，唯一)\n- phone (手机号)\n- password_hash (密码哈希)\n- avatar_url (头像链接)\n- bio (个人简介)\n- skill_tags (技能标签JSON)\n- user_level (用户等级：0-7)\n- points (积分)\n- registration_date (注册时间)\n- last_login (最后登录)\n- status (状态：active/banned/deleted)\n\n**UserProfiles表**\n- profile_id (主键)\n- user_id (外键)\n- real_name (真实姓名)\n- company (公司)\n- position (职位)\n- location (地区)\n- github_url (GitHub链接)\n- website_url (个人网站)\n\n### 2. 内容相关表\n**Posts表**\n- post_id (主键)\n- user_id (外键)\n- category_id (外键)\n- title (标题)\n- content (内容，支持Markdown)\n- post_type (帖子类型：text/image/code/qa/poll/resource)\n- status (状态：draft/published/pinned/featured/deleted)\n- view_count (浏览数)\n- like_count (点赞数)\n- reply_count (回复数)\n- created_at (创建时间)\n- updated_at (更新时间)\n- is_solved (是否已解决，用于问答帖)\n\n**Categories表**\n- category_id (主键)\n- name (分类名称)\n- description (描述)\n- icon (图标)\n- sort_order (排序)\n- parent_id (父分类ID，支持二级分类)\n\n**PostTags表**\n- tag_id (主键)\n- post_id (外键)\n- tag_name (标签名)\n\n**PostAttachments表**\n- attachment_id (主键)\n- post_id (外键)\n- file_url (文件链接)\n- file_type (文件类型)\n- file_size (文件大小)\n\n### 3. 互动相关表\n**Comments表**\n- comment_id (主键)\n- post_id (外键)\n- user_id (外键)\n- parent_id (父评论id，支持嵌套)\n- content (评论内容)\n- like_count (点赞数)\n- created_at (创建时间)\n- is_best_answer (是否最佳答案)\n\n**Likes表**\n- like_id (主键)\n- user_id (外键)\n- target_id (目标ID：帖子或评论)\n- target_type (目标类型：post/comment)\n- like_type (点赞类型：like/dislike)\n- created_at (创建时间)\n\n**Follows表**\n- follow_id (主键)\n- follower_id (关注者ID)\n- following_id (被关注者ID)\n- created_at (关注时间)\n\n**Favorites表**\n- favorite_id (主键)\n- user_id (外键)\n- post_id (外键)\n- created_at (收藏时间)\n\n### 4. 消息通知表\n**Messages表**\n- message_id (主键)\n- sender_id (发送者ID)\n- receiver_id (接收者ID)\n- content (消息内容)\n- message_type (消息类型：private/system)\n- is_read (是否已读)\n- created_at (发送时间)\n\n**Notifications表**\n- notification_id (主键)\n- user_id (外键)\n- type (通知类型：like/comment/follow/mention/system)\n- title (通知标题)\n- content (通知内容)\n- related_id (相关ID)\n- is_read (是否已读)\n- created_at (创建时间)\n\n## 存储方案设计\n\n### 主数据库：MySQL 8.0\n- **优势**：成熟稳定、事务支持、丰富的索引类型\n- **用途**：存储用户、帖子、评论等核心业务数据\n- **配置**：主从复制、读写分离\n\n### 缓存层：Redis\n- **用途**：\n  - 热门帖子缓存\n  - 用户会话管理\n  - 计数器缓存（点赞数、浏览数）\n  - 搜索结果缓存\n- **配置**：Redis Cluster集群模式\n\n### 文件存储：云存储服务\n- **图片存储**：阿里云OSS/腾讯云COS\n- **文件处理**：自动压缩、格式转换、CDN加速\n- **备份策略**：多地域备份\n\n### 搜索引擎：Elasticsearch\n- **用途**：全文搜索、标签搜索、高级筛选\n- **索引设计**：\n  - posts_index：帖子内容索引\n  - users_index：用户信息索引\n  - tags_index：标签索引\n\n### 数据备份策略\n- **MySQL**：每日全量备份 + 实时binlog备份\n- **Redis**：RDB + AOF双重持久化\n- **文件**：云存储自动备份 + 跨地域复制\n\n### 性能优化方案\n- **数据库优化**：\n  - 合理设计索引（复合索引、覆盖索引）\n  - 分表策略（按时间分表）\n  - 连接池优化\n- **缓存策略**：\n  - 多级缓存（本地缓存 + Redis）\n  - 缓存预热\n  - 缓存穿透防护\n- **CDN加速**：静态资源全球加速"
+          }
+        ]
+      },
+      {
+        "branch_name": "技术栈选型与非功能性需求",
+        "storage_key": "technology_stack_and_non_functional",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "TECH_Q1",
+            "question_text": "技术栈选型与非功能性需求完整方案",
+            "ai_suggestion": "",
+            "status": "completed",
+            "user_answer": "技术栈选型与非功能性需求完整方案：\n\n## iOS客户端技术栈\n\n### 开发语言与框架\n- **主语言**：Swift 5.9+\n- **UI框架**：SwiftUI + UIKit混合开发\n- **架构模式**：MVVM + Combine\n- **依赖管理**：Swift Package Manager (SPM)\n\n### 核心三方库\n- **网络请求**：Alamofire\n- **图片加载**：Kingfisher\n- **JSON解析**：Codable (原生) + JSONDecoder\n- **数据存储**：Core Data + UserDefaults\n- **实时通信**：WebSocket (Starscream)\n- **推送通知**：APNs (Apple Push Notification)\n- **崩溃统计**：Crashlytics\n- **数据统计**：Firebase Analytics\n\n### 开发工具\n- **IDE**：Xcode 15+\n- **版本控制**：Git + GitHub\n- **CI/CD**：Xcode Cloud / GitHub Actions\n- **调试工具**：Instruments\n- **设计协作**：Figma\n\n## 后端技术栈\n\n### 服务端框架\n- **语言**：Node.js 18+ (TypeScript)\n- **Web框架**：Express.js + Fastify\n- **认证授权**：JWT + OAuth 2.0\n- **API设计**：RESTful API + GraphQL\n- **数据验证**：Joi / Yup\n- **日志系统**：Winston + ELK Stack\n\n### 数据存储\n- **主数据库**：MySQL 8.0\n- **ORM**：Sequelize / Prisma\n- **缓存**：Redis 7.0\n- **搜索引擎**：Elasticsearch 8.0\n- **文件存储**：阿里云OSS / AWS S3\n- **CDN**：阿里云CDN / CloudFlare\n\n### 微服务架构\n- **容器化**：Docker + Docker Compose\n- **编排**：Kubernetes\n- **服务网格**：Istio\n- **API网关**：Nginx / Kong\n- **服务发现**：Consul / Eureka\n- **配置中心**：Apollo / Nacos\n\n## 非功能性需求\n\n### 性能需求\n- **响应时间**：\n  - API响应时间 < 200ms\n  - 页面加载时间 < 2s\n  - 图片加载时间 < 1s\n- **并发性能**：\n  - 支持 1000+ 并发用户\n  - QPS > 5000\n  - 数据库连接池 100-500\n\n### 可用性需求\n- **系统可用性**：99.9%\n- **故障恢复时间**：< 5分钟\n- **数据备份**：每日全量 + 实时增量\n- **灾难恢复**：RTO < 1小时，RPO < 15分钟\n\n### 安全性需求\n- **数据加密**：\n  - 传输加密：HTTPS/TLS 1.3\n  - 存储加密：AES-256\n  - 密码加密：bcrypt\n- **身份认证**：\n  - JWT Token + Refresh Token\n  - 双因子认证 (2FA)\n  - OAuth 2.0 第三方登录\n- **安全防护**：\n  - SQL注入防护\n  - XSS/CSRF防护\n  - 频率限制 (Rate Limiting)\n  - WAF 防火墙\n\n### 扩展性需求\n- **水平扩展**：\n  - 微服务架构设计\n  - 负载均衡器\n  - 数据库读写分离\n  - 分库分表策略\n- **垂直扩展**：\n  - 容器化部署\n  - 自动伸缩缩容\n  - 资源监控告警\n\n### 兼容性需求\n- **iOS版本支持**：iOS 15.0+\n- **设备支持**：iPhone 8+ / iPad Air 2+\n- **屏幕适配**：支持所有iPhone尺寸\n- **无障碍支持**：VoiceOver、动态字体\n\n### 监控运维\n- **应用监控**：\n  - APM：New Relic / Datadog\n  - 日志分析：ELK Stack\n  - 错误追踪：Sentry\n- **基础设施监控**：\n  - 服务器监控：Prometheus + Grafana\n  - 网络监控：Ping / Traceroute\n  - 数据库监控：MySQL Workbench\n\n### 部署环境\n- **开发环境**：本地Docker + 测试数据\n- **测试环境**：阿里云ECS + RDS\n- **预发布环境**：生产环境的简化版\n- **生产环境**：\n  - 云平台：阿里云 / AWS\n  - 容器编排：Kubernetes\n  - CI/CD：Jenkins / GitLab CI\n  - 自动化部署：Ansible / Terraform"
+          }
+        ]
+      },
+      {
+        "branch_name": "UI/UX设计原则",
+        "storage_key": "ui_ux_design_principles",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "UI_Q1",
+            "question_text": "UI/UX设计原则完整方案",
+            "ai_suggestion": "",
+            "status": "completed",
+            "user_answer": "UI/UX设计原则完整方案：\n\n## 设计理念\n\n### 核心设计原则\n- **简洁至上**：遵循Apple Human Interface Guidelines\n- **内容优先**：突出技术内容，减少视觉干扰\n- **直觉易用**：降低学习成本，提高交互效率\n- **一致性**：统一的视觉语言和交互模式\n- **可访问性**：支持无障碍访问和多样化需求\n\n## 视觉设计\n\n### 色彩系统\n- **主色调**：\n  - 主色：#007AFF (iOS系统蓝)\n  - 辅助色：#34C759 (成功绿) / #FF3B30 (警告红)\n  - 中性色：#8E8E93 (灰色系列)\n- **深色模式支持**：\n  - 自动适配系统主题\n  - 保证对比度符合WCAG标准\n\n### 字体系统\n- **主字体**：SF Pro (iOS系统字体)\n- **代码字体**：SF Mono / Menlo\n- **字体层级**：\n  - 大标题：28pt, Bold\n  - 标题：22pt, Semibold\n  - 子标题：18pt, Medium\n  - 正文：16pt, Regular\n  - 辅助文字：14pt, Regular\n  - 小文字：12pt, Regular\n\n### 布局系统\n- **网格系统**：8pt基础网格\n- **间距规范**：\n  - 微间距：4pt / 8pt\n  - 小间距：12pt / 16pt\n  - 中间距：20pt / 24pt\n  - 大间距：32pt / 40pt\n- **安全区域**：遵循各种iPhone的Safe Area\n\n## 交互设计\n\n### 导航系统\n- **主导航**：Tab Bar底部导航\n  - 首页 (Home)\n  - 发现 (Discover)\n  - 发布 (+)\n  - 消息 (Messages)\n  - 我的 (Profile)\n- **次级导航**：Navigation Bar + 面包屑\n- **深层级导航**：Modal弹窗 + Sheet抽屉\n\n### 手势交互\n- **基础手势**：\n  - 点击：选择和确认\n  - 长按：快捷菜单和预览\n  - 滑动：列表滚动和页面切换\n  - 双指缩放：图片查看\n- **高级手势**：\n  - 左滑删除：列表项操作\n  - 下拉刷新：内容更新\n  - 3D Touch：快速预览（兼容老设备）\n\n### 动效设计\n- **过渡动效**：\n  - 页面切换：ease-in-out 0.3s\n  - 元素出现：fade-in + slide-up\n  - 加载状态：skeleton screen\n- **反馈动效**：\n  - 按钮点击：轻微缩放 + 震动反馈\n  - 成功操作：绿色勾号动效\n  - 错误提示：红色摇摆动效\n\n## 组件设计\n\n### 基础组件\n- **按钮系统**：\n  - Primary Button：主要操作\n  - Secondary Button：次要操作\n  - Text Button：辅助操作\n  - Icon Button：工具栏操作\n- **输入组件**：\n  - Text Field：单行文本输入\n  - Text View：多行文本输入\n  - Search Bar：搜索输入\n  - Picker：选择器\n\n### 业务组件\n- **帖子卡片**：\n  - 紧凑模式：显示标题、作者、时间、简介\n  - 详细模式：增加标签、统计数据、预览图\n- **用户头像**：\n  - 小尺寸：24pt 列表中使用\n  - 中尺寸：40pt 评论中使用\n  - 大尺寸：80pt 个人资料使用\n- **状态指示器**：\n  - 在线状态：绿色圆点\n  - 等级徽章：彩色标签\n  - 新消息：红色数字徽章\n\n## 页面结构\n\n### 首页设计\n- **顶部区域**：\n  - 搜索框 + 筛选按钮\n  - 快捷分类标签\n- **内容区域**：\n  - 热门帖子轮播\n  - 帖子列表 (支持上拉加载)\n  - 悬浮发布按钮\n\n### 帖子详情页\n- **内容区域**：\n  - 帖子标题和元信息\n  - Markdown渲染内容\n  - 代码语法高亮\n  - 图片画廊\n- **交互区域**：\n  - 点赞/收藏/分享工具栏\n  - 评论列表\n  - 快速回复输入框\n\n### 个人中心\n- **用户信息**：\n  - 头像 + 姓名 + 等级徽章\n  - 简介 + 技能标签\n  - 统计数据 (帖子数/粉丝数/积分)\n- **功能入口**：\n  - 我的帖子 / 我的收藏\n  - 设置 / 关于 / 帮助\n\n## 响应式设计\n\n### 屏幕适配\n- **iPhone SE (4.7\")**: 紧凑布局，减少空白\n- **iPhone 12/13/14 (6.1\")**: 标准布局\n- **iPhone 12/13/14 Pro Max (6.7\")**: 充分利用屏幕空间\n- **iPad**: 支持分屏显示，侧边栏导航\n\n### 方向适配\n- **竖屏模式**: 主要使用场景\n- **横屏模式**: 支持图片查看和视频播放\n\n## 无障碍设计\n\n### VoiceOver支持\n- **语义化标签**: 所有交互元素都有明确的accessibility label\n- **焦点管理**: 合理的焦点顺序和群组\n- **动态内容**: 实时更新的内容能被VoiceOver识别\n\n### 视觉辅助\n- **动态字体**: 支持系统字体大小设置\n- **对比度**: 所有文字和背景对比度≥ 4.5:1\n- **颜色盲支持**: 不仅依赖颜色传达信息\n\n### 动作辅助\n- **大按钮**: 所有可点击区域≥ 44pt\n- **手势替代**: 提供按钮替代复杂手势\n- **减少动效**: 支持系统的“减少动效”设置"
+          }
+        ]
+      }
+    ]
+  }
+}
