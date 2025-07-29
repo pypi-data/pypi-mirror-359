@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: anujstick
+Version: 0.1.1
+Summary: AnujStrike - Offensive Strike Toolkit by Anuj Prajapati
+Author: Anuj Prajapati
+Author-email: your_email@example.com
+Requires-Python: >=3.6
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
