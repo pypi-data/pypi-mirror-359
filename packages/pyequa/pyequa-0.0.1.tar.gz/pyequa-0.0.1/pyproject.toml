@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyequa"
+version = "0.0.1"
+authors = [
+  { name="Pedro Cruz", email="pedrocruz@ua.pt" },
+]
+packages = ["src/pyequa"]
+description = "Exercises from equations and relations."
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Topic :: Education :: Computer Aided Instruction (CAI)",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+]
+dependencies = [
+    "sympy",
+    "pandas",
+    "networkx",
+    "matplotlib",
+    "openpyxl",
+    "PyYAML",
+    "Markdown",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/jpedroan/pyequa"
+Issues = "https://github.com/jpedroan/pyequa/issues"
+
