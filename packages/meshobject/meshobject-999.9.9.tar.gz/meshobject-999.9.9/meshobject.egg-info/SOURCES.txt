@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+meshobject.egg-info/PKG-INFO
+meshobject.egg-info/SOURCES.txt
+meshobject.egg-info/dependency_links.txt
+meshobject.egg-info/top_level.txt
