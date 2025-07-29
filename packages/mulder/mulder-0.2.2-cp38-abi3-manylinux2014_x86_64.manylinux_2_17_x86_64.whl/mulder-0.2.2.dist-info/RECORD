@@ -1,0 +1,13 @@
+mulder/__init__.py,sha256=WNKLVYNWHmEtq585xUwXZ8PGMOfM0ne1WQSn6aR4M2w,33
+mulder/__main__.py,sha256=ImvtvgTeHw6y_hhpaxa-PVoaXsbVqM0TIU7kqiLYbWw,2339
+mulder/mulder.abi3.so,sha256=Kh67li3uLmEUinHgZZ3QjPqhn_Omr2DDbawPZsInIRk,4738040
+mulder/data/geoid/egm96.png,sha256=eFNTEcsTBrP4j07slCvMsXJD7g-DvPFDE_PtDXqnIeg,1333334
+mulder/data/magnet/IGRF14.COF,sha256=Avx_RXPvRTFY7sVdLlt_SiXfmMokdaIEY_QLjyu_688,157950
+mulder/data/materials/default.toml,sha256=vJtuH9ZbSlLxl-suH7_iHS317ATj4xFJ29qyFv2CsUQ,493
+mulder-0.2.2.dist-info/COPYING.LESSER,sha256=-XvEu5t66KZTlBBzZ4tcd3Xo3kSgHDvMIefNwUi5DmE,7632
+mulder-0.2.2.dist-info/LICENSE,sha256=WJ7YI-moTFb-uVrFjnzzhGJrnL9P2iqQe8NuED3hutI,35141
+mulder-0.2.2.dist-info/METADATA,sha256=FEYE-kTrEG-S8oRURKdjJol3QlW0bVo-TDsmq9zBZP0,2613
+mulder-0.2.2.dist-info/WHEEL,sha256=UR22ib8F3ZPZk5Te-YoD6EG3BKd42tVQDyq8_Y5eU0w,147
+mulder-0.2.2.dist-info/entry_points.txt,sha256=1c_xhoI-MLNArkzv3B36LQHb2geivyXVzQ-7-Znt-7c,48
+mulder-0.2.2.dist-info/top_level.txt,sha256=G3hxndCo8cat0J_CzjSgPz00T7E7V3AZZRP2oTSD6iA,7
+mulder-0.2.2.dist-info/RECORD,,
