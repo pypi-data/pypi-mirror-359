@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+dorianutilsmodulaire.egg-info/PKG-INFO
+dorianutilsmodulaire.egg-info/SOURCES.txt
+dorianutilsmodulaire.egg-info/dependency_links.txt
+dorianutilsmodulaire.egg-info/top_level.txt
