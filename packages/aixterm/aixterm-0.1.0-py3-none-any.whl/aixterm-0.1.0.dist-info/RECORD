@@ -1,0 +1,17 @@
+aixterm/__init__.py,sha256=CtHKsfeGf93UFbl9ahTdrrNVrIGYQEfhytPlcO0NZaE,576
+aixterm/__main__.py,sha256=koeRrgZE-4GCeFNO1to8kUS0QOqthRRbdM1LaOldL9M,152
+aixterm/cleanup.py,sha256=7U_KAuew47RA04YxZIfn_xtOJ1VNDnwKSP9ONAilRiA,10608
+aixterm/config.py,sha256=w0r97ri2YVmLRgV0q9imgO92jvoVTMwnSZQuaaeR-Vc,19322
+aixterm/context.py,sha256=cIhF1W0qE_kCnOazkCwe-O5olupYSE8434c6mWmwaBU,38068
+aixterm/llm.py,sha256=PIq4KutEqHuXHmv1XcMVeMmPTJAW19QKc4YSvEBgNOI,49641
+aixterm/main.py,sha256=JuK7jVgMts-pv_uO9Zxi71sEYj6szUMows1x7FQ_T1w,25096
+aixterm/mcp_client.py,sha256=FkkdQ6XMdNUP78Rjrt6SbGBRfDoNsg54OCDtiGMXhZw,15515
+aixterm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aixterm/server.py,sha256=agA4BaLjfQ8sr9LA9kDbjIA-MW00xVMPKDL8e_BMAnA,11378
+aixterm/utils.py,sha256=hH7KQ3G9sz2hsZ6CFr0sw_zAV-PpHcF8Gq8d-MGWwLo,3154
+aixterm-0.1.0.dist-info/licenses/LICENSE,sha256=FMQpqvVbcZX0lkzP_zqL33FYTuwuHJmSvDuht2NWpQc,1069
+aixterm-0.1.0.dist-info/METADATA,sha256=6bF8O1mBukFB5Dte5x5zttn-_5nT_YPcYC1Gnq4GliM,11689
+aixterm-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aixterm-0.1.0.dist-info/entry_points.txt,sha256=QR_buBl_5dijub5IHZtDqR4qQDemXXj5RVSkPQ-qjBw,69
+aixterm-0.1.0.dist-info/top_level.txt,sha256=RL0f1VkFTJUwbj61HBUmZ1UHOgDaFPqOfPB-5t0Ryag,8
+aixterm-0.1.0.dist-info/RECORD,,
