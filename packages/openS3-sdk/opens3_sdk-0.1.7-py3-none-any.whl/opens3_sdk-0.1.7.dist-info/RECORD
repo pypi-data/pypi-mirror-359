@@ -1,0 +1,10 @@
+opens3/__init__.py,sha256=gRE-1hjQQ73OmtoMOD3eN4mw0AWD_1p9KTL2In3zFFY,1627
+opens3/client.py,sha256=pKpEDoR_YUIKP4k-W4e1M5rxkCAj3CQPNDjnwWJP9oQ,16784
+opens3/exceptions.py,sha256=8UjPYgUlkqj5aIuU9fdrB5qEtBHt-gTLSpByh7Fg_I4,1502
+opens3/session.py,sha256=1CvLfGoHy_YmUpXdoWDVQ46VGR0Wx_7onjnJmyafsYk,1386
+opens3/utils/__init__.py,sha256=IdaYuGFwC0mKlnbfNWm39iPp7UBcOVJAP5i9G_t0rmY,37
+opens3/utils/auth.py,sha256=XPuj1nXn7dl2GUVCVPqV5d7PD39rqSZH8yqR63KYMQc,939
+opens3_sdk-0.1.7.dist-info/METADATA,sha256=aFM4aZETY1CL5TsPSZ8xas_SzUCu0LHW5AJY880LyOk,13433
+opens3_sdk-0.1.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+opens3_sdk-0.1.7.dist-info/top_level.txt,sha256=0TkPoiaMjuwu1lpF5Ti8fpGVyW8ky7uoAYLimfdLWug,7
+opens3_sdk-0.1.7.dist-info/RECORD,,
