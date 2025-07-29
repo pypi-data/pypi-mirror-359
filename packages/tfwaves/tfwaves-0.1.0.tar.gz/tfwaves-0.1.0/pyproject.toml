@@ -1,0 +1,27 @@
+[project]
+name = "tfwaves"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Quentin Baghi",email = "quentin.baghi@protonmail.com"},
+    {name = "Gael Servignat",email = "servignat@apc.in2p3.fr"},
+    {name = "Saptarshi Ghosh",email = "saptarshi.ghosh@apc.in2p3.fr"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy (>=2.3.0,<3.0.0)",
+    "scipy (>=1.15.3,<2.0.0)",
+    "h5py (>=3.14.0,<4.0.0)",
+    "matplotlib (>=3.10.3,<4.0.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "pylint (>=3.3.7,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "tfwaves", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

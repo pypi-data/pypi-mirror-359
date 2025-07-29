@@ -1,0 +1,22 @@
+Metadata-Version: 2.3
+Name: tfwaves
+Version: 0.1.0
+Summary: 
+Author: Quentin Baghi
+Author-email: quentin.baghi@protonmail.com
+Requires-Python: >=3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: h5py (>=3.14.0,<4.0.0)
+Requires-Dist: matplotlib (>=3.10.3,<4.0.0)
+Requires-Dist: numpy (>=2.3.0,<3.0.0)
+Requires-Dist: pylint (>=3.3.7,<4.0.0)
+Requires-Dist: pytest (>=8.4.1,<9.0.0)
+Requires-Dist: scipy (>=1.15.3,<2.0.0)
+Description-Content-Type: text/markdown
+
+# tfwaves
+TFWaves is a python package to compute fast time-frequency gravitational-wave response for LISA data analysis. It takes as imput phase and amplitude functions of the gravitational strain in the pseudo-inertial solar system barycenter frame, and outputs time-delay interferometry responses in the time-frequency domain.
+
