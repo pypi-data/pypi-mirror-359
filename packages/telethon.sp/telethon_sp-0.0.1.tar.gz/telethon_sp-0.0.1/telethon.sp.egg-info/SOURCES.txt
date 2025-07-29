@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+chatjoiner/__init__.py
+telethon.sp.egg-info/PKG-INFO
+telethon.sp.egg-info/SOURCES.txt
+telethon.sp.egg-info/dependency_links.txt
+telethon.sp.egg-info/top_level.txt

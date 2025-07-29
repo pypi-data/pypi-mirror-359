@@ -1,0 +1,26 @@
+# Файл конфигурации для системы сборки Python (setuptools)
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# Метаданные проекта для PyPI
+[project]
+# ВАЖНО: Замените "chatjoiner" на уникальное имя, которого еще нет на PyPI
+name = "telethon.sp"
+version = "0.0.1"
+authors = [
+  # Можете указать свои данные
+  { name="Example Author", email="author@example.com" },
+]
+description = "A simple utility for chat operations."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject" # Можете указать ссылку на свой GitHub
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues" # или удалить эти строки
