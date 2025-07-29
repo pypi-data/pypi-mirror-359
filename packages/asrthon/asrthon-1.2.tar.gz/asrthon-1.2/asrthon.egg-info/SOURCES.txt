@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+asrthon.egg-info/PKG-INFO
+asrthon.egg-info/SOURCES.txt
+asrthon.egg-info/dependency_links.txt
+asrthon.egg-info/top_level.txt
