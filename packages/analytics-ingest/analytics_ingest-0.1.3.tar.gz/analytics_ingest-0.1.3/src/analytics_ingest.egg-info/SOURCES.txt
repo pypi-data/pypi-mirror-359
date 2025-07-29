@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/analytics_ingest/__init__.py
+src/analytics_ingest/batching.py
+src/analytics_ingest/client.py
+src/analytics_ingest/graphql_executor.py
+src/analytics_ingest/mutations.py
+src/analytics_ingest.egg-info/PKG-INFO
+src/analytics_ingest.egg-info/SOURCES.txt
+src/analytics_ingest.egg-info/dependency_links.txt
+src/analytics_ingest.egg-info/requires.txt
+src/analytics_ingest.egg-info/top_level.txt
+src/factories/__init__.py
+src/factories/configuration.py
+src/factories/message.py
+src/factories/signal.py
+tests/test_add_signal.py
