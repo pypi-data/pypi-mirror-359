@@ -1,0 +1,14 @@
+pyabc2/__init__.py,sha256=diIkZhhzoKJcjBSH_sICW0O1TEZpBDKT80rks488wwM,308
+pyabc2/_util.py,sha256=ApiV_KGQeLeiUtUNiPgEhMjnFZM3g8MmD1ilPemRmDg,492
+pyabc2/key.py,sha256=esypT16Se5zYmRqA56Z4YUPUUOCdKnBZk83JT6VQepw,15578
+pyabc2/note.py,sha256=H_GHq2MvdOSqD7HnK_uFkKpUxzmGor0Jna7yQEGEbxA,11243
+pyabc2/parse.py,sha256=xfMEYe_mffxF69otWBSej_kg8QBfDwfu1KRzMf5I3qs,16717
+pyabc2/pitch.py,sha256=pC0PYqAeOBl52bvI7pPVNZ0Uc2jTnJTfU9zCLDToGrw,26253
+pyabc2/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyabc2/sources/__init__.py,sha256=HzOJyNupD9c70i71sE8i5aMHfLNpHhHlfANwwggteUQ,2533
+pyabc2/sources/norbeck.py,sha256=WxI91T39pgLAxtcLkWpON9xZkf-rY9_FD8Q5n68cVHI,9636
+pyabc2/sources/the_session.py,sha256=Y4a5mccvcVt5bMgLwvm3jJvN1JoLof4RnI1GxCW_4Kg,14166
+pyabc2-0.1.0.dev3.dist-info/LICENSE,sha256=eRcJbBr4mY8xdhl8iwE_P5eSFuIh2qVcxAQNIrdzlIA,1090
+pyabc2-0.1.0.dev3.dist-info/WHEEL,sha256=CpUCUxeHQbRN5UGRQHYRJorO5Af-Qy_fHMctcQ8DSGI,82
+pyabc2-0.1.0.dev3.dist-info/METADATA,sha256=oM8S6KP06b8_0DRhdyDQhZIDuY-oidTJjVaKnLxooeY,2619
+pyabc2-0.1.0.dev3.dist-info/RECORD,,
