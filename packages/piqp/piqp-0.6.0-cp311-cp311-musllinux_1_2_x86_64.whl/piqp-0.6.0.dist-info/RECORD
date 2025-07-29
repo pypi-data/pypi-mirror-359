@@ -1,0 +1,12 @@
+piqp/__init__.py,sha256=Wjb2QcsWaVeit-n248L7l7u603eEeamLdQOmJPjiE2Q,965
+piqp/__init__.pyi,sha256=bmDasThSlMcRpZqoBN8JLz5nKQWr18w_GClQGI7j7Bg,10475
+piqp/instruction_set.cpython-311-x86_64-linux-musl.so,sha256=lyJ2EnwMRCS7rJ0a42Yx8zv5Sj4NR1cdSqdZrOFNzWk,165969
+piqp/piqp_python.cpython-311-x86_64-linux-musl.so,sha256=0N-xIeo1MD_t7-O1c9pX_QI__08_I3mlv5UOwucOaFE,1445569
+piqp/piqp_python_avx2.cpython-311-x86_64-linux-musl.so,sha256=gT94USQlBxw8tWhjJH0cbwov97xVoXSxa-DwucUTvbg,1807721
+piqp/piqp_python_avx512.cpython-311-x86_64-linux-musl.so,sha256=cvTWR0D2DPnu4Qbqyx4xgWOSq0BxOGfLWcNXpbWiZpg,1575257
+piqp.libs/libgcc_s-2298274a.so.1,sha256=V2IJwfUuwSSQhJqB29JtMx8hH79dCRjAvTQIGWShH-s,181737
+piqp.libs/libstdc++-08d5c7eb.so.6.0.33,sha256=k0S_imrCh_IE6WpvxrLoVPYiRyMVf15RDWRiXPIywV8,3562401
+piqp-0.6.0.dist-info/METADATA,sha256=gh_S37pCJgfpG-B0N8we1V4soU0wi_9K8tszjlhGygk,6804
+piqp-0.6.0.dist-info/WHEEL,sha256=ytcO6FlAkWeAl40hnegBQlx5TynHj6qZkzkNONZpqQA,117
+piqp-0.6.0.dist-info/RECORD,,
+piqp-0.6.0.dist-info/licenses/LICENSE,sha256=Ql0WXOWsYrw_0c74NzT6Z4C8hEZYv8XpBMpFoBHf7HA,1313
