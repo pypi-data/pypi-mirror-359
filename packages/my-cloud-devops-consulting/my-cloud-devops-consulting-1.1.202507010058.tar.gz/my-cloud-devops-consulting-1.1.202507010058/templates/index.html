@@ -1,0 +1,133 @@
+{% extends "base.html" %} {% block main %}
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Empowering Your Cloud & DevOps Journey</h2>
+    <p>
+      We specialize in delivering Cloud and DevOps consulting services tailored
+      to meet your unique business needs.
+    </p>
+    <button onclick="window.location.href='{{ url_for('services') }}'">
+      Explore our Services
+    </button>
+  </section>
+
+  <!-- add demo -->
+  <section style="background: #f8f9fa; padding: 60px 20px; text-align: center">
+    <h2
+      style="
+        color: #1b1b1b;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      "
+    >
+      Drive More Sales and Deliver an Effortless Experience
+    </h2>
+    <h1
+      style="
+        color: #005f73;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      "
+    >
+      Live Chat Customer Service Software
+    </h1>
+    <p
+      style="
+        color: #333;
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      "
+    >
+      Etech’s highly effective solution for cross-channel interactive customer
+      interactions.
+    </p>
+    <a
+      href="/contact-form"
+      style="
+        display: inline-block;
+        background-color: #005f73;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+      "
+    >
+      Request A Demo
+    </a>
+  </section>
+  <!-- add demo -->
+
+  <!-- Moving Image Section -->
+  <section class="moving-image-container">
+    <img
+      src="{{ url_for('static', filename='images/image.jpg') }}"
+      alt="Moving Image"
+      class="moving-image"
+    />
+  </section>
+
+  <!-- Services Highlights -->
+  <section class="services-highlight">
+    <h3>Our Key Services</h3>
+    <div class="service-cards">
+      <div class="card">
+        <h4>Cloud Consulting</h4>
+        <p>
+          Cloud migration, strategy, and optimization tailored for your
+          business.
+        </p>
+        <a href="{{ url_for('services') }}" class="btn-link">Learn More</a>
+      </div>
+      <div class="card">
+        <h4>DevOps Solutions</h4>
+        <p>
+          CI/CD pipelines, automated infrastructure, and efficient delivery.
+        </p>
+        <a href="{{ url_for('services') }}" class="btn-link">Learn More</a>
+      </div>
+      <div class="card">
+        <h4>Security & Compliance</h4>
+        <p>
+          Ensure security and compliance across your cloud and on-premise
+          environments.
+        </p>
+        <a href="{{ url_for('services') }}" class="btn-link">Learn More</a>
+      </div>
+    </div>
+  </section>
+  <!--add testimony-->
+  <section class="testimonials-carousel">
+    <h3>What Our Clients Say</h3>
+    <div class="carousel">
+      <div class="testimonial active">
+        <p>"CDC helped us streamline our cloud migration. Highly recommend!"</p>
+        <span>– <strong>Jane D.</strong></span>
+      </div>
+      <div class="testimonial">
+        <p>"Professional, reliable, and skilled team."</p>
+        <span>– <strong>TechCorp Inc.</strong></span>
+      </div>
+      <div class="testimonial">
+        <p>"Their DevOps support transformed our infrastructure!"</p>
+        <span>– <strong>DevOps Solutions</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="quick-links">
+    <h3>Quick Links for more</h3>
+    <ul>
+      <li><a href="{{ url_for('services') }}">View Our Services</a></li>
+      <li><a href="{{ url_for('contact_form') }}">Contact Form</a></li>
+    </ul>
+  </section>
+</main>
+
+{% endblock main %}
