@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: MLPredictiveModels
+Version: 0.4
+Summary: Educational regression models built from scratch in Python
+Home-page: https://github.com/Alouakhalid/MLPredictiveModels
+Author: Ali Khalid Ali Khalid
+Author-email: ali88883737@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: LICENSE.save
+Requires-Dist: numpy
+Requires-Dist: tqdm
+
+# LinearRegression From Scratch
+
+A minimal, easy-to-understand implementation of **Linear Regression** in Python using only NumPy.  
+Designed for educational purposes to show how gradient descent optimizes linear models step by step.
+
+## 🚀 Features
+
+- Fits simple linear models with gradient descent
+- Clean OOP class structure
+- Pure NumPy implementation (no scikit-learn)
+- Supports multi-feature data
+- Easy to extend for regularization
+- Printed training loss progress
+- Simple `fit`, `predict`, and `evaluate` interface
+
+---
+
+## 📦 Installation
+
+You can simply copy the `linear_regression.py` file into your project.  
+No external dependencies are required except NumPy.
+
+import numpy as np
+from linear_regression import LinearRegression
+
+# toy dataset
+X_train = np.array([[1], [2], [3], [4], [5]])
+y_train = np.array([2, 4, 6, 8, 10])
+
+# initialize model
+model = LinearRegression(learning_rate=0.01, epochs=1000)
+
+# train
+model.fit(X_train, y_train)
+
+# predict
+predictions = model.predict(X_train)
+
+# evaluate
+mse, r2 = model.evaluate(X_train, y_train)
+
+print("Predictions:", predictions)
+print(f"MSE: {mse:.4f}, R2: {r2:.4f}")
+
+
