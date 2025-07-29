@@ -1,0 +1,268 @@
+Metadata-Version: 2.4
+Name: shipboss-mcp-server
+Version: 4.0.3
+Summary: ShipBoss MCP server with parcel & freight endpoints
+Author-email: ShipBoss <support@shipboss.io>
+Keywords: shipping,mcp,shipboss,fastmcp
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: mcp[cli]>=1.2.0
+Requires-Dist: httpx~=0.27
+Requires-Dist: pydantic>=2.7
+Requires-Dist: python-dotenv>=1.0.0
+
+# ShipBoss MCP Server
+
+A Model Context Protocol (MCP) server that provides shipping and logistics tools through the ShipBoss API. Get parcel rates, create shipping labels, track packages, manage pickups, and handle freight shipments directly from Claude Desktop or any MCP-compatible client.
+
+## Features
+
+- **Parcel Shipping**: Get rates, create labels, and track packages with FedEx, UPS, and DHL
+- **Freight Services**: Get rates, create labels, and track freight shipments
+- **Pickup Management**: Schedule and cancel carrier pickups
+- **Address Parsing**: Intelligent address format parsing for multiple countries
+- **Auto Package Detection**: Automatic package type selection based on dimensions
+- **Service Name Mapping**: User-friendly service aliases (e.g., "GROUND" → "UPS Ground")
+
+## Installation
+
+### Option 1: Install from PyPI (Recommended)
+
+```bash
+pip install shipboss-mcp-server
+```
+
+### Option 2: Install from Source
+
+```bash
+git clone https://github.com/shipboss/shipboss-mcp-server
+cd shipboss-mcp-server
+pip install -e .
+```
+
+## Configuration
+
+### 1. Get Your ShipBoss API Token
+
+1. Sign up at [ShipBoss](https://shipboss.io)
+2. Navigate to your account settings
+3. Generate an API token
+4. Copy the token for configuration
+
+### 2. Configure for Claude Desktop
+
+Add the server to your Claude Desktop configuration:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "shipboss": {
+      "command": "shipboss-mcp-server",
+      "env": {
+        "SHIPBOSS_API_TOKEN": "your_api_token_here"
+      }
+    }
+  }
+}
+```
+
+### 3. Configure for Other MCP Clients
+
+#### Cursor IDE
+```json
+{
+  "mcpServers": {
+    "shipboss": {
+      "command": "shipboss-mcp-server",
+      "env": {
+        "SHIPBOSS_API_TOKEN": "your_api_token_here"
+      }
+    }
+  }
+}
+```
+
+#### Using Environment Variables
+Alternatively, set the environment variable system-wide:
+
+**Linux/macOS**:
+```bash
+export SHIPBOSS_API_TOKEN="your_api_token_here"
+```
+
+**Windows**:
+```cmd
+set SHIPBOSS_API_TOKEN=your_api_token_here
+```
+
+Or create a `.env` file in your working directory:
+```
+SHIPBOSS_API_TOKEN=your_api_token_here
+```
+
+## Usage Examples
+
+### Get Parcel Shipping Rates
+
+```
+Get shipping rates from New York to Los Angeles for a 5-pound package, dimensions 12x8x6 inches, shipping tomorrow.
+```
+
+### Create a Shipping Label
+
+```
+Create a FedEx Ground shipping label from "123 Main St, New York, NY 10001, US" to "456 Oak Ave, Los Angeles, CA 90210, US" for a 3-pound package, shipping date 2024-12-20. Include sender name "John Doe" and recipient name "Jane Smith".
+```
+
+### Track a Package
+
+```
+Track UPS package with tracking number 1Z999AA1234567890.
+```
+
+### Schedule a Pickup
+
+```
+Schedule a UPS pickup at "123 Business Blvd, New York, NY 10001, US" for December 20, 2024, ready time 10:00, close time 17:00, for 5 packages weighing 25 pounds total.
+```
+
+### Get Freight Rates
+
+```
+Get freight rates from "3500 Sunset Ave, Ocean, NJ, 07712, US" to "1000 Industrial Way, Chicago, IL 60601, US" for 2 pallets, each 500 pounds, 48x40x60 inches, commodity "Electronics", freight class 125.
+```
+
+## Available Tools
+
+### Parcel Tools
+- `get_parcel_rates` - Get shipping rates from multiple carriers
+- `create_parcel_label` - Create shipping labels with full customization
+- `track_parcel` - Track packages by carrier and tracking number
+- `create_pickup` - Schedule carrier pickups
+- `cancel_pickup` - Cancel existing pickups
+
+### Freight Tools
+- `get_freight_rates` - Get LTL freight shipping rates
+- `create_freight_label` - Create freight shipping labels
+- `track_freight` - Track freight shipments
+
+### Utility Tools
+- `ping` - Health check for the server
+
+## Address Format
+
+The server accepts addresses in flexible formats:
+
+**Format 1**: `Street, City, State ZIP, Country`
+```
+123 Main St, New York, NY 10001, US
+```
+
+**Format 2**: `Street, City, State, ZIP, Country`
+```
+10 cottage ave, long branch, NJ, 07740, US
+```
+
+**Supported Countries**: US, CA, MX, GB, AU, DE, FR, ES, IT, NL, BE, CH, AT, DK, SE, NO, FI, PL, CZ
+
+## Service Name Shortcuts
+
+Use convenient shortcuts instead of full service names:
+
+| Carrier | Shortcut | Full Service Name |
+|---------|----------|-------------------|
+| UPS | `GROUND` | UPS Ground |
+| UPS | `EXPRESS` | UPS Worldwide Express |
+| UPS | `2DAY` | UPS Second Day Air |
+| UPS | `NEXT_DAY` | UPS Next Day Air |
+| FedEx | `GROUND` | FedEx Ground |
+| FedEx | `2DAY` | FedEx 2Day |
+| FedEx | `OVERNIGHT` | FedEx Priority Overnight |
+| DHL | `EXPRESS_WORLDWIDE` | Express Worldwide |
+
+## Package Types
+
+Auto-detected based on weight and dimensions, or specify manually:
+- `ENVELOPE` - Documents and small items
+- `PAK` - FedEx Pak or similar
+- `BOX_SM` - Small box (≤8" max dimension)
+- `BOX_MD` - Medium box (≤12" max dimension)  
+- `BOX_LG` - Large box (≤18" max dimension)
+- `BOX_XL` - Extra large box (≤24" max dimension)
+- `CUSTOMER_PACKAGING` - Custom packaging
+
+## Development
+
+### Running from Source
+
+```bash
+git clone https://github.com/shipboss/shipboss-mcp-server
+cd shipboss-mcp-server
+pip install -r requirements.txt
+export SHIPBOSS_API_TOKEN="your_token_here"
+python shipboss_mcp_server.py
+```
+
+### Testing
+
+The server includes comprehensive error handling and validation:
+
+- Address format validation
+- API token verification
+- Carrier service validation
+- Package dimension validation
+
+## Troubleshooting
+
+### Common Issues
+
+1. **API Token Error**: Verify your token is correct and active
+2. **Address Format Error**: Ensure addresses include country codes
+3. **Service Not Found**: Use supported service shortcuts or full names
+4. **Connection Timeout**: Check internet connection and API status
+
+### Debug Mode
+
+Set logging level for detailed output:
+```bash
+export PYTHONPATH=.
+python -c "import logging; logging.basicConfig(level=logging.DEBUG)"
+python shipboss_mcp_server.py
+```
+
+## Support
+
+- **Documentation**: [ShipBoss API Docs](https://docs.shipboss.io)
+- **Support**: [support@shipboss.io](mailto:support@shipboss.io)
+- **Issues**: [GitHub Issues](https://github.com/shipboss/shipboss-mcp-server/issues)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## Changelog
+
+### v4.0.3
+- FastMCP SDK integration
+- Improved error handling
+- Auto package type detection
+- Service name mapping
+- Enhanced address parsing 
