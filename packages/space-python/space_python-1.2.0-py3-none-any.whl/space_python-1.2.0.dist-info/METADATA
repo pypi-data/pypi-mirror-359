@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: space-python
+Version: 1.2.0
+Summary: SpacePython core interface
+Project-URL: Homepage, https://www.omg.org/solm/
+Project-URL: Issues, https://issues.omg.org
+Author-email: Object Management Group <space@omg.org>
+License: Object Management Group RF-Limited License 
+        https://www.omg.org/cgi-bin/doc.cgi?ipr
+        
+        Each Obligated Party in an RF on Limited Terms IPR Mode Adoption or Revision 
+        Process covenants that it will grant to an unrestricted number of applicants 
+        a royalty and fee free, nonexclusive, worldwide, non-sublicensable, perpetual 
+        patent license to its Essential Claims on fair, reasonable, and 
+        non-discriminatory terms to make, have made, use, import, offer to sell, sell, 
+        and otherwise directly or indirectly distribute Covered Implementations of 
+        such OMG Formal Specification, provided that it may not impose any further 
+        conditions or restrictions beyond those specifically mentioned in Appendix B 
+        on the use of any technology or intellectual property rights or the behavior 
+        of the Licensee, but may include reasonable, customary terms relating to 
+        operation or maintenance of the license relationship, including choice of law 
+        and dispute resolution. 
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# SpacePython
+
+Managed by the Object Management Group
+
+Project Website: https://www.omg.org/solm/
+
+## Package Description
+
+The space package defines SpacePython, a high level interface to a Spacecraft
+Operations Center for spacecraft monitoring and control.  The scripts included
+in the test directory package exercise the normative interfaces for SpacePython 
+and should be runnable by any SpacePython-compliant implementation with a 
+similar operating configuration.  
+
+Each function and class definition in a space module that is required for a 
+SpacePython implementation is marked as an abstract class or function.
+
+Within the test directory, the included dataset, SpacePythonDataset.yaml, 
+provides command, directive, and parameter lists to allow running the 
+example procedures, but should be replaced with 
+the database definition formats used by the Spacecraft Operations Center 
+software.  The yaml format (and the pyyaml module) is not a required input 
+format, but is required for running the example scripts.
+
+## Package Build Instructions
+
+First, make sure that you have latest pip installed
+
+```
+python3 -m pip install --upgrade pip
+```
+
+Second, install the build tooling
+
+```
+python3 -m pip install --upgrade build
+```
+
+Lastly, perform a build
+
+```
+python3 -m build
+```
+
+## Reporting Issues
+If you have issues, please share them with the Object Management Group via our issue tracker at https://issues.omg.org/
