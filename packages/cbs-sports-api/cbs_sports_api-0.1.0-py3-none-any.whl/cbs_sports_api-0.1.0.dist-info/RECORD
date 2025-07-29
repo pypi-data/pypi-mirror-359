@@ -1,0 +1,12 @@
+cbs_sports_api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cbs_sports_api/_version.py,sha256=ryAfvAaW7VM8g1gnCrFCPrXmcbbm99Xw44aLkwGZzaI,23
+cbs_sports_api/bracket.py,sha256=OQ32Lp_WA4QInFcp_9T7t6xnLXPb9PaJi_tNh48q7H0,1603
+cbs_sports_api/cbs_requests.py,sha256=cXKYx4VE4BPiLuA6mf7woAe_Adoo1JDz4924nQEsHtM,11658
+cbs_sports_api/entry.py,sha256=gM929lSzeXXk0fqxLbwCl87NZih0T_IWjG9b_q3JjQU,1633
+cbs_sports_api/matchup.py,sha256=RoPZ9hf32Z33oeZ9MItd5ub6zMgrXy-baRV5QsRg6Uc,2577
+cbs_sports_api/pool.py,sha256=Zhy126r7Sbr255E0Zf8hMJtwAka0CUnqopvRMUy-7Mw,873
+cbs_sports_api/team.py,sha256=imCi0pTUN-Rm0Lus7zDpXafH0AO_Z4VkiN7EF505ToA,841
+cbs_sports_api-0.1.0.dist-info/METADATA,sha256=7cH1-b82oOwOOGCVmkcCuu6FUpC9yNKCuIp5gWqItGk,790
+cbs_sports_api-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cbs_sports_api-0.1.0.dist-info/licenses/LICENSE,sha256=NSVcz4vG4tyyv-yldOJvhMlkHh3sIwXt_EaAON3F_To,1090
+cbs_sports_api-0.1.0.dist-info/RECORD,,
