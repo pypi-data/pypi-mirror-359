@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: local-mcp
+Version: 0.1.0
+Summary: A local MCP server project
+Author-email: Diego Saenz <dosaenz28@gmail.com>
+Requires-Python: >=3.12
+Requires-Dist: mcp[cli]>=1.5.0
