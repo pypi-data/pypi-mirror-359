@@ -1,0 +1,3 @@
+[console_scripts]
+stash=stash_basic.main:cli
+
