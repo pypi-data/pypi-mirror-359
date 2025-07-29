@@ -1,0 +1,2 @@
+[console_scripts]
+xvi-mcp = xvi_mcp.server:main
