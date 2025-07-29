@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+holoviz_mcp.egg-info/PKG-INFO
+holoviz_mcp.egg-info/SOURCES.txt
+holoviz_mcp.egg-info/dependency_links.txt
+holoviz_mcp.egg-info/top_level.txt
