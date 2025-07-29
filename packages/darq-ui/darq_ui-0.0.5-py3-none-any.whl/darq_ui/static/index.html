@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <script>
+      window.__dynamic_base__ = "{{DYNAMIC_BASE}}";
+      if (!window.location.pathname.startsWith(window.__dynamic_base__)) {
+        // Update static path when the app is served from a subpath different from the base_path
+        let base = window.location.pathname.replace(/\/embed$/, "").replace(/\/$/, "");
+        window.__dynamic_base__ = base + "/static";
+      }
+    </script>
+    
+    <title>Darq UI</title>
+    
+    
+    <script>
+(function(){
+var preloads = [{"parentTagName":"head","tagName":"link","attrs":{"rel":"icon","type":"image/x-icon","href":"/assets/favicon-BSE-TIUP.ico"}},{"parentTagName":"head","tagName":"script","attrs":{"type":"module","crossorigin":"","src":"/assets/index-DV_5qxoM.js"}},{"parentTagName":"head","tagName":"link","attrs":{"rel":"modulepreload","crossorigin":"","href":"/assets/vendor-DwS7OE0o.js"}}];
+function setAttribute(target, attrs) {
+for (var key in attrs) {
+  target.setAttribute(key, attrs[key]);
+}
+return target;
+};
+for(var i = 0; i < preloads.length; i++){
+var item = preloads[i]
+var childNode = document.createElement(item.tagName);
+setAttribute(childNode, item.attrs)
+if( window.__dynamic_base__) {
+  if(item.tagName == 'link') {
+    setAttribute(childNode, { href:  window.__dynamic_base__ + item.attrs.href })
+  } else if (item.tagName == 'script') {
+    setAttribute(childNode, { src:  window.__dynamic_base__ + item.attrs.src })
+  }
+}
+document.getElementsByTagName(item.parentTagName)[0].appendChild(childNode);
+}
+})();
+</script>
+</head>
+
+  <body style="margin:0;">
+    <div id="root"></div>
+    <script>
+      window.__DARQ_UI_CONFIG__ = {{CONFIG}};
+    </script>
+  </body>
+</html>
