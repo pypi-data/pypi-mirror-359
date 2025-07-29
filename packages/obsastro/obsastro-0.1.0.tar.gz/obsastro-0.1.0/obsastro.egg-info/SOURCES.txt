@@ -1,0 +1,7 @@
+LICENSE
+README.md
+pyproject.toml
+obsastro.egg-info/PKG-INFO
+obsastro.egg-info/SOURCES.txt
+obsastro.egg-info/dependency_links.txt
+obsastro.egg-info/top_level.txt
