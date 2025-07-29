@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+ergonomica.egg-info/PKG-INFO
+ergonomica.egg-info/SOURCES.txt
+ergonomica.egg-info/dependency_links.txt
+ergonomica.egg-info/top_level.txt
