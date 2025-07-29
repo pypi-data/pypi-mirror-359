@@ -1,0 +1,13 @@
+psifr/__init__.py,sha256=cFqbkzxlWU18CaDCcqvhg5x_1256u3cIQgqhLDJsNUk,35
+psifr/fr.py,sha256=rV6OSlgj0-lCCgrMjAkpHeq9iJHdGsEn7hUrqbqjHnE,73144
+psifr/maskers.py,sha256=R6pTJLm7FN86dhrmUsEMJDmLlzLDKVKWcQ_Bb1hpz4Q,14013
+psifr/measures.py,sha256=g4bxklqUmhpCXrOPqCcI3O5iHt7gGGR_g03orVJsZzg,15477
+psifr/stats.py,sha256=t6z2gMv2YWd1hU_lCjj97yDuQsmESlPHkZQvzT5POkM,38279
+psifr/data/Morton2013.csv,sha256=UTWCFPsUbyg_n-XzxDk_AyxzCZePVPdPbp2rKob_Zzo,4050433
+psifr/data/peers_notask.csv,sha256=WS9nqun4-b1FoBlyfHpJhXkBfQt-vfRWZqZHpDLOFoQ,2317657
+psifr/distances/Morton2013.npz,sha256=_x2ShtUGLQ6-YQrsY1b7QCS7JTiv2G1LDrqfT8tdptI,4802050
+psifr-0.10.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+psifr-0.10.0.dist-info/METADATA,sha256=7nJKkvJG0xjj0ZQVULrmFsnYiLEWe0hjKgW9AE3FtQI,6187
+psifr-0.10.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+psifr-0.10.0.dist-info/top_level.txt,sha256=joLOLwjtNqS09LDcIC9ZvBcYumehmcPiUsYf__RVAsc,6
+psifr-0.10.0.dist-info/RECORD,,
