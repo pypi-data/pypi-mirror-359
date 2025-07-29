@@ -1,0 +1,13 @@
+requests>=2.32.4
+tiktoken>=0.9.0
+python-dotenv>=1.1.0
+tqdm>=4.67.0
+transformers[hf-xet]>=4.52.4
+zstandard
+brotli
+
+[all]
+stampr_ai[openai]
+
+[openai]
+openai
