@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pueue.egg-info/PKG-INFO
+pueue.egg-info/SOURCES.txt
+pueue.egg-info/dependency_links.txt
+pueue.egg-info/top_level.txt
