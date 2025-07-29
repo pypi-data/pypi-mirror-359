@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/tacotruck/___init__.py
+src/tacotruck/utils.py
+src/tacotruck.egg-info/PKG-INFO
+src/tacotruck.egg-info/SOURCES.txt
+src/tacotruck.egg-info/dependency_links.txt
+src/tacotruck.egg-info/top_level.txt
