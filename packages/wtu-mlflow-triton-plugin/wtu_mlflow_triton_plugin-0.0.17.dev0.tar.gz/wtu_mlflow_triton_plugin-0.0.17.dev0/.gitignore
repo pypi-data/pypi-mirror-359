@@ -1,0 +1,11 @@
+**/*.egg-info
+.venv
+.vscode
+.env
+dist
+build
+s3:
+**/*.pyc
+**/__pycache__
+.DS_Store
+htmlcov
