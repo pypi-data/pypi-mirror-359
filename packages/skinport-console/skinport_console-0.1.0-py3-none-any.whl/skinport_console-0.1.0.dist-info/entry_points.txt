@@ -1,0 +1,2 @@
+[console_scripts]
+skinport-console = skinport_console.cli:main
