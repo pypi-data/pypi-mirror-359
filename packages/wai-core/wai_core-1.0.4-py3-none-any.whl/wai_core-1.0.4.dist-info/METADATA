@@ -1,0 +1,283 @@
+Metadata-Version: 2.1
+Name: wai-core
+Version: 1.0.4
+Summary: WAI: World AI format unifying various 3D/4D datasets
+Author-email: Norman Mueller <normanm@meta.com>
+License: CC-BY-NC-4.0
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+Requires-Dist: color-science
+Requires-Dist: einops
+Requires-Dist: imageio
+Requires-Dist: iopath
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: opencv-python ==4.10.0.84
+Requires-Dist: orjson
+Requires-Dist: pillow
+Requires-Dist: plyfile
+Requires-Dist: portalocker
+Requires-Dist: pycolmap
+Requires-Dist: python-box
+Requires-Dist: pyyaml
+Requires-Dist: scipy
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: tqdm
+Requires-Dist: trimesh
+Provides-Extra: dev
+Requires-Dist: ruff ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: pre-commit-hooks ; extra == 'dev'
+
+<img src="assets/wai_logo.png" height="64" align="right">
+
+# Core library for the WorldAI format (WAI)
+Core functionality to access and process data in the WorldAI format (WAI).
+Lightweight and easy to use, with a focus on modularity and extensibility.
+
+
+# Features
+- IO functions for reading and writing WAI data
+- Intersection checks between 2d/3d geometric primitives
+- Batched camera and geometric processing functions (e.g. (un)projection, transformations, etc.)
+
+
+# Install
+We recommend using python 3.12.9. WAI is likely to work also with other python versions, but was only tested on 3.12.9.
+Pip install (recommended):
+```
+pip install wai-core
+```
+
+Clone and install from source *(for development)*
+```
+git clone https://ghe.oculus-rep.com/mb-research/wai-core.git
+cd wai-core
+pip install -e ".[dev]"
+```
+
+# WAI dataset format
+## Folder structure
+We follow [Nerfstudio](https://docs.nerf.studio/quickstart/)’s folder structure and extend it by additional (optional) modalities.
+The general folder and file structure is as follows:
+```
+<dataset name>
+├── <first scene name>
+│   ├── scene_meta.json   OR   scene_meta_distorted.json
+│   │
+│   ├── images   OR   images_distorted
+│   │   ├── <frame_id_1>.[png|jpg]
+│   │   :
+│   │   └── <frame_id_n>.[png|jpg]
+│   │
+│   ├── [Optional] <depth> (GT depth, as specified in scene_meta.json)
+│   │   ├── <frame_id_1>.exr
+│   │   :
+│   │   └── <frame_id_n>.exr
+│   │
+│   ├── [Optional] masks
+│   │   ├── <frame_id_1>.png
+│   │   :
+│   │   └── <frame_id_n>.png
+│   │
+│   └── [Optional] Any extra modalities, as specified in scene_meta.json
+:
+└── <last scene name>
+```
+
+
+## `scene_meta` format
+The `scene_meta.json` format is an extension of Nerfstudio's [transforms.json](https://docs.nerf.studio/quickstart/data_conventions.html).
+
+The general structure is:
+```json5
+{
+  "scene_name": "00dd871005", // Unique scene name
+  "dataset_name": "scannetppv2", // Unique dataset name
+  "version": "0.1", // WAI format version
+  "last_modified": "2025-02-10T09:43:48.232022", // ISO datetime format
+  "shared_intrinsics": true/false, // Same intrinsics for all cameras?
+
+  // Camera model type [PINHOLE, OPENCV, OPENCV_FISHEYE]
+  "camera_model": "PINHOLE",
+
+  // Convention for cam2world extrinsics (must be "opencv")
+  "camera_convention": "opencv",
+
+  // <camera_coeff_name>: // camera coefficients like fl_x, cx, h,...
+
+  // Per-frame intrinsics and extrinsics parameters
+  "frames": <see below>,
+
+  // Scene-level modalities with default mapping like gt_points3D -> pts3d.npy
+  "scene_modalities": <see below>,
+
+  // Frame-level modalities with default mapping like pred_depth -> metric3dv2
+  "frame_modalities": <see below>,
+
+  // Transform applied on original poses to get poses stored in `frames`
+  "_applied_transform": <see below>,
+
+  // All transforms to convert the original poses to poses stored in `frames`
+  "_applied_transforms": <see below>,
+}
+```
+
+Per-frame intrinsics can also be defined in the `frames` field, which is a list of dictionaries with the following structure:
+```json5
+{
+  "frames": [
+    {
+      // Unique name to identify a frame
+      "frame_name": "<frame_name>",
+
+      // Relative path to frame, required for Nerfstudio compatibility
+      "file_path": "<images>/<frame_name>.<ext>",
+
+      // 4x4 flattened list of extrinsics in OpenCV format
+      "transform_matrix": [[1, 0, 0, 0], ... [0, 0, 0, 1]],
+
+      // Relative path to frame modality (optional)
+      "<modality>_path": "<modality_path>/<frame_name>.<ext>",
+
+      // Additional intrinsics for this frame (optional)
+      "camera_model": "PINHOLE",
+      // <camera_coeff_name>: // camera coefficients like fl_x, cx, h,...
+    },
+    ...
+  ]
+}
+```
+
+Example:
+```json5
+{
+  "scene_name": "00dd871005", // unique scene name
+  "dataset_name": "scannetppv2", // unique dataset name
+  "version": "0.1",
+  "last_modified":  "2025-02-10T09:43:48.232022",
+  "camera_model": "PINHOLE", // camera model type [PINHOLE, OPENCV, OPENCV_FISHEYE]
+  "camera_convention": "opencv", // camera convention used for cam2world extrinsics (different to Nerfstudio!)
+  "fl_x": 1072.0, // focal length x
+  "fl_y": 1068.0, // focal length y
+  "cx": 1504.0, // principal point x
+  "cy": 1000.0, // principal point y
+  "w": 3008, // image width
+  "h": 2000, // image height
+  "frames": [
+    {
+      "frame_name": "000000",
+      "file_path": "images/000000.png", // required by Nerfstudio
+      "transform_matrix": [
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, 1.0, 0.0, 0.0],
+        [0.0, 0.0, 1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+      ], // required by Nerfstudio
+      "image": "images/000000.png", // same as file_path
+      "metric3dv2_depth": "metric3dv2/v0/depth/000000.png",
+      "metric3dv2_depth_conf": "metric3dv2/v0/depth_confidence/000000.exr",
+      "fl_x": 1234, // specific focal length for this frame
+      "w": 1000 // specific width for this frame
+    },
+    ...
+  ],
+  "scene_modalities": {
+    "gt_pts3d": {
+        "path": "global_pts3d.npy", //path to a scene_level point cloud
+        "format": "numpy"
+    }
+  },
+  "frame_modalities": {
+    "pred_depth": {
+        "frame_key": "metric3dv2_depth", //default mapping of pred_depth to frame modality
+        "format": "depth"
+    },
+    "image": {
+        "frame_key": "image", //default mapping of pred_depth to modality
+        "format": "image",
+    },
+    "depth_confidence": {
+        "frame_key": "metric3dv2_depth_conf",
+        "format": "scalar"
+    }
+  },
+  "_applied_transformation": [ // e.g. the transformation from opengl to opencv
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, -1.0, 0.0, 0.0],
+        [0.0, 0.0, -1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+  ],
+  "_applied_transformations": {
+    "opengl2opencv": [ // e.g. applied from OpenGL to OpenCV before
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, -1.0, 0.0, 0.0],
+        [0.0, 0.0, -1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+  ]}
+}
+```
+
+
+# Standard formats (WIP!)
+We provide a set of default read-/write functions for the following data types:
+- `image`: using `pillow` for reading/writing
+- `depth`: depth images stored as exr-files using `opencv`
+- `normals`:  normals images stored as exr-files using `opencv`
+- `scalar`: scalar images stored as exr-files using `opencv`
+- `readable`: json/yaml using `orjson`/`yaml` for reading/writing
+- `numpy`: load stored (compressed) numpy arrays
+- `binary`: binary mask stored as 1-bit or 8-bit image
+- `ptz`: load/store compressed Pytorch files
+- `mmap`: memory-mapped numpy array for fast random-access
+- `scene_meta`: load and store our default scene-level info file (see scene_meta format)
+
+All these formats can be conveniently loaded and stored using `load_data`, `store_data`:
+
+```python
+from wai import load_data, store_data
+
+# --- load modalities ---
+scene_meta = load_data(<path_to_scene_meta.json>, "scene_meta")
+info = load_data(<path_to_readable.json>)
+image = load_data(<path_to_image.png>) # suffix resolves format to "image"
+depth = load_data(<path_to_depth_image.exr>, "depth")
+confidences = load_data(<path_to_image.exr>, "scalar")
+normals = load_data(<path_to_image.exr>, "normals")
+mask = load_data(<path_to_mask.png>, "binary")
+array = load_data(<path_to_image.npy>, "numpy")
+data = load_data(<path_to_ptz.ptz>) # suffix resolves format to "ptz"
+# ...
+
+# --- store modalities ---
+store_data(<target_path.json>, scene_meta, "scene_meta")
+store_data(<target_path.json>, info) # default for json: readable
+store_data(<target_path.png>, image) # default for png: 'image'
+store_data(<target_path.exr>, depth_img, "depth")
+store_data(<target_path.exr>, confidences, "scalar")
+store_data(<target_path.exr>, normals, "normals")
+store_data(<target_path.png>, mask, "binary")
+store_data(<target_path.npy>, array, "numpy")
+store_data(<target_path.ptz>, data) # suffix resolves format to "ptz"
+# ...
+
+```
+Implementation details can be found in `utils.io`.
+
+# Create a simple pytorch dataset using WAI
+We provide a basic dataset to get you started with training your models with WAI datasets. This is a minimal example on how to construct a WAI dataset:
+```python
+from wai import BasicSceneframeDataset
+from box import Box
+
+cfg = Box(
+    {
+        "root": "/fsx/xrtech/data/scannetppv2",
+        "frame_modalities": ["image", "pred_depth"],    
+    }
+)
+dataset = BasicSceneframeDataset(cfg)
+item = dataset[0]
+print(f"Fetched an item from the WAI dataset with the following keys: {item.keys()}")
+```
