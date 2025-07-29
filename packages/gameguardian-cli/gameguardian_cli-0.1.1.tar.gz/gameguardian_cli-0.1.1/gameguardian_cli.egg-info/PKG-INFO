@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: gameguardian-cli
+Version: 0.1.1
+Summary: Python CLI version of Game Guardian
+Author: Dx4Grey
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary
