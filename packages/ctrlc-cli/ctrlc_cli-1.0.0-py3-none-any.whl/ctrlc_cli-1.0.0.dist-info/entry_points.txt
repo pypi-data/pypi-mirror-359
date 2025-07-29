@@ -1,0 +1,3 @@
+[console_scripts]
+ctrlc=ctrlc.cli:main
+

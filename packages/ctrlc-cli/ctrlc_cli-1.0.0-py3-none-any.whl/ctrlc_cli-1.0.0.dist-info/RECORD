@@ -1,0 +1,10 @@
+ctrlc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ctrlc/cli.py,sha256=0u94niW4di2C6i0jmf4FW4weIHpGuKyYWzxVPbAvSJg,4270
+ctrlc/config.py,sha256=wB1uhWgoFQwih9frPMFGdRQDBOWm-7_jAQPJx46rgZY,267
+ctrlc/core.py,sha256=lBQFS4I25nyw5JnwvUKuKxI9iQhY9k29kbm-hw9KRAQ,4097
+ctrlc/ignore.py,sha256=QVzND9kkpKjMqsxWevprN9OZRXnRiJo65526zaOUZDs,423
+ctrlc_cli-1.0.0.dist-info/entry_points.txt,sha256=I6YnvyE_r32BofEXNa1H4-sEm75kTa6wYt8JQcS-S-U,40
+ctrlc_cli-1.0.0.dist-info/LICENSE,sha256=NEupslPoxGGSYcscCl4sYbzkur6yM_coMNztfX-7JnE,1095
+ctrlc_cli-1.0.0.dist-info/METADATA,sha256=uyPnsMoSOBYcvqVcYUx83z3oa8ZdtLm14Cv-9gOB3jU,814
+ctrlc_cli-1.0.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+ctrlc_cli-1.0.0.dist-info/RECORD,,
