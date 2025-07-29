@@ -1,0 +1,589 @@
+# DDN Metadata Bootstrap
+
+[![PyPI version](https://badge.fury.io/py/ddn-metadata-bootstrap.svg)](https://badge.fury.io/py/ddn-metadata-bootstrap)
+[![Python versions](https://img.shields.io/pypi/pyversions/ddn-metadata-bootstrap.svg)](https://pypi.org/project/ddn-metadata-bootstrap/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+AI-powered metadata enhancement for Hasura DDN (Data Delivery Network) schema files. Automatically generate descriptions and detect sophisticated relationships in your YAML/HML schema definitions using advanced AI and intelligent pattern recognition.
+
+## 🚀 Features
+
+- **🤖 AI-Powered Descriptions**: Generate natural language descriptions for schema elements using Anthropic's Claude
+- **🔗 Advanced Relationship Detection**: 
+  - Foreign key relationships with confidence scoring
+  - Shared business key many-to-many relationships  
+  - Bidirectional relationship generation
+  - camelCase/snake_case field name support
+  - Safe incremental enhancement (preserves existing relationships)
+- **📊 Domain Analysis**: Intelligent analysis of business domains and terminology
+- **⚡ Batch Processing**: Process entire directories of schema files efficiently
+- **🎯 DDN Optimized**: Specifically designed for Hasura DDN schema structures
+- **🔧 Configurable**: Extensive configuration options via environment variables or CLI
+- **🏗️ Queryable Entity Aware**: Only processes queryable entities (Model-backed ObjectTypes, Models, and Query Commands) for production-ready relationships
+- **🎮 Command Processing**: Advanced Query Command detection and field resolution for comprehensive schema analysis
+
+## 📦 Installation
+
+### From PyPI (Recommended)
+
+```bash
+pip install ddn-metadata-bootstrap
+```
+
+### From Source
+
+```bash
+git clone https://github.com/hasura/ddn-metadata-bootstrap.git
+cd ddn-metadata-bootstrap
+pip install -e .
+```
+
+## 🏃 Quick Start
+
+### 1. Set up your environment
+
+```bash
+export ANTHROPIC_API_KEY="your-anthropic-api-key"
+export METADATA_BOOTSTRAP_INPUT_DIR="./input"
+export METADATA_BOOTSTRAP_OUTPUT_DIR="./output"
+```
+
+### 2. Run the tool
+
+```bash
+# Process entire directory
+ddn-metadata-bootstrap
+
+# Or with CLI arguments
+ddn-metadata-bootstrap --input-dir ./schema --output-dir ./enhanced --api-key YOUR_KEY
+```
+
+### 3. Or use as a Python package
+
+```python
+from ddn_metadata_bootstrap import MetadataBootstrapper
+
+bootstrapper = MetadataBootstrapper(
+    api_key="your-anthropic-api-key",
+    use_case="E-commerce platform"
+)
+
+# Process directory
+bootstrapper.process_directory("./input", "./output")
+
+# Get statistics
+stats = bootstrapper.get_statistics()
+print(f"Generated {stats['relationships_generated']} relationships")
+print(f"FK relationships: {stats['fk_relationships']}")
+print(f"Shared field relationships: {stats['shared_field_relationships']}")
+print(f"Query Commands processed: {stats['query_commands_processed']}")
+```
+
+## 📝 Examples
+
+### Schema Description Enhancement
+
+#### Input HML File
+```yaml
+kind: ObjectType
+version: v1
+definition:
+  name: User
+  fields:
+    - name: id
+      type: ID!
+    - name: email
+      type: String!
+    - name: created_at
+      type: String
+```
+
+#### Enhanced Output
+```yaml
+kind: ObjectType
+version: v1
+definition:
+  name: User
+  description: |
+    Represents a user account in the system with authentication
+    and profile information.
+  fields:
+    - name: id
+      type: ID!
+      description: Unique identifier for the user account.
+    - name: email
+      type: String!
+      description: User's email address for authentication and communication.
+    - name: created_at
+      type: String
+      description: Timestamp when the user account was created.
+```
+
+### Relationship Detection Examples
+
+#### Foreign Key Detection with Query Command Queryability
+```yaml
+# Input Schema: ObjectType made queryable by Query Command
+kind: ObjectType
+definition:
+  name: UserProfile
+  fields:
+    - name: userId        # camelCase field
+      type: String
+    - name: companyId     # camelCase field  
+      type: String
+
+# Query Command making UserProfile queryable
+kind: Command
+definition:
+  name: GetUserProfile
+  graphql:
+    rootFieldKind: Query
+  outputType: UserProfile
+
+# Generated Relationships (UserProfile is now queryable via Query Command)
+---
+kind: Relationship
+definition:
+  name: user             # Forward relationship
+  sourceType: UserProfile
+  target:
+    model:
+      name: User
+      relationshipType: Object
+  mapping:
+  - source:
+      fieldPath: [fieldName: userId]    # Original camelCase preserved
+    target:
+      modelField: [fieldName: id]
+---
+kind: Relationship  
+definition:
+  name: userProfilesByUser    # Reverse relationship
+  sourceType: User
+  target:
+    model:
+      name: UserProfile
+      relationshipType: Array
+  mapping:
+  - source:
+      fieldPath: [fieldName: id]
+    target:
+      modelField: [fieldName: userId]  # Original camelCase preserved
+```
+
+#### Model-Backed ObjectType Relationships
+```yaml
+# Input: Traditional Model-backed ObjectType
+kind: ObjectType
+definition:
+  name: Order
+  fields:
+    - name: id
+      type: String
+    - name: customerId
+      type: String
+
+# Model making Order queryable
+kind: Model
+definition:
+  name: Orders
+  objectType: Order
+
+# Generated Relationships (Order is queryable via Model)
+---
+kind: Relationship
+definition:
+  name: customer
+  sourceType: Order
+  target:
+    model:
+      name: Customer
+      relationshipType: Object
+  mapping:
+  - source:
+      fieldPath: [fieldName: customerId]
+    target:
+      modelField: [fieldName: id]
+```
+
+#### Shared Business Key Detection (Many-to-Many)
+```yaml
+# Input: Multiple entities with shared business fields
+# Entity A (Model-backed)
+kind: ObjectType
+definition:
+  name: Application
+  fields:
+    - name: category      # Shared business key
+      type: String
+    - name: version       # Shared business key
+      type: String
+
+kind: Model
+definition:
+  name: Applications
+  objectType: Application
+
+# Entity B (Query Command-backed)
+kind: ObjectType
+definition:
+  name: PolicyCompliance
+  fields:
+    - name: category      # Same business key
+      type: String
+
+kind: Command
+definition:
+  name: GetPolicyCompliance
+  graphql:
+    rootFieldKind: Query
+  outputType: PolicyCompliance
+
+# Generated Many-to-Many Relationship
+---
+kind: Relationship
+definition:
+  name: policyCompliancesByCategory
+  sourceType: Application
+  target:
+    model:
+      name: PolicyCompliance
+      relationshipType: Array      # Many-to-many via shared key
+  mapping:
+  - source:
+      fieldPath: [fieldName: category]
+    target:
+      modelField: [fieldName: category]
+```
+
+## 🔄 What It Does
+
+### 1. **AI-Powered Description Generation**
+- Analyzes schema element names and types for context
+- Generates human-readable descriptions using Anthropic's Claude
+- Respects character limits and DDN style guidelines
+- Supports field-level and entity-level descriptions
+- Understands business domain terminology
+
+### 2. **Advanced Entity Queryability Analysis**
+
+#### **Query Command Processing**
+- **Command Type Detection**: Distinguishes Query Commands from Mutation Commands
+- **ObjectType Backing Analysis**: Identifies which ObjectTypes are made queryable by Query Commands
+- **Field Resolution**: Resolves Command output fields from referenced ObjectTypes
+- **Cross-Reference Validation**: Ensures Commands and ObjectTypes are properly linked
+
+#### **Model-Based Queryability**
+- **Traditional Model Detection**: Identifies ObjectTypes backed by Models
+- **Dual Backing Support**: Handles ObjectTypes backed by both Models and Query Commands
+- **Priority Analysis**: Understands Model vs Command backing for relationship generation
+
+#### **Queryable Entity Rules**
+- **Valid Relationship Sources**: Models, Model-backed ObjectTypes, Query Commands, Command-backed ObjectTypes
+- **Valid Relationship Targets**: Models and Model-backed ObjectTypes only (Commands cannot be relationship targets due to lack of filtering semantics)
+- **Non-Queryable Entities**: Pure ObjectTypes without Model or Query Command backing
+
+### 3. **Advanced Relationship Detection**
+
+#### **Foreign Key Detection**
+- **Pattern Recognition**: Detects FK patterns like `user_id`, `userId`, `company_id`, `departmentName`
+- **camelCase Support**: Handles `userId` → `user_id` conversion for analysis while preserving original field names (automatic)
+- **Confidence Scoring**: Uses minimum confidence thresholds to prevent spurious relationships
+- **Bidirectional Generation**: Creates both forward (many-to-one) and reverse (one-to-many) relationships
+- **Cross-Subgraph Intelligence**: Smart entity matching across subgraph boundaries
+- **Queryability Validation**: Only creates relationships between queryable entities
+
+#### **Shared Business Key Detection** 
+- **Business Logic Focus**: Identifies meaningful shared fields like `category`, `version`, `customer_id`, `project_code`
+- **Many-to-Many Relationships**: Creates bidirectional many-to-many relationships via business keys
+- **Generic Field Filtering**: Excludes meaningless generic fields (`id`, `name`, `status`) to focus on business relationships
+- **Mixed Naming Support**: Handles `departmentName` ↔ `department_name` field matching
+- **Queryable Entity Filter**: Only creates relationships between entities that can be queried
+
+#### **Quality & Precision**
+- **Queryability Requirement**: Only processes entities that are queryable (have Models or Query Commands)
+- **Command Target Prevention**: Correctly prevents Commands from being relationship targets (no filtering semantics)
+- **Confidence Thresholds**: Rejects weak matches (e.g., `lastUsedFileName` → spurious entity matches)
+- **Relationship Deduplication**: Detects and avoids creating duplicate relationships with same field mappings
+- **Existing Relationship Protection**: Never overwrites existing relationship definitions in your schema files
+- **Automatic Field Preservation**: Always maintains exact original field names in generated YAML (not configurable)
+
+### 4. **Domain Analysis**
+- Extracts business terminology from schema structure
+- Identifies domain-specific patterns and relationships
+- Provides contextual AI prompts based on detected domains
+- Supports configurable domain-specific relationship hints
+
+### 5. **Schema Enhancement**
+- Preserves original schema structure and formatting
+- Adds descriptions without breaking DDN functionality
+- Generates proper DDN relationship definitions without overwriting existing ones
+- Maintains YAML formatting, comments, and field order
+- Handles complex nested structures and cross-references
+- Smart deduplication: Won't create redundant relationships even if they have different names but same field mappings
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+All configuration can be done via environment variables with the `METADATA_BOOTSTRAP_` prefix:
+
+```bash
+# Required
+ANTHROPIC_API_KEY=your_api_key_here
+
+# Input/Output (choose one mode)
+METADATA_BOOTSTRAP_INPUT_DIR=./input
+METADATA_BOOTSTRAP_OUTPUT_DIR=./output
+
+# OR single file mode
+METADATA_BOOTSTRAP_INPUT_FILE=./schema.hml  
+METADATA_BOOTSTRAP_OUTPUT_FILE=./enhanced.hml
+
+# AI Configuration
+METADATA_BOOTSTRAP_USE_CASE="E-commerce platform"
+METADATA_BOOTSTRAP_MODEL=claude-3-haiku-20240307
+METADATA_BOOTSTRAP_FIELD_DESC_MAX_LENGTH=120
+METADATA_BOOTSTRAP_KIND_DESC_MAX_LENGTH=250
+
+# Relationship Detection
+METADATA_BOOTSTRAP_GENERIC_FIELDS="_id,_key,id,key,name,status,type,created,updated"
+METADATA_BOOTSTRAP_FK_TEMPLATES="{pt}_{gi}|{gi},{fs}_{pt}_{gi}|{gi}"
+METADATA_BOOTSTRAP_DOMAIN_IDENTIFIERS="user,customer,order,product,company"
+```
+
+### CLI Arguments
+
+```bash
+ddn-metadata-bootstrap --help
+
+Options:
+  --input-dir PATH              Input directory containing HML files
+  --output-dir PATH             Output directory for enhanced files
+  --input-file PATH             Single input HML file
+  --output-file PATH            Single output HML file
+  --api-key TEXT                Anthropic API key
+  --use-case TEXT               Business domain description
+  --model TEXT                  AI model to use
+  --field-max-length INTEGER    Max characters for field descriptions
+  --kind-max-length INTEGER     Max characters for kind descriptions
+  --verbose                     Enable verbose logging
+  --dry-run                     Validate configuration without processing
+  --stats                       Show relationship detection statistics
+```
+
+## 🔧 Entity Queryability Deep Dive
+
+### Queryable Entity Analysis
+
+| Entity Type | Backing | Queryable | Can Be Source | Can Be Target | Example |
+|-------------|---------|-----------|---------------|---------------|---------|
+| **Model** | Self | ✅ Yes | ✅ Yes | ✅ Yes | `Users` Model |
+| **ObjectType + Model** | Model | ✅ Yes | ✅ Yes | ✅ Yes | `User` + `Users` Model |
+| **ObjectType + Query Command** | Query Command | ✅ Yes | ✅ Yes | ✅ Yes | `UserStats` + `GetUserStats` |
+| **Query Command** | Self | ✅ Yes | ✅ Yes | ❌ No | `GetUserProfile` |
+| **Mutation Command** | Self | ✅ Yes | ✅ Yes | ❌ No | `CreateUser` |
+| **Pure ObjectType** | None | ❌ No | ❌ No | ❌ No | Standalone `User` |
+
+### Command Processing Examples
+
+#### Query Command Making ObjectType Queryable
+```yaml
+# Command-backed ObjectType becomes queryable
+kind: Command
+definition:
+  name: GetUserAnalytics
+  graphql:
+    rootFieldKind: Query
+  outputType: UserAnalytics  # Makes UserAnalytics queryable
+
+# Result: UserAnalytics can now participate in relationships
+```
+
+#### Command Field Resolution
+```yaml
+# Query Command with complex output
+kind: Command
+definition:
+  name: GetOrderSummary
+  graphql:
+    rootFieldKind: Query
+  outputType: "[OrderSummaryItem!]!"
+
+# Tool resolves to: Array of OrderSummaryItem ObjectType
+# OrderSummaryItem becomes queryable via this Command
+```
+
+### Relationship Types Generated
+
+1. **Forward FK Relationships** (Many-to-One)
+   - `UserProfile.user` → `User` (Object)
+   - Based on `userId`/`user_id` fields
+   - Works with Model-backed or Command-backed sources
+
+2. **Reverse FK Relationships** (One-to-Many)  
+   - `User.userProfilesByUser` → `UserProfile[]` (Array)
+   - Contextual naming with field reference
+   - Only targets Model-backed ObjectTypes (not Commands)
+
+3. **Shared Field Relationships** (Many-to-Many)
+   - `Application.policiesByCategory` → `Policy[]` (Array)
+   - `Policy.applicationsByCategory` → `Application[]` (Array)
+   - Based on shared business keys between queryable entities
+
+### Quality Filters
+
+- **Queryability Validation**: Only queryable entities participate in relationships
+- **Command Target Prevention**: Commands cannot be relationship targets (lack filtering semantics)
+- **Confidence Scoring**: FK matches must score ≥50 to prevent spurious relationships
+- **Generic Field Exclusion**: Shared field detection ignores `id`, `name`, `key`, `status`, etc.
+- **Business Logic Validation**: Prevents meaningless connections like audit fields → entities
+- **Smart Deduplication**: Analyzes existing relationship mappings to avoid creating functionally equivalent relationships
+- **Existing Relationship Protection**: Scans for and preserves existing relationship definitions - never overwrites
+- **Automatic Field Preservation**: Original field names (`userId`, `department_name`) are always preserved in output
+
+## 🏗️ Architecture
+
+The tool is built with a modular architecture:
+
+- **`ai/`** - AI integration and description generation
+- **`schema/`** - Schema analysis, metadata collection, and Command processing
+- **`relationships/`** - Advanced relationship detection and generation
+  - `detector.py` - FK and shared field pattern detection with queryability validation
+  - `generator.py` - YAML relationship definition creation with Command target prevention
+  - `mapper.py` - Relationship orchestration, Command field resolution, and context analysis
+- **`processors/`** - File and directory processing
+- **`utils/`** - Text processing, YAML handling, path utilities
+
+## 🧪 Testing
+
+```bash
+# Install dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run with coverage
+pytest --cov=ddn_metadata_bootstrap
+
+# Test relationship detection specifically
+pytest tests/test_relationships.py -v
+
+# Test Command processing
+pytest tests/test_command_processing.py -v
+
+# Type checking
+mypy ddn_metadata_bootstrap/
+
+# Code formatting
+black ddn_metadata_bootstrap/
+```
+
+## 📊 Statistics & Reporting
+
+The tool provides detailed statistics on processing:
+
+```python
+stats = bootstrapper.get_statistics()
+print(f"Entities processed: {stats['entities_processed']}")
+print(f"Entities with Models: {stats['entities_with_models']}")
+print(f"Entities with Query Commands: {stats['entities_with_query_commands']}")
+print(f"Command-backed ObjectTypes: {stats['command_backed_objecttypes']}")
+print(f"Total queryable entities: {stats['queryable_entities']}")
+print(f"Total relationships: {stats['relationships_generated']}")
+print(f"FK relationships: {stats['fk_relationships']}")
+print(f"Shared field relationships: {stats['shared_field_relationships']}")
+print(f"Cross-subgraph relationships: {stats['cross_subgraph_relationships']}")
+print(f"Descriptions generated: {stats['descriptions_generated']}")
+```
+
+## 🚀 Future Enhancements
+
+The current implementation focuses on **metadata/schema analysis** for fast, secure relationship detection. Several exciting enhancements could build on this foundation:
+
+### **Data Analysis Validation** 
+```bash
+# Validate detected relationships against actual data
+ddn-metadata-bootstrap --validate-with-data --db-connection postgresql://...
+```
+- **Referential Integrity Checking**: Verify that `user_id` values actually exist in `users.id`
+- **Statistical Confidence**: "94% of order.customer_id values found in customers.id"  
+- **Orphaned Relationship Detection**: Find foreign key fields that don't reference anything
+- **Convention-Independent Discovery**: Detect relationships regardless of naming patterns
+
+### **Advanced Command Processing**
+- **Command Dependency Analysis**: Track relationships between Commands
+- **Mutation Command Integration**: Enhanced support for Command workflow patterns
+- **Function/Procedure Mapping**: Direct analysis of underlying connector functions
+- **Command Performance Analysis**: Relationship impact on Command execution
+
+### **Enhanced Pattern Recognition**
+- **Machine Learning Field Classification**: Train models to recognize relationship patterns beyond naming conventions
+- **Semantic Analysis**: Use NLP to understand field meanings (`customer_ref` → `clients.id`)
+- **Cross-Database Pattern Learning**: Learn from relationship patterns across multiple schemas
+- **Domain-Specific Templates**: Industry-specific relationship detection (e-commerce, healthcare, finance)
+
+### **Enhanced AI Integration**
+- **Relationship Validation**: Ask AI to validate if detected relationships make business sense
+- **Missing Relationship Suggestions**: AI-powered analysis of potential missing connections
+- **Relationship Documentation**: Auto-generate business logic explanations for relationships
+- **Schema Quality Scoring**: Overall relationship completeness and quality metrics
+
+### **Why Metadata-First Design Enables These**
+
+The current **schema analysis foundation** provides:
+- **🚀 Fast Detection**: Quick feedback for iterative development
+- **🔒 Security**: No production data access required for core functionality  
+- **📋 Schema Validation**: Works on schemas before data exists
+- **🎯 DDN Integration**: Native support for Hasura DDN patterns including Command processing
+- **🎮 Command Awareness**: Full Query/Mutation Command analysis and field resolution
+
+**Data analysis features** would be **additive enhancements** that complement rather than replace the metadata approach, providing validation and discovery capabilities for mature schemas with production data.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Add tests for new relationship detection patterns
+- Update configuration documentation for new options
+- Follow the existing code style and architecture
+- Include examples in docstrings for complex functions
+- Test Command processing scenarios with various Query/Mutation patterns
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- 📖 [Documentation](https://github.com/hasura/ddn-metadata-bootstrap#readme)
+- 🐛 [Bug Reports](https://github.com/hasura/ddn-metadata-bootstrap/issues)
+- 💬 [Discussions](https://github.com/hasura/ddn-metadata-bootstrap/discussions)
+- 📋 [Relationship Detection Issues](https://github.com/hasura/ddn-metadata-bootstrap/issues?q=label%3Arelationships)
+- 🎮 [Command Processing Issues](https://github.com/hasura/ddn-metadata-bootstrap/issues?q=label%3Acommands)
+
+## 🏷️ Version History
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and breaking changes.
+
+## ⭐ Acknowledgments
+
+- Built for [Hasura DDN](https://hasura.io/ddn)
+- Powered by [Anthropic Claude](https://www.anthropic.com/)
+- Inspired by the GraphQL and OpenAPI communities
+- Relationship detection algorithms inspired by database schema analysis tools
+- Command processing logic designed for DDN Query/Mutation Command patterns
+
+---
+
+Made with ❤️ by the Hasura team
