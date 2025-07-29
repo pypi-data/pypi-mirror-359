@@ -1,0 +1,11 @@
+shellinspector/__about__.py,sha256=Mu4JbSLl5nr-J2figk5hmW2mrw4skf_oeIzxbnpcgwY,23
+shellinspector/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shellinspector/__main__.py,sha256=4EqXqgAzrhJwdDPGwjlT8XNL424ycx97AoNo5-f6htE,8017
+shellinspector/logging.py,sha256=LXinowIbpam7eJ94ahajNwStpl3Q5XpuPZpA0ieh7ig,679
+shellinspector/parser.py,sha256=57U9us11zEKAmARVO0FpaN1rMHFbqpIw1MgCPt1traM,13869
+shellinspector/reporter.py,sha256=qRhtzm2kLEAeKYmuoPO3fqEHE-PWnIshhv2vo-pAWFs,2998
+shellinspector/runner.py,sha256=LzPPgfSdt15Km5l82wmzIw1S5fcYdIHSTHr1n57qNfI,18929
+shellinspector-0.25.0.dist-info/METADATA,sha256=UGaFZwaRD_PG2WFGSi80BcKra0WyzUCdtGhiJAERZVM,1577
+shellinspector-0.25.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+shellinspector-0.25.0.dist-info/entry_points.txt,sha256=ekTzFAMxi5ChCz4re0J9nhNIIe7eMnmM79-7nEN5CYE,64
+shellinspector-0.25.0.dist-info/RECORD,,
