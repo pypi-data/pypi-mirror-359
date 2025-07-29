@@ -1,0 +1,79 @@
+import { 
+  SlideBase, 
+  Header, 
+  Footer, 
+  CardGrid 
+} from '../components';
+
+<SlideBase>
+  <Header 
+    logo="MARKOV AI"
+    date="June 2025"
+    confidentiality="Confidential"
+  />
+  
+  <div className="flex-grow w-full px-32 py-8">
+    {/* Title Section */}
+    <div className="mb-8">
+      <h1 className="text-4xl font-bold text-blue-800">Next Steps</h1>
+      <h2 className="text-2xl font-semibold text-blue-600 mt-3">
+        Your AI Transformation Starts Here
+      </h2>
+      <div className="h-1 w-32 bg-blue-700 mt-4"></div>
+    </div>
+    
+    {/* Three Card Grid */}
+    <CardGrid 
+      cards={[
+        {
+          title: "1. Discovery Session",
+          icon: "fas fa-search",
+          subtitle: "1 hour, €500",
+          subtitleIcon: "far fa-clock",
+          items: [
+            "Map your specific AI opportunities",
+            "Identify quick wins",
+            "Build custom roadmap"
+          ]
+        },
+        {
+          title: "2. Pilot Project Selection",
+          icon: "fas fa-rocket",
+          items: [
+            "Start with highest-impact area",
+            "Prove ROI quickly",
+            "Scale systematically"
+          ]
+        },
+        {
+          title: "3. Partnership Structure",
+          icon: "fas fa-handshake",
+          items: [
+            "Flexible engagement models",
+            "Success-based pricing available",
+            "Dedicated AI team"
+          ]
+        }
+      ]}
+    />
+    
+    {/* Call to Action */}
+    <div className="mt-12 bg-blue-700 text-white rounded-lg p-8 text-center">
+      <h3 className="text-3xl font-bold mb-4">
+        Ready to Transform Your Business?
+      </h3>
+      <p className="text-xl mb-6">
+        Let's schedule your discovery session
+      </p>
+      <div className="text-2xl font-semibold">
+        <i className="fas fa-envelope mr-3"></i>
+        contact@markov.ai
+      </div>
+    </div>
+  </div>
+  
+  <Footer 
+    pageNumber={12}
+    tagline="Transform. Automate. Scale."
+  />
+</SlideBase>
