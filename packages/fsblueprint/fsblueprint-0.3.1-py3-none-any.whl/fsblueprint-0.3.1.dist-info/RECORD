@@ -1,0 +1,12 @@
+fsblueprint/__main__.py,sha256=WPZMaIJmodox4sqEWXxdhr8jzBI8sLP_aU4xrFpbUHI,72
+fsblueprint/cli.py,sha256=DuLPJHVxHiGTflTtqkmIuFvnKagNjpAgZrA7D84lXT4,3769
+fsblueprint/core/__init__.py,sha256=9zXMBpvmwBRAsiugeRLIbBaRaXEgdarPv10mnV2TpaE,260
+fsblueprint/core/blueprint.py,sha256=Qgk3EPbnAvhaeySbIuizmiMpZi_7ni3bbblRKbbBvGE,2225
+fsblueprint/core/ignore_patterns.py,sha256=xIhSxuwS0yTw-1w5RaeZ4iHKtwJkcfSUp1V7K0y_ipM,935
+fsblueprint/core/scaffold.py,sha256=IaAaF-6sg2-_fZlyVaKZo2dUHfMDCgU3fO5SGk19vUs,640
+fsblueprint/core/utils.py,sha256=XM1-SzBFlY9vQtAWzO57reihZeHKg6k0izc-ziQFXYc,601
+fsblueprint-0.3.1.dist-info/METADATA,sha256=7J9s63JoyVZmI-CYHGfHIP47xFEDP3d-QEfOPX5ocgI,2950
+fsblueprint-0.3.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fsblueprint-0.3.1.dist-info/entry_points.txt,sha256=MS-sKqEHIxo2w11eoLBvCnpG5GGlfxMzPUeTBQCDZ4Q,53
+fsblueprint-0.3.1.dist-info/licenses/LICENSE,sha256=jkwmU9KSXrzcRQgb5RgjvviVZpraimIrXKbhLqBKbBU,1065
+fsblueprint-0.3.1.dist-info/RECORD,,
