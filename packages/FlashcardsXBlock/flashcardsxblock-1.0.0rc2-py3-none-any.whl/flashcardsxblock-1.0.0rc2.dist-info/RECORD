@@ -1,0 +1,15 @@
+flashcards/__init__.py,sha256=dg51VfSGQZbgK6pDLCpa-9maZHMxzFOBGv8y9jBYXC0,110
+flashcards/flashcards.py,sha256=PcKoLBys_JeOiA0GBgtb0V9Fr0eRuGgaAc55M--3R5E,4284
+flashcards/public/student-ui.css,sha256=TC6w4GtPwxNHKZcjyWd1eyf8X3TOVJXp6Rgo8Qz1etk,85887
+flashcards/public/student-ui.js,sha256=5YWOD-g5ekZ3GT3V649lVHryQ6cEByK5wmbBLpLlmBM,226665
+flashcards/public/studio-ui.css,sha256=PAx1yg7q0CqeEOPv-Gubo3uPlCwlYrFa6c3SqHa1RfQ,242598
+flashcards/public/studio-ui.js,sha256=uNq1To1hrJIMuvgtwfUwn3Bvgj-FGZbctYyZedfhH9M,2614532
+flashcards/static/html/studio.html,sha256=PMRqbAdU3YyMrN5VYTXEjinBHde8ejV0Y3qazlGBGDU,64
+flashcards/static/js/student.js,sha256=Bq_EgK7telZUqnBrC2KVQ_CSmw0ETbSBvAmMX-hCxr0,160
+flashcards/static/js/studio.js,sha256=Kls8y1EJ5niZr7iAwjoxqfi1FmWyEwTE4KrpT8F6NeE,175
+flashcardsxblock-1.0.0rc2.dist-info/licenses/LICENSE,sha256=myvkJeoIF-3SOyL2XBnn3EBoQGc75jOnEapU6qC7Aa0,1073
+flashcardsxblock-1.0.0rc2.dist-info/METADATA,sha256=Vx9ciHJAyI5AL_-WKIeEu_v9HrPbO1R9yeUziLE8LGA,1370
+flashcardsxblock-1.0.0rc2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flashcardsxblock-1.0.0rc2.dist-info/entry_points.txt,sha256=adWsUbz4i8AJTwoqq_EULWSQT6YfukJZb2olFa6-6Js,53
+flashcardsxblock-1.0.0rc2.dist-info/top_level.txt,sha256=1j-1IPsI5ozT1YqHDZuMFzGsndw-dB2oh7tzi5YGOS0,11
+flashcardsxblock-1.0.0rc2.dist-info/RECORD,,
