@@ -1,0 +1,3 @@
+[console_scripts]
+nowplay-peak = nowplay.play_peak:main
+nowplay-pitch = nowplay.play_pitch:main
