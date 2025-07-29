@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+mcp_sqlite/server.py
+mcp_sqlite.egg-info/PKG-INFO
+mcp_sqlite.egg-info/SOURCES.txt
+mcp_sqlite.egg-info/dependency_links.txt
+mcp_sqlite.egg-info/entry_points.txt
+mcp_sqlite.egg-info/requires.txt
+mcp_sqlite.egg-info/top_level.txt
+tests/test_canned_queries.py
+tests/test_catalog.py
+tests/test_execution.py
+tests/test_usability.py
