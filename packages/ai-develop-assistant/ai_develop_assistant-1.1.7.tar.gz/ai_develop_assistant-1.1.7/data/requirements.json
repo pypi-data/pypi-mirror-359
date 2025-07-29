@@ -1,0 +1,117 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": [],
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T11:22:13.649457",
+  "project_id": null,
+  "branch_status": {},
+  "user_personas_and_journeys": [],
+  "core_functional_modules": [],
+  "data_model_and_storage": [],
+  "technology_stack_and_non_functional": [],
+  "ui_ux_design_principles": [],
+  "requirement_blueprint": {
+    "project_title": "Excel数据上传展示工具",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "用户画像与核心旅程",
+        "storage_key": "user_personas_and_journeys",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "USER_Q1",
+            "question_text": "谁是这个Excel数据上传展示工具的主要用户群体？（如：数据分析师、业务人员、学生、研究人员等）",
+            "ai_suggestion": "建议定位为需要快速查看和分享Excel数据的业务人员和数据分析师，这类用户通常需要简单直观的工具来展示数据给同事或客户",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "USER_Q2",
+            "question_text": "用户使用这个工具的主要场景是什么？（如：数据汇报、临时数据查看、数据分享、数据验证等）",
+            "ai_suggestion": "建议聚焦于临时数据查看和快速数据分享场景，这是最常见且最简单的需求",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "USER_Q3",
+            "question_text": "用户的技术水平如何？是否需要考虑非技术用户的易用性？",
+            "ai_suggestion": "建议面向非技术用户设计，采用拖拽上传、一键展示的简单交互方式",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "USER_Q4",
+            "question_text": "用户期望的核心操作流程是什么？（从上传到查看数据的完整步骤）",
+            "ai_suggestion": "建议采用最简流程：上传Excel文件 → 自动解析 → 表格展示 → 可选的基础筛选/排序功能",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "核心功能模块拆解",
+        "storage_key": "core_functional_modules",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "FUNC_Q1",
+            "question_text": "文件上传模块需要支持哪些文件格式？（如：仅.xlsx/.xls，还是还要支持.csv等其他格式）",
+            "ai_suggestion": "建议仅支持.xlsx和.xls格式，保持工具的简单性，后续可根据需要扩展",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q2",
+            "question_text": "数据解析模块需要处理哪些复杂情况？（如：多工作表、合并单元格、公式、图表等）",
+            "ai_suggestion": "建议仅处理简单的表格数据，只读取第一个工作表，忽略合并单元格和公式，保持最简实现",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q3",
+            "question_text": "数据展示模块需要哪些基础功能？（如：分页、排序、筛选、搜索等）",
+            "ai_suggestion": "建议包含基础的表格展示、简单排序和基础筛选功能，不做复杂的搜索和高级筛选",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q4",
+            "question_text": "是否需要数据导出功能？如果需要，支持哪些格式？",
+            "ai_suggestion": "建议不包含导出功能，保持工具的最简化，主要用于展示和查看",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "数据模型与存储方案",
+        "storage_key": "data_model_and_storage",
+        "status": "pending"
+      },
+      {
+        "branch_name": "技术栈选型与非功能性需求",
+        "storage_key": "technology_stack_and_non_functional",
+        "status": "pending"
+      },
+      {
+        "branch_name": "UI/UX设计原则",
+        "storage_key": "ui_ux_design_principles",
+        "status": "pending"
+      }
+    ]
+  }
+}
