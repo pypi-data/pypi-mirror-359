@@ -1,0 +1,25 @@
+# dependencies list to build requirements.dev.txt with pip-compile (from pip-tools package)
+-r requirements.txt
+
+# docs
+lazydocs
+mkdocs-material
+pymdown-extensions
+mkdocs-awesome-pages-plugin
+mkdocs
+
+# test
+pytest
+pytest-cov
+pytest-asyncio
+coveralls
+freezegun
+
+# build
+twine
+pip-tools
+
+# lint
+pre-commit
+pylint
+mypy

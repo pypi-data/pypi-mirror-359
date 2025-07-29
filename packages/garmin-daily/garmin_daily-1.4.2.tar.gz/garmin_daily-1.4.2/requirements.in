@@ -1,0 +1,8 @@
+# dependencies list to build requirements.txt with pip-compile (from pip-tools package)
+requests
+gspread
+markdownify
+click
+rich-click
+garminconnect
+pandas
