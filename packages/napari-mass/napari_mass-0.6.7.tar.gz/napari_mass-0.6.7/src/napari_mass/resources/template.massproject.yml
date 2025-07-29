@@ -1,0 +1,48 @@
+project:
+  filename: {type: path.set.massproject, function: dialog_project_file, edit: False, tip: 'Set project file', value: 'project.massproject.yml'}
+  output:
+    folder: {type: path.folder, value: 'mass'}
+    datafile: {type: path.set.mass, value: 'data.mass.json'}
+    pixel_size: {value: 2um}
+  initialise_project: {type: button, function: init_project}
+
+input:
+  layers: {value: 'sample, rois, focus, landmarks'}
+  source: {type: path.open.image}
+  source2: {type: path.open.image}
+  initialise_layers: {type: button, function: create_layers}
+
+magnet:
+  pixel_size: {value: 12um}
+  shape: {value: 5}
+  size_range_um: {value: '1, 5'}
+  size_slice_thickness_um: {value: 0.2}
+  lowe_ratio: {value: 0.75}
+  max_iter: {value: 200}
+  min_npoints: {value: 10}
+  min_match_rate: {value: 0.5}
+  detect: {type: button, function: detect_magnets, tip: 'Automatic section detection'}
+  point_matching_methods: {value: 'cpd, features'}
+  order: {type: button, function: order_magnets, tip: 'Automatic section Z stack ordering'}
+
+sample:
+  pixel_size: {value: 12um}
+  shape: {value: 4}
+  size_range_um: {value: '10, 25'}
+  min_match_rate: {value: 0.5}
+  snap_scaledown: {value: 0.25}
+  snap_margin: {value: 0.2}
+  snap_to_edges: {type: bool}
+  order_mode: {type: bool, function: set_order_mode, tip: 'Enable order mode, click sections to set new section order'}
+  copy: {type: button, function: copy_sample, tip: 'Copy selected section, click view to paste'}
+  detect: {type: button, function: detect_sample, tip: 'Automatic section detection'}
+  order: {type: button, function: order_sample, tip: 'Automatic section Z stack ordering'}
+
+rois:
+  sigma: {value: 8.0}
+  min_cell_diameter: {value: 30.0}
+  max_cell_diameter: {value: 90.0}
+  watershed_threshold: {value: 0.92}
+  merge_regions: {value: True}
+  merge_intersection_ratio: {value: 0.33}
+  filter_small_regions: {value: True}

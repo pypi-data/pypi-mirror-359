@@ -1,0 +1,16 @@
+numpy
+napari-ome-zarr
+dask
+scikit-learn
+scikit-image
+opencv-contrib-python-headless
+tifffile
+matplotlib
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5
