@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+grapes_tokenizer/__init__.py
+grapes_tokenizer/core.py
+grapes_tokenizer.egg-info/PKG-INFO
+grapes_tokenizer.egg-info/SOURCES.txt
+grapes_tokenizer.egg-info/dependency_links.txt
+grapes_tokenizer.egg-info/entry_points.txt
+grapes_tokenizer.egg-info/top_level.txt
+tests/test_core.py
