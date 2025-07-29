@@ -1,0 +1,12 @@
+zodable_sample_package/__init__.py,sha256=9dAYk1TjsgS9QOETjfAHvlQLEuLQ_C10IxwpNzjPBWE,521
+zodable_sample_package/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zodable_sample_package/digital/guimauve/example/Address.py,sha256=OKV25h67lDEUxtjJ5i6WDFDMpPT7xr94-hxXYeF3W48,185
+zodable_sample_package/digital/guimauve/example/Country.py,sha256=iio34p3PRhZE38cJRbb8rM1FFtSuSrZTXg8RL159rEc,85
+zodable_sample_package/digital/guimauve/example/Custom.py,sha256=KGwt6ejHKTWNmJteImhvtd7kvV_zRKdrcQ8bccVANYw,149
+zodable_sample_package/digital/guimauve/example/Message.py,sha256=J24nFoA4YlWC-OvoQdfE4ZHr_ZFrpSPkJi-WVTFd35k,156
+zodable_sample_package/digital/guimauve/example/Payload.py,sha256=ultkXTuQtn1elBHTkR85hsxwyr5xa8weCuQh7-MbhxM,257
+zodable_sample_package/digital/guimauve/example/User.py,sha256=nvX2ZJtw5Pacp0Pl5vVT6DTtZG5lyvr31rj0zzdxzSg,916
+zodable_sample_package-1.6.0.dist-info/METADATA,sha256=ilQj9JEG_IR6hTazoYsbvTNvCCviMXwZeL04E4a2LK4,387
+zodable_sample_package-1.6.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+zodable_sample_package-1.6.0.dist-info/top_level.txt,sha256=jhgrWjK4PwIgp4RxjD9bQa7sBCo-OJApcaVQwwEVrZc,23
+zodable_sample_package-1.6.0.dist-info/RECORD,,
