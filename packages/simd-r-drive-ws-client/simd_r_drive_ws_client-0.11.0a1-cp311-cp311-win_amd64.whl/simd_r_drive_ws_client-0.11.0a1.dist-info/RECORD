@@ -1,0 +1,9 @@
+simd_r_drive_ws_client-0.11.0a1.dist-info/METADATA,sha256=JS9svfE5xKRIEFHBBrntcnOr-OtAyOiylyLJt8bwz7k,3891
+simd_r_drive_ws_client-0.11.0a1.dist-info/WHEEL,sha256=j4qqVNEKdft0WYe2NEymIjSlGSeJ1BogQYEaMx5ZvPI,96
+simd_r_drive_ws_client-0.11.0a1.dist-info/licenses/LICENSE,sha256=Ac_3D42ztTVBsKn2yCbL_4kCItzOWTjme8tyW7tqLHY,10458
+simd_r_drive_ws_client/__init__.py,sha256=08ijw2ESys8rUifFrvZsKpL9y4154ujXRkcVXU3kOUk,279
+simd_r_drive_ws_client/data_store_ws_client.py,sha256=rZFqHeuxU02iJUFofqGLDA1rWciQZQZ22Sdi9VXQZyY,2467
+simd_r_drive_ws_client/data_store_ws_client.pyi,sha256=ddyqO4oI2BpPl5EcHqT4AnVt8bJfChlTTn5Rgk7gRVM,7148
+simd_r_drive_ws_client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simd_r_drive_ws_client/simd_r_drive_ws_client.cp311-win_amd64.pyd,sha256=2NfbsBO5Nn4ATbZRG2L9CXFKWBceTWKgz2nzkU4GDUM,1819648
+simd_r_drive_ws_client-0.11.0a1.dist-info/RECORD,,
