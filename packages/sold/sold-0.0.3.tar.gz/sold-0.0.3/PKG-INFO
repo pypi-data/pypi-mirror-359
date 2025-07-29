@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: sold
+Version: 0.0.3
+Summary: A library for the study of auctions.
+Author: Vincent Knight
+Author-email: knightva@cardiff.ac.uk
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: numpy >= 1.26.1
+Requires-Dist: scipy >= 1.14.1
+Requires-Dist: sphinx ; extra == "doc"
+Requires-Dist: sphinx-rtd-theme ; extra == "doc"
+Requires-Dist: sphinx-togglebutton ; extra == "doc"
+Provides-Extra: doc
+
+Join [the Game Theory Discord](https://github.com/drvinceknight/equilibrium_explorers)
+server to chat — [direct invite link](https://discord.gg/NfTAkhAeyc).
+
+# Sold
+
+A python library for the study of Auctions
+
+## Tutorial
+
+## How To?
+
+## Discussion
+
+## Reference
+
