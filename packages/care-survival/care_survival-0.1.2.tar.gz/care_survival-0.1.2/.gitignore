@@ -1,0 +1,8 @@
+target/
+result
+__pycache__/
+.venv
+*.egg-info/
+dist/
+data/
+*.pdf
