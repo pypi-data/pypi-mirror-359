@@ -1,0 +1,6 @@
+setup.py
+SKP_DEBUG.egg-info/PKG-INFO
+SKP_DEBUG.egg-info/SOURCES.txt
+SKP_DEBUG.egg-info/dependency_links.txt
+SKP_DEBUG.egg-info/requires.txt
+SKP_DEBUG.egg-info/top_level.txt
