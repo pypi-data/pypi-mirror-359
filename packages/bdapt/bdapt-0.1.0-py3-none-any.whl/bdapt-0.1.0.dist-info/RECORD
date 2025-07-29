@@ -1,0 +1,12 @@
+bdapt/__init__.py,sha256=yodavjx2BmmuUTQJnQ_6hyxrrWolmtxUCkX-Som61pc,96
+bdapt/apt_operations.py,sha256=nyGX_nGJkjy-2RrcOMX3LhKkzoSAK88vBpOjyeBTj5M,6018
+bdapt/bundle_manager.py,sha256=DQkRzDDxQIHo5VAzwkQ-RwkEyg4hhXUNUUr4hlP5lO4,9313
+bdapt/cli.py,sha256=dez_DBtmXYPhznCFge42sjgJ6HNjk_S2JdBj_DeZyMY,7443
+bdapt/metapackage.py,sha256=Er5lleSoVlfb2__qzNqoesL7xKBG_KpReUjgpVsfMtY,5999
+bdapt/models.py,sha256=vsvgZq80Pt9aLGw4Tqd2z8x9kjlplVcAg4H1E54IcSs,922
+bdapt/storage.py,sha256=ZXyz--L-5svDJdoC-6uRD5uEz6Czf-j4dhHbVQrIZug,2824
+bdapt/validators.py,sha256=t3AZp5G4RMceEukxisDD6IGmwmEsEorzD9pFcpn7dlY,2631
+bdapt-0.1.0.dist-info/METADATA,sha256=wweQ9UQqpBFWyWKG144iLGspmnf8JUJY5qZy_eZJ9X0,3933
+bdapt-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+bdapt-0.1.0.dist-info/entry_points.txt,sha256=zxtvbJ41H45Cbo4oBj9NdvPf97F-otMWp_wr79VhJ9g,40
+bdapt-0.1.0.dist-info/RECORD,,
