@@ -1,0 +1,14 @@
+nitrate/__init__.py,sha256=IJ4tl-NmQWv5YmQPb6oS-6iwg7zyi5OIMnXfEg4HaPw,410
+nitrate/cassettes.py,sha256=ZrLFsVJe-88jYP5deaZ5cRJRQW2pUlToD9aA37tMYJg,2013
+nitrate/flickr_login.py,sha256=HuFjDZRj4IQrA-YS738K_0ja9eXQbIFlDzqt96FOhtE,5538
+nitrate/json.py,sha256=uqW-yIjE1SkD20nJ6nkmdzdAbGLec_wJ0ErSuTTNGtQ,2493
+nitrate/passwords.py,sha256=hRFlujJgOiUL3fR8fUCfKw-UDWCpOszJm2IHROASlfI,3214
+nitrate/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nitrate/types.py,sha256=SKeONrIPZqIsA_nrYgQ9tumX7yccPFcg4lHo2DRk9jU,2892
+nitrate/xml.py,sha256=vZJbCvwMgSaNtNhYN8cpHxJz0DGHqY3pwpoQOnA1Hc8,2679
+silver_nitrate-1.7.0.dist-info/licenses/LICENSE-APACHE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+silver_nitrate-1.7.0.dist-info/licenses/LICENSE-MIT,sha256=0lTh9BLH_hA5eNVmfptbjPAyjq9hl24MH98-h0mI22s,1074
+silver_nitrate-1.7.0.dist-info/METADATA,sha256=Hy-PZaI4Hx-wMeh6NfMs0OO_Gs_3ImGZ1-8xfsaEI4c,3077
+silver_nitrate-1.7.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+silver_nitrate-1.7.0.dist-info/top_level.txt,sha256=45QqNfszzQqMuM7WMQ1BiLHOUkn-DVU7ZbwQP9Ji2y0,8
+silver_nitrate-1.7.0.dist-info/RECORD,,
