@@ -1,0 +1,10 @@
+pyfedcamp/__init__.py,sha256=rq3fB1mn9UXiP1aVGdWciSp5-sny0oSrJNylvG0C0eo,38
+pyfedcamp/cli.py,sha256=L1CcnjRLQa8wUhTMxyro8_vYVHQZA4hF5uWPGX6Va6M,1179
+pyfedcamp/reservations.py,sha256=4r1hItzYeh51miCa_xFvJPIOdmYVwhLXTlHYR_ZThQ4,17539
+pyfedcamp/static/NPS_logo.png,sha256=Yzq7_oXBQvGIZB3jiuWfY7if0hXdWi8-FHK5incjtmg,267556
+pyfedcamp/static/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyfedcamp-0.0.5.dist-info/LICENSE,sha256=cZZ4SkvsYOzrjWnuaBxAyKOQLtslvdWyNL-fL1ChZOA,1070
+pyfedcamp-0.0.5.dist-info/METADATA,sha256=lgNAlWbQdjaXKdzQVZvBrLhXSwL0W74l0BIHkKOGN10,4135
+pyfedcamp-0.0.5.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+pyfedcamp-0.0.5.dist-info/entry_points.txt,sha256=ehlXNWGFR9WQfjwz9ybM3DW4-uNse2jox2Knf5QF8tA,48
+pyfedcamp-0.0.5.dist-info/RECORD,,
