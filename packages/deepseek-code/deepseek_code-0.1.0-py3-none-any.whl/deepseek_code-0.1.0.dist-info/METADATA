@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: deepseek-code
+Version: 0.1.0
+Summary: DSC - DeepSeek Code
+Author-email: The QPYPI Team <qpypi@qpython.org>
+License: MIT AND (Apache-2.0 OR BSD-2-Clause)
+Project-URL: Homepage, https://qpypi.qpython.org/project/deepseek-code/
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: Android
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+DSC - DeepSeek Code
+
+DSC (DeepSeek Code) is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. 
+
+Tip: This is a non-DeepSeek official project
