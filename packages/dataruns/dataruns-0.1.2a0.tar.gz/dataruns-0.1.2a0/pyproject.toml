@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataruns"
+version = "0.1.2a"
+description = "A library with Pandas-Like api used for data manipulation and function pipeline execution"
+readme = "dist.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.2.5",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "requests>=2.32.3"
+]
+
+authors = [
+    {name = "Daniel"}
+]
+
+license = "MIT"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/DanielUgoAli/Dataruns/issues"  
+"Source Code" = "https://github.com/DanielUgoAli/Dataruns"  
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
