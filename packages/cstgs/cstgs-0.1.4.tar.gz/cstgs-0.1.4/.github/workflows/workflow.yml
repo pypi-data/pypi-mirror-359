@@ -1,0 +1,158 @@
+name: Build and Publish Wheels
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.10', '3.11']
+        architecture: ['x64']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install and verify gettext on macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install homebrew/core/gettext
+          brew link gettext --force
+          ls -l /usr/local/opt/gettext/lib/libintl.8.dylib || echo "libintl.8.dylib not found"
+          echo "DYLD_LIBRARY_PATH=/usr/local/opt/gettext/lib:$DYLD_LIBRARY_PATH" >> $GITHUB_ENV
+      - name: Install Python on macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install python@${{ matrix.python-version }}
+          echo "PATH=/usr/local/opt/python@${{ matrix.python-version }}/bin:$PATH" >> $GITHUB_PATH
+          python3 --version
+          pip3 --version
+      - name: Setup Python on non-macOS
+        if: matrix.os != 'macos-latest'
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: ${{ matrix.architecture }}
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install dependencies on Windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          choco install -y python --version ${{ matrix.python-version }}
+          echo "PATH=$env:PATH;C:\Python${{ matrix.python-version }}\Scripts;C:\Python${{ matrix.python-version }}" >> $GITHUB_ENV
+          python --version
+          pip --version
+      - name: Build wheels
+        uses: PyO3/maturin-action@v1
+        with:
+          target: ${{ matrix.architecture == 'x64' && 'x86_64' || 'i686' }}
+          args: --release --out dist --interpreter ${{ matrix.python-version }}
+          manylinux: ${{ matrix.os == 'ubuntu-latest' && '2014' || 'off' }}
+      - name: Upload wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-${{ matrix.os }}-${{ matrix.architecture }}-py${{ matrix.python-version }}
+          path: dist
+
+  build_sdist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install maturin
+        run: pip install maturin
+      - name: Build sdist
+        run: maturin sdist --out dist
+      - name: Upload sdist
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdist
+          path: dist/*.tar.gz
+
+  publish:
+    needs: [build_wheels, build_sdist]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          pattern: wheels-*
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdist
+          path: dist
+      - name: Log artifact structure
+        run: |
+          find dist -type f -ls
+      - name: Consolidate artifacts
+        run: |
+          mkdir -p dist_temp
+          find dist -name '*.whl' -exec mv {} dist_temp/ \;
+          find dist -name '*.tar.gz' -exec mv {} dist_temp/ \;
+          rm -rf dist
+          mv dist_temp dist
+          ls -l dist
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_TOKEN }}
+          skip-existing: true
+      - name: Verify PyPI upload
+        run: |
+          pip install twine jq
+          twine check dist/*.whl dist/*.tar.gz
+          curl -s https://pypi.org/pypi/cstgs/${{ github.ref_name }}/json | jq '.files[] | .filename'
+
+  create_github_release:
+    name: Create GitHub Release
+    needs: [build_wheels, build_sdist]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          pattern: wheels-*
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdist
+          path: dist
+      - name: Log artifact structure
+        run: |
+          find dist -type f -ls
+      - name: Create release directory
+        run: |
+          mkdir -p release_wheels
+          find dist -name '*.whl' -exec mv {} release_wheels/ \;
+          find dist -name '*.tar.gz' -exec mv {} release_wheels/ \;
+          ls -l release_wheels
+      - name: Verify files
+        run: |
+          ls release_wheels/* | grep . || { echo "No files found!"; exit 1; }
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release_wheels/*
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            Automated release for ${{ github.ref_name }}.
+            See the [changelog](CHANGELOG.md) for details.
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
