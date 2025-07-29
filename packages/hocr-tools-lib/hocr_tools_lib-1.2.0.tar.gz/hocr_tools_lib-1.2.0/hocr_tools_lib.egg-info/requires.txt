@@ -1,0 +1,26 @@
+Pillow>=9.3.0
+lxml>=3.5.0
+reportlab>=3.3.0
+python-bidi
+
+[dev]
+beautifulsoup4
+requests
+pypdf
+flake8
+flake8-bugbear
+pep8-naming
+mypy
+types-beautifulsoup4
+types-html5lib
+types-lxml
+types-Pillow
+types-requests
+codespell
+
+[dev:python_version < "3.10"]
+importlib-resources
+
+[docs]
+sphinx
+furo
