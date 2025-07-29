@@ -1,0 +1,15 @@
+walt/__init__.py,sha256=ETVa8ZCcOUUxUO_45PKa-rujmy_obDpzB9aFHl-v3zk,147
+walt/virtual/__init__.py,sha256=8SGzoLHjpbO2bjOdVlsrLtFrH9LwCSvep2OoITXP44E,71
+walt/virtual/node/__init__.py,sha256=xmP_yn7GgKw4DtL_73omqyBNeKSHd_1dSCb2C7LfBPY,58
+walt/virtual/node/node.py,sha256=HcXmMpBYJib46SYAsLURAs7-okvwdriYyk1TEnuxAhM,26568
+walt/virtual/node/udhcpc.py,sha256=dShDzxWm3x3F6kZ67JDeFgiQbQ-JWxxvjgrFXU_zBxQ,3359
+walt/virtual/node/walt-vnode-ifdown,sha256=W0XiX4bAWfMwetky_5I5VfbVLfMCQOL4srE57r7YS7s,889
+walt/virtual/node/walt-vnode-ifup,sha256=W52Sjjf2fRWfxgXAPdvZmhM_F6PL8a61jtpC2gU9T4A,2016
+walt/virtual/setup/S52waltvirtualnode,sha256=CsCO_tWrICbfZImfrC9fif8vpKd57cJagWsvb701gtE,2215
+walt/virtual/setup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+walt/virtual/setup/node.py,sha256=_HwBgrWnTwRMaJjwGTw8hii2LtMqVNJUoMLsUU7SMNM,562
+walt_virtual-10.0.dist-info/METADATA,sha256=5C-KlJ0lTvTShmOf6-TxsDE3NFxmI1ua8fXNftCeiZ0,433
+walt_virtual-10.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+walt_virtual-10.0.dist-info/entry_points.txt,sha256=SkmgoYH4EPaPu07_OssklwPAt25X6Xr3N4_s4S3D3EM,114
+walt_virtual-10.0.dist-info/top_level.txt,sha256=l-PfU1zjk_gYnc1ACwNtjEENVU-lzZdx-dBWa_dJHX8,5
+walt_virtual-10.0.dist-info/RECORD,,
