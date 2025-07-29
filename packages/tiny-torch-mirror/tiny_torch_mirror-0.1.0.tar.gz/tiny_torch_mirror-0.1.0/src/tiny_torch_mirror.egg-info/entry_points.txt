@@ -1,0 +1,3 @@
+[console_scripts]
+_tiny_torch_mirror_remote_std_interface_json = tiny_torch_mirror._interface:_remote_std_interface_json
+tiny-torch-mirror = tiny_torch_mirror.__main__:app
