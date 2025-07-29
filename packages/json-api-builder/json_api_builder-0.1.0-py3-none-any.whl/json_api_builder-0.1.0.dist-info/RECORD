@@ -1,0 +1,13 @@
+json_api_builder/__init__.py,sha256=YCFQw06ZI2QRgbFjgv0yqu2X53gj8LVBq_RaBwjGkVk,596
+json_api_builder/api_builder.py,sha256=QepsiQ9yNUpcGTqOWk2sIHr-1smf8iDF_JElBnBLb3A,2538
+json_api_builder/crud.py,sha256=ubftUSgByLLPHkSXotVBb9MBOhQavmzUgxPFcoFPp74,2173
+json_api_builder/database.py,sha256=GMMTQY2I5EOPb3ACqsoyZfxidcMJ_yM1rfE7MHkyCEQ,1324
+json_api_builder/db_download.py,sha256=nvmQYKI2zWKljIUaitZekbmhZs1wffsr-8SoN62vqEg,2780
+json_api_builder/json_export.py,sha256=zv4FWJI33NpsRBm90DEJFCP13oYfaVWSmqb_v4wdFSs,4910
+json_api_builder/json_import.py,sha256=vEUNTbJECf013L2Qp_pc_KeLwCjYg17ob-iy8sNiHOY,2732
+json_api_builder/models.py,sha256=ibl8cOk_-NzoGZWJQIGUY00uuiksxJloP2kkjC-Bn-M,663
+json_api_builder/router.py,sha256=eiGP7wT47hW8v6ucLafOysk_pcwi1s1JpjTlW8qQelE,2759
+json_api_builder-0.1.0.dist-info/METADATA,sha256=XUwGfKlTeV7vYgmuosACcH-Pmayp9LCPFNRZg735BGw,7973
+json_api_builder-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+json_api_builder-0.1.0.dist-info/licenses/LICENSE,sha256=BPI3UNZEHlu5dHhCI4Ygwjd1OXnIzK8q8vwCVdTIMMU,1073
+json_api_builder-0.1.0.dist-info/RECORD,,
