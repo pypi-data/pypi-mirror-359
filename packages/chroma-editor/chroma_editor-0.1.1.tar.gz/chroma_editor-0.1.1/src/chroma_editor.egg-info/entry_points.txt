@@ -1,0 +1,2 @@
+[console_scripts]
+chroma-editor = chroma_editor.runner:run_app

@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/chroma_editor/__init__.py
+src/chroma_editor/app.py
+src/chroma_editor/pagination.py
+src/chroma_editor/runner.py
+src/chroma_editor/search_utils.py
+src/chroma_editor.egg-info/PKG-INFO
+src/chroma_editor.egg-info/SOURCES.txt
+src/chroma_editor.egg-info/dependency_links.txt
+src/chroma_editor.egg-info/entry_points.txt
+src/chroma_editor.egg-info/requires.txt
+src/chroma_editor.egg-info/top_level.txt

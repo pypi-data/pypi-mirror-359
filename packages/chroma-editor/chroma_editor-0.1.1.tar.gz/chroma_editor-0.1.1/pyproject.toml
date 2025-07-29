@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=62.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chroma-editor"
+version = "0.1.1"
+description = "Streamlit editor for a Chroma vector DB with pagination and semantic search."
+readme = "README.md"
+authors = [
+  { name = "Jacob Young", email = "huang-guili@inspireme.co.jp" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "streamlit",
+    "chromadb",
+]
+
+[project.scripts]
+chroma-editor = "chroma_editor.runner:run_app"
