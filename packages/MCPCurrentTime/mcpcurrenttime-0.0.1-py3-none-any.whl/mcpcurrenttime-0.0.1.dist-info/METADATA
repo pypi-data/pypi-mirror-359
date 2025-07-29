@@ -1,0 +1,142 @@
+Metadata-Version: 2.4
+Name: MCPCurrentTime
+Version: 0.0.1
+Summary: A simple MCP server providing a single tool that agents can use to get the current time in a given timezone.
+Project-URL: Homepage, https://github.com/mattjwarren/MCPCurrentTime
+Project-URL: Issues, https://github.com/mattjwarren/MCPCurrentTime/issues
+Author-email: Matthew Warren <matt.j.warren@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: mcp
+Requires-Dist: pytz
+Description-Content-Type: text/markdown
+
+# MCPCurrentTime
+
+A python Model Context Protocol (MCP) server that provides a simple and reliable way to get the current time in any timezone with customizable formatting.
+
+## Overview
+
+MCPCurrentTime is an MCP server that wraps a time utility tool, allowing AI assistants and other MCP clients to retrieve the current time in various timezones and formats. This is particularly useful for applications that need timezone-aware time information or want to display time in user-friendly formats.
+
+The server is based on the python mcp package.
+
+## Features
+
+- **Timezone Support**: Get current time in any timezone supported by the `pytz` library
+- **Flexible Formatting**: Customize time output using Python's `strftime` directives
+- **Error Handling**: Robust error handling for invalid timezones and format strings
+- **Simple Integration**: Easy to integrate with any MCP-compatible application
+
+## Installation
+
+### Prerequisites
+
+- Python 3.7+
+- Required packages:
+  - `mcp`
+  - `pytz`
+
+### Setup
+
+1. Clone or download this repository:
+```bash
+git clone <repository-url>
+cd MCPCurrentTime
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Running the Server
+
+You can run the MCP server in several ways:
+
+#### Command Line, with stdio transport
+```bash
+python MCPCurrentTime.py
+```
+
+#### As a Module
+```python
+from MCPCurrentTime import MCPCurrentTime
+
+server = MCPCurrentTime()
+server.run_server()
+```
+
+#### Custom Transport
+```python
+from MCPCurrentTime import CurrentTimeTool
+
+server = MCPCurrentTime()
+# Run with custom MCP arguments
+server.run_server({"transport": "stdio"})
+```
+
+### Tool Usage
+
+The server provides a single tool called `get_time` with the following parameters:
+
+#### Parameters
+
+- **time_format** (optional, default: `"%Y%m%d%H%M%S"`): The format string for time output
+- **timezone** (optional, default: `"UTC"`): The timezone to get the current time for
+
+#### Time Format Examples
+
+The `time_format` parameter uses Python's strftime directives:
+
+- `"%Y-%m-%d %H:%M:%S"` → `"2025-06-30 14:30:45"`
+- `"%Y%m%d%H%M%S"` → `"20250630143045"` (default)
+- `"%B %d, %Y at %I:%M %p"` → `"June 30, 2025 at 02:30 PM"`
+- `"%A, %B %d, %Y"` → `"Monday, June 30, 2025"`
+
+#### Timezone Examples
+
+The `timezone` parameter accepts any timezone from the pytz library:
+
+- `"UTC"` (default)
+- `"America/New_York"`
+- `"Europe/London"`
+- `"Asia/Tokyo"`
+- `"Australia/Sydney"`
+- `"America/Los_Angeles"`
+
+#### Example Calls
+
+```python
+# Get current time in default format and UTC
+await get_time()
+# Returns: "20250630-143045"
+
+# Get current time in New York with custom format
+await get_time(time_format="%Y-%m-%d %H:%M:%S", timezone="America/New_York")
+# Returns: "2025-06-30 10:30:45"
+
+# Get current date only in Tokyo
+await get_time(time_format="%Y-%m-%d", timezone="Asia/Tokyo")
+# Returns: "2025-06-30"
+```
+
+### AI Assistant Integration
+A tool for AI assistants that need to:
+- Schedule appointments and events
+- Provide time-aware responses
+- Generate timestamps for logs or documents
+- Real-time clock functionality
+- Time-based file naming
+- Log generation with timezone awareness
+- Batch processing with time tracking
+- ...
+
+## License
+
+This project is open source. Please refer to the LICENSE file for details.
