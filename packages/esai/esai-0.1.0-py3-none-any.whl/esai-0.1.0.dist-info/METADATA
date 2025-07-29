@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: esai
+Version: 0.1.0
+Summary: Practice backend framework for scalable text extraction
+Author-email: Logidhasan <logidhasan25@gmail.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+** esai is a scalable and maintainable backend architecture.
+** Using this backend framework we can build any use case.
