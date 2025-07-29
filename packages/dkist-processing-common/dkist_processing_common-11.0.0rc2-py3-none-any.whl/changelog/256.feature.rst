@@ -1,0 +1,2 @@
+Move `location_of_dkist` from the `WriteL1` task to its own module (`~dkist_processing_common.models.dkist_location`).
+Also make it a constant variable instead of a function.
