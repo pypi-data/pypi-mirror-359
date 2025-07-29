@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+biomomentum/__init__.py
+biomomentum/analysis_dynamic.py
+biomomentum/analysis_static.py
+biomomentum/interpolation.py
+biomomentum/ios.py
+biomomentum/stats.py
+biomomentum/utils.py
+biomomentum.egg-info/PKG-INFO
+biomomentum.egg-info/SOURCES.txt
+biomomentum.egg-info/dependency_links.txt
+biomomentum.egg-info/requires.txt
+biomomentum.egg-info/top_level.txt
+biomomentum/data/__init__.py
+biomomentum/data/sveff_tab.mat
