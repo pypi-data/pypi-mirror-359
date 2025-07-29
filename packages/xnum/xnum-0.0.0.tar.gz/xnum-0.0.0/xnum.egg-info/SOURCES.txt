@@ -1,0 +1,6 @@
+xnum_setup.py
+xnum/__init__.py
+xnum.egg-info/PKG-INFO
+xnum.egg-info/SOURCES.txt
+xnum.egg-info/dependency_links.txt
+xnum.egg-info/top_level.txt
