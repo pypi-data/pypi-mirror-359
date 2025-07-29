@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proteosushi"
+version = "1.7.0"
+description = "A bioinformatics tool for proteomics data analysis"
+readme = "README.md"
+authors = [{name = "Rob Seymour", email = "r27seymour@gmail.com"}]
+license = {text = "GPL-3.0"}
+requires-python = ">=3.7"
+dependencies = [
+    "PyQt5>=5.15",
+    "requests>=2.24", 
+    "pandas>=1.0"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows", 
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Homepage = "https://github.com/HeldLab/ProteoSushi"
+Download = "https://github.com/HeldLab/ProteoSushi/archive/v1.7.0.tar.gz"
+
+[tool.setuptools.packages.find]
+include = ["proteosushi*"]
+
+[tool.setuptools.package-data]
+proteosushi = ["spec_list_fixed.tsv"]
