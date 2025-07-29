@@ -1,0 +1,61 @@
+[build-system]
+requires = ["scikit-build-core"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "spicebind"
+version = "0.0.1"
+description = "SpiceBind is a bridge that embeds the ngspice analog engine inside VPI-capable Verilog simulator for mixed-signal co-simulation."
+authors = [{name = "Tomasz Hemperek"}]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "cocotb",
+    "numpy",
+    "matplotlib",
+    "cocotbext-spi",
+    "tomli",
+]
+
+docs = [
+    "sphinx>=8.2",
+    "breathe",
+    "sphinx-book-theme==1.1.3",  # pin this to exact version to guard against any CSS changes
+    "sphinx-design>=0.6.1",
+    "sphinxcontrib-spelling>=5.3.0",
+    "pyenchant",
+    "sphinx-argparse-cli",
+    "sphinx-autobuild",
+    "sphinx-codeautolink",
+    "myst-parser",
+]
+
+[project.scripts]
+spicebind-vpi-path = "spicebind.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/themperek/spicebind"
+Repository = "https://github.com/themperek/spicebind"
+
+[tool.scikit-build]
+# Specify the CMake version
+cmake.version = ">=3.15"
+# Use ninja generator for faster builds
+ninja.version = ">=1.10"
+
+[tool.scikit-build.cmake.define]
+# Pass any CMake defines if needed
+# CMAKE_BUILD_TYPE = "Release"
+
+[tool.black]
+line-length = 120
