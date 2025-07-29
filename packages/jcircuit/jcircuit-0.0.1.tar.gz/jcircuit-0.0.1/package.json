@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"dev": "npm run build -- --sourcemap=inline --watch",
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl",
+		"copy": "cp -r node_modules/gui-circuit-generator/assets jcircuit/static/assets",
+		"build": "npm run bundle && npm run copy"
+	},
+	"dependencies": {
+		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#develop"
+	},
+	"devDependencies": {
+		"esbuild": "^0.25.4"
+	}
+}

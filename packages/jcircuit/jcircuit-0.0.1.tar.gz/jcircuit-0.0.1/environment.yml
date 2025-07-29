@@ -1,0 +1,18 @@
+name: jcircuit
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13.2
+  - conda-forge::anywidget=0.9.14
+  - conda-forge::jupyterlab=4.3.5
+  - conda-forge::watchfiles=1.0.4
+  - ipykernel=6.29.5
+  - conda-forge::nbdime=4.0.2
+  - conda-forge::nodejs=22.13.0
+  - conda-forge::esbuild=0.24.2
+  - pip
+  - pip:
+    - build==1.2.2.post1
+    - twine==6.1.0
+    - nodeenv==1.9.1

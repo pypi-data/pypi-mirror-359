@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Designer</title>
+</head>
+<body>
+    <h1>Circuit Designer</h1>
+    <script type="module">
+        import defaultExport from "./widget.js";
+        const { render } = defaultExport;
+        const model = document.getElementById("model");
+        const el = document.body;
+        render({ model, el });
+    </script>
+</body>
+</html>
