@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+cloudscrape.egg-info/PKG-INFO
+cloudscrape.egg-info/SOURCES.txt
+cloudscrape.egg-info/dependency_links.txt
+cloudscrape.egg-info/top_level.txt
