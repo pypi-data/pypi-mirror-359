@@ -1,0 +1,5 @@
+[console_scripts]
+peacock-trame = peacock_trame.app:main
+
+[jupyter_serverproxy_servers]
+peacock-trame = peacock_trame.app.jupyter:jupyter_proxy_info

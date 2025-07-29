@@ -1,0 +1,7 @@
+trame
+trame-vuetify
+trame-vtk
+trame-xterm
+trame-simput
+pyaml
+numpy
