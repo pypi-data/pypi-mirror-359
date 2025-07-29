@@ -1,0 +1,9 @@
+cog_to_zarr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cog_to_zarr/cli.py,sha256=ls-aJ6yGcLihqF5tKh6494xr5eGfY92xx5ubc14Oub0,2207
+cog_to_zarr/cog_to_zarr.py,sha256=eKFY6M_xY8y6WUXv4Jobd9WOvASR29gjyqpOZzmD7K4,8894
+cog_to_zarr/types.py,sha256=FeXv-dd_Nx4r7P8xUCo42b1-eSYW_3nPoiRrIGecI4o,3772
+cog_to_zarr-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+cog_to_zarr-0.1.0.dist-info/METADATA,sha256=ZjuyYo6ZAJpYZwJgcl2j-nN9MciXlJx5JdDG3a76YyQ,6158
+cog_to_zarr-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+cog_to_zarr-0.1.0.dist-info/entry_points.txt,sha256=NngVDxktz_2ikQ8rFvgbtTiSxCmQjzXg2UL63x5RtHY,49
+cog_to_zarr-0.1.0.dist-info/RECORD,,
