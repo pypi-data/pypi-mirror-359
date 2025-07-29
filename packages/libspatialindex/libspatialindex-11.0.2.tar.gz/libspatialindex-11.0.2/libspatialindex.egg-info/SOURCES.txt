@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+libspatialindex/__init__.py
+libspatialindex.egg-info/PKG-INFO
+libspatialindex.egg-info/SOURCES.txt
+libspatialindex.egg-info/dependency_links.txt
+libspatialindex.egg-info/not-zip-safe
+libspatialindex.egg-info/top_level.txt

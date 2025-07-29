@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: libspatialindex
+Version: 11.0.2
+Summary: A simple PoC package for supply chain research demonstrating code execution on install and data exfiltration.
+Home-page: https://github.com
+Author: abc
+Author-email: abc <abc@abc.com>
+Project-URL: Homepage, https://github.com
+Project-URL: Bug Tracker, https://github.com
+Keywords: poc,supply-chain,security,research,exfiltration
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+
+#  libspatialindex
+This is a Proof of Concept package for supply chain security research.
+It demonstrates arbitrary code execution during package installation.
+
+**WARNING: This package is for educational purposes only. Do not use in production.**
