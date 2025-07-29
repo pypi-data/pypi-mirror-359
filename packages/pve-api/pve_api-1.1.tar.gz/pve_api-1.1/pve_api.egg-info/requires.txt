@@ -1,0 +1,5 @@
+build>=1.2.2.post1
+dotenv>=0.9.9
+requests>=2.32.4
+setuptools>=80.9.0
+twine>=6.1.0
