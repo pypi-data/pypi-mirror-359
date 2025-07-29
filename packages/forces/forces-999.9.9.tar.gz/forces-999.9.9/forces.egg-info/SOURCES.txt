@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+forces.egg-info/PKG-INFO
+forces.egg-info/SOURCES.txt
+forces.egg-info/dependency_links.txt
+forces.egg-info/top_level.txt
