@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+mybiotools.egg-info/PKG-INFO
+mybiotools.egg-info/SOURCES.txt
+mybiotools.egg-info/dependency_links.txt
+mybiotools.egg-info/top_level.txt
