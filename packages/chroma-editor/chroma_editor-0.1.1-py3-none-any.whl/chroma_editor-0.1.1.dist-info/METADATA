@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: chroma-editor
+Version: 0.1.1
+Summary: Streamlit editor for a Chroma vector DB with pagination and semantic search.
+Author-email: Jacob Young <huang-guili@inspireme.co.jp>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit
+Requires-Dist: chromadb
