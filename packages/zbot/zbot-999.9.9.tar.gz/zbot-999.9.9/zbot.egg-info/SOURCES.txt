@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+zbot.egg-info/PKG-INFO
+zbot.egg-info/SOURCES.txt
+zbot.egg-info/dependency_links.txt
+zbot.egg-info/top_level.txt
