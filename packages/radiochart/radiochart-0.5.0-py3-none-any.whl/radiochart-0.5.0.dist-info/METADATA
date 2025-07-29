@@ -1,0 +1,115 @@
+Metadata-Version: 2.4
+Name: radiochart
+Version: 0.5.0
+Summary: CLI tool to generate Arma 3 radio frequency hierarchy charts
+Home-page: https://github.com/kingcharlesvi/radiochart
+Author: KingCharlesVII
+Author-email: KingCharlesVII <viikingcharles@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: graphviz
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# RadioChart CLI
+
+Generate hierarchical radio frequency charts for your Arma 3 MILSIM unit from a JSON file.
+
+---
+
+## Features
+
+- Input a nested JSON structure representing nets, squads, and fireteams  
+- Automatically generates a hierarchical chart image (PNG, SVG, PDF)  
+- Color-coded squads and their fireteams for easy visualization  
+- Lightweight CLI tool with no external dependencies except Graphviz  
+- Ready for future extension to web app or other input formats  
+
+---
+
+## Installation
+
+### 1. Install [Graphviz](https://graphviz.org/download/)
+
+Make sure the Graphviz system binaries are installed and available on your system `PATH`.
+
+- **Windows:** Download and install from https://graphviz.org/download/  
+  Check **"Add Graphviz to system PATH"** during installation.
+
+- **macOS:**  
+  ```bash
+  brew install graphviz
+  ```
+
+- **Ubuntu/Debian:** 
+    ```bash
+    sudo apt install graphviz
+    ```
+
+### 2. Install [radiochart](https://pypi.org/project/radiochart/)
+
+```bash
+pip install radiochart
+```
+
+## Usage
+
+```bash
+radiochart --input net_structure.json --output chart.png
+```
+
+## Example JSON Input (net_structure.json)
+
+```json
+{
+  "Company Net (CH 1)": {
+    "Platoon Net (CH 2)": {
+      "Alpha Squad (CH 3)": {
+        "Alpha Squad Fireteam 1 (CH 31)": {},
+        "Alpha Squad Fireteam 2 (CH 32)": {}
+      },
+      "Bravo Squad (CH 4)": {
+        "Bravo Squad Fireteam 1 (CH 41)": {},
+        "Bravo Squad Fireteam 2 (CH 42)": {}
+      },
+      "Charlie Squad (CH 5)": {
+        "Charlie Squad Fireteam 1 (CH 51)": {},
+        "Charlie Squad Fireteam 2 (CH 52)": {}
+      },
+      "Whiskey Squad (CH 6)": {
+        "Whiskey Squad Fireteam 1 (CH 61)": {},
+        "Whiskey Squad Fireteam 2 (CH 62)": {}
+      }
+    },
+    "Enablers (CH 7)": {},
+    "Aviation (CH 8)": {},
+    "Tac Air (CH 9)": {},
+    "Medevac (CH 10)": {}
+  }
+}
+```
+
+## Output
+
+This will generate a hierarchical chart image showing the nets, squads, and fireteams, with color-coded squads and their fireteams for clarity.
+
+## Troubleshooting
+
+- If you see errors related to dot or graphviz executable not found, make sure Graphviz is installed and added to your system PATH.
+- On Windows, restart your terminal after installing Graphviz.
+- Verify installation by running:
+```bash
+dot -V
+```
+
+## Future Enhancements
+
+- Support for YAML or CSV input
+- Web application
+- Additional styling options
+
+## License
+
+MIT
