@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+myhiddenlib/__init__.py
+myhiddenlib/core.py
+myhiddenlib.egg-info/PKG-INFO
+myhiddenlib.egg-info/SOURCES.txt
+myhiddenlib.egg-info/dependency_links.txt
+myhiddenlib.egg-info/top_level.txt
