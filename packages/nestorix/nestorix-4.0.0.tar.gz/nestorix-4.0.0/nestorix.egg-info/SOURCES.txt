@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+nestorix/__init__.py
+nestorix/nestorix.py
+nestorix/nexel.py
+nestorix.egg-info/PKG-INFO
+nestorix.egg-info/SOURCES.txt
+nestorix.egg-info/dependency_links.txt
+nestorix.egg-info/requires.txt
+nestorix.egg-info/top_level.txt
