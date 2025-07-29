@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+smallpowerdash.egg-info/PKG-INFO
+smallpowerdash.egg-info/SOURCES.txt
+smallpowerdash.egg-info/dependency_links.txt
+smallpowerdash.egg-info/top_level.txt
