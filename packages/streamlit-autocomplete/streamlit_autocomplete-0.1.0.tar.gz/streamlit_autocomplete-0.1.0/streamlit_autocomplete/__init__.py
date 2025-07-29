@@ -1,0 +1,1 @@
+from .autocomplete import st_textcomplete_autocomplete
