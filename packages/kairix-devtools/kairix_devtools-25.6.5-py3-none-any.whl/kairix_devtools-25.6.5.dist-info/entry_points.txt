@@ -1,0 +1,2 @@
+[console_scripts]
+kairix-devtools = kairix_devtools.__main__:main
