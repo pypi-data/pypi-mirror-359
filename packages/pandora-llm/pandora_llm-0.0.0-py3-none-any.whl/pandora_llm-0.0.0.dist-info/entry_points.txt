@@ -1,0 +1,2 @@
+[console_scripts]
+pandora-mia = pandora_llm:membership_inference_entry_point
