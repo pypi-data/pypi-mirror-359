@@ -1,0 +1,14 @@
+# walt-server-podman - WalT service for Podman containers
+#
+# The WalT platform provides a lightweight distributed testbed for
+# sensor networks, distributed protocols, distributed data
+# management.
+
+[Unit]
+Description=WalT service for Podman containers
+
+[Service]
+# note: socket fd is given by systemd socket activation feature
+EnvironmentFile=-/etc/walt/server.env
+ExecStart=podman system service
+Restart=on-failure

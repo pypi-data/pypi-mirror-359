@@ -1,0 +1,87 @@
+#!/bin/busybox sh
+
+func_call="$1"; shift
+
+# note: arguments must be quoted/escaped by the caller
+# appropriately to match a python syntax, e.g.:
+# walt-rpc send_integer 23
+# walt-rpc send_string "'hello'"
+
+# make a tuple for arguments
+args=""
+for arg in "$@"
+do
+    args="$args ${arg},"
+done
+args="(${args})"
+
+NC_FIFO_4="/tmp/nc-$$-4.fifo"
+NC_FIFO_5="/tmp/nc-$$-5.fifo"
+NC_FIFO_6="/tmp/nc-$$-6.fifo"
+busybox mkfifo $NC_FIFO_4
+busybox mkfifo $NC_FIFO_5
+busybox mkfifo $NC_FIFO_6
+
+cleanup() {
+    rm $NC_FIFO_4 $NC_FIFO_5 $NC_FIFO_6
+}
+
+on_term() {
+    echo Received SIGTERM >&2
+    kill $nc_pid
+    kill $req_pid
+    kill $rcv_pid
+    cleanup
+    exit 3
+}
+
+trap on_term TERM
+
+requester() {
+    exec 4>$NC_FIFO_4
+    exec 6<$NC_FIFO_6
+    cat >&4 << EOF
+REQ_API_SESSION
+NSAPI
+('API_CALL', '$func_call', $args, {})
+EOF
+    read feedback <&6
+    echo "('CLOSE')" >&4
+}
+
+receiver() {
+    exec 5<$NC_FIFO_5
+    exec 6>$NC_FIFO_6
+    read server_version <&5
+    read response_word1 response_rest <&5
+    word2=$(echo -n "$response_rest" | sed -e 's/.$//')
+    if [ "$response_word1" = "('RESULT'," ]
+    then
+        echo $word2	# print result to stdout
+        echo DONE >&6
+	exit 0
+    else
+        echo $word2 >&2	# print issue to stderr
+        echo ISSUE >&6
+	exit 1
+    fi
+}
+
+connector() {
+    exec busybox nc %(server_ip)s %(walt_server_rpc_port)s <$NC_FIFO_4 >$NC_FIFO_5
+}
+
+connector &
+nc_pid=$!
+requester &
+req_pid=$!
+receiver &
+rcv_pid=$!
+
+wait $nc_pid
+wait $req_pid
+wait $rcv_pid
+ret_code=$?
+
+cleanup
+exit $ret_code

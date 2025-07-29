@@ -1,0 +1,23 @@
+# walt-server-netconfig - WalT platform network management
+#
+# The WalT platform provides a lightweight distributed testbed for
+# sensor networks, distributed protocols, distributed data
+# management.
+
+[Unit]
+Description=WalT platform network management
+# Minimal requirements on the network
+After=network.target
+# Configuration file is needed, service should not start if missing.
+ConditionPathExists=/etc/walt/server.conf
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/walt/server.env
+StateDirectory=walt
+ExecStart=walt-net-config up
+ExecStop=walt-net-config down
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target
