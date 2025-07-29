@@ -1,0 +1,13 @@
+paulicirc/__init__.py,sha256=flptmmU3vD_Hu5NisaFv1Sc2O954wpiKbXUsG_wcH1k,1057
+paulicirc/builders.py,sha256=XdFxHL3TWzjloBQQErlmBmQ5NhPgyCe1AZZdiDk7oHc,22952
+paulicirc/circuits.py,sha256=FQHz7t-RRmi_yxGQ1PzF9k1aicN6YJqaV9ZRVYb3R94,26832
+paulicirc/gadgets.py,sha256=N_EWFmLPM5_lMcILf1w2upblh7EbWmc0wlKhc_eWskE,31194
+paulicirc/layers.py,sha256=Tcmz-LxeoGUscjX6evjD0x-fjJRKBig6OJdb2y32Q_0,15520
+paulicirc/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+paulicirc/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+paulicirc/utils/numpy.py,sha256=gvsrzFfZT_Zl6M0_9zFG-pWKm1trnl4H1Qvu0xD7tz8,3226
+paulicirc/utils/options.py,sha256=vY34qVWu71Rve2Z5quoUF_VDU90kaWoO-8hyfaDL2ik,1122
+paulicirc-0.2.0.dist-info/METADATA,sha256=xrhIlPV4FKqvTKFrpfxwgIPIomlUjEhFQSRrkFdX0bA,2447
+paulicirc-0.2.0.dist-info/WHEEL,sha256=C2FUgwZgiLbznR-k0b_5k3Ai_1aASOXDss3lzCUsUug,87
+paulicirc-0.2.0.dist-info/licenses/LICENSE,sha256=tcgnuIDQGIT8QadyEYqJgiAsvElAgRdW0FfCb0mCe_c,43644
+paulicirc-0.2.0.dist-info/RECORD,,

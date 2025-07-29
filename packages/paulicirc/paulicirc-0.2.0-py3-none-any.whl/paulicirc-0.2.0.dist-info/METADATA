@@ -1,0 +1,85 @@
+Metadata-Version: 2.3
+Name: paulicirc
+Version: 0.2.0
+Summary: A library for quantum circuits based on Pauli gadgets.
+Project-URL: Documentation, https://paulicirc.readthedocs.io
+Project-URL: Repository, https://github.com/neverlocal/paulicirc
+Project-URL: Issues, https://github.com/neverlocal/paulicirc/issues
+Author: NeverLocal
+License: LGPL-3.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: euler>=1.0.2.post0
+Requires-Dist: numba>=0.61.2
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: optmanage>=1.1.1
+Requires-Dist: scipy>=1.14.1
+Requires-Dist: typing-validation>=1.2.12
+Description-Content-Type: text/x-rst
+
+=========
+PauliCirc
+=========
+
+.. image:: https://img.shields.io/badge/python-3.10+-green.svg
+    :target: https://docs.python.org/3.10/
+    :alt: Python versions
+
+.. image:: https://img.shields.io/pypi/v/paulicirc.svg
+    :target: https://pypi.python.org/pypi/paulicirc/
+    :alt: PyPI version
+
+.. image:: https://img.shields.io/pypi/status/paulicirc.svg
+    :target: https://pypi.python.org/pypi/paulicirc/
+    :alt: PyPI status
+
+.. image:: http://www.mypy-lang.org/static/mypy_badge.svg
+    :target: https://github.com/python/mypy
+    :alt: Checked with Mypy
+
+.. image:: https://readthedocs.org/projects/paulicirc/badge/?version=latest
+    :target: https://paulicirc.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+
+.. contents::
+
+
+PauliCirc is a library for the vectorized creation and manipulation of quantum circuits consisting of Pauli gadgets.
+The library is in alpha stage and active development, so please be mindful that bugs are possible at this stage.
+
+Install
+=======
+
+You can install the latest release from `PyPI <https://pypi.org/project/dag-cbor/>`_ as follows:
+
+.. code-block:: console
+
+    $ pip install --upgrade paulicirc
+
+
+Usage
+=====
+
+For an overview of library features and usage, see https://paulicirc.readthedocs.io/en/latest/getting-started.html
+
+
+API
+===
+
+For the full API documentation, see https://paulicirc.readthedocs.io/
+
+
+License
+=======
+
+`LGPLv3 © NeverLocal. <LICENSE>`_
+
