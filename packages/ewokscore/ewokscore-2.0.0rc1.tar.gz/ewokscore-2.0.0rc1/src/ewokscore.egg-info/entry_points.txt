@@ -1,0 +1,8 @@
+[ewoks.engines]
+core = ewokscore.engine:CoreWorkflowEngine
+
+[ewoks.tasks.class]
+ewokscore.tests.examples.tasks.* = ewokscore
+
+[ewoks.tasks.method]
+ewokscore.tests.examples.tasks.* = ewokscore
