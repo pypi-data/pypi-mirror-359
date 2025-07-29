@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+notetool.egg-info/PKG-INFO
+notetool.egg-info/SOURCES.txt
+notetool.egg-info/dependency_links.txt
+notetool.egg-info/top_level.txt
