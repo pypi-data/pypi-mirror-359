@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+vijjupyds/__init__.py
+vijjupyds/core.py
+vijjupyds.egg-info/PKG-INFO
+vijjupyds.egg-info/SOURCES.txt
+vijjupyds.egg-info/dependency_links.txt
+vijjupyds.egg-info/requires.txt
+vijjupyds.egg-info/top_level.txt
