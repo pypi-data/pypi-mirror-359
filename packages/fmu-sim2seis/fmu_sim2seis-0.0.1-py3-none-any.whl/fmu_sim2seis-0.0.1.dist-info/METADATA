@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: fmu-sim2seis
+Version: 0.0.1
+Summary: sim2seis
+Author-email: Equinor <fg_fmu-atlas@equinor.com>
+Project-URL: Homepage, https://github.com/equinor/fmu-sim2seis
+Project-URL: Repository, https://github.com/equinor/fmu-sim2seis
+Keywords: energy,subsurface,seismic,scientific,engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24.3
+Requires-Dist: pandas>=2.0.2
+Requires-Dist: xtgeo>=3.7.1
+Requires-Dist: fmu-tools>=1.16.0
+Requires-Dist: fmu-config
+Requires-Dist: fmu-dataio
+Requires-Dist: fmu-pem
+Requires-Dist: pydantic
+Requires-Dist: ert
+Requires-Dist: seismic-forward
+Requires-Dist: si4ti
+Provides-Extra: tests
+Requires-Dist: mypy; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pytest-cov; extra == "tests"
+Requires-Dist: pytest-xdist; extra == "tests"
+Requires-Dist: ruff; extra == "tests"
+Provides-Extra: docs
+Requires-Dist: autoapi; extra == "docs"
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-argparse; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Requires-Dist: sphinx-togglebutton; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Dynamic: license-file
+
+> [!WARNING]
+> `fmu-sim2seis` is not yet qualified technology, and as of today only applicable for selected pilot test fields.
+
+**[📚 User documentation](https://equinor.github.io/fmu-sim2seis/)**
+
+## What is fmu-sim2seis?
+
+Calculates synthetic seismic from reservoir simulation model, together with a petro-elastic model.
+
+`fmu-sim2seis` can be run either from command line, or from ERT, the latter being the
+preferred option.
+
+### Installation
+
+To install `fmu-sim2seis`, run
+```bash
+pip install fmu-sim2seis
+```
+
+### ERT jobs
+
+`fmu-sim2seis` is divided into a series of separate jobs:
+
+* sim2seis_seismic_forward
+* sim2seis_relative_ai
+* sim2seis_observed_data
+* sim2seis_map_attributes
+
+There exists also a forward model for running petro-elastic modelling, defined in [**fmu-pem**](https://github.com/equinor/fmu-pem).
+
+In the ERT-file for running fmu-sim2seis, necessary arguments are shown in [this example ERT setup](./ERT/run_sim2seis.ert).
+
+Beware of hardcoded directory names - they should be replaced by **your** project path/name.
+
+```bash
+cd ./ERT
+ert gui run_sim2seis.ert
+```
+
+`fmu-sim2seis` (and `fmu-pem`) are controlled by a series of `.yaml`-files which you find in examples of [here](./tests/TestData/sim2seis/model/pem).
+
+The files `modelled_data_intervals` and `observed_data_intervals.yml` are used to define zones/intervals 
+for estimating seismic attributes. `sim2seis_config` contains all configuration parameters for all parts
+of `fmu-sim2seis` workflow, except for observed seismic data, which has its own configuration file - 
+`obs_data_config.yml`.
+
+### Tests
+
+`fmu-sim2seis` has tests that use the `tests/TestData` structure, which contains the necessary input data
+files.
+```bash
+pytest tests/test_run_sim2seis
+```
+
+### User interface
+
+Users can visit https://equinor.github.io/fmu-sim2seis/ in order to get help configuring the `fmu-sim2seis` input data.
+
+Developing the user interface can be done by:
+```bash
+cd ./documentation
+npm ci  # Install dependencies
+npm run create-json-schema  # Extract JSON schema from Python code
+npm run docs:dev  # Start local development server
+```
+The JSON schema itself (type, title, description etc.) comes from the corresponding Pydantic models in the Python code.
