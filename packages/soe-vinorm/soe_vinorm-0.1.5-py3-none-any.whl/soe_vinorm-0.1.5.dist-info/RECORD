@@ -1,0 +1,13 @@
+soe_vinorm/__init__.py,sha256=TR7bJcme8PgMqh2qdmS8esBvMH5Grvk28wlYzRzLpMc,791
+soe_vinorm/constants.py,sha256=VY8Ci60BMz24loc5y5_UL9iEHC5yQd4EhLnC5lUihaw,5719
+soe_vinorm/normalizer.py,sha256=RQ6YpOeCDKubnwXVtsFyGASUuDoC12JZLVaKwfHzpTc,5826
+soe_vinorm/nsw_detector.py,sha256=Evenb15nF1EC-FU7M_-wTuM_yVROU4I9rtNbKAUpF8o,12708
+soe_vinorm/nsw_expander.py,sha256=g4NFY_8gW_btoNW7E8C2CT2SU0piO6paeRqs6obTwkA,35407
+soe_vinorm/text_processor.py,sha256=2YOzI5_DqcCLP94pi_cbP1HUsRRTVMDlV6trbXWWifY,11852
+soe_vinorm/utils.py,sha256=CODb-JkZCEn_e8kFN6VgbLwbG2vpMjNBV1q8moDca8E,2396
+soe_vinorm/data/dictionaries/abbreviations.txt,sha256=s8kkA3ZE8GW_9c0Z06YpJJ9ff9ICJmlx1RKtdKiAeqw,68968
+soe_vinorm/data/dictionaries/vietnamese-syllables.txt,sha256=JAZEH4tCt92oN49Ei_f4QoHhMiP7TR1zHXECtvUUBhw,117231
+soe_vinorm-0.1.5.dist-info/METADATA,sha256=R_iyOYxeTkFEK38k6MO8AiSwNLPaYlmxVYGyj8H_-hM,6121
+soe_vinorm-0.1.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+soe_vinorm-0.1.5.dist-info/licenses/LICENSE,sha256=JSC1OHyhfRaGYZG1f3EZj_irmkJgNpVRAknFqXWhR-4,1066
+soe_vinorm-0.1.5.dist-info/RECORD,,
