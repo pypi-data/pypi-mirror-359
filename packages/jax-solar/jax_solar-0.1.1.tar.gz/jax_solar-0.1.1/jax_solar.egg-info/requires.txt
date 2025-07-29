@@ -1,0 +1,7 @@
+jax
+jax-datetime
+numpy
+
+[tests]
+absl-py
+pytest
