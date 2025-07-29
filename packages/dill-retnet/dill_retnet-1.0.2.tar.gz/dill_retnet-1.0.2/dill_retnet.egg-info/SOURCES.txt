@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+dill_retnet/__init__.py
+dill_retnet/dillretnet.py
+dill_retnet.egg-info/PKG-INFO
+dill_retnet.egg-info/SOURCES.txt
+dill_retnet.egg-info/dependency_links.txt
+dill_retnet.egg-info/requires.txt
+dill_retnet.egg-info/top_level.txt
