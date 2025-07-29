@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "example_package_russelli"
+version = "0.0.1"
+authors = [{name = "Ingrid Russell", email = "russelli@unc.edu"}]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = ["Programming Language :: Python :: 3"]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/ing-russell/example_package_russelli"
+Issues = "https://github.com/ing-russell/example_package_russelli/issues"
