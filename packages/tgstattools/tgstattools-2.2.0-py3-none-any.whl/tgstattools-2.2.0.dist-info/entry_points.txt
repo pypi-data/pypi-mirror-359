@@ -1,0 +1,2 @@
+[console_scripts]
+tgstattools = tgstattools.cli:main
