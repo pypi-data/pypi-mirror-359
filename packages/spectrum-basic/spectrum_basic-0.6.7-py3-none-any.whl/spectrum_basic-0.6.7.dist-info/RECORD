@@ -1,0 +1,16 @@
+spectrum_basic/__init__.py,sha256=pOc2FiTA223IngC35Kdc6F0BlH9IiXWZu0xqJQ-qzxU,355
+spectrum_basic/__main__.py,sha256=j8g6A34OH2hFX16jvKPZKfUF46tjPMNzI6g2RPgkNCo,62
+spectrum_basic/ast.py,sha256=cmSEbd09JawO_u4dL2zgmMF7pt3zMYzTE-Knsm8Tm78,35860
+spectrum_basic/ast_base.py,sha256=BXfM6iYwRmGO0KJoj5aGmWt7jMHUOdhmnFU8kV5xm0E,7551
+spectrum_basic/core.py,sha256=CRI8YFXvD80dbiqbwYUfWRXQHsne9TrCF2fBvDY3e6Y,45596
+spectrum_basic/gen_ast.py,sha256=if3J_NrN_l0dJYHvXvDEi9q2IZWMkfNhRsCMOjDZjCQ,14693
+spectrum_basic/run.py,sha256=xVnGQHA8tFICd_UMp5zKmsk_jLICAl0ysjineS_ZPwE,35283
+spectrum_basic/spectrum_basic.tx,sha256=einvWu9fnav81NRkXA_i43_a2Loc5S5QuMoMn4vi3W0,11644
+spectrum_basic/tokenizer.py,sha256=eDujhppmzxF5zqwJw5U_03ZqEfJcAT4TFRdp-461SzA,8219
+spectrum_basic/zxinput.py,sha256=7OWAq4u2LPEYqcsVM415coOHcij5wq1jU1SlusGf2-g,2857
+spectrum_basic/zxoutput.py,sha256=ltY_0si5BvFTWbe_G8-u0qUZQZyape-1IObAd71Wkh4,11502
+spectrum_basic-0.6.7.dist-info/METADATA,sha256=l0pqPH36eO71BQqx2_q8RT2hg_lk7PsxnhekMRGGK_E,9674
+spectrum_basic-0.6.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spectrum_basic-0.6.7.dist-info/entry_points.txt,sha256=RridsESw3WDeNB3GsrO7lb2-okZteFr9xayMHbg-Ja0,62
+spectrum_basic-0.6.7.dist-info/top_level.txt,sha256=g4UMo0-3V8kt2HSJ3g1GrVs9GAUbjNoAs84a8SICAes,15
+spectrum_basic-0.6.7.dist-info/RECORD,,
