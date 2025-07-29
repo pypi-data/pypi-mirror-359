@@ -1,0 +1,12 @@
+LICENSE.md
+README.md
+pyproject.toml
+matsubplots/__init__.py
+matsubplots/matsubplots.py
+matsubplots/version.py
+matsubplots/viewers.py
+matsubplots.egg-info/PKG-INFO
+matsubplots.egg-info/SOURCES.txt
+matsubplots.egg-info/dependency_links.txt
+matsubplots.egg-info/requires.txt
+matsubplots.egg-info/top_level.txt
