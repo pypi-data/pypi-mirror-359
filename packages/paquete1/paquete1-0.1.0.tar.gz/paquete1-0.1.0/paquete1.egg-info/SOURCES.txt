@@ -1,0 +1,9 @@
+README.md
+setup.py
+paquete1/__init__.py
+paquete1/course.py
+paquete1/utils.py
+paquete1.egg-info/PKG-INFO
+paquete1.egg-info/SOURCES.txt
+paquete1.egg-info/dependency_links.txt
+paquete1.egg-info/top_level.txt

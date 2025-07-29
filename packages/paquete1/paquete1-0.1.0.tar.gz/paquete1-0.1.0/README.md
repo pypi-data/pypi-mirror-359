@@ -1,0 +1,44 @@
+# Micro biblioteca de los cursos de S4vitar
+
+Una micro biblioteca para consultar algunos de los cursos de s4vitar.
+
+## Cursos disponibles:
+
+-Introducción a Linux [15 horas]
+-Personalización de Linux [3 horas]
+-Introducción al Hacking [53 horas]
+
+## Instalación
+
+Instala el paquete usando `pip3`:
+
+```python3
+pip install paquete1
+```
+
+## Uso básico
+
+### Listar todos los cursos
+
+```python
+from paquete1 import list_courses
+
+for course in list_courses():
+    print(course)
+```
+
+### Obtener un curso por nombre
+
+```python
+from paquete1 import course_by_name
+
+course = course_by_name("Introduccion a Linux")
+print(course)
+```
+### Calcular duración total de los cursos
+
+```python3
+from paquete1.utils import total_duration
+
+print(f"Duración total: {total_duration()} horas)
+```
