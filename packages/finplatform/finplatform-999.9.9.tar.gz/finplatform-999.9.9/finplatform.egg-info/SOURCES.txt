@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+finplatform.egg-info/PKG-INFO
+finplatform.egg-info/SOURCES.txt
+finplatform.egg-info/dependency_links.txt
+finplatform.egg-info/top_level.txt
