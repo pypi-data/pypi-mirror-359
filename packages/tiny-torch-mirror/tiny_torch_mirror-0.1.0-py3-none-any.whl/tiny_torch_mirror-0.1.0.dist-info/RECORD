@@ -1,0 +1,17 @@
+tiny_torch_mirror/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tiny_torch_mirror/__main__.py,sha256=a7WNhewIphtHukl2ZiVTsJnGovb18gVrzIVvfzntfhc,8241
+tiny_torch_mirror/_interface.py,sha256=yllD3kuzSvneQMRXVeYE6RMy75M4-qKOIFzARyoVPo0,1185
+tiny_torch_mirror/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tiny_torch_mirror/core/config.py,sha256=ATgJEg_Xhy_OI87RjzzYOO5XHr8XXBdjmU3ee_szygs,2463
+tiny_torch_mirror/core/fetch.py,sha256=tVELCYXSD1YjBPThDXNDmTR02eWN59HDbBz_23P_Tzk,7199
+tiny_torch_mirror/core/job.py,sha256=TS4MlsCYlEzwjebmhi8VwLrSaEFpJ4gUhR1bYbxb5MA,4514
+tiny_torch_mirror/core/log.py,sha256=DH8qzR5nXZ43TPM8lPmimiR1ucs-EZfOyK0uPpnMjrM,161
+tiny_torch_mirror/core/server.py,sha256=iYtESY9zrsSPaGXZfhVIgTQcm9sQvbmXpwoc5hv4XQQ,2092
+tiny_torch_mirror/core/sync.py,sha256=iNiD45TAlM5rrymUzFV2y8NHXzTz8piRKGHEh2hGU2E,503
+tiny_torch_mirror/core/ui.py,sha256=0URn4IkyOXns-mjrFKCbzb-H2Tv59Kbc8c-qwYSNBhc,7364
+tiny_torch_mirror/core/utils.py,sha256=RpCG6u8nTHCOkZqyPwuYkPJc2XqyMgPlI4_nkrCII2o,9087
+tiny_torch_mirror-0.1.0.dist-info/METADATA,sha256=cbPPlJ1XY1tf869mgG7DmgFsDPOsA6bD-1N90k0RkDs,2023
+tiny_torch_mirror-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tiny_torch_mirror-0.1.0.dist-info/entry_points.txt,sha256=0iZAtWJdKLEaj53NeRfprqA4dt1_3nYb8reKMF4_vWE,172
+tiny_torch_mirror-0.1.0.dist-info/top_level.txt,sha256=N5m94lFvOGSnOSOEAmJUgg41sAkVdzm6bICRDtH6Kfc,18
+tiny_torch_mirror-0.1.0.dist-info/RECORD,,
