@@ -1,0 +1,39 @@
+# 查看状态 systemctl status <name> 或 journalctl -u <name>
+# 重新加载并重启服务 systemctl daemon-reload && systemctl restart <name>
+
+[Unit]
+# 提供远程桌面服务（VNC）的描述
+Description=TigerVNC service
+# 指定了该服务应在哪些其他服务之后启动 确保在网络和系统日志服务启动之后再启动 VNC 服务
+After=syslog.target network.target
+
+[Service]
+# TODO fix PID problem: Type=forking 最好，但是系统守护进程在启动时以root身份运行
+# ERROR tigervnc@:1.service: New main PID 233 does not belong to service, and PID file is not owned by root. Refusing.
+# https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=
+# https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Specifiers
+# https://wiki.archlinux.org/index.php/TigerVNC#Starting_and_stopping_vncserver_via_systemd
+# 一旦发布，这应该由官方systemd文件修复: https://github.com/TigerVNC/tigervnc/pull/838
+# 指定服务类型为 forking，意味着它会在启动后 fork 出一个后台进程 simple 非守护进程的方式
+Type=simple
+# 指定运行该服务的用户
+User=root
+# 使用 PAM 进行登录验证
+PAMName=login
+# NOTE %u 对 PIDFile 不起作用 因为这不是 "User=" https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Specifiers
+# 指定 服务启动后将会生成的 PID 文件的位置，用于追踪服务的主进程 ID
+PIDFile=%h/.vnc/%H%i.pid
+# 在启动服务之前尝试停止任何现有的 VNC 服务器实例，- 符号时，它的作用是告诉 Systemd 忽略该命令的失败退出状态
+ExecStartPre=-/usr/bin/vncserver -kill %i > /dev/null 2>&1
+# 启动 VNC 服务器的命令，指定显示分辨率和颜色深度 
+# -localhost no 是必须的 确保VNC 服务器接受来自任何主机的连接请求，而不仅仅是 localhost（即 127.0.0.1）
+# -fg 非守护进程的方式 运行
+ExecStart=/usr/bin/vncserver %i -geometry 1920x1080 -depth 24 -localhost no -fg
+# 停止 VNC 服务器的命令
+ExecStop=/usr/bin/vncserver -kill %i > /dev/null 2>&1
+# 屏幕分辨率geometry 作为环境变量进行设置 可以通过 EnvironmentFile=/path/to/env
+# EnvironmentFile=/etc/vnc-env.conf
+
+[Install]
+# 定义在 multi-user 目标下自动启动此服务
+WantedBy=multi-user.target

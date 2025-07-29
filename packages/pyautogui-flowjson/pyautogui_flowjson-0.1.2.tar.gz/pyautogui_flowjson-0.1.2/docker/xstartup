@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# 指定了当前会话使用的显示服务器类型。当你设置 XDG_SESSION_TYPE=x11，你是在告诉系统使用 X Window System (X11) 而不是 Wayland 作为显示服务器。
+# 这在一些应用程序不兼容 Wayland 或者你需要特定于 X11 的功能时特别有用。例如，某些 VNC 客户端或远程桌面解决方案可能与 Wayland 不兼容，默认情况下需要 X11 才能正常工
+export XDG_SESSION_TYPE=x11
+# 用于禁用 xmodmap 工具对键盘布局的自动调整。xmodmap 是一个用来修改键盘映射表（keymap table）的工具。
+# 设置 XKL_XMODMAP_DISABLE=1 可以避免 GNOME 桌面环境中的一些潜在问题，特别是那些与键盘快捷键或特殊键映射有关的问题。这在一些情况下可以防止 GNOME 自动重置用户的自定义键盘映射
+export XKL_XMODMAP_DISABLE=1
+
+# 取消设置了 SESSION_MANAGER 环境变量。这个变量通常由 GNOME 或其他桌面环境用来管理会话。如果这个变量被设置，可能会导致 VNC 会话出现问题，因为它可能试图与现有的会话管理器通信
+unset SESSION_MANAGER
+# 取消设置了 DBUS_SESSION_BUS_ADDRESS 环境变量。D-Bus 是一个消息总线系统，用于应用程序之间的通信。取消设置这个变量可以防止新的 D-Bus 会话尝试连接到已经存在的 D-Bus 地址，从而避免潜在的问题
+unset DBUS_SESSION_BUS_ADDRESS
+# 启动默认桌面环境
+# exec /etc/X11/xinit/xinitrc
+# 这是为了允许系统级别的 VNC 配置覆盖用户的 .vnc/xstartup 文件
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+# 检查用户主目录下的 .Xresources 文件是否可读。如果是，则使用 xrdb 命令将其加载到 X server 的资源数据库中。.Xresources 文件通常包含用户对 X 应用程序外观和行为的自定义设置
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+# xsetroot 命令将背景颜色设置为纯灰色。这是一个简单的命令，用来给用户界面提供基本的视觉样式
+# xsetroot -solid grey
+# 启动 vncconfig 工具，& 符号意味着它将在后台运行，不会阻塞脚本的继续执行 -nowin 参数时，vncconfig 不会创建任何图形界面窗口，包括系统托盘图标
+vncconfig -nowin &
+
+# 启动了一个 D-Bus 会话（会设置DBUS_SESSION_BUS_ADDRESS）
+eval "$(dbus-launch --sh-syntax)"
+
+# 替换 20.04 firefox.desktop 24.04 firefox_firefox.desktop 为 google-chrome
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed -E "s/'firefox(_firefox)?\.desktop'/'google-chrome.desktop'/")"
+# 添加 Terminal
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Terminal.desktop']/")"
+
+# Screen Lock -> Screen Lock Blank Screen Delay
+# Power -> Blank Screen 禁用 系统闲置多长时间后，屏幕会自动变暗
+gsettings set org.gnome.desktop.session idle-delay 0
+# Screen Lock -> Automatic Screen Lock 禁用自动锁定屏幕
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+# Screen Lock -> Lock Screen on Suspend 禁用挂起时锁定屏幕
+gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+# 禁用整体 锁屏操作屏幕右上角lock消失
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+# 备用
+# gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+
+# 查看所有 键 & 值
+# gsettings list-recursively org.gnome.desktop.screensaver
+# 查看所有 键
+# gsettings list-keys org.gnome.desktop.screensaver
+
+# 确保 非守护进程 无限挂起​
+# tail -f /dev/null
+
+# VNC 剪贴板桥接工具 mac command+c command+v  linux control+c control+v
+# vnc 本机 <-> linux
+# novnc 本机 <-> novnc Browser <-> linux
+autocutsel -fork
+
+# 启动 GNOME 桌面环境
+gnome-session
+# dbus-launch --exit-with-session 

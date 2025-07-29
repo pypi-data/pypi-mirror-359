@@ -1,0 +1,11 @@
+[Unit]
+Description=noVNC Server
+After=tigervnc@:1.service
+ 
+[Service]
+Type=simple
+User=root
+ExecStart=/app/noVNC/utils/novnc_proxy --vnc localhost:5901 --listen 0.0.0.0:6081
+ 
+[Install]
+WantedBy=multi-user.target
