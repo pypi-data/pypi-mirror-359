@@ -1,0 +1,33 @@
+{
+  "name": "c2cgeoform",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
+    "test": "jest"
+  },
+  "private": true,
+  "dependencies": {
+    "@babel/core": "7.27.7",
+    "@babel/plugin-proposal-optional-chaining": "7.21.0",
+    "@babel/polyfill": "7.12.1",
+    "@babel/preset-env": "7.27.2",
+    "babel-loader": "10.0.0",
+    "clean-webpack-plugin": "4.0.0",
+    "html-webpack-plugin": "5.6.3",
+    "webpack": "5.99.9",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2",
+    "whatwg-fetch": "3.6.20"
+  },
+  "devDependencies": {
+    "css-loader": "7.1.2",
+    "mini-css-extract-plugin": "2.9.2",
+    "sass": "1.89.2",
+    "ol": "10.6.1",
+    "proj4": "2.19.5",
+    "sass-loader": "16.0.5",
+    "style-loader": "4.0.0"
+  }
+}
