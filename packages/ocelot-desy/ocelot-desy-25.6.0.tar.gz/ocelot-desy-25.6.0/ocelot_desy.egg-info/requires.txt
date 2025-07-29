@@ -1,0 +1,10 @@
+numpy
+scipy
+matplotlib
+pandas
+h5py
+
+[docs]
+Sphinx
+alabaster
+sphinxcontrib-jsmath

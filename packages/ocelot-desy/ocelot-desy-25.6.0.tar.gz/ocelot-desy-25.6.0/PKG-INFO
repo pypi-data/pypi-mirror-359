@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ocelot-desy
+Version: 25.6.0
+Summary: Accelerator, radiation and x-ray optics simulation framework
+Home-page: https://github.com/ocelot-collab/ocelot
+Author: ocelot-collab
+Author-email: tomin.sergey@gmail.com
+License: GNU General Public License v3.0
+Platform: UNKNOWN
+Requires-Python: >=3.9
+Provides-Extra: docs
+License-File: LICENSE
+License-File: AUTHORS
+
+UNKNOWN
+
