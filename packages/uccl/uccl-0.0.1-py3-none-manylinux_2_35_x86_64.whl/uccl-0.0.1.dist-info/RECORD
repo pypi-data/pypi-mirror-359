@@ -1,0 +1,14 @@
+uccl/__init__.py,sha256=ugyuFliEqtAwQmH4sTlc16YXKYbFWDmfyk87fErB8-8,21
+uccl/lib/libnccl-net-uccl.so,sha256=FvDhnxAVbiQGpYNQp8qjZUY1c5EQBCax39z8pSB4xUM,5731952
+uccl.libs/libgflags-f3c7dc50.so.2.2.2,sha256=EeNp0PbBZL42LAAkS2-tSykeRwaYqAM91Dqd4nGDf8o,173832
+uccl.libs/libglog-c040a6f3.so.0.4.0,sha256=ZXQYGApeHnI9HHzNSKU76f7a52_wbcC2lrUN5QbVjyE,174856
+uccl.libs/libibverbs-b146f9c3.so.1.14.39.0,sha256=GqPEYcoZ8b68MU7xf1hOAIhtgNXtVDGw1EulAvx2fQM,156648
+uccl.libs/liblzma-493cb401.so.5.2.5,sha256=ZOILvwbGsEeQ4f0Y41z1mwcBSG2LNzB7HqP3OsLTFcQ,175808
+uccl.libs/libnl-3-458dd701.so.200.26.0,sha256=dxWAHrRRZhnJKUE5Bb_7OMoQoyxOUml0ayfGRKhow6w,148368
+uccl.libs/libnl-route-3-e461e1f3.so.200.26.0,sha256=0CkXtCqwXOoxJ7fYja3QSHFULriWOiUVKcrgeeiAFnI,599936
+uccl.libs/libunwind-5d1f6f10.so.8.0.1,sha256=wkfRCZ3Fi4haazhzA9D1D9zj4N3e-I_FMiOdY8oQ_4M,71720
+uccl-0.0.1.dist-info/METADATA,sha256=A0RI-mj5wZhj5RSYoyOZIb0x1LXRkbqqsij1ifceJVc,6284
+uccl-0.0.1.dist-info/WHEEL,sha256=1nnPIx_4gP7sHRnqhnqYZTQSNRKOBlaU9v71C_2H2p8,132
+uccl-0.0.1.dist-info/top_level.txt,sha256=vnFgo7LTC70B4ugBcOD6QMtInbw_LJLSghsmBEHZ4N8,5
+uccl-0.0.1.dist-info/RECORD,,
+uccl-0.0.1.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
