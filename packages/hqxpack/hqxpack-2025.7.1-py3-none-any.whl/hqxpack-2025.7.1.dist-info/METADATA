@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: hqxpack
+Version: 2025.7.1
+Summary: HQX's AI Tool Pack
+Author: MC_CZQ
+Author-email: 2637941587@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: openai
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 这是来源于HQX Python Team开发的一个AI工具包，拥有如deepseek、kimi、coze等AI的API集成接口。
