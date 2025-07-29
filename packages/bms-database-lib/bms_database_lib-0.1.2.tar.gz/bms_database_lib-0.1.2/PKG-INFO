@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: bms-database-lib
+Version: 0.1.2
+Summary: 
+License: Proprietary
+Author: Mikhail Bashchkov
+Author-email: mikhail@bashchkov.com
+Requires-Python: >=3.13
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: asyncpg (>=0.30.0,<0.31.0)
+Requires-Dist: pydantic (>=2.11.7,<3.0.0)
+Requires-Dist: sqlalchemy (>=2.0.41,<3.0.0)
+Project-URL: Homepage, https://gitlab.com/btecham/bms/backend/libs/database-lib
+Project-URL: Repository, https://gitlab.com/btecham/bms/backend/libs/database-lib
+Description-Content-Type: text/markdown
+
+# BMS - Database Lib
+
+
+## Getting started
+
