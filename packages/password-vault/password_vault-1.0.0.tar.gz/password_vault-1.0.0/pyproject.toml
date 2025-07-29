@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "password-vault"
+version = "1.0.0"
+description = "A simple python library to safely store your passwords using encription"
+authors = ["matteogabburo <matteogabburo@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pynacl = "^1.5.0"
+cryptography = "^45.0.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,168 @@
+Metadata-Version: 2.1
+Name: password-vault
+Version: 1.0.0
+Summary: A simple python library to safely store your passwords using encription
+License: Apache 2.0
+Author: matteogabburo
+Author-email: matteogabburo@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: cryptography (>=45.0.4,<46.0.0)
+Requires-Dist: pynacl (>=1.5.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# Secure Password Vault
+
+A lightweight, thread-safe, file-backed password vault that encrypts entries using a master password. It provides a simple API to add, retrieve, and list secrets, while ensuring data integrity through HMAC and protecting against concurrent access with file locks.
+
+---
+
+## Table of Contents
+
+* [Features](#features)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+
+  * [Initializing or Opening a Vault](#initializing-or-opening-a-vault)
+  * [Adding Secrets](#adding-secrets)
+  * [Retrieving Secrets](#retrieving-secrets)
+  * [Listing Keys](#listing-keys)
+  * [Closing the Vault](#closing-the-vault)
+* [API Reference](#api-reference)
+
+  * [Class: `Vault`](#class-vault)
+  * [Exceptions](#exceptions)
+* [Security Considerations](#security-considerations)
+* [Contributing](#contributing)
+* [License](#license)
+
+---
+
+## Features
+
+* **AES‑GCM encryption** of each entry via `cryptography.Fernet`.
+* **Argon2id** key derivation for strong password-based key stretching.
+* **Integrity checking** with HMAC-SHA256 over the entire vault.
+* **Inter-process file locking** (`filelock`) to prevent concurrent writes.
+* **Threaded queue** to serialize file operations in a dedicated worker.
+* **Configurable password caching** with auto-lock after inactivity.
+* Custom subclass `NumericValue` for automatically sorting numeric keys.
+
+## Requirements
+
+This project uses Poetry for dependency management. Ensure you have [Poetry](https://python-poetry.org/) installed.
+
+Required Python version:
+
+* Python 3.12+
+
+Dependencies are specified in `pyproject.toml` and will be installed automatically by Poetry.
+
+## Installation
+
+Install the library via Poetry from PyPI:
+
+```bash
+poetry add password-vault
+```
+
+Or to install for development:
+
+```bash
+git clone https://github.com/matteogabburo/password-vault.git
+cd password-vault
+poetry install
+```
+
+Then import and use the `Vault` class in your project:
+
+````python
+from vault import Vault
+```python
+from vault import Vault
+````
+
+## Usage
+
+### Initializing or Opening a Vault
+
+```python
+# Creates a new vault if file doesn't exist, or opens existing.
+vault = Vault(filepath="./mysecret.vault", master_password=None, keep_unlocked=10)
+```
+
+* If `mysecret.vault` does not exist, you will be prompted for a **new** master password (unless provided).
+* If it exists, you will be prompted to verify your password (unless provided).
+* `keep_unlocked` is seconds to cache the password before re-prompting.
+
+### Adding Secrets
+
+```python
+# Add a new secret with key "api_token" and value "s3cr3t"
+vault.add(key="api_token", secret="s3cr3t")
+```
+
+Raises `WalletError` on lock timeout or I/O issues.
+
+### Retrieving Secrets
+
+```python
+token = vault.get(key="api_token")
+print(token)  # "s3cr3t"
+```
+
+* Returns a `NumericValue` for numeric-style secrets (e.g. "value1").
+* Raises `KeyNotFoundError` if the key is absent.
+
+### Listing Keys
+
+```python
+keys = vault.list_keys()
+print(keys)  # ["api_token", ...]
+```
+
+### Closing the Vault
+
+```python
+vault.close()
+```
+
+Stops the internal worker thread and releases resources.
+Automatically invoked on program exit.
+
+## API Reference
+
+### Class: `Vault`
+
+| Method                                                       | Description                                        |
+| ------------------------------------------------------------ | -------------------------------------------------- |
+| `__init__(filepath, master_password=None, keep_unlocked=10)` | Initialize or open a vault file. Prompt if needed. |
+| `add(key, secret, master_password=None)`                     | Encrypt and store a secret.                        |
+| `get(key, master_password=None) -> str`                      | Decrypt and return a secret.                       |
+| `list_keys(master_password=None) -> list`                    | Return list of stored keys.                        |
+| `close()`                                                    | Gracefully stop worker thread.                     |
+
+#### Class Attributes
+
+* `KDF_ITERATIONS`: Number of iterations for Argon2id KDF.
+* `FILE_MODE`: File permissions (default `0o600`).
+* `LOCK_TIMEOUT`: Seconds to wait for the file lock (default `5`).
+
+### Exceptions
+
+* `WalletError`: Base exception for vault errors.
+* `WalletNotFoundError`: File does not exist.
+* `InvalidPasswordError`: Wrong master password.
+* `KeyNotFoundError`: Secret key not found.
+* `MalformedWalletError`: Vault JSON is invalid or missing fields.
+
+## Security Considerations
+
+* **Do not** share your master password.
+* Vault file is created with **owner-only** permissions.
+* Entries are individually encrypted and integrity-protected.
+* **Argon2id** settings: 64 MiB memory, parallelism 4, 3 iterations.
+* HMAC key derived from the same Argon2id output, ensuring tamper-detection.
