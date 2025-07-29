@@ -1,0 +1,10 @@
+desto/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+desto/app/config.py,sha256=LKckbfiUnT5fuORxsNlgJOhO3kP4EtnA5n52Q3Se4Nk,2213
+desto/app/dashboard.py,sha256=6-Esvdg--L0xjwnleSzltEfqE-JzdcACDF9Gb515Yns,1654
+desto/app/sessions.py,sha256=kCgrX0jau5e7g-JonYrQwEYLvHVHb00o2gIRGHMmEg4,24785
+desto/app/ui.py,sha256=mmXvAAiDnP_SA5k8_hD0QShaUMVJPu434y-pS32hwmQ,54229
+desto-0.1.13.dist-info/METADATA,sha256=QQBZLDeUd0HLuRms4DhSlLh7TfQZK6CTZKgx1w2sTuw,6355
+desto-0.1.13.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+desto-0.1.13.dist-info/entry_points.txt,sha256=mMBKT-siKg8-GaWG7pxacvK3yJJ6hmB1TKJlCJZoEeo,51
+desto-0.1.13.dist-info/licenses/LICENSE,sha256=fnFw486_iKn2DHuEIUGDI8CTBNoa9NXpD02h3ByKJmE,18650
+desto-0.1.13.dist-info/RECORD,,
