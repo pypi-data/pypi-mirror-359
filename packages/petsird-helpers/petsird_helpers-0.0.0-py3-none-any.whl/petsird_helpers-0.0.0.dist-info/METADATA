@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: petsird-helpers
+Version: 0.0.0
+Summary: Library and tools for working with Positron Emission Tomography Standardization Initiative Raw Data (PETSIRD)
+Author-email: Kris Thielemans <k.thielemans@ucl.ac.uk>
+Maintainer-email: Casper da Costa-Luis <imaging@cdcl.ml>, Kris Thielemans <k.thielemans@ucl.ac.uk>
+License-Expression: Apache-2.0
+Project-URL: Homepage, https://etsinitiative.org
+Requires-Python: >=3.9
+Requires-Dist: numpy>=1.22
