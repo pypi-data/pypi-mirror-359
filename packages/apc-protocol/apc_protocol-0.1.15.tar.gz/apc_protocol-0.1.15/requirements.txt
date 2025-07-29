@@ -1,0 +1,6 @@
+grpcio>=1.73.1
+grpcio-tools>=1.73.1
+websockets>=15.0.1
+redis>=6.2.0
+boto3>=1.39.0
+protobuf>=6.31.1
