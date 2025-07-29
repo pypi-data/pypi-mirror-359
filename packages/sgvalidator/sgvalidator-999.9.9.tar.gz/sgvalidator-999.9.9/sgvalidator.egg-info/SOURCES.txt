@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+sgvalidator.egg-info/PKG-INFO
+sgvalidator.egg-info/SOURCES.txt
+sgvalidator.egg-info/dependency_links.txt
+sgvalidator.egg-info/top_level.txt
