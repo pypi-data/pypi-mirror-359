@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "Cython", "numpy", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.qpro]
+[[tool.qpro.server_targets]]
+user = "lianhaocheng"
+host = "localhost"
+path = "/opt/homebrew/lib/python3.13/site-packages/"
+port = "22"
+
+[tool.qpro.config]
+build = "python3 setup.py build_ext --inplace"
+entry_point = ""
+executable = "python3 -m MtxDrawer.main"
+input_file = ""
+template_root = ""
+enable_complete = true
