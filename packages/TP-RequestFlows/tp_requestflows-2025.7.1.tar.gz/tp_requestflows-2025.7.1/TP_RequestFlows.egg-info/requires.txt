@@ -1,0 +1,3 @@
+json-duplicate-keys>=2025.7.1
+TP-HTTP-Request-Response-Parser>=2025.7.1
+TP-Requests>=2025.7.1
