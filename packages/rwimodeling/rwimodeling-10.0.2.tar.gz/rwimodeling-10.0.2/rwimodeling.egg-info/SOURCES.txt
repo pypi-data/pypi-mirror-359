@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+rwimodeling/__init__.py
+rwimodeling.egg-info/PKG-INFO
+rwimodeling.egg-info/SOURCES.txt
+rwimodeling.egg-info/dependency_links.txt
+rwimodeling.egg-info/not-zip-safe
+rwimodeling.egg-info/top_level.txt

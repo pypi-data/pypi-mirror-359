@@ -1,0 +1,28 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rwimodeling" # 
+version = "10.0.2"       # 
+authors = [
+  { name="abc", email="abc@abc.com" },
+]
+description = "A simple PoC package for supply chain research demonstrating code execution on install and data exfiltration."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["poc", "supply-chain", "security", "research", "exfiltration"]
+
+[project.urls]
+"Homepage" = "https://github.com" # Update this
+"Bug Tracker" = "https://github.com" # Update this
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rwimodeling*"] # 
