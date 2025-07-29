@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: Shadowcord
+Version: 1.7.3
+Summary: A Discord.py 1.7.3 fork tailored for selfbot usage
+Home-page: https://github.com/JinxedUp/shadowcord
+Author: JinxedUp
+License: MIT
+Project-URL: Documentation, https://discordpy.readthedocs.io/en/v1.7.3/
+Project-URL: Issue tracker, https://github.com/JinxedUp/shadowcord/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Python: >=3.8.0
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Provides-Extra: voice
+Requires-Dist: PyNaCl<1.5,>=1.3.0; extra == "voice"
+Provides-Extra: docs
+Requires-Dist: sphinx==4.0.2; extra == "docs"
+Requires-Dist: sphinxcontrib_trio==1.1.2; extra == "docs"
+Requires-Dist: sphinxcontrib-websupport; extra == "docs"
+Provides-Extra: speed
+Requires-Dist: orjson>=3.5.4; extra == "speed"
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
