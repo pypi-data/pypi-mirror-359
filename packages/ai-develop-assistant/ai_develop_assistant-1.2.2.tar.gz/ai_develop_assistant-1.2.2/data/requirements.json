@@ -1,0 +1,207 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": "# 五子棋网页版游戏 - 系统架构设计文档\n\n## 1. 项目概述\n\n### 1.1 项目目标\n开发一个功能完整的五子棋网页版游戏，支持人机对战、本地双人对战和在线双人对战三种游戏模式。\n\n### 1.2 核心功能\n- **游戏模式**: 人机对战(3个AI难度)、本地双人对战、在线双人对战\n- **棋盘规格**: 标准15×15棋盘，五子连珠获胜，可选禁手规则\n- **辅助功能**: 悔棋、提示、棋谱回放、游戏保存\n- **界面设计**: 简洁现代风格，木质纹理棋盘，响应式设计\n- **网络功能**: 随机匹配、房间模式、实时聊天\n- **用户系统**: 游客模式、注册用户模式\n\n## 2. 技术栈选型\n\n### 2.1 前端技术栈\n- **核心技术**: HTML5 + CSS3 + JavaScript (ES6+)\n- **渲染引擎**: HTML5 Canvas\n- **样式预处理**: CSS3 原生变量和Grid/Flexbox布局\n- **模块化**: ES6 Modules\n- **构建工具**: Vite (开发服务器和打包)\n\n### 2.2 后端技术栈\n- **运行环境**: Node.js 18+\n- **Web框架**: Express.js\n- **实时通信**: Socket.io\n- **数据库**: MongoDB\n- **身份认证**: JWT + bcrypt\n- **API文档**: 内置Swagger\n\n### 2.3 开发工具\n- **版本控制**: Git\n- **代码规范**: ESLint + Prettier\n- **测试框架**: Jest (单元测试)\n- **部署**: Docker + Nginx\n\n## 3. 系统架构设计\n\n### 3.1 整体架构图\n\n```mermaid\ngraph TB\n    subgraph \"客户端层\"\n        A[Web浏览器] --> B[游戏前端应用]\n        B --> C[Canvas渲染引擎]\n        B --> D[游戏状态管理]\n        B --> E[网络通信模块]\n    end\n    \n    subgraph \"网络层\"\n        F[HTTP/HTTPS] --> G[WebSocket/Socket.io]\n    end\n    \n    subgraph \"服务端层\"\n        H[Nginx反向代理] --> I[Express.js服务器]\n        I --> J[Socket.io实时通信]\n        I --> K[RESTful API]\n        I --> L[身份认证中间件]\n    end\n    \n    subgraph \"业务逻辑层\"\n        M[游戏房间管理] --> N[匹配系统]\n        M --> O[游戏状态同步]\n        P[用户管理] --> Q[AI引擎]\n        P --> R[数据统计]\n    end\n    \n    subgraph \"数据层\"\n        S[MongoDB数据库]\n        T[Redis缓存]\n        U[本地存储LocalStorage]\n    end\n    \n    E --> F\n    F --> H\n    J --> M\n    K --> P\n    M --> S\n    P --> S\n    O --> T\n    D --> U\n```\n\n### 3.2 前端模块架构\n\n```mermaid\ngraph LR\n    subgraph \"前端应用架构\"\n        A[App.js 主应用] --> B[GameManager 游戏管理器]\n        B --> C[BoardRenderer 棋盘渲染]\n        B --> D[GameLogic 游戏逻辑]\n        B --> E[AIEngine AI引擎]\n        B --> F[NetworkManager 网络管理]\n        B --> G[UIManager 界面管理]\n        B --> H[DataManager 数据管理]\n        \n        C --> I[Canvas绘制]\n        D --> J[规则验证]\n        E --> K[算法实现]\n        F --> L[Socket.io客户端]\n        G --> M[事件处理]\n        H --> N[本地存储]\n    end\n```\n\n## 4. 核心模块设计\n\n### 4.1 游戏状态管理 (GameState)\n\n```javascript\nclass GameState {\n    constructor() {\n        this.board = Array(15).fill().map(() => Array(15).fill(0)); // 0:空 1:黑 2:白\n        this.currentPlayer = 1; // 1:黑子先手 2:白子\n        this.gamePhase = 'waiting'; // waiting/playing/finished\n        this.moveHistory = []; // 历史步骤\n        this.gameMode = 'ai'; // ai/local/online\n        this.aiDifficulty = 'medium'; // easy/medium/hard\n        this.timer = { black: 0, white: 0 };\n        this.winner = null;\n        this.lastMove = null;\n    }\n}\n```\n\n### 4.2 棋盘渲染器 (BoardRenderer)\n\n```javascript\nclass BoardRenderer {\n    constructor(canvas, gameState) {\n        this.canvas = canvas;\n        this.ctx = canvas.getContext('2d');\n        this.gameState = gameState;\n        this.cellSize = 30;\n        this.boardSize = 15;\n        this.margin = 40;\n    }\n    \n    render() {\n        this.drawBoard();\n        this.drawStones();\n        this.drawLastMove();\n        this.drawCoordinates();\n    }\n    \n    drawBoard() { /* 绘制棋盘网格和木质背景 */ }\n    drawStones() { /* 绘制黑白棋子 */ }\n    drawLastMove() { /* 高亮最后一步 */ }\n    getClickPosition(x, y) { /* 将点击坐标转换为棋盘位置 */ }\n}\n```\n\n### 4.3 AI引擎 (AIEngine)\n\n```javascript\nclass AIEngine {\n    constructor(difficulty = 'medium') {\n        this.difficulty = difficulty;\n        this.maxDepth = this.getMaxDepth(difficulty);\n    }\n    \n    getBestMove(board, player) {\n        switch(this.difficulty) {\n            case 'easy': return this.getRandomMove(board);\n            case 'medium': return this.getHeuristicMove(board, player);\n            case 'hard': return this.getMinimaxMove(board, player);\n        }\n    }\n    \n    minimax(board, depth, alpha, beta, isMaximizing, player) {\n        // Minimax算法 + Alpha-Beta剪枝\n    }\n    \n    evaluateBoard(board, player) {\n        // 棋盘评估函数：考虑连子数量、位置权重、攻防平衡\n    }\n}\n```\n\n### 4.4 网络管理器 (NetworkManager)\n\n```javascript\nclass NetworkManager {\n    constructor() {\n        this.socket = null;\n        this.isConnected = false;\n        this.roomId = null;\n        this.playerId = null;\n    }\n    \n    connect() {\n        this.socket = io();\n        this.setupEventListeners();\n    }\n    \n    joinRoom(roomId) { /* 加入房间 */ }\n    createRoom() { /* 创建房间 */ }\n    sendMove(move) { /* 发送落子 */ }\n    sendMessage(message) { /* 发送聊天消息 */ }\n    \n    setupEventListeners() {\n        this.socket.on('move', this.handleMove.bind(this));\n        this.socket.on('gameState', this.handleGameState.bind(this));\n        this.socket.on('message', this.handleMessage.bind(this));\n    }\n}\n```\n\n## 5. 数据库设计\n\n### 5.1 用户表 (users)\n\n```javascript\n{\n    _id: ObjectId,\n    username: String,\n    email: String,\n    passwordHash: String,\n    avatar: String,\n    createdAt: Date,\n    lastLoginAt: Date,\n    isGuest: Boolean,\n    statistics: {\n        totalGames: Number,\n        wins: Number,\n        losses: Number,\n        draws: Number,\n        winRate: Number,\n        averageGameTime: Number,\n        favoriteMode: String\n    }\n}\n```\n\n### 5.2 游戏记录表 (games)\n\n```javascript\n{\n    _id: ObjectId,\n    gameId: String,\n    players: [{\n        userId: ObjectId,\n        username: String,\n        color: String, // 'black' | 'white'\n        isAI: Boolean,\n        aiDifficulty: String\n    }],\n    gameMode: String, // 'ai' | 'local' | 'online'\n    board: Array, // 15x15棋盘状态\n    moveHistory: [{\n        player: String,\n        position: [Number, Number],\n        timestamp: Date,\n        moveNumber: Number\n    }],\n    result: {\n        winner: String, // 'black' | 'white' | 'draw'\n        winCondition: String, // 'five_in_row' | 'timeout' | 'resign'\n        endPosition: Array\n    },\n    startTime: Date,\n    endTime: Date,\n    duration: Number\n}\n```\n\n### 5.3 房间表 (rooms)\n\n```javascript\n{\n    _id: ObjectId,\n    roomId: String,\n    hostId: ObjectId,\n    players: [{\n        userId: ObjectId,\n        username: String,\n        isReady: Boolean,\n        joinTime: Date\n    }],\n    gameSettings: {\n        timeLimit: Number,\n        allowUndo: Boolean,\n        enableForbiddenMoves: Boolean\n    },\n    status: String, // 'waiting' | 'playing' | 'finished'\n    createdAt: Date,\n    gameId: ObjectId\n}\n```\n\n## 6. API接口设计\n\n### 6.1 用户认证接口\n\n```javascript\n// POST /api/auth/register\n{\n    username: String,\n    email: String,\n    password: String\n}\n\n// POST /api/auth/login\n{\n    email: String,\n    password: String\n}\n\n// POST /api/auth/guest\n{\n    username: String\n}\n```\n\n### 6.2 游戏接口\n\n```javascript\n// GET /api/games/history/:userId\n// 获取用户游戏历史\n\n// POST /api/games/save\n// 保存游戏进度\n\n// GET /api/games/statistics/:userId\n// 获取用户统计数据\n```\n\n### 6.3 房间管理接口\n\n```javascript\n// POST /api/rooms/create\n// 创建游戏房间\n\n// POST /api/rooms/join/:roomId\n// 加入游戏房间\n\n// GET /api/rooms/list\n// 获取房间列表\n```\n\n## 7. Socket.io事件设计\n\n### 7.1 客户端发送事件\n\n```javascript\n// 游戏相关\nsocket.emit('makeMove', { position: [x, y], roomId });\nsocket.emit('requestUndo', { roomId });\nsocket.emit('resign', { roomId });\n\n// 房间相关\nsocket.emit('joinRoom', { roomId, userId });\nsocket.emit('leaveRoom', { roomId });\nsocket.emit('playerReady', { roomId });\n\n// 聊天相关\nsocket.emit('sendMessage', { roomId, message, type });\n```\n\n### 7.2 服务端发送事件\n\n```javascript\n// 游戏状态同步\nsocket.emit('gameState', gameState);\nsocket.emit('moveResult', { success, position, nextPlayer });\nsocket.emit('gameEnd', { winner, reason });\n\n// 房间状态\nsocket.emit('roomUpdate', roomInfo);\nsocket.emit('playerJoined', playerInfo);\nsocket.emit('playerLeft', playerId);\n\n// 聊天消息\nsocket.emit('newMessage', { sender, message, timestamp });\n```\n\n## 8. 部署架构\n\n### 8.1 生产环境部署\n\n```mermaid\ngraph TB\n    subgraph \"负载均衡层\"\n        A[Nginx负载均衡器]\n    end\n    \n    subgraph \"应用服务层\"\n        B[Node.js应用服务器1]\n        C[Node.js应用服务器2]\n    end\n    \n    subgraph \"数据层\"\n        D[MongoDB主节点]\n        E[MongoDB副本节点]\n        F[Redis缓存集群]\n    end\n    \n    subgraph \"静态资源\"\n        G[CDN静态资源]\n    end\n    \n    A --> B\n    A --> C\n    B --> D\n    C --> D\n    B --> F\n    C --> F\n    D --> E\n    A --> G\n```\n\n### 8.2 Docker配置\n\n```dockerfile\n# Dockerfile\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\nEXPOSE 3000\nCMD [\"npm\", \"start\"]\n```\n\n```yaml\n# docker-compose.yml\nversion: '3.8'\nservices:\n  app:\n    build: .\n    ports:\n      - \"3000:3000\"\n    environment:\n      - NODE_ENV=production\n      - MONGODB_URI=mongodb://mongo:27017/gomoku\n    depends_on:\n      - mongo\n      - redis\n  \n  mongo:\n    image: mongo:5.0\n    volumes:\n      - mongo_data:/data/db\n    \n  redis:\n    image: redis:7-alpine\n    \n  nginx:\n    image: nginx:alpine\n    ports:\n      - \"80:80\"\n    volumes:\n      - ./nginx.conf:/etc/nginx/nginx.conf\n```\n\n## 9. 开发流程与实施计划\n\n### 9.1 开发阶段划分\n\n#### 第一阶段：核心游戏功能 (2周)\n1. **项目初始化**\n   - 创建项目结构\n   - 配置开发环境和构建工具\n   - 设置代码规范和Git工作流\n\n2. **棋盘渲染系统**\n   - 实现Canvas棋盘绘制\n   - 添加鼠标交互和响应式设计\n   - 实现棋子动画效果\n\n3. **游戏逻辑核心**\n   - 实现游戏规则验证\n   - 添加胜负判断逻辑\n   - 实现禁手规则检查\n\n4. **本地双人对战**\n   - 实现轮流下棋逻辑\n   - 添加悔棋和重新开始功能\n   - 实现游戏状态保存\n\n#### 第二阶段：AI系统 (1.5周)\n1. **AI引擎基础**\n   - 实现棋盘评估函数\n   - 开发三个难度等级的AI\n   - 优化AI响应速度\n\n2. **人机对战模式**\n   - 集成AI引擎到游戏流程\n   - 添加AI思考时间显示\n   - 实现提示功能\n\n#### 第三阶段：界面优化 (1周)\n1. **UI/UX完善**\n   - 实现完整的游戏界面\n   - 添加音效和视觉反馈\n   - 优化移动端体验\n\n2. **辅助功能**\n   - 实现棋谱回放系统\n   - 添加游戏统计功能\n   - 实现设置和偏好保存\n\n#### 第四阶段：后端服务 (2周)\n1. **服务器架构**\n   - 搭建Express.js服务器\n   - 配置MongoDB数据库\n   - 实现用户认证系统\n\n2. **实时通信**\n   - 集成Socket.io\n   - 实现房间管理系统\n   - 开发匹配算法\n\n#### 第五阶段：在线对战 (1.5周)\n1. **多人游戏功能**\n   - 实现在线对战逻辑\n   - 添加断线重连机制\n   - 实现游戏状态同步\n\n2. **社交功能**\n   - 开发聊天系统\n   - 实现快捷表情\n   - 添加游戏分享功能\n\n#### 第六阶段：测试与部署 (1周)\n1. **测试与优化**\n   - 单元测试和集成测试\n   - 性能优化和bug修复\n   - 跨浏览器兼容性测试\n\n2. **部署上线**\n   - 配置生产环境\n   - 设置监控和日志\n   - 编写部署文档\n\n### 9.2 技术实施要点\n\n#### 9.2.1 模块化开发原则\n- 每个功能模块独立开发和测试\n- 使用ES6模块系统保证代码组织清晰\n- 实现松耦合的模块间通信机制\n\n#### 9.2.2 性能优化策略\n- Canvas渲染优化：只重绘变化区域\n- AI计算优化：使用Web Worker避免阻塞UI\n- 网络优化：实现智能重连和数据压缩\n\n#### 9.2.3 错误处理机制\n- 前端：全局错误捕获和用户友好提示\n- 后端：完整的日志记录和错误监控\n- 网络：超时处理和重试机制\n\n### 9.3 质量保证措施\n\n#### 9.3.1 代码质量\n- ESLint + Prettier 代码规范\n- 代码审查流程\n- 单元测试覆盖率 > 80%\n\n#### 9.3.2 用户体验\n- 响应式设计测试\n- 多设备兼容性验证\n- 用户操作流程优化\n\n#### 9.3.3 系统稳定性\n- 负载测试和压力测试\n- 数据备份和恢复机制\n- 监控告警系统\n\n## 10. 风险评估与应对\n\n### 10.1 技术风险\n- **AI算法性能**: 通过Web Worker和算法优化解决\n- **实时通信稳定性**: 实现重连机制和状态同步\n- **跨浏览器兼容性**: 使用标准API和polyfill\n\n### 10.2 业务风险\n- **用户体验**: 持续的用户测试和反馈收集\n- **服务器负载**: 实现水平扩展和负载均衡\n- **数据安全**: 加密传输和安全认证\n\n这份架构设计文档为五子棋网页版游戏提供了完整的技术实现方案，确保项目能够按照需求高质量交付。",
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T13:23:14.312129",
+  "project_id": null,
+  "branch_status": {},
+  "game_modes_and_gameplay": [],
+  "ui_ux_design": [],
+  "technology_stack": [],
+  "multiplayer_networking": [],
+  "data_management": [],
+  "requirement_blueprint": {
+    "project_title": "五子棋网页版游戏",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "游戏模式与玩法设计",
+        "storage_key": "game_modes_and_gameplay",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "GAME_Q1",
+            "question_text": "您希望支持哪些游戏模式？",
+            "ai_suggestion": "建议支持：1)人机对战（单人vs AI）2)本地双人对战（同一设备轮流下棋）3)在线双人对战（实时匹配或邀请好友）。这样可以满足不同场景的游戏需求。",
+            "status": "completed",
+            "user_answer": "支持人机对战、本地双人对战和在线双人对战三种模式"
+          },
+          {
+            "question_id": "GAME_Q2",
+            "question_text": "棋盘规格和胜利条件如何设定？",
+            "ai_suggestion": "建议采用标准15×15棋盘，五子连珠获胜。可选支持禁手规则（如三三禁手、四四禁手）来增加游戏策略性，适合不同水平的玩家。",
+            "status": "completed",
+            "user_answer": "采用标准15x15棋盘，五子连珠获胜，支持可选的禁手规则"
+          },
+          {
+            "question_id": "GAME_Q3",
+            "question_text": "AI难度等级如何设计？",
+            "ai_suggestion": "建议设置3个难度等级：初级（随机落子+简单阻挡）、中级（基础算法+2-3步预判）、高级（minimax算法+深度搜索）。满足从新手到高手的挑战需求。",
+            "status": "completed",
+            "user_answer": "设置初级、中级、高级三个AI难度等级"
+          },
+          {
+            "question_id": "GAME_Q4",
+            "question_text": "是否需要游戏辅助功能？",
+            "ai_suggestion": "建议添加：悔棋功能（限制次数）、提示功能（显示推荐落子位置）、棋谱回放、保存/加载游戏进度。这些功能可以提升用户体验和学习效果。",
+            "status": "completed",
+            "user_answer": "支持悔棋、提示、棋谱回放和游戏保存功能"
+          }
+        ]
+      },
+      {
+        "branch_name": "用户界面与交互体验",
+        "storage_key": "ui_ux_design",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "UI_Q1",
+            "question_text": "界面风格和视觉设计偏好如何？",
+            "ai_suggestion": "建议采用简洁现代的扁平化设计，使用温暖的木质纹理背景模拟真实棋盘，黑白棋子采用立体阴影效果。整体色调以棕色、米色为主，营造传统棋类游戏的氛围。",
+            "status": "completed",
+            "user_answer": "采用简洁现代风格，木质纹理棋盘，立体棋子设计"
+          },
+          {
+            "question_id": "UI_Q2",
+            "question_text": "棋盘交互方式如何设计？",
+            "ai_suggestion": "支持点击落子，鼠标悬停时显示半透明预览棋子，已落子位置显示坐标标记。棋盘支持缩放和拖拽（移动端），确保在不同屏幕尺寸下都有良好的操作体验。",
+            "status": "completed",
+            "user_answer": "支持点击落子，鼠标悬停预览，支持缩放和拖拽"
+          },
+          {
+            "question_id": "UI_Q3",
+            "question_text": "游戏信息显示区域需要包含哪些内容？",
+            "ai_suggestion": "包含：当前回合指示、游戏计时器、步数统计、玩家信息（头像/昵称）、游戏状态提示、操作按钮区（悔棋、认输、暂停等）。布局建议采用左右分栏或上下分区的方式。",
+            "status": "completed",
+            "user_answer": "包含回合指示、计时器、步数、玩家信息和操作按钮"
+          },
+          {
+            "question_id": "UI_Q4",
+            "question_text": "响应式设计和多设备适配要求？",
+            "ai_suggestion": "支持桌面端（1920×1080及以上）、平板端（768×1024）、手机端（375×667及以上）。棋盘在小屏幕上自动缩放，操作按钮适配触摸操作，确保在各种设备上都有流畅的游戏体验。",
+            "status": "completed",
+            "user_answer": "支持桌面、平板和手机端的响应式设计"
+          }
+        ]
+      },
+      {
+        "branch_name": "技术架构与实现方案",
+        "storage_key": "technology_stack",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "TECH_Q1",
+            "question_text": "前端技术栈选择？",
+            "ai_suggestion": "建议使用原生HTML5 + CSS3 + JavaScript，或者React/Vue.js框架。对于五子棋这类游戏，原生技术已经足够，可以获得更好的性能和更小的打包体积。如果需要复杂状态管理，可考虑React。",
+            "status": "completed",
+            "user_answer": "使用原生HTML5 + CSS3 + JavaScript实现"
+          },
+          {
+            "question_id": "TECH_Q2",
+            "question_text": "游戏渲染方式选择？",
+            "ai_suggestion": "建议使用HTML5 Canvas或SVG进行棋盘渲染。Canvas适合复杂动画和高性能渲染，SVG适合矢量图形和响应式设计。对于五子棋，建议优先考虑Canvas，可以实现更丰富的视觉效果。",
+            "status": "completed",
+            "user_answer": "使用HTML5 Canvas进行棋盘渲染"
+          },
+          {
+            "question_id": "TECH_Q3",
+            "question_text": "后端服务和数据存储方案？",
+            "ai_suggestion": "对于在线对战功能，建议使用Node.js + Express + Socket.io实现实时通信。数据存储可使用MongoDB或PostgreSQL存储用户信息和游戏记录。如果只做单机版，可使用localStorage存储游戏进度。",
+            "status": "completed",
+            "user_answer": "使用Node.js + Express + Socket.io后端，数据存储使用MongoDB"
+          },
+          {
+            "question_id": "TECH_Q4",
+            "question_text": "AI算法实现方案？",
+            "ai_suggestion": "建议实现分层的AI策略：初级使用随机+简单启发式，中级使用评估函数+有限深度搜索，高级使用Minimax算法+Alpha-Beta剪枝。评估函数考虑连子数量、位置权重、攻防平衡等因素。",
+            "status": "completed",
+            "user_answer": "实现分层AI策略：初级随机+启发式，中级评估函数，高级Minimax+Alpha-Beta剪枝"
+          }
+        ]
+      },
+      {
+        "branch_name": "多人对战与网络功能",
+        "storage_key": "multiplayer_networking",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "NET_Q1",
+            "question_text": "在线对战的匹配机制如何设计？",
+            "ai_suggestion": "建议支持两种模式：1)随机匹配（系统自动匹配在线玩家）2)房间模式（创建/加入房间，支持邀请码分享）。可按照水平分级匹配，确保游戏的公平性和趣味性。",
+            "status": "completed",
+            "user_answer": "支持随机匹配和房间模式两种在线对战方式"
+          },
+          {
+            "question_id": "NET_Q2",
+            "question_text": "用户系统和身份认证方案？",
+            "ai_suggestion": "建议实现简单的游客模式（输入昵称即可游戏）和注册用户模式（邮箱+密码注册，可保存游戏记录和统计数据）。支持第三方登录（如Google、微信）可降低用户门槛。",
+            "status": "completed",
+            "user_answer": "支持游客模式和注册用户模式，可选第三方登录"
+          },
+          {
+            "question_id": "NET_Q3",
+            "question_text": "实时通信和数据同步机制？",
+            "ai_suggestion": "使用WebSocket或Socket.io实现实时双向通信。数据同步包括：落子位置、游戏状态、玩家操作、聊天消息等。需要处理网络延迟、断线重连、数据一致性验证等问题。",
+            "status": "completed",
+            "user_answer": "使用Socket.io实现实时通信和数据同步"
+          },
+          {
+            "question_id": "NET_Q4",
+            "question_text": "游戏内聊天和社交功能需求？",
+            "ai_suggestion": "建议实现基础聊天功能：游戏内文字聊天、快捷表情和短语（如“好棋”、“再来一局”）。可选支持好友系统、游戏邀请、战绩查看等社交功能，提升用户粘性。",
+            "status": "completed",
+            "user_answer": "实现基础文字聊天和快捷表情功能"
+          }
+        ]
+      },
+      {
+        "branch_name": "游戏数据与状态管理",
+        "storage_key": "data_management",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "DATA_Q1",
+            "question_text": "游戏状态数据结构如何设计？",
+            "ai_suggestion": "建议设计包含：棋盘状态（15x15二维数组）、当前玩家、游戏阶段（等待/进行中/结束）、历史步骤记录、计时器状态等。使用不可变数据结构保证状态一致性，支持游戏回放和恢复功能。",
+            "status": "completed",
+            "user_answer": "设计包含棋盘状态、玩家信息、游戏阶段和历史记录的数据结构"
+          },
+          {
+            "question_id": "DATA_Q2",
+            "question_text": "本地数据存储和持久化方案？",
+            "ai_suggestion": "使用localStorage存储用户设置、游戏进度、历史战绩等数据。对于大量数据（如棋谱库）可使用IndexedDB。实现数据版本管理和迁移机制，确保升级兼容性。",
+            "status": "completed",
+            "user_answer": "使用localStorage存储基础数据，IndexedDB存储大量数据"
+          },
+          {
+            "question_id": "DATA_Q3",
+            "question_text": "游戏统计和数据分析需求？",
+            "ai_suggestion": "记录基础统计数据：胜负场次、游戏时长、平均步数、不同难度AI的胜率等。可选实现进阶分析：开局类型统计、常用落子位置热力图、游戏时间分布等，帮助玩家提升技能。",
+            "status": "completed",
+            "user_answer": "记录基础统计数据：胜负、时长、步数等"
+          },
+          {
+            "question_id": "DATA_Q4",
+            "question_text": "游戏回放和分享功能设计？",
+            "ai_suggestion": "实现棋谱记录和回放功能，支持步骤前进/后退、关键步骤标记、棋谱导出（JSON/SGF格式）。支持生成游戏截图和分享链接，方便玩家展示精彩对局和交流学习。",
+            "status": "completed",
+            "user_answer": "实现棋谱回放、步骤导航和游戏分享功能"
+          }
+        ]
+      }
+    ]
+  }
+}
