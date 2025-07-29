@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+zlairflow.egg-info/PKG-INFO
+zlairflow.egg-info/SOURCES.txt
+zlairflow.egg-info/dependency_links.txt
+zlairflow.egg-info/top_level.txt
