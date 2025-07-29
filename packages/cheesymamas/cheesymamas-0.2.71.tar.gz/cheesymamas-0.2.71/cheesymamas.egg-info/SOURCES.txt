@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+cheesymamas/__init__.py
+cheesymamas/cheesymamas.py
+cheesymamas/main.py
+cheesymamas.egg-info/PKG-INFO
+cheesymamas.egg-info/SOURCES.txt
+cheesymamas.egg-info/dependency_links.txt
+cheesymamas.egg-info/entry_points.txt
+cheesymamas.egg-info/requires.txt
+cheesymamas.egg-info/top_level.txt
+cheesymamas/assets/CheesyMamas.png
