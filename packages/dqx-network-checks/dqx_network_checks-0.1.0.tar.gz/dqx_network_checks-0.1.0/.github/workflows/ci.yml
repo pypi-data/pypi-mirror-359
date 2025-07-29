@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Cache uv virtualenv
+        uses: actions/cache@v3
+        with:
+          path: |
+            .venv
+            ~/.cache/uv
+          key: uv-${{ runner.os }}-${{ hashFiles('pyproject.toml', 'uv.lock') }}
+          restore-keys: |
+            uv-${{ runner.os }}-
+
+      - name: Format with Black
+        run: uv run black --check .
+
+      - name: Lint with Ruff
+        run: uv run ruff check .
+
+      - name: Run tests with Pytest
+        run: uv run pytest -vvv tests/
