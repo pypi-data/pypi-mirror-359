@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: cloneai
+Version: 1.0.0
+Summary: Voice cloning bot - work not released yet
+Author: Justin Silver
+License-Expression: LicenseRef-Proprietary
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: Unix
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# CloneAI
+
+Voice cloning bot - work not released yet
