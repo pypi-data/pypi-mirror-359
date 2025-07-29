@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: codetoprompt-mcp
+Version: 0.1.0
+Summary: An MCP server for the codetoprompt library, enabling integration with LLM agents.
+Author-email: Yash Bhaskar <yash9439@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yash9439/codetoprompt-mcp
+Project-URL: Repository, https://github.com/yash9439/codetoprompt-mcp
+Project-URL: Issues, https://github.com/yash9439/codetoprompt-mcp/issues
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: General
+Classifier: Topic :: Utilities
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: codetoprompt==0.6.2
+Requires-Dist: mcp>=1.3.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: license-file
+
+# CodeToPrompt MCP Server
+
+[![PyPI version](https://badge.fury.io/py/codetoprompt-mcp.svg)](https://badge.fury.io/py/codetoprompt-mcp)
+
+**CodeToPrompt MCP Server** exposes the powerful features of the [codetoprompt](https://github.com/yash9439/codetoprompt) library through the Model Context Protocol (MCP). This allows LLM agents and other MCP-compatible clients to programmatically generate prompts, analyze codebases, and retrieve specific file contents.
+
+---
+
+## 🔧 Installation
+
+Install from PyPI:
+
+```bash
+pip install codetoprompt-mcp
+```
+
+This will automatically install `codetoprompt` and the required `mcp` library.
+
+---
+
+## 🚀 Usage with an MCP Client
+
+This server is designed to be used with an MCP client, such as the Claude Desktop App.
+
+### Example: Claude Desktop Configuration
+
+To use this server with Claude, add it to your `claude_desktop_config.json` file:
+
+```jsonc
+{
+  "mcpServers": {
+    "CodeToPrompt": {
+      "command": "ctp-mcp"
+    }
+  }
+}
+```
+
+Once configured, you can invoke the tools from your conversation with the LLM.
+
+### Available Tools
+
+*   **`ctp-get-context`**: The primary tool for generating a comprehensive prompt from a directory. It supports all of `codetoprompt`'s filtering, formatting, and compression options.
+*   **`ctp-analyse-project`**: Provides a detailed statistical analysis of a codebase, including token counts, line counts, and breakdowns by file type.
+*   **`ctp-get-files`**: Retrieves the content of specific files, formatted as a prompt. This is useful for targeted queries.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please refer to the main [codetoprompt repository](https://github.com/yash9439/codetoprompt) for contribution guidelines.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for full details.

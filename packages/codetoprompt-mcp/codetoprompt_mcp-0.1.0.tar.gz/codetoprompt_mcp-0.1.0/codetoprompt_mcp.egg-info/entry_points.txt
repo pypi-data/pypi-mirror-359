@@ -1,0 +1,2 @@
+[console_scripts]
+ctp-mcp = codetoprompt_mcp.mcp:run_server
