@@ -1,0 +1,3 @@
+[console_scripts]
+ynab-csv-converter=ynab_csv_converter.__main__:main
+
