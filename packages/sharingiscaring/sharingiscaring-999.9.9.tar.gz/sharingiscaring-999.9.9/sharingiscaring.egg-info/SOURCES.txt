@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+sharingiscaring.egg-info/PKG-INFO
+sharingiscaring.egg-info/SOURCES.txt
+sharingiscaring.egg-info/dependency_links.txt
+sharingiscaring.egg-info/top_level.txt
