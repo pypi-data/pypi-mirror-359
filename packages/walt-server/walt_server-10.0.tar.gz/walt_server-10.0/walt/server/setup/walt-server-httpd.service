@@ -1,0 +1,25 @@
+# walt-server-httpd - WalT platform HTTP daemon
+#
+# The WalT platform provides a lightweight distributed testbed for
+# sensor networks, distributed protocols, distributed data
+# management.
+
+[Unit]
+Description=WalT server HTTP service
+Requires=walt-server-netconfig.service
+After=walt-server-netconfig.service
+# we also need the configuration file to know the server IP
+ConditionPathExists=/etc/walt/server.conf
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/etc/walt/server.env
+# After the initialization phase, we will notify systemd
+# that we are started successfully.
+Type=notify
+NotifyAccess=all
+ExecStart=walt-server-httpd
+Restart=on-failure
+
+[Install]
+WantedBy=walt-server.service

@@ -1,0 +1,28 @@
+#!/bin/sh
+SYNC_CLOCK_TIMEOUT=3
+TRIALS=5
+
+sync_clock() {
+    ts="none"
+    trials=$TRIALS
+    while [ $trials -gt 0 ]
+    do
+        trials=$((trials-1))
+        # get timestamp from server (format epoch)
+        ts=$(/bin/walt-timeout $SYNC_CLOCK_TIMEOUT /bin/walt-rpc sync_clock) || continue
+        break
+    done
+
+    if [ "$ts" = "none" ]
+    then
+        echo "walt-clock-sync: failed $TRIALS times."
+        trigger_walt_reboot reboot
+        exit 1
+    fi
+
+    # set local clock
+    # (if '@' epoch format is recognised, use it, otherwise convert
+    # before setting date)
+    busybox date -s @$ts 2>/dev/null || \
+    busybox date -s "$(busybox date -D "%s" -d $ts "+%Y-%m-%d %H:%M:%S")"
+}

@@ -1,0 +1,73 @@
+#!/bin/sh
+
+start_background_processes()
+{
+    # check if walt-init logs are enabled
+    log_dir="/persist/logs/walt-init"
+    if [ -d "$log_dir" ]
+    then
+        rootfs_log_dir="/mnt$log_dir"
+    else
+        log_dir=""
+        rootfs_log_dir=""
+    fi
+    # start bg processes.
+    # walt-fs-watchdog is run with chroot in the rootfs,
+    # a tmpfs in RAM where the busybox binary has been copied,
+    # in order to be able to run properly in case of NFS share
+    # disconnection.
+    walt-log-script bg "$log_dir" walt-net-service
+    walt-log-script bg "$log_dir" walt-notify-bootup
+    cd "/run/walt/rootfs"
+    busybox chroot . bin/walt-log-script bg "$rootfs_log_dir" walt-fs-watchdog
+    cd /
+}
+
+update_mounts_rootfs_to_finalfs() {
+    busybox mkdir -p /run/walt/rootfs/mnt/finalfs
+    cd /run/walt/rootfs
+    # note: /persist may be disabled by using "walt node config"
+    # in this case walt-init-rootfs does not create mnt/persist
+    if [ -d "mnt/persist" ]
+    then
+        busybox mkdir -p /persist
+        busybox mount -o bind mnt/persist /persist
+    fi
+    busybox mount -o bind /dev dev  # needed for walt-log-script & walt-fs-watchdog
+    cd /
+}
+
+run_real_init()
+{
+    # try to make the system ressemble what we got when called
+    [ "$had_procfs" -eq 1 ] || busybox umount /proc
+    [ "$had_sysfs" -eq 1 ] || busybox umount /sys
+    # call the OS init
+    exec /sbin/init "$@" </dev/console >/dev/console 2>&1
+}
+
+enable_zswap() {
+    # enable zswap if the kernel supports it, for more optimized RAM usage
+    # (or limited NBD swap usage if NBD mounting succeeds)
+    [ -e /sys/module/zswap/parameters/enabled ] && \
+        echo 1 > /sys/module/zswap/parameters/enabled || true
+}
+
+# complete transition to finalfs
+. walt-script-common
+. walt-init-nbd
+update_mounts_rootfs_to_finalfs
+export walt_init_done=1
+
+# start bg processes
+boot_step_label_cr          "Starting bg processes..."
+start_background_processes
+
+# enable zswap and mount remote NBD swap
+enable_zswap
+mount_nbd_swap
+
+# start image init
+boot_step_label_cr          "Starting walt image init..."
+walt-log-echo "walt-init" "Handing over to WALT image init."
+run_real_init

@@ -1,0 +1,34 @@
+# walt-server - WalT platform server daemon
+#
+# The WalT platform provides a lightweight distributed testbed for
+# sensor networks, distributed protocols, distributed data
+# management.
+
+[Unit]
+Description=WalT server daemon
+Requires=walt-server-netconfig.service
+After=walt-server-netconfig.service
+# needs lldp
+Wants=walt-server-lldpd.service
+# we need a configuration file
+ConditionPathExists=/etc/walt/server.conf
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+# After the initialization phase, we will notify systemd
+# that we are started successfully.
+Type=notify
+NotifyAccess=all
+# no startup timeout, because it can take a long time
+# if the user is installing the platform.
+TimeoutStartSec=infinity
+RuntimeDirectory=walt/daemon
+StateDirectory=walt
+EnvironmentFile=-/etc/walt/server.env
+ExecStartPre=walt-server-cleanup
+ExecStart=walt-server-daemon $DAEMON_ARGS
+ExecReload=kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

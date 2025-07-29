@@ -1,0 +1,176 @@
+#!/bin/busybox sh
+
+# Check we are PID 1.
+if [ "$$" -ne 1 ]
+then
+    echo "This is the init script of walt nodes." >&2
+    echo "It is only useful when the node is booting. Exiting." >&2
+    exit 1
+fi
+
+MOUNT='busybox mount'
+UMOUNT='busybox umount'
+ROOTFS='/run/walt/rootfs'
+ROOTFS_BUSYBOX_APPLETS="
+    basename cat chroot cp date grep ln ls mkdir mkfifo mktemp modprobe
+    mount nc pivot_root reboot rm sed sh sleep timeout umount uname
+"
+ROOTFS_IMAGE_SCRIPTS="
+    /bin/walt-env
+    /bin/walt-log-tee
+    /bin/walt-log-cat
+    /bin/walt-log-echo
+    /bin/_walt_internal_/walt-rpc
+    /bin/_walt_internal_/walt-clock-sync
+    /bin/_walt_internal_/walt-timeout
+    /bin/_walt_internal_/walt-boot-modes
+    /bin/_walt_internal_/walt-script-common
+    /bin/_walt_internal_/walt-init-rootfs
+    /bin/_walt_internal_/walt-init-rootfs-main
+    /bin/_walt_internal_/walt-init-finalfs
+    /bin/_walt_internal_/walt-init-nbd
+    /bin/_walt_internal_/walt-log-script
+    /bin/_walt_internal_/walt-fs-watchdog
+"
+
+_run_is_mounted() {
+    busybox mount | busybox grep " /run " >/dev/null
+}
+
+do_mounts()
+{
+    # mount /proc and /sys if missing, and if that is the case,
+    # record that for cleanup up before running the final init.
+    if [ -e "/proc/self" ]
+    then
+        export had_procfs=1
+    else
+        $MOUNT -t proc proc /proc
+        export had_procfs=0
+    fi
+    if [ -d "/sys/class" ]
+    then
+        export had_sysfs=1
+    else
+        $MOUNT -t sysfs sysfs /sys
+        export had_sysfs=0
+    fi
+    # mount /dev and /run if missing.
+    # in any case, we will not umount them before running the final init
+    # because walt bg processes need them.
+    if [ ! -e "/dev/null" ]
+    then
+        $MOUNT -t devtmpfs udev /dev
+    fi
+    if ! _run_is_mounted
+    then
+        $MOUNT -t tmpfs tmpfs /run
+    fi
+}
+
+autodetect_block_modules() {
+    # we need to load at list the modules needed for block devices, and bus
+    # modules they are connected to (for hybrid boot modes).
+    # the original idea of looking into /sys/devices is borrowed from alpine's
+    # /etc/init.d/hwdrivers
+    busybox find /sys/devices/ -name modalias -type f -print0 2>/dev/null | \
+        busybox xargs -0 busybox sort -u | \
+        happy_grep -v \
+            "^\(\(acpi\)\|\(platform\)\|\(cpu\)\|\(serio\)\|\(dmi\)\|\(input\)\)"
+}
+
+# This function loads modules which we may need and may not be compiled in the kernel.
+load_modules() {
+    # crc32c may be needed for mounting ext4 filesystems without error (hybrid modes)
+    # nbd & zswap: useful for mounting a swap file stored remotely on server
+    # if other modules are needed, the image may provide a file /bin/walt-preinit
+    # to load them.
+    # note: "busybox modprobe" may cause dmesg warnings "Invalid ELF header magic"
+    # when dealing with compressed kernel modules, so we prefer the modprobe command
+    # provided by the OS if any.
+    modules="crc32c overlay overlayfs ext4 nfs nfsv3 nbd zswap"
+    more_modules=$(autodetect_block_modules)
+    run_busybox_or_not --prefer-system \
+        modprobe -a $modules $more_modules 2>/dev/null || true
+    # loading a bus module may uncover another module needed, so re-run autodetection
+    more_modules=$(autodetect_block_modules)
+    run_busybox_or_not --prefer-system \
+        modprobe -a $more_modules 2>/dev/null || true
+}
+
+preinit() {
+    if [ -e "/bin/walt-preinit" ]
+    then
+        boot_step_label_cr          "Calling /bin/walt-preinit..."
+        /bin/walt-preinit
+    fi
+}
+
+copy_busybox_to_rootfs()
+{
+    busybox_path="$(busybox which busybox)"
+    # copy binary
+    cp "$busybox_path" $ROOTFS/bin/
+    # check if ldd is available
+    if ! busybox which ldd >/dev/null
+    then
+        echo "Warning: no ldd -- If busybox is a dynamic executable, this script will not work."
+        return
+    fi
+    # check needed shared libraries
+    if ! bin_deps="$(ldd "$busybox_path" 2>/dev/null)"
+    then
+        # busybox is probably static, nothing more to do
+        return
+    fi
+    # copy shared libraries
+    echo "$bin_deps" | busybox awk '{print $(NF-1)}' | while read lib
+    do
+        if [ -f "$lib" ]
+        then
+            destdir="$ROOTFS/$(dirname $lib)"
+            mkdir -p "$destdir"
+            cp "$lib" "$destdir"
+        fi
+    done
+}
+
+prepare_rootfs()
+{
+    busybox mkdir -p $ROOTFS
+    $MOUNT -t tmpfs tmpfs $ROOTFS  # pivot_root will need a mountpoint as <new_root>
+    cd $ROOTFS
+    busybox mkdir -p tmp bin dev proc sys run mnt/nfsroot
+    copy_busybox_to_rootfs
+    for image_script in $ROOTFS_IMAGE_SCRIPTS
+    do
+        cp $image_script bin/
+    done
+    for c in $ROOTFS_BUSYBOX_APPLETS
+    do
+        ln -s busybox bin/$c
+    done
+    cd - >/dev/null
+}
+
+switch_to_rootfs() {
+    cd $ROOTFS
+    busybox pivot_root . mnt/nfsroot
+    exec busybox chroot . bin/walt-init-rootfs "$@" \
+        <mnt/nfsroot/dev/console \
+        >mnt/nfsroot/dev/console 2>&1
+}
+
+# let's go
+export PATH="$PATH:/bin/_walt_internal_"
+export walt_init_done=0
+. walt-script-common
+walt-log-echo "walt-init" "Starting up."
+boot_step_label_cr          "Initializing..."
+do_mounts
+load_modules
+preinit
+boot_step_label_cr          "Switching to rootfs..."
+prepare_rootfs
+switch_to_rootfs "$@"
+# the process continues in bin/_walt_internal_/walt-init-rootfs
