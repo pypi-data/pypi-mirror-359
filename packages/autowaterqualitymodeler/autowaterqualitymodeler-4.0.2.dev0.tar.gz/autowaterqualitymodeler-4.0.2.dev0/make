@@ -1,0 +1,126 @@
+# 通用 uv 命令（自动加上 --active）
+uv args...:
+    uv {{args...}} --active
+
+# pip 相关操作
+pip args...:
+    uv pip {{args...}} --active
+
+# Python 运行（包括 uv python pin/version 等）
+py args...:
+    uv python {{args...}} --active
+
+# 添加依赖
+add args...:
+    uv add {{args...}} --active
+
+# 删除依赖
+remove args...:
+    uv remove {{args...}} --active
+
+# 初始化（创建 pyproject.toml）
+init:
+    uv init --name "$(basename {{JUSTFILE_DIRECTORY}})" --yes
+
+# 设置 Python 版本（例如: just pin 3.12）
+python pin version:
+    uv python pin {{version}} --active
+
+# 查看 Python 当前 pin 版本
+python version:
+    uv python version --active
+
+# 同步依赖（安装 pyproject.toml 中所有内容）
+sync:
+    uv sync --active
+
+# 锁定依赖
+lock:
+    uv lock --active
+
+# 导出 requirements.txt
+export:
+    uv export --format=requirements.txt > requirements.txt
+
+# 构建 wheel 和 sdist
+build:
+    uv build --active
+
+# 清理缓存和构建产物
+clean:
+    rm -rf .venv dist/ build/ *.egg-info __pycache__ .pytest_cache .mypy_cache .ruff_cache
+
+# 删除缓存（uv 自己的缓存）
+cache:
+    uv cache clean
+
+# 查看依赖树
+tree:
+    uv tree --active# 通用 uv 命令（自动加上 --active）
+uv args...:
+    uv {{args...}} --active
+
+# pip 相关操作
+pip args...:
+    uv pip {{args...}} --active
+
+# Python 运行（包括 uv python pin/version 等）
+py args...:
+    uv python {{args...}} --active
+
+# 添加依赖
+add args...:
+    uv add {{args...}} --active
+
+# 删除依赖
+remove args...:
+    uv remove {{args...}} --active
+
+# 初始化（创建 pyproject.toml）
+init:
+    uv init --name "$(basename {{JUSTFILE_DIRECTORY}})" --yes
+
+# 设置 Python 版本（例如: just python pin 3.12）
+python pin version:
+    uv python pin {{version}} --active
+
+# 查看 Python 当前 pin 版本
+python version:
+    uv python version --active
+
+# 同步依赖（安装 pyproject.toml 中所有内容）
+sync:
+    uv sync --active
+
+# 锁定依赖
+lock:
+    uv lock --active
+
+# 导出 requirements.txt
+export:
+    uv export --format=requirements.txt > requirements.txt
+
+# 构建 wheel 和 sdist
+build:
+    uv build --active
+
+# 清理缓存和构建产物
+clean:
+    rm -rf .venv dist/ build/ *.egg-info __pycache__ .pytest_cache .mypy_cache .ruff_cache
+
+# 删除缓存（uv 自己的缓存）
+cache:
+    uv cache clean
+
+# 查看依赖树
+tree:
+    uv tree --active
+
+# 快速运行 Python 脚本（保持用 uv，自动带 --active）
+run python script:
+    uv run python {{script}} --active
+
+
+# 快速运行 Python 脚本
+run python script:
+    uv run python {{script}} --active
