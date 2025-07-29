@@ -1,0 +1,12 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='dataupdater',
+    version='0.1.4',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=['flask'],
+    author='Anson',
+    description='Live Python variable monitor and editor via web browser.',
+    license='MIT',
+)
