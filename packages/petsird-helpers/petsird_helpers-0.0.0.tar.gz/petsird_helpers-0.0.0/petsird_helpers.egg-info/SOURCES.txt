@@ -1,0 +1,8 @@
+pyproject.toml
+petsird/__init__.py
+petsird/helpers/__init__.py
+petsird_helpers.egg-info/PKG-INFO
+petsird_helpers.egg-info/SOURCES.txt
+petsird_helpers.egg-info/dependency_links.txt
+petsird_helpers.egg-info/requires.txt
+petsird_helpers.egg-info/top_level.txt
