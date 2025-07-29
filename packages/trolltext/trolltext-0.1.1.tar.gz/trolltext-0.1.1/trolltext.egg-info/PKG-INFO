@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: trolltext
+Version: 0.1.1
+Summary: Текстовые стили с множеством шрифтов
+Home-page: https://github.com/G3tfun/trolltext
+Author: G3tfun
+Author-email: no-reply@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+pip install trolltext
+ 
+
+Импортируйте нужные функции:
+ 
+
+from trolltext import style\_text, allfont
+ 
+
+Создайте переменную с текстом:
+ 
+
+text = "Hello world!"
+ 
+
+Преобразуйте текст в выбранный стиль (например, жирный):
+ 
+
+bold\_text = style\_text(text, "bold")
+ 
+print(bold\_text)
+ 
+
+Выведите текст во всех доступных стилях:
+ 
+
+print(allfont(text))
+ 
+
+Доступные стили для параметра font в функции style\_text:
+ 
+
+double\_struck, bold, italic, bold\_italic, script, fraktur, bold\_script, bold\_fraktur, monospace, circled
+ 
+
+Если передать несуществующий стиль, библиотека выдаст ошибку:
+ 
+
+style\_text("Hello", "unknown\_font") # ValueError: Шрифт 'unknown\_font' не найден.
+ 
+
+Если у вас есть идеи или нашли баги — создайте issue или pull request в репозитории.
+ 
+
+Лицензия: MIT © Ваше Имя
+ 
+
+Спасибо за использование TrollText!

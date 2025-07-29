@@ -1,0 +1,7 @@
+README.md
+setup.py
+Trolltext/__init__.py
+trolltext.egg-info/PKG-INFO
+trolltext.egg-info/SOURCES.txt
+trolltext.egg-info/dependency_links.txt
+trolltext.egg-info/top_level.txt
