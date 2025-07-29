@@ -1,0 +1,2 @@
+[console_scripts]
+nyxbox = glyphsh.main:main
