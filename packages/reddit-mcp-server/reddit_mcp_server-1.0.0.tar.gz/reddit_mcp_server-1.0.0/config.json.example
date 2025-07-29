@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "reddit-research": {
+      "command": "python",
+      "args": ["-m", "reddit_mcp_server.server"],
+      "cwd": "/path/to/your/reddit-mcp-server",
+      "env": {
+        "REDDIT_CLIENT_ID": "your_client_id_here",
+        "REDDIT_CLIENT_SECRET": "your_client_secret_here", 
+        "REDDIT_USER_AGENT": "reddit-mcp-server:v1.0.0 (by /u/yourusername)",
+        "REDDIT_USERNAME": "your_reddit_username",
+        "REDDIT_PASSWORD": "your_reddit_password"
+      }
+    }
+  }
+}

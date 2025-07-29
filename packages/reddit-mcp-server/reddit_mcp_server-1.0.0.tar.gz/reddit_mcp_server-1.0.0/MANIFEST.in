@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include CLAUDE.md
+include config.json.example
+recursive-include src/reddit_mcp_server *.py
+recursive-include src/reddit_mcp_server py.typed
+recursive-include tests *.py
+exclude .env
+exclude .env.example
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
