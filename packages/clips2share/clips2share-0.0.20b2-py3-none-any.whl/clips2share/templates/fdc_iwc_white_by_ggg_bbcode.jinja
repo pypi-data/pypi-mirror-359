@@ -1,0 +1,19 @@
+{% set bg_image = 'https://hamster.is/images/2019/12/07/ScmKXT51_o.png' %}
+[align=center][BG={{ bg_image }}]
+
+[img]{{ header_image_link }}[/img]
+
+[table=900px,nball][tr][td][align=justify][size=5][font=Trebuchet MS][align=justify][color=#FFFFFF]{{ clip.studio }} - {{ clip.title }}[/color][/align][/font][/size]
+[i][font=Arial][size=2][color=#00CCFF]${{ clip.price }}[/color]
+
+[color=#c0c0c0]Description: {{ clip.description }}[/color]
+
+[color=#f0f0f0]Published: {{ clip.date }}[/color]
+
+{% if clip.keywords -%}
+[color=#00CCFF]Keywords: {{ clip.keywords|join(', ') }}[/color]
+{% endif %}
+[/size][/font][/i][/align][/td][/tr][/table]
+[color=#FFFFFF][font=Trebuchet MS][size=3][Spoiler=Screens][img]{{ thumbnail_image_link }}[/img][/Spoiler][/size][/font][/color]
+
+[/bg][/align]
