@@ -1,0 +1,16 @@
+OrganiserPro/__init__.py,sha256=3bZdxNtg8KOTV0rfbD-DhNQPwqKLtM9mbw_92bx8lDU,572
+OrganiserPro/cli.py,sha256=61m6_FwLvG9c12JsgEFg1KEGuhmy45he6UNCpRLjXAc,4650
+OrganiserPro/dedupe.py,sha256=DObA2XoRqq9nz9PP-xbFTPsb9odwB0p-I2myAB-zvkM,6962
+OrganiserPro/encryptor.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+OrganiserPro/py.typed,sha256=SX42tKVlXkjiZ5shEZqSLD3s6LgzTi2fnqmdlbp4Ipc,143
+OrganiserPro/sorter.py,sha256=k5F43Hiqd1g5x3qb6-0MQKk0yhqC3jG8PZHHR9aqqNQ,6742
+organiserpro-0.1.0.dist-info/licenses/LICENSE,sha256=ucgFUlg1weuki549ZX_PIdnB9Hnld0y_26lY44KypNQ,1071
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=odaS1QGbRDKe9piwXJVROn2NGvzQ30qdOaRigfinzj0,1197
+tests/test_cli.py,sha256=3ugVsub1ILq5mDrL77-6iJqQBEnds6wkrAznC9S3BMw,6128
+tests/test_dedupe.py,sha256=tvqcb2mA6nEga-ejGO4kBvsuzkZsCDOin9RxhgNhgZQ,5296
+tests/test_sorter.py,sha256=gXXP6_BI82dfaLiuos-1_JmMx_TS1b84ly8OPJkN3ls,6522
+organiserpro-0.1.0.dist-info/METADATA,sha256=0kwC8sp258nCAkwvQSBm5-g-bHI3D1km7JH5O8bie0Y,5797
+organiserpro-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+organiserpro-0.1.0.dist-info/top_level.txt,sha256=FPlZWs69LQaC_wmF44DUw1crtWN9HV_WiZkuMdSa0-Q,19
+organiserpro-0.1.0.dist-info/RECORD,,
