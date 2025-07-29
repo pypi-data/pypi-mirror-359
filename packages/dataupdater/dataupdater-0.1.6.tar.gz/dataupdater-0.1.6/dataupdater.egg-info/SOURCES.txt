@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+dataupdater/__init__.py
+dataupdater/core.py
+dataupdater.egg-info/PKG-INFO
+dataupdater.egg-info/SOURCES.txt
+dataupdater.egg-info/dependency_links.txt
+dataupdater.egg-info/top_level.txt
