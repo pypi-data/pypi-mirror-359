@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloneai"
+version = "1.0.0"
+authors = [ { name = "Justin Silver" } ]
+description = "Voice cloning bot - work not released yet"
+readme = "README.md"
+requires-python = ">=3.10"
+
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Operating System :: Unix",
+]
+
+license = "LicenseRef-Proprietary"
+license-files = ["LICEN[CS]E*"]
+
+[tool.setuptools.packages]
+find = {namespaces = false}  # Disable implicit namespaces

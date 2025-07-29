@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+cloneai/__init__.py
+cloneai.egg-info/PKG-INFO
+cloneai.egg-info/SOURCES.txt
+cloneai.egg-info/dependency_links.txt
+cloneai.egg-info/top_level.txt
