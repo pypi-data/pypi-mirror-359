@@ -1,0 +1,10 @@
+numpy
+jsonschema
+gymnasium
+importlib-metadata
+tensorflow==2.15.0
+protobuf
+stable-baselines3[extra]
+sb3-contrib
+pandas
+mpi4py
