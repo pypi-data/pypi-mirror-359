@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+brcore/__init__.py
+brcore/core.py
+brcore/util.py
+brcore/enum/__init__.py
+brcore/enum/exception_texts.py
+brcore/enum/channels/__init__.py
+brcore/enum/channels/channel_argtype.py
+brcore/enum/channels/channels.py
+brominecore.egg-info/PKG-INFO
+brominecore.egg-info/SOURCES.txt
+brominecore.egg-info/dependency_links.txt
+brominecore.egg-info/requires.txt
+brominecore.egg-info/top_level.txt
