@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: vulkan_utils
+Version: 0.1.3
+Summary: A simple CLI utility for Vulkan operations
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
