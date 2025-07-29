@@ -1,0 +1,12 @@
+sagenetgw/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sagenetgw/classes.py,sha256=p1MqtW8cBaVVxLluiLSoFKCg-1XBU7ozga5QQvtFxLM,7588
+sagenetgw/metrics.py,sha256=Hv9oNutD39AWjbdlskSW0ONlTH3JfIyh_ACECHQqdMU,2099
+sagenetgw/models.py,sha256=C59OjEW7YX5alNjAXImUh1N6yCjjTM7ZkZElUiwaBYM,4570
+sagenetgw/models/best_gw_model_CosmicNet2.pth,sha256=0_PKQyAimm5Nyy69CoTx72kg4hNXxqkyANGy5K39AWw,627464
+sagenetgw/models/best_gw_model_LSTM.pth,sha256=bBBmukt00oP21FE0aqQKIwYq2B_u7AvLu6zhVIo6s0M,6596380
+sagenetgw/models/best_gw_model_RNN.pth,sha256=GfSBLOxV9g7KMt9ztKmKS3R3oLQBqt2GvzfoStOOajs,1860112
+sagenetgw/models/best_gw_model_Transformer.pth,sha256=ldh7SDRy_Upz9t5bqFITNY7ROL91otJti9HOQYGm1IU,6879607
+sagenetgw-0.1.6.dist-info/METADATA,sha256=LVwbuKDluQzrLoim0_q3t8wWugO0uIHATxpKOmkIW2U,2771
+sagenetgw-0.1.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sagenetgw-0.1.6.dist-info/licenses/LICENSE,sha256=8HExtmiatUYvAysvrbjnaIniraEHLCVQ_sAKS5PeKeo,1083
+sagenetgw-0.1.6.dist-info/RECORD,,
