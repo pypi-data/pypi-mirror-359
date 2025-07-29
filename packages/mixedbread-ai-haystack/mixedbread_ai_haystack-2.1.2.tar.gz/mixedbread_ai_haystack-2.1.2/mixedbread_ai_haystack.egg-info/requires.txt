@@ -1,0 +1,7 @@
+haystack-ai>=2.0.0
+mixedbread>=0.13.1
+pydantic>=2.0.0
+
+[dev]
+pytest>=7.0
+pytest-asyncio>=0.21.0

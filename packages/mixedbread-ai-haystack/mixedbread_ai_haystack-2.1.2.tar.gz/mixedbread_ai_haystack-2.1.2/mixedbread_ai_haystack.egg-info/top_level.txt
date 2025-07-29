@@ -1,0 +1,5 @@
+data
+dist
+examples
+mixedbread_ai_haystack
+tests
