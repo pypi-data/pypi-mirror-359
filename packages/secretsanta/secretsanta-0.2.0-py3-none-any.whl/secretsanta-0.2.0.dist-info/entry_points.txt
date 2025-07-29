@@ -1,0 +1,2 @@
+[console_scripts]
+santa = secretsanta.cli.cli:santa
