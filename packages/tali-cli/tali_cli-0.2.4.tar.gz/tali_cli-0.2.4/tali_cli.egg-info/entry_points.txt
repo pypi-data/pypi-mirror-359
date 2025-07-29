@@ -1,0 +1,3 @@
+[console_scripts]
+tali = tali.cli:main
+tali-cli = tali.cli:main
