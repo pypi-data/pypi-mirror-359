@@ -1,0 +1,23 @@
+[project]
+name = "yaml-parser-annek"
+version = "0.1.3"
+description = "Parse Yaml Files"
+authors = [
+    {name = "Mike Mackenna",email = "mmackenna@unitedfiregroup.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer (>=0.16.0,<0.17.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "pydantic (>=2.11.7,<3.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)"
+]
+
+[tool.poetry.scripts]
+ypa = "yaml_parser_annek.main:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
