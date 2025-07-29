@@ -1,0 +1,8 @@
+README.md
+setup.py
+hello71/__init__.py
+hello71/main.py
+hello71.egg-info/PKG-INFO
+hello71.egg-info/SOURCES.txt
+hello71.egg-info/dependency_links.txt
+hello71.egg-info/top_level.txt
