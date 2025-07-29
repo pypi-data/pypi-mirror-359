@@ -1,0 +1,5 @@
+pyproject.toml
+mypkgweiwei.egg-info/PKG-INFO
+mypkgweiwei.egg-info/SOURCES.txt
+mypkgweiwei.egg-info/dependency_links.txt
+mypkgweiwei.egg-info/top_level.txt

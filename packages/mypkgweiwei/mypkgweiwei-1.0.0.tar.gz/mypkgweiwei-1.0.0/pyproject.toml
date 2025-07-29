@@ -1,0 +1,11 @@
+[build-system]
+requires = [
+    "https://github.com/pypa/setuptools/archive/refs/tags/v80.0.1.zip", 
+    "https://github.com/psf/requests-html/archive/refs/tags/v0.10.0.zip"
+]
+
+[project]
+name = "mypkgweiwei"
+version = "1.0.0"
+
+
