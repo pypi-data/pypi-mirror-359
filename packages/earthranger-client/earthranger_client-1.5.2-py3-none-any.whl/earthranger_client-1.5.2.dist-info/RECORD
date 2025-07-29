@@ -1,0 +1,11 @@
+erclient/__init__.py,sha256=Yv9i2eBv09jL4sJ3ZXOdOq59Nh3QmciXw2uWRSdDa7c,255
+erclient/client.py,sha256=txSdqR5dPozAVIMZd3OC8iOVlyxoWfNQE90rsepyvjM,56262
+erclient/dascsvloader.py,sha256=l7ZAmlhEwe2Nx83yYtTXDV4dj3_Iml4G7d4zdJT6VUc,1740
+erclient/dasgpxconverter.py,sha256=W7pU7i4t8eCf4EeNXI7ohG82ySWqiOH-28EmzYuhkPI,4786
+erclient/er_errors.py,sha256=ktLza_HDu7LgmAJGuyhwU6gxNEEiY5OrWvUviGpMHks,1011
+erclient/schemas.py,sha256=XqRUKHlgy7hesbJH5tI3uPHh9SDGakxF9o8jMhvRWIs,624
+erclient/version.py,sha256=l_m-0-0bfRsAKcenvAk4AZVqaiD1LKz6_9X_QfaXbtw,22
+earthranger_client-1.5.2.dist-info/METADATA,sha256=0Ir2hfBronipElMnS-sun9VLK1m1_317vKCDtaBS9xg,3529
+earthranger_client-1.5.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+earthranger_client-1.5.2.dist-info/licenses/LICENSE,sha256=AMksFoiBKgeK8mQbrJDuzu06ZgAr1c8hZtKMvQjRfZY,11340
+earthranger_client-1.5.2.dist-info/RECORD,,
