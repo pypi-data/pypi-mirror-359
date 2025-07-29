@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+speedmem/___init__.py
+speedmem/speedmem.py
+speedmem.egg-info/PKG-INFO
+speedmem.egg-info/SOURCES.txt
+speedmem.egg-info/dependency_links.txt
+speedmem.egg-info/requires.txt
+speedmem.egg-info/top_level.txt

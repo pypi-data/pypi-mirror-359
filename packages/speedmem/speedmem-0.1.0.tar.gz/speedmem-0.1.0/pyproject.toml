@@ -1,0 +1,35 @@
+[build-system]
+   requires = ["setuptools>=61.0", "wheel"]
+   build-backend = "setuptools.build_meta"
+
+   [project]
+   name = "speedmem"
+   version = "0.1.0"
+   description = "A lightweight library for fast memory read/write and Vulkan-based overlay windows on Windows 10/11 x64."
+   readme = "README.md"
+   authors = [{name = "SelfCode", email = "selfcode.dev@gmail.com"}]
+   license-files = ["LICENSE"]  # Указываем файл лицензии
+   requires-python = ">=3.8"
+   dependencies = [
+       "pywin32>=306",
+       "vulkan>=1.3.0.0"
+   ]
+   keywords = ["memory", "overlay", "vulkan", "windows", "game-development"]
+   classifiers = [
+       "Development Status :: 3 - Alpha",
+       "Intended Audience :: Developers",
+       "Operating System :: Microsoft :: Windows :: Windows 10",
+       "Operating System :: Microsoft :: Windows :: Windows 11",
+       "Programming Language :: Python :: 3",
+       "Programming Language :: Python :: 3.8",
+       "Programming Language :: Python :: 3.9",
+       "Programming Language :: Python :: 3.10",
+       "Programming Language :: Python :: 3.11",
+       "Topic :: Software Development :: Libraries :: Python Modules",
+       "Topic :: Games/Entertainment"
+   ]
+
+   [project.urls]
+   Homepage = "https://github.com/SelfC0de"
+   Repository = "https://github.com/SelfC0de/speedmem"
+   Documentation = "https://github.com/SelfC0de/speedmem#readme"
