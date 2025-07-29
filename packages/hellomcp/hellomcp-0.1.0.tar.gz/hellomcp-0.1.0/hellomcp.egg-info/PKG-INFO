@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: hellomcp
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: mcp[cli]>=1.6.0
+
+# Hello MCP
+
+The minimal Python MCP server implementation with [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk).

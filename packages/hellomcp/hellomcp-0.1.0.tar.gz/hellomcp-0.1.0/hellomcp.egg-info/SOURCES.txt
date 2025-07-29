@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+hellomcp.egg-info/PKG-INFO
+hellomcp.egg-info/SOURCES.txt
+hellomcp.egg-info/dependency_links.txt
+hellomcp.egg-info/requires.txt
+hellomcp.egg-info/top_level.txt
