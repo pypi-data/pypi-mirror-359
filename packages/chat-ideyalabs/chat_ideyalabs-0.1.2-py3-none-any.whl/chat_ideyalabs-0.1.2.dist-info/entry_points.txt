@@ -1,0 +1,2 @@
+[console_scripts]
+chat-ideyalabs-server = chat_ideyalabs.api.main:main
