@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: pyglimpse
+Version: 0.1.0
+Summary: A pandas DataFrame glimpse function inspired by R's dplyr::glimpse.
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/pyglimpse/
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.0
+Requires-Dist: numpy>=1.18
+Dynamic: license-file
+
+# pyglimpse
+
+A pandas DataFrame glimpse function inspired by R's dplyr::glimpse.
+
+## Installation
+
+```bash
+pip install pyglimpse
+```
+
+## Usage
+
+```python
+import pandas as pd
+from pyglimpse import glimpse
+
+df = pd.DataFrame({
+    'a': [1, 2, 3],
+    'b': ['x', 'y', 'z']
+})
+glimpse(df)
+``` 
