@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/soldcli/__init__.py
+src/soldcli/__main__.py
+src/soldcli/cli.py
+src/soldcli.egg-info/PKG-INFO
+src/soldcli.egg-info/SOURCES.txt
+src/soldcli.egg-info/dependency_links.txt
+src/soldcli.egg-info/entry_points.txt
+src/soldcli.egg-info/requires.txt
+src/soldcli.egg-info/top_level.txt
+src/soldcli/commands/__init__.py
+src/soldcli/commands/pack1.py
+tests/test_cli.py
