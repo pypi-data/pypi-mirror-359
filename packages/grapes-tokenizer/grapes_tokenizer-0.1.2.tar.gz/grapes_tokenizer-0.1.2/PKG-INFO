@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: grapes-tokenizer
+Version: 0.1.2
+Summary: A simple sum-based tokenizer for NLP/LLM research
+Home-page: https://github.com/akashpittalwar/Grapes-tokenizer
+Author: Akash Pittalwar
+Author-email: akashpittalwar107@gmail.com
+Project-URL: Source, https://github.com/akashpittalwar/Grapes-tokenizer
+Project-URL: Tracker, https://github.com/akashpittalwar/Grapes-tokenizer/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
+
+# Grapes-tokenizer
