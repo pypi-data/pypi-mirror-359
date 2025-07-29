@@ -1,0 +1,111 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mappymatch"
+dynamic = ["version"]
+description = "Pure python package for map-matching."
+readme = "README.md"
+authors = [{ name = "National Renewable Energy Laboratory" }]
+license = { text = "BSD 3-Clause License Copyright (c) 2022, Alliance for Sustainable Energy, LLC" }
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+]
+keywords = ["GPS", "map", "match"]
+dependencies = [
+  "geopandas>=1",
+  "osmnx>=2",
+  "shapely>=2",
+  "rtree",
+  "pyproj",
+  "pandas",
+  "numpy",
+  "matplotlib",
+  "networkx",
+  "igraph",
+  "folium",
+  "requests",
+  "polyline",
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+# Used to run CI. 
+tests = ["ruff", "mypy>=1", "types-requests", "pytest"]
+# Used to build the docs.
+docs = [
+  "jupyter-book>=1",
+  "sphinx-book-theme",
+  "sphinx-autodoc-typehints",
+  "sphinxcontrib-autoyaml",
+  "sphinxcontrib.mermaid",
+]
+# Tests + docs + other.
+dev = [
+  "hatch",
+  "mappymatch[tests]",
+  "mappymatch[docs]",
+  "coverage",
+  "pre-commit",
+]
+
+[project.urls]
+Homepage = "https://github.com/NREL/mappymatch"
+
+[tool.hatch.version]
+path = "mappymatch/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["tests/", "docs/", "examples/"]
+
+[tool.ruff]
+exclude = [
+  "build/*",
+  "dist/*",
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Assume Python 3.9
+target-version = "py39"
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.mypy]
+ignore_missing_imports = true
+exclude = ["docs/", "build/", "dist/", "py-notebooks/"]
+
+[tool.coverage.run]
+# Ensures coverage for all if, elif, else branches. 
+# https://coverage.readthedocs.io/en/6.3.2/branch.html#branch
+branch = true
+
+[tool.coverage.report]
+precision = 1
+fail_under = 50.0
+skip_covered = false
+skip_empty = true
