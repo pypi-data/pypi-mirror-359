@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: nowplay
+Version: 0.1.5
+Summary: CLI tool for playing audio and visualizing waveform with metadata.
+Author: PJ H.
+Author-email: archood2@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: sounddevice
+Requires-Dist: matplotlib
+Requires-Dist: mutagen
+Requires-Dist: blessed
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

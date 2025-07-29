@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+nowplay.egg-info/PKG-INFO
+nowplay.egg-info/SOURCES.txt
+nowplay.egg-info/dependency_links.txt
+nowplay.egg-info/entry_points.txt
+nowplay.egg-info/requires.txt
+nowplay.egg-info/top_level.txt
