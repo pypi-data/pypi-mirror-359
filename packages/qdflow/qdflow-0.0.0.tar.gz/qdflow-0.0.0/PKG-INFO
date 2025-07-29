@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: qdflow
+Version: 0.0.0
+Summary: Library for simulating, tuning, and operating quantum dot devices. Coming soon!
+Author: Justyna Zwolak
+Author-email: Donovan Buterakos <dlbuterakos@gmail.com>
+Maintainer-email: Donovan Buterakos <dlbuterakos@gmail.com>
+Keywords: qdflow,quantum
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+# QDFlow
+
+A library for simulating, tuning, and operating quantum dot devices.
+
+Coming soon!

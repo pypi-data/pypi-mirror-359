@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdflow"
+version = "0.0.0"
+dependencies = [
+  "numpy",
+]
+authors = [
+  {name = "Donovan Buterakos", email="dlbuterakos@gmail.com"},
+  {name = "Justyna Zwolak"},
+]
+maintainers = [
+  {name = "Donovan Buterakos", email="dlbuterakos@gmail.com"},
+]
+description = "Library for simulating, tuning, and operating quantum dot devices. Coming soon!"
+readme = "README.md"
+keywords = ["qdflow", "quantum"]
+
+[tool.setuptools]
+packages = ["qdflow"]
