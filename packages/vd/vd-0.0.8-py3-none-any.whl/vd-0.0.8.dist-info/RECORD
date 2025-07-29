@@ -1,0 +1,11 @@
+vd/__init__.py,sha256=dzefYmUPuaQVjDzSkHgOK7PBKq_a8a7uNSor4RQhZg4,21
+vd/crude.py,sha256=yJbGR-q5H7Xjbe9z__fxh1DhsIyg9FGuPS_XplBFqoE,41833
+vd/dog.py,sha256=amRFu3pBQgoEL6m765R-X9Nn6X8E35AOxTsz-xHDmjg,14943
+vd/wip/__init__.py,sha256=wSzHAU4LckX2REGTcSWquDjSOn92HqBLuzJgsDw5fqs,18
+vd/wip/input_sourcing.py,sha256=sh_DoCanyxFpQNkoGi6zpcBrbtOHTPvHNlNUWYnoW04,18787
+vd/wip/input_wire.py,sha256=emL2tiBX-lfJIwrsmGu5aDV4lDwhRCLVw2pDNXtzZbs,2971
+vd-0.0.8.dist-info/LICENSE,sha256=ACwmltkrXIz5VsEQcrqljq-fat6ZXAMepjXGoe40KtE,1069
+vd-0.0.8.dist-info/METADATA,sha256=zCY0aIJw9us3QtdnLRelZGqCvJWn7g89jftSR184UKI,3205
+vd-0.0.8.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+vd-0.0.8.dist-info/top_level.txt,sha256=2w-dbaSJSY4M67Tu3gE1aPqIWYp5X7h2clTq-wD4h5w,3
+vd-0.0.8.dist-info/RECORD,,
