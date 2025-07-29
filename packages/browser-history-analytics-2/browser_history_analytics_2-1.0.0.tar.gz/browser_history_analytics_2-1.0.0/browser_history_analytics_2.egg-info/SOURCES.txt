@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+browser_history_analytics_2/__init__.py
+browser_history_analytics_2/app.py
+browser_history_analytics_2/graphs.py
+browser_history_analytics_2/main.py
+browser_history_analytics_2/utils.py
+browser_history_analytics_2.egg-info/PKG-INFO
+browser_history_analytics_2.egg-info/SOURCES.txt
+browser_history_analytics_2.egg-info/dependency_links.txt
+browser_history_analytics_2.egg-info/entry_points.txt
+browser_history_analytics_2.egg-info/requires.txt
+browser_history_analytics_2.egg-info/top_level.txt
