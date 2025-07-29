@@ -1,0 +1,2 @@
+[console_scripts]
+gsport = main:main
