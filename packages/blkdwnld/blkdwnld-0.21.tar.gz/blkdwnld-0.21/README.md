@@ -1,0 +1,92 @@
+# blkdwnld
+
+A bulk video downloader tool by Ans Raza (0xAnsR). Download videos from YouTube, TikTok, Facebook, and other platforms using yt-dlp, with customizable quality and editing options.
+
+## Installation
+
+```bash
+pip install blkdwnld
+Usage
+Run the interactive command:
+
+bash
+
+Collapse
+
+Wrap
+
+Run
+
+Copy
+blkdwnld
+Follow the prompts to:
+
+Select platform (YouTube, TikTok, Facebook, or Other)
+Enter the video or channel/page URL
+Choose download scope (single video or all videos)
+Select quality (Best, 1080p, 720p, 480p, or Audio only)
+Optionally include description files or apply video edits (trim, resize, convert, flip)
+Features
+Multi-Platform Support: Downloads from YouTube, Facebook, TikTok, and other yt-dlp-supported sites.
+Flexible Download Options: Single video or entire channel/playlist downloads.
+Quality Selection: Choose Best quality, 1080p, 720p, 480p, or Audio only (MP3).
+Video Editing: Trim, resize, convert, or flip videos using ffmpeg (requires ffmpeg installed).
+Cookie Support: Use cookies.txt for private/restricted content (export via Get Cookies.txt LOCALLY).
+Automatic Setup: Installs yt-dlp if missing; prompts for ffmpeg installation.
+Organized Output: Saves files to platform-specific folders with original video titles.
+Prerequisites
+Python 3.6+
+ffmpeg (install via sudo apt-get install ffmpeg on Linux or brew install ffmpeg on macOS)
+Optional: cookies.txt for authenticated downloads
+Example Workflow
+Install the Chrome extension Get Cookies.txt LOCALLY and export cookies from the target site.
+Install the package: pip install blkdwnld
+Run: blkdwnld
+Follow prompts to download videos (e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+Optionally zip the output folder: zip -r downloaded_videos.zip <output_folder>
+Share files via a local server: python3 -m http.server 8000
+Troubleshooting
+Cookies: Ensure cookies.txt is in the Netscape format and placed in the working directory.
+ffmpeg: Install manually if the script’s auto-install fails.
+URLs: Verify the URL is valid and accessible.
+Issues: Check the GitHub repository for support.
+License
+MIT License - see LICENSE for details.
+
+Author
+Ans Raza (0xAnsR)
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+This `README.md` aligns with the `pip` package, includes installation instructions, and reflects the features described in your repository.
+
+#### Verify `LICENSE`
+Ensure `/workspaces/BULK-DOWNLOADER/LICENSE` contains:
+
+```text
+MIT License
+
+Copyright (c) 2025 Ans Raza (0xAnsR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
