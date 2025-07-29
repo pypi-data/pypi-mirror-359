@@ -1,0 +1,2 @@
+[console_scripts]
+jl95terceira-pytools/pptoml = jl95terceira.pytools.pptoml:main
