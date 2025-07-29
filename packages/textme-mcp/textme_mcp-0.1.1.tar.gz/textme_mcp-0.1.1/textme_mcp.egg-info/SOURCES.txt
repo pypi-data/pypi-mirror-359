@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+textme_mcp/__init__.py
+textme_mcp/server.py
+textme_mcp.egg-info/PKG-INFO
+textme_mcp.egg-info/SOURCES.txt
+textme_mcp.egg-info/dependency_links.txt
+textme_mcp.egg-info/entry_points.txt
+textme_mcp.egg-info/requires.txt
+textme_mcp.egg-info/top_level.txt

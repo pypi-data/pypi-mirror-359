@@ -1,0 +1,14 @@
+[project]
+name = "textme-mcp"
+version = "0.1.1"
+description = "大模型调用textme的服务发送推送消息"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.10.1",
+]
+
+[project.scripts]
+textme-mcp = "textme_mcp.server:run"
