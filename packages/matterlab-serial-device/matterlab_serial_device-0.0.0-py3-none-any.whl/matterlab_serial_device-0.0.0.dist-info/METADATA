@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: matterlab_serial_device
+Version: 0.0.0
+Summary: A wrapper for PySerial device interfaces.
+Author: Han Hao, Martin Seifrid
+License: Apache 2.0
+Platform: win
+Platform: osx
+Platform: unix
+Platform: linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: pyserial
+Provides-Extra: testing
+Requires-Dist: flake8>=4; extra == "testing"
+Requires-Dist: mypy>=0; extra == "testing"
+Requires-Dist: pytest>=7; extra == "testing"
+Requires-Dist: pytest-cov>=3; extra == "testing"
+Requires-Dist: tox>=3; extra == "testing"
+Dynamic: license-file
