@@ -1,0 +1,16 @@
+django_cosmograph/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_cosmograph/admin.py,sha256=suMo4x8I3JBxAFBVIdE-5qnqZ6JAZV0FESABHOSc-vg,63
+django_cosmograph/apps.py,sha256=ZysGqUIB4QjdPqRZzGena_YmYT22Ok9gKJZZPlW0d0Y,165
+django_cosmograph/models.py,sha256=Vjc0p2XbAPgE6HyTF6vll98A4eDhA5AvaQqsc4kQ9AQ,57
+django_cosmograph/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+django_cosmograph/urls.py,sha256=LNLCqhguoJzt10zQonL2XTNWfTTKukxbhMQoLcGXDao,184
+django_cosmograph/views.py,sha256=LWyTyvaLq8EBUDH1YhQ0Xi9PM_QQvcsl8FIexL_kCZs,852
+django_cosmograph/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_cosmograph/static/django_cosmograph/cosmograph.js,sha256=qfl-EaQ3tZ87OkUBD-N6-MW3n3s9nyF98LPUBu594zE,1336339
+django_cosmograph/static/django_cosmograph/main.css,sha256=xB-Kg1WPzwdG_MVY1eF9R9d3-rAu2ffDhcLkXCBOKmA,911
+django_cosmograph/static/django_cosmograph/vite.svg,sha256=SnSK_UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs,1497
+django_cosmograph/templates/django_cosmograph/cosmograph.html,sha256=AFRIl0zFk9PpYWOZ-3zkKiMY-i-dojNGMEsMdQxsD2w,258
+django_cosmograph-0.1.0.dist-info/METADATA,sha256=0G0p6dVzSkKxDAYwd-rE-xMeJMKLJu0YBax63f03RqU,947
+django_cosmograph-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+django_cosmograph-0.1.0.dist-info/licenses/LICENSE.md,sha256=CvyjFFWWzQBfb27ZdzE-oxkoCU_FtKqrwhu3Zeo2nQk,19342
+django_cosmograph-0.1.0.dist-info/RECORD,,
