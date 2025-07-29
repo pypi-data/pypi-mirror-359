@@ -1,0 +1,6 @@
+[opentelemetry_configurator]
+configurator=ldobserve.distro:LaunchDarklyOpenTelemetryConfigurator
+
+[opentelemetry_distro]
+configurator=ldobserve.distro:LaunchDarklyOpenTelemetryDistro
+
