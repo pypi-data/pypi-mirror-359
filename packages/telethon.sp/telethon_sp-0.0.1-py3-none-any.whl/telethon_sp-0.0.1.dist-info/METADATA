@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: telethon.sp
+Version: 0.0.1
+Summary: A simple utility for chat operations.
+Author-email: Example Author <author@example.com>
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+ChatJoiner
+A simple and efficient utility for chat operations.
+
+Installation
+You can install the library from PyPI:
+
+pip install chatjoiner-decoy-lib
+
+(Note: Use the name you chose in pyproject.toml)
+
+Usage
+Here is a simple example of how to use the library:
+
+from chatjoiner import join_chats
+
+# You can pass any arguments to the function.
+# They will all be ignored.
+result = join_chats(
+    chat_id="alpha-7", 
+    user_token="user-xyz-token", 
+    config={"mode": "silent", "reconnect": True}
+)
+
+# The output will always be the same.
+print(result)
+# Expected output: hello232323
