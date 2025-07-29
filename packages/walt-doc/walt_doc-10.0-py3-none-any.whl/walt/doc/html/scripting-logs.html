@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripting API: logs management &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scripting API: miscellaneous tools" href="scripting-tools.html" />
+    <link rel="prev" title="scripting API: image management" href="scripting-images.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scripting API: logs management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#retrieving-logs-in-realtime">Retrieving logs in realtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieving-logs-from-the-past">Retrieving logs from the past</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combining-realtime-and-recent-history">Combining realtime and recent history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specifying-and-analysing-issuers">Specifying and analysing issuers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scripting API: logs management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scripting-api-logs-management">
+<h1>scripting API: logs management<a class="headerlink" href="#scripting-api-logs-management" title="Link to this heading"></a></h1>
+<p>Scripting features for logs management are available at
+<code class="docutils literal notranslate"><span class="pre">walt.client.api.logs</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv) ~/experiment$ python3
+&gt;&gt;&gt; from walt.client import api
+&gt;&gt;&gt; api.logs
+&lt; -- API submodule for WALT logs --
+
+  methods:
+  - self.get_logs(self, realtime=False, history=None, issuers=&#39;my-nodes&#39;, timeout=-1): Iterate over historical or realtime logs
+&gt;
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Currently, only one method is available: <code class="docutils literal notranslate"><span class="pre">api.logs.get_logs()</span></code>. It
+allows to retrieve log lines in realtime and/or from the past. See
+<a class="reference internal" href="logging.html"><span class="doc">walt help show logging</span></a> for information about WalT
+logging system.</p>
+<p>Since this command may match a large number of log lines, it actually
+returns an iterable object. You can then use a for loop (see next
+examples) to iterate over it and break the loop when relevant. If you
+are sure the number of log lines is not too high, you can also use
+<code class="docutils literal notranslate"><span class="pre">list(api.nodes.get_logs(...))</span></code> to get a list.</p>
+<section id="retrieving-logs-in-realtime">
+<h2>Retrieving logs in realtime<a class="headerlink" href="#retrieving-logs-in-realtime" title="Link to this heading"></a></h2>
+<p>Here is a first example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">logline</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">logs</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">realtime</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">logline</span><span class="o">.</span><span class="n">stream</span> <span class="o">==</span> <span class="s1">&#39;api-example&#39;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">logline</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Log(timestamp=datetime.datetime(2023, 4, 21, 11, 28, 32, 317186), line=&#39;log line sent from node vn23&#39;, issuer=&lt;virtual node vn23&gt;, stream=&#39;api-example&#39;)</span>
+<span class="go">Log(timestamp=datetime.datetime(2023, 4, 21, 11, 30, 30, 746634), line=&#39;another log line sent from node vn23&#39;, issuer=&lt;virtual node vn23&gt;, stream=&#39;api-example&#39;)</span>
+</pre></div>
+</div>
+<p>Note that the log lines displayed above were generated from the
+following parallel terminal session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv) ~/experiment$ walt node shell vn23
+Caution: changes outside /persist will be lost on next node reboot.
+Run &#39;walt help show shells&#39; for more info.
+[...]
+root@vn23:~# walt-log-echo api-example &#39;log line sent from node vn23&#39;
+root@vn23:~# walt-log-echo api-example &#39;another log line sent from node vn23&#39;
+root@vn23:~#
+</pre></div>
+</div>
+<p>It is possible to specify a timeout value in seconds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">walt.client.exceptions</span> <span class="kn">import</span> <span class="n">TimeoutException</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">logline</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">logs</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">realtime</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="n">logline</span><span class="o">.</span><span class="n">issuer</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;vn23&#39;</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;got a log line from vn23&#39;</span><span class="p">)</span>
+<span class="gp">... </span>            <span class="k">break</span>
+<span class="gp">... </span><span class="k">except</span> <span class="n">TimeoutException</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vn23 was silent!&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">vn23 was silent!</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="retrieving-logs-from-the-past">
+<h2>Retrieving logs from the past<a class="headerlink" href="#retrieving-logs-from-the-past" title="Link to this heading"></a></h2>
+<p>Here is a command retrieving logs issued in the last 10 minutes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">logline</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">logs</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="s1">&#39;-10m:&#39;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">logline</span><span class="o">.</span><span class="n">stream</span> <span class="o">==</span> <span class="s1">&#39;api-example&#39;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">logline</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Log(timestamp=datetime.datetime(2023, 4, 21, 11, 28, 32, 317186), line=&#39;log line sent from node vn23&#39;, issuer=&lt;virtual node vn23&gt;, stream=&#39;api-example&#39;)</span>
+<span class="go">Log(timestamp=datetime.datetime(2023, 4, 21, 11, 30, 30, 746634), line=&#39;another log line sent from node vn23&#39;, issuer=&lt;virtual node vn23&gt;, stream=&#39;api-example&#39;)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Checkout <a class="reference internal" href="log-history.html"><span class="doc">walt help show log-history</span></a> for
+information about the expected format for the <code class="docutils literal notranslate"><span class="pre">history</span></code> parameter.</p>
+</section>
+<section id="combining-realtime-and-recent-history">
+<h2>Combining realtime and recent history<a class="headerlink" href="#combining-realtime-and-recent-history" title="Link to this heading"></a></h2>
+<p>In some cases, it is useful to enable both <code class="docutils literal notranslate"><span class="pre">realtime</span></code> and <code class="docutils literal notranslate"><span class="pre">history</span></code>
+options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vn23</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
+<span class="go">Node vn23: rebooted ok.</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">logline</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">logs</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="s1">&#39;-2m:&#39;</span><span class="p">,</span> <span class="n">realtime</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">issuers</span><span class="o">=</span><span class="s1">&#39;server&#39;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;booted&#39;</span> <span class="ow">in</span> <span class="n">logline</span><span class="o">.</span><span class="n">line</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">logline</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">break</span>
+<span class="gp">...</span>
+<span class="go">Log(timestamp=datetime.datetime(2023, 4, 21, 11, 47, 15, 55869), line=&#39;node vn23 is booted&#39;, issuer=&lt;walt server&gt;, stream=&#39;platform.nodes&#39;)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">get_logs()</span></code> retrieves any logs issued by the WalT
+server during the past two minutes, and then continue retrieving new
+logs in realtime (unless the break was reached, of course).</p>
+</section>
+<section id="specifying-and-analysing-issuers">
+<h2>Specifying and analysing issuers<a class="headerlink" href="#specifying-and-analysing-issuers" title="Link to this heading"></a></h2>
+<p>By default, only log lines issued by the nodes of the calling user are
+retrieved. Option <code class="docutils literal notranslate"><span class="pre">issuers</span></code> can be used to change this default filter.</p>
+<p>Various forms are allowed for the value of this option, such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers='my-nodes'</span></code> # same as default value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers='server'</span></code> # see example of previous section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers='all-nodes'</span></code> # also include free nodes and nodes of other
+users</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers='my-nodes,server'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers=('vn23',)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuers=('vn23',</span> <span class="pre">'rpibp')</span></code></p></li>
+</ul>
+<p>It is also possible to use an API object representing a set of nodes,
+for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;pc-x86-64&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loglines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">logs</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="s1">&#39;-30m:&#39;</span><span class="p">,</span> <span class="n">issuers</span><span class="o">=</span><span class="n">nodes</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>As shown in the examples of previous sections, each log line has an
+attribute called <code class="docutils literal notranslate"><span class="pre">issuer</span></code> which indicates the machine which issued it.
+The value of this attribute is an API object. It may be either:</p>
+<ul class="simple">
+<li><p>a node object – see
+<a class="reference internal" href="scripting-nodes.html"><span class="doc">walt help show scripting-nodes</span></a> for more
+info about node objects</p></li>
+<li><p>a server object – see
+<a class="reference internal" href="scripting-tools.html"><span class="doc">walt help show scripting-tools</span></a></p></li>
+</ul>
+<p>If needed, one can easily differentiate these two kinds of issuers by
+checking the <code class="docutils literal notranslate"><span class="pre">device_type</span></code> attribute they both have.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scripting-images.html" class="btn btn-neutral float-left" title="scripting API: image management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripting-tools.html" class="btn btn-neutral float-right" title="scripting API: miscellaneous tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

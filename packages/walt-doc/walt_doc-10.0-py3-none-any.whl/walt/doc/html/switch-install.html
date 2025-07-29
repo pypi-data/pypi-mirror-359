@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Switch installation in WalT network &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="WalT client software installation" href="client-install.html" />
+    <link rel="prev" title="WalT node installation" href="node-install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Switch installation in WalT network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-switch-features">Recommended switch features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-recommendation">Hardware recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-identify-the-new-switch-in-walt">How to identify the new switch in WALT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-lldp-and-or-poe">Enabling LLDP and/or PoE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switch-configuration-settings">Switch configuration settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Switch installation in WalT network</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="switch-installation-in-walt-network">
+<h1>Switch installation in WalT network<a class="headerlink" href="#switch-installation-in-walt-network" title="Link to this heading"></a></h1>
+<section id="scope">
+<h2>Scope<a class="headerlink" href="#scope" title="Link to this heading"></a></h2>
+<p>For a general view of networking topic, see
+<a class="reference internal" href="networking.html"><span class="doc">walt help show networking</span></a> first.</p>
+<p>This documentation page explains how to plug and configure a switch
+connected to the dedicated WalT platform network (sometimes called
+<code class="docutils literal notranslate"><span class="pre">walt-net</span></code>).</p>
+<p>In complex scenarios (see
+<a class="reference internal" href="server-network-config.html"><span class="doc">walt help show server-network-config</span></a>),
+the first switch connected to WALT server may have to be configured for
+using VLANs. This is outside the scope of this configuration, because it
+highly depends on the switch model you use and the overall network
+environment where the platform is deployed. In this case you should
+contact your network admins.</p>
+</section>
+<section id="recommended-switch-features">
+<h2>Recommended switch features<a class="headerlink" href="#recommended-switch-features" title="Link to this heading"></a></h2>
+<p>The following WalT features are optional:</p>
+<ul class="simple">
+<li><p>Node “hard-reboots” (being able to remotely stop powering a given
+node to force a reboot in case of problem)</p></li>
+<li><p>Automatic power savings (by powering off unused nodes)</p></li>
+<li><p>Network topology exploration</p></li>
+</ul>
+<p>In order to enable those features, the switches you connect to
+<code class="docutils literal notranslate"><span class="pre">walt-net</span></code> must provide the following features:</p>
+<ul class="simple">
+<li><p>PoE (Power-Over-Ethernet) ports</p></li>
+<li><p>LLDP support (Link Layer Discovery Protocol)</p></li>
+<li><p>SNMP remote administration, with support for standard MIBs
+(POWER-OVER-ETHERNET.mib, IF.mib and LLDP.mib)</p></li>
+</ul>
+<p>If LLDP.mib is missing, WALT will try to analyse the forwarding tables
+instead (BRIDGE.mib or Q-BRIDGE.mib); These alternate MIBs should
+suffice as long as you connect and configure these switches on WALT one
+at a time.</p>
+<p>See <a class="reference internal" href="optional-features.html"><span class="doc">walt help show optional-features</span></a> for
+more info.</p>
+</section>
+<section id="hardware-recommendation">
+<h2>Hardware recommendation<a class="headerlink" href="#hardware-recommendation" title="Link to this heading"></a></h2>
+<p>We recommend the switch Netgear GS110TP. It is a cost-effective switch,
+with useful features in the context of a WalT platform:</p>
+<ul class="simple">
+<li><p>8 PoE ports</p></li>
+<li><p>LLDP support (Link Layer Discovery Protocol)</p></li>
+<li><p>remote administration using SNMP</p></li>
+<li><p>(and, if you ever need it in a particular setup, 802.1q support
+(VLANs))</p></li>
+</ul>
+<p>This switch works well with its default settings; it comes with a
+default SNMPv2 community named ‘private’ with read-write rights.</p>
+<p>The switch Netgear GS324TP works equally well with WALT; It provides 24
+PoE+ ports and has very similar network management features. However, it
+has no default SNMPv2 community configured, so you will have to connect
+to its web interface (<code class="docutils literal notranslate"><span class="pre">http://&lt;switch-ip&gt;</span></code>) to define an SNMPv2
+community with read-write rights to be used by WALT.</p>
+<p>Alternatively, WalT was also tested with the switch TP-Link T1500G-10PS.
+You just have to configure it to request its management IP through DHCP.
+Other default settings are OK.</p>
+<p>At LIG, WalT also communicates with switches of the building network,
+which are Avaya 4850GTS-PWR+ switches (48 PoE ports). These switches
+provide all optional remote management features useful for WALT too.</p>
+<p>Note: if you test another switch model, we would be happy to get the
+results of your test.</p>
+</section>
+<section id="how-to-identify-the-new-switch-in-walt">
+<h2>How to identify the new switch in WALT<a class="headerlink" href="#how-to-identify-the-new-switch-in-walt" title="Link to this heading"></a></h2>
+<p>When WALT server detects a switch for the first time, a log line is
+emitted. Thus, you should be able to identify the new switch by checking
+the logs as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt log show --platform --history -5m: &quot;new&quot;
+10:50:15.498 walt-server.platform.devices -&gt; new switch name=switch-18d55d [...]
+$
+</pre></div>
+</div>
+<p>If WALT is unable to detect this device is a switch, the log line will
+look like this instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">15.498</span> <span class="n">walt</span><span class="o">-</span><span class="n">server</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">devices</span> <span class="o">-&gt;</span> <span class="n">new</span> <span class="n">device</span> <span class="n">name</span><span class="o">=</span><span class="n">unknown</span><span class="o">-</span><span class="mi">18</span><span class="n">d55d</span> <span class="nb">type</span><span class="o">=</span><span class="n">unknown</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example we see that WALT registered this unknown device with
+name <code class="docutils literal notranslate"><span class="pre">unknown-18d55d</span></code>. The hex chars are taken from the right side of
+the switch mac address.</p>
+<p>In such a case, run the following to let WALT know this new device is
+actually a switch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device config unknown-18d55d type=switch
+Renaming unknown-18d55d to switch-18d55d for clarity.
+Done.
+$
+</pre></div>
+</div>
+<p>In any case, when your switch is identified you can give it a more
+convenient name, for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device rename switch-18d55d switch-netgear-426
+</pre></div>
+</div>
+</section>
+<section id="enabling-lldp-and-or-poe">
+<h2>Enabling LLDP and/or PoE<a class="headerlink" href="#enabling-lldp-and-or-poe" title="Link to this heading"></a></h2>
+<p>In some complex environments, remote administration of a given switch by
+WalT may not be allowed; or LLDP/PoE may not be available. Thus, these
+features are disabled by default. As a result, WALT must be explicitely
+allowed to use these features on a given switch, by using
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">config</span></code> (see next section).</p>
+<p>When LLDP is enabled, after a little time (e.g. 10 minutes) you can run
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">rescan</span></code> and <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">tree</span></code>; your switch should
+appear in the network topology tree.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>LLDP only works between two devices (two switches, or a switch and a
+node) when both devices have LLDP enabled. On a node, this means the
+running walt image must embed a LLDP daemon.</p></li>
+<li><p>In any case, keep in mind that topology exploration and PoE reboots
+are optional features. It should not prevent you from working with
+nodes.</p></li>
+</ul>
+</section>
+<section id="switch-configuration-settings">
+<h2>Switch configuration settings<a class="headerlink" href="#switch-configuration-settings" title="Link to this heading"></a></h2>
+<p>If you want to enable LLDP or PoE reboots and power savings, WalT server
+will have to communicate with the switch by using SNMP. Thus you should
+specify SNMP configuration parameters <code class="docutils literal notranslate"><span class="pre">snmp.version</span></code> (with value <code class="docutils literal notranslate"><span class="pre">1</span></code>
+or <code class="docutils literal notranslate"><span class="pre">2</span></code>) and <code class="docutils literal notranslate"><span class="pre">snmp.community</span></code>. Then, you can enable LLDP by
+specifying <code class="docutils literal notranslate"><span class="pre">lldp.explore=true</span></code>. And finally you can enable node
+hard-reboots using PoE by specifying <code class="docutils literal notranslate"><span class="pre">poe.reboots=true</span></code>. This setting
+also activates automatic power savings. Note that you cannot enable
+<code class="docutils literal notranslate"><span class="pre">poe.reboots</span></code> without enabling <code class="docutils literal notranslate"><span class="pre">lldp.explore</span></code> (since WalT needs to
+know on which PoE switch port a node is connected in order to
+hard-reboot it or power it off).</p>
+<p>For instance, on the Netgear GS110TP in its default configuration, one
+may run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device config &lt;switch-name&gt; snmp.version=2 snmp.community=&#39;private&#39;
+$ walt device config &lt;switch-name&gt; lldp.explore=true poe.reboots=true
+</pre></div>
+</div>
+<p>For general information about these commands, see
+<a class="reference internal" href="device-config.html"><span class="doc">walt help show device-config</span></a>.</p>
+<p>Last note: to make the network view (output by <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">tree</span></code>) of
+a large building more readable, its is possible to rename the switch
+ports. See
+<a class="reference internal" href="device-port-config.html"><span class="doc">walt help show device-port-config</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="node-install.html" class="btn btn-neutral float-left" title="WalT node installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="client-install.html" class="btn btn-neutral float-right" title="WalT client software installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

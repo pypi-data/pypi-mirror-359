@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer documentation summary &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Repository: walt-python-packages" href="dev-walt-python-packages.html" />
+    <link rel="prev" title="Boot modes: network boot and hybrid boot" href="boot-modes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer documentation summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#collaborative-workflow">Collaborative workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#experimental-setup">Experimental setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repositories">Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Developer documentation summary</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developer-documentation-summary">
+<h1>Developer documentation summary<a class="headerlink" href="#developer-documentation-summary" title="Link to this heading"></a></h1>
+<p>This section explains various topics helpful to participate with the
+software development of WALT.</p>
+<section id="collaborative-workflow">
+<h2>Collaborative workflow<a class="headerlink" href="#collaborative-workflow" title="Link to this heading"></a></h2>
+<p>If you want to participate in the development of walt, email us:
+walt-contact at univ-grenoble-alpes.fr</p>
+<p>We welcome any contribution, bugfix, new feature, documentation update,
+more automated tests, etc. If you implement something, you can use the
+“pull request” feature of github. WalT is based on various github
+repositories. Scroll down for the list.</p>
+</section>
+<section id="experimental-setup">
+<h2>Experimental setup<a class="headerlink" href="#experimental-setup" title="Link to this heading"></a></h2>
+<p>Each developer must install a dedicated WALT platform for allowing
+development and testing without disturbing experimental work or other
+developers. This involves:</p>
+<ol class="arabic simple">
+<li><p>Install walt server software on a dedicated machine.</p></li>
+<li><p>Optionally, connect one or more network switches, and physical nodes
+(or just use virtual nodes).</p></li>
+</ol>
+<p>Note about step 1: since the purpose of this platform is just software
+development, a small-form-factor PC is largely enough. But remember that
+walt server software starts various network daemons, so the machine
+should be dedicated for this purpose only. Don’t try to install walt
+server software on your laptop!</p>
+<p>With this setup in place, the developer can connect as root to the
+development server, and modify the code, restart the main server daemon,
+test walt client tool, etc.</p>
+<p>For installing the server, you can mostly follow
+<a class="reference internal" href="server-install.html"><span class="doc">walt help show server-install</span></a>. However, for
+a more developer-friendly setup, commands at step 2 should be replaced.</p>
+<p>If you are a core developer (with push access to the repository) just
+run the following instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@walt-server$ git clone git@github.com:drakkar-lig/walt-python-packages.git
+root@walt-server$ make -j install
+</pre></div>
+</div>
+<p>If you are not a core developer, you can instead fork our repository by
+pointing your browser to the following URL, and validate:
+<a class="reference external" href="https://github.com/drakkar-lig/walt-python-packages/fork">https://github.com/drakkar-lig/walt-python-packages/fork</a>. Then, run the
+two commands above, but clone you own repository instead (i.e., replace
+<code class="docutils literal notranslate"><span class="pre">drakkar-lig</span></code> by your own username on github).</p>
+<p>When you want to reinstall the code you modified, run
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">install</span></code> again.</p>
+</section>
+<section id="repositories">
+<h2>Repositories<a class="headerlink" href="#repositories" title="Link to this heading"></a></h2>
+<p>The WalT project relies on various code repositories:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/walt-python-packages">https://github.com/drakkar-lig/walt-python-packages</a>: the main
+repository of WalT platform code. It includes server code, client
+code, common code, optional code to be installed on WalT OS images,
+etc. The various <code class="docutils literal notranslate"><span class="pre">walt-*</span></code> pip packages published on PyPI are built
+from this repository. For helping developers understand the code
+structure and various important topics, this repository has its own
+documentation pages. See
+<a class="reference internal" href="dev-walt-python-packages.html"><span class="doc">walt help show dev-walt-python-packages</span></a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/walt-images">https://github.com/drakkar-lig/walt-images</a>: a repository building
+various WalT OS images to be booted by WalT nodes, including the
+default image of each WalT node model we support.</p></li>
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/walt-node-boot">https://github.com/drakkar-lig/walt-node-boot</a>: a repository for
+building network bootloaders useful to turn a computer into a WalT
+node. Some node models, such as recent Raspberry Pi board and some
+x86 computers do not need such a specific bootloader because their
+firmware is already capable of network booting. This repository
+remains useful for turning other kinds of computers or SBCs into WalT
+nodes.</p></li>
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/walt-project">https://github.com/drakkar-lig/walt-project</a>: the repository where we
+announce new WalT versions. With each version we link some build
+artefacts of the other repositories. There is no source code there.
+Since WalT relies on several code repositories, it is probably easier
+for the end user to find all these artefacts at a single place.</p></li>
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/python-apt-binary">https://github.com/drakkar-lig/python-apt-binary</a>: the repository for
+building and uploading the pip package
+<a class="reference external" href="https://pypi.org/project/python-apt-binary">https://pypi.org/project/python-apt-binary</a>. It allows to interact
+with debian package manager <code class="docutils literal notranslate"><span class="pre">apt</span></code>, when running
+<code class="docutils literal notranslate"><span class="pre">walt-server-setup</span></code> to install or upgrade a WalT server. The
+underlying code is developed by Debian developers and available as a
+Debian package called <code class="docutils literal notranslate"><span class="pre">python3-apt</span></code>, but it was not available on
+PyPI, thus not installable in a python virtual environment.</p></li>
+<li><p><a class="reference external" href="https://github.com/drakkar-lig/walt-vpn-node">https://github.com/drakkar-lig/walt-vpn-node</a>: the repository allowing
+to turn a raspberry pi 3B/3B+ board into a WalT VPN node. It
+generates an SD card image file. See
+<a class="reference internal" href="vpn.html"><span class="doc">walt help show vpn</span></a> for more info.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="boot-modes.html" class="btn btn-neutral float-left" title="Boot modes: network boot and hybrid boot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dev-walt-python-packages.html" class="btn btn-neutral float-right" title="Repository: walt-python-packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

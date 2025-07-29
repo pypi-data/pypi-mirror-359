@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating a WalT image from scratch &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Device and node sets: use several devices at once" href="device-sets.html" />
+    <link rel="prev" title="Writting image spec files" href="image-spec-file.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating a WalT image from scratch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-introduction">A) Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-mandatory-features">B) Mandatory features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-label-walt-node-models">1- A label “walt.node.models”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-label-walt-server-minversion">2- A label “walt.server.minversion”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appropriate-boot-files">3- appropriate boot files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kernel-features">4- kernel features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#an-init-system">5- an init system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#busybox-and-classical-unix-commands">6- busybox and classical unix commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-ssh-server-set-up-to-listen-on-port-22">7- a ssh server set up to listen on port 22</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#c-optional-features">C) Optional features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lldp-daemon">1- lldp daemon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#precise-time-synchronization">2- precise time synchronization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multicast-dns">3- multicast DNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#walt-node-python-package">4- walt-node python package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#led-blinking-script">5- led-blinking script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-reboot-script">6- custom reboot script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label-walt-image-preferred-name">7- label “walt.image.preferred-name”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etc-cpuinfo-file">8- /etc/cpuinfo file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-an-advanced-virtual-environment-in-walt-image-shell">9- Support for an advanced virtual environment in <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-ram-swapping-using-nbd">10- Support for RAM swapping using NBD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Creating a WalT image from scratch</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-a-walt-image-from-scratch">
+<h1>Creating a WalT image from scratch<a class="headerlink" href="#creating-a-walt-image-from-scratch" title="Link to this heading"></a></h1>
+<p>Most users just need to modify existing images built by other users,
+such as the official images build by walt platform developers (with
+docker user <code class="docutils literal notranslate"><span class="pre">waltplatform</span></code>). In order to modify an image easily, they
+can use <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code>, <a class="reference internal" href="image-cp.html"><span class="doc">walt image cp</span></a> or
+<a class="reference internal" href="image-build.html"><span class="doc">walt image build</span></a>. However, for specific needs,
+it is sometimes useful to create a whole new operating system image from
+scratch. For instance, this is sometimes required for the support of a
+new kind of node in WALT.</p>
+<p>This procedure is dedicated to advanced users that are familiar with
+operating systems operation and docker-related tools.</p>
+<section id="a-introduction">
+<h2>A) Introduction<a class="headerlink" href="#a-introduction" title="Link to this heading"></a></h2>
+<p>A WalT image is just a <a class="reference external" href="https://docs.docker.com/engine/getstarted/">docker
+image</a>, so it is easy to
+build an image using a Dockerfile. Check-out
+<a class="reference internal" href="image-build.html"><span class="doc">walt help show image-build</span></a> for reference.</p>
+<p>However, most users use an existing WALT image (usually the default one
+for the node model) as a starting point, and just define the additional
+build steps needed for a specific experiment. Here, we describe how to
+define the whole image from scratch.</p>
+<p>A small set of features is required. The next section lists them. Then,
+another section describes a few optional features you could also benefit
+from.</p>
+</section>
+<section id="b-mandatory-features">
+<h2>B) Mandatory features<a class="headerlink" href="#b-mandatory-features" title="Link to this heading"></a></h2>
+<p>In order to run properly as a WalT image, a <a class="reference external" href="https://docs.docker.com/engine/getstarted/">docker
+image</a> should provide:</p>
+<section id="a-label-walt-node-models">
+<span id="a-label-waltnodemodels"></span><h3>1- A label “walt.node.models”<a class="headerlink" href="#a-label-walt-node-models" title="Link to this heading"></a></h3>
+<p>All WalT images should provide a label <code class="docutils literal notranslate"><span class="pre">walt.node.models</span></code> specifying
+which node models this image can boot. Without this label, the image
+will be ignored.</p>
+<p>For example, the Dockerfile of an image for <code class="docutils literal notranslate"><span class="pre">rpi-b</span></code> and <code class="docutils literal notranslate"><span class="pre">rpi-b-plus</span></code>
+models should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FROM</span> <span class="o">&lt;</span><span class="n">base</span><span class="o">-</span><span class="n">image</span><span class="o">&gt;</span>
+<span class="n">LABEL</span> <span class="n">walt</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">models</span><span class="o">=</span><span class="s2">&quot;rpi-b,rpi-b-plus&quot;</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note: This comma-separated format is mandatory (even if WalT will try to
+print it in a more compact way in commands output).</p>
+</section>
+<section id="a-label-walt-server-minversion">
+<span id="a-label-waltserverminversion"></span><h3>2- A label “walt.server.minversion”<a class="headerlink" href="#a-label-walt-server-minversion" title="Link to this heading"></a></h3>
+<p>This label allows to specify the minimum server version this image was
+built for. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LABEL</span> <span class="n">walt</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">minversion</span><span class="o">=</span><span class="s2">&quot;5&quot;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Management of this label was introduced in walt version 5. Thus, if
+not found in an image, the default value for this label is 4.</p></li>
+<li><p>This label allows to handle changes in the minimum set of software an
+image should provide. For instance, a busybox syntax change between
+debian 9 and debian 10 prevents proper node bootup on walt server
+version 4. Thus version 5 was modified to allow both syntax forms,
+and buster images were built with label <code class="docutils literal notranslate"><span class="pre">walt.server.minversion</span></code>
+set to 5.</p></li>
+</ul>
+</section>
+<section id="appropriate-boot-files">
+<span id="id1"></span><h3>3- appropriate boot files<a class="headerlink" href="#appropriate-boot-files" title="Link to this heading"></a></h3>
+<p>When booting, the node starts its network bootloader stored locally (on
+a SD card, in a flash memory, on a bootable USB device, etc.). Then it
+will use the TFTP protocol to download a second-stage boot script. The
+name of this second-stage boot script depends on the network bootloader.
+Here are some examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/start.ipxe</span></code> for ipxe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/start.uboot</span></code> for u-boot</p></li>
+</ul>
+<p>The TFTP service installed on WalT server redirects TFTP requests for a
+file at <code class="docutils literal notranslate"><span class="pre">&lt;path&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">[image_root]/boot/&lt;node_model&gt;/&lt;path&gt;</span></code>. For
+example, a <code class="docutils literal notranslate"><span class="pre">rpi-b-plus</span></code> node sending a TFTP request for file
+<code class="docutils literal notranslate"><span class="pre">/start.uboot</span></code> will actually get file
+<code class="docutils literal notranslate"><span class="pre">[image_root]/boot/rpi-b-plus/start.uboot</span></code>.</p>
+<p>As a result, the image should provide a directory <code class="docutils literal notranslate"><span class="pre">/boot/&lt;node_model&gt;</span></code>
+for each node model handled. This directory should contain the
+second-stage boot script and resources needed by this script (kernel,
+maybe an initrd, maybe a device tree blob, etc.), or symbolic links if
+these resources are stored elsewhere in the image.</p>
+<p>For detailed information of the node bootup procedure, see
+<a class="reference internal" href="node-bootup.html"><span class="doc">walt help show node-bootup</span></a>.</p>
+</section>
+<section id="kernel-features">
+<span id="id2"></span><h3>4- kernel features<a class="headerlink" href="#kernel-features" title="Link to this heading"></a></h3>
+<p>For a raspberry pi kernel, see
+<a class="reference external" href="https://www.raspberrypi.org/documentation/linux/kernel/building.md">https://www.raspberrypi.org/documentation/linux/kernel/building.md</a>.</p>
+<p>The provided kernel(s) should include the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_OVERLAY_FS=y</span></code> # overlay filesystem</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_NFS_FS=y</span></code> # nfs client</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_NFS_V3=y</span></code> # nfs client v3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_ROOT_NFS=y</span></code> # root filesystem on NFS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_IP_PNP=y</span></code> # kernel network autoconf</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_IP_PNP_DHCP=y</span></code> # kernel dhcp autoconf</p></li>
+</ul>
+<p>You should also include the device driver for your network card, for
+instance <code class="docutils literal notranslate"><span class="pre">CONFIG_IGB=y</span></code> for Intel cards.</p>
+<p>If you use an initrd, some of these features (such as
+<code class="docutils literal notranslate"><span class="pre">CONFIG_OVERLAY_FS</span></code>) may be built as kernel modules (<code class="docutils literal notranslate"><span class="pre">=m</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">=y</span></code>) and others may be omitted (such as <code class="docutils literal notranslate"><span class="pre">CONFIG_ROOT_NFS</span></code>). If not,
+building all these features into the kernel (<code class="docutils literal notranslate"><span class="pre">=y</span></code>) is mandatory, and
+in any case, it is safe to do it.</p>
+</section>
+<section id="an-init-system">
+<span id="id3"></span><h3>5- an init system<a class="headerlink" href="#an-init-system" title="Link to this heading"></a></h3>
+<p>The init system of your image should be available at <code class="docutils literal notranslate"><span class="pre">/sbin/init</span></code>.</p>
+</section>
+<section id="busybox-and-classical-unix-commands">
+<span id="id4"></span><h3>6- busybox and classical unix commands<a class="headerlink" href="#busybox-and-classical-unix-commands" title="Link to this heading"></a></h3>
+<p>For proper handling of the bootup procedure, you should provide a
+<code class="docutils literal notranslate"><span class="pre">busybox</span></code> multi-call binary at <code class="docutils literal notranslate"><span class="pre">/bin/busybox</span></code>. This busybox binary
+should at least include the following applets: <code class="docutils literal notranslate"><span class="pre">awk</span></code> <code class="docutils literal notranslate"><span class="pre">cat</span></code>
+<code class="docutils literal notranslate"><span class="pre">chroot</span></code> <code class="docutils literal notranslate"><span class="pre">ls</span></code> <code class="docutils literal notranslate"><span class="pre">mktemp</span></code> <code class="docutils literal notranslate"><span class="pre">mkfifo</span></code> <code class="docutils literal notranslate"><span class="pre">nc</span></code> <code class="docutils literal notranslate"><span class="pre">realpath</span></code> <code class="docutils literal notranslate"><span class="pre">reboot</span></code>
+<code class="docutils literal notranslate"><span class="pre">rm</span></code> <code class="docutils literal notranslate"><span class="pre">sed</span></code> <code class="docutils literal notranslate"><span class="pre">sh</span></code> <code class="docutils literal notranslate"><span class="pre">sleep</span></code> <code class="docutils literal notranslate"><span class="pre">timeout</span></code> <code class="docutils literal notranslate"><span class="pre">uname</span></code>. If this busybox
+binary is not statically compiled (on a debian-based image:
+<code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">busybox-static</span></code>), you must also provide a <code class="docutils literal notranslate"><span class="pre">ldd</span></code>
+binary.</p>
+<p>The following commands should also be provided in the image (either
+through <code class="docutils literal notranslate"><span class="pre">busybox</span></code> applets or not, it does not matter): <code class="docutils literal notranslate"><span class="pre">chmod</span></code>
+<code class="docutils literal notranslate"><span class="pre">chroot</span></code> <code class="docutils literal notranslate"><span class="pre">cp</span></code> <code class="docutils literal notranslate"><span class="pre">date</span></code> <code class="docutils literal notranslate"><span class="pre">echo</span></code> <code class="docutils literal notranslate"><span class="pre">grep</span></code> <code class="docutils literal notranslate"><span class="pre">head</span></code> <code class="docutils literal notranslate"><span class="pre">ln</span></code> <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>
+<code class="docutils literal notranslate"><span class="pre">mount</span></code> <code class="docutils literal notranslate"><span class="pre">reboot</span></code> <code class="docutils literal notranslate"><span class="pre">sed</span></code> <code class="docutils literal notranslate"><span class="pre">setsid</span></code> <code class="docutils literal notranslate"><span class="pre">sh</span></code> <code class="docutils literal notranslate"><span class="pre">timeout</span></code> <code class="docutils literal notranslate"><span class="pre">tr</span></code>
+<code class="docutils literal notranslate"><span class="pre">umount</span></code>.</p>
+</section>
+<section id="a-ssh-server-set-up-to-listen-on-port-22">
+<span id="id5"></span><h3>7- a ssh server set up to listen on port 22<a class="headerlink" href="#a-ssh-server-set-up-to-listen-on-port-22" title="Link to this heading"></a></h3>
+<p>The ssh server configuration should allow root access when using public
+key authentication.</p>
+<p>When deploying your image, the WalT server will automatically insert its
+own public key in file <code class="docutils literal notranslate"><span class="pre">/root/.ssh/authorized_keys</span></code>. This allows the
+WalT server to offer shell sessions and file transfers to or from the
+node.</p>
+<p>In the case of openssh, <code class="docutils literal notranslate"><span class="pre">PermitRootLogin</span> <span class="pre">without-password</span></code> in
+<code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> should be enough.</p>
+<p>For low-power devices, consider using
+<a class="reference external" href="https://matt.ucc.asn.au/dropbear/dropbear.html">dropbear</a>.</p>
+</section>
+</section>
+<section id="c-optional-features">
+<h2>C) Optional features<a class="headerlink" href="#c-optional-features" title="Link to this heading"></a></h2>
+<p>Supporting the following options will add more features to your walt
+image.</p>
+<section id="lldp-daemon">
+<span id="id6"></span><h3>1- lldp daemon<a class="headerlink" href="#lldp-daemon" title="Link to this heading"></a></h3>
+<p>LLDP (link layer discovery protocol) allows the WalT server to locate
+your node inside the layer-2 network, and thus display the network
+topology appropriately when calling <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">tree</span></code>.</p>
+</section>
+<section id="precise-time-synchronization">
+<span id="id7"></span><h3>2- precise time synchronization<a class="headerlink" href="#precise-time-synchronization" title="Link to this heading"></a></h3>
+<p>WalT bootup scripts will automatically synchronize node’s clock with the
+server at bootup. For a more precise synchronization between nodes, and
+to avoid clock drift over the long term, a network synchronization
+protocol is needed.</p>
+<p>PTP (Precision Time Protocol) is the preferred synchronization protocol.
+The WalT server is a PTP master.</p>
+<p>For reference, the images we provide come with the following
+configuration files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/default/ptpd
+# /etc/default/ptpd
+
+# Set to &quot;yes&quot; to actually start ptpd automatically
+START_DAEMON=yes
+
+# Add command line options for ptpd
+PTPD_OPTS=&quot;-c /etc/ptpd.conf&quot;
+
+$ cat /etc/ptpd.conf
+ptpengine:interface=eth0
+ptpengine:preset=slaveonly
+global:cpuaffinity_cpucore=0
+global:ignore_lock=Y
+global:log_file=/var/log/ptpd.log
+global:log_status=y
+ptpengine:domain=42
+ptpengine:ip_dscp=46
+ptpengine:ip_mode=hybrid
+ptpengine:log_delayreq_interval=3
+$
+</pre></div>
+</div>
+<p>An alternative protocol is NTP (Network Time Protocol), also available
+on server side. However using NTP is discouraged because synchronization
+is much slower and less stable. A working configuration would be in this
+case:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/ntp.conf
+driftfile /var/lib/ntp/ntp.drift
+
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+server %(server_ip)s
+
+restrict -4 default kod notrap nomodify nopeer noquery
+restrict -6 default kod notrap nomodify nopeer noquery
+
+restrict 127.0.0.1
+restrict ::1
+
+$
+$ cat /etc/walt/image.spec
+{
+    &quot;templates&quot;: [
+        &quot;/etc/ntp.conf&quot;
+    ]
+}
+$
+</pre></div>
+</div>
+<p>As you can see, NTP configuration requires the IP address of the NTP
+server. In this case, this is the IP of WalT server. As a result, this
+IP could vary depending on the WalT platform where this image will be
+used. To overcome this issue, we use the image templating system (see
+<a class="reference internal" href="image-spec-file.html"><span class="doc">walt help show image-spec-file</span></a>). WalT
+server will automatically replace the pattern <code class="docutils literal notranslate"><span class="pre">%(server_ip)s</span></code> in file
+<code class="docutils literal notranslate"><span class="pre">/etc/ntp.conf</span></code> when the image is mounted.</p>
+</section>
+<section id="multicast-dns">
+<span id="id8"></span><h3>3- multicast DNS<a class="headerlink" href="#multicast-dns" title="Link to this heading"></a></h3>
+<p>Installing multicast DNS management in an image is handy for
+communicating between nodes, since nodes can be reached by targeting
+<code class="docutils literal notranslate"><span class="pre">&lt;node-name&gt;.local</span></code>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@rpi</span><span class="o">-</span><span class="n">ble1</span><span class="p">:</span><span class="o">~</span><span class="c1"># ping rpi-ble2.local</span>
+<span class="n">PING</span> <span class="n">rpi</span><span class="o">-</span><span class="n">ble2</span><span class="o">.</span><span class="n">local</span> <span class="p">(</span><span class="mf">192.168.152.198</span><span class="p">)</span> <span class="mi">56</span><span class="p">(</span><span class="mi">84</span><span class="p">)</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.152.198</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">1.73</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.152.198</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.879</span> <span class="n">ms</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>On a debian-based image, mDNS may be installed by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt-get install avahi-daemon libnss-mdns
+</pre></div>
+</div>
+</section>
+<section id="walt-node-python-package">
+<span id="id9"></span><h3>4- walt-node python package<a class="headerlink" href="#walt-node-python-package" title="Link to this heading"></a></h3>
+<p>If your image provides python3.6+ and systemd, you can install the
+walt-node python package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip3 install walt-node
+$ walt-node-setup
+</pre></div>
+</div>
+<p>This will provide:</p>
+<ul class="simple">
+<li><p>Enhanced walt logging features (see
+<a class="reference internal" href="logging.html"><span class="doc">walt help show logging</span></a>). Note that without this
+package, you can still use the standard logging features.</p></li>
+<li><p>Tool <code class="docutils literal notranslate"><span class="pre">walt-ipxe-kexec-reboot</span></code>, allowing to implement faster
+reboots. This only works if the image is based on iPXE boot scripts
+and has kexec tool installed. To enable this, link this command to
+<code class="docutils literal notranslate"><span class="pre">/bin/walt-reboot</span></code> (see below).</p></li>
+</ul>
+</section>
+<section id="led-blinking-script">
+<span id="id10"></span><h3>5- led-blinking script<a class="headerlink" href="#led-blinking-script" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">blink</span> <span class="pre">&lt;node-name&gt;</span></code> command may be used to visually
+identify a node, by making a led blink.</p>
+<p>This will work only if the image provides an executable file at
+<code class="docutils literal notranslate"><span class="pre">/bin/blink</span></code>. Calling <code class="docutils literal notranslate"><span class="pre">/bin/blink</span> <span class="pre">1</span></code> should make the led start to
+blink, <code class="docutils literal notranslate"><span class="pre">/bin/blink</span> <span class="pre">0</span></code> should make it stop.</p>
+</section>
+<section id="custom-reboot-script">
+<span id="id11"></span><h3>6- custom reboot script<a class="headerlink" href="#custom-reboot-script" title="Link to this heading"></a></h3>
+<p>If the image provides an executable command <code class="docutils literal notranslate"><span class="pre">/bin/walt-reboot</span></code>, then
+this command will be called when (soft-)rebooting the node.</p>
+<p>Providing this file may be useful in various cases. For instance:</p>
+<ul class="simple">
+<li><p>Ensuring a result file is flushed in <code class="docutils literal notranslate"><span class="pre">/persist</span></code> before rebooting</p></li>
+<li><p>Providing a faster way to reboot, e.g. kexec</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">/bin/walt-reboot</span></code> returns, even successfully, the calling script
+<code class="docutils literal notranslate"><span class="pre">walt-net-service</span></code> will consider the reboot failed and run
+<code class="docutils literal notranslate"><span class="pre">busybox</span> <span class="pre">reboot</span> <span class="pre">-f</span></code>.</p>
+<p>Caution: if providing an advanced way to reboot (e.g. kexec), one must
+take care not blindly rebooting the same kernel and initrd: the node may
+have been associated to a different image.</p>
+</section>
+<section id="label-walt-image-preferred-name">
+<span id="label-waltimagepreferred-name"></span><h3>7- label “walt.image.preferred-name”<a class="headerlink" href="#label-walt-image-preferred-name" title="Link to this heading"></a></h3>
+<p>If this image will be the default image for several new node models, one
+may specify this label to indicate the “preferred image name” (see
+explanation below). For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LABEL</span> <span class="n">walt</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">preferred</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;rpi-default:latest&quot;</span>
+</pre></div>
+</div>
+<p>When a new user types <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">show</span></code> for the first time, a set of
+default images is automatically cloned. These are the default images for
+the node models already present on the platform. However, a default
+image often handles several node models. For instance, the default image
+for raspberry pi boards can handle all B models, from rpi-b to rpi-4-b.
+In earlier walt versions, the new user obtained various clones of this
+image, named <code class="docutils literal notranslate"><span class="pre">rpi-b-default</span></code>, <code class="docutils literal notranslate"><span class="pre">rpi-b-plus-default</span></code>, … and
+<code class="docutils literal notranslate"><span class="pre">rpi-4-b-default</span></code> (as long as all these models are present on the
+platform). Now only one clone will be created, and it will be named
+according to this label if defined.</p>
+</section>
+<section id="etc-cpuinfo-file">
+<span id="etccpuinfo-file"></span><h3>8- /etc/cpuinfo file<a class="headerlink" href="#etc-cpuinfo-file" title="Link to this heading"></a></h3>
+<p>When users will be running <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code> on your new image, some
+(rare) programs may fail: those that try to guess the CPU architecture
+by reading file <code class="docutils literal notranslate"><span class="pre">/proc/cpuinfo</span></code>. Since the filesystem mounted at
+<code class="docutils literal notranslate"><span class="pre">/proc</span></code> is linked to the linux kernel running on the host, the content
+of this file shows information about the host CPU, instead of the
+expected target node CPU. An example of those failing commands is
+<code class="docutils literal notranslate"><span class="pre">yum</span></code> package manager often installed in rpm-based systems. In order
+to handle this case properly, you may dump the file <code class="docutils literal notranslate"><span class="pre">/proc/cpuinfo</span></code> of
+a running target node, and provide this file at
+<code class="docutils literal notranslate"><span class="pre">[image_root]/etc/cpuinfo</span></code>. If this file is found in the image, walt
+server will bind-mount it at <code class="docutils literal notranslate"><span class="pre">/proc/cpuinfo</span></code>, which should solve this
+problem.</p>
+</section>
+<section id="support-for-an-advanced-virtual-environment-in-walt-image-shell">
+<span id="id12"></span><h3>9- Support for an advanced virtual environment in <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code><a class="headerlink" href="#support-for-an-advanced-virtual-environment-in-walt-image-shell" title="Link to this heading"></a></h3>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code> is just implemented by running a shell
+(<code class="docutils literal notranslate"><span class="pre">bash</span></code> or <code class="docutils literal notranslate"><span class="pre">sh</span></code>) in a container created from the image. On user
+exit, the changes are saved as a new image. But this basic virtual
+environment with only the shell process is too minimalist for some
+cases. See <a class="reference internal" href="shells.html"><span class="doc">walt help show shells</span></a> for more details.</p>
+<p>As an alternative, you can add support for an advanced virtual
+environment in <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code>, where the OS init is started when
+the shell starts, and shut down when it exits. For this, provide the
+following files with execution bits set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[image_root]/bin/walt-image-shell-start</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[image_root]/bin/walt-image-shell-shutdown</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">/bin/walt-image-shell-start</span></code> is expected to eventually call
+<code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">/sbin/init</span></code>, and possibly perform a little tuning before that
+point for the init system to run well in the container environment. For
+instance, in the systemd-based images we provide, we temporarily rename
+<code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code>. Otherwise systemd will try to initialize
+<code class="docutils literal notranslate"><span class="pre">lo</span></code> (loopback interface), which fails because the container
+environment already initialized it. <code class="docutils literal notranslate"><span class="pre">/bin/walt-image-shell-shutdown</span></code>
+is expected to undo the tuning done by <code class="docutils literal notranslate"><span class="pre">/bin/walt-image-shell-start</span></code>
+and then request the init system to halt (e.g, <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">0</span></code>).</p>
+<p>When these files are provided, the WALT server performs these steps:</p>
+<ol class="arabic simple">
+<li><p>Run the container in the background with <code class="docutils literal notranslate"><span class="pre">walt-image-shell-start</span></code>
+(i.e.,
+<code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span> <span class="pre">-d</span> <span class="pre">--entrypoint</span> <span class="pre">/bin/walt-image-shell-start</span> <span class="pre">[...]</span></code>)</p></li>
+<li><p>Start the shell in an <code class="docutils literal notranslate"><span class="pre">exec</span></code> interactive session (i.e.,
+<code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">$container_id</span> <span class="pre">$shell</span></code>)</p></li>
+<li><p>When the shell session (step 2) ends, call
+<code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">exec</span> <span class="pre">$container_id</span> <span class="pre">/bin/walt-image-shell-shutdown</span></code></p></li>
+<li><p>Similarly to the basic case, wait for the background container to
+end, then save changes to a new image, etc.</p></li>
+</ol>
+<p>Note that this procedure hides the startup messages of the init system
+(steps 1 and 3) to the user. For debugging, you can work on an image
+without <code class="docutils literal notranslate"><span class="pre">/bin/walt-image-shell-start</span></code> or
+<code class="docutils literal notranslate"><span class="pre">/bin/walt-image-shell-shutdown</span></code> at first, so just a basic virtual
+environment is set when you run <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code>. In this basic
+environment, you can test the commands you wish to embed in those files
+one by one, for instance <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">/sbin/init</span></code>, and verify that everything
+can run properly in a container environment.</p>
+</section>
+<section id="support-for-ram-swapping-using-nbd">
+<span id="id13"></span><h3>10- Support for RAM swapping using NBD<a class="headerlink" href="#support-for-ram-swapping-using-nbd" title="Link to this heading"></a></h3>
+<p>If the OS image supports it, the node will be able to use a Network
+Block Device (NBD) for RAM swapping. It is quite an interesting feature,
+because heavy file modifications on the nodes (e.g., package
+installations) fail otherwise, since they are stored in a RAM overlay
+with limited size. See <a class="reference internal" href="boot-modes.html"><span class="doc">walt help show boot-modes</span></a>
+for more info.</p>
+<p>To support this, the image must provide commands <code class="docutils literal notranslate"><span class="pre">nbd-client</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mkswap</span></code>, <code class="docutils literal notranslate"><span class="pre">swapon</span></code> and the kernel module called <code class="docutils literal notranslate"><span class="pre">nbd</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="image-spec-file.html" class="btn btn-neutral float-left" title="Writting image spec files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="device-sets.html" class="btn btn-neutral float-right" title="Device and node sets: use several devices at once" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

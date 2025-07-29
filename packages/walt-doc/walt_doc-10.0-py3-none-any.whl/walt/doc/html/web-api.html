@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using the web API &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to use WalT built-in VPN and distant nodes" href="vpn.html" />
+    <link rel="prev" title="Web server" href="web-server.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the web API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#entrypoint-api-v1-nodes">Entrypoint /api/v1/nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entrypoint-api-v1-images">Entrypoint /api/v1/images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entrypoint-api-v1-logs">Entrypoint <code class="docutils literal notranslate"><span class="pre">/api/v1/logs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using the web API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-the-web-api">
+<h1>Using the web API<a class="headerlink" href="#using-the-web-api" title="Link to this heading"></a></h1>
+<p>This section explains how to interact with the web API WalT provides.</p>
+<p>It can be used to export WalT platform data to another system, such as
+Grafana and its “Infinity” datasource plugin.</p>
+<p>The web API is managed by the web-server component (see
+<a class="reference internal" href="web-server.html"><span class="doc">walt help show web-server</span></a>) and is available at
+<code class="docutils literal notranslate"><span class="pre">http://&lt;walt-server&gt;/api</span></code>. The entrypoints are described below. they
+all expect a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request and return a JSON object or an HTTP error.</p>
+<section id="entrypoint-api-v1-nodes">
+<h2>Entrypoint <a class="reference external" href="/api/v1/nodes">/api/v1/nodes</a><a class="headerlink" href="#entrypoint-api-v1-nodes" title="Link to this heading"></a></h2>
+<p>This entrypoint allows to retrieve data about the nodes. Example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/nodes&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<span class="go">{</span>
+<span class="go">  &quot;num_nodes&quot;: 15,</span>
+<span class="go">  &quot;nodes&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;name&quot;: &quot;dummy&quot;,</span>
+<span class="go">      &quot;model&quot;: &quot;pc-x86-64&quot;,</span>
+<span class="go">      &quot;virtual&quot;: true,</span>
+<span class="go">      &quot;image&quot;: &quot;eduble/pc-x86-64-default:latest&quot;,</span>
+<span class="go">      &quot;booted&quot;: true,</span>
+<span class="go">      &quot;ip&quot;: &quot;192.168.222.5&quot;,</span>
+<span class="go">      &quot;mac&quot;: &quot;52:54:00:bb:1b:b9&quot;,</span>
+<span class="go">      &quot;config&quot;: {</span>
+<span class="go">        &quot;netsetup&quot;: 1,</span>
+<span class="go">        &quot;expose&quot;: &quot;none&quot;,</span>
+<span class="go">        [...]</span>
+<span class="go">      }</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">      &quot;name&quot;: &quot;nanopi&quot;,</span>
+<span class="go">      &quot;model&quot;: &quot;nanopi-r5c&quot;,</span>
+<span class="go">      &quot;virtual&quot;: false,</span>
+<span class="go">      &quot;image&quot;: &quot;eduble/nanopi-r5c-default</span>
+<span class="go">      &quot;booted&quot;: false,</span>
+<span class="go">      &quot;ip&quot;: &quot;192.168.222.24&quot;,</span>
+<span class="go">      &quot;mac&quot;: &quot;52:e8:a1:60:81:e6&quot;,</span>
+<span class="go">      &quot;config&quot;: {</span>
+<span class="go">        &quot;netsetup&quot;: 1,</span>
+<span class="go">        &quot;expose&quot;: &quot;80:8080&quot;,</span>
+<span class="go">        [...]</span>
+<span class="go">      }</span>
+<span class="go">    },</span>
+<span class="go">    [...]</span>
+<span class="go">  ]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>First-level attributes of each node are always: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>,
+<code class="docutils literal notranslate"><span class="pre">virtual</span></code>, <code class="docutils literal notranslate"><span class="pre">image</span></code>, <code class="docutils literal notranslate"><span class="pre">booted</span></code>, <code class="docutils literal notranslate"><span class="pre">ip</span></code>, <code class="docutils literal notranslate"><span class="pre">mac</span></code>, and <code class="docutils literal notranslate"><span class="pre">config</span></code>.
+However, the content of the <code class="docutils literal notranslate"><span class="pre">config</span></code> item vary depending on several
+factors. For instance, if the node is virtual, it has several more
+config items allowing to define disks, networks, number of cpus, and
+amount of ram.</p>
+<p>One can further refine the query by specifying one or more of the
+first-level attributes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/nodes?booted=true&amp;model=pc-x86-64&quot;</span>
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p>Any of the first-level attributes can be specified like this except
+<code class="docutils literal notranslate"><span class="pre">config</span></code>.</p>
+</section>
+<section id="entrypoint-api-v1-images">
+<h2>Entrypoint <a class="reference external" href="/api/v1/images">/api/v1/images</a><a class="headerlink" href="#entrypoint-api-v1-images" title="Link to this heading"></a></h2>
+<p>This entrypoint allows to retrieve data about the OS images available on
+the WalT server. Example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/images&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<span class="go">{</span>
+<span class="go">  &quot;num_images&quot;: 119,</span>
+<span class="go">  &quot;images&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;fullname&quot;: &quot;eduble/pc-x86-64-2:latest&quot;,</span>
+<span class="go">      &quot;user&quot;: &quot;eduble&quot;,</span>
+<span class="go">      &quot;id&quot;: &quot;807e871055267897be0a7e29090844e65e0181660cda4728f6f2eaddec49ce6d&quot;,</span>
+<span class="go">      &quot;in_use&quot;: false,</span>
+<span class="go">      &quot;created&quot;: &quot;2024-03-12 14:52:47&quot;,</span>
+<span class="go">      &quot;compatibility&quot;: [</span>
+<span class="go">        &quot;pc-x86-64&quot;</span>
+<span class="go">      ]</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">      &quot;fullname&quot;: &quot;waltplatform/rpi-debian:bookworm&quot;,</span>
+<span class="go">      &quot;user&quot;: &quot;waltplatform&quot;,</span>
+<span class="go">      &quot;id&quot;: &quot;1739447a661b739aa127af56117c9468c039f1d612125862cfa6d89ae4df3363&quot;,</span>
+<span class="go">      &quot;in_use&quot;: false,</span>
+<span class="go">      &quot;created&quot;: &quot;2024-03-12 10:35:17&quot;,</span>
+<span class="go">      &quot;compatibility&quot;: [</span>
+<span class="go">        &quot;rpi-b&quot;,</span>
+<span class="go">        &quot;rpi-b-plus&quot;,</span>
+<span class="go">        &quot;rpi-2-b&quot;,</span>
+<span class="go">        &quot;rpi-3-b&quot;,</span>
+<span class="go">        &quot;rpi-3-b-plus&quot;,</span>
+<span class="go">        &quot;rpi-4-b&quot;,</span>
+<span class="go">        &quot;rpi-400&quot;,</span>
+<span class="go">        &quot;qemu-arm-32&quot;,</span>
+<span class="go">        &quot;qemu-arm-64&quot;</span>
+<span class="go">      ]</span>
+<span class="go">    },</span>
+<span class="go">    [...]</span>
+<span class="go">  ]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>One can further refine the query by specifying one or more of the
+attributes <code class="docutils literal notranslate"><span class="pre">fullname</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">in_use</span></code>. For instance:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/images?user=eduble&amp;in_use=false&quot;</span>
+<span class="go">[...]</span>
+</pre></div>
+</div>
+</section>
+<section id="entrypoint-api-v1-logs">
+<h2>Entrypoint <code class="docutils literal notranslate"><span class="pre">/api/v1/logs</span></code><a class="headerlink" href="#entrypoint-api-v1-logs" title="Link to this heading"></a></h2>
+<p>This entrypoint allows to retrieve platform and experiment logs from
+WalT server database. Example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/logs?from=1727090181&amp;to=1727101440&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<span class="go">{</span>
+<span class="go">  &quot;num_logs&quot;: 4324,</span>
+<span class="go">  &quot;logs&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;timestamp&quot;: 1727090181.324492,</span>
+<span class="go">      &quot;line&quot;: &quot;scanning images...&quot;,</span>
+<span class="go">      &quot;issuer&quot;: &quot;walt-server&quot;,</span>
+<span class="go">      &quot;stream&quot;: &quot;daemon.stdout&quot;</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">      &quot;timestamp&quot;: 1727090181.737941,</span>
+<span class="go">      &quot;line&quot;: &quot;found testeduble/pc-x86-64-default:latest -- [...]&quot;,</span>
+<span class="go">      &quot;issuer&quot;: &quot;walt-server&quot;,</span>
+<span class="go">      &quot;stream&quot;: &quot;daemon.stdout&quot;</span>
+<span class="go">    },</span>
+<span class="go">    [...]</span>
+<span class="go">  ]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Query parameters <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> are mandatory. Their value must be
+encoded as a number of seconds since the Unix Epoch (i.e., 00:00:00 UTC
+on 1 January 1970). Floating-point values are accepted too.</p>
+<p>The unit of timestamps may be specified by using optional query
+parameter <code class="docutils literal notranslate"><span class="pre">ts_unit</span></code>. Accepted values are <code class="docutils literal notranslate"><span class="pre">ts_unit=s</span></code> (for seconds,
+the default) and <code class="docutils literal notranslate"><span class="pre">ts_unit=ms</span></code> (for milliseconds). If <code class="docutils literal notranslate"><span class="pre">ts_unit=ms</span></code> is
+specified, then:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> must correspond to a number of milliseconds since
+the Unix Epoch;</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> attribute of logs is returned as a number of
+milliseconds too.</p></li>
+</ul>
+<p>One can further refine the query by looking up a specific <code class="docutils literal notranslate"><span class="pre">issuer</span></code>
+and/or <code class="docutils literal notranslate"><span class="pre">stream</span></code>. For instance:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost/api/v1/logs?from=1727090180&amp;to=1727101440&amp;stream=netconsole&quot;</span>
+<span class="go">[...]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="web-server.html" class="btn btn-neutral float-left" title="Web server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vpn.html" class="btn btn-neutral float-right" title="How to use WalT built-in VPN and distant nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

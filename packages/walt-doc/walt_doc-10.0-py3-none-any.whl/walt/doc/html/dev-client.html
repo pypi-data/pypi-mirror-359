@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repository: walt-python-packages; walt-client code. &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Repository: walt-python-packages; walt-server code." href="dev-server.html" />
+    <link rel="prev" title="Repository: walt-python-packages" href="dev-walt-python-packages.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Repository: walt-python-packages; walt-client code.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#performance-constraint">Performance constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#library-plumbum-cli">Library plumbum.cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-structure">Code structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-with-the-server">Communication with the server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-notes">General notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rpc-communication">RPC communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stream-based-communication">Stream-based communication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#information-about-complex-code-parts">Information about complex code parts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-shell-commands">Interactive shell commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-scripting-features">Python scripting features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Repository: walt-python-packages; walt-client code.</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="repository-walt-python-packages-walt-client-code">
+<span id="id1"></span><h1>Repository: walt-python-packages; walt-client code.<a class="headerlink" href="#repository-walt-python-packages-walt-client-code" title="Link to this heading"></a></h1>
+<p>This section explains various things helpful when modifying the walt
+client code.</p>
+<p>As a reminder, this code is in subdirectory <code class="docutils literal notranslate"><span class="pre">client</span></code> of repository
+<code class="docutils literal notranslate"><span class="pre">walt-python-packages</span></code>, the code must maintain a compatibility with
+python 3.9, and there are constraints regarding package dependencies.
+See
+<a class="reference internal" href="dev-walt-python-packages.html"><span class="doc">walt help show dev-walt-python-packages</span></a>
+for more info.</p>
+<section id="performance-constraint">
+<h2>Performance constraint<a class="headerlink" href="#performance-constraint" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">walt</span></code> tool provides many short-lived sub-commands such as
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">show</span></code>, <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">show</span></code>, etc. Unlike daemons
+continuously running on the server, this python tool has to reload from
+scratch very often. For making its usage pleasant, those short-lived
+commands should run fast enough (target &lt;0.1s, even on slow machines).</p>
+<p>For instance, at the time of this writting, here is the time I get on my
+development platform:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@ibiza</span><span class="p">:</span><span class="o">~</span><span class="c1"># time walt node show</span>
+
+<span class="n">You</span> <span class="n">currently</span> <span class="n">own</span> <span class="n">the</span> <span class="n">following</span> <span class="n">nodes</span><span class="p">:</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">real</span>  <span class="mi">0</span><span class="n">m0</span><span class="p">,</span><span class="mi">054</span><span class="n">s</span>
+<span class="n">user</span>  <span class="mi">0</span><span class="n">m0</span><span class="p">,</span><span class="mi">025</span><span class="n">s</span>
+<span class="n">sys</span>   <span class="mi">0</span><span class="n">m0</span><span class="p">,</span><span class="mi">012</span><span class="n">s</span>
+<span class="n">root</span><span class="nd">@ibiza</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>The code of the tool, and of its dependencies (<code class="docutils literal notranslate"><span class="pre">walt-common</span></code> and
+<code class="docutils literal notranslate"><span class="pre">walt-doc</span></code>), contains various optimizations to achieve this goal:</p>
+<ul class="simple">
+<li><p>Many python imports are delayed just before they are really needed.</p></li>
+<li><p>When running <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">&lt;category&gt;</span> <span class="pre">&lt;subcommand&gt;</span> <span class="pre">&lt;args&gt;</span></code>, only the module
+specific to <code class="docutils literal notranslate"><span class="pre">&lt;category&gt;</span></code> is loaded, not others.</p></li>
+<li><p>The Logo is only loaded if needed.</p></li>
+<li><p>Various more optimizations are written in <code class="docutils literal notranslate"><span class="pre">walt.client.speedup</span></code> and
+loaded at client startup. More on this below.</p></li>
+</ul>
+<p>The module <code class="docutils literal notranslate"><span class="pre">walt.client.speedup</span></code> allows to register a faster exit
+procedure, it implements two tricks to improve <code class="docutils literal notranslate"><span class="pre">plumbum</span></code> module
+loading performance, and an optional trick to improve loading time when
+the virtual environment is stored on a slow filesystem (such as NFS, on
+Grid’5000). It is implemented in file <code class="docutils literal notranslate"><span class="pre">client/walt/client/speedup.py</span></code>.</p>
+<p>The module <code class="docutils literal notranslate"><span class="pre">walt.client.speedup</span></code> embeds quite complex code, but if you
+suspect issues with this file, you can easily check: just remove the
+line <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">walt.client.speedup</span></code> at the top of
+<code class="docutils literal notranslate"><span class="pre">client/walt/client/client.py</span></code>. The client should run correctly
+without it too, but slower. On my system, without the import statement,
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">show</span></code> is +133% slower.</p>
+</section>
+<section id="library-plumbum-cli">
+<span id="library-plumbumcli"></span><h2>Library plumbum.cli<a class="headerlink" href="#library-plumbum-cli" title="Link to this heading"></a></h2>
+<p>For managing the Command Line Interface (CLI), the client code relies on
+a library called <code class="docutils literal notranslate"><span class="pre">plumbum</span></code>, and more-specifically its submodule
+<code class="docutils literal notranslate"><span class="pre">plumbum.cli</span></code>.</p>
+<p>It relies on introspection to avoid duplicating things:</p>
+<ul class="simple">
+<li><p>The prototype of a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function leads to usage rules</p></li>
+<li><p>Docstrings help building help messages automatically</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>See <a class="reference external" href="https://plumbum.readthedocs.io/en/latest/cli.html">https://plumbum.readthedocs.io/en/latest/cli.html</a> for more info.</p>
+<p>By convention, if you want the <code class="docutils literal notranslate"><span class="pre">walt</span></code> command to return a non-zero
+exit status to indicate that a command failed or got invalid arguments,
+return <code class="docutils literal notranslate"><span class="pre">False</span></code> from the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. See the comment in
+<code class="docutils literal notranslate"><span class="pre">wrap.py</span></code> for more info.</p>
+</section>
+<section id="code-structure">
+<h2>Code structure<a class="headerlink" href="#code-structure" title="Link to this heading"></a></h2>
+<p>The client code is usually simple, with the code of each <code class="docutils literal notranslate"><span class="pre">&lt;category&gt;</span></code>
+stored in a file <code class="docutils literal notranslate"><span class="pre">client/walt/client/&lt;category&gt;.py</span></code>, except category
+<code class="docutils literal notranslate"><span class="pre">help</span></code> which is stored in a file named <code class="docutils literal notranslate"><span class="pre">myhelp.py</span></code> (for avoiding a
+conflict with the <code class="docutils literal notranslate"><span class="pre">help</span></code> builtin).</p>
+<p>Other files factorize more elaborate processing.</p>
+</section>
+<section id="communication-with-the-server">
+<h2>Communication with the server<a class="headerlink" href="#communication-with-the-server" title="Link to this heading"></a></h2>
+<p>Apart from a few local-only subcommands (e.g., <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span></code> category),
+almost all subcommands need to communicate with the server.</p>
+<section id="general-notes">
+<h3>General notes<a class="headerlink" href="#general-notes" title="Link to this heading"></a></h3>
+<p>Note: the client <em>never</em> communicates directly with nodes. Commands
+interacting with nodes actually pass through the server. For instance,
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">shell</span></code> relies on an ssh command from the server to the
+node, and this ssh command runs in a terminal emulated on the server;
+but the terminal input &amp; output are forwarded up to the client to give
+the impression that the SSH session is local.</p>
+<p>Since we want the client to be easily installable, the communication
+between the server and the client is based on a simple, custom protocol.
+And since we consider walt platforms are installed on private networks,
+the communication between the client and the server is not encrypted,
+except for passing the Docker Hub password from the client to the server
+when using <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">publish</span></code>.</p>
+<p>Two server endpoints are used by the client:</p>
+<ul class="simple">
+<li><p>TCP port 12345: for remote-procedure-call (RPC) type of communication</p></li>
+<li><p>TCP port 12347: for other, more stream-based purposes</p></li>
+</ul>
+<p>These port numbers are defined in <code class="docutils literal notranslate"><span class="pre">common/walt/common/constants.py</span></code>.
+More info below.</p>
+</section>
+<section id="rpc-communication">
+<h3>RPC communication<a class="headerlink" href="#rpc-communication" title="Link to this heading"></a></h3>
+<p>RPC communication is abstracted using the following kind of fragment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">ClientToServerLink</span><span class="p">()</span> <span class="k">as</span> <span class="n">server</span><span class="p">:</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">create_vnode</span><span class="p">(</span><span class="n">node_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example manages <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">create</span> <span class="pre">&lt;node_name&gt;</span></code>, and can be found
+in <code class="docutils literal notranslate"><span class="pre">client/walt/client/node.py</span></code>.</p>
+<p>On server side, this code calls the function
+<code class="docutils literal notranslate"><span class="pre">CSAPI.create_vnode(context,</span> <span class="pre">node_name)</span></code> which can be found in
+<code class="docutils literal notranslate"><span class="pre">server/walt/server/processes/main/api/cs.py</span></code>. <code class="docutils literal notranslate"><span class="pre">CS</span></code> stands for
+<code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">to</span> <span class="pre">Server</span></code>.</p>
+</section>
+<section id="stream-based-communication">
+<h3>Stream-based communication<a class="headerlink" href="#stream-based-communication" title="Link to this heading"></a></h3>
+<p>Stream based communication works like in the following kind of fragment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># connect to server</span>
+<span class="n">sock</span> <span class="o">=</span> <span class="n">connect_to_tcp_server</span><span class="p">()</span>
+<span class="c1"># send the request id</span>
+<span class="n">Requests</span><span class="o">.</span><span class="n">send_id</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">Requests</span><span class="o">.</span><span class="n">REQ_VPN_NODE_IMAGE</span><span class="p">)</span>
+<span class="c1"># wait for the READY message from the server</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="c1"># custom processing on sock</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="c1"># end</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This code is the one behind <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">vpn</span> <span class="pre">setup-node</span></code>. It dumps a SD card
+image file for turning a raspberry pi board into an autonomous walt VPN
+node.</p>
+<p>Variable <code class="docutils literal notranslate"><span class="pre">sock</span></code> in a file object obtained from the plain socket object
+using <code class="docutils literal notranslate"><span class="pre">socket.makefile()</span></code>, so it provides <code class="docutils literal notranslate"><span class="pre">sock.read(&lt;bufsize&gt;)</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sock.write(&lt;bin-data&gt;)</span></code> for easy communication with the server.</p>
+<p>In this case, the custom processing is just about sending parameters for
+the server to generate an appropriate image, and then a loop to read the
+SD card image that the server streams over the socket, and write this
+image to a file.</p>
+<p>The list of current request types (such as <code class="docutils literal notranslate"><span class="pre">REQ_VPN_NODE_IMAGE</span></code> here)
+can be seen in <code class="docutils literal notranslate"><span class="pre">common/walt/common/tcp.py</span></code>. Note: some of them are
+used by the nodes, not by the clients (e.g., <code class="docutils literal notranslate"><span class="pre">REQ_NEW_INCOMING_LOGS</span></code>,
+<code class="docutils literal notranslate"><span class="pre">REQ_FAKE_TFTP_GET</span></code>).</p>
+<p>This kind of communication is also used for implementing remote shells,
+file transfers, log retrieval.</p>
+</section>
+</section>
+<section id="information-about-complex-code-parts">
+<h2>Information about complex code parts<a class="headerlink" href="#information-about-complex-code-parts" title="Link to this heading"></a></h2>
+<p>Since we want to have a fast and easily installable client tool, complex
+things are implemented on server side whenever possible. Next sections
+describe a few client modules still presenting some level of complexity.</p>
+<section id="interactive-shell-commands">
+<h3>Interactive shell commands<a class="headerlink" href="#interactive-shell-commands" title="Link to this heading"></a></h3>
+<p>Interactive shell commands (e.g., <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">shell</span></code>,
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code>) are probably the most complex part of the client
+code. They are mostly implemented in file <code class="docutils literal notranslate"><span class="pre">interactive.py</span></code>. We decribe
+below how it works.</p>
+<p>Terminal emulation is implemented on server side. The <code class="docutils literal notranslate"><span class="pre">walt</span></code> client
+tool sets its own terminal in ‘raw’ mode, in order to avoid interpreting
+any escape sequence (ctrl-r, etc.). As a consequence, these sequences
+are just forwarded over the socket connection up to the terminal
+emulated on the server, and this remote terminal interprets them.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">echo</span></code> feature (printing keys as they are typed) is also disabled
+on the local terminal, otherwise keys would be echo-ed twice. It is
+better to consider that the server terminal will handle all outputs,
+otherwise the synchronization between the output coming from the client
+(echo) and from the server (command outputs, prompts) would not be
+perfect because of network latency. Thus we let the server terminal
+handle the echo.</p>
+<p>The local terminal window size is also transmitted at startup, in order
+to let the server emulate a terminal of the correct size. And the client
+monitors the <code class="docutils literal notranslate"><span class="pre">SIGWINCH</span></code> signal to be able to transmit window size
+changes to the server.</p>
+<p>File <code class="docutils literal notranslate"><span class="pre">console.py</span></code> is used for implementing <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">console</span></code>, i.e.
+a shell connected to the console of a virtual node. This file implements
+the same kind of features, but the output data comes for the logging
+system instead of a virtual terminal implemented on server side. This
+comes from the fact we capture the console of virtual nodes as a suite
+of messages stored into the walt logging system.</p>
+</section>
+<section id="python-scripting-features">
+<h3>Python scripting features<a class="headerlink" href="#python-scripting-features" title="Link to this heading"></a></h3>
+<p>Python scripting features (see
+<a class="reference internal" href="scripting.html"><span class="doc">walt help show scripting</span></a>) are implemented at
+<code class="docutils literal notranslate"><span class="pre">client/walt/client/apitools.py</span></code> and in directory
+<code class="docutils literal notranslate"><span class="pre">client/walt/client/apiobject</span></code>.</p>
+<p>The root <code class="docutils literal notranslate"><span class="pre">api</span></code> object (i.e., the object obtained by
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">walt.client</span> <span class="pre">import</span> <span class="pre">api</span></code>) is instanciated in file
+<code class="docutils literal notranslate"><span class="pre">client/walt/client/startup.py</span></code>.</p>
+<p>Most of python scripting code reuses the code behind <code class="docutils literal notranslate"><span class="pre">walt</span></code> client
+tool subcommands. However, some other parts of this code are complex, as
+shown below.</p>
+<p>When used with an interactive python interpreter session, we want the
+api objects to be self-descriptive for a much improved user learning
+curve; but at the same time, we have to limit the amount of requests
+sent to the server for maintaining a good performance.</p>
+<p>All python api objects derive from class <code class="docutils literal notranslate"><span class="pre">APIObjectBase</span></code>, defined in
+file <code class="docutils literal notranslate"><span class="pre">base.py</span></code>. This class defines the special method <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>,
+which is called to print a representation of the python object. See
+<code class="docutils literal notranslate"><span class="pre">https://docs.python.org/3/reference/datamodel.html#object.__repr__</span></code>
+for more info. In our case, for a given object, we automatically print
+its attributes and methods. If the attributes are themselves api
+objects, we recursively call their <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> method but add a
+custom argument <code class="docutils literal notranslate"><span class="pre">level=1</span></code> to reflect the fact we want a much shorter
+description this time.</p>
+<p>To limit the amount of requests sent to the server, <code class="docutils literal notranslate"><span class="pre">APIObjectBase</span></code>
+also defines the special method <code class="docutils literal notranslate"><span class="pre">__getattr__()</span></code>, allowing to retrieve
+the value of attributes on-demand only, instead of retrieving the full
+knowledge as soon as the object is created. The <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> method
+which has to display all attributes manages a variable
+<code class="docutils literal notranslate"><span class="pre">self.__context__</span></code> allowing to send only one request to the server per
+call. Classes of higher level, such as the classes handling a set of
+nodes or a set of images, also handle their own cache (in files
+<code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> and <code class="docutils literal notranslate"><span class="pre">images.py</span></code>).</p>
+<p>Handling the lifecycle of python objects is another important matter,
+that developers should keep in mind. See this for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn7</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">create_vnode</span><span class="p">(</span><span class="s2">&quot;vn7&quot;</span><span class="p">)</span>
+<span class="go">Node vn7 is now booting your image &quot;pc-x86-64-default&quot;.</span>
+<span class="go">Use `walt node boot vn7 &lt;other-image&gt;` if needed.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn7</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn7</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">  [...]</span>
+<span class="gr">  File &quot;/root/walt-python-packages/.venv/lib/python3.11/site-packages/walt/client/apiobject/base.py&quot;, line 468, in __get_remote_info__</span>
+<span class="gr">    self.__class__.__check_deleted__()</span>
+<span class="gr">  File &quot;/root/walt-python-packages/.venv/lib/python3.11/site-packages/walt/client/apiobject/base.py&quot;, line 458, in __check_deleted__</span>
+<span class="gr">    raise ReferenceError(&quot;This item is no longer valid! (was removed)&quot;)</span>
+<span class="gr">ReferenceError</span>: <span class="n">This item is no longer valid! (was removed)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dev-walt-python-packages.html" class="btn btn-neutral float-left" title="Repository: walt-python-packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dev-server.html" class="btn btn-neutral float-right" title="Repository: walt-python-packages; walt-server code." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

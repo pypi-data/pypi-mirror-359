@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripting API: image management &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scripting API: logs management" href="scripting-logs.html" />
+    <link rel="prev" title="scripting API: node management" href="scripting-nodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scripting API: image management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-an-image">Building an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-an-image">Cloning an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-images">Managing images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#booting-a-walt-image-on-one-or-several-nodes">Booting a WalT image on one or several nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scripting API: image management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scripting-api-image-management">
+<h1>scripting API: image management<a class="headerlink" href="#scripting-api-image-management" title="Link to this heading"></a></h1>
+<p>Scripting features for image management are available at
+<code class="docutils literal notranslate"><span class="pre">walt.client.api.images</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv) ~/experiment$ python3
+&gt;&gt;&gt; from walt.client import api
+&gt;&gt;&gt; api.images
+&lt; -- API submodule for WALT images --
+
+  methods:
+  - self.build(self, image_name, dir_or_url): Build an image using a Dockerfile
+  - self.clone(self, clonable_image_link, force=False, image_name=None): Clone a remote image into your working set
+  - self.get_images(self): Return images of your working set
+&gt;
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<section id="building-an-image">
+<h2>Building an image<a class="headerlink" href="#building-an-image" title="Link to this heading"></a></h2>
+<p>Use API method <code class="docutils literal notranslate"><span class="pre">api.images.build()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_image</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;test-suite-image&#39;</span><span class="p">,</span> <span class="s2">&quot;https://github.com/eduble/pc-x86-64-test-suite-mod&quot;</span><span class="p">)</span>
+<span class="go">** Cloning the git repository at https://github.com/eduble/pc-x86-64-test-suite-mod</span>
+<span class="go">Cloning into &#39;.&#39;...</span>
+<span class="go">** Verifying the repository</span>
+<span class="go">** Building the image</span>
+<span class="go">STEP 1: FROM waltplatform/pc-x86-64-test-suite:latest</span>
+<span class="go">STEP 2: ADD testfile /root</span>
+<span class="go">STEP 3: RUN echo OK &gt; /root/test-result</span>
+<span class="go">STEP 4: COMMIT docker.io/eduble/test-suite-image:latest</span>
+<span class="go">Getting image source signatures</span>
+<span class="go">Copying blob sha256:c581f4ede92df7272da388a45126ddd2944a4eeb27d3b0d80ee71cd633761394</span>
+<span class="go">Copying blob sha256:02ffd0aa707d1c869a40632ffec8b3f4df41d2e0d01cb8bb4aabda3a95469897</span>
+<span class="go">Copying blob sha256:0d0da9a827946f2b27eeb2a8a5e9aa2adee0c5751caac15b8b63739e4c02fa33</span>
+<span class="go">Copying blob sha256:3180c2adbfcef6e52b95dc459a9d45de52d975cbb2725a90e65aefd03e202753</span>
+<span class="go">Copying blob sha256:6df8c0ce6e5c426defe272236c6c8143cadaf8dd341f7b11160538f8b02627d3</span>
+<span class="go">Copying blob sha256:21e77f20596e90a04add23b7a417f3ef4d29ef1ca935f2ec6f403a41ca46b55d</span>
+<span class="go">Copying blob sha256:929eed5fc9c83ccbd80452e0bee03db07255cbff0223cad7baa54b83c42cc10f</span>
+<span class="go">Copying blob sha256:e839f712c8dc36f56a437238515bfee6aaa9a89dec29232365f93fd3e2c80d52</span>
+<span class="go">Copying blob sha256:29513c560e2adfeb57b5d4b843f4fe8a09b7e7e6a3457388cad54284e5f7d730</span>
+<span class="go">Copying blob sha256:f1492f85162d40a89e073fe6705751e47ef38e76d702183d487870f5db1c0f5e</span>
+<span class="go">Copying config sha256:a0b59dc0dd26ff38477bc7d745d5fba030778f4644fb4d6adf9a9ac52ca90eb6</span>
+<span class="go">Writing manifest to image destination</span>
+<span class="go">Storing signatures</span>
+<span class="go">--&gt; a0b59dc0dd2</span>
+<span class="go">a0b59dc0dd26ff38477bc7d745d5fba030778f4644fb4d6adf9a9ac52ca90eb6</span>
+<span class="go">** Verifying the image</span>
+<span class="go">OK</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_image</span>
+<span class="go">&lt; -- image test-suite-image --</span>
+
+<span class="go">  read-only attributes:</span>
+<span class="go">  - self.aliases: {&#39;test-suite-image&#39;}</span>
+<span class="go">  - self.compatibility: (&#39;pc-x86-64&#39;,)</span>
+<span class="go">  - self.created: &#39;2023-04-21 10:14:19&#39;</span>
+<span class="go">  - self.fullname: &#39;eduble/test-suite-image:latest&#39;</span>
+<span class="go">  - self.id: &#39;a0b59dc0dd26ff38477bc7d745d5fba030778f4644fb4d6adf9a9ac52ca90eb6&#39;</span>
+<span class="go">  - self.in_use: False</span>
+<span class="go">  - self.name: &#39;test-suite-image&#39;</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.remove(self): Remove this image</span>
+<span class="go">  - self.rename(self, new_name): Rename this image</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Instead of the URL of a git repository, one can also specify a local
+directory as the 2nd argument.</p>
+</section>
+<section id="cloning-an-image">
+<h2>Cloning an image<a class="headerlink" href="#cloning-an-image" title="Link to this heading"></a></h2>
+<p>Use API method <code class="docutils literal notranslate"><span class="pre">api.images.clone()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new_image</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s1">&#39;hub:eduble/pc-x86-64-test-suite&#39;</span><span class="p">)</span>
+<span class="go">The image was cloned successfully.</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="managing-images">
+<h2>Managing images<a class="headerlink" href="#managing-images" title="Link to this heading"></a></h2>
+<p>API method <code class="docutils literal notranslate"><span class="pre">api.images.get_images()</span></code> will list the images belonging to
+your working set. Your working set is made of the images you previously
+cloned or built. A few images (i.e., the default images of node models
+present on the platform) may have been automatically cloned for you when
+you first used the walt client tool.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">get_images</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">images</span>
+<span class="go">&lt; -- Set of WalT images (5 items) --</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.filter(self, **kwargs): Return the subset of images matching the given attributes</span>
+<span class="go">  - self.get(self, k, default=None): Return item specified or default value if missing</span>
+<span class="go">  - self.items(self): Iterate over key &amp; value pairs this set contains</span>
+<span class="go">  - self.keys(self): Iterate over keys this set contains</span>
+<span class="go">  - self.values(self): Iterate over values this set contains</span>
+
+<span class="go">  sub-items:</span>
+<span class="go">  - self[&#39;coral-dev-board-mendel&#39;]: &lt;image coral-dev-board-mendel&gt;</span>
+<span class="go">  - self[&#39;openwrt-nfs3&#39;]: &lt;image openwrt-nfs3&gt;</span>
+<span class="go">  - self[&#39;pc-image&#39;]: &lt;image pc-image&gt;</span>
+<span class="go">  - self[&#39;pc-x86-64-test-suite&#39;]: &lt;image pc-x86-64-test-suite&gt;</span>
+<span class="go">  - self[&#39;test-suite-image&#39;]: &lt;image test-suite-image&gt;</span>
+
+<span class="go">  note: these sub-items are also accessible using self.&lt;shortcut&gt; for handy completion.</span>
+<span class="go">        (use &lt;obj&gt;.&lt;tab&gt;&lt;tab&gt; to list these shortcuts)</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pc_image</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="s1">&#39;pc-image&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pc_image</span>
+<span class="go">&lt; -- image pc-image --</span>
+
+<span class="go">  read-only attributes:</span>
+<span class="go">  - self.aliases: {&#39;pc-x86-64-default&#39;, &#39;pc-image&#39;}</span>
+<span class="go">  - self.compatibility: (&#39;pc-x86-64&#39;,)</span>
+<span class="go">  - self.created: &#39;2022-05-25 15:23:20&#39;</span>
+<span class="go">  - self.fullname: &#39;eduble/pc-image:latest&#39;</span>
+<span class="go">  - self.id: &#39;efa37b66baee1ee74ee42bf18066d70d43f0df1e69c960e16d541f432df424d4&#39;</span>
+<span class="go">  - self.in_use: True</span>
+<span class="go">  - self.name: &#39;pc-image&#39;</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.remove(self): Remove this image</span>
+<span class="go">  - self.rename(self, new_name): Rename this image</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pc_image</span><span class="o">.</span><span class="n">compatibility</span>
+<span class="go">(&#39;pc-x86-64&#39;,)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>As shown above it is easy to get access to information about a specific
+image, and methods for renaming or removing an image are
+straightforward.</p>
+</section>
+<section id="booting-a-walt-image-on-one-or-several-nodes">
+<h2>Booting a WalT image on one or several nodes<a class="headerlink" href="#booting-a-walt-image-on-one-or-several-nodes" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="scripting-nodes.html"><span class="doc">walt help show scripting-nodes</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scripting-nodes.html" class="btn btn-neutral float-left" title="scripting API: node management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripting-logs.html" class="btn btn-neutral float-right" title="scripting API: logs management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripting API: node management &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scripting API: image management" href="scripting-images.html" />
+    <link rel="prev" title="Scripting WalT experiments" href="scripting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scripting API: node management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-virtual-node">Creating a virtual node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-access-to-plaform-nodes">Getting access to plaform nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-node-sets">Working with node sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interacting-with-a-given-node">Interacting with a given node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#booting-a-walt-image">Booting a WalT image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-logs">Working with logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scripting API: node management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scripting-api-node-management">
+<h1>scripting API: node management<a class="headerlink" href="#scripting-api-node-management" title="Link to this heading"></a></h1>
+<p>Scripting features for node management are available at
+<code class="docutils literal notranslate"><span class="pre">walt.client.api.nodes</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv) ~/experiment$ python3
+&gt;&gt;&gt; from walt.client import api
+&gt;&gt;&gt; api.nodes
+&lt; -- API submodule for WALT nodes --
+
+  methods:
+  - self.create_vnode(self, node_name): Create a virtual node
+  - self.get_nodes(self, node_set=&#39;all-nodes&#39;): Return nodes of the platform
+&gt;
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<section id="creating-a-virtual-node">
+<h2>Creating a virtual node<a class="headerlink" href="#creating-a-virtual-node" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn23</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">create_vnode</span><span class="p">(</span><span class="s1">&#39;vn23&#39;</span><span class="p">)</span>
+<span class="go">Node vn23 is now booting your image &quot;pc-image:latest&quot;.</span>
+<span class="go">Use `walt node boot vn23 &lt;other-image&gt;` if needed.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn23</span>
+<span class="go">&lt; -- virtual node vn23 --</span>
+
+<span class="go">  read-only attributes:</span>
+<span class="go">  - self.booted: False</span>
+<span class="go">  - self.config: &lt;node configuration&gt;</span>
+<span class="go">  - self.device_type: &#39;node&#39;</span>
+<span class="go">  - self.gateway: &#39;&#39;</span>
+<span class="go">  - self.image: &lt;image pc-image&gt;</span>
+<span class="go">  - self.ip: &#39;192.168.152.6&#39;</span>
+<span class="go">  - self.mac: &#39;52:54:00:2b:d4:76&#39;</span>
+<span class="go">  - self.model: &#39;pc-x86-64&#39;</span>
+<span class="go">  - self.name: &#39;vn23&#39;</span>
+<span class="go">  - self.netmask: &#39;255.255.255.0&#39;</span>
+<span class="go">  - self.owner: &#39;eduble&#39;  # yourself</span>
+<span class="go">  - self.type: &#39;node&#39;</span>
+<span class="go">  - self.virtual: True</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.boot(self, image, force=False): Boot the specified WalT image</span>
+<span class="go">  - self.get_logs(self, realtime=False, history=None, timeout=-1): Iterate over historical or realtime logs</span>
+<span class="go">  - self.reboot(self, force=False, hard_only=False): Reboot this node</span>
+<span class="go">  - self.remove(self, force=False): Remove this virtual node</span>
+<span class="go">  - self.rename(self, new_name, force=False): Rename this virtual node</span>
+<span class="go">  - self.wait(self, timeout=-1): Wait until node is booted</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-access-to-plaform-nodes">
+<h2>Getting access to plaform nodes<a class="headerlink" href="#getting-access-to-plaform-nodes" title="Link to this heading"></a></h2>
+<p>Use api method <code class="docutils literal notranslate"><span class="pre">api.nodes.get_nodes()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>   <span class="c1"># default is to get all nodes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="s1">&#39;my-nodes&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="s1">&#39;rpibp,vn23&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">([</span><span class="s1">&#39;rpibp&#39;</span><span class="p">,</span> <span class="s1">&#39;vn23&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span>
+<span class="go">&lt; -- Set of WalT nodes (2 items) --</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.boot(self, image, force=False): Boot the specified image on all nodes of this set</span>
+<span class="go">  - self.filter(self, **kwargs): Return the subset of nodes matching the given attributes</span>
+<span class="go">  - self.get(self, k, default=None): Return item specified or default value if missing</span>
+<span class="go">  - self.get_logs(self, realtime=False, history=None, timeout=-1): Iterate over historical or realtime logs</span>
+<span class="go">  - self.items(self): Iterate over key &amp; value pairs this set contains</span>
+<span class="go">  - self.keys(self): Iterate over keys this set contains</span>
+<span class="go">  - self.reboot(self, force=False, hard_only=False): Reboot all nodes of this set</span>
+<span class="go">  - self.values(self): Iterate over values this set contains</span>
+<span class="go">  - self.wait(self, timeout=-1): Wait until all nodes of this set are booted</span>
+
+<span class="go">  sub-items:</span>
+<span class="go">  - self[&#39;rpibp&#39;]: &lt;node rpibp&gt;</span>
+<span class="go">  - self[&#39;vn23&#39;]: &lt;virtual node vn23&gt;</span>
+
+<span class="go">  note: these sub-items are also accessible using self.&lt;shortcut&gt; for handy completion.</span>
+<span class="go">        (use &lt;obj&gt;.&lt;tab&gt;&lt;tab&gt; to list these shortcuts)</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="working-with-node-sets">
+<h2>Working with node sets<a class="headerlink" href="#working-with-node-sets" title="Link to this heading"></a></h2>
+<p>Some API functions such as <code class="docutils literal notranslate"><span class="pre">api.nodes.get_nodes()</span></code> return a set of
+nodes. Sets of nodes provide the following features:</p>
+<ul class="simple">
+<li><p>nodes in the set can be accessed by using their name (e.g.
+<code class="docutils literal notranslate"><span class="pre">nodes['rpibp']</span></code>);</p></li>
+<li><p>they provide group operations for all nodes of the set, such as
+<code class="docutils literal notranslate"><span class="pre">reboot()</span></code>, <code class="docutils literal notranslate"><span class="pre">wait()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_logs()</span></code> functions;</p></li>
+<li><p>they provide a <code class="docutils literal notranslate"><span class="pre">filter()</span></code> method allowing to select nodes having
+given attribute values (e.g.
+<code class="docutils literal notranslate"><span class="pre">nodes.filter(virtual=True,</span> <span class="pre">booted=True)</span></code>), and returning a new set
+of nodes;</p></li>
+<li><p>they provide the self-description features of API objects.</p></li>
+</ul>
+<p>Here is a sample code which reboots all virtual nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">booted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">virtual</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">nodes</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Indeed the user is free to use regular python sets instead, such as in
+this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">booted</span> <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">virtual</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>One can also group individual nodes into a set by using binary-or
+operators:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;rpi2b&#39;</span><span class="p">]</span> <span class="o">|</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;rpi3b-test&#39;</span><span class="p">]</span> <span class="o">|</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;rpibp&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span>
+<span class="go">&lt; -- Set of WalT nodes (3 items) --</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.boot(self, image, force=False): Boot the specified image on all nodes of this set</span>
+<span class="go">  - self.filter(self, **kwargs): Return the subset of nodes matching the given attributes</span>
+<span class="go">  - self.get(self, k, default=None): Return item specified or default value if missing</span>
+<span class="go">  - self.items(self): Iterate over key &amp; value pairs this set contains</span>
+<span class="go">  - self.keys(self): Iterate over keys this set contains</span>
+<span class="go">  - self.reboot(self, force=False, hard_only=False): Reboot all nodes of this set</span>
+<span class="go">  - self.values(self): Iterate over values this set contains</span>
+<span class="go">  - self.wait(self, timeout_secs=-1): Wait until all nodes of this set are booted</span>
+
+<span class="go">  sub-items:</span>
+<span class="go">  - self[&#39;rpi2b&#39;]: &lt;node rpi2b&gt;</span>
+<span class="go">  - self[&#39;rpi3b-test&#39;]: &lt;node rpi3b-test&gt;</span>
+<span class="go">  - self[&#39;rpibp&#39;]: &lt;node rpibp&gt;</span>
+
+<span class="go">  note: these sub-items are also accessible using self.&lt;shortcut&gt; for handy completion.</span>
+<span class="go">        (use &lt;obj&gt;.&lt;tab&gt;&lt;tab&gt; to list these shortcuts)</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="interacting-with-a-given-node">
+<h2>Interacting with a given node<a class="headerlink" href="#interacting-with-a-given-node" title="Link to this heading"></a></h2>
+<p>Interacting with a given node is pretty obvious, as shown in this
+interactive session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rpibp</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;rpibp&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rpibp</span>
+<span class="go">&lt; -- node rpibp --</span>
+
+<span class="go">  read-only attributes:</span>
+<span class="go">  - self.booted: True</span>
+<span class="go">  - self.config: &lt;node configuration&gt;</span>
+<span class="go">  - self.device_type: &#39;node&#39;</span>
+<span class="go">  - self.gateway: &#39;&#39;</span>
+<span class="go">  - self.image: &lt;default for rpi-b-plus nodes&gt;</span>
+<span class="go">  - self.ip: &#39;192.168.152.3&#39;</span>
+<span class="go">  - self.mac: &#39;b8:27:eb:68:a2:df&#39;</span>
+<span class="go">  - self.model: &#39;rpi-b-plus&#39;</span>
+<span class="go">  - self.name: &#39;rpibp&#39;</span>
+<span class="go">  - self.netmask: &#39;255.255.255.0&#39;</span>
+<span class="go">  - self.owner: &#39;waltplatform&#39;  # node is free</span>
+<span class="go">  - self.type: &#39;node&#39;</span>
+<span class="go">  - self.virtual: False</span>
+
+<span class="go">  methods:</span>
+<span class="go">  - self.boot(self, image, force=False): Boot the specified WalT image</span>
+<span class="go">  - self.forget(self, force=False): Forget this node</span>
+<span class="go">  - self.get_logs(self, realtime=False, history=None, timeout=-1): Iterate over historical or realtime logs</span>
+<span class="go">  - self.reboot(self, force=False, hard_only=False): Reboot this node</span>
+<span class="go">  - self.rename(self, new_name, force=False): Rename this node</span>
+<span class="go">  - self.wait(self, timeout=-1): Wait until node is booted</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rpibp</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
+<span class="go">Node rpibp: rebooted ok.</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>These operations can be automated in a script, for instance to emulate
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">reboot</span> <span class="pre">&lt;node-name&gt;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">walt.client</span> <span class="kn">import</span> <span class="n">api</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Node name is missing.&#39;</span><span class="p">)</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()</span>
+<span class="n">node_name</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">node_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Could not find node </span><span class="si">{</span><span class="n">node_name</span><span class="si">}</span><span class="s1"> on the platform!&#39;</span><span class="p">)</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">]</span>
+<span class="n">node</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="booting-a-walt-image">
+<h2>Booting a WalT image<a class="headerlink" href="#booting-a-walt-image" title="Link to this heading"></a></h2>
+<p>Method <code class="docutils literal notranslate"><span class="pre">&lt;node&gt;.boot()</span></code> allows to boot a WalT image on a single node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vn23</span><span class="o">.</span><span class="n">boot</span><span class="p">(</span><span class="s1">&#39;pc-x86-64-test-suite&#39;</span><span class="p">)</span>
+<span class="go">Node vn23 will now boot pc-x86-64-test-suite.</span>
+<span class="go">Node vn23: rebooted ok.</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Instead of specifying the image by its name, one can also specify an
+image object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">get_images</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test_suite_image</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="s1">&#39;pc-x86-64-test-suite&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vn23</span><span class="o">.</span><span class="n">boot</span><span class="p">(</span><span class="n">test_suite_image</span><span class="p">)</span>
+<span class="go">Node vn23 will now boot pc-x86-64-test-suite.</span>
+<span class="go">Node vn23: rebooted ok.</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="scripting-images.html"><span class="doc">walt help show scripting-images</span></a> for
+more info about image objects.</p>
+<p>Alternatively, method <code class="docutils literal notranslate"><span class="pre">&lt;set-of-nodes&gt;.boot()</span></code> can also be used to boot
+an image on several nodes at once.</p>
+</section>
+<section id="working-with-logs">
+<h2>Working with logs<a class="headerlink" href="#working-with-logs" title="Link to this heading"></a></h2>
+<p>Method <code class="docutils literal notranslate"><span class="pre">&lt;node&gt;.get_logs()</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">api.logs.get_logs()</span></code> with
+the parameter <code class="docutils literal notranslate"><span class="pre">issuers</span></code> set to <code class="docutils literal notranslate"><span class="pre">&lt;node&gt;</span></code>. See
+<a class="reference internal" href="scripting-logs.html"><span class="doc">walt help show scripting-logs</span></a> for more info.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scripting.html" class="btn btn-neutral float-left" title="Scripting WalT experiments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripting-images.html" class="btn btn-neutral float-right" title="scripting API: image management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

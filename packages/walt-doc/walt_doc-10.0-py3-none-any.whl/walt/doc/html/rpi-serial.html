@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using the serial port of a Raspberry Pi &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deploying WalT on Grid’5000" href="g5k.html" />
+    <link rel="prev" title="Packaging notes" href="packaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the serial port of a Raspberry Pi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raspberry-pi-5">Raspberry Pi 5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#position-of-the-jst-connector">Position of the JST connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-the-debug-probe">Connecting the Debug Probe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#older-models">Older models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-the-mini-uart">Note about the mini-UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#position-of-gpio-pins">Position of GPIO pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-a-ttl-232r-3v3-cable">Connecting a TTL-232R-3V3 cable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using the serial port of a Raspberry Pi</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-the-serial-port-of-a-raspberry-pi">
+<h1>Using the serial port of a Raspberry Pi<a class="headerlink" href="#using-the-serial-port-of-a-raspberry-pi" title="Link to this heading"></a></h1>
+<p>Debugging the early bootup steps of a WalT node is sometimes tricky.
+Connecting to a serial port allows to view the bootloader log messages
+and can greatly ease this work. This section explains how to connect to
+the serial port of a Raspberry Pi board.</p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Serial connector</p></th>
+<th class="head"><p>Works well</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>B+</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>2B</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>No (2)</p></td>
+</tr>
+<tr class="row-even"><td><p>3B+</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>No (2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>4B</p></td>
+<td><p>GPIO pins (1)</p></td>
+<td><p>No (2)</p></td>
+</tr>
+<tr class="row-even"><td><p>5B</p></td>
+<td><p>JST-SH connector (3)</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol class="arabic simple">
+<li><p>See “Older models” / “Position of GPIO pins” below.</p></li>
+<li><p>See “Older models” / “Note about the mini-UART” below.</p></li>
+<li><p>See “Raspberry Pi 5” / “Connecting the Debug Probe” below.</p></li>
+</ol>
+</section>
+<section id="raspberry-pi-5">
+<h2>Raspberry Pi 5<a class="headerlink" href="#raspberry-pi-5" title="Link to this heading"></a></h2>
+<p>The serial connector of the Raspberry Pi 5 is a dedicated JST-SH 3-pin
+connector. We recommend purchasing the “Raspberry Pi Debug Probe” for
+connecting to it.</p>
+<section id="position-of-the-jst-connector">
+<h3>Position of the JST connector<a class="headerlink" href="#position-of-the-jst-connector" title="Link to this heading"></a></h3>
+<p>The UART JST connector is between the two micro-HDMI connectors of the
+Rpi 5B board.</p>
+</section>
+<section id="connecting-the-debug-probe">
+<h3>Connecting the Debug Probe<a class="headerlink" href="#connecting-the-debug-probe" title="Link to this heading"></a></h3>
+<p>The Raspberry Pi Debug Probe is sold with 4 cables included in the
+package. You must use the “3-pin JST-SH to 3-pin JST-SH cable” to
+connect the Debug Probe to the UART JST connector of the Rpi 5 board, as
+shown in the following figure. Don’t try to seat the JST connectors too
+much (both on the Debug Probe and on the Raspberry Pi board).</p>
+<p>Obviously you must also use the provided USB cable to connect the Debug
+Probe to your laptop.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                            Your laptop
+
+---------------------------|USB|----|USB|----|USB|---------------
+                            | |
+                            ┆ ┆
+                            | |
+                        ---|USB|----
+                       |            |
+                       |   Debug    |
+                       |   Probe    |
+                       |            |
+                       |  U     D   |
+                       | [╷╷]  [  ] |
+                        --||--------
+                          ||
+              (grey side) ┆┆ (red side of the cable)
+                          ||
+                    hdmi  ||  hdmi      usb-c
+ -------------------|  |--||--|  |------|   |---
+|                   |  | [╵╵] |  |      |   |   |
+|                    ‾‾  uart  ‾‾        ‾‾‾    |
+|                                               |
+|                Raspberry Pi 5B board          |
+|                                               |
+</pre></div>
+</div>
+<p>When the Debug Probe is connected on a Linux machine, a device
+/dev/ttyACM0 (or perhaps ttyACM1 if ttyACM0 is already allocated)
+appears:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dmesg | grep ttyACM
+[   71.635627] cdc_acm 1-1:1.1: ttyACM0: USB ACM device
+$
+</pre></div>
+</div>
+<p>You can then use your usual software (e.g., minicom) for interacting
+with this serial device, with communication parameters set as 115200
+8N1.</p>
+</section>
+</section>
+<section id="older-models">
+<h2>Older models<a class="headerlink" href="#older-models" title="Link to this heading"></a></h2>
+<section id="note-about-the-mini-uart">
+<h3>Note about the mini-UART<a class="headerlink" href="#note-about-the-mini-uart" title="Link to this heading"></a></h3>
+<p>In their default configuration, 3B 3B+ and 4B models use a limited
+mini-UART chip for serial communication, so you may face problems such
+as missed characters on input.</p>
+<p>If the problem you are facing is not specific to a given model, then we
+recommend to use another model instead.</p>
+<p>It is also possible to reconfigure the board to use its regular PL011
+chip instead. In the default configuration, this chip is used for
+bluetooth. See
+<a class="reference external" href="https://www.raspberrypi.com/documentation/computers/configuration.html#configure-uarts">https://www.raspberrypi.com/documentation/computers/configuration.html#configure-uarts</a>.</p>
+</section>
+<section id="position-of-gpio-pins">
+<h3>Position of GPIO pins<a class="headerlink" href="#position-of-gpio-pins" title="Link to this heading"></a></h3>
+<p>The serial connection should be made on the 3rd, 4th and 5th GPIO pins
+of the upper line of pins (the line of pins closest to the edge of the
+board, see figure).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   BYO
+ --↓↓↓------------------------
+|::::::::::::::::::::
+|
+|    Raspberry Pi board
+|
+</pre></div>
+</div>
+<p>B stands for Black, it is the Ground pin. Y stands for Yellow, it is the
+TX pin of the board. O stands for Orange, it is the RX pin of the board.</p>
+</section>
+<section id="connecting-a-ttl-232r-3v3-cable">
+<h3>Connecting a TTL-232R-3V3 cable<a class="headerlink" href="#connecting-a-ttl-232r-3v3-cable" title="Link to this heading"></a></h3>
+<p>Obviously, the RX pin of the board must be connected to the TX pin of
+the TTL cable, and vice versa. We also need a ribbon cable.</p>
+<p>The TTL-232R-3V3 has 6 colored cables, Black, Maroon, Red, Orange,
+Yellow and Green. We will need only the Black, Orange, and Yellow ones,
+as shown on the second figure below. Take care of the different order on
+the two ends of the ribbon cable (Orange and Yellow are inverted).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   usb-A    ^
+    ||      |
+    ||      | TTL-232R-3V3
+   /  \     | cable
+  /    \    |
+  BMROYG    v
+  B  OY     ^
+  \   /     |
+   |||      | ribbon cable
+   |||      |
+   BYO      v
+ --↓↓↓------------------------
+|::::::::::::::::::::
+|
+|    Raspberry Pi board
+|
+</pre></div>
+</div>
+<p>When the usb-A connector of the TTL-232R-3V3 cable is connected on a
+Linux machine, a device /dev/ttyUSB0 (or perhaps ttyUSB1 if ttyUSB0 is
+already allocated) appears:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dmesg | grep ttyUSB
+[    3.168625] usb 2-2: FTDI USB Serial Device converter now attached to ttyUSB0
+$
+</pre></div>
+</div>
+<p>You can then use your usual software (e.g., minicom) for interacting
+with this serial device, with communication parameters set as 115200
+8N1.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="packaging.html" class="btn btn-neutral float-left" title="Packaging notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="g5k.html" class="btn btn-neutral float-right" title="Deploying WalT on Grid’5000" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
