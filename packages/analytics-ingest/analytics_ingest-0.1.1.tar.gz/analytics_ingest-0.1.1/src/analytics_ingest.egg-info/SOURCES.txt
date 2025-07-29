@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/analytics_ingest/__init__.py
+src/analytics_ingest/client.py
+src/analytics_ingest.egg-info/PKG-INFO
+src/analytics_ingest.egg-info/SOURCES.txt
+src/analytics_ingest.egg-info/dependency_links.txt
+src/analytics_ingest.egg-info/requires.txt
+src/analytics_ingest.egg-info/top_level.txt
+tests/test_client.py
