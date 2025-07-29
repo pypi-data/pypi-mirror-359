@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: email-address-local
+Version: 0.0.63
+Home-page: https://github.com/circles-zone/email-address-local-python-package
+Author: Circles
+Author-email: info@circles.ai
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: logger-local
+Requires-Dist: database-mysql-local
+Requires-Dist: language-remote
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+
+Email address local python package
