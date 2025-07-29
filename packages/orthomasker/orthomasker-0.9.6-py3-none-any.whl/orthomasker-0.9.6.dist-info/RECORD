@@ -1,0 +1,10 @@
+orthomasker/__init__.py,sha256=HXfRhdPlmBC4Vd3hC1tQH70VEedOwZ4fdC_PVzAn4QQ,320
+orthomasker/cli.py,sha256=Jf_Z6jaKHYdlkQGavnUy0CBTqotrpHHlbFN2YmGXFpY,4496
+orthomasker/feature_extractor.py,sha256=7I3TuDDpnyLNSCFIG1pjZRdyC0bD-0gRC4EUDurU3gc,1848
+orthomasker/mask_generator.py,sha256=5rWipDxWmoo6o-VBwt4vy0jTd0SwEGZRwMlP_YIut-M,13292
+orthomasker-0.9.6.dist-info/licenses/LICENSE,sha256=TnMKNnA-FSgAsX-jGIR5IOMEz8-mD4pfUoA28AlkeL0,583
+orthomasker-0.9.6.dist-info/METADATA,sha256=uFqXkn3vfiIPsnrn-_JyesXS5NZBUeH5zrEBWKTZwSw,5895
+orthomasker-0.9.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+orthomasker-0.9.6.dist-info/entry_points.txt,sha256=-kYASEqeWlXYlC0jk078c7fjJc6IELWgAV-GQQb-aKg,53
+orthomasker-0.9.6.dist-info/top_level.txt,sha256=quYGUkPwU1-icexkSDe40jqQos6e5K-nKbCFdkm-ZxU,12
+orthomasker-0.9.6.dist-info/RECORD,,
