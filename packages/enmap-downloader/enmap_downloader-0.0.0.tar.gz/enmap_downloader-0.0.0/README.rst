@@ -1,0 +1,269 @@
+.. SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+.. SPDX-FileCopyrightText: 2025 Felix Dombrowski
+.. SPDX-License-Identifier: EUPL-1.2
+
+
+
+================
+EnMAP Downloader
+================
+
+Downloader for EnMAP data products with STAC
+
+
+* Free software: EUPL-1.2
+* Documentation: https://global-land-monitoring.git-pages.gfz-potsdam.de/enmap_downloader/doc/
+
+
+
+Status
+======
+.. image:: https://git.gfz-potsdam.de/global-land-monitoring/enmap_downloader/badges/main/pipeline.svg
+        :target: https://git.gfz-potsdam.de/global-land-monitoring/enmap_downloader/pipelines
+        :alt: Pipelines
+.. image:: https://git.gfz-potsdam.de/global-land-monitoring/enmap_downloader/badges/main/coverage.svg
+        :target: https://global-land-monitoring.git-pages.gfz-potsdam.de/enmap_downloader/coverage/
+        :alt: Coverage
+.. image:: https://img.shields.io/static/v1?label=Documentation&message=GitLab%20Pages&color=orange
+        :target: https://global-land-monitoring.git-pages.gfz-potsdam.de/enmap_downloader/doc/
+        :alt: Documentation
+
+..
+  for adding a DOI badge fill and uncomment the following:
+  image:: (link to your DOI badge svg on zenodo)
+  target: (link to your DOI on zenodo)
+  alt: DOI
+
+
+
+See also the latest coverage_ report and the pytest_ HTML report.
+
+
+Feature overview
+================
+
+The EnMAP Downloader is a Python-based tool designed to streamline access to hyperspectral imagery from the Earth Observation Center (EOC).
+It provides a flexible and efficient interface for searching, downloading, and preparing EnMAP data tailored to user-defined spatial and temporal criteria.
+
+🌐 **Download Hyperspectral EnMAP Data**
+
+- Fetches .tif hyperspectral datasets (EnMAP L2A) directly from the EOC archive.
+
+🗺️ **User-Defined Spatial Parameters**
+
+- Accepts a a single GeoJSON, or a folder of multiple GeoJSON files — each is handled automatically and clipped to the defined area.
+
+🕒 **User-Defined Temporal Filtering**
+
+- Specify a date range to download only the scenes captured within that timeframe.
+
+⚡ **Multithreaded Downloads**
+
+- Utilizes parallel downloading to significantly speed up large or batch operations on e.g. clusters.
+
+📂 **Batch Processing of Multiple AOIs**
+
+- Efficiently processes multiple areas of interest in one go, especially useful for regional or project-wide data collection.
+
+💾 **Flexible Output Formats**
+
+- Outputs data as GeoTIFFs (.tif) or NumPy arrays (.npy)—choose based on your workflow.
+
+🔐 **Authentication & Config File Support**
+
+- Includes authentication checks and a customizable config file for repeatable, automated use.
+
+✅ **Typical Use Cases**
+
+- 🛰️ Collecting hyperspectral scenes for machine learning and remote sensing projects
+
+- 🗃️ Handling a large folder of AOIs automatically for environmental or urban monitoring
+
+- 🔄 Automating scheduled or repeatable data collection workflows
+
+
+History / Changelog
+===================
+
+You can find the protocol of recent changes in the EnMAP Downloader package
+`here <https://git.gfz-potsdam.de/global-land-monitoring/enmap_downloader/-/blob/main/HISTORY.rst>`__.
+
+Credentials
+===========
+
+To access the EnMAP data, you need to have a valid EOC account. You can register for an account at the EOC website.
+When running the code for the first time, a .env file will be created in the root directory of the package.
+This file will contain the following variables:
+
+.. code-block:: bash
+
+    USERNAME=USERNAME
+    PASSWORD=PASSWORD
+
+You can edit this file to securely add your EOC credentials. The package will automatically read the credentials from this file when executing the code.
+
+**Important:** This file contains sensitive information. To protect your credentials, keep it private and do not share it with others.
+
+The package requires valid credentials to function properly. If the credentials are missing or incorrect, you will receive an error message.
+
+Once saved, your credentials will be stored in the ``.netrc`` file in your home directory. This means you won’t need to enter them again for future runs.
+
+
+Quick Installation
+==================
+
+To install the package, clone it into a local directory and run the following command:
+
+.. code-block:: bash
+
+    python -m pip install .
+
+Alternatively you can create a conda environment and install the package with its dependencies:
+
+.. code-block:: bash
+
+    conda env create -f environment_enmap_downloader.yml
+    conda activate enmap_downloader
+    pip install .
+
+Make sure to create a config.json file in the config directory. You can use the provided example file as a template.
+The config.json file should contain the following information:
+
+.. code-block:: json
+
+    {
+    "search_settings": {
+        "collections": [
+        "ENMAP_HSI_L2A"
+        ],
+        "catalog_link" : "https://geoservice.dlr.de/eoc/ogc/stac/v1/",
+        "aoi_settings": {
+            "bounding_box": "./config/geojson",
+            "start_date": "",
+            "end_date": ""
+        }
+    },
+    "result_settings": {
+        "results_dir": "./downloads",
+        "result_format": "npy",
+        "download_data": true,
+        "download_metadata": false,
+        "logging_level": "INFO",
+        "logging_dir": "./logs"
+    }
+
+
+Configuration Options
+=====================
+
+Below is a description of the configurable parameters in the configuration file used by this project.
+
+AOI Settings
+------------
+
+These settings define the area of interest (AOI) and the time window for data selection.
+
+.. code-block:: json
+
+    "aoi_settings": {
+        "bounding_box": "./config/geojson",
+        "start_date": "",
+        "end_date": ""
+    }
+
+- **bounding_box** (`str`):
+  Path to a GeoJSON file that defines the spatial bounding box for the area of interest.
+
+- **start_date** (`str`, optional):
+  Start date for the data query, in `YYYY-MM-DD` format. Leave empty to ignore.
+
+- **end_date** (`str`, optional):
+  End date for the data query, in `YYYY-MM-DD` format. Leave empty to ignore.
+
+Result Settings
+---------------
+
+These settings control how the results are processed, saved, and logged.
+
+.. code-block:: json
+
+    "result_settings": {
+        "crop_data": true,
+        "results_dir": "./downloads",
+        "result_format": "npy",
+        "download_data": true,
+        "download_metadata": false,
+        "logging_level": "INFO",
+        "logging_dir": "./logs"
+    }
+
+- **crop_data** (`bool`):
+  If `true`, the data will be spatially cropped to the area defined by the AOI bounding box.
+  If `false`, the entire source TIFF will be saved without cropping.
+
+- **results_dir** (`str`):
+  Directory path where result files will be saved.
+
+- **result_format** (`str`):
+  Format in which results are stored. Supported options: `"npy"` (NumPy array), `"tif"` (GeoTIFF).
+
+- **download_data** (`bool`):
+  If `true`, the raw data will be downloaded, in the defined `result_format`.
+
+- **download_metadata** (`bool`):
+  If `true`, associated metadata files will also be downloaded.
+
+- **logging_level** (`str`):
+  Logging verbosity level. Typical values: `"DEBUG"`, `"INFO"`, `"WARNING"`, `"ERROR"`.
+
+- **logging_dir** (`str`):
+  Directory where log files are saved.
+
+Then you can use the package by running the following code block:
+
+.. code-block:: python
+
+    import os
+
+    from enmap_downloader.config import loadConfiguration, Config
+    from enmap_downloader.enmap_downloader import enmapDownloader
+
+    if __name__ == "__main__":
+
+        config_file = os.path.abspath("config/config.json")
+        config = loadConfiguration(path=config_file)
+        Config(**config)
+
+        enmapDownloader(config, in_parallel=True)
+
+The function enmapDownloader has the following parameters:
+
+- **config** (`Config`): The configuration object containing all settings.
+
+- **in_parallel** (`bool`, optional): If `True`, the downloader will run in parallel mode, downloading multiple files simultaneously. Default is `True`.
+
+- **num_workers** (`int`, optional): Number of worker threads used by the `ThreadPoolExecutor <https://docs.python.org/3/library/concurrent.futures.html>`_ when `in_parallel` is `True`. Default is `None`, which uses the number of available CPU cores.
+
+- **limit** (`int`, optional): Maximum number of items to download per query. If `None`, all items matching the query will be downloaded. Default is `None`.
+
+The downloader will search for EnMAP data products based on the configuration provided, download the data, and save it in the specified format and directory. The downloaded files will be logged in the specified logging directory.
+
+Developed by
+============
+
+enmap_downloader has been developed by the `Global Land Monitoring <https://www.gfz.de/en/section/remote-sensing-and-geoinformatics/topics/global-land-monitoring>`_ group and `FERN.Lab <https://fernlab.gfz-potsdam.de/>`_ at the `GFZ Helmholtz Centre for Geosciences <https://www.gfz.de/en/>`_.
+
+Copyright
+=========
+
+Copyright (c) 2025 GFZ Helmholtz Centre for Geosciences.
+
+Credits
+=======
+
+This package was created with Cookiecutter_ and the `fernlab/cookiecutter-py-package`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`fernlab/cookiecutter-py-package`: https://github.com/fernlab/cookiecutter-py-package
+.. _coverage: https://global-land-monitoring.git-pages.gfz-potsdam.de/enmap_downloader/coverage/
+.. _pytest: https://global-land-monitoring.git-pages.gfz-potsdam.de/enmap_downloader/test_reports/report.html
