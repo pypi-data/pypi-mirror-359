@@ -1,0 +1,2 @@
+[console_scripts]
+textme_mcp = textme_mcp.server:run
