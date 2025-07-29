@@ -1,0 +1,41 @@
+{
+    "input_text": "Intern: John A. Peterson Advisor: Dr. Michael Andersson\nInstitution: Department of Physics, University of Copenhagen\n\nAbstract\n\nLow-temperature physics, or cryogenics, is a field of physics that explores the behavior of materials at temperatures approaching absolute zero. This report presents an internship study focusing on the experimental investigation of superconductivity and quantum fluids at cryogenic temperatures. Using liquid helium-based cooling techniques, we examined the superconducting transition temperature of niobium samples and performed measurements on superfluid helium. Our study provides insights into the fundamental properties of quantum materials at ultra-low temperatures and highlights challenges in experimental cryogenics.",
+    "current_domain": "https://example.com",
+    "doc_hid": "fe8647f4be6a",
+    "files": {},
+    "current_chunk": {
+        "text": "Intern: John A. Peterson Advisor: Dr. Michael Andersson\nInstitution: Department of Physics, University of Copenhagen\n\nAbstract\n\nLow-temperature physics, or cryogenics, is a field of physics that explores the behavior of materials at temperatures approaching absolute zero. This report presents an internship study focusing on the experimental investigation of superconductivity and quantum fluids at cryogenic temperatures. Using liquid helium-based cooling techniques, we examined the superconducting transition temperature of niobium samples and performed measurements on superfluid helium. Our study provides insights into the fundamental properties of quantum materials at ultra-low temperatures and highlights challenges in experimental cryogenics.",
+        "hid": "fe8647f4be6a",
+        "doc_iri": "https://example.com/doc/fe8647f4be6a",
+        "graph": "\n",
+        "processed": false
+    },
+    "chunks": [],
+    "chunks_processed": [],
+    "current_ontology": {
+        "ontology_id": "_void_ontology_name",
+        "title": "null title",
+        "description": "null description",
+        "version": null,
+        "iri": "https://example.com/_void_ontology_name",
+        "graph": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<https://example.com/_void_ontology_name> a owl:Ontology ;\n    rdfs:label \"null title\" ;\n    dcterms:description \"null description\" ;\n    dcterms:title \"_void_ontology_name\" ;\n    rdfs:comment \"null description\" .\n\n",
+        "current_domain": "https://example.com"
+    },
+    "aggregated_facts": "\n",
+    "ontology_addendum": {
+        "ontology_id": "ont_cryogenics",
+        "title": "Cryogenics Ontology",
+        "description": "The Cryogenics Ontology provides a structured framework for representing knowledge in the field of low-temperature physics, particularly focusing on superconductivity and quantum fluids. It encompasses entities related to cryogenic materials, experimental techniques, and fundamental properties of quantum materials at ultra-low temperatures. This ontology aims to facilitate data interoperability and knowledge sharing in cryogenics research.",
+        "version": "1.0.0",
+        "iri": "https://example.com/ont_cryogenics#CryogenicsOntology",
+        "graph": "@prefix co: <https://example.com/ont_cryogenics#> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nco:CoolingTechnique a rdfs:Class ;\n    rdfs:label \"Cooling Technique\" ;\n    rdfs:comment \"Methods used to achieve low temperatures in experimental setups.\" .\n\nco:ExperimentalInvestigation a rdfs:Class ;\n    rdfs:label \"Experimental Investigation\" ;\n    rdfs:comment \"A systematic study conducted to explore and understand phenomena in cryogenics.\" .\n\nco:LiquidHeliumCooling a rdfs:Class ;\n    rdfs:label \"Liquid Helium Cooling\" ;\n    rdfs:comment \"A cooling technique that utilizes liquid helium to reach cryogenic temperatures.\" ;\n    rdfs:subClassOf co:CoolingTechnique .\n\nco:Material a rdfs:Class ;\n    rdfs:label \"Material\" ;\n    rdfs:comment \"A substance or mixture of substances that has specific physical properties.\" .\n\nco:Measurement a rdfs:Class ;\n    rdfs:label \"Measurement\" ;\n    rdfs:comment \"The process of obtaining quantitative data about a physical property.\" .\n\nco:QuantumFluid a rdfs:Class ;\n    rdfs:label \"Quantum Fluid\" ;\n    rdfs:comment \"A state of matter that exhibits quantum mechanical effects at macroscopic scales, typically at low temperatures.\" ;\n    rdfs:subClassOf co:Material .\n\nco:Superconductivity a rdfs:Class ;\n    rdfs:label \"Superconductivity\" ;\n    rdfs:comment \"A phenomenon where a material exhibits zero electrical resistance and expulsion of magnetic fields at low temperatures.\" ;\n    rdfs:subClassOf co:Material .\n\nco:CryogenicsOntology a owl:Ontology ;\n    rdfs:label \"Cryogenics Ontology\" ;\n    dcterms:description \"The Cryogenics Ontology provides a structured framework for representing knowledge in the field of low-temperature physics, particularly focusing on superconductivity and quantum fluids. It encompasses entities related to cryogenic materials, experimental techniques, and fundamental properties of quantum materials at ultra-low temperatures. This ontology aims to facilitate data interoperability and knowledge sharing in cryogenics research.\" ;\n    dcterms:title \"ont_cryogenics\" ;\n    rdfs:comment \"Ontology for representing knowledge in low-temperature physics, focusing on superconductivity and quantum fluids.\" ;\n    owl:versionInfo \"1.0.0\" .\n\nco:SuperconductingTransitionTemperature a rdf:Property ;\n    rdfs:label \"Superconducting Transition Temperature\" ;\n    rdfs:comment \"The temperature at which a material transitions into a superconducting state.\" ;\n    rdfs:domain co:Superconductivity ;\n    rdfs:range xsd:float .\n\n",
+        "current_domain": "https://example.com"
+    },
+    "failure_stage": null,
+    "failure_reason": null,
+    "success_score": 0.0,
+    "status": "success",
+    "node_visits": {},
+    "max_visits": 3,
+    "max_chunks": null
+}
