@@ -1,0 +1,11 @@
+soldcli/__init__.py,sha256=QnN10YZFwuuK4nFFI0Hj94YfQW0fTry6AkPtuWac6MM,336
+soldcli/__main__.py,sha256=t_bnAwZn4rweBNt-jjbK8J1sYQkaa4XYNQiVnNgp7Fc,117
+soldcli/cli.py,sha256=pvtCVbErOYjDU0q4kvIgLbbXYbHa41KE0sEO_uxuaqo,2241
+soldcli/commands/__init__.py,sha256=MesCBOm85PLAW4fUWYA-Hd3T50s-9B4ZQ76tuYcfCnw,150
+soldcli/commands/pack1.py,sha256=z9PUXyrJtVpjWP0iduCoRtIVG-xamGm3Wt7hxIeoyJM,2290
+soldcli/commands/pack2.py,sha256=rxEfkA-AQyiggcYCnhlXLSVYXn8WtVNcAaW48m0LfIw,13602
+soldcli-0.2.0.dist-info/METADATA,sha256=FxAHwT4tI0NbVz_ADXJKPyYNfIFythiZMaAcAaTV0tE,4337
+soldcli-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+soldcli-0.2.0.dist-info/entry_points.txt,sha256=OqCgyVw-6pcxzD-RJqERW6Y31ViN2wpNKw2cSIt4IRM,45
+soldcli-0.2.0.dist-info/top_level.txt,sha256=1RRAmA9IYLtRTWyTWk0zp4t8hhvjXt4j__ITfERDM9c,8
+soldcli-0.2.0.dist-info/RECORD,,
