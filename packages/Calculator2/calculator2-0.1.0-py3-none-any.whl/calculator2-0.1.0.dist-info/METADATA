@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: Calculator2
+Version: 0.1.0
+Summary: Even if it is nothing but for easier codes without adding anything I created this library to calculate
+Home-page: https://github.com/2232MATTIA/Calculator
+Author: Dennis
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# Calculator
+
+A simple Python library that allows you to do mathematical calculations from strings, using regex validation.
+
+## Installazione
+
+```bash
+pip install Calculator2
+```
+
+## Example
+
+```python
+from Calculator import calc
+
+test = calc("2+2 * 2")
+print(test)
+```
