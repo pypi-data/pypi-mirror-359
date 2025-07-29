@@ -1,0 +1,28 @@
+[tool.poetry]
+requires-poetry = '>=2.0'
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+simpsons-rdf = "^0.1.4"
+
+[build-system]
+requires = ['poetry-core (>=2.0)']
+build-backend = "poetry.core.masonry.api"
+
+
+[project]
+name = "kisumu"
+description = "A command line interface for jinja-rdf"
+license = "EUPL-1.2"
+version = "0.1.2"
+readme = "README.md"
+authors = [{name = "Natanael Arndt", email = "arndtn@gmail.com"}]
+requires-python = '>=3.12,<4.0'
+dependencies = ['click (>=8.1.8,<9.0.0)', 'rdflib (>=7.1.1,<8.0.0)', 'loguru (>=0.7.2,<0.8.0)', 'jinja-rdf (>=0.1.0,<0.2.0)']
+
+[project.scripts]
+kisumu = "kisumu:cli"
