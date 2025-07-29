@@ -1,0 +1,10 @@
+acumbamail/__init__.py,sha256=EdHFvUeOpyVTO5lpd9L2sT1U0R9VlBvCVK9qOCEhUbc,247
+acumbamail/aclient.py,sha256=0aCtqwnajazV6GSxlm5W734PIStenxkVN_jptFMt5b8,40303
+acumbamail/client.py,sha256=ePqFlouA2_RMb_7cs1B9d_LxB47Wl9Z0S6RBSu0OZOU,50500
+acumbamail/exceptions.py,sha256=xeT1XrErZdeyLW5Vs9Ge9e5ekD43VjF4yNzsVj1tRDU,715
+acumbamail/models.py,sha256=9qkbfSPtEwMSDbFYbhovSWGJqrnU8O6HPlHD48hcung,17497
+acumbamail/utils.py,sha256=2BVoReqVoozbo4fSZ7xQ4VooqMDtTpZ3VXdyADs0EdE,5758
+acumbamail-0.1.1.dist-info/LICENSE,sha256=kTYdKBW9fBNH_3HU2uPUOHNGOT_XBlMCBKNWF5xudRo,1102
+acumbamail-0.1.1.dist-info/METADATA,sha256=9VFvHd-DBKWxY0ZLGSETUaeFkA1YB6dnFaII5RuIko4,18363
+acumbamail-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+acumbamail-0.1.1.dist-info/RECORD,,
