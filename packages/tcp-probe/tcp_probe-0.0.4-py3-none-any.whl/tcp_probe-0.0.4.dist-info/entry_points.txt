@@ -1,0 +1,2 @@
+[console_scripts]
+tcp_probe = tcp_probe.cli:cli

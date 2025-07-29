@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: tcp_probe
+Version: 0.0.4
+Summary: Tools for tracing TCP in Linux
+Home-page: https://github.com/brucespang/tcp_probe
+Author: Bruce Spang
+Author-email: bruce@brucespang.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: System :: Operating System Kernels :: Linux
+Classifier: Topic :: System :: Networking :: Monitoring
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Click
+Requires-Dist: lark
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# tcp_probe
+
+[![Build Status](https://travis-ci.com/brucespang/tcp_probe.svg?branch=master)](https://travis-ci.org/brucespang/tcp_probe)
+
+A little library and set of tools to make it a bit easier to use Linux's tcp_probe tracing.
+
