@@ -1,0 +1,6 @@
+fastembed
+docling
+py7zr
+
+[:platform_system == "Windows"]
+pywin32
