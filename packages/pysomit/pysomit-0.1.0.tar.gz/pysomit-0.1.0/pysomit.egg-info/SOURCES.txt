@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+pysomit/__init__.py
+pysomit.egg-info/PKG-INFO
+pysomit.egg-info/SOURCES.txt
+pysomit.egg-info/dependency_links.txt
+pysomit.egg-info/top_level.txt
