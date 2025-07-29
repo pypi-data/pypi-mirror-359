@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: example_package_russelli
+Version: 0.0.1
+Summary: A small example package
+Author-email: Ingrid Russell <russelli@unc.edu>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/ing-russell/example_package_russelli
+Project-URL: Issues, https://github.com/ing-russell/example_package_russelli/issues
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+#Example Package
+
+This is a simple example package.
