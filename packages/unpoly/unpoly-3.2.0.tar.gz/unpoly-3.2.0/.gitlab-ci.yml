@@ -1,0 +1,115 @@
+include:
+  - template: "Workflows/Branch-Pipelines.gitlab-ci.yml"
+
+stages:
+  - prepare
+  - test
+  - build
+  - release
+
+variables:
+  PYTHON_VERSION: "3.10"
+  UV_LINK_MODE: copy
+  UV_CACHE_DIR: .uv-cache
+
+.default_cache: &default_cache
+  key:
+    files:
+      - uv.lock
+    prefix: $PYTHON_VERSION
+  paths:
+    - $UV_CACHE_DIR
+
+.push_cache: &push_cache
+  cache:
+    <<: *default_cache
+    policy: pull-push
+
+.pull_cache: &pull_cache
+  cache:
+    <<: *default_cache
+    policy: pull
+
+.job_template: &job_definition
+  image: registry.gitlab.com/rocketduck/python-unpoly/builder:$PYTHON_VERSION
+  before_script:
+    - uv sync
+  after_script:
+    - uv cache prune --ci
+
+prepare:
+  stage: prepare
+  parallel:
+    matrix:
+      - PYTHON_VERSION: ["3.10", "3.14-rc"]
+  image: quay.io/containers/podman:v5
+  before_script:
+    - echo "$CI_JOB_TOKEN" | podman login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+  script:
+    - podman build -t "${CI_REGISTRY_IMAGE}/builder:${PYTHON_VERSION}" --build-arg "PYTHON_VERSION=${PYTHON_VERSION}" .
+    - podman push "${CI_REGISTRY_IMAGE}/builder:${PYTHON_VERSION}"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - Containerfile
+        - .gitlab-ci.yml
+    - when: manual
+      allow_failure: true
+
+lint:
+  image: registry.gitlab.com/rocketduck/python-unpoly/builder:$PYTHON_VERSION
+  stage: test
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+    PRE_COMMIT_COLOR: always
+  script: pre-commit run --all-files
+  cache:
+    key:
+      prefix: pre-commit-${PYTHON_VERSION}
+      files:
+        - .pre-commit-config.yaml
+    paths:
+      - ${PRE_COMMIT_HOME}
+
+test:
+  <<: [*job_definition, *push_cache]
+  stage: test
+  script: uv run py.test --cov=unpoly --cov-report=xml:report.xml --cov-report=term
+  coverage: "/TOTAL.+ ([0-9]{1,3}%)/"
+  artifacts:
+    reports:
+      junit: report.xml
+    expire_in: 1 day
+
+test-py314:
+  <<: [*job_definition, *push_cache]
+  variables:
+    PYTHON_VERSION: "3.14-rc"
+  stage: test
+  script: uv run -v py.test
+
+build:
+  <<: [*job_definition, *pull_cache]
+  stage: build
+  script: uv build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 day
+
+release:
+  <<: [*job_definition, *pull_cache]
+  stage: release
+  dependencies: ["build"]
+  id_tokens:
+    PYPI_ID_TOKEN:
+      aud: pypi
+  script:
+    - oidc_token=$(python -m id PYPI)
+    - resp=$(curl -X POST https://pypi.org/_/oidc/mint-token -d "{\"token\":\"${oidc_token}\"}")
+    - api_token=$(jq --raw-output '.token' <<< "${resp}")
+    - python3 -m twine upload -u __token__ -p "${api_token}" dist/*
+  environment:
+    name: release
+  only:
+    - tags
