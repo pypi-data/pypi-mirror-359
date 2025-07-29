@@ -1,0 +1,13 @@
+LICENSE
+PYPI_README.md
+README.md
+pyproject.toml
+src/__init__.py
+src/taskwarrior.py
+src/test_exec.py
+src/pytaskwarrior.egg-info/PKG-INFO
+src/pytaskwarrior.egg-info/SOURCES.txt
+src/pytaskwarrior.egg-info/dependency_links.txt
+src/pytaskwarrior.egg-info/requires.txt
+src/pytaskwarrior.egg-info/top_level.txt
+tests/test_warrior.py
