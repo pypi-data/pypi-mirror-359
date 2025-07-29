@@ -1,0 +1,64 @@
+[project]
+name = "ozon-api"
+dynamic = ["version"]
+description = "Library for interacting with the Ozon API"
+authors = [{ name = "FxCode", email = "dev@fxcode.ru" }]
+requires-python = "~=3.10"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "aiohttp>=3.10.5,<4",
+    "build>=1.2.2.post1",
+    "loguru>=0.7.2,<0.8",
+    "pydantic>=2.9.2,<3",
+    "python-semantic-release>=10.2.0",
+    "tenacity>=9.1.2",
+]
+
+[project.urls]
+Repository = "https://github.com/mephistofox/python-ozon-api"
+Documentation = "https://github.com/mephistofox/python-ozon-api/blob/main/README.md"
+
+[dependency-groups]
+dev = [
+    "python-dotenv>=1.0.1,<2",
+    "asyncio>=3.4.3,<4",
+    "black>=24.8.0,<25",
+    "pytest>=8.3.3,<9",
+    "pytest-asyncio>=0.24.0,<0.25",
+    "pytest-mock>=3.14.0,<4",
+    "pytest-html>=4.1.1,<5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+asyncio_mode = "auto"
+
+[tool.hatch.version]
+path = "ozon_api/__init__.py"
+
+[tool.semantic_release]
+version_variables = ["ozon_api/__init__.py:__version__"]
+version_toml = ["pyproject.toml:project.version"]
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "python -m build"
+dist_path = "dist/"
+upload_to_pypi = true
+upload_to_release = true
+commit_message = "chore: release v{version}"
+commit_parser = "conventional"
+major_on_zero = false
+tag_format = "v{version}"
+github_repository = "mephistofox/python-ozon-api"
+repository_url = "git@github.com:mephistofox/python-ozon-api.git"
+github_token = "env:GH_TOKEN"
+pypi_token = "env:UV_PUBLISH_PASSWORD"
