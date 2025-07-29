@@ -1,0 +1,23 @@
+[project]
+name = "vulkan_utils"
+description = "A simple CLI utility for Vulkan operations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0.0",
+]
+dynamic = ["version"]
+
+[project.scripts]
+vulkan-utils = "vulkan_utils.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "vulkan_utils._version.__version__"}
+
+[tool.uv]
+package = true
