@@ -1,0 +1,19 @@
+{% if results %}
+    <div class="{{ result_type }}">
+    {% for result in results %}
+    <p class="center {{ result_type }}">
+    {{ result }}
+    </p>
+    {% endfor %}
+    </div>
+{% endif %}
+{% if explain %}
+<table class="explain">
+    <caption>Explanation</caption>
+    {% for explanation in explain %}
+    <tr>
+        <td>{{ explanation }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
