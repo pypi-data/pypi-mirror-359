@@ -1,0 +1,3 @@
+[console_scripts]
+StructuralGT = StructuralGT.entrypoints:main_gui
+StructuralGT-cli = StructuralGT.entrypoints:main_cli
