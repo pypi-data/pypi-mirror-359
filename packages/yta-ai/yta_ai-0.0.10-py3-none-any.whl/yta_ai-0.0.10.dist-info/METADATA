@@ -1,0 +1,34 @@
+Metadata-Version: 2.3
+Name: yta-ai
+Version: 0.0.10
+Summary: Youtube Autónomo AI Module.
+Author: danialcala94
+Author-email: danielalcalavalera@gmail.com
+Requires-Python: ==3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: openai (>=1.3.8,<2.0.0)
+Requires-Dist: requests (>=2.32.3,<9.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0)
+Requires-Dist: yta_ai_blip (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_flux (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_gemini (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_hugginface (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_leonardo (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_llava (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_pollinations (>=0.0.1,<1.0.0)
+Requires-Dist: yta_ai_prodia (>=0.0.1,<1.0.0)
+Requires-Dist: yta_constants (>=0.0.1,<1.0.0)
+Requires-Dist: yta_file_downloader (>=0.0.1,<1.0.0)
+Requires-Dist: yta_general (>=0.0.1,<1.0.0)
+Requires-Dist: yta_general_utils (>=0.0.250,<1.0.0)
+Requires-Dist: yta_programming (>=0.0.1,<1.0.0)
+Requires-Dist: yta_validation (>=0.0.1,<1.0.0)
+Description-Content-Type: text/markdown
+
+# Youtube Autonomous Artificial Intelligence (AI) Module
+
+The Artificial Intelligence (AI) module.
+
+This project needs:
+- to_fill_this
