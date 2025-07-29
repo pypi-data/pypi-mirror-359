@@ -1,0 +1,2 @@
+[console_scripts]
+run_polardb_postgresql_mcp_server = polardb_postgresql_mcp_server:main
