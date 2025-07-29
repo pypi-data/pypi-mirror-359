@@ -1,0 +1,3 @@
+[console_scripts]
+garmy-mcp = garmy.mcp.cli:main
+garmy-sync = garmy.localdb.cli:main
