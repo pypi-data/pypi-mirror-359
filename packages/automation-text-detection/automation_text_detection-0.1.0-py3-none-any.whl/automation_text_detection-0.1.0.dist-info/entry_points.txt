@@ -1,0 +1,2 @@
+[console_scripts]
+automation-text-detection = automation_text_detection.automation_text_detection:main
