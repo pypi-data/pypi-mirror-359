@@ -1,0 +1,13 @@
+docs/conf.py,sha256=epCsZDbAozBcZpWe6LwW9nVLk7W3zjWP8v87JIQymzU,3353
+pydriftn-0.1.4.dist-info/licenses/LICENSE,sha256=IR1xQ0G57eEze4x7eKykK2h_M71Cb-sfvwfWYWpL0NU,1066
+src/pydriftn/DriftAstrom.py,sha256=XbCQGUu1az1bp3MqNCo6zM7TPpBOx2-M3NftTcBd_N8,25513
+src/pydriftn/DriftClassify.py,sha256=njjcrDU_LWle9-z4yqNMv9sk9tcQmbYIirLm-8VKC30,376
+src/pydriftn/DriftExtract.py,sha256=6-p7LH9hvSF88OYoTMdmSnDMllvDff_4frZSc1qvjII,17309
+src/pydriftn/DriftReposition.py,sha256=nBYw7BDljpPiRnqML8F3J77cBEHByu-tUQ62k_jGMpo,367
+src/pydriftn/DriftSkysub.py,sha256=dASyealDwTvlOyXcnM0SwRHEvCFv4t6bDN9tbzAQPfg,9685
+src/pydriftn/GenerateCatalogue.py,sha256=4R5VraM_wfaQRxihR0nPM1jtxDt15k6Tv7nuedTu6b4,30017
+src/pydriftn/Utils.py,sha256=RLfY5prRNPHCLUrT479SOuJ9yeQSri4KRRYgcVNVCgE,17478
+pydriftn-0.1.4.dist-info/METADATA,sha256=ot1G8pTkhkfmLxjOx0ZkXZuLUYgBNCH7pkrWAR2ECpE,10932
+pydriftn-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydriftn-0.1.4.dist-info/top_level.txt,sha256=l9rlCtlCTvT17Rx3PaiJj2NGkZgvWcvMUQnX3vapGIs,9
+pydriftn-0.1.4.dist-info/RECORD,,
