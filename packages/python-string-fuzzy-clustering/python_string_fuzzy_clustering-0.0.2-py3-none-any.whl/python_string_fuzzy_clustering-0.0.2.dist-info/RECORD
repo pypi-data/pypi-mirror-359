@@ -1,0 +1,9 @@
+sgfcmed/__init__.py,sha256=mpEG_oLoSO4TfoyMmfuk1mmC_g9DXuk1N-DsLEVF-UY,550
+sgfcmed/sgfcmed_parallel.py,sha256=gWuHd3oIpFs8uEb_sYnPxJTBkeLgd7N8Ae6nXcLztQc,6815
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_sgfcmed.py,sha256=Z0SuBxCwxeu8zSWk0bjLHzPd2R9ivHw3GbwFCp4OS_0,7603
+python_string_fuzzy_clustering-0.0.2.dist-info/LICENSE,sha256=gcuuhKKc5-dwvyvHsXjlC9oM6N5gZ6umYbC8ewW1Yvg,35821
+python_string_fuzzy_clustering-0.0.2.dist-info/METADATA,sha256=5e6dr0u4H60wtiX7FrNUesem7nn3D-eGQUHvvZOYVSI,1684
+python_string_fuzzy_clustering-0.0.2.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+python_string_fuzzy_clustering-0.0.2.dist-info/top_level.txt,sha256=0_LKZa1JnYBeo9h2kO0qr6rkmUyfOsDx2oJdqRAXhVQ,14
+python_string_fuzzy_clustering-0.0.2.dist-info/RECORD,,
