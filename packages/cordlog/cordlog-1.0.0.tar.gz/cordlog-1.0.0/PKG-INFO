@@ -1,0 +1,43 @@
+Metadata-Version: 2.3
+Name: cordlog
+Version: 1.0.0
+Summary: Colored logging formatter for Python
+Author: LordCode
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: aiohttp (>=3.11.18,<4.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Description-Content-Type: text/markdown
+
+### **CordLog - Удобное ведение логов для Discord-ботов**
+
+CordLog — это простой и мощный инструмент для логирования событий, ошибок и другой информации в Discord-ботах. С этим инструментом вы сможете легко отслеживать и анализировать важные действия, происходящие в вашем боте, обеспечивая удобный и структурированный вывод логов.
+
+---
+
+### **Основные возможности:**
+
+* Логирование сообщений, ошибок и событий с детальной информацией.
+* Гибкая настройка уровней логирования (info, warn, error).
+* Поддержка кастомных выводов логов (консоль, файл и другие).
+* Легкая интеграция с любыми Discord-ботами на базе библиотеки Discord.js и тп.
+
+---
+
+### **Почему CordLog?**
+
+CordLog создан с учетом удобства использования и масштабируемости. Он позволяет эффективно следить за работой вашего бота, устранять ошибки и собирать статистику, что делает его идеальным инструментом для разработчиков Discord-ботов всех уровней.
+
+---
+
+### **Требования**
+
+Для работы с CordLog не требуется никаких дополнительных библиотек, но его можно использовать в асинхронном режиме для оптимальной работы.
+
+---
+
+**GitHub репозиторий:** [lordcod/cordlog](https://github.com/lordcod/cordlog)
+
