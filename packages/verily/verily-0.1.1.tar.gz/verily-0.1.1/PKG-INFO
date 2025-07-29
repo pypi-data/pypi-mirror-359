@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: verily
+Version: 0.1.1
+Summary: Simple stability testing test for stochastic systems
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: aiostream>=0.6.4
+Requires-Dist: fsspec>=2025.5.1
+Requires-Dist: numpy>=2.3.1
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: rich>=14.0.0
+Requires-Dist: scipy>=1.16.0
+Requires-Dist: typer>=0.16.0
+Description-Content-Type: text/markdown
+
+# Verily
+Simple stability testing test for stochastic systems
