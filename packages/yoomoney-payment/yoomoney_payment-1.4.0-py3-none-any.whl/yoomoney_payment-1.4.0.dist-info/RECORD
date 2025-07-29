@@ -1,0 +1,17 @@
+yoomoney_payment/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yoomoney_payment/forms.py,sha256=aj_-5TLaEVYTRMTB2aRA2hLSMvqtv3D4xM9c8JfwUa0,173
+yoomoney_payment/urls.py,sha256=nf2a1VaVcjaQUrLYPckgUBYGVB1-KorH8gsNq58TG5g,180
+yoomoney_payment/views.py,sha256=q22WFJGJhFAjhmuf0xAX5pWc77E1wnjZrU-eCdws0K8,1120
+yoomoney_payment/commerce/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yoomoney_payment/commerce/checkout.py,sha256=uTO_ama4gLSbwu3l81aZPAF8asPrIovzTHL1eO9qp30,3887
+yoomoney_payment/commerce/conf.py,sha256=mvs83LKw5BEarpnXC-H5sKkgeEo7gyJ5OaTnWxNnf8Y,210
+yoomoney_payment/commerce/dummy.py,sha256=wJi-N4NT4KwqzV58zzZR9KzaOgv5NfDryDh4U7QLkqc,1387
+yoomoney_payment/templates/yoomoney_payment.html,sha256=BspTuMWXvUXE6tUhHe2ytoN59xPA2atxPl5fFiiA2y8,430
+yoomoney_payment/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yoomoney_payment/tests/mixins.py,sha256=SnTwptUKLjZsqlkoXUvRkErJezSF618rP8R0czuFmBY,716
+yoomoney_payment/tests/test_service.py,sha256=oASxmB0Sd3igWAiITFOthhGzhxBlnD1Uki33jSOpOTc,7226
+yoomoney_payment/tests/test_views.py,sha256=Hj1uaRKqGKDYXKkC6AlMeo1j556NY2DNSxiYuepuG8M,2934
+yoomoney_payment-1.4.0.dist-info/METADATA,sha256=46StG3KDaqraKMVf0CCLw-StygMnbqcaH4ji1ZPJfPU,1401
+yoomoney_payment-1.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+yoomoney_payment-1.4.0.dist-info/top_level.txt,sha256=AexgbIYOHMAx-MeB8MwZlRlFGdCZJRUIhe3WrtjKETs,17
+yoomoney_payment-1.4.0.dist-info/RECORD,,
