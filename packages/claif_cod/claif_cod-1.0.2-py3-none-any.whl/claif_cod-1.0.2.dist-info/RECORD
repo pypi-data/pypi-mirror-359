@@ -1,0 +1,11 @@
+claif_cod/__init__.py,sha256=mGILI-MSqJi5CHz7-SJazh8WE8x_BIzRTJZyTuESR3I,1090
+claif_cod/__version__.py,sha256=98Mtoja-WpqDUnppClywkGhX6oxX6l-ZHnSYMYYbBUE,511
+claif_cod/cli.py,sha256=gOSyLC4rANI_AeU19FEFvFF7mgVz4Q3FQwWFBkI6KYQ,11376
+claif_cod/client.py,sha256=awKGevZ6oGjFuPNrRzi-pFu_Y6iRYVBg8aWftbMdPWU,1546
+claif_cod/transport.py,sha256=gYHSZ0asvtqM0gAMu4wgeIcvhnpzNrL0EYNk3dyb51k,9146
+claif_cod/types.py,sha256=NTMTbBO1AKnJDTYVGEh-a9uBxcKNpW9e8lC2yxOFgMc,2403
+claif_cod-1.0.2.dist-info/METADATA,sha256=CjCnLsMIEs6Fmc4iT0pgWKyjizWQfqEVb1D8tYUYnr4,17846
+claif_cod-1.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claif_cod-1.0.2.dist-info/entry_points.txt,sha256=g_V9FPMM_2I-TrGArAkKcM2yWzuvmjJuceGHyZ2BKIY,82
+claif_cod-1.0.2.dist-info/licenses/LICENSE,sha256=owbwpVdTHiU18mRyRzvr1DDQe_Rjs1FCkEdzMGJIU9U,1069
+claif_cod-1.0.2.dist-info/RECORD,,
