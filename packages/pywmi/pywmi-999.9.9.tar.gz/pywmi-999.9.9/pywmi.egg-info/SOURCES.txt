@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pywmi.egg-info/PKG-INFO
+pywmi.egg-info/SOURCES.txt
+pywmi.egg-info/dependency_links.txt
+pywmi.egg-info/top_level.txt
