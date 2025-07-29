@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+snapshot_integration_package/EULA
+snapshot_integration_package/__init__.py
+snapshot_integration_package/semiauto_main.py
+snapshot_integration_package/semiauto_misc.py
+snapshot_integration_package/semiauto_ps.py
+snapshot_integration_package/semiauto_rc.py
+snapshot_integration_package/setup.py
+snapshot_integration_package.egg-info/PKG-INFO
+snapshot_integration_package.egg-info/SOURCES.txt
+snapshot_integration_package.egg-info/dependency_links.txt
+snapshot_integration_package.egg-info/requires.txt
+snapshot_integration_package.egg-info/top_level.txt
