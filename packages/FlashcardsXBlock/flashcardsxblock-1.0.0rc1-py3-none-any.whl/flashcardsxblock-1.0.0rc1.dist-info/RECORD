@@ -1,0 +1,11 @@
+flashcards/__init__.py,sha256=dg51VfSGQZbgK6pDLCpa-9maZHMxzFOBGv8y9jBYXC0,110
+flashcards/flashcards.py,sha256=PcKoLBys_JeOiA0GBgtb0V9Fr0eRuGgaAc55M--3R5E,4284
+flashcards/static/html/studio.html,sha256=PMRqbAdU3YyMrN5VYTXEjinBHde8ejV0Y3qazlGBGDU,64
+flashcards/static/js/student.js,sha256=Bq_EgK7telZUqnBrC2KVQ_CSmw0ETbSBvAmMX-hCxr0,160
+flashcards/static/js/studio.js,sha256=Kls8y1EJ5niZr7iAwjoxqfi1FmWyEwTE4KrpT8F6NeE,175
+flashcardsxblock-1.0.0rc1.dist-info/licenses/LICENSE,sha256=myvkJeoIF-3SOyL2XBnn3EBoQGc75jOnEapU6qC7Aa0,1073
+flashcardsxblock-1.0.0rc1.dist-info/METADATA,sha256=UACMDEhq_XITkS9Dqz7DLaaogt7O0rdawXXNV3chXFQ,1370
+flashcardsxblock-1.0.0rc1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flashcardsxblock-1.0.0rc1.dist-info/entry_points.txt,sha256=adWsUbz4i8AJTwoqq_EULWSQT6YfukJZb2olFa6-6Js,53
+flashcardsxblock-1.0.0rc1.dist-info/top_level.txt,sha256=1j-1IPsI5ozT1YqHDZuMFzGsndw-dB2oh7tzi5YGOS0,11
+flashcardsxblock-1.0.0rc1.dist-info/RECORD,,
