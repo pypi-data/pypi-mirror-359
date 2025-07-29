@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: dream_on_gym_v2
+Version: 0.0.9
+Home-page: https://gitlab.com/IRO-Team/dream-on-gym-v2
+Author: Hermann Ignacio Pempelfort Vergara
+Author-email: hermann.pempelfort@usm.cl
+License-File: COPYING.md
+Requires-Dist: numpy
+Requires-Dist: jsonschema
+Requires-Dist: gymnasium
+Requires-Dist: importlib-metadata
+Requires-Dist: tensorflow==2.15.0
+Requires-Dist: protobuf
+Requires-Dist: stable-baselines3[extra]
+Requires-Dist: sb3-contrib
+Requires-Dist: pandas
+Requires-Dist: mpi4py
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
