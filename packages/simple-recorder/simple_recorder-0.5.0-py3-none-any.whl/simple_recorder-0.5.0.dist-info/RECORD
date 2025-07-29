@@ -1,0 +1,16 @@
+simple_recorder-0.5.0.dist-info/METADATA,sha256=t-YYjGRK686q2hW8eH_M14kuVRN_dZtmOx37zD18JYs,4451
+simple_recorder-0.5.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+simple_recorder-0.5.0.dist-info/entry_points.txt,sha256=2zb3tHm0AOFLl1jqKOPqTsdIbtxN194nhNUJkWEe664,114
+simple_recorder/__init__.py,sha256=LVFpHZSNYFiUrhxy81zOExXlXUvzA3ZQ4tT4_ggxu-U,40
+simple_recorder/chapter.py,sha256=bXyy5zutJ2sjF3IMtjh8LL3R7xtuiRKeW8Rf6BatYSU,1803
+simple_recorder/cli.py,sha256=heB1MSoivt4KnnQvX-5A6-xjgFFHZuIdINOuabSjhEU,1989
+simple_recorder/directory.py,sha256=f6Df6hCjmL0aN4sFej9CyR0Eq4GrDUsNn4Tbsdwq-zY,1326
+simple_recorder/errors.py,sha256=UIYgW1mRtwEQdUSlzzU_8P51wWgl4mSFknbM74Di0yE,276
+simple_recorder/gui.py,sha256=rfSp_OMliGEidbwIVm5IgnB-3dlOnBF6yzHYIerLLvc,11040
+simple_recorder/pause.py,sha256=k3JuBQLa1kEDus7jSX2sW0xrJ2_fXpMAF-kL9d3gRpA,1019
+simple_recorder/resume.py,sha256=UDtXCq1i16difhPp8Q2RTZpSKC1AfGnhzAzCny9ai9Y,1024
+simple_recorder/split.py,sha256=EVRFOwY9ITrGOcRv8N70IJn5cUrZcQWwF2lZ3EEh4kE,1284
+simple_recorder/start.py,sha256=COwJ3FGlGbkLcxBSKX-Dcpkony8BI7h08sfkTAOoZis,1602
+simple_recorder/stop.py,sha256=6F6mKGeka66gOAvcFSFJpdos8Qo2LgsDq49DXwagpGE,895
+simple_recorder/styler.py,sha256=VAJweI4_UKhZXdC82FGqVqT9X-GNep7hQf-UwAlTyCk,93
+simple_recorder-0.5.0.dist-info/RECORD,,
