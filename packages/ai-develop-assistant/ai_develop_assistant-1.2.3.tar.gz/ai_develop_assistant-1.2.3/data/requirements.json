@@ -1,0 +1,229 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": "# 桌面五子棋游戏 - 技术架构设计文档\n\n## 1. 项目概述\n\n### 1.1 项目定位\n- **目标用户**: 8-60岁休闲游戏爱好者，支持初学者到高级玩家\n- **使用场景**: 家庭娱乐和办公休闲场景\n- **核心价值**: 简洁易用的桌面五子棋游戏，支持人机对战和本地双人对战\n\n### 1.2 功能范围\n- **游戏模式**: 人机对战（3个难度级别）、本地双人对战、简单练习模式\n- **游戏体验**: 单局5-15分钟，支持快速开始、暂停保存和悔棋功能\n- **界面设计**: 简洁现代风格，800x600像素窗口，支持窗口缩放\n- **数据存储**: 本地JSON文件存储游戏记录、用户设置和统计数据\n\n## 2. 技术栈选型\n\n### 2.1 核心技术栈\n- **桌面框架**: Electron (跨平台支持)\n- **前端技术**: HTML5 + CSS3 + 原生JavaScript\n- **图形渲染**: Canvas 2D API\n- **数据存储**: JSON文件 + Node.js fs模块\n- **AI算法**: Minimax + Alpha-Beta剪枝\n\n### 2.2 技术选型理由\n- **Electron**: 跨平台兼容，开发效率高，易于维护\n- **原生JavaScript**: 无复杂框架依赖，性能优秀，代码简洁\n- **Canvas 2D**: 适合棋盘游戏渲染，性能良好\n- **JSON存储**: 简单轻量，易于读写和调试\n\n## 3. 系统架构设计\n\n### 3.1 整体架构图\n\n```mermaid\ngraph TB\n    A[主进程 Main Process] --> B[渲染进程 Renderer Process]\n    B --> C[游戏核心模块 GameCore]\n    B --> D[界面渲染模块 UIRenderer]\n    B --> E[AI算法模块 AIEngine]\n    B --> F[数据管理模块 DataManager]\n    \n    C --> G[游戏逻辑 GameLogic]\n    C --> H[规则引擎 RuleEngine]\n    C --> I[状态管理 StateManager]\n    \n    D --> J[棋盘渲染 BoardRenderer]\n    D --> K[UI控件 UIControls]\n    D --> L[事件处理 EventHandler]\n    \n    E --> M[简单AI SimpleAI]\n    E --> N[中等AI MediumAI]\n    E --> O[困难AI HardAI]\n    \n    F --> P[设置管理 SettingsManager]\n    F --> Q[统计管理 StatsManager]\n    F --> R[文件操作 FileOperations]\n```\n\n### 3.2 模块化设计\n\n#### 3.2.1 游戏核心模块 (GameCore)\n```javascript\n// 游戏逻辑管理\nclass GameLogic {\n    constructor()\n    startNewGame(mode, difficulty)\n    makeMove(x, y)\n    undoMove()\n    pauseGame()\n    resumeGame()\n    resetGame()\n}\n\n// 规则引擎\nclass RuleEngine {\n    checkWin(board, x, y, player)\n    isValidMove(board, x, y)\n    getGameStatus()\n}\n\n// 状态管理\nclass StateManager {\n    getCurrentState()\n    saveState()\n    loadState()\n    getHistory()\n}\n```\n\n#### 3.2.2 界面渲染模块 (UIRenderer)\n```javascript\n// 棋盘渲染\nclass BoardRenderer {\n    drawBoard()\n    drawPieces()\n    highlightLastMove()\n    drawGrid()\n    resizeBoard()\n}\n\n// UI控件\nclass UIControls {\n    createMenuBar()\n    createControlPanel()\n    createStatusBar()\n    updateGameInfo()\n}\n\n// 事件处理\nclass EventHandler {\n    handleMouseClick(event)\n    handleKeyPress(event)\n    handleWindowResize(event)\n}\n```\n\n#### 3.2.3 AI算法模块 (AIEngine)\n```javascript\n// AI基类\nclass BaseAI {\n    makeMove(board, difficulty)\n    evaluateBoard(board)\n    calculateBestMove()\n}\n\n// 简单AI\nclass SimpleAI extends BaseAI {\n    makeMove() // 随机+基础评估\n}\n\n// 中等AI\nclass MediumAI extends BaseAI {\n    makeMove() // Minimax算法\n    minimax(board, depth, isMaximizing)\n}\n\n// 困难AI\nclass HardAI extends BaseAI {\n    makeMove() // Alpha-Beta剪枝\n    alphaBeta(board, depth, alpha, beta, isMaximizing)\n}\n```\n\n#### 3.2.4 数据管理模块 (DataManager)\n```javascript\n// 设置管理\nclass SettingsManager {\n    loadSettings()\n    saveSettings()\n    getDefaultSettings()\n}\n\n// 统计管理\nclass StatsManager {\n    updateStats(gameResult)\n    getStats()\n    resetStats()\n}\n\n// 文件操作\nclass FileOperations {\n    readFile(path)\n    writeFile(path, data)\n    ensureDirectory(path)\n}\n```\n\n## 4. 数据模型设计\n\n### 4.1 游戏状态数据结构\n```javascript\nconst GameState = {\n    board: Array(15).fill().map(() => Array(15).fill(0)), // 0:空, 1:黑, 2:白\n    currentPlayer: 1, // 1:黑棋, 2:白棋\n    gameMode: 'AI', // 'AI', 'PVP', 'PRACTICE'\n    difficulty: 'MEDIUM', // 'EASY', 'MEDIUM', 'HARD'\n    gameStatus: 'PLAYING', // 'PLAYING', 'PAUSED', 'FINISHED'\n    winner: null, // null, 1, 2\n    moveHistory: [], // [{x, y, player, timestamp}]\n    undoCount: 0, // 悔棋次数\n    startTime: null,\n    endTime: null\n}\n```\n\n### 4.2 用户设置数据结构\n```javascript\nconst UserSettings = {\n    soundEnabled: true,\n    defaultDifficulty: 'MEDIUM',\n    windowSize: {width: 800, height: 600},\n    boardTheme: 'classic',\n    autoSave: true\n}\n```\n\n### 4.3 统计数据结构\n```javascript\nconst GameStats = {\n    totalGames: 0,\n    wins: 0,\n    losses: 0,\n    draws: 0,\n    winsByDifficulty: {\n        EASY: 0,\n        MEDIUM: 0,\n        HARD: 0\n    },\n    averageGameTime: 0,\n    longestGame: 0,\n    lastPlayed: null\n}\n```\n\n## 5. 核心算法设计\n\n### 5.1 胜负判定算法\n```javascript\nfunction checkWin(board, x, y, player) {\n    const directions = [\n        [1, 0],   // 水平\n        [0, 1],   // 垂直\n        [1, 1],   // 主对角线\n        [1, -1]   // 副对角线\n    ];\n    \n    for (let [dx, dy] of directions) {\n        let count = 1;\n        \n        // 正方向计数\n        for (let i = 1; i < 5; i++) {\n            const nx = x + dx * i;\n            const ny = y + dy * i;\n            if (nx < 0 || nx >= 15 || ny < 0 || ny >= 15 || board[nx][ny] !== player) break;\n            count++;\n        }\n        \n        // 反方向计数\n        for (let i = 1; i < 5; i++) {\n            const nx = x - dx * i;\n            const ny = y - dy * i;\n            if (nx < 0 || nx >= 15 || ny < 0 || ny >= 15 || board[nx][ny] !== player) break;\n            count++;\n        }\n        \n        if (count >= 5) return true;\n    }\n    \n    return false;\n}\n```\n\n### 5.2 AI评估函数\n```javascript\nfunction evaluateBoard(board, player) {\n    let score = 0;\n    const opponent = player === 1 ? 2 : 1;\n    \n    // 位置权重评估\n    for (let i = 0; i < 15; i++) {\n        for (let j = 0; j < 15; j++) {\n            if (board[i][j] === player) {\n                score += getPositionWeight(i, j);\n            } else if (board[i][j] === opponent) {\n                score -= getPositionWeight(i, j);\n            }\n        }\n    }\n    \n    // 连子评估\n    score += evaluateLines(board, player);\n    score -= evaluateLines(board, opponent);\n    \n    return score;\n}\n\nfunction getPositionWeight(x, y) {\n    const centerX = 7, centerY = 7;\n    const distance = Math.abs(x - centerX) + Math.abs(y - centerY);\n    return Math.max(1, 15 - distance);\n}\n```\n\n## 6. 性能优化策略\n\n### 6.1 渲染优化\n- **局部重绘**: 只重绘发生变化的棋盘区域\n- **双缓冲**: 使用离屏Canvas避免闪烁\n- **事件节流**: 限制鼠标移动事件频率\n\n### 6.2 AI计算优化\n- **异步计算**: 使用Web Worker避免界面卡顿\n- **剪枝优化**: Alpha-Beta剪枝减少搜索空间\n- **缓存机制**: 缓存已计算的棋局评估结果\n\n### 6.3 内存管理\n- **对象池**: 复用棋子对象减少GC压力\n- **及时清理**: 清理不需要的事件监听器\n- **数据压缩**: 压缩历史记录数据\n\n## 7. 项目结构\n\n```\ngomoku-desktop/\n├── main.js                 # Electron主进程\n├── package.json            # 项目配置\n├── src/\n│   ├── renderer/\n│   │   ├── index.html      # 主页面\n│   │   ├── css/\n│   │   │   └── style.css   # 样式文件\n│   │   └── js/\n│   │       ├── app.js      # 应用入口\n│   │       ├── game/\n│   │       │   ├── GameCore.js\n│   │       │   ├── RuleEngine.js\n│   │       │   └── StateManager.js\n│   │       ├── ui/\n│   │       │   ├── BoardRenderer.js\n│   │       │   ├── UIControls.js\n│   │       │   └── EventHandler.js\n│   │       ├── ai/\n│   │       │   ├── BaseAI.js\n│   │       │   ├── SimpleAI.js\n│   │       │   ├── MediumAI.js\n│   │       │   └── HardAI.js\n│   │       └── data/\n│   │           ├── SettingsManager.js\n│   │           ├── StatsManager.js\n│   │           └── FileOperations.js\n│   └── assets/\n│       ├── sounds/         # 音效文件\n│       └── images/         # 图片资源\n├── data/\n│   ├── settings.json       # 用户设置\n│   └── stats.json         # 游戏统计\n└── dist/                  # 打包输出目录\n```\n\n## 8. 开发流程\n\n### 8.1 开发阶段规划\n\n#### 阶段1: 基础框架搭建 (1-2天)\n1. **环境配置**\n   - 初始化Electron项目\n   - 配置开发环境和构建脚本\n   - 设置项目目录结构\n\n2. **基础界面**\n   - 创建主窗口和基本布局\n   - 实现棋盘Canvas渲染\n   - 添加基本UI控件\n\n#### 阶段2: 核心游戏逻辑 (2-3天)\n1. **游戏核心**\n   - 实现GameCore和RuleEngine\n   - 添加胜负判定逻辑\n   - 实现基本的下棋功能\n\n2. **状态管理**\n   - 实现StateManager\n   - 添加悔棋功能\n   - 实现游戏暂停/继续\n\n#### 阶段3: AI算法实现 (2-3天)\n1. **AI基础**\n   - 实现BaseAI和评估函数\n   - 开发SimpleAI（随机+基础评估）\n   - 测试AI基本功能\n\n2. **高级AI**\n   - 实现MediumAI（Minimax算法）\n   - 实现HardAI（Alpha-Beta剪枝）\n   - 性能优化和异步处理\n\n#### 阶段4: 数据管理和UI完善 (1-2天)\n1. **数据持久化**\n   - 实现SettingsManager和StatsManager\n   - 添加JSON文件读写功能\n   - 实现游戏统计功能\n\n2. **UI优化**\n   - 完善界面交互\n   - 添加音效支持\n   - 实现窗口自适应\n\n#### 阶段5: 测试和优化 (1-2天)\n1. **功能测试**\n   - 全面测试游戏功能\n   - 修复发现的bug\n   - 性能优化\n\n2. **用户体验**\n   - 界面细节优化\n   - 添加帮助文档\n   - 准备发布版本\n\n### 8.2 开发规范\n\n#### 8.2.1 代码规范\n- 使用ES6+语法\n- 采用模块化设计\n- 统一命名规范（驼峰命名）\n- 添加必要的注释\n\n#### 8.2.2 测试策略\n- 单元测试覆盖核心算法\n- 集成测试验证模块交互\n- 用户测试验证游戏体验\n\n#### 8.2.3 版本控制\n- 使用Git进行版本控制\n- 采用功能分支开发模式\n- 定期提交和合并代码\n\n## 9. 部署方案\n\n### 9.1 打包配置\n```json\n{\n  \"build\": {\n    \"appId\": \"com.example.gomoku\",\n    \"productName\": \"五子棋大师\",\n    \"directories\": {\n      \"output\": \"dist\"\n    },\n    \"files\": [\n      \"src/**/*\",\n      \"main.js\",\n      \"package.json\"\n    ],\n    \"win\": {\n      \"target\": \"nsis\",\n      \"icon\": \"assets/icon.ico\"\n    },\n    \"mac\": {\n      \"target\": \"dmg\",\n      \"icon\": \"assets/icon.icns\"\n    },\n    \"linux\": {\n      \"target\": \"AppImage\",\n      \"icon\": \"assets/icon.png\"\n    }\n  }\n}\n```\n\n### 9.2 发布流程\n1. **代码检查**: 运行测试和代码质量检查\n2. **版本更新**: 更新版本号和变更日志\n3. **构建打包**: 生成各平台安装包\n4. **测试验证**: 在目标平台测试安装包\n5. **发布分发**: 上传到分发平台\n\n## 10. 风险评估与应对\n\n### 10.1 技术风险\n- **性能问题**: 通过算法优化和异步处理解决\n- **兼容性问题**: 充分测试各平台兼容性\n- **内存泄漏**: 规范内存管理和及时清理\n\n### 10.2 项目风险\n- **开发周期**: 合理规划开发阶段，预留缓冲时间\n- **需求变更**: 采用模块化设计，便于功能扩展\n- **质量控制**: 建立完善的测试体系\n\n## 11. 后续扩展规划\n\n### 11.1 功能扩展\n- 在线对战功能\n- 复盘分析功能\n- 自定义棋盘主题\n- 游戏录像回放\n\n### 11.2 技术升级\n- 升级到更新的Electron版本\n- 考虑使用WebGL提升渲染性能\n- 集成更先进的AI算法\n\n---\n\n*本文档版本: v1.0*  \n*最后更新: 2025-07-01*",
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T13:38:09.239647",
+  "project_id": null,
+  "branch_status": {},
+  "user_personas_and_scenarios": [],
+  "core_game_modules": [],
+  "data_model_and_storage": [],
+  "technology_stack_and_performance": [],
+  "ui_ux_design_principles": [],
+  "ai_algorithm_and_difficulty": [],
+  "requirement_blueprint": {
+    "project_title": "桌面五子棋游戏",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "用户画像与游戏场景",
+        "storage_key": "user_personas_and_scenarios",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "USER_Q1",
+            "question_text": "目标用户群体是什么？（年龄段、技能水平、使用场景）",
+            "ai_suggestion": "建议定位为：8-60岁的休闲游戏爱好者，包括五子棋初学者到高级玩家，主要在家庭、办公室休息时间或朋友聚会时使用",
+            "status": "completed",
+            "user_answer": "8-60岁休闲游戏爱好者，支持初学者到高级玩家，适用于家庭娱乐和办公休闲场景"
+          },
+          {
+            "question_id": "USER_Q2",
+            "question_text": "主要游戏模式需求是什么？",
+            "ai_suggestion": "建议包含：人机对战（多难度AI）、双人对战（本地）、在线对战（可选）、练习模式、复盘功能",
+            "status": "completed",
+            "user_answer": "核心模式：人机对战（3个难度级别）、本地双人对战、简单练习模式，暂不包含在线功能"
+          },
+          {
+            "question_id": "USER_Q3",
+            "question_text": "用户期望的游戏体验时长和频率？",
+            "ai_suggestion": "建议设计为：单局5-15分钟，支持快速开始和暂停保存，适合碎片化时间和深度思考两种场景",
+            "status": "completed",
+            "user_answer": "单局5-15分钟，支持快速开始、暂停保存和悔棋功能，适合碎片化娱乐"
+          },
+          {
+            "question_id": "USER_Q4",
+            "question_text": "用户对游戏社交功能的需求程度？",
+            "ai_suggestion": "建议轻量级社交：本地排行榜、游戏记录分享、简单的好友对战功能，避免复杂的社交系统",
+            "status": "completed",
+            "user_answer": "最简化设计：仅本地游戏记录和简单统计，无社交功能"
+          }
+        ]
+      },
+      {
+        "branch_name": "核心游戏功能模块",
+        "storage_key": "core_game_modules",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "FUNC_Q1",
+            "question_text": "游戏棋盘和棋子的基本规格和视觉设计？",
+            "ai_suggestion": "建议：15x15标准棋盘，黑白棋子，简洁的2D界面，支持鼠标点击下棋，高亮显示最后一步和可下位置",
+            "status": "completed",
+            "user_answer": "15x15标准棋盘，黑白棋子，简洁的2D界面设计，鼠标点击下棋，高亮显示最后一步"
+          },
+          {
+            "question_id": "FUNC_Q2",
+            "question_text": "游戏规则判定和胜负检测机制？",
+            "ai_suggestion": "建议：标准五子棋规则，连成五子即胜，实时检测横竖斜四个方向，支持禁手规则（可选）",
+            "status": "completed",
+            "user_answer": "标准五子棋规则，连成五子即胜，实时检测四个方向，不包含禁手规则（简化设计）"
+          },
+          {
+            "question_id": "FUNC_Q3",
+            "question_text": "AI对手的智能等级和算法复杂度？",
+            "ai_suggestion": "建议：初级（随机+简单评估）、中级（Minimax算法）、高级（Alpha-Beta剪枝），每级别控制思考深度和时间",
+            "status": "completed",
+            "user_answer": "三个难度级别：简单（随机+基本评估）、中等（Minimax算法）、困难（Alpha-Beta剪枝优化）"
+          },
+          {
+            "question_id": "FUNC_Q4",
+            "question_text": "游戏辅助功能需求（悔棋、提示、保存等）？",
+            "ai_suggestion": "建议：悔棋功能（限制次数）、游戏暂停/继续、自动保存进度、重新开始、简单的走棋提示",
+            "status": "completed",
+            "user_answer": "核心功能：悔棋（每局限制3次）、游戏暂停/继续、重新开始，不包含走棋提示功能"
+          }
+        ]
+      },
+      {
+        "branch_name": "游戏数据模型与存储",
+        "storage_key": "data_model_and_storage",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "DATA_Q1",
+            "question_text": "游戏状态数据结构设计？",
+            "ai_suggestion": "建议：棋盘状态（15x15二维数组）、当前玩家、游戏模式、步数记录、游戏状态（进行中/结束）",
+            "status": "completed",
+            "user_answer": "核心数据：棋盘状态（15x15数组）、当前玩家、游戏模式、步数历史、游戏状态"
+          },
+          {
+            "question_id": "DATA_Q2",
+            "question_text": "本地数据存储方案？",
+            "ai_suggestion": "建议：使用JSON文件存储游戏记录和设置，简单轻量，易于读写和调试",
+            "status": "completed",
+            "user_answer": "使用JSON文件存储游戏记录、用户设置和统计数据，简单易维护"
+          },
+          {
+            "question_id": "DATA_Q3",
+            "question_text": "需要存储的用户数据类型？",
+            "ai_suggestion": "建议：游戏设置（音效、难度偏好）、游戏统计（胜负场次、游戏时长）、历史记录（最近10局）",
+            "status": "completed",
+            "user_answer": "最简化数据：基本设置（音效开关、AI难度）、简单统计（胜负场次）"
+          }
+        ]
+      },
+      {
+        "branch_name": "技术栈选型与性能需求",
+        "storage_key": "technology_stack_and_performance",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "TECH_Q1",
+            "question_text": "桌面应用开发技术选型？",
+            "ai_suggestion": "建议：Electron + HTML5 Canvas，跨平台兼容，开发简单，易于维护和扩展",
+            "status": "completed",
+            "user_answer": "Electron + HTML5 Canvas技术栈，跨平台支持，开发效率高"
+          },
+          {
+            "question_id": "TECH_Q2",
+            "question_text": "前端渲染和交互技术方案？",
+            "ai_suggestion": "建议：原生JavaScript + Canvas API，事件驱动的交互模式，简单高效",
+            "status": "completed",
+            "user_answer": "原生JavaScript + Canvas 2D API，事件驱动交互，无复杂框架依赖"
+          },
+          {
+            "question_id": "TECH_Q3",
+            "question_text": "性能和响应速度要求？",
+            "ai_suggestion": "建议：下棋响应<100ms，AI思考时间<3秒，界面刷新率60fps，内存占用<100MB",
+            "status": "completed",
+            "user_answer": "基本性能要求：下棋响应<100ms，AI思考<3秒，流畅的界面交互"
+          },
+          {
+            "question_id": "TECH_Q4",
+            "question_text": "项目结构和模块化设计？",
+            "ai_suggestion": "建议：清晰的MVC模式，游戏逻辑、AI算法、界面渲染分离，模块化设计",
+            "status": "completed",
+            "user_answer": "模块化设计：游戏核心逻辑、AI算法模块、界面渲染模块、数据管理模块分离"
+          }
+        ]
+      },
+      {
+        "branch_name": "游戏界面设计与交互",
+        "storage_key": "ui_ux_design_principles",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "UI_Q1",
+            "question_text": "界面布局和视觉风格？",
+            "ai_suggestion": "建议：简洁现代风格，中心棋盘+侧边控制面板，清晰的对比度和舒适的配色",
+            "status": "completed",
+            "user_answer": "简洁现代风格，中心棋盘布局，右侧功能面板，清晰易读的色彩搭配"
+          },
+          {
+            "question_id": "UI_Q2",
+            "question_text": "用户交互方式和操作流程？",
+            "ai_suggestion": "建议：鼠标点击下棋，右键菜单，快捷键支持，直观的按钮和状态显示",
+            "status": "completed",
+            "user_answer": "主要鼠标交互：点击下棋，按钮操作，简单直观的操作流程"
+          },
+          {
+            "question_id": "UI_Q3",
+            "question_text": "音效和视觉反馈设计？",
+            "ai_suggestion": "建议：简单的下棋音效、胜利提示音，棋子高亮、动画过渡，可关闭音效",
+            "status": "completed",
+            "user_answer": "最简化设计：基本下棋音效（可关闭），棋子高亮显示，无复杂动画"
+          },
+          {
+            "question_id": "UI_Q4",
+            "question_text": "窗口尺寸和自适应设计？",
+            "ai_suggestion": "建议：默认800x600像素，支持窗口缩放，棋盘自适应尺寸，最小尺寸限制",
+            "status": "completed",
+            "user_answer": "默认800x600像素窗口，支持窗口缩放，棋盘自适应尺寸调整"
+          }
+        ]
+      },
+      {
+        "branch_name": "AI算法与难度设计",
+        "storage_key": "ai_algorithm_and_difficulty",
+        "status": "completed",
+        "clarification_tasks": [
+          {
+            "question_id": "AI_Q1",
+            "question_text": "不同难度AI的算法实现方案？",
+            "ai_suggestion": "建议：简单（随机+基本评估）、中等（Minimax算法深度3层）、困难（Alpha-Beta剪枝深度5层）",
+            "status": "completed",
+            "user_answer": "三级难度：简单（随机+基础评估）、中等（Minimax算法）、困难（Alpha-Beta剪枝优化）"
+          },
+          {
+            "question_id": "AI_Q2",
+            "question_text": "棋局评估函数设计策略？",
+            "ai_suggestion": "建议：连子数量评分、位置权重（中心高分）、攻防平衡、威胁检测",
+            "status": "completed",
+            "user_answer": "简化评估策略：连子数量评分、位置权重、基本攻防判断"
+          },
+          {
+            "question_id": "AI_Q3",
+            "question_text": "AI思考时间和性能优化？",
+            "ai_suggestion": "建议：简单级<1秒，中等级<2秒，困难级<3秒，异步计算避免界面卡顿",
+            "status": "completed",
+            "user_answer": "性能控制：简单<1秒、中等<2秒、困难<3秒，异步计算保证响应"
+          }
+        ]
+      }
+    ]
+  }
+}
