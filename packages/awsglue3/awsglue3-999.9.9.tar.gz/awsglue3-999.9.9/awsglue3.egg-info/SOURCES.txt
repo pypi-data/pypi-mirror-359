@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+awsglue3.egg-info/PKG-INFO
+awsglue3.egg-info/SOURCES.txt
+awsglue3.egg-info/dependency_links.txt
+awsglue3.egg-info/top_level.txt
