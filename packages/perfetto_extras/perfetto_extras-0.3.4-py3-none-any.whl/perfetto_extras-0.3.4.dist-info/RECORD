@@ -1,0 +1,8 @@
+perfetto_extras/__init__.py,sha256=v743J9YjvwZvu6rXoa_LaR4J14-avYyZIlM5T3L2sT0,354
+perfetto_extras/__main__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+perfetto_extras/opentrace.py,sha256=qNStTkZKiz6BdFCx3othGncjyQxemGLFj6_EzVEV_aI,2576
+perfetto_extras/trace_events.py,sha256=5P8S7pYw1wXeLhw2JjAjFCq1sd9zEPJarhtJqKE1MPA,21169
+perfetto_extras-0.3.4.dist-info/METADATA,sha256=-ykMM-77dHT07vxhAPtNZX_-X-qMwHiJhLNzcmDsWqA,4522
+perfetto_extras-0.3.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+perfetto_extras-0.3.4.dist-info/entry_points.txt,sha256=eCS-VKlXrbg9vvxQkGKDBPIPIRaWYRlbQOdA7x6NP-E,65
+perfetto_extras-0.3.4.dist-info/RECORD,,
