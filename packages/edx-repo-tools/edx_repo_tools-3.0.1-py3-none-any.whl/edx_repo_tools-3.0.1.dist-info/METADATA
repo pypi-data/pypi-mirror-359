@@ -1,0 +1,344 @@
+Metadata-Version: 2.1
+Name: edx-repo-tools
+Version: 3.0.1
+Summary: This repo contains a number of tools Open edX uses for working with GitHub repositories.
+Home-page: https://github.com/openedx/repo-tools
+Author: edX
+Author-email: oscm@edx.org
+License: Apache
+Keywords: edx repo tools
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+License-File: LICENSE.txt
+License-File: NOTICE.txt
+Requires-Dist: appdirs ==1.4.4
+Requires-Dist: attrs ==23.2.0
+Requires-Dist: backports-csv ==1.0.7
+Requires-Dist: bowler ==0.9.0
+Requires-Dist: cachecontrol ==0.14.0
+Requires-Dist: cachetools ==5.4.0
+Requires-Dist: certifi ==2024.7.4
+Requires-Dist: cffi ==1.16.0
+Requires-Dist: chardet ==5.2.0
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: click ==8.1.7
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: cryptography ==43.0.0
+Requires-Dist: distlib ==0.3.8
+Requires-Dist: docutils ==0.21.2
+Requires-Dist: execnet ==2.1.1
+Requires-Dist: filelock ==3.15.4
+Requires-Dist: fissix ==24.4.24
+Requires-Dist: gitdb ==4.0.11
+Requires-Dist: github3-py ==4.0.1
+Requires-Dist: gitpython ==3.1.43
+Requires-Dist: idna ==3.7
+Requires-Dist: iniconfig ==2.0.0
+Requires-Dist: lazy ==1.6
+Requires-Dist: lockfile ==0.12.2
+Requires-Dist: more-itertools ==10.3.0
+Requires-Dist: moreorless ==0.4.0
+Requires-Dist: msgpack ==1.0.8
+Requires-Dist: packaging ==24.1
+Requires-Dist: path ==16.14.0
+Requires-Dist: path-py ==12.5.0
+Requires-Dist: platformdirs ==4.2.2
+Requires-Dist: pluggy ==1.5.0
+Requires-Dist: pycparser ==2.22
+Requires-Dist: pyjwt[crypto] ==2.8.0
+Requires-Dist: pyproject-api ==1.7.1
+Requires-Dist: pytest ==8.3.1
+Requires-Dist: pytest-logging ==2015.11.4
+Requires-Dist: pytest-xdist ==3.6.1
+Requires-Dist: python-dateutil ==2.9.0.post0
+Requires-Dist: python-dotenv ==1.0.1
+Requires-Dist: pyyaml ==6.0.1
+Requires-Dist: requests ==2.32.3
+Requires-Dist: ruamel-yaml ==0.18.6
+Requires-Dist: ruamel-yaml-clib ==0.2.8
+Requires-Dist: six ==1.16.0
+Requires-Dist: smmap ==5.0.1
+Requires-Dist: statistics ==1.0.3.5
+Requires-Dist: tox ==4.16.0
+Requires-Dist: tqdm ==4.66.4
+Requires-Dist: uritemplate ==4.1.1
+Requires-Dist: urllib3 ==2.2.2
+Requires-Dist: urlobject ==2.4.3
+Requires-Dist: virtualenv ==20.26.3
+Requires-Dist: volatile ==2.1.0
+Provides-Extra: audit_gh_users
+Requires-Dist: click ==8.1.7 ; extra == 'audit_gh_users'
+Requires-Dist: fastcore ==1.5.54 ; extra == 'audit_gh_users'
+Requires-Dist: ghapi ==1.0.5 ; extra == 'audit_gh_users'
+Requires-Dist: packaging ==24.1 ; extra == 'audit_gh_users'
+Provides-Extra: conventional_commits
+Requires-Dist: alembic ==1.13.2 ; extra == 'conventional_commits'
+Requires-Dist: banal ==1.0.6 ; extra == 'conventional_commits'
+Requires-Dist: contourpy ==1.2.1 ; extra == 'conventional_commits'
+Requires-Dist: cycler ==0.12.1 ; extra == 'conventional_commits'
+Requires-Dist: dataset ==1.6.2 ; extra == 'conventional_commits'
+Requires-Dist: fonttools ==4.53.1 ; extra == 'conventional_commits'
+Requires-Dist: greenlet ==3.0.3 ; extra == 'conventional_commits'
+Requires-Dist: kiwisolver ==1.4.5 ; extra == 'conventional_commits'
+Requires-Dist: mako ==1.3.5 ; extra == 'conventional_commits'
+Requires-Dist: markupsafe ==2.1.5 ; extra == 'conventional_commits'
+Requires-Dist: matplotlib ==3.9.1 ; extra == 'conventional_commits'
+Requires-Dist: numpy ==2.0.1 ; extra == 'conventional_commits'
+Requires-Dist: packaging ==24.1 ; extra == 'conventional_commits'
+Requires-Dist: pandas ==2.2.2 ; extra == 'conventional_commits'
+Requires-Dist: pillow ==10.4.0 ; extra == 'conventional_commits'
+Requires-Dist: pyparsing ==3.1.2 ; extra == 'conventional_commits'
+Requires-Dist: python-dateutil ==2.9.0.post0 ; extra == 'conventional_commits'
+Requires-Dist: pytz ==2024.1 ; extra == 'conventional_commits'
+Requires-Dist: six ==1.16.0 ; extra == 'conventional_commits'
+Requires-Dist: sqlalchemy ==1.4.52 ; extra == 'conventional_commits'
+Requires-Dist: typing-extensions ==4.12.2 ; extra == 'conventional_commits'
+Requires-Dist: tzdata ==2024.1 ; extra == 'conventional_commits'
+Provides-Extra: dev
+Requires-Dist: alembic ==1.13.2 ; extra == 'dev'
+Requires-Dist: appdirs ==1.4.4 ; extra == 'dev'
+Requires-Dist: astroid ==3.2.4 ; extra == 'dev'
+Requires-Dist: attrs ==23.2.0 ; extra == 'dev'
+Requires-Dist: backports-csv ==1.0.7 ; extra == 'dev'
+Requires-Dist: banal ==1.0.6 ; extra == 'dev'
+Requires-Dist: bowler ==0.9.0 ; extra == 'dev'
+Requires-Dist: build ==1.2.1 ; extra == 'dev'
+Requires-Dist: cache-to-disk ==2.0.0 ; extra == 'dev'
+Requires-Dist: cachecontrol ==0.14.0 ; extra == 'dev'
+Requires-Dist: cachetools ==5.4.0 ; extra == 'dev'
+Requires-Dist: certifi ==2024.7.4 ; extra == 'dev'
+Requires-Dist: cffi ==1.16.0 ; extra == 'dev'
+Requires-Dist: chardet ==5.2.0 ; extra == 'dev'
+Requires-Dist: charset-normalizer ==3.3.2 ; extra == 'dev'
+Requires-Dist: click-log ==0.4.0 ; extra == 'dev'
+Requires-Dist: click ==8.1.7 ; extra == 'dev'
+Requires-Dist: code-annotations ==1.8.0 ; extra == 'dev'
+Requires-Dist: colorama ==0.4.6 ; extra == 'dev'
+Requires-Dist: contourpy ==1.2.1 ; extra == 'dev'
+Requires-Dist: cryptography ==43.0.0 ; extra == 'dev'
+Requires-Dist: cycler ==0.12.1 ; extra == 'dev'
+Requires-Dist: dataset ==1.6.2 ; extra == 'dev'
+Requires-Dist: deprecated ==1.2.14 ; extra == 'dev'
+Requires-Dist: dill ==0.3.8 ; extra == 'dev'
+Requires-Dist: distlib ==0.3.8 ; extra == 'dev'
+Requires-Dist: docutils ==0.21.2 ; extra == 'dev'
+Requires-Dist: edx-lint ==5.3.7 ; extra == 'dev'
+Requires-Dist: execnet ==2.1.1 ; extra == 'dev'
+Requires-Dist: fastcore ==1.5.54 ; extra == 'dev'
+Requires-Dist: filelock ==3.15.4 ; extra == 'dev'
+Requires-Dist: fissix ==24.4.24 ; extra == 'dev'
+Requires-Dist: fonttools ==4.53.1 ; extra == 'dev'
+Requires-Dist: ghapi ==1.0.5 ; extra == 'dev'
+Requires-Dist: gitdb ==4.0.11 ; extra == 'dev'
+Requires-Dist: github3-py ==4.0.1 ; extra == 'dev'
+Requires-Dist: gitpython ==3.1.43 ; extra == 'dev'
+Requires-Dist: greenlet ==3.0.3 ; extra == 'dev'
+Requires-Dist: idna ==3.7 ; extra == 'dev'
+Requires-Dist: iniconfig ==2.0.0 ; extra == 'dev'
+Requires-Dist: isort ==5.13.2 ; extra == 'dev'
+Requires-Dist: jinja2 ==3.1.4 ; extra == 'dev'
+Requires-Dist: kiwisolver ==1.4.5 ; extra == 'dev'
+Requires-Dist: lazy ==1.6 ; extra == 'dev'
+Requires-Dist: lockfile ==0.12.2 ; extra == 'dev'
+Requires-Dist: mako ==1.3.5 ; extra == 'dev'
+Requires-Dist: markdown-it-py ==3.0.0 ; extra == 'dev'
+Requires-Dist: markupsafe ==2.1.5 ; extra == 'dev'
+Requires-Dist: matplotlib ==3.9.1 ; extra == 'dev'
+Requires-Dist: mccabe ==0.7.0 ; extra == 'dev'
+Requires-Dist: mdurl ==0.1.2 ; extra == 'dev'
+Requires-Dist: more-itertools ==10.3.0 ; extra == 'dev'
+Requires-Dist: moreorless ==0.4.0 ; extra == 'dev'
+Requires-Dist: msgpack ==1.0.8 ; extra == 'dev'
+Requires-Dist: numpy ==2.0.1 ; extra == 'dev'
+Requires-Dist: packaging ==24.1 ; extra == 'dev'
+Requires-Dist: pandas ==2.2.2 ; extra == 'dev'
+Requires-Dist: path-py ==12.5.0 ; extra == 'dev'
+Requires-Dist: path ==16.14.0 ; extra == 'dev'
+Requires-Dist: pbr ==6.0.0 ; extra == 'dev'
+Requires-Dist: pillow ==10.4.0 ; extra == 'dev'
+Requires-Dist: pip-tools ==7.4.1 ; extra == 'dev'
+Requires-Dist: platformdirs ==4.2.2 ; extra == 'dev'
+Requires-Dist: playwright ==1.45.1 ; extra == 'dev'
+Requires-Dist: pluggy ==1.5.0 ; extra == 'dev'
+Requires-Dist: pycparser ==2.22 ; extra == 'dev'
+Requires-Dist: pyee ==11.1.0 ; extra == 'dev'
+Requires-Dist: pygithub ==2.3.0 ; extra == 'dev'
+Requires-Dist: pygments ==2.18.0 ; extra == 'dev'
+Requires-Dist: pyjwt[crypto] ==2.8.0 ; extra == 'dev'
+Requires-Dist: pylint-celery ==0.3 ; extra == 'dev'
+Requires-Dist: pylint-django ==2.5.5 ; extra == 'dev'
+Requires-Dist: pylint-plugin-utils ==0.8.2 ; extra == 'dev'
+Requires-Dist: pylint ==3.2.6 ; extra == 'dev'
+Requires-Dist: pynacl ==1.5.0 ; extra == 'dev'
+Requires-Dist: pyparsing ==3.1.2 ; extra == 'dev'
+Requires-Dist: pyproject-api ==1.7.1 ; extra == 'dev'
+Requires-Dist: pyproject-hooks ==1.1.0 ; extra == 'dev'
+Requires-Dist: pytest-logging ==2015.11.4 ; extra == 'dev'
+Requires-Dist: pytest-mock ==3.14.0 ; extra == 'dev'
+Requires-Dist: pytest-xdist ==3.6.1 ; extra == 'dev'
+Requires-Dist: pytest ==8.3.1 ; extra == 'dev'
+Requires-Dist: python-dateutil ==2.9.0.post0 ; extra == 'dev'
+Requires-Dist: python-dotenv ==1.0.1 ; extra == 'dev'
+Requires-Dist: python-slugify ==8.0.4 ; extra == 'dev'
+Requires-Dist: pytz ==2024.1 ; extra == 'dev'
+Requires-Dist: pyyaml ==6.0.1 ; extra == 'dev'
+Requires-Dist: requests ==2.32.3 ; extra == 'dev'
+Requires-Dist: requirements-parser ==0.10.1 ; extra == 'dev'
+Requires-Dist: responses ==0.25.3 ; extra == 'dev'
+Requires-Dist: rich ==13.7.1 ; extra == 'dev'
+Requires-Dist: ruamel-yaml-clib ==0.2.8 ; extra == 'dev'
+Requires-Dist: ruamel-yaml ==0.18.6 ; extra == 'dev'
+Requires-Dist: six ==1.16.0 ; extra == 'dev'
+Requires-Dist: smmap ==5.0.1 ; extra == 'dev'
+Requires-Dist: sqlalchemy ==1.4.52 ; extra == 'dev'
+Requires-Dist: statistics ==1.0.3.5 ; extra == 'dev'
+Requires-Dist: stevedore ==5.2.0 ; extra == 'dev'
+Requires-Dist: text-unidecode ==1.3 ; extra == 'dev'
+Requires-Dist: tomlkit ==0.13.0 ; extra == 'dev'
+Requires-Dist: tox ==4.16.0 ; extra == 'dev'
+Requires-Dist: tqdm ==4.66.4 ; extra == 'dev'
+Requires-Dist: types-setuptools ==71.1.0.20240723 ; extra == 'dev'
+Requires-Dist: typing-extensions ==4.12.2 ; extra == 'dev'
+Requires-Dist: tzdata ==2024.1 ; extra == 'dev'
+Requires-Dist: uritemplate ==4.1.1 ; extra == 'dev'
+Requires-Dist: urllib3 ==2.2.2 ; extra == 'dev'
+Requires-Dist: urlobject ==2.4.3 ; extra == 'dev'
+Requires-Dist: virtualenv ==20.26.3 ; extra == 'dev'
+Requires-Dist: volatile ==2.1.0 ; extra == 'dev'
+Requires-Dist: wheel ==0.43.0 ; extra == 'dev'
+Requires-Dist: wrapt ==1.16.0 ; extra == 'dev'
+Provides-Extra: find_dependencies
+Requires-Dist: certifi ==2024.7.4 ; extra == 'find_dependencies'
+Requires-Dist: charset-normalizer ==3.3.2 ; extra == 'find_dependencies'
+Requires-Dist: idna ==3.7 ; extra == 'find_dependencies'
+Requires-Dist: markdown-it-py ==3.0.0 ; extra == 'find_dependencies'
+Requires-Dist: mdurl ==0.1.2 ; extra == 'find_dependencies'
+Requires-Dist: pygments ==2.18.0 ; extra == 'find_dependencies'
+Requires-Dist: requests ==2.32.3 ; extra == 'find_dependencies'
+Requires-Dist: requirements-parser ==0.10.1 ; extra == 'find_dependencies'
+Requires-Dist: rich ==13.7.1 ; extra == 'find_dependencies'
+Requires-Dist: types-setuptools ==71.1.0.20240723 ; extra == 'find_dependencies'
+Requires-Dist: urllib3 ==2.2.2 ; extra == 'find_dependencies'
+Provides-Extra: pull_request_creator
+Requires-Dist: certifi ==2024.7.4 ; extra == 'pull_request_creator'
+Requires-Dist: cffi ==1.16.0 ; extra == 'pull_request_creator'
+Requires-Dist: charset-normalizer ==3.3.2 ; extra == 'pull_request_creator'
+Requires-Dist: cryptography ==43.0.0 ; extra == 'pull_request_creator'
+Requires-Dist: deprecated ==1.2.14 ; extra == 'pull_request_creator'
+Requires-Dist: idna ==3.7 ; extra == 'pull_request_creator'
+Requires-Dist: packaging ==24.1 ; extra == 'pull_request_creator'
+Requires-Dist: pycparser ==2.22 ; extra == 'pull_request_creator'
+Requires-Dist: pygithub ==2.3.0 ; extra == 'pull_request_creator'
+Requires-Dist: pyjwt[crypto] ==2.8.0 ; extra == 'pull_request_creator'
+Requires-Dist: pynacl ==1.5.0 ; extra == 'pull_request_creator'
+Requires-Dist: requests ==2.32.3 ; extra == 'pull_request_creator'
+Requires-Dist: typing-extensions ==4.12.2 ; extra == 'pull_request_creator'
+Requires-Dist: urllib3 ==2.2.2 ; extra == 'pull_request_creator'
+Requires-Dist: wrapt ==1.16.0 ; extra == 'pull_request_creator'
+Provides-Extra: repo_access_scraper
+Requires-Dist: greenlet ==3.0.3 ; extra == 'repo_access_scraper'
+Requires-Dist: playwright ==1.45.1 ; extra == 'repo_access_scraper'
+Requires-Dist: pyee ==11.1.0 ; extra == 'repo_access_scraper'
+Requires-Dist: typing-extensions ==4.12.2 ; extra == 'repo_access_scraper'
+Provides-Extra: repo_checks
+Requires-Dist: cache-to-disk ==2.0.0 ; extra == 'repo_checks'
+Requires-Dist: certifi ==2024.7.4 ; extra == 'repo_checks'
+Requires-Dist: charset-normalizer ==3.3.2 ; extra == 'repo_checks'
+Requires-Dist: click ==8.1.7 ; extra == 'repo_checks'
+Requires-Dist: fastcore ==1.5.54 ; extra == 'repo_checks'
+Requires-Dist: ghapi ==1.0.5 ; extra == 'repo_checks'
+Requires-Dist: idna ==3.7 ; extra == 'repo_checks'
+Requires-Dist: packaging ==24.1 ; extra == 'repo_checks'
+Requires-Dist: pyyaml ==6.0.1 ; extra == 'repo_checks'
+Requires-Dist: requests ==2.32.3 ; extra == 'repo_checks'
+Requires-Dist: urllib3 ==2.2.2 ; extra == 'repo_checks'
+
+###################
+Open edX Repo Tools
+###################
+
+This repo contains a number of tools Open edX engineers use for working with
+GitHub repositories.
+
+The set of tools has grown over the years. Some are old and in current use,
+some have fallen out of use, some are quite new.
+
+Setting up GitHub authentication
+================================
+
+Most of these make GitHub API calls, and so will need GitHub credentials in
+order to not be severely rate-limited.  Edit (or create) `~/.netrc` so that it
+has an entry like this::
+
+    machine api.github.com
+      login your_user_name
+      password ghp_XyzzyfGXFooBar8nBqQuuxY9brgXYz4Xyzzy
+
+Change the login to your GitHub user name.  The password is a Personal Access
+Token you get from https://github.com/settings/tokens.  Visit that page, click
+"Generate new token." It will prompt you for your password, then you'll see a
+scary list of scopes. Check the "repo" option and click "Generate token." Copy
+the token that appears. Paste it into your ~/.netrc in the "password" entry.
+
+
+Working in the repo
+===================
+
+To work on these tools:
+
+1. Use a virtualenv.
+
+2. Install dependencies::
+
+    make dev-install
+
+3. Run tests::
+
+    make test
+
+4. Older tools were Python files run from the root of the repo.  Now we are
+   being more disciplined and putting code into importable modules with entry
+   points in setup.py.
+
+5. Simple tools can go into an existing subdirectory of edx_repo_tools.  Follow
+   the structure of existing tools you find here.  More complex tools, or ones
+   that need unusual third-party requirements, should go into a new
+   subdirectory of edx_repo_tools.
+
+6. Add a new `entry_point` in setup.py for your command:
+
+   .. code::
+
+        entry_points={
+            'console_scripts': [
+                ...
+                'new_tool = edx_repo_tools.new_tool_dir.new_tool:main',
+                ...
+
+7. If your tool is in its own directory, you can create an `extra.in` file
+   there with third-party requirements intended just for your tool.  This will
+   automatically create an installable "extra" for your requirements.
+
+Active Tools
+============
+
+repo_checks
+-----------
+
+See the `repo_checks README <edx_repo_tools/repo_checks/README.rst>`_ in its subfolder.
+
+Older Tools
+===========
+
+There are many programs in this repo in various stages of disrepair.  A few
+of them are described in this repo's `older README.md`_ file.  Others are not
+described at all, but may be useful, or have useful tidbits in the code.
+
+.. _older README.md: https://github.com/openedx/repo-tools/blob/7aa8bda466d1925c56d4ad6e3b2bdd87b1f83148/README.md
+
+
+Feedback
+========
+
+Please send any feedback to oscm@edx.org.
