@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: preflexpart
+Version: 0.1.0
+Summary: A Python library for pre-processing FLEXPART inputs
+Author: Nina Burgdorfer
+Author-email: nina.burgdorfer@meteoswiss.ch
+Requires-Python: >=3.11,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: earthkit-data (>=0.12.2,<0.13.0)
+Requires-Dist: ecmwf-api-client (>=1.6.3,<2.0.0)
+Requires-Dist: ipdb (>=0.13.13,<0.14.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: xarray (>=2025.1.1,<2026.0.0)
+Description-Content-Type: text/markdown
+
+# preflexpart
+
+A Python library for pre-processing FLEXPART inputs.
+
+## Features
+- Supports preprocessing of FLEXPART meteorological input fields
+- Utilizes `xarray` for data manipulation
+- Integrates with ECMWF API for data retrieval (currently via MARS, with future plans to support Polytope)
+
+## Installation
+
+### Using Poetry
+```sh
+poetry install
+```
+
+## Dependencies
+- Python 3.11+
+- `xarray`
+- `ecmwf-api-client`
+- `meteodatalab` (from MeteoSwiss repository) (TODO: get rid of this dep)
+
+## Development
+Run tests using:
+```sh
+pytest
+```
+
+## License
+This project is licensed under the terms of the LICENSE file included in this repository.
+
+
