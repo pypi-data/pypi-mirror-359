@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+gtfstk.egg-info/PKG-INFO
+gtfstk.egg-info/SOURCES.txt
+gtfstk.egg-info/dependency_links.txt
+gtfstk.egg-info/top_level.txt
