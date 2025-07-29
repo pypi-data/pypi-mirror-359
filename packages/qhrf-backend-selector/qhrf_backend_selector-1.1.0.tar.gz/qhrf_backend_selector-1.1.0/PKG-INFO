@@ -1,0 +1,253 @@
+Metadata-Version: 2.4
+Name: qhrf-backend-selector
+Version: 1.1.0
+Summary: Interactive IBM Quantum backend selector for QHRF experiments
+Author-email: Zach White <Xses.Code@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/xs-es/qhrf-backend-selector
+Project-URL: Documentation, https://github.com/xs-es/qhrf-backend-selector/blob/main/README.md
+Project-URL: Repository, https://github.com/xs-es/qhrf-backend-selector.git
+Project-URL: Bug Tracker, https://github.com/xs-es/qhrf-backend-selector/issues
+Keywords: quantum computing,IBM Quantum,QHRF,quantum physics,backend selector
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qiskit-ibm-runtime>=0.17.0
+Requires-Dist: qiskit>=0.45.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: flake8>=5.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+Dynamic: license-file
+
+# QHRF Backend Selector
+
+Interactive IBM Quantum backend selector for Quantum Harmonic Resonance Framework (QHRF) experiments and quantum computing research.
+
+## Features
+
+- 🚀 **Instant templates** - Generate complete QHRF experiment files with `--base`
+- 🔬 **Real-time backend status** - See operational status and queue lengths
+- 🖥️ **Simulator support** - Includes both hardware and simulator backends  
+- 📊 **Detailed information** - Qubits, processor type, connections, and more
+- 🎯 **Smart recommendations** - Automatic backend scoring and recommendations
+- 🚀 **CLI interface** - Command-line tool for quick backend selection
+- ⚙️ **Easy integration** - Simple API for use in your quantum experiments
+
+## Installation
+
+```bash
+pip install qhrf-backend-selector
+```
+
+## Quick Start
+
+### Create a Base Template
+
+The fastest way to get started:
+
+```bash
+# Create a complete QHRF experiment template
+qhrf-backends --base
+
+# This creates 'qhrf_experiment_base.py' with everything you need
+python qhrf_experiment_base.py
+```
+
+The template includes:
+- ✅ Backend selection with `qhrf-backend-selector`
+- ✅ Complete QHRF circuit creation example
+- ✅ Transpilation and execution workflow
+- ✅ Results analysis with QHRF metrics
+- ✅ Error handling and user guidance
+- ✅ Customizable QHRF parameters (φ, breathing frequencies)
+- ✅ Ready-to-run experiment structure
+
+**Generated template structure:**
+```python
+def create_qhrf_circuit():
+    # QHRF parameters
+    phi = 1.618034  # Golden ratio
+    breathing_freq = 0.2857  # Breathing frequency
+    
+    # Circuit creation with QHRF methodology
+    # ... (complete implementation)
+
+def run_qhrf_experiment():
+    # 1. Backend selection
+    service, backend = list_and_select_backend()
+    
+    # 2. Circuit creation and execution  
+    # 3. Results analysis
+    # ... (complete workflow)
+```
+
+### Interactive Selection
+
+```python
+from qhrf_backend_selector import list_and_select_backend, get_backend_details
+
+# Select a backend interactively
+service, backend = list_and_select_backend()
+
+if service and backend:
+    # Show detailed information
+    get_backend_details(backend)
+    
+    # Use in your experiments
+    # Your quantum circuit code here...
+```
+
+### Programmatic Selection
+
+```python
+from qhrf_backend_selector import recommend_backend, check_authentication
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+# Check authentication first
+if check_authentication():
+    service = QiskitRuntimeService()
+    backends = service.backends()
+    
+    # Get backend recommendations
+    from qhrf_backend_selector.selector import _parse_backends
+    backend_infos = _parse_backends(backends)
+    
+    # Recommend best backend for 5+ qubit experiments
+    recommended = recommend_backend(backend_infos, min_qubits=5)
+    
+    if recommended:
+        print(f"Recommended: {recommended.name}")
+```
+
+### Command Line Interface
+
+```bash
+# Interactive backend selection
+qhrf-backends
+
+# Check authentication
+qhrf-backends --check-auth
+
+# Setup authentication
+qhrf-backends --setup-auth
+
+# Create base template file for experiments
+qhrf-backends --base
+
+# Create template with custom filename
+qhrf-backends --base my_experiment.py
+```
+
+## Authentication Setup
+
+1. Go to [IBM Quantum](https://quantum-computing.ibm.com/)
+2. Log in to your account  
+3. Copy your API token from Account Settings
+4. Set up authentication:
+
+```python
+from qiskit_ibm_runtime import QiskitRuntimeService
+QiskitRuntimeService.save_account(token='your_token_here')
+```
+
+## API Reference
+
+### Core Functions
+
+- `list_and_select_backend()` - Interactive backend selection
+- `get_backend_details(backend)` - Display detailed backend information
+- `check_authentication()` - Verify IBM Quantum connection
+- `setup_authentication()` - Authentication setup guide
+
+### Utility Functions
+
+- `recommend_backend(backend_infos, min_qubits)` - Get backend recommendations
+- `get_backend_performance(backend_info)` - Calculate performance metrics
+- `format_backend_status(backend_info)` - Format status display
+
+## Example Output
+
+```
+🔬 REAL QUANTUM COMPUTERS:
+--------------------------------------------------
+ 1. ibm_brisbane       127 qubits  🟢 Queue: 12
+ 2. ibm_kyiv           127 qubits  🟢 Queue: 8  
+ 3. ibm_sherbrooke     127 qubits  🔴 OFFLINE
+ 4. ibm_torino         133 qubits  🟢 Queue: 15
+
+🖥️  SIMULATORS:
+--------------------------------------------------
+ 5. simulator_mps       100 qubits  🖥️  Simulator
+ 6. simulator_statevector 32 qubits  🖥️  Simulator
+
+👆 Select backend (1-6): 2
+
+🎯 Selected: ibm_kyiv
+   📊 Qubits: 127
+   🔄 Status: Operational
+   ⏳ Queue: 8 jobs
+```
+
+## Requirements
+
+- Python 3.8+
+- qiskit-ibm-runtime >= 0.17.0
+- qiskit >= 0.45.0
+
+## Development
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/qhrf-backend-selector.git
+cd qhrf-backend-selector
+
+# Install in development mode
+pip install -e .[dev]
+
+# Run tests
+pytest
+
+# Format code
+black src/
+
+# Type checking
+mypy src/
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file.
+
+## Author
+
+**Zach White**  
+Quantum Harmonic Resonance Institute  
+Email: Xses.Science@gmail.com
+
+## Contributing
+
+Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Changelog
+
+### 1.1.0 (2025-06-30)
+- Initial release
+- Interactive backend selection
+- CLI interface with --base template generation
+- Backend recommendations
+- Comprehensive backend information display
+- Complete QHRF experiment template creation
