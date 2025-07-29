@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: walt-node
+Version: 10.0
+Summary: WalT optional software embedded in images.
+Home-page: https://walt-project.liglab.fr
+Author: WalT developers
+Author-email: walt-contact@univ-grenoble-alpes.fr
+License: 3-Clause BSD
+Keywords: WalT testbed
+Requires-Dist: walt-common==10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
