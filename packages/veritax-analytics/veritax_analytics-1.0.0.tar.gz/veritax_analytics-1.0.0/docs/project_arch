@@ -1,0 +1,52 @@
+graph TD
+    subgraph MCP Server Environment
+        MCP_Server[MCP Server]
+        Analytics_SDK[Analytics SDK]
+        MCP_Server -- Integrates --> Analytics_SDK
+    end
+
+    subgraph Local MCP Server Environment
+        MCP_Server_Stdio[MCP_Server_Stdio]
+        Analytics_SDK_Stdio[Analytics_SDK_Stdio]
+        Forwarder_Agent[Forwarder Agent]
+        MCP_Server_Stdio -- Integrates --> Analytics_SDK_Stdio
+        Analytics_SDK_Stdio -- Writes Events Locally --> Forwarder_Agent
+        Forwarder_Agent -- Emits Events (HTTPS) --> Ingestion_Endpoint
+    end
+
+    Analytics_SDK -- Emits Events (HTTPS JSON) --> Ingestion_Endpoint[Ingestion API Endpoint]
+
+    subgraph Analytics Backend - GCP Implementation
+        Ingestion_Endpoint -- Raw Events --> PubSub_Queue[Cloud Pub/Sub Queue]
+        PubSub_Queue -- Message Trigger --> Data_Processor[Data Processor Function]
+        Data_Processor -- Processed Events --> BigQuery_DB[BigQuery Tables]
+        
+        subgraph BigQuery Schema
+            BigQuery_DB --> Tool_Events[tool_events]
+            BigQuery_DB --> Server_Health[server_health]
+            BigQuery_DB --> Error_Analytics[error_analytics]
+        end
+        
+        subgraph Monitoring Layer
+            Data_Processor -- Custom Metrics --> Cloud_Monitoring[Cloud Monitoring]
+            Cloud_Monitoring -- Prometheus Format --> Prometheus_Endpoint["/metrics" Endpoint]
+        end
+    end
+
+    subgraph Client Applications
+        Web_Dashboard[Analytics Dashboard]
+        Prometheus_Scraper[Prometheus Scraper]
+        
+        Web_Dashboard -- Queries --> BigQuery_DB
+        Prometheus_Scraper -- Scrapes --> Prometheus_Endpoint
+    end
+
+    %% Abstraction boundary
+    style Analytics_SDK fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    style Ingestion_Endpoint fill:#f3e5f5,stroke:#4a148c,stroke-width:3px
+    style PubSub_Queue fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style Data_Processor fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style BigQuery_DB fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    classDef userFacing fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef internal fill:#fff3e0,stroke:#e65100,stroke-width:1px

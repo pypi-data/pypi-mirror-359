@@ -1,0 +1,21 @@
+# Production Environment Configuration
+environment: production
+debug: false
+log_level: WARNING
+
+sdk:
+  batch_size: 100
+  flush_interval: 60
+  retry_attempts: 5
+
+infrastructure:
+  ingestion_api:
+    memory: 2Gi
+    cpu: 2000m
+    min_instances: 2
+    max_instances: 100
+  
+  data_processor:
+    memory: 1Gi
+    timeout: 300s
+    max_instances: 1000

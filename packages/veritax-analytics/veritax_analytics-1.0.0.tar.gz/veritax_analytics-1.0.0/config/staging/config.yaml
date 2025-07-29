@@ -1,0 +1,21 @@
+# Staging Environment Configuration
+environment: staging
+debug: false
+log_level: INFO
+
+sdk:
+  batch_size: 50
+  flush_interval: 30
+  retry_attempts: 5
+
+infrastructure:
+  ingestion_api:
+    memory: 1Gi
+    cpu: 1000m
+    min_instances: 1
+    max_instances: 50
+  
+  data_processor:
+    memory: 512Mi
+    timeout: 120s
+    max_instances: 500

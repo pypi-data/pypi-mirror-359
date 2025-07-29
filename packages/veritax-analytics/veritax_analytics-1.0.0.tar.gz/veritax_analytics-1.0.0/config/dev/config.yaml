@@ -1,0 +1,21 @@
+# Development Environment Configuration
+environment: development
+debug: true
+log_level: DEBUG
+
+sdk:
+  batch_size: 10
+  flush_interval: 5
+  retry_attempts: 3
+
+infrastructure:
+  ingestion_api:
+    memory: 512Mi
+    cpu: 1000m
+    min_instances: 0
+    max_instances: 10
+  
+  data_processor:
+    memory: 256Mi
+    timeout: 60s
+    max_instances: 100
