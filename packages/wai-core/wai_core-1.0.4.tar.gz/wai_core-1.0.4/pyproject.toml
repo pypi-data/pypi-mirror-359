@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wai-core"
+version = "1.0.4"
+description = "WAI: World AI format unifying various 3D/4D datasets"
+readme = "readme.md"
+authors = [
+    {name = "Norman Mueller", email = "normanm@meta.com"}
+]
+license = {text = "CC-BY-NC-4.0"}
+requires-python = ">=3.10.0"
+dependencies = [
+    "color-science",
+    "einops",
+    "imageio",
+    "iopath",
+    "matplotlib",
+    "numpy",
+    "opencv-python==4.10.0.84",  # Comment this out if using OpenCV from Conda
+    "orjson",
+    "pillow",
+    "plyfile",
+    "portalocker",
+    "pycolmap",
+    "python-box",
+    "pyyaml",  # For yaml imports
+    "scipy",
+    "torch",
+    "torchvision",
+    "tqdm",
+    "trimesh",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pre-commit-hooks",
+]
+# After installing the "dev" feature, run this to install pre-commit hooks:
+# python -m post_dev_install
+
+[tool.setuptools]
+packages = ["wai", "wai.colormaps"]
+# package-dir = {"wai" = "wai-core"}
+
+[tool.setuptools.package-data]
+wai = ["colormaps/*.npz"]
+
+[tool.ruff]
+## Enable the isort rules.
+lint.extend-select = ["I"]
+
+## Following https://www.internalfb.com/wiki/Python/code_formatting/pyfmt/
+target-version = "py310"
+
+## Following https://www.internalfb.com/wiki/Python/code_formatting/pyfmt/
+[tool.ruff.lint.isort]
+case-sensitive = false
+combine-as-imports = true
+detect-same-package = false
+order-by-type = false
