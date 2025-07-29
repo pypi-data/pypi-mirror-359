@@ -1,0 +1,14 @@
+autoDCRdata/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+autoDCRdata/regexes.json,sha256=YZF582h8wy7hOxlASeFynFzel1lK-SN3hYnIPT2M48w,318
+autoDCRscripts/__init__.py,sha256=xOd3C-6WbUO7iuN42mqv0oss_J-Q6O9QhEoc6YwQRxI,188
+autoDCRscripts/annotate.py,sha256=0wYpvvJl_HIQtalw24kPup7PbCMFeXaCUGis6FChcd0,4732
+autoDCRscripts/autoDCRfunctions.py,sha256=ymK_7Si-M_3HrS6V-AgqF2Il8928TDNkkre4H7rntzI,52228
+autoDCRscripts/commandline.py,sha256=HUVgjUuZWZ1-UzYeLJsZT8ioDaOjc039Td_KqMe2TAY,5719
+autoDCRscripts/discover.py,sha256=N2UAVLFuU9D7LPdWdF3qpoTIe3uW0-nR3NBW7ad4itw,7479
+autoDCRscripts/genotype.py,sha256=USfKgr8NwvocWY-TlO6BDIouSB7I4wTuhbiR_gIt4fk,1812
+autoDCRscripts/main.py,sha256=eEP8SMf2kOFr0-EUI-h4KFshtu8yjijCsXxT9qZ1GtI,9559
+autoDCRscripts/referencedata.py,sha256=EykBOMgd1yk6JlYRFEaCmFhahL5Xl2GrFuc_Vr6PalA,27282
+autodcr-0.3.0.dist-info/METADATA,sha256=CL_H7e1iH1dUHskzAH-HcXU9x6DrnbOnvWsGxS6u24E,2202
+autodcr-0.3.0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+autodcr-0.3.0.dist-info/entry_points.txt,sha256=_JBiQkU_GwOQYM9wcYQlubT-Hw2jMA87AT8GHjk-Mbo,51
+autodcr-0.3.0.dist-info/RECORD,,

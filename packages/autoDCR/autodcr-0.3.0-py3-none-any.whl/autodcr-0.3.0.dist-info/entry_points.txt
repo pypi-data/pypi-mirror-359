@@ -1,0 +1,3 @@
+[console_scripts]
+autoDCR=autoDCRscripts.main:app
+
