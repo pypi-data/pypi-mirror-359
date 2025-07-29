@@ -1,0 +1,167 @@
+# Agent Spy Monitor
+
+An operational monitoring library for AI agent applications that tracks token usage, costs, performance metrics, and environmental impact.
+
+## Features
+
+1. **Token Counting**
+   - Total tokens
+   - Input tokens
+   - Output tokens
+
+2. **Cost Calculation**
+   - Based on the token usage and model pricing
+
+3. **Performance Metrics**
+   - Time taken for each call
+   - CPU and memory consumption
+
+4. **Environmental Impact**
+   - Estimated CO₂ emissions
+
+5. **Logging**
+   - Comprehensive logs of all operations
+
+6. **Visualization**
+   - CLI summaries
+   - Streamlit dashboard for detailed insights
+
+## Installation
+
+You can install **Agent Spy Monitor** via [PyPI](https://pypi.org/project/agent-spy-monitor/) using `pip`:
+
+```bash
+pip install agent-spy-monitor
+```
+
+## Quick Start
+
+```python
+from agent_spy import AgentSpy
+
+# Initialize the monitor
+spy = AgentSpy(model="gpt-4o")
+
+# Start monitoring
+spy.start()
+
+# Your AI agent code here
+input_text = "Hello, how are you?"
+output_text = "I'm doing well, thank you!"
+
+# Set token counts
+spy.set_token_counts(input_text, output_text)
+
+# End monitoring
+spy.end()
+
+# View results
+print(f"Total cost: ${spy.cost:.6f}")
+print(f"Total tokens: {spy.total_tokens}")
+print(f"Carbon emissions: {spy.carbon_emissions:.6f} kg CO2")
+```
+
+## Advanced Usage
+
+### Using with CrewAI
+
+```python
+from agent_spy import AgentSpy
+
+spy = AgentSpy(model="gpt-4o")
+spy.start()
+
+# Run your CrewAI workflow
+crew_output = your_crew.kickoff()
+
+# Extract token usage from CrewAI output
+spy.set_token_usage_from_crew_output(crew_output)
+spy.end()
+```
+
+### Extended Monitoring with Visualization
+
+```python
+from agent_spy import AgentSpyExtended
+
+spy = AgentSpyExtended(model="gpt-4o")
+spy.start()
+
+# Your AI operations here
+
+spy.end()
+
+# Show CLI summary
+spy.visualize(method='cli')
+
+# Or launch Streamlit dashboard
+spy.visualize(method='streamlit')
+```
+
+## Supported Models
+
+The library supports cost calculation for various AI models:
+
+- **OpenAI**: GPT-4o, GPT-4o-mini, GPT-4, GPT-3.5-turbo, and more
+- **Anthropic**: Claude-3 variants, Claude-2, Claude Instant
+- **Google**: Gemini Pro, Gemini Flash
+
+## Configuration Options
+
+```python
+# Disable resource monitoring for better performance
+spy = AgentSpy(model="gpt-4o", enable_monitoring=False)
+
+# Custom encoding for token counting
+spy = AgentSpy(model="custom-model", encoding_name="cl100k_base")
+```
+
+## API Reference
+
+### AgentSpy Class
+
+**Methods:**
+- `start()`: Begin monitoring
+- `end()`: Stop monitoring and calculate metrics
+- `set_token_counts(input_text, output_text)`: Manually set token counts
+- `set_token_usage_from_crew_output(crew_output)`: Extract from CrewAI output
+- `count_tokens(text)`: Count tokens in text
+
+**Properties:**
+- `cost`: Total cost in USD
+- `total_tokens`: Total token count
+- `input_tokens`: Input token count
+- `output_tokens`: Output token count
+- `total_time`: Execution time in seconds
+- `carbon_emissions`: Estimated CO₂ emissions in kg
+
+### AgentSpyExtended Class
+
+Extends `AgentSpy` with visualization capabilities:
+
+**Additional Methods:**
+- `visualize(method='cli')`: Show CLI summary
+- `visualize(method='streamlit')`: Launch Streamlit dashboard
+
+## License
+
+MIT License
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Author
+
+**Nidhish Wakodikar**
+- Email: nidhishwakodikar@gmail.com
+- GitHub: [@nidhishwakodikar](https://github.com/Nidhish-714)
+
+## Changelog
+
+### v0.1.0
+- Initial release
+- Token counting and cost calculation
+- Performance monitoring
+- Carbon emissions estimation
+- CLI and Streamlit visualization
