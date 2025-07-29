@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+matricesm.egg-info/PKG-INFO
+matricesm.egg-info/SOURCES.txt
+matricesm.egg-info/dependency_links.txt
+matricesm.egg-info/top_level.txt
