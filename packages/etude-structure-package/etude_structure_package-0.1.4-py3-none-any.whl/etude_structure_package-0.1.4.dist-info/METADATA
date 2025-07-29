@@ -1,0 +1,129 @@
+Metadata-Version: 2.4
+Name: etude_structure_package
+Version: 0.1.4
+Summary: A package for converting impyrial lengths and weights.
+Author: Josue Afouda
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.10
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+# ![package_python_tuto](https://github.com/user-attachments/assets/93d342ad-742d-41dd-9597-77fc701b5a0b)
+
+## Introduction
+
+Un package Python est une collection organisée de modules qui facilitent la réutilisation du code. Les packages permettent de structurer un projet de manière modulaire, ce qui améliore la maintenabilité, la lisibilité et le partage de code. Pour les développeurs, et en particulier en **Data Science**, créer et utiliser des packages permet de réutiliser des fonctionnalités complexes, de les organiser et de les partager facilement. Cela contribue également à la productivité en regroupant des fonctions spécifiques à un domaine ou à une tâche dans un ensemble cohérent.
+
+Dans ce tutoriel, nous allons découvrir comment créer un package Python à travers l'exemple de **impyrialtuto**, un package simple qui permet de convertir des unités impériales de longueur et de poids.
+
+## Explication de la structure du répertoire de travail
+
+Un package Python n'est rien d'autre qu'un dossier qui contient un fichier spécial appelé `__init__.py`. Ce fichier indique à Python que le dossier doit être traité comme un package. Un package peut également contenir des sous-packages, qui sont simplement des sous-dossiers avec leur propre fichier `__init__.py`.
+
+### Structure hiérarchique
+
+Voici la structure du répertoire de travail pour le projet **impyrialtuto** :
+
+```
+etude_structure_package/
+│
+├── LICENSE
+├── MANIFEST.in
+├── README.md
+├── setup.py
+├── etude_structure_package/
+    ├── __init__.py
+    ├── sous_pk1
+      ├──__init__.py
+      ├──m_1_1.py
+      ├──m_1_2.py
+    ├── sous_pk2
+    │   ├── __init__.py
+    │   ├── m_2_1.py
+```
+
+#### Explication des éléments :
+
+- **LICENSE** : Ce fichier contient la licence du projet qui définit les termes sous lesquels le code peut être utilisé et distribué.
+  
+- **MANIFEST.in** : Ce fichier permet de spécifier quels fichiers doivent être inclus lors de la distribution du package.
+  
+- **README.md** : Le fichier que vous êtes en train de lire. Il décrit le projet, ses fonctionnalités et son utilisation.
+  
+- **setup.py** : Le script de configuration qui permet de packager et de distribuer le projet via des outils comme PyPI (Python Package Index).
+
+
+### Fonctionnalités
+
+### Utilisation
+
+
+
+
+## Place à la démo
+
+Dans cette section, nous allons parcourir les étapes pour démarrer le développement de votre package **impyrialtuto**.
+
+### 1. Création d'un répertoire GitHub
+
+- Rendez-vous sur [GitHub](https://github.com/) et créez un nouveau dépôt nommé **impyrialtuto**. Ce dépôt contiendra tout le code de votre package.
+
+### 2. Cloner le répertoire en local
+
+- Une fois le dépôt créé, clonez-le en local sur votre machine à l'aide de la commande suivante dans votre terminal :
+
+  ```bash
+  git clone https://github.com/username/impyrialtuto.git
+  ```
+
+  Remplacez `username` par votre nom d'utilisateur GitHub.
+
+### 3. Créer un environnement virtuel
+
+- Une bonne pratique pour les projets Python est de travailler dans un environnement virtuel afin d'isoler les dépendances. Pour créer un environnement virtuel dans votre répertoire de travail, utilisez la commande suivante sous Linux :
+
+  ```bash
+  python3 -m venv .venv
+  ```
+
+### 4. Activer l'environnement virtuel
+
+- Activez l'environnement virtuel avec la commande suivante (toujours sous Linux) :
+
+  ```bash
+  source .venv/bin/activate
+  ```
+
+  Cela vous permet de travailler avec des versions spécifiques de bibliothèques et de maintenir votre environnement de développement propre.
+
+### 5. Ouvrir VSCode
+
+- Lancez Visual Studio Code (VSCode) et ouvrez le répertoire **impyrialtuto** que vous avez cloné.
+
+  ```bash
+  code .
+  ```
+
+  Cela ouvrira le projet dans VSCode, où vous pouvez commencer à développer.
+
+### 6. Créer la structure du package
+
+- Créez tous les fichiers et dossiers nécessaires en suivant la structure décrite dans la section précédente du README. Assurez-vous que chaque fichier et sous-dossier est correctement positionné.
+
+### 7. Développer le package
+
+- Vous êtes maintenant prêt à commencer à coder ! Suivez les instructions ou la vidéo de démo pour développer les modules du package **impyrialtuto**.
+
+
+## Commandes Linux pour démarrer
+
+Voici les commandes Linux pour créer la structure hiérarchique du projet **impyrialtuto** en étant dans le répertoire principal de travail :
+
+
+
