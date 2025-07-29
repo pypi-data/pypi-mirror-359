@@ -1,0 +1,2 @@
+[console_scripts]
+docstrings = wowool.build.docstrings:main
