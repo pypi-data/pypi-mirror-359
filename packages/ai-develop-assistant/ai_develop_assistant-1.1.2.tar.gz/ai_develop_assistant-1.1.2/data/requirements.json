@@ -1,0 +1,242 @@
+{
+  "project_overview": [],
+  "functional_requirements": [],
+  "technical_requirements": [],
+  "design_requirements": [],
+  "deployment_requirements": [],
+  "ai_constraints": [],
+  "clarification_history": [],
+  "architecture_designs": [],
+  "data_model_design": [],
+  "mobile_specifics": [],
+  "project_governance": [],
+  "smart_contract_design": [],
+  "wallet_integration": [],
+  "off_chain_services": [],
+  "frontend_interaction": [],
+  "security_audit": [],
+  "last_updated": "2025-07-01T08:12:30.854485",
+  "project_id": null,
+  "branch_status": {},
+  "core_mcp_functionality": [],
+  "browser_automation_architecture": [],
+  "tool_interface_design": [],
+  "security_and_permissions": [],
+  "deployment_and_integration": [],
+  "requirement_blueprint": {
+    "project_title": "浏览器自动化MCP项目",
+    "status": "CLARIFYING",
+    "checklist": [
+      {
+        "branch_name": "核心功能模块与MCP协议实现",
+        "storage_key": "core_mcp_functionality",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "FUNC_Q1",
+            "question_text": "MCP服务器需要提供哪些核心工具类型？（如页面导航、元素操作、数据提取、表单填写等）",
+            "ai_suggestion": "建议提供以下核心工具：1) 页面导航工具（navigate、refresh、back/forward）2) 元素操作工具（click、type、select、hover）3) 数据提取工具（getText、getAttribute、screenshot）4) 表单处理工具（fillForm、submitForm）5) 等待和条件工具（waitFor、waitUntil）6) 页面状态工具（getCurrentUrl、getTitle、getPageSource）",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q2",
+            "question_text": "如何设计MCP工具的参数结构和返回值格式？需要支持哪些数据类型？",
+            "ai_suggestion": "建议采用JSON Schema定义参数：1) 输入参数支持string、number、boolean、object、array类型 2) 返回值统一格式：{success: boolean, data: any, error?: string, metadata?: object} 3) 支持选择器类型（CSS、XPath、文本匹配）4) 支持超时和重试配置 5) 支持截图和日志输出选项",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q3",
+            "question_text": "MCP协议的错误处理和异常管理机制如何设计？",
+            "ai_suggestion": "建议实现分层错误处理：1) 浏览器级错误（连接失败、崩溃）2) 页面级错误（加载超时、404）3) 元素级错误（找不到元素、不可交互）4) 操作级错误（点击失败、输入被阻止）。每种错误提供错误码、描述和建议解决方案，支持自动重试和降级策略",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q4",
+            "question_text": "需要支持哪些浏览器会话管理功能？（如多标签页、Cookie管理、用户代理等）",
+            "ai_suggestion": "建议支持：1) 多标签页管理（创建、切换、关闭标签页）2) Cookie和存储管理（设置、获取、清除Cookie/localStorage）3) 用户代理和请求头自定义 4) 代理设置支持 5) 浏览器配置管理（窗口大小、无头模式、扩展加载）6) 会话持久化和恢复",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "FUNC_Q5",
+            "question_text": "如何实现MCP工具的组合和工作流支持？是否需要支持批量操作？",
+            "ai_suggestion": "建议实现：1) 原子操作工具（单一功能，可组合）2) 复合操作工具（常用操作组合，如登录流程）3) 批量操作支持（批量点击、批量数据提取）4) 条件执行和分支逻辑 5) 操作序列记录和回放 6) 并发操作控制和资源管理",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "浏览器自动化引擎选型与架构",
+        "storage_key": "browser_automation_architecture",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "ARCH_Q1",
+            "question_text": "选择哪种浏览器自动化引擎？（Puppeteer、Playwright、Selenium、或其他）",
+            "ai_suggestion": "建议使用Playwright作为主要引擎：1) 支持多浏览器（Chrome、Firefox、Safari、Edge）2) 更好的稳定性和性能 3) 内置等待机制和自动重试 4) 支持现代Web技术（SPA、WebSocket等）5) 作为备选方案，也可支持Puppeteer以兼容现有代码",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "ARCH_Q2",
+            "question_text": "如何设计浏览器实例管理和资源池化？",
+            "ai_suggestion": "建议实现分层管理：1) 浏览器进程池（限制并发数量）2) 上下文管理（隔离不同任务）3) 页面生命周期管理（自动清理和回收）4) 资源监控（内存、CPU使用率）5) 健康检查和故障恢复 6) 配置化的超时和重试策略",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "ARCH_Q3",
+            "question_text": "是否需要支持分布式部署和负载均衡？",
+            "ai_suggestion": "建议采用模块化设计：1) 单机模式：适用于小规模使用，简单部署 2) 集群模式：支持多节点部署，任务分发和负载均衡 3) 使用Redis或消息队列进行任务调度 4) 支持水平扩展和弹性伸缩 5) 提供统一的API网关和服务发现",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "ARCH_Q4",
+            "question_text": "如何处理反爬虫和浏览器检测问题？",
+            "ai_suggestion": "建议实现多层防护：1) 用户代理轮换和随机化 2) 请求间隔和频率控制 3) 浏览器指纹伪装（修改navigator属性）4) 行为模拟（鼠标轨迹、打字速度）5) 验证码识别集成 6) 代理IP池管理 7) 失败重试和降级策略",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "ARCH_Q5",
+            "question_text": "需要实现哪些性能监控和日志记录功能？",
+            "ai_suggestion": "建议实现全面监控：1) 性能指标：响应时间、内存使用、CPU负载 2) 业务指标：成功率、错误率、并发数 3) 结构化日志：操作日志、错误日志、调试日志 4) 实时告警和通知 5) 日志聚合和分析仪表板 6) 调用链跟踪和性能分析",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "工具接口设计与扩展性",
+        "storage_key": "tool_interface_design",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "TOOL_Q1",
+            "question_text": "如何设计MCP工具的命名规范和分类体系？",
+            "ai_suggestion": "建议采用分层命名结构：1) 按功能分类：navigation_*、element_*、data_*、form_*、session_* 2) 动词+名词格式：click_element、get_text、fill_form 3) 参数统一使用snake_case 4) 支持版本化和向后兼容 5) 提供工具发现和文档生成机制",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "TOOL_Q2",
+            "question_text": "需要支持哪些选择器类型和元素定位策略？",
+            "ai_suggestion": "建议支持多种选择器：1) CSS选择器（最常用）2) XPath选择器（复杂定位）3) 文本内容匹配（模糊查找）4) 属性匹配（data-*、aria-*）5) 组合选择器（多条件筛选）6) 智能选择器（AI辅助元素识别）7) 备用选择器链（提高健壮性）",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "TOOL_Q3",
+            "question_text": "如何设计插件系统和自定义工具扩展机制？",
+            "ai_suggestion": "建议实现灵活的插件架构：1) 核心工具集（内置基础功能）2) 插件接口定义（标准化API）3) 动态加载机制（运行时注册）4) 配置化管理（插件参数和依赖）5) 生命周期管理（初始化、清理）6) 权限控制和沙箱隔离 7) 插件市场和版本管理",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "TOOL_Q4",
+            "question_text": "需要实现哪些数据序列化和传输格式？",
+            "ai_suggestion": "建议支持多种数据格式：1) JSON（主要格式，兼容MCP协议）2) Base64（图片和二进制数据）3) 流式传输（大文件和实时数据）4) 压缩支持（减少网络开销）5) 类型安全（Schema验证）6) 版本兼容（向后兼容机制）",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "TOOL_Q5",
+            "question_text": "如何实现工具的性能优化和缓存机制？",
+            "ai_suggestion": "建议实现多层缓存：1) 元素定位缓存（减少DOM查询）2) 页面状态缓存（避免重复加载）3) 请求结果缓存（相同操作复用）4) 连接池管理（复用浏览器实例）5) 并发控制（防止资源竞争）6) 懒加载和预加载策略 7) 性能监控和自动调优",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "安全性与权限控制机制",
+        "storage_key": "security_and_permissions",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "SEC_Q1",
+            "question_text": "需要实现哪些身份认证和授权机制？",
+            "ai_suggestion": "建议实现多层认证：1) API密钥认证（基础访问控制）2) JWT Token认证（会话管理）3) OAuth 2.0集成（第三方服务）4) 角色权限控制（RBAC）5) 操作级权限验证 6) 率限和频率控制 7) IP白名单和黑名单",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "SEC_Q2",
+            "question_text": "如何防止恶意使用和滥用攻击？",
+            "ai_suggestion": "建议实现全面防护：1) 请求频率限制（按IP、用户、操作类型）2) 资源使用限制（内存、CPU、网络）3) 操作超时和熔断机制 4) 危险操作检测（文件下载、敏感信息）5) 实时监控和告警 6) 自动封禁和解封机制 7) 安全审计日志",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "SEC_Q3",
+            "question_text": "需要对哪些类型的网站和操作进行限制？",
+            "ai_suggestion": "建议实现分类限制：1) 域名白名单/黑名单机制 2) 禁止访问金融、政府等敏感网站 3) 限制文件下载和上传操作 4) 禁止执行危险JavaScript代码 5) 限制跨域请求和第三方资源访问 6) 内容安全策略（CSP）强制 7) 用户数据隐私保护",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "SEC_Q4",
+            "question_text": "如何处理敏感数据和隐私信息？",
+            "ai_suggestion": "建议实现严格的数据保护：1) 数据加密存储（静态加密）2) 传输加密（TLS/SSL）3) 敏感数据识别和打码 4) 数据访问日志和审计 5) 数据保留策略和自动清理 6) 符合GDPR、CCPA等法规要求 7) 数据泄露监测和应急响应",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "SEC_Q5",
+            "question_text": "需要实现哪些安全审计和监控功能？",
+            "ai_suggestion": "建议实现全面审计：1) 操作日志记录（谁、何时、做了什么）2) 安全事件监测（异常登录、权限提升）3) 实时告警系统（邮件、短信、Webhook）4) 安全仪表板和报告 5) 漏洞扫描和安全评估 6) 事件关联分析和威胁情报 7) 合规性检查和证据收集",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      },
+      {
+        "branch_name": "部署方式与集成方案",
+        "storage_key": "deployment_and_integration",
+        "status": "pending",
+        "clarification_tasks": [
+          {
+            "question_id": "DEPLOY_Q1",
+            "question_text": "支持哪些部署环境和平台？（Docker、K8s、云服务等）",
+            "ai_suggestion": "建议支持多种部署方式：1) Docker容器化部署（标准化环境）2) Kubernetes集群部署（生产环境）3) 云服务集成（AWS、Azure、GCP）4) 本地安装部署（开发测试）5) Serverless部署（函数计算）6) 跨平台支持（Linux、Windows、macOS）",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "DEPLOY_Q2",
+            "question_text": "如何与现有的AI助手和工作流系统集成？",
+            "ai_suggestion": "建议实现广泛集成：1) MCP协议标准化接口（与Claude、GPT等集成）2) REST API接口（通用集成）3) WebSocket实时通信 4) Webhook事件通知 5) 消息队列集成（RabbitMQ、Kafka）6) 工作流平台集成（Zapier、n8n）7) CI/CD管道集成",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "DEPLOY_Q3",
+            "question_text": "需要实现哪些配置管理和环境变量支持？",
+            "ai_suggestion": "建议实现灵活配置：1) 分层配置系统（默认、环境、用户）2) 环境变量支持（.env文件）3) 配置中心集成（Consul、etcd）4) 动态配置更新（无需重启）5) 配置加密和安全管理 6) 配置验证和默认值 7) 多环境配置管理",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "DEPLOY_Q4",
+            "question_text": "如何实现服务发现和负载均衡？",
+            "ai_suggestion": "建议实现健壮的服务架构：1) 服务注册与发现（Consul、Eureka）2) 负载均衡策略（轮询、加权、最少连接）3) 健康检查和故障转移 4) 熔断器和限流机制 5) API网关集成 6) 服务网格支持（Istio）7) 监控和警告集成",
+            "status": "pending",
+            "user_answer": null
+          },
+          {
+            "question_id": "DEPLOY_Q5",
+            "question_text": "需要提供哪些监控、日志和运维工具？",
+            "ai_suggestion": "建议实现全面运维支持：1) 指标监控（Prometheus、Grafana）2) 日志聚合（ELK Stack、Fluentd）3) 链路跟踪（Jaeger、Zipkin）4) 告警通知系统 5) 性能分析和优化建议 6) 自动化运维脚本 7) 备份恢复和灾难恢复方案",
+            "status": "pending",
+            "user_answer": null
+          }
+        ]
+      }
+    ]
+  }
+}
