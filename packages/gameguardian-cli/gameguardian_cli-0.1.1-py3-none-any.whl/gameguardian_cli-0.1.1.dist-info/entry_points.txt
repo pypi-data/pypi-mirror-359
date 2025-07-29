@@ -1,0 +1,2 @@
+[console_scripts]
+ggcli = gameguardian_cli.__main__:main
