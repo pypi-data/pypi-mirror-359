@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: kalouk
+Version: 0.1.0
+Summary: A Python package for creating dataset metadata using Schema.org's Dataset type and sending it to Kalouk's API
+Author-email: Fabián Abarca <fabian.abarca@ucr.ac.cr>
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: requests>=2.32.4
+Description-Content-Type: text/markdown
+
+# Kalouk Python Package
+
+A Python package for creating dataset metadata using Schema.org's Dataset type and sending it to Kalouk's API.
+
+## Installation
+
+```bash
+uv add kalouk
+# or
+pip install kalouk
+```
+
+## Quick Start
+
+```python
+from kalouk import Dataset
+
+# Create a new dataset
+dataset = Dataset()
+
+# Set metadata using Schema.org Dataset properties
+dataset.set_metadata("name", "My Dataset")
+dataset.set_metadata("description", "A sample dataset")
+dataset.set_metadata("creator", "John Doe")
+dataset.set_metadata("dateCreated", "2025-01-01")
+dataset.set_metadata("license", "https://creativecommons.org/licenses/by/4.0/")
+
+# Send to Kalouk's API
+response = dataset.send_to_kalouk()
+print(f"Status: {response.status_code}")
+```
+
+## Features
+
+- Create dataset metadata using Schema.org Dataset specification
+- Send dataset metadata to Kalouk's API at web.kalouk.xyz/api/datasets
+- NumPy-style docstrings with full type hints
+- Comprehensive Sphinx documentation with Markdown support
+
+## Documentation
+
+Build the documentation locally:
+
+```bash
+cd docs
+uv run make html
+```
+
+The documentation will be available in `docs/build/html/index.html`.
+
+## Development
+
+This project uses `uv` for dependency management. To set up the development environment:
+
+```bash
+uv sync
+```
+
+## API Reference
+
+See the full API documentation in the `docs/` directory or build it locally using Sphinx.

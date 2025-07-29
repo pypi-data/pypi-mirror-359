@@ -1,0 +1,29 @@
+[project]
+name = "kalouk"
+version = "0.1.0"
+description = "A Python package for creating dataset metadata using Schema.org's Dataset type and sending it to Kalouk's API"
+readme = "README.md"
+authors = [
+    { name = "Fabián Abarca", email = "fabian.abarca@ucr.ac.cr" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.4",
+]
+
+[project.scripts]
+kalouk = "kalouk:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "furo>=2024.8.6",
+    "myst-parser>=4.0.1",
+    "pytest>=8.4.1",
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.2.0",
+    "sphinx-design>=0.6.1",
+]
