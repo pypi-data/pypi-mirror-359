@@ -1,0 +1,2 @@
+[console_scripts]
+npi-registry-mcp-server = npi_registry_mcp.server:main
