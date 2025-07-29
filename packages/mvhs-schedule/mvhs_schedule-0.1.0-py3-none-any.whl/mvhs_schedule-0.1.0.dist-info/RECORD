@@ -1,0 +1,10 @@
+mvhs_schedule/__init__.py,sha256=lMQccV4rb9JiWQZF3YsYRzpkv7avulMVomJ0xfX9YhE,342
+mvhs_schedule/db.py,sha256=xBDJ3RlDJDi-T-EQ2eML5UAgplpOUYaJGBiruLsYZV4,9593
+mvhs_schedule/models.py,sha256=q_iXIz2v-fNqQWYiXTqhoB-ReHZ9SQF1EjOH5Tp1Qn0,555
+mvhs_schedule/schedule.py,sha256=flgP0c2NXKyv6HWw5aM4ECdprZVFSvrAgTptd_4Js4Q,2975
+mvhs_schedule-0.1.0.dist-info/licenses/LICENSE,sha256=JCGTjyygGj_TB2NRiAHP-lv-POA3sN5mTHwbucAHq_o,1066
+tests/test_schedule.py,sha256=DUBMaJF52z8YS5ivi0y4Ao-KRR1h43ueragWuxj3dJw,3194
+mvhs_schedule-0.1.0.dist-info/METADATA,sha256=9f4HlYcEVWDnFRTVYuolDsKvN6jJvY2kkiVzztY5G-M,2007
+mvhs_schedule-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mvhs_schedule-0.1.0.dist-info/top_level.txt,sha256=ZyXcq4D9A2FSTm_wKDeXMRyZrTBPNvNt9zaog0LGSsM,20
+mvhs_schedule-0.1.0.dist-info/RECORD,,
