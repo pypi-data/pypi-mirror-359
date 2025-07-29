@@ -1,0 +1,16 @@
+yta_audio_narration/__init__.py,sha256=6Sdnmv9DQF1i00soaXKGKHzZDBUT5n3XyqX_Diruy28,247
+yta_audio_narration/enums.py,sha256=AsGCuRldH4Fa4XHMcS0SS1J_J6hAAKGo9rJ9ONd3erQ,4534
+yta_audio_narration/narrator.py,sha256=w-ACkH71vGhgAJxD1H3ToPDa3HQZOs5W0f1okeqyznE,20459
+yta_audio_narration/voices/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yta_audio_narration/voices/coqui.py,sha256=e3-AOTW-IS9L9aYFrp-_sSE543vygKupW96xgYhL0cI,331
+yta_audio_narration/voices/google.py,sha256=I4L2qm-zIXJ7eE23iM88m8rdEtO9L820vbnRJbQHhsg,328
+yta_audio_narration/voices/microsoft.py,sha256=DnMyc2C5Zy2VEpYK2Xljsrhx8QibUPlIrXAKTUD6uTI,318
+yta_audio_narration/voices/open_voice.py,sha256=zU4LmXVAHgF3YCMrM--55RM1UGQX7kn9Y2137wCNu1Y,347
+yta_audio_narration/voices/tetyys.py,sha256=CFVpUJLA_SK7_wMBnhl4mlPNgI-VKvxXy0aX7MvxoxE,316
+yta_audio_narration/voices/tiktok.py,sha256=hX-u3Aqlu93IxahnrWGoGYIPJCPelsv7lxaxjoX1blE,316
+yta_audio_narration/voices/tortoise.py,sha256=B1126W-BMkOe1iHmGvKixVnIqFDjE_3QFVxaW79p7Is,315
+yta_audio_narration/voices/ttsmp3.py,sha256=zwZftMuM_lziR9DBvaWC7m8QZYsF0i5H71BQzkKA7Sk,314
+yta_audio_narration-0.0.11.dist-info/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+yta_audio_narration-0.0.11.dist-info/METADATA,sha256=IxGtGOMKrnUD5QLLwmGgMFhHxF96QmjuC42lqJGTEQ8,1163
+yta_audio_narration-0.0.11.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+yta_audio_narration-0.0.11.dist-info/RECORD,,
