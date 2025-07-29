@@ -1,0 +1,2 @@
+[console_scripts]
+kompressor = kompressor:kompressor
