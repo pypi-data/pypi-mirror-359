@@ -1,0 +1,10 @@
+shahanshahi_calendar/__init__.py,sha256=OcND7ZYYuemnFHQk36syenIPJk08B7oopcZ6dTdCo_Y,7620
+shahanshahi_calendar/day_names.py,sha256=IwaBS8mRR7yH1VAbnUPY7cQYb0UPGhCL2dTP6HLrsaE,1832
+shahanshahi_calendar/occasions.py,sha256=w-rWLw-17BDOWVJ6Vsjg3Of9MfRxyXlHWfWaMTM8ADs,3701
+shahanshahi_calendar-0.1.0.dist-info/licenses/LICENSE,sha256=uk_IaggYvFedkIRbayJoZvW5Jd3k7O57fFlLmcU_UrQ,423
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_shahanshahi_calendar.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shahanshahi_calendar-0.1.0.dist-info/METADATA,sha256=nIkcSRVr-R4MSxExZKxcdd_aqs3mqMD3Kwsn1AhP-Kg,400
+shahanshahi_calendar-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shahanshahi_calendar-0.1.0.dist-info/top_level.txt,sha256=FjCvex3PHfXlVx17aC2IYuAt8EjwboBCY-ytGdgWe_Y,27
+shahanshahi_calendar-0.1.0.dist-info/RECORD,,
