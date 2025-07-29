@@ -1,0 +1,2 @@
+[console_scripts]
+clubhead-build = clubhead_db.builder:main

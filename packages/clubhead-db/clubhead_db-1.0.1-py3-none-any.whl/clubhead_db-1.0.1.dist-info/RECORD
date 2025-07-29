@@ -1,0 +1,11 @@
+clubhead_db/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+clubhead_db/builder.py,sha256=8WcGWJKSADqe0lOILAeyWu7lsw-ObS6OL3tN-kS40u4,1014
+clubhead_db/data_processor.py,sha256=4uu9RateAJaE84_uyL96JK420BmuAyfE1vtIfzcULAY,6393
+clubhead_db/label_merger.py,sha256=c1oyC891wKHHwHXzpuPvEy2YvcRFlqEB5RQp1a-z5Ks,3899
+clubhead_db/data/annotations.parquet,sha256=HGME9kG9fYMDBhc5QY54gGjf25isVMpUDdKukPUbqJ0,393635
+clubhead_db/data/metadata.csv,sha256=qZ-J8QyNp-6RAQoICO6tMtIjPFZl59UZjIitIsBSFvM,10279
+clubhead_db-1.0.1.dist-info/METADATA,sha256=2cUVk2g99oMI7jlOX0Zfp-SMzwr_QVTo-8cg7ACVJWo,4726
+clubhead_db-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+clubhead_db-1.0.1.dist-info/entry_points.txt,sha256=qo4m939tosSgxdzPMLbUcj-YKn8h0bM9w8_yNjWN6z0,60
+clubhead_db-1.0.1.dist-info/top_level.txt,sha256=eAWb_9s050ZR0PzJlKhQ8d9yw6LTzyX2KpOmVcVhb44,12
+clubhead_db-1.0.1.dist-info/RECORD,,
