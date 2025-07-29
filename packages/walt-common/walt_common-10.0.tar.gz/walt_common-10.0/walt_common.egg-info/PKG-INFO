@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: walt-common
+Version: 10.0
+Summary: WalT common python modules.
+Home-page: https://walt-project.liglab.fr
+Author: WalT developers
+Author-email: walt-contact@univ-grenoble-alpes.fr
+License: 3-Clause BSD
+Keywords: WalT testbed
+Requires-Dist: plumbum>=1.7.2
+Requires-Dist: requests>=2.21.0
+Requires-Dist: python-dateutil>=2.8.1
+Requires-Dist: pyyaml>=5.3.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
