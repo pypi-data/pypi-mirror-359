@@ -1,0 +1,3 @@
+[variant_plugins]
+provider_variant_x86_64=provider_variant_x86_64.plugin:X8664Plugin
+
