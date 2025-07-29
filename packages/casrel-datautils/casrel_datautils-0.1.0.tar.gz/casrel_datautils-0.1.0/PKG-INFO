@@ -1,0 +1,36 @@
+Metadata-Version: 2.2
+Name: casrel_datautils
+Version: 0.1.0
+Summary: A Chinese relation extraction data utility toolkit based on CasRel model
+Home-page: https://github.com/yourusername/casrel_datautils
+Author: Your Name
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: License
+Requires-Dist: torch
+Requires-Dist: transformers>=4.0.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# casrel_datautils
+
+这是一个基于 CasRel 模型的中文关系抽取数据处理工具包，支持 BERT 预训练模型。
+
+# 支持的bert模型
+### bert-base-chinese: 默认中文 BERT 基础模型，适用于通用中文任务，参数量适中，bert_dim=768。
+### bert-large-chinese: 较大规模的中文 BERT 模型，适用于需要更高精度的大型数据集，bert_dim=1024。
+### hfl/chinese-roberta-wwm-ext: 基于 RoBERTa 的中文模型，带全词掩码，适合复杂关系抽取任务，bert_dim=768。
+### hfl/chinese-bert-wwm: 带全词掩码的中文 BERT，适用于需要更好语义理解的任务，bert_dim=768。
+
+## 安装
+```bash
+pip install casrel_datautils
