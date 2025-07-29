@@ -1,0 +1,15 @@
+License.txt
+README.md
+setup.py
+Aplicacion_Ventas/__init__.py
+Aplicacion_Ventas/descuentos.py
+Aplicacion_Ventas/excepciones.py
+Aplicacion_Ventas/gestor_de_ventas.py
+Aplicacion_Ventas/impuestos.py
+Aplicacion_Ventas/precios.py
+Test_Unitario/__init__.py
+Test_Unitario/test_aplicación_ventas.py
+aplicacion_de_ventas.egg-info/PKG-INFO
+aplicacion_de_ventas.egg-info/SOURCES.txt
+aplicacion_de_ventas.egg-info/dependency_links.txt
+aplicacion_de_ventas.egg-info/top_level.txt

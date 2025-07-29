@@ -1,0 +1,20 @@
+Licencia MIT
+
+Copyright (c) 2025 Marcello Paolo Massucco Bustios
+
+Por la presente se concede permiso, de manera gratuita, a cualquier persona que obtenga
+una copia de este software y los archivos de documentación asociados, para utilizar el
+software sin restricciones, incluidos entre otros los derechos de usar, copiar, modificar, 
+fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, y permitir que
+las personas a quienes se les proporcione este software a hacer lo mismo, sujeto a la siguiente
+condición:
+
+El aviso de derechos de autor anterior y este aviso de permiso se incluirá en todas las
+copias o partes sustanciales del software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA,
+INCLUYENDO, PERO NO LIMITADO A, LAS GARANTÍAS DE COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO
+PARTICUPAR Y NO INFRACCIÓN. EN NINGÚN CASO EL AUTOR O TITULAR DE DERECHOS DE AUTOR SERÁ 
+RESPONSABLE POR NINGUNA RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN
+CONTRACTUAL, AGRAVIO O DE OTRO TIPO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL
+USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.
