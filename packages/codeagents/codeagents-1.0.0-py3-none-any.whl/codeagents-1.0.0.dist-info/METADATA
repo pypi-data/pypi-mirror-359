@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: codeagents
+Version: 1.0.0
+Summary: A powerful library for building code agents
+Author-email: Lawrence Chen <lawrence@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/lawrencechen/codeagents
+Project-URL: Repository, https://github.com/lawrencechen/codeagents.git
+Project-URL: Issues, https://github.com/lawrencechen/codeagents/issues
+Keywords: code,agents,ai,automation,development
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: requires-python
+
+# CodeAgents
+
+A powerful library for building code agents.
+
+## Installation
+
+### npm
+```bash
+npm install codeagents
+```
+
+### pip
+```bash
+pip install codeagents
+```
+
+## Usage
+
+### JavaScript
+```javascript
+const { CodeAgent } = require('codeagents');
+
+const agent = new CodeAgent('MyAgent');
+const result = agent.execute('console.log("Hello World")');
+const analysis = agent.analyze('const x = 5;\nconst y = 10;');
+```
+
+### Python
+```python
+from codeagents import CodeAgent
+
+agent = CodeAgent('MyAgent')
+result = agent.execute('print("Hello World")')
+analysis = agent.analyze('x = 5\ny = 10')
+```
+
+## License
+
+MIT
