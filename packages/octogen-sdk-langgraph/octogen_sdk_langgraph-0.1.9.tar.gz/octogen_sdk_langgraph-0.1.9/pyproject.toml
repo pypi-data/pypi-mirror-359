@@ -1,0 +1,61 @@
+[project]
+name = "octogen-sdk-langgraph"
+version = "0.1.9"
+description = "Octogen Python SDK built on langgraph"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.115.14",
+    "jsonpatch>=1.33",
+    "langchain>=0.3.25",
+    "langchain-mcp-adapters>=0.1.8",
+    "langchain-openai>=0.3.27",
+    "langchain-openapi>=0.1.1",
+    "langgraph>=0.4.3",
+    "mcp>=1.10.1",
+    "octogen-api>=0.1.0a8",
+    "pydantic>=2.11.4",
+    "pydantic-settings>=2.9.1",
+    "python-dotenv>=1.1.0",
+    "ruff>=0.11.10",
+    "structlog>=25.3.0",
+    "uvicorn>=0.35.0",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://octogen.ai"
+Issues = "https://github.com/octogen-systems/octogen-py-sdk/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/octogen"]
+exclude = ["examples/**"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+show_error_codes = true
+no_implicit_optional = true
+warn_return_any = true
+warn_unused_ignores = true
+mypy_path = "src"
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["octogen"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.16.1",
+]
