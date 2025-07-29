@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+mountcontrol.egg-info/PKG-INFO
+mountcontrol.egg-info/SOURCES.txt
+mountcontrol.egg-info/dependency_links.txt
+mountcontrol.egg-info/top_level.txt
