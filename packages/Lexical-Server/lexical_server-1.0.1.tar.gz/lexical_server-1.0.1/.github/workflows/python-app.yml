@@ -1,0 +1,77 @@
+name: Build, Test & Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.13.3
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13.3"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest build
+        pip install -e .
+
+    - name: Run tests with pytest
+      run: pytest
+
+    - name: Build sdist
+      run: python -m build --sdist
+
+    - name: List dist contents
+      run: ls -lh dist/
+
+    - name: Extract tarball
+      run: |
+        mkdir unpacked
+        tar -xzf dist/*.tar.gz -C unpacked
+        ls -R unpacked/
+
+    - name: Check for expected data files
+      run: |
+        DATA_FILES=$(find unpacked -type f -path "*/lexical/data/*" || true)
+        if [ -z "$DATA_FILES" ]; then
+          echo "ERROR: Data files missing in lexical/data/"
+          exit 1
+        else
+          echo "Found data files:"
+          echo "$DATA_FILES"
+        fi
+
+  # publish:
+  #   runs-on: ubuntu-latest
+  #   needs: build-test
+  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  #
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #
+  #   - name: Set up Python 3.13.3
+  #     uses: actions/setup-python@v5
+  #     with:
+  #       python-version: "3.13.3"
+  #
+  #   - name: Upgrade build tools
+  #     run: python -m pip install --upgrade pip build twine
+  #
+  #   - name: Build distributions
+  #     run: python -m build
+  #
+  #   - name: Publish to PyPI
+  #     env:
+  #       TWINE_USERNAME: __token__
+  #       TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+  #     run: twine upload dist/*

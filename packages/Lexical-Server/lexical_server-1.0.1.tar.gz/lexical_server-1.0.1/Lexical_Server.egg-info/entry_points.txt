@@ -1,0 +1,2 @@
+[console_scripts]
+lexical = lexical.main:main
