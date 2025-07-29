@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+vishpdf.egg-info/PKG-INFO
+vishpdf.egg-info/SOURCES.txt
+vishpdf.egg-info/dependency_links.txt
+vishpdf.egg-info/top_level.txt
