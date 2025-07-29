@@ -1,0 +1,16 @@
+portacode/README.md,sha256=4dKtpvR8LNgZPVz37GmkQCMWIr_u25Ao63iW56s7Ke4,775
+portacode/__init__.py,sha256=oB3sV1wXr-um-RXio73UG8E5Xx6cF2ZVJveqjNmC-vQ,1086
+portacode/_version.py,sha256=Mmxse1R0ki5tjz9qzU8AQyqUsLt8nTyCAbYQp8R87PU,511
+portacode/cli.py,sha256=Lq4ndO_11yeaJwwYXqGZrTrZEvSZh3neXx0DEct6tdk,6482
+portacode/data.py,sha256=5-s291bv8J354myaHm1Y7CQZTZyRzMU3TGe5U4hb-FA,1591
+portacode/keypair.py,sha256=C2JZg4QFj37w4ATU8ZMCYEyF5mfr-tuQmKJm7Qqa34Q,3429
+portacode/connection/README.md,sha256=f9rbuIEKa7cTm9C98rCiBbEtbiIXQU11esGSNhSMiJg,883
+portacode/connection/__init__.py,sha256=atqcVGkViIEd7pRa6cP2do07RJOM0UWpbnz5zXjGktU,250
+portacode/connection/client.py,sha256=gy0c7v7wH77sRMdL5EhtCe1UgfuI2a_F40-uVM-oFNY,7151
+portacode/connection/multiplex.py,sha256=XlQY3o2GEm1W08mng66HOWek4lGUncLjL8OAim0sifQ,2002
+portacode/connection/terminal.py,sha256=8Dh_NYqmiQ9nDUEj2SIYBX-ThlP_We8pYw_uz4QW4tQ,17066
+portacode-0.1.1.dist-info/METADATA,sha256=BWrsstSO7gGor8H2fbZX_LsaD4F9CLWcOrQ7Cnriez0,1974
+portacode-0.1.1.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+portacode-0.1.1.dist-info/entry_points.txt,sha256=lLUUL-BM6_wwe44Xv0__5NQ1BnAz6jWjSMFvZdWW3zU,48
+portacode-0.1.1.dist-info/top_level.txt,sha256=U_n6hYjK7CBYFzYluuG-AP8UouIIQLCObIj6-WtG3Go,10
+portacode-0.1.1.dist-info/RECORD,,
