@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: xorq-datafusion
+Version: 0.2.3
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: pyarrow>=19.0.1
+License-File: LICENSE
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# xorq DataFusion Python Bindings
+
+> [!CAUTION]
+> This repo is for the internal xorq DataFusion engine and is not meant for public use
+
