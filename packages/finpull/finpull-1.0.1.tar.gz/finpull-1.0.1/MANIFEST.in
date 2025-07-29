@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include requirements.txt
+include INSTALLATION.md
+recursive-include src/finpull *.py
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude *.egg-info 

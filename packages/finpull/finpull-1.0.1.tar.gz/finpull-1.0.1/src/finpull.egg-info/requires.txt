@@ -1,0 +1,16 @@
+
+[excel]
+openpyxl>=3.0.7
+
+[full]
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+yfinance>=0.1.63
+openpyxl>=3.0.7
+
+[scraping]
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+
+[yahoo]
+yfinance>=0.1.63
