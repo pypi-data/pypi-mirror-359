@@ -1,0 +1,43 @@
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.build]
+run-setuptools = true
+sdist-excludes = [
+    "src/easy_3dgs/third_party/",
+]
+excludes = [
+    "src/easy_3dgs/third_party/",
+]
+
+[tool.setuptools.packages.find]
+where = [
+    "src",
+]
+include = [
+    "easy_3dgs*",
+]
+exclude = [
+    "easy_3dgs.third_party*",
+]
+
+[project]
+name = "easy-3dgs"
+version = "0.1.0"
+description = "A Python library that includes an end-to-end 3D Gaussian splatting pipeline without requiring the compilation of hundreds of dependencies."
+readme = "README.md"
+authors = [
+    { name = "jourdelune", email = "jourdelune863@gmail.com" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pycolmap>=3.11.1",
+]
+
+[dependency-groups]
+dev = [
+    "easy-3dgs",
+]
