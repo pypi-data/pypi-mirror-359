@@ -1,0 +1,25 @@
+boilergen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boilergen/__main__.py,sha256=slWSN-LgFwQdSsOzWQIWtqI0ayTj-LEmeaS5epAIuWg,76
+boilergen/builder/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boilergen/builder/generation_logic.py,sha256=x3N9amApyE53UGWwoQ-xzGf0OSOXJXJ6Jvog5sM2t-Q,1228
+boilergen/builder/hooks.py,sha256=phb_zkbX912FexESEwYwvn5AwfBTw6vsYQoewrkyC-8,789
+boilergen/builder/output_selection.py,sha256=zb-6dxRkjua4EY0G2gqbecgMhP3zmSpGnnYApn-B1Nw,2474
+boilergen/builder/project_setup.py,sha256=Ul3AbuEELD1-vZfpvtwT_n94fw-05bL0x9Jt2fyWAsk,8948
+boilergen/builder/parser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boilergen/builder/parser/configs.py,sha256=k22-1ATAORck054kuxQCzzhm-zWPXnk6XY1igo_HzR4,5825
+boilergen/builder/parser/injections.py,sha256=yJ0Z3rAMjbR9pezFFlMk_-Wc-ggXKdytzQltGUkUyrk,9741
+boilergen/builder/parser/tags.py,sha256=xv_Mjx7ViiYytFpfs813LSyQMTkP_Er91q7AW_ld2qU,1819
+boilergen/cli/__init__.py,sha256=btuzZwgyuk7fY-Hi8Zbiq1JDdWInyI14BgTU6BxRa6c,138
+boilergen/cli/commands.py,sha256=0Xjfn2oyn9HMVcZw5WenGBz0tOG-bE1F13sd8tuX_Qs,8380
+boilergen/cli/run_config.py,sha256=V64lmWShtEnmwDdPvagD4aRLPdhqH0S67-V6i_z9QZ4,245
+boilergen/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boilergen/core/display.py,sha256=FFFn_2-b55AGWJ-ezQXJE6uT2aJMAmiGmi0drkOEuIs,9858
+boilergen/core/navigator.py,sha256=AI3GVIf0B99eZ0QiWEYbY2ri51SOugM00VxrC9eyDUE,14511
+boilergen/core/template.py,sha256=b9gO1Iue-1_2b1Qgujqb0CE34j3mDQy9Ghc5vskYySQ,1437
+boilergen/core/template_finder.py,sha256=Jb361JrqLNEgEf7U_9KhGTZiF6xjSlhe27I4oEJp7Ko,3455
+boilergen/templates/gh-Workflows/Realease Version to Github/template.yaml,sha256=1DqwfX46wDUySRBsBvEh50Gf16d_yiDQ5VjozBU1-w4,82
+boilergen/templates/gh-Workflows/Realease Version to Github/template/.github/workflows/flutter-release.yml,sha256=YrqQIUxZwHQbwZxcREgcKnnpqgow5ZjVpjdmz4F85EI,4976
+boilergen-1.2.2.dist-info/METADATA,sha256=ITeJKiQUxT7pp9VTy0RuqXToHWyXmM0R3Bh-40MktIQ,170
+boilergen-1.2.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+boilergen-1.2.2.dist-info/entry_points.txt,sha256=mpdxe2k-YT-og0YR750tRAmX5WyKZznjN3E28IYZfvE,53
+boilergen-1.2.2.dist-info/RECORD,,
