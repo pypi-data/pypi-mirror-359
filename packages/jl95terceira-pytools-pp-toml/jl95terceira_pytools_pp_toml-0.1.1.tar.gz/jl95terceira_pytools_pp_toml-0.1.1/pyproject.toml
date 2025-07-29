@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+[project]
+name = "jl95terceira_pytools_pp_toml"
+version = "0.1.1"
+authors = [
+  { name="Joao Luis Ornelas da Silva", email="jl95terceira@gmail.com" },
+]
+description = "A processor / source generator for TOML"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/jl95terceira/project-pytools-pp-toml"
+Issues = "https://github.com/jl95terceira/project-pytools-pp-toml/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["project/package"]
+
+[tool.hatch.build.targets.wheel.sources]
+"project/package" = "jl95terceira/pytools"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[project.scripts]
+#PPTOML:BEGIN
+#import os
+#import proj
+#for file_name in filter(lambda file_name: file_name.endswith('.py'), os.listdir(os.path.join(proj.PATH, 'project', 'package',))):
+#  app_name = os.path.splitext(file_name)[0]
+#  padding  = (12-len(app_name))*' '
+#  writeline(f'"{proj.TOOLS_DIR}/{app_name}"{padding}="jl95terceira.pytools.{app_name}:main"')
+#PPTOML:END
+"jl95terceira-pytools/pptoml"      ="jl95terceira.pytools.pptoml:main"
+#PPTOML:TAIL
