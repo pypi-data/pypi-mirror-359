@@ -1,0 +1,10 @@
+xync-schema
+
+[dev]
+PGram
+pre-commit
+pytest
+python-dotenv
+setuptools-scm
+build
+twine
