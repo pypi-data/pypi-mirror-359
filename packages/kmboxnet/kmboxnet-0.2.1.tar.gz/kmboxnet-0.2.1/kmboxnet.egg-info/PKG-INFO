@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: kmboxnet
+Version: 0.2.1
+Summary: Prototype of a controller library for Kmbox Net. Depends only on Python standard libraries. Implemented using Python's socket module.
+Requires-Python: >=3.8
