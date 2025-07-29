@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matterlab_shakers"
+version = "1.0.0"
+description = "A Python API for the shakers in the Matter Lab."
+authors = [
+    { name = "Han Hao" },
+    { name = "Martin Seifrid" },
+    { name = "Tony C. Wu"}
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: System :: Hardware",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+    "Topic :: System :: Hardware :: Universal Serial Bus (USB)",
+]
+
+keywords = ["shaker", "automation", "matterlab"]
+
+dependencies = [
+    "matterlab_serial_device"
+]
+
+[project.entry-points."medusa.devices"]
+Shaker              = "matterlab_shakers.base_shaker:Shaker"
+TorreyPinesShaker    = "matterlab_shakers.torrey_pines_shakers:TorreyPinesShaker"
+
