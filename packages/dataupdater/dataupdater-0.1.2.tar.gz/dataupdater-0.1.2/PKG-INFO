@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: dataupdater
+Version: 0.1.2
+Summary: A live Python variable editor via web interface
+Author: Your Name
+Author-email: Anson <ansonwong815@email.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: license-file
+
+# DataUpdater
+
+**Live Python Variable Monitor and Editor via Web Interface**
+
+## 📌 Overview
+
+`DataUpdater` is a lightweight Python tool that allows developers to track, view, and modify global variables in real time through a web interface — without restarting the script. This is especially useful for tasks like:
+
+- Physics simulations
+- Machine learning training
+- Tuning live parameters
+- Debugging long-running scripts
+
+## 🚀 Features
+
+- Live variable monitoring in the browser
+- Supports all Python data types via `eval()` 
+- Manual update and override control
+- Flask-powered local server
+- Minimal setup — no database or config required
+
+## 📦 Installation
+
+```bash
+pip install dataupdater
