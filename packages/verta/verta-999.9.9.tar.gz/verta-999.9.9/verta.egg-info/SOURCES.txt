@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+verta.egg-info/PKG-INFO
+verta.egg-info/SOURCES.txt
+verta.egg-info/dependency_links.txt
+verta.egg-info/top_level.txt
