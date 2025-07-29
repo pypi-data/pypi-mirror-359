@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: aras-mcp-steepgraph
+Version: 0.1.1
+Summary: this is aras innovator mcp
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.12.13
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: mcp[cli]>=1.10.1
+Requires-Dist: requests>=2.32.4
+Requires-Dist: requests-oauthlib>=2.0.0
+
+# custom-mcp
+
+A custom MCP server for Aras Innovator integration.
+
+## Usage
+
+Install dependencies:
+
+```sh
+pip install -r requirements.txt
+```
+
+Run the MCP server:
+
+```sh
+python main.py
+```
+
+## Tools/Resources
+- `add(a, b)`: Adds two numbers.
+- `greeting://{name}`: Returns a personalized greeting.

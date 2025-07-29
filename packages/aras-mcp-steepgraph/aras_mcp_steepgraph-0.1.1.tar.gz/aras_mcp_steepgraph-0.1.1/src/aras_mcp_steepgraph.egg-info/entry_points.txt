@@ -1,0 +1,2 @@
+[console_scripts]
+aras-mcp-steepgraph = main:main
