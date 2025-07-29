@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+neuro_mine.egg-info/PKG-INFO
+neuro_mine.egg-info/SOURCES.txt
+neuro_mine.egg-info/dependency_links.txt
+neuro_mine.egg-info/requires.txt
+neuro_mine.egg-info/top_level.txt
+tests/test_module.py
