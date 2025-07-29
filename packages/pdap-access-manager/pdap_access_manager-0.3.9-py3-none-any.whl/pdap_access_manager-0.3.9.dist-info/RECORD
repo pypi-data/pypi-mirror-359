@@ -1,0 +1,11 @@
+pdap_access_manager/__init__.py,sha256=BFOj3wO5XJ3yqU6MUolJnLXzwvCd_9kqnqO2CYqSYeY,95
+pdap_access_manager/access_manager.py,sha256=m5MNNpJIhZmMC8emlG_ie44B1nSrYvLyLmZsZs39Dzw,7501
+pdap_access_manager/constants.py,sha256=x-OKa6El3P4cwrYfFaWNHa3lf7vw1mGfKR-LYafsxFs,128
+pdap_access_manager/enums.py,sha256=-UUPag-UN_NQFJo2ZejtQX07Adj2wM5DjggE2K_Tpyw,497
+pdap_access_manager/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pdap_access_manager/models/request.py,sha256=-6ootRd4y8LRN9jQK2O2nYZ27cNZm2_VgNlvBfukkts,903
+pdap_access_manager/models/response.py,sha256=BIpb33JHVEgzCPfOtcqLtXx7pe5vVg4M5jxtjhoGQUI,174
+pdap_access_manager-0.3.9.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+pdap_access_manager-0.3.9.dist-info/METADATA,sha256=wY5P93fhJGjkLRzUvLtrMvKCZUkgKotm3ZXOqQdJW0A,1532
+pdap_access_manager-0.3.9.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pdap_access_manager-0.3.9.dist-info/RECORD,,
