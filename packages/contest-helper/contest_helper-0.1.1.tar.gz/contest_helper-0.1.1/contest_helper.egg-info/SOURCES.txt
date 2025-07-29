@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+contest_helper/__init__.py
+contest_helper/basic.py
+contest_helper/exceptions.py
+contest_helper.egg-info/PKG-INFO
+contest_helper.egg-info/SOURCES.txt
+contest_helper.egg-info/dependency_links.txt
+contest_helper.egg-info/top_level.txt
