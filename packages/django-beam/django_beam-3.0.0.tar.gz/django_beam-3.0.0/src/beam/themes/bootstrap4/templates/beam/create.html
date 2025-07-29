@@ -1,0 +1,6 @@
+{% extends "beam/form.html" %}
+{% load beam_tags %}
+
+{% block body_classes %}{{ block.super }} beam-create{% if facet.model %}{% get_options facet.model as options %} beam-create-{{ options.app_label }}-{{ options.model_name }}{% endif %}{% endblock %}
+
+{% block form_attributes %}{{ block.super }} {% get_options facet.model as options %} id="{{ options.app_label }}-{{ options.model_name }}-create-form"{% endblock %}
