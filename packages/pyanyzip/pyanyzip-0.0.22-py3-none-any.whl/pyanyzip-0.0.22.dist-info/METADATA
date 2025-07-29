@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: pyanyzip
+Version: 0.0.22
+Summary: pyanyzip is a module to help with dealing with compressed files transparently
+Project-URL: Homepage, https://github.com/veltzer/pyanyzip
+Project-URL: Bug Tracker, https://github.com/veltzer/pyanyzip/issues
+Project-URL: Documentation, https://veltzer.github.io/pyanyzip
+Project-URL: Download, https://pypi.org/project/pyanyzip/
+Project-URL: Repository, https://github.com/veltzer/pyanyzip
+Author-email: Mark Veltzer <mark.veltzer@gmail.com>
+Maintainer-email: Mark Veltzer <mark.veltzer@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: bz2,gzip,python,zip
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Requires-Python: >=3.12
+Requires-Dist: pypipegzip
+Description-Content-Type: text/markdown
+
+# *pyanyzip* project by Mark Veltzer
+
+description: pyanyzip is a module to help with dealing with compressed files transparently
+
+project website: https://veltzer.github.io/pyanyzip
+
+author: Mark Veltzer
+
+version: 0.0.22
+
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+
+## github
+
+![License](https://img.shields.io/github/license/veltzer/pyanyzip)
+
+## build
+
+![build](https://github.com/veltzer/pyanyzip/workflows/build/badge.svg)
+
+## pypi
+
+![PyPI - Status](https://img.shields.io/pypi/status/pyanyzip)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyanyzip)
+![PyPI - License](https://img.shields.io/pypi/l/pyanyzip)
+![PyPI - Package Name](https://img.shields.io/pypi/v/pyanyzip)
+![PyPI - Format](https://img.shields.io/pypi/format/pyanyzip)
+
+## pypi download
+
+![PyPI - Downloads](https://img.shields.io/pypi/dd/pyanyzip)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/pyanyzip)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/pyanyzip)
+
+
+
+## contact me
+[mailto](mailto:mark.veltzer@gmail.com)
+![gitter](https://img.shields.io/gitter/room/veltzer/mark.veltzer)
+![discord](https://img.shields.io/discord/719336281624281119)
+![discord](https://img.shields.io/discord/719336282194444302)
+
+Mark Veltzer, Copyright © 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
