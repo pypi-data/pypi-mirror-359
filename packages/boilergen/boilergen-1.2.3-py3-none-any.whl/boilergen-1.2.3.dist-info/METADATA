@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: boilergen
+Version: 1.2.3
+Summary: CLI tool for creating template based boilerplate projects
+Requires-Python: >=3.12
+Requires-Dist: gitpython<4.0,>=3.1.0
+Requires-Dist: prompt-toolkit<4.0.0,>=3.0.51
+Requires-Dist: pyyaml<7.0.0,>=6.0.2
+Requires-Dist: questionary<3.0.0,>=2.1.0
+Requires-Dist: rainbow-tqdm<0.2.0,>=0.1.5
+Requires-Dist: rich<15.0.0,>=14.0.0
+Requires-Dist: tqdm<5.0.0,>=4.67.1
+Requires-Dist: typer<0.17,>=0.16.0

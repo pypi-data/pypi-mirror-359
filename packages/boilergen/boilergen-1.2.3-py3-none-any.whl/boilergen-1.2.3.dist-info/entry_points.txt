@@ -1,0 +1,2 @@
+[console_scripts]
+boilergen = boilergen.__main__:app
