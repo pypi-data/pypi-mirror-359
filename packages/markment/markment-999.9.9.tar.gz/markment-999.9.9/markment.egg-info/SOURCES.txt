@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+markment.egg-info/PKG-INFO
+markment.egg-info/SOURCES.txt
+markment.egg-info/dependency_links.txt
+markment.egg-info/top_level.txt
