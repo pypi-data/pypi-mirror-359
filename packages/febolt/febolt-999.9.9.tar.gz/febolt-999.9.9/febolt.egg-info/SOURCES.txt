@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+febolt.egg-info/PKG-INFO
+febolt.egg-info/SOURCES.txt
+febolt.egg-info/dependency_links.txt
+febolt.egg-info/top_level.txt
