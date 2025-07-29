@@ -1,0 +1,17 @@
+[project]
+name = "hellomcp"
+version = "0.1.3"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.6.0",
+]
+
+
+[project.scripts]
+hellomcp = "hellomcp.__main__:main_wrapper"
+
+[tool.setuptools.packages.find]
+include = ["hellomcp"]
+exclude = ["node_modules"]

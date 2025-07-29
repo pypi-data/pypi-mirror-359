@@ -1,0 +1,2 @@
+[console_scripts]
+hellomcp = hellomcp.__main__:main_wrapper
