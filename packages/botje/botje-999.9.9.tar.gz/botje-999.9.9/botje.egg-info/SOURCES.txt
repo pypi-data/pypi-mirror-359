@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+botje.egg-info/PKG-INFO
+botje.egg-info/SOURCES.txt
+botje.egg-info/dependency_links.txt
+botje.egg-info/top_level.txt
