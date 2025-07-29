@@ -1,0 +1,3 @@
+[console_scripts]
+ats-score = ats_resume_scorer.main:main
+ats-scorer = ats_resume_scorer.main:main
