@@ -1,0 +1,12 @@
+[project]
+name = "personalinfo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+
+[build-system]
+requires = ["setuptools>=42", "setuptools_scm>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
