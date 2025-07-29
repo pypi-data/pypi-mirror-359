@@ -1,0 +1,2 @@
+[console_scripts]
+Git = Server:__main__.main
