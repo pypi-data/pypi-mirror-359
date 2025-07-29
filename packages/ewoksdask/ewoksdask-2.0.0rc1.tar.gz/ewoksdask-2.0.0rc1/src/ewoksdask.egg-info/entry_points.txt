@@ -1,0 +1,2 @@
+[ewoks.engines]
+dask = ewoksdask.engine:DaskWorkflowEngine
