@@ -1,0 +1,25 @@
+# MVHS Schedule
+A Python library for fetching the MVHS Schedule from the Firebase REST API used by mvhs.io, ported from [this NPM package](https://www.npmjs.com/package/mvhs-schedule). It provides the same simple functions from that package, and uses asyncio for asynchronous execution.
+
+### Installation
+
+```
+pip install mvhs-schedule
+```
+
+### Usage
+
+This module is async, so all of the functions need to be awaited. All arguments that need a day require a `datetime.date`, and the times require `datetime.datetime`.
+
+> [!NOTE]  
+> The module relies on the Firebase app that is maintained by Mr. Nguyen, so if that is ever out-of-date, then this library will likely by inaccurate on special schedule days.
+
+### Functions
+
+There are a few functions that you can use:
+
+ - `get_schedule_from_day` returns the name of the schedule (e.g. `"Schedule A"`) given a specific date.
+ - `get_periods_from_schedule` returns a list of `Period` from a specific schedule
+ - `get_periods_from_day` will get simply get the list of periods on a specific date
+ - `get_periods_from_day_count` takes in a date and a `day_count`, which will return a list of lists of `Period` starting from the specified date and spanning `day_count` days. For example, calling `get_periods_from_day_count(date.today(), 7)` will return 7 lists of periods for the next week (including today).
+ - `time_of_period` will return the start and end time of a period given the day and period
