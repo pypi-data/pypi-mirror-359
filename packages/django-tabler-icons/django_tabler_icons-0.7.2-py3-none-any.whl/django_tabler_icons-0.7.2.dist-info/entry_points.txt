@@ -1,0 +1,2 @@
+[console_scripts]
+django_tabler_icons = tabler_icons.cli:main
