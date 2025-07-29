@@ -1,0 +1,3 @@
+[console_scripts]
+httpc-clean = httpc._base:_extract_headers_cli
+httpc-next-data = httpc._base:_extract_next_data_cli
