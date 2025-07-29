@@ -1,0 +1,12 @@
+[project]
+name = "esai"
+version = "0.1.0"
+description = "Practice backend framework for scalable text extraction"
+authors = [{ name = "Logidhasan", email = "logidhasan25@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
