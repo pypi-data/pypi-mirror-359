@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: scallops
+Version: 0.0.1
+Summary: A framework for scalable data analysis.
+Author: The Scallops Project Team
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# Scallops
+
+This package name `scallops` is reserved for a future project.
+
+The package is in a planning stage and is not yet ready for use. Please check back later for the official release.

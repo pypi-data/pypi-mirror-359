@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+scallops.egg-info/PKG-INFO
+scallops.egg-info/SOURCES.txt
+scallops.egg-info/dependency_links.txt
+scallops.egg-info/top_level.txt
