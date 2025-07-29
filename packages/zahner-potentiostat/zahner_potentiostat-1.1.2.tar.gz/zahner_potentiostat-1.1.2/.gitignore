@@ -1,0 +1,13 @@
+# Byte-compiled, optimized
+__pycache__
+*.py[cod]
+
+# Project files
+.project
+.pydevproject
+/sphinxenv/
+/dist/
+/*.egg-info/
+/.vs
+/docs/html/_static
+/source/_build
