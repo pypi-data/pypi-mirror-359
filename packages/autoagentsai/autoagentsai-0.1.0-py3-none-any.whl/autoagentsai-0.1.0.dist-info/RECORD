@@ -1,0 +1,7 @@
+autoagentsai/__init__.py,sha256=jYXA-Ev-2t__zpLi6EMWSte2Y-r3JlT8D9kSQSZZXwY,209
+autoagentsai/client.py,sha256=UVzWFlZekc35ANHwI0apb7htWzscyYT0Qm90fg8TiJs,4532
+autoagentsai/types.py,sha256=B7PIKT7Ls8hWi5zPfb1XfCs8k56TvWj0pfU5QYb1DX0,520
+autoagentsai-0.1.0.dist-info/METADATA,sha256=MofiSm0zD0F-AIEx_y5NgSeK14bGmzOLKQKS-2uFwQw,246
+autoagentsai-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+autoagentsai-0.1.0.dist-info/entry_points.txt,sha256=lSeOP0YK9FF9K5o0QaazRe4752pijeJgPG3j4Z2BUcs,69
+autoagentsai-0.1.0.dist-info/RECORD,,
