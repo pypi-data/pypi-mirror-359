@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: skinport-console
+Version: 0.1.0
+Summary: An interactive command-line tool to explore and analyze sales and purchases on the Skinport marketplace.
+Project-URL: Homepage, https://github.com/t1edtke/skinport-console
+Project-URL: Issues, https://github.com/t1edtke/skinport-console/issues
+Author-email: t1edtke <136181851+t1edtke@users.noreply.github.com>
+License-File: LICENSE
+Keywords: Counter-Strike 2,Dota 2,Rust,Skinport,Team Fortress 2,skinport.py
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: inquirer
+Requires-Dist: skinport-py
+Description-Content-Type: text/markdown
+
+# skinport-console
+An interactive command-line tool to explore and analyze sales and purchases on the Skinport marketplace.
