@@ -1,0 +1,3 @@
+[console_scripts]
+ypa=yaml_parser_annek.main:app
+
