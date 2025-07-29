@@ -1,0 +1,39 @@
+# `auto-stomp` - Async STOMP over WebSocket for Python
+`auto-stomp` is an asyncio-based STOMP (Simple/Streaming Text Oriented Messaging Protocol) client that supports WebSocket connections.
+It's designed for use with brokers like Spring STOMP endpoints over WebSocket.
+
+## Installation
+```bash
+pip install async-stomp-client
+```
+
+Or, if you're building from source:
+
+```bash
+git clone https://github.com/your-username/async-stomp-client.git
+cd async-stomp-client
+pip install .
+```
+
+## Quick Start
+```python
+import asyncio
+from auto_stomp import Client
+
+async def main():
+    stomp = Client(brockerURL="ws://localhost:8080/signaling", debug=True)
+
+    await stomp.connect()
+
+    await stomp.subscribe(
+        id="1", 
+        destination="/topic/offer", 
+        callback=lambda body: print(f"Received offer: {body}")
+    )
+
+    await stomp.send(destination="/app/offer", body="Hello, World!")
+
+    await stomp.run_forever()
+
+asyncio.run(main())
+```
