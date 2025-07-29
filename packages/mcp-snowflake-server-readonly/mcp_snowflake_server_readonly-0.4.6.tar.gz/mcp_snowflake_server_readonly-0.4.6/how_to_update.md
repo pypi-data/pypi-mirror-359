@@ -1,0 +1,33 @@
+1. Make your code changes
+   Edit files under `src/mcp_snowflake_server/`, `pyproject.toml`, etc.
+
+2. Bump the version
+   Open `pyproject.toml` and update the version field, for example:
+   version = "0.4.X"
+
+3. Build the package (optional)
+   Run:
+   uv build --no-sources
+
+To test locally (optional):
+uvx --from dist/mcp\_snowflake\_server\_readonly\_sysprompt-0.4.X-py3-none-any.whl --help
+
+4. Commit, tag, and push
+   git add .
+   git commit -m "v0.4.X: update version"
+   git tag v0.4.X
+   git push origin v0.4.X
+
+5. Publish the release
+   Go to [https://github.com/sgriffin-magnoliacap/mcp-snowflake-server-readonly/releases/new](https://github.com/sgriffin-magnoliacap/mcp-snowflake-server-readonly/releases/new)
+   Select tag v0.4.X
+   Set title: v0.4.X
+   Click "Publish release"
+
+6. Check GitHub Actions for successful run
+
+7. Confirm it's live
+   Run:
+   uvx mcp\_snowflake\_server\_readonly\_sysprompt\@0.4.X --help
+
+8. If Claude isn't updating the version automatically, clear the uv cache with Remove-Item -Recurse -Force "$env:LOCALAPPDATA\uv\cache\archive-v0"
