@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/wrapped_optimizations/__init__.py
+src/wrapped_optimizations/wrapped_optimizations.py
+src/wrapped_optimizations.egg-info/PKG-INFO
+src/wrapped_optimizations.egg-info/SOURCES.txt
+src/wrapped_optimizations.egg-info/dependency_links.txt
+src/wrapped_optimizations.egg-info/requires.txt
+src/wrapped_optimizations.egg-info/top_level.txt
