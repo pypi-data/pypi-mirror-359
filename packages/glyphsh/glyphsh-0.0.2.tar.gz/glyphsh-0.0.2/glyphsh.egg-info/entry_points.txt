@@ -1,0 +1,2 @@
+[console_scripts]
+glyphsh = glyphsh.main:main
