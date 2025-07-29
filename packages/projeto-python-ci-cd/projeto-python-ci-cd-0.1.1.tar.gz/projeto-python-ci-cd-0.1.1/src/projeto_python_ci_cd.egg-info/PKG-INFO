@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: projeto-python-ci-cd
+Version: 0.1.1
+Summary: Projeto exemplo com CI/CD usando GitHub Actions
+Home-page: https://github.com/EricMencarini/projeto-python-ci-cd
+Author: Mencarini
+Author-email: ericmencarini@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+License-File: License
