@@ -1,0 +1,239 @@
+Metadata-Version: 2.4
+Name: xingkong-board
+Version: 0.1.0
+Summary: 行空板双工通信与本地视觉控制库
+Home-page: https://github.com/xingkong/xingkong-board
+Author: XingKong Team
+Author-email: xingkong@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial>=3.5
+Requires-Dist: opencv-python>=4.7.0
+Requires-Dist: mediapipe>=0.10.0
+Requires-Dist: pyttsx3>=2.90
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 行空板双工通信系统
+
+为开源硬件比赛设计的PC与行空板双工通信解决方案。学生只需写极少代码就能控制行空板并获取传感器数据。
+
+## 快速开始
+
+### 1. 运行示例
+```bash
+python student_quickstart.py COM5  # 替换COM5为实际串口
+```
+
+### 2. 学生只需修改这个文件
+```python
+from simple_robot import SimpleRobot
+import sys
+
+# 连接行空板
+xingkong = SimpleRobot(sys.argv[1] if len(sys.argv) > 1 else "COM5")
+
+# 手势控制
+def gesture_handler(gesture, pose):
+    if gesture == "one":    xingkong.send("LED", "ON")     # 开灯
+    elif gesture == "two":  xingkong.send("FAN", "ON")     # 开风扇
+    elif gesture == "five": 
+        xingkong.send("LED", "OFF")    # 关灯
+        xingkong.send("FAN", "OFF")    # 关风扇
+
+# 语音对话
+def speech_handler(text):
+    if "light on" in text.lower():  xingkong.send("LED", "ON")
+    elif "light off" in text.lower(): xingkong.send("LED", "OFF")
+    elif "hello" in text.lower():   xingkong.send("TTS", "Hello!")
+
+# 传感器响应
+def sensor_handler(data):
+    temp = data.get("temperature", 0)
+    dist = data.get("distance", 0)
+    light = data.get("light", 0)
+    
+    if temp > 30:     xingkong.send("FAN", "ON")    # 太热开风扇
+    elif temp < 18:   xingkong.send("HEAT", "ON")   # 太冷开加热
+    if dist < 10:     xingkong.send("BUZZER", "ON") # 太近响警报
+    if light < 100:   xingkong.send("LED", "ON")    # 太暗开灯
+
+# 直接判断收到的消息
+def raw_handler(line):
+    if "BTN" in line and "PRESS" in line:
+        xingkong.send("LED", "BLINK")    # 按钮按下时闪灯
+    if "ALARM" in line:
+        xingkong.send("TTS", "Warning!") # 收到警报时说话
+
+# 启动
+xingkong.when_gesture(gesture_handler)\
+        .when_speech(speech_handler)\
+        .when_sensor(sensor_handler)\
+        .when_raw(raw_handler)\
+        .start()
+```
+
+## 系统架构
+
+### 核心文件
+- `simple_robot.py` - 简化的行空板API
+- `student_quickstart.py` - 学生示例代码
+- `kid_duplex_controller.py` - 双工通信控制器
+- `kid_protocol.py` - 通信协议
+- `kid_serial.py` - 串口通信
+- `kid_vision.py` - 视觉识别（手势0-5）
+- `kid_speech.py` - 语音识别与合成
+
+### 通信协议
+**极简协议 V2**
+格式：`DEVICE:VALUE` 或 `DEVICE1:VALUE1|DEVICE2:VALUE2`
+
+**控制命令（PC → 行空板）**
+```
+LED:ON          # 开灯
+FAN:OFF         # 关风扇
+MOVE:FWD        # 前进
+TTS:Hello       # 语音播报
+```
+
+**传感器数据（行空板 → PC）**
+```
+TEMP:25.4|HUMI:60|LIGHT:350|DIST:12.3
+BTN:PRESS
+BAT:84
+```
+
+## 学生API
+
+### 基本控制
+```python
+# 新极简API
+xingkong.send("LED", "ON")      # 开灯
+xingkong.send("FAN", "OFF")     # 关风扇
+xingkong.send("MOVE", "FWD")    # 前进
+xingkong.send("TTS", "Hello")   # 语音播报
+xingkong.send_multi(LED="ON", FAN="ON")  # 同时控制多个设备
+
+# 兼容旧API
+xingkong.forward()   # 等同于 xingkong.send("MOVE", "FWD")
+xingkong.stop()      # 等同于 xingkong.send("MOVE", "STOP")
+xingkong.say("文本") # 等同于 xingkong.send("TTS", "文本")
+```
+
+### 事件处理
+```python
+# 注册手势处理
+xingkong.when_gesture(my_gesture_func)
+
+# 注册语音处理  
+xingkong.when_speech(my_speech_func)
+
+# 注册传感器处理
+xingkong.when_sensor(my_sensor_func)
+
+# 注册原始消息处理（直接判断字符串）
+xingkong.when_raw(my_raw_func)
+
+# 启动系统
+xingkong.start()
+```
+
+## 行空板端示例
+
+行空板端只需要简单的字符串判断：
+
+```python
+# 行空板Arduino/MicroPython代码示例
+while True:
+    if serial.available():
+        line = serial.readline().decode().strip()
+        
+        # 直接判断设备名
+        if "LED" in line:
+            if "ON" in line:   led_on()
+            if "OFF" in line:  led_off()
+            
+        if "FAN" in line:
+            if "ON" in line:   fan_on()
+            if "OFF" in line:  fan_off()
+            
+        if "MOVE" in line:
+            if "FWD" in line:   move_forward()
+            if "STOP" in line:  stop_motor()
+            
+    # 发送传感器数据
+    temp = read_temperature()
+    dist = read_distance()
+    msg = f"TEMP:{temp}|DIST:{dist}\n"
+    serial.print(msg)
+    delay(1000)
+```
+
+## 开发测试
+
+### 集成测试
+```bash
+python test_simple_protocol.py COM5 [mode]
+```
+
+选择测试模式：
+1. `send` - PC发送模式，测试控制命令
+2. `receive` - PC接收模式，测试传感器数据接收
+3. `device` - 设备模拟模式，模拟行空板进行测试
+
+## 硬件连接
+
+1. 行空板通过USB线连接PC
+2. 确认串口号（Windows: COM5, Linux: /dev/ttyUSB0）
+3. 波特率：115200
+
+## 故障排除
+
+**串口连接失败**
+- 检查USB线连接
+- 确认串口号正确
+- 检查行空板是否正常启动
+
+**视觉识别不工作**
+- 确认摄像头权限
+- 检查光线是否充足
+- 手势要清晰，面向摄像头
+
+**语音识别不工作**
+- 检查麦克风权限
+- 按空格键开始录音
+- 说话清晰，环境安静
+
+**心跳超时**
+- 检查行空板程序是否正常运行
+- 确认协议格式正确
+- 检查串口连接稳定性
+
+## 为什么选择极简协议？
+
+1. **学生友好** - 不需要学习复杂的JSON或XML
+2. **调试简单** - 直接看字符串就知道内容
+3. **代码最少** - `if "LED" in line:` 一行搞定
+4. **性能更好** - 没有解析开销，速度更快
+5. **容错性强** - 即使格式稍有问题也能工作
+
+## 协议详情
+
+详细协议说明请参考 [PROTOCOL_DOC.md](PROTOCOL_DOC.md)
+
+---
+
+**适用场景**: 开源硬件比赛、教学演示、机器人控制  
+**技术栈**: Python + MediaPipe + pyttsx3 + speech_recognition + pyserial 

@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+kid_duplex_controller.py
+kid_protocol.py
+kid_serial.py
+kid_speech.py
+kid_vision.py
+setup.py
+xingkong_board.py
+xingkong_board.egg-info/PKG-INFO
+xingkong_board.egg-info/SOURCES.txt
+xingkong_board.egg-info/dependency_links.txt
+xingkong_board.egg-info/requires.txt
+xingkong_board.egg-info/top_level.txt
