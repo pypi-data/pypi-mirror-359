@@ -1,0 +1,11 @@
+nessie/__init__.py,sha256=9GLm-89ZbkdBrxPTRkGJOCs4j85DlBZm3FAM50lN6q0,75
+nessie/catalog.py,sha256=WFYCx-Zmf76SMShp3V_LrGFfezCw7lBpU9kvd0dbm5U,5105
+nessie/core_funcs.py,sha256=I73WsBf9wp1e2MamZi3aN2VK2D6_CH06nIzVZ-rtZbc,1342
+nessie/cosmology.py,sha256=Up78Z61Wv6BDOPezlPiI0kqG4-vMUEgNHtXGtdhXtQo,3279
+nessie/helper_funcs.py,sha256=IruWQT9oCUn9ZEPilRcouoeIBYnMAYo3JVttAWK0KVE,2740
+nessie_py-0.1.1.dist-info/METADATA,sha256=HZMi0_IT5p92fgajSOWqsJOnWMi-WAr66DwQu8hQALY,425
+nessie_py-0.1.1.dist-info/WHEEL,sha256=lKF1x2UaOHDUKmYwqYyNAuk2SmZm-X0V9mSA2tiAos4,104
+nessie_py-0.1.1.dist-info/licenses/LICENSE,sha256=u3xND5mD7PnqUMz_LT1IwPF7Xk5Jc5Uiq4fpzrVChio,1078
+nessie_py/__init__.py,sha256=qTutN3JN_e8Sv-qsvYtPSNsBiQLrYZbO4u3e42p4iWA,119
+nessie_py/nessie_py.cpython-312-darwin.so,sha256=xCrQKl33dPbzzkP5ed4O8QdqF4XasQmSQnuMtkJ_dTs,3244880
+nessie_py-0.1.1.dist-info/RECORD,,

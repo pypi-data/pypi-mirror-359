@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: nessie_py
+Version: 0.1.1
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+License-File: LICENSE
+Summary: A fast and flexible friends-of-friends galaxy-group finder based on Rust.
+Author-email: Trystan Lambert <trystanscottlambert@gmail.com>
+Requires-Python: >=3.8
