@@ -1,0 +1,26 @@
+[package]
+name = "pisalt"
+version = "1.0.0"
+edition = "2024"
+
+authors = ["Anonymous <218768726+1xfalsebit@users.noreply.github.com>"]
+description = "Python Cryptography"
+keywords = ["python", "cryptography"]
+
+license = "Unlicense"
+readme = "readme.md"
+
+homepage = "https://github.com/1xfalsebit/pisalt"
+documentation = "https://github.com/1xfalsebit/pisalt"
+repository = "https://github.com/1xfalsebit/pisalt"
+
+[lib]
+crate-type = ["cdylib"]
+path = "source/rust/library.rs"
+
+[dependencies]
+oqs = { version = "0.11.0", features = ["sigs", "kems"], default-features = false }
+pyo3 = { version = "0.25.1", features = ["extension-module"] }
+
+[profile.release]
+overflow-checks = true
