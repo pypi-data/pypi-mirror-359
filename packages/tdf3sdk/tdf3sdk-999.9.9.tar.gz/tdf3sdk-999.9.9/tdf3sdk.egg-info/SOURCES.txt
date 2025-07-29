@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+tdf3sdk.egg-info/PKG-INFO
+tdf3sdk.egg-info/SOURCES.txt
+tdf3sdk.egg-info/dependency_links.txt
+tdf3sdk.egg-info/top_level.txt
