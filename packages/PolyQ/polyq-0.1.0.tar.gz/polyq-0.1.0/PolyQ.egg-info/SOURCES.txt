@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+PolyQ/__init__.py
+PolyQ/engine.py
+PolyQ/simulation.py
+PolyQ.egg-info/PKG-INFO
+PolyQ.egg-info/SOURCES.txt
+PolyQ.egg-info/dependency_links.txt
+PolyQ.egg-info/requires.txt
+PolyQ.egg-info/top_level.txt
