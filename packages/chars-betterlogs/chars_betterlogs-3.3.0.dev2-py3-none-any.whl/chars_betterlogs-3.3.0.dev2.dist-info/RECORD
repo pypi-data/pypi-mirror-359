@@ -1,0 +1,11 @@
+chars_betterlogs/__init__.py,sha256=OvwhKTVA5TCwc30BV1rwYW-7ZwfbJmZDmegW16-wFTY,137
+chars_betterlogs/betterLogs.py,sha256=4M_S3Ah83rqRTCV4N4yxUJFkI3dsifKXcok74RJo57E,7355
+chars_betterlogs/logs.py,sha256=kAksJ3cJElBUtuwu8YZMZrp20kFSCgCfW8ghBVeBSwc,6965
+chars_betterlogs/internal/args.py,sha256=1xMjF9_bM2HnLEDAnRXTXs9Up0MUTh8UzzFj0xq7NE0,436
+chars_betterlogs/internal/bcolors.py,sha256=TpLb7Wwb8OEnsN8OdKnVv0PEPchZeOLTYPP7_Vn9TNc,161
+chars_betterlogs/internal/birdy.py,sha256=TBO7Q-nmfByx2s76-irjfc3W_tTBHXxKRfxBApFX-bg,431
+chars_betterlogs/internal/semver.py,sha256=sC4Lh77BPCpvLmX862hN1Q1O5D6bQq3-ooFfHMOQRV0,4885
+chars_betterlogs-3.3.0.dev2.dist-info/METADATA,sha256=NeqssLEduBLXIj-L0_Vdf6Afu-hR9Hm5CqQBm7lXZks,1397
+chars_betterlogs-3.3.0.dev2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+chars_betterlogs-3.3.0.dev2.dist-info/licenses/LICENSE,sha256=oO50YGSwbQnKsHaBFuwmX9DUUmHUCHya0saYoHx6rA4,35803
+chars_betterlogs-3.3.0.dev2.dist-info/RECORD,,
