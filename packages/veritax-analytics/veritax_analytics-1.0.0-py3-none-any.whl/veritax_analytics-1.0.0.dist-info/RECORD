@@ -1,0 +1,13 @@
+veritax_analytics/__init__.py,sha256=rp1ZTOq9TR-u0-tTSiKh2zLvEQ5cctBGJwTaxWMFwcQ,1423
+veritax_analytics/buffer.py,sha256=ANosHcSEGGZWZDWAyef9I7zfzJlBwYnZrC_CAcHVcio,6644
+veritax_analytics/client.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+veritax_analytics/exceptions.py,sha256=EXZiQ-pCW7P8dJrr7NeYoN1ktBxHrdWVNjW5KWdYngo,4992
+veritax_analytics/models.py,sha256=ttCvg5BBROSUiT3qDtlDsaqGZQxnRgzu_EniSOvctak,8921
+veritax_analytics/trace.py,sha256=gYtwE5i6Q2Mg6uCU5lG4wTBD7ZiiEKmB8ZUQaNUksag,10750
+veritax_analytics/trace_context.py,sha256=Xh5rxmAuPtpbtPbwQ6Cms3oc8tV0JsZJUbjPS-KVqh4,4170
+veritax_analytics/trace_manager.py,sha256=BAFHhPVC6t4udMy1znFudIrQ5PrQ337TrUi5ZZAR0p4,13060
+veritax_analytics/transport.py,sha256=A-dZptRQan6M0H1Ny5LHwI1yj170Z0PQHuvrSzEAPaM,13566
+veritax_analytics/utils.py,sha256=mnBEfPZnOmMNjTxMk7fU1oSsEZjN_EbgO8atyjUIZjw,17455
+veritax_analytics-1.0.0.dist-info/METADATA,sha256=zBYM0rFe1sSA-2toxiS8N7sQ2DqEAnwnwWcN_O8XzwQ,2442
+veritax_analytics-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+veritax_analytics-1.0.0.dist-info/RECORD,,
