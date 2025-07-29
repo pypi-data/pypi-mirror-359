@@ -1,0 +1,14 @@
+minimamba/__init__.py,sha256=DMTeO4i7N0OMzENzbiHiFCJf0lZ7M12X3y_JOWqg554,1292
+minimamba/_version.py,sha256=Uhnt_TI9boJPqeryzNqJdYs8nQqua_O-VQnwi0USl7k,246
+minimamba/block.py,sha256=OUIpnCtIJnCs9l4zuKg45408RYoBl_I63y67R5-RWMQ,1493
+minimamba/config.py,sha256=f1FaVRTEePT_25WDce3aYhVWKCursYiS4wEMYE_T18o,6133
+minimamba/core.py,sha256=1HsoccvEBvKJuJYa1jiRfnjFY0jAXGQU31drCP3RUto,6893
+minimamba/model.py,sha256=CYvSXzLy5CLd8n47HG8_GeS4KSQKxzmPyIJAzzALSjg,10457
+minimamba/models.py,sha256=MGbuZWt58IUKqcK1oBIYlZGKsoaRMjsi_CMhX68JG6w,14195
+minimamba/norm.py,sha256=HMHykPIv7qbUsAF2NY2mBuBqZRPasQvTRBHQPfG_O3w,681
+minimamba/s6.py,sha256=sJ8_jCwg4SNnfwcz1gtH0Hg6DpBC_jS-ms0bbVo4-OY,14990
+minimamba-1.0.0.dist-info/licenses/LICENSE,sha256=x6ad2d6zLu8JKNUaki__5uOPg3fv0UdYXXrY_N1CNmg,1077
+minimamba-1.0.0.dist-info/METADATA,sha256=zmMUxeiRUCe9yazyXsNrjeZMnfTh6LZNHTo3J6_zaag,11974
+minimamba-1.0.0.dist-info/WHEEL,sha256=wXxTzcEDnjrTwFYjLPcsW_7_XihufBwmpiBeiXNBGEA,91
+minimamba-1.0.0.dist-info/top_level.txt,sha256=Z-OjqV7udgg9yX508DqTztSHArC-zu6chTNDAgCTK6g,10
+minimamba-1.0.0.dist-info/RECORD,,
