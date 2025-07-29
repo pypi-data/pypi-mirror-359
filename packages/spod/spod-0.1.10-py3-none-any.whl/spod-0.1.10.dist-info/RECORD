@@ -1,0 +1,13 @@
+spod/__init__.py,sha256=gjN85pEUgqQZgWYdh2TIyziqi6P-322ClLdoQoM0QnY,38
+spod/spod.py,sha256=gbw4NvjhvcD3_UaBle_-eZ4glYFvFjyUKP_ICmg7YRU,14717
+spod/templates/accelerate.sh,sha256=11OTFtkeQnAM0skDjXx4neuTBmiKYKjH72NZHK1RYms,2693
+spod/templates/accelerate_org.sh,sha256=KX_pNrnXj8lj9Y68n6-OKlFUw00UqBcFSj3Zf1hyxEo,1404
+spod/templates/accelerate_rsc.sh,sha256=mlgAEMZrCwN3ViAuF-cHrBG2_LlQKlhuL506GKgJqgA,2940
+spod/templates/ava_rsc.sh,sha256=9dY50338D_MLom-3yegf8VH-2UnJfCdmWD5JbYpWAWI,894
+spod/templates/basic_cmd.sh,sha256=8sLSL93-DmmYjckzoGbIaRwRipKUcdSBwxtrRhRTtTQ,1179
+spod/templates/basic_cmd_nodelist.sh,sha256=4Mg7sk-YUzrvomlDiyjf6vXzoRkOGU8jPWtPTTgeVx0,1112
+spod-0.1.10.dist-info/METADATA,sha256=PxRMhFvCVt5TiaI9HE7LqZ8PA93mPppEr6zDLN0G_6E,71
+spod-0.1.10.dist-info/WHEEL,sha256=pL8R0wFFS65tNSRnaOVrsw9EOkOqxLrlUPenUYnJKNo,91
+spod-0.1.10.dist-info/entry_points.txt,sha256=KwXokVRcyD0IvQMiY96QoE3qAAbgAoobybN-OMw9flo,39
+spod-0.1.10.dist-info/top_level.txt,sha256=njgGhCMYZ3L1mrNlJZUbtH8IJdMcxP47Gy6jPSXH8n8,5
+spod-0.1.10.dist-info/RECORD,,
