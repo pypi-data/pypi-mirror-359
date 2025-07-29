@@ -1,0 +1,2 @@
+arches==8.0.1
+arches-component-lab==0.0.1a0
