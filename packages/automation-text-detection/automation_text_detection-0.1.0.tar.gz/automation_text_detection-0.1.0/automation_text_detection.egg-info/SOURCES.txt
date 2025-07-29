@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+automation_text_detection/__init__.py
+automation_text_detection/automation_text_detection.py
+automation_text_detection.egg-info/PKG-INFO
+automation_text_detection.egg-info/SOURCES.txt
+automation_text_detection.egg-info/dependency_links.txt
+automation_text_detection.egg-info/entry_points.txt
+automation_text_detection.egg-info/requires.txt
+automation_text_detection.egg-info/top_level.txt
