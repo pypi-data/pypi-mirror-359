@@ -1,0 +1,13 @@
+onnxruntime_genai/LICENSE,sha256=ws_MuBL-SCEBqPBFl9_FqZkaaydIJmxHrJG2parhU4M,1141
+onnxruntime_genai/ThirdPartyNotices.txt,sha256=QPWMmm0zGeg5mW3jWBcNpWKwZ0eO5gGu96Vhb4DbE-8,339676
+onnxruntime_genai/__init__.py,sha256=9narK3mtIC5rhAdbhLLX_oj2U_UrTvZHABeUtdq72XQ,760
+onnxruntime_genai/_dll_directory.py,sha256=ppv03MbjV74DulVgYgV_VmvBmF4OtNbWpHI2-OTixqg,3096
+onnxruntime_genai/libonnxruntime-genai.dylib,sha256=YnRYoXMRyRiMdezeUlxVvnxrtbsDejvDQ5Pdplkyh-s,8759800
+onnxruntime_genai/onnxruntime_genai.cpython-310-darwin.so,sha256=H6mk-2JwGBWBkszoXw3vJ93nCpr8S8659T8a1l4j68c,307032
+onnxruntime_genai/models/builder.py,sha256=YVvNHSxTFJan9TEOxQdtHM-1tl1CnQQzq3k8kwdr2tA,230935
+onnxruntime_genai/models/gguf_model.py,sha256=7FPtjEaP1BeulyJNBLhGm0uY9GrFxwYyFF8p89Xgiuk,17795
+onnxruntime_genai/models/quantized_model.py,sha256=PykC70adUMBDOFyZEzETN0VY_rlHlt4UPMCTOC_vELk,55276
+onnxruntime_genai-0.8.3.dist-info/METADATA,sha256=vXXpqsCr5aQAmD1GgdyH-F4ZbMwkWB5YPgwUn30B4U0,516
+onnxruntime_genai-0.8.3.dist-info/WHEEL,sha256=q0TPgUxajuMfSTFwO3317FclNU7HRupUtKlJk4ZUMOs,110
+onnxruntime_genai-0.8.3.dist-info/top_level.txt,sha256=U92ZdtZYnKUmz1D94v3YxXHvRyNbrxkZ1gDYUzEJ_bc,18
+onnxruntime_genai-0.8.3.dist-info/RECORD,,
