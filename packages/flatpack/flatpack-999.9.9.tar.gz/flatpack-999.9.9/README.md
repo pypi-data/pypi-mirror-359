@@ -1,0 +1,11 @@
+## Description
+
+This is a stub package intended to mitigate the risks of dependency confusion.
+It reclaims a once-popular package name that the original author has since removed.
+
+You will encounter this public package if your application depends on a package that was previously removed.
+
+Read more about [Dependency Confusion](https://protsenko.dev/dependency-confusion).
+
+## Contact me
+- If you're developer of an original library and want to re-publish your own original package — contact me: `security@protsenko.dev`
