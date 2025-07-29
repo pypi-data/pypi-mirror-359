@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: anujstrike
+Version: 0.1.6
+Summary: AnujStrike Offensive Toolkit with GUI
+Home-page: https://pypi.org/project/anujstrike/
+Author: Anuj Prajapati
+Author-email: Anuj Prajapati <anujprajapatiwork.2109@gmail.com>
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: scapy
+Requires-Dist: psutil
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# AnujStick
+
+AnujStick is a cybersecurity toolkit developed for automating ethical hacking tasks.
+
+## Installation
+```bash
+pip install anujstick
+
+Usage
+anujstick --help
+
+
+---
+
+### **5. Build the Package**
+
+First, install required tools:
+
+```bash
+pip install build twine
+
+Then build:
+python -m build

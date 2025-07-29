@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anujstrike"
+version = "0.1.6"
+description = "AnujStrike Offensive Toolkit with GUI"
+authors = [{ name="Anuj Prajapati", email="anujprajapatiwork.2109@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+dependencies = ["requests", "scapy", "psutil"]
+
+[project.scripts]
+anujstrike = "anujstrike.main:main"
+anujstrike-gui = "anujstrike.gui:main"
