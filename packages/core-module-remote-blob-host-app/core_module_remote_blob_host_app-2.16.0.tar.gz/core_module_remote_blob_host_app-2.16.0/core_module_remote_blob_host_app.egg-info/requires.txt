@@ -1,0 +1,4 @@
+Django
+core-main-app==2.16.*
+core-parser-app==2.16.*
+core-module-blob-host-app==2.16.*
