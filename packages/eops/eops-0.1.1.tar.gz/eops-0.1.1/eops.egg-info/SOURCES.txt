@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+eops/__init__.py
+eops/cli.py
+eops/worker.py
+eops.egg-info/PKG-INFO
+eops.egg-info/SOURCES.txt
+eops.egg-info/dependency_links.txt
+eops.egg-info/entry_points.txt
+eops.egg-info/requires.txt
+eops.egg-info/top_level.txt
