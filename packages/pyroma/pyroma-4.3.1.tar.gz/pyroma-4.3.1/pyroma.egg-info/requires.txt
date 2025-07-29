@@ -1,0 +1,12 @@
+build>=0.7.0
+docutils
+packaging
+pygments
+requests
+setuptools>=42
+trove-classifiers>=2022.6.26
+
+[test]
+pytest
+setuptools>=60
+zest.releaser[recommended]
