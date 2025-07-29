@@ -1,0 +1,12 @@
+skarabina/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+skarabina/barber.py,sha256=MA6iPHZWj0f_cPo-5kK5RLum24s73Vwx3pQuF2lP6eE,3213
+skarabina/dask_ms.py,sha256=ddJo3JBG3JRMWUAFBbEJcCpbMdNOFPNhk1Pkdvyp9Zo,7235
+skarabina/genesis/skarabina-base.yml,sha256=535sL_-Wm4aFvlOTndKncM22RaXMuTDN0zm5HzIOkU8,88
+skarabina/hello.py,sha256=3zM5x4tH2zyNNGwfuyFR1X6JRLAvNh6zATALe-njp3w,550
+skarabina/main.py,sha256=S-1E-CK5YF7k20zODm6-YUwhGrEyJfH4hDMw1Him_bs,1700
+skarabina/skarabina.yml,sha256=YHI8qw7wm-PJOtsDxL12wBbIgXeEY8v3fVsw99rnB5k,2829
+skarabina-0.1.4.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+skarabina-0.1.4.dist-info/METADATA,sha256=znArHjY7b1UUymvq4G1PfaSJQQMKKWnPFLTNof39gMY,2009
+skarabina-0.1.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+skarabina-0.1.4.dist-info/entry_points.txt,sha256=oNY-MtnHZMXj8YkRYayTQo1nVpphoj_HK3vloL7RXdI,49
+skarabina-0.1.4.dist-info/RECORD,,
