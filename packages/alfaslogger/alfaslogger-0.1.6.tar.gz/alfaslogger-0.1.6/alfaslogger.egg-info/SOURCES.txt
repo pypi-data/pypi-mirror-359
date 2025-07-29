@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+logger_app.py
+pyproject.toml
+setup.cfg
+setup.py
+alfaslogger.egg-info/PKG-INFO
+alfaslogger.egg-info/SOURCES.txt
+alfaslogger.egg-info/dependency_links.txt
+alfaslogger.egg-info/not-zip-safe
+alfaslogger.egg-info/requires.txt
+alfaslogger.egg-info/top_level.txt
