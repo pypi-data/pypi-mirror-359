@@ -1,0 +1,9 @@
+simd_r_drive_ws_client/data_store_ws_client.pyi,sha256=UxR7uSkQMNArulW8aeCDrXSVz0GyFW51jU8_m7Rbnaw,6849
+simd_r_drive_ws_client/__init__.py,sha256=3te66e4fyXA6RQ7otGa7dMQExcb6N_-XgAJG2Hk4AVU,265
+simd_r_drive_ws_client/data_store_ws_client.py,sha256=AxXj850nQUO0MuDPhRyvyWebnhGzkFlII-mHMAUYgrA,2408
+simd_r_drive_ws_client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simd_r_drive_ws_client/simd_r_drive_ws_client.cpython-313-darwin.so,sha256=am1kLVUAKISl6Sibv0rhmDvvJhtmll_DPaIudAIaRgI,2242768
+simd_r_drive_ws_client-0.11.0a0.dist-info/RECORD,,
+simd_r_drive_ws_client-0.11.0a0.dist-info/WHEEL,sha256=pqjr7GrZP7kfkSZHNfdMSi2nNhgB3y5sKlBhqO0I38w,132
+simd_r_drive_ws_client-0.11.0a0.dist-info/METADATA,sha256=I7IG6o06lH3pv8aV3Xtyj4bsZsVjNPHv_EV01XWEP0c,3834
+simd_r_drive_ws_client-0.11.0a0.dist-info/licenses/LICENSE,sha256=Fg7NiAFl3kbvpJhypzmICgURUP8aBhsbHgNmZuUUWA0,10256
