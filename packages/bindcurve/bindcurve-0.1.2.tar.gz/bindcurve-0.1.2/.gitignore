@@ -1,0 +1,12 @@
+__pycache__
+test.ipynb
+algebra
+tempCodeRunnerFile.py
+build
+logo
+
+# Distribution / packaging
+bindcurve.egg-info
+build
+dist
+
