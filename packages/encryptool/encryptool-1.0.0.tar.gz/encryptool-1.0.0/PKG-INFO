@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: encryptool
+Version: 1.0.0
+Summary: An encryption/decryption tool written in Python.
+Project-URL: Homepage, https://github.com/CORT1N/encryptool
+Project-URL: Issues, https://github.com/CORT1N/encryptool/issues
+Author-email: Lucas Bonnaire <lbonnairepro@gmail.com>
+License-Expression: MIT
+License-File: LICENCE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# encryptool
