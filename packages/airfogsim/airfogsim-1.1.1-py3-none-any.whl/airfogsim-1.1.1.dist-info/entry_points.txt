@@ -1,0 +1,2 @@
+[console_scripts]
+airfogsim = airfogsim.cli:main
