@@ -1,0 +1,26 @@
+[CDF-25130] CDF-25130 Function schedule validation (#1691)
+
+# Description
+
+The `FunctionScheduleYAML.data` field is currently incorrectly expecting
+input data for functions to be a `dict[str, str]` causing the
+following incorrect warning.
+
+![image](https://github.com/user-attachments/assets/c0120d4e-8ba7-462b-9229-150055dfc51a)
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- When running `cdf build` on a Function Schedule with nested input
+data, the user no longer gets a `ResourceFormatWarning`.
+
+## templates
+
+No changes.
