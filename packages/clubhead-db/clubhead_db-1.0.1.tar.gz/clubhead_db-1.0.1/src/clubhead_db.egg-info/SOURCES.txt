@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/clubhead_db/__init__.py
+src/clubhead_db/builder.py
+src/clubhead_db/data_processor.py
+src/clubhead_db/label_merger.py
+src/clubhead_db.egg-info/PKG-INFO
+src/clubhead_db.egg-info/SOURCES.txt
+src/clubhead_db.egg-info/dependency_links.txt
+src/clubhead_db.egg-info/entry_points.txt
+src/clubhead_db.egg-info/requires.txt
+src/clubhead_db.egg-info/top_level.txt
+src/clubhead_db/data/annotations.parquet
+src/clubhead_db/data/metadata.csv

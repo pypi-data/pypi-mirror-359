@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clubhead-db"
+version = "1.0.1"
+description = "Scripts to download and prepare the ClubheadDB dataset."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "CC-BY-NC-4.0" }
+authors = [
+    { name = "anonymousauthor23", email = "algorithmartist02@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas",
+    "pyarrow",
+    "tqdm",
+]
+
+[project.urls]
+Homepage = "https://github.com/unknownauthor23/ClubheadDB"
+
+# --- THIS IS THE MISSING SECTION THAT CREATES THE COMMAND ---
+[project.scripts]
+clubhead-build = "clubhead_db.builder:main"
+
+# --- THIS IS THE OTHER MISSING SECTION THAT FINDS YOUR CODE ---
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+clubhead_db = ["data/*.csv", "data/*.parquet"]
