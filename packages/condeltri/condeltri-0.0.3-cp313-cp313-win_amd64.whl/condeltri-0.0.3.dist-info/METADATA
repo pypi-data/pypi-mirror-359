@@ -1,0 +1,27 @@
+Metadata-Version: 2.2
+Name: condeltri
+Version: 0.0.3
+Summary: Constrained Delaunay Triangulation
+Author: Leica Geosystems
+License: MPL-2.0
+Project-URL: Repository, https://github.com/mdealencar/PythonCDT/tree/ConDelTri
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# ConDelTri: Constrained Delaunay Triangulation
+
+This is a rebranded fork of [PythonCDT](https://github.com/artem-ogre/PythonCDT) by Leica Geosystems, maintained by [Artem Amirkhanov](https://github.com/artem-ogre).
+
+Python bindings for [CDT: C++ library for constrained Delaunay triangulation](https://github.com/artem-ogre/CDT) implemented with [pybind11](https://github.com/pybind/pybind11)
+
+## Installation
+
+```
+pip install condeltri
+```
+
+## License
+[Mozilla Public License, v. 2.0](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
+
+## Contributors
+- [SioulisChris](https://github.com/SioulisChris): fixing the tests on Windows
