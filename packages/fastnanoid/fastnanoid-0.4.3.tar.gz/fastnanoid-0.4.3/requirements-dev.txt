@@ -1,0 +1,8 @@
+-e .
+pip
+maturin
+nanoid==2.0.0
+pytest
+mypy
+ruff
+types-nanoid
