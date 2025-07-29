@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: checkamg
+Version: 0.1.11
+Summary: Automated identification and curation of Auxiliary Metabolic Genes (AMGs), Auxiliary Regulatory Genes (AReGs), and Auxiliary Physiology Genes (APGs) in viral genomes.
+Author: Cody Martin
+Author-email: "James C. Kosmopoulos" <kosmopoulos@wisc.edu>, Karthik Anantharaman <karthik@bact.wisc.edu>
+License: MIT
+Project-URL: Homepage, https://github.com/AnantharamanLab/CheckAMG
+Keywords: bioinformatics,metagenomics,viromics,genomics,AMG,phage
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: joblib>=1.5.1
+Requires-Dist: metapyrodigal>=1.4.1
+Requires-Dist: numba>=0.61.2
+Requires-Dist: numpy<2.3,>=1.24
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: polars-u64-idx>=1.30.0
+Requires-Dist: psutil>=7.0.0
+Requires-Dist: pyfastatools==2.5.0
+Requires-Dist: pyhmmer==0.11.1
+Requires-Dist: pyrodigal>=3.5.2
+Requires-Dist: pyrodigal-gv>=0.3.2
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.32
+Requires-Dist: snakemake==8.23.2
+Requires-Dist: tqdm>=4.67.1
+
+# CheckAMG
+Automated identification and curation of Auxiliary Metabolic Genes (AMGs), Auxiliary Regulatory Genes (AReGs), and Auxiliary Physiology Genes (APGs) in viral genomes.
