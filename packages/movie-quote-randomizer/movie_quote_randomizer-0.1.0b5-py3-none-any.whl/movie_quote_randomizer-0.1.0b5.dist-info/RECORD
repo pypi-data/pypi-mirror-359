@@ -1,0 +1,14 @@
+movie_quote_randomizer-0.1.0b5.dist-info/licenses/LICENSE,sha256=cmwUMHFG2v0oIjYWOT7dgrZJVpAk3xFVilACNua8zjk,1072
+mq_randomizer/__about__.py,sha256=yKA7YqNVaqSmC5g0P4gkZ6GKmbi0zWpPqbL32FJWj1I,513
+mq_randomizer/__init__.py,sha256=kpY_Md3Ux4OYVuwNAfaczir3LmdweiURKzpYjYuv_Dw,306
+mq_randomizer/pkg_resources.py,sha256=GvC5pPLHPOy8XkL87k6UoLUV_IVBP-b5YnVTsiSkKkg,920
+mq_randomizer/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mq_randomizer/quote_types.py,sha256=djcYh--DI5zg2m4OOlxH2NfpX_tfp4ZWikwVT8XaZJc,3240
+mq_randomizer/randomizer.py,sha256=FjzmQJrYSgeRHvbyKR2yKssi7LRO888lYK43eCfd48w,2010
+mq_randomizer/version.py,sha256=vVDR0GQQPXGAhIU6B79ndI_q9XOoc3Im18VC4xa_-GQ,777
+mq_randomizer/data/__init__.py,sha256=hdLCQKqlHRFUlZvFJoQO-KSKBPrXhqRci3Vc-EIjn20,44
+mq_randomizer/data/hackers_quotes.json,sha256=BtIRtPjMUwK_GYkOIRrm2_rMyf0UehJ0aOLHKBlyWHs,4400
+movie_quote_randomizer-0.1.0b5.dist-info/METADATA,sha256=K0eAxnGRa6mRFgho94YIUHBHVT75omUsZOL1mHbhnU8,6002
+movie_quote_randomizer-0.1.0b5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+movie_quote_randomizer-0.1.0b5.dist-info/top_level.txt,sha256=w8dxvFNx49sq6Ybq07jdqfAi164ERd6pf3lo8aUD8XU,14
+movie_quote_randomizer-0.1.0b5.dist-info/RECORD,,
