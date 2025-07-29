@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+hic2mcool/__init__.py
+hic2mcool/hic2mcool.py
+hic2mcool.egg-info/PKG-INFO
+hic2mcool.egg-info/SOURCES.txt
+hic2mcool.egg-info/dependency_links.txt
+hic2mcool.egg-info/entry_points.txt
+hic2mcool.egg-info/requires.txt
+hic2mcool.egg-info/top_level.txt

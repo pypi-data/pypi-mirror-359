@@ -1,0 +1,5 @@
+numpy
+pandas
+hic-straw
+cooler
+h5py
