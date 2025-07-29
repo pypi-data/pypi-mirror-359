@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pybcy.egg-info/PKG-INFO
+pybcy.egg-info/SOURCES.txt
+pybcy.egg-info/dependency_links.txt
+pybcy.egg-info/top_level.txt
