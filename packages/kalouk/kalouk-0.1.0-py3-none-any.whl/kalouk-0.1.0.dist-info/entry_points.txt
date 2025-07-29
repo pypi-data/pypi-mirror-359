@@ -1,0 +1,2 @@
+[console_scripts]
+kalouk = kalouk:main
