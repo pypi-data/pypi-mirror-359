@@ -1,0 +1,8 @@
+qiskit-ibm-runtime>=0.17.0
+qiskit>=0.45.0
+
+[dev]
+pytest>=7.0
+black>=22.0
+flake8>=5.0
+mypy>=1.0

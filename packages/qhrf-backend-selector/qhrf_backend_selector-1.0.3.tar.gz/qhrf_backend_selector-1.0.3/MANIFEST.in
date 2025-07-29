@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+recursive-include src/qhrf_backend_selector *.py
+exclude tests/*
+exclude .pytest_cache
+exclude .mypy_cache
+exclude __pycache__

@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/qhrf_backend_selector/__init__.py
+src/qhrf_backend_selector/cli.py
+src/qhrf_backend_selector/selector.py
+src/qhrf_backend_selector/utils.py
+src/qhrf_backend_selector.egg-info/PKG-INFO
+src/qhrf_backend_selector.egg-info/SOURCES.txt
+src/qhrf_backend_selector.egg-info/dependency_links.txt
+src/qhrf_backend_selector.egg-info/entry_points.txt
+src/qhrf_backend_selector.egg-info/requires.txt
+src/qhrf_backend_selector.egg-info/top_level.txt
