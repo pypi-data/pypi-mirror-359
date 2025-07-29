@@ -1,0 +1,80 @@
+from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo import InsertOne, DESCENDING, ASCENDING
+from pymongo.errors import BulkWriteError
+
+from db2_hj3415.nfs import Dart, DB_NAME, get_collection
+from datetime import datetime, timezone, timedelta
+from utils_hj3415 import setup_logger
+
+mylogger = setup_logger(__name__, 'DEBUG')
+
+COL_NAME = "dart"
+
+async def save_many(many_data: list[Dart], client: AsyncIOMotorClient) -> dict:
+    if not many_data:
+        return {"inserted_count": 0, "skipped": 0}
+
+    coll = get_collection(client, DB_NAME, COL_NAME)
+
+    await coll.create_index(
+        [
+            ("rcept_no", ASCENDING),
+            ("코드", ASCENDING),
+            ("날짜", DESCENDING),
+        ],
+        unique=True,  # 중복 완전 차단이 목적이면 True
+        name="rcept_code_date_idx"  # 인덱스 이름(선택)
+    )
+
+    ops = [
+        InsertOne(
+            item.model_dump(mode="python", by_alias=True, exclude={"_id"})
+        )
+        for item in many_data
+    ]
+
+    try:
+        result = await coll.bulk_write(ops, ordered=False)
+        return {"inserted_count": result.inserted_count, "skipped": 0}
+    except BulkWriteError as e:
+        skipped = len(e.details.get("writeErrors", []))
+        inserted = e.details.get("nInserted", 0)
+        return {"inserted_count": inserted, "skipped": skipped}
+
+
+async def get_data_last_n_days(code: str, client: AsyncIOMotorClient, days: int = 30) -> list[Dart]:
+    coll = get_collection(client, DB_NAME, COL_NAME)
+
+    now_utc = datetime.now(timezone.utc)
+    cutoff  = now_utc - timedelta(days=days)
+
+    cursor = coll.find(
+        {"코드": code, "날짜": {"$gte": cutoff}}
+    ).sort("날짜", DESCENDING)
+
+    docs = await cursor.to_list(length=None)
+    if not docs:
+        return []
+
+    return [Dart(**doc, id=str(doc["_id"])) for doc in docs]
+
+
+async def get_data_today(client: AsyncIOMotorClient) -> list[Dart]:
+    coll = get_collection(client, DB_NAME, COL_NAME)
+
+    now_utc = datetime.now(timezone.utc)
+    start = datetime(now_utc.year, now_utc.month, now_utc.day, tzinfo=timezone.utc)
+    end   = start + timedelta(days=1)
+
+    cursor = coll.find({"날짜": {"$gte": start, "$lt": end}}) \
+                 .sort("날짜", DESCENDING)
+
+    docs = await cursor.to_list(length=None)
+    if not docs:
+        return []
+
+    # by_alias=True 를 써서 _id→id 매핑을 Pydantic이 알아서 하게 할 수도 있음
+    return [
+        Dart(**doc, id=str(doc["_id"]))   # or Dart(**doc, id=str(doc.pop("_id")))
+        for doc in docs
+    ]
