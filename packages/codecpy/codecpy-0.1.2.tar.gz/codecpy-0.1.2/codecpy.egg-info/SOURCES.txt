@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+codecpy/__init__.py
+codecpy.egg-info/PKG-INFO
+codecpy.egg-info/SOURCES.txt
+codecpy.egg-info/dependency_links.txt
+codecpy.egg-info/requires.txt
+codecpy.egg-info/top_level.txt
+codecpy/codecs/__init__.py
+codecpy/colors/__init__.py
+codecpy/container/__init__.py
+codecpy/mime/__init__.py
+codecpy/mime/info.py
+codecpy/profiles/__init__.py
