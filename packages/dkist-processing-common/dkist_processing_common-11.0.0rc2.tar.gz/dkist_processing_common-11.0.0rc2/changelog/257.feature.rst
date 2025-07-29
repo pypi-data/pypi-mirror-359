@@ -1,0 +1,1 @@
+`Stems` that only match a specific task types can now check against a list of task types.
