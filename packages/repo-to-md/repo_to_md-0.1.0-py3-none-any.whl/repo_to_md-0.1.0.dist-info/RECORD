@@ -1,0 +1,8 @@
+repo_to_md/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+repo_to_md/_core.py,sha256=6wNxtopowZ0p0Yg3v12PKb1vz3OzOBI9vG0y8UTQLz4,10726
+repo_to_md/cli.py,sha256=icnnNltfpf5bqbAUvCKiCaDhi86RG_eibA2JXZ61kgs,2660
+repo_to_md-0.1.0.dist-info/METADATA,sha256=hZX13efJ_y9WkH4itU1n_Th_VdJ1sMfHsh1dkopo-5g,4647
+repo_to_md-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+repo_to_md-0.1.0.dist-info/entry_points.txt,sha256=9bh8Sy6d2YTNkEJLp3izGOqctzWG65bs4aqB9G_PvwM,50
+repo_to_md-0.1.0.dist-info/licenses/LICENSE,sha256=4U1FZ3NVKSPBlyMz15P4NGxUruUonLsuBvCVeMTPCKk,11342
+repo_to_md-0.1.0.dist-info/RECORD,,
