@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: eventextreme
+Version: 1.0
+Summary: A package for extracting extreme events
+Home-page: https://github.com/liuquan18/EventExtreme
+Author: Quan Liu
+Author-email: quan.liu@mpimet.mpg.de
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+![logo](logo.png)
+
+# Overview
+Extracting extreme events from daily time series data.
+
+
+Such extreme events are defined as the values exceeding a certain threshold, and lasting for a certain duration.
+
+Extremes events are identified by attributes such as:
+
+    - extreme_start_time
+    - extreme_end_time
+    - extreme_duration
+    - sign_start_time
+    - sign_end_time
+    - sign_duration
+    - max
+    - min
+    - mean
+
+![plot](plot.png)
+
+The algorithm has some robust features, such as:
+
+(P: positive sign, N: negative sign, E: extreme value)
+
+    - single opposite valued data are ignored. e.g, P,P,P,N,P,P,P -> P,P,P,P,P,P
+    - Multiple extreme events within one sign event are considered as one event. e.g, P,P,P,E,P,E,P,P,P is considered as one event.
+
+# Installation
+```bash
+pip install eventextreme
+```
