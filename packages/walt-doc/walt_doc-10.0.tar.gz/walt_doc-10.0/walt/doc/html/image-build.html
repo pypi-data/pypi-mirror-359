@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a WalT image from a Dockerfile &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transfering files to or from a walt image" href="image-cp.html" />
+    <link rel="prev" title="Configuring disks on virtual nodes" href="vnode-disks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building a WalT image from a Dockerfile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-walt-image-build">Using <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">build</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-tips-selection-of-the-base-image">Build tips: selection of the base image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-methods">Alternative methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-docker-hub">Using the docker hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-on-the-walt-server">Working on the walt server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Building a WalT image from a Dockerfile</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="building-a-walt-image-from-a-dockerfile">
+<h1>Building a WalT image from a Dockerfile<a class="headerlink" href="#building-a-walt-image-from-a-dockerfile" title="Link to this heading"></a></h1>
+<p>In order to modify an image easily, one can use <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">shell</span></code> or
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">cp</span></code>. One can also do modifications directly on a node and
+then use <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">save</span></code> to record the modified OS as a new image
+(see <a class="reference internal" href="node-save.html"><span class="doc">walt help show node-save</span></a>). However, listing
+build steps in a
+<a class="reference external" href="https://docs.docker.com/engine/reference/builder">Dockerfile</a> makes
+an image build reproducible, a valuable feature for image maintenance.
+Command <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">build</span></code> allows to build images this way.</p>
+<section id="using-walt-image-build">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">build</span></code><a class="headerlink" href="#using-walt-image-build" title="Link to this heading"></a></h2>
+<p>This command has two modes of operation:</p>
+<ul class="simple">
+<li><p>option <code class="docutils literal notranslate"><span class="pre">--from-url</span></code> allows to specify the URL of a git repository
+(e.g., on github)</p></li>
+<li><p>option <code class="docutils literal notranslate"><span class="pre">--from-dir</span></code> allows to specify a local directory on the
+client.</p></li>
+</ul>
+<p>When using <code class="docutils literal notranslate"><span class="pre">--from-url</span></code>, one may use option <code class="docutils literal notranslate"><span class="pre">--sub-dir</span></code> to target a
+specific sub-directory of the git repository to be used for the build.
+Otherwise the root directory is used. In any case, a Dockerfile must be
+present in the target directory. The other files contained in the target
+directory may be used in ADD and COPY instructions.</p>
+<p>As a last command argument, one has to specify the name of the resulting
+image. If this name is already in use, the previous image will be
+overwritten (after a confirmation prompt).</p>
+</section>
+<section id="build-tips-selection-of-the-base-image">
+<h2>Build tips: selection of the base image<a class="headerlink" href="#build-tips-selection-of-the-base-image" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">FROM</span></code> line of the Dockerfile defines which existing image should
+be used as a starting point. Building upon a WalT image allows to
+inherit provided features and image compliance with the WalT system.</p>
+<p>You should specify the <code class="docutils literal notranslate"><span class="pre">FROM</span></code> line like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FROM</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;/</span><span class="p">]</span><span class="o">&lt;</span><span class="n">image</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">[:</span><span class="o">&lt;</span><span class="n">tag</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">&lt;tag&gt;</span></code> part is omitted, tag <code class="docutils literal notranslate"><span class="pre">latest</span></code> is assumed. For
+instance <code class="docutils literal notranslate"><span class="pre">eduble/rpi-default</span></code> and <code class="docutils literal notranslate"><span class="pre">eduble/rpi-default:latest</span></code> are
+the same image. (All tools based on docker images work like this.)</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> part is omitted, the username of the current user
+is assumed. For instance, if my username is <code class="docutils literal notranslate"><span class="pre">eduble</span></code>, then
+<code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">rpi-default</span></code> means <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">eduble/rpi-default:latest</span></code>. This rule
+allows to directly reuse an <code class="docutils literal notranslate"><span class="pre">&lt;image-name&gt;</span></code> displayed by
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">show</span></code>. Note that this is specific to <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">build</span></code>:
+using a plain <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> instead, specifying the username would be
+mandatory.</p>
+<p>Note: in case you want to write <code class="docutils literal notranslate"><span class="pre">&lt;yourself&gt;/&lt;image-name&gt;[:&lt;tag&gt;]</span></code>
+explicitely but forgot your <code class="docutils literal notranslate"><span class="pre">walt</span></code> username, check-out your client
+configuration file at <code class="docutils literal notranslate"><span class="pre">$HOME/.walt/config</span></code>.</p>
+<p>As an alternative, you may want to specify user <code class="docutils literal notranslate"><span class="pre">&lt;waltplatform&gt;</span></code>,
+which is a kind of virtual user holding the default images of each node
+model. Default images are named
+<code class="docutils literal notranslate"><span class="pre">waltplatform/&lt;node-model&gt;-default:latest</span></code>. For instance, the default
+image for <code class="docutils literal notranslate"><span class="pre">rpi-b-plus</span></code> nodes is
+<code class="docutils literal notranslate"><span class="pre">waltplatform/rpi-b-plus-default:latest</span></code>.</p>
+<p>Here is a sample Dockerfile adding <code class="docutils literal notranslate"><span class="pre">tshark</span></code> to this default image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FROM</span> <span class="n">waltplatform</span><span class="o">/</span><span class="n">rpi</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">plus</span><span class="o">-</span><span class="n">default</span><span class="p">:</span><span class="n">latest</span>
+<span class="n">RUN</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">tshark</span>
+</pre></div>
+</div>
+<p>In some very specific cases, one may also create the image completely
+from scratch. However, in this case, the user must ensure the resulting
+image complies with walt image requirements. For details, see
+<a class="reference internal" href="image-from-scratch.html"><span class="doc">walt help show image-from-scratch</span></a>.</p>
+</section>
+<section id="alternative-methods">
+<h2>Alternative methods<a class="headerlink" href="#alternative-methods" title="Link to this heading"></a></h2>
+<p>Users may also build walt images by just using docker tooling, and then
+importing them into walt internal registry.</p>
+<section id="using-the-docker-hub">
+<h3>Using the docker hub<a class="headerlink" href="#using-the-docker-hub" title="Link to this heading"></a></h3>
+<p>The image can be built on any build machine equipped with docker:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker build -t &lt;user&gt;/&lt;image-name&gt; .     # build
+[...]
+$ docker push &lt;user&gt;/&lt;image-name&gt;           # publish on the docker hub
+[...]
+$
+</pre></div>
+</div>
+<p>And then it can be retrieved by using the walt client:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt advanced rescan-hub-account          # let walt know about the new remote image
+[...]
+$ walt image search &lt;image-name&gt;            # verify walt can find it
+[...]
+$ walt image clone hub:&lt;user&gt;/&lt;image-name&gt;  # import into walt
+[...]
+</pre></div>
+</div>
+</section>
+<section id="working-on-the-walt-server">
+<h3>Working on the walt server<a class="headerlink" href="#working-on-the-walt-server" title="Link to this heading"></a></h3>
+<p>When working on the walt server, which is equipped with docker tooling,
+the workflow is even simpler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker build -t &lt;user&gt;/&lt;image-name&gt; .         # build the image
+[...]
+$ walt image search &lt;image-name&gt;                # walt should detect it on the docker daemon
+[...]
+$ walt image clone docker:&lt;user&gt;/&lt;image-name&gt;   # import into walt
+[...]
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vnode-disks.html" class="btn btn-neutral float-left" title="Configuring disks on virtual nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="image-cp.html" class="btn btn-neutral float-right" title="Transfering files to or from a walt image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

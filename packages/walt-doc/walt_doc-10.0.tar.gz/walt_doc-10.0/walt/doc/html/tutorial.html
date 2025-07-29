@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Tutorial &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Shell usage notes" href="shells.html" />
+    <link rel="prev" title="Troubleshooting tips" href="troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-install-walt-client">(Optional) Install walt-client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-walt-command">The <code class="docutils literal notranslate"><span class="pre">walt</span></code> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exploring-the-platform">Exploring the platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#having-a-closer-look-at-the-nodes">Having a closer look at the nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-images">The images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes-on-the-usual-workflow-of-walt-users">Notes on the usual workflow of WalT users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-step-1-customizing-your-image">Workflow step 1: Customizing your image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-step-2-letting-nodes-boot-our-modified-image">Workflow step 2: Letting nodes boot our modified image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-step-3-connecting-to-nodes-and-monitoring-the-experiment">Workflow step 3: Connecting to nodes and monitoring the experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-step-4-publishing-your-image">Workflow step 4: Publishing your image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#whats-next">What’s next?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">User Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-tutorial">
+<h1>User Tutorial<a class="headerlink" href="#user-tutorial" title="Link to this heading"></a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>If you want to interact with the docker hub to clone or publish OS
+images, you will need an account there. If you do not have one already,
+you can register at: <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a>.</p>
+</section>
+<section id="optional-install-walt-client">
+<h2>(Optional) Install walt-client<a class="headerlink" href="#optional-install-walt-client" title="Link to this heading"></a></h2>
+<p>Most users use ssh to connect to the WalT server and use the walt client
+already installed there.</p>
+<p>If you want to install the WalT client on your own machine (Mac OS X,
+GNU/Linux, or using Windows Subsystem for Linux (WSL)) instead, check
+the client install documentation:
+<a class="reference internal" href="client-install.html"><span class="doc">walt help show client-install</span></a>.</p>
+</section>
+<section id="the-walt-command">
+<h2>The <code class="docutils literal notranslate"><span class="pre">walt</span></code> command<a class="headerlink" href="#the-walt-command" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">walt</span></code> is the entry point of the walt platform management.</p>
+<p>You can get an overview of walt subcommands categories by just typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt
+<span class="go">No sub-command given</span>
+<span class="go">------</span>
+
+<span class="go">WalT platform control tool.</span>
+
+<span class="go">Usage:</span>
+<span class="go">    walt CATEGORY SUBCOMMAND [args...]</span>
+
+<span class="go">Help about a given category or subcommand:</span>
+<span class="go">    walt CATEGORY --help</span>
+<span class="go">    walt CATEGORY SUBCOMMAND --help</span>
+
+<span class="go">Help about WalT in general:</span>
+<span class="go">    walt help show</span>
+
+<span class="go">Categories:</span>
+<span class="go">    advanced  advanced sub-commands</span>
+<span class="go">    device    management of WalT platform devices</span>
+<span class="go">    help      help sub-commands</span>
+<span class="go">    image     management of WalT-nodes operating system images</span>
+<span class="go">    log       management of logs</span>
+<span class="go">    node      WalT node management sub-commands</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>As indicated above, you can get help about a category or about a
+subcommand using:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>&lt;category&gt;<span class="w"> </span>--help
+<span class="gp">$ </span>walt<span class="w"> </span>&lt;category&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>You can also get more detailed information about various aspects of
+WalT, by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span><span class="nb">help</span><span class="w"> </span>show
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span></code> is actually a shortcut of
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span> <span class="pre">help-intro</span></code>, because
+<a class="reference internal" href="index.html"><span class="doc">help-intro</span></a> is the default topic displayed. While
+using WalT, commands will often print tips about unobvious features, and
+sometimes direct you to another help topic. For example, to get more
+information about WalT “shells”, you can type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span><span class="nb">help</span><span class="w"> </span>show<span class="w"> </span>shells
+<span class="go">[...]</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>We will now present a little overview of the “essential” commands.</p>
+</section>
+<section id="exploring-the-platform">
+<h2>Exploring the platform<a class="headerlink" href="#exploring-the-platform" title="Link to this heading"></a></h2>
+<p>Tree form:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>device<span class="w"> </span>tree
+
+<span class="go">main-switch</span>
+<span class="go"> ├─2: walt-server</span>
+<span class="go"> ├─4: switch-D317-new</span>
+<span class="go"> │     ├─3: rpi-D317-2</span>
+<span class="go"> │     ├─7: (rpi-demo)</span>
+<span class="go"> │     └─8: rpi-D317-1</span>
+<span class="go"> ├─5: (rpi-D313-2)</span>
+<span class="go">[...]</span>
+<span class="go"> └─7: switch-2</span>
+<span class="go">       ├─1: rpi-D322-1</span>
+<span class="go">[...]</span>
+<span class="go">       ├─5: (rpi-kfet-3)</span>
+<span class="go">       └─7: switch-3</span>
+<span class="go">             ├─1: rpi-D318-1</span>
+<span class="go">[...]</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>This tree view requires proper LLDP configuration, see
+<a class="reference internal" href="switch-install.html"><span class="doc">walt help show switch-install</span></a>. However, LLDP
+is an optional feature and the other WalT commands can work without it.</p>
+<p>Table form:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>device<span class="w"> </span>show
+
+<span class="go">The WalT network contains the following devices:</span>
+
+<span class="go">name         type    mac                ip            switch name  switch port</span>
+<span class="go">-----------  ------  -----------------  ------------  -----------  -----------</span>
+<span class="go">walt-server  server  00:0e:0c:09:94:4a  192.168.12.1  main-switch  2</span>
+<span class="go">switch-D317  switch  6c:b0:ce:0b:33:2c  192.168.12.3  main-switch  4</span>
+<span class="go">rpi-D313-2   rpi     b8:27:eb:2e:94:39  192.168.12.6  main-switch  5</span>
+<span class="go">switch-D106  switch  28:c6:8e:05:87:5a  192.168.12.2  main-switch  6</span>
+<span class="go">[...]</span>
+
+<span class="go">The network position of the following devices is unknown (at least for now):</span>
+
+<span class="go">name        type    mac                ip              reachable</span>
+<span class="go">----------  ------  -----------------  --------------  ---------</span>
+<span class="go">rpi-new-3   rpi     b8:27:eb:ae:ca:0b  192.168.12.240  NO</span>
+<span class="go">rpi-D106-5  rpi     b8:27:eb:77:22:df  192.168.12.111  NO</span>
+<span class="go">[...]</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>For example, the line of device <code class="docutils literal notranslate"><span class="pre">rpi-D313-2</span></code> indicates it is a
+raspberry pi (<code class="docutils literal notranslate"><span class="pre">rpi</span></code>), it’s mac and ip address are specified, it is
+reachable and connected on port <code class="docutils literal notranslate"><span class="pre">5</span></code> of the <code class="docutils literal notranslate"><span class="pre">main-switch</span></code>.</p>
+<p>The Raspberry Pi devices listed above are the <strong>nodes</strong> of the platform.</p>
+</section>
+<section id="having-a-closer-look-at-the-nodes">
+<h2>Having a closer look at the nodes<a class="headerlink" href="#having-a-closer-look-at-the-nodes" title="Link to this heading"></a></h2>
+<p>In order to view the nodes and what they are doing, you can type the
+following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span>show<span class="w"> </span>--all
+
+<span class="go">The following nodes are running one of your images:</span>
+
+<span class="go">name           type  image            ip             reachable</span>
+<span class="go">-------------  ----  ---------------  -------------  ---------</span>
+<span class="go">rpi-D314-1     rpi   rpi-debian       192.168.12.16  yes</span>
+<span class="go">rpi-D314-jtag  rpi   rpi-jtag-target  192.168.12.2   yes</span>
+<span class="go">[...]</span>
+
+<span class="go">The following nodes are free (they boot a default image):</span>
+
+<span class="go">name           type  ip              reachable</span>
+<span class="go">-------------  ----  --------------  ---------</span>
+<span class="go">rpi-D106-5     rpi   192.168.12.111  NO</span>
+<span class="go">rpi-D301B-4    rpi   192.168.12.164  yes</span>
+
+<span class="go">The following nodes are likely to be used by other users, since you do</span>
+<span class="go">not own the image they boot.</span>
+
+<span class="go">name       type  image owner  clonable image link   ip             reachable</span>
+<span class="go">---------  ----  -----------  --------------------  -------------  ---------</span>
+<span class="go">rpi-D30-1  rpi   zyta         server:zyta/rpi-demo  192.168.12.21  yes</span>
+<span class="go">rpi-D31-2  rpi   zyta         server:zyta/rpi-fix   192.168.12.18  NO</span>
+<span class="go">[...]</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>Three categories of nodes are listed:</p>
+<ol class="arabic simple">
+<li><p>the nodes that you <strong>own</strong>: in WalT terminology, if node <code class="docutils literal notranslate"><span class="pre">&lt;N&gt;</span></code>
+boots an image created by user <code class="docutils literal notranslate"><span class="pre">&lt;U&gt;</span></code>, we consider that “<code class="docutils literal notranslate"><span class="pre">&lt;U&gt;</span></code>
+owns <code class="docutils literal notranslate"><span class="pre">&lt;N&gt;</span></code>”. Thus, if you just started using WalT, this category
+is empty for now.</p></li>
+<li><p>the nodes that are <strong>free</strong>: they boot a default image (users
+currently do not use them).</p></li>
+<li><p>the nodes that are <strong>owned by someone else</strong>: the image they are
+running belongs to another user. If you want to use them, make sure
+this user is ok. This category is not shown unless you specify the
+<code class="docutils literal notranslate"><span class="pre">--all</span></code> option.</p></li>
+</ol>
+<p>For more information on this topic, you can type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span><span class="nb">help</span><span class="w"> </span>show<span class="w"> </span>node-ownership
+</pre></div>
+</div>
+</section>
+<section id="the-images">
+<h2>The images<a class="headerlink" href="#the-images" title="Link to this heading"></a></h2>
+<p>In the previous section we’ve seen that a Raspberry Pi was running an
+image named <code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code>. Let’s have a little explanation. An image is
+the operating system a node is running. For example <code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code> is a
+lightweight Debian OS built for Raspberry Pi.</p>
+<p>You can have a look at “your” images with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>image<span class="w"> </span>show
+<span class="go">Name             Mounted  Created              Ready</span>
+<span class="go">---------------  -------  -------------------  -----</span>
+<span class="go">rpi-default      False    2016-02-25 17:57:56  True</span>
+<span class="go">rpi-default-2    False    2016-04-11 11:01:03  True</span>
+<span class="go">rpi-debian-test  True     2016-02-25 17:57:56  True</span>
+<span class="go">rpi-debian       True     2016-02-29 10:35:02  True</span>
+<span class="go">rpi-openocd      False    2016-03-23 18:06:03  True</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>You can see the names of the different images, if they are currently
+used, their creation date, and whether they are ready (when downloading
+an image, you will see Ready = False until the download completes).</p>
+<p>If you just started using WalT, this list of images is initialized with
+a set of default images. You may <code class="docutils literal notranslate"><span class="pre">clone</span></code> other images in order to make
+them “yours”.</p>
+<p>You can <code class="docutils literal notranslate"><span class="pre">search</span></code> for images available for cloning as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>image<span class="w"> </span>search<span class="w"> </span>jessie
+<span class="go">User          Image name       Location           Clonable link</span>
+<span class="go">------------  ---------------  -----------        ----------------------------</span>
+<span class="go">brunisholz    rpi-debian       walt (other user)  walt:brunisholz/rpi-debian</span>
+<span class="go">eduble        rpi-debian-test  docker hub         hub:eduble/rpi-debian-test</span>
+<span class="go">onss          rpi-debian       walt (other user)  walt:onss/rpi-debian</span>
+<span class="go">waltplatform  rpi-debian       docker hub         hub:waltplatform/rpi-debian</span>
+<span class="go">zyta          rpi-debian       docker daemon      docker:zyta/rpi-debian</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>WalT images are internally packaged as
+<a class="reference external" href="https://www.docker.com/whatisdocker">Docker</a> images. Listed images
+may be stored in one of the following locations:</p>
+<ul class="simple">
+<li><p>docker hub (clonable link prefix ‘hub:’)</p></li>
+<li><p>local server, managed by docker daemon (clonable link prefix
+‘docker:’)</p></li>
+<li><p>already in walt internal storage (clonable link prefix ‘walt:’)</p></li>
+<li><p>possibly other custom registries configured on the WalT server.</p></li>
+</ul>
+<p>In the third case, only images of other users are listed, since the
+images you already own do not need to be cloned.</p>
+<p>Let’s choose one and clone it:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>image<span class="w"> </span>clone<span class="w"> </span>walt:brunisholz/rpi-debian
+<span class="go">[...]</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>After this operation, <strong>your</strong> image <code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code> will be listed when
+you type <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">show</span></code>.</p>
+<p>For now, your image <code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code> is just a clone of image
+<code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code> of WalT user <code class="docutils literal notranslate"><span class="pre">brunisholz</span></code>. But you can modify it, as we
+will show below.</p>
+</section>
+<section id="notes-on-the-usual-workflow-of-walt-users">
+<h2>Notes on the usual workflow of WalT users<a class="headerlink" href="#notes-on-the-usual-workflow-of-walt-users" title="Link to this heading"></a></h2>
+<p>WalT users usually follow these steps when using WalT:</p>
+<ol class="arabic simple">
+<li><p>Adapt an OS image (or several ones) to the needs of the experiment.</p></li>
+<li><p>Let nodes run the modified OS images.</p></li>
+<li><p>Monitor the experiment, and possibly interact with nodes if something
+could not be automated on OS startup. Of course, if something is not
+working as expected, one might need to return to step 1 for further
+OS image changes. The experiment monitoring may be automated by using
+the logging system: see <a class="reference internal" href="logging.html"><span class="doc">walt help show logging</span></a>.</p></li>
+<li><p>If the experiment gave good results, publish OS images for allowing
+experiment reproducibility.</p></li>
+</ol>
+<p>It is still possible to modify things while the node is running (i.e.,
+at step 3 instead of step 1). This is mostly useful in the debugging
+phase, because step 1 is done in a virtual and limited environment.
+However, for the sake of reproducibility, it is better to have
+everything set up and automated in the WalT OS image before publishing
+it.</p>
+<p>Command <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">save</span></code> also allows to work the other way: if you
+made modifications directly on a node, it allows to save the modified OS
+as a new WalT image. See <a class="reference internal" href="node-save.html"><span class="doc">walt help show node-save</span></a>
+for more info.</p>
+</section>
+<section id="workflow-step-1-customizing-your-image">
+<h2>Workflow step 1: Customizing your image<a class="headerlink" href="#workflow-step-1-customizing-your-image" title="Link to this heading"></a></h2>
+<p><em>N.B. Operations on the raspberry pi images require ARM emulation on
+WalT server side. This leads to a slower behavior.</em></p>
+<p>We will modify our image in order to allow two nodes to play a network
+ping pong.</p>
+<p>A powerful way to modify an image is to use a shell:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>image<span class="w"> </span>shell<span class="w"> </span>rpi-debian
+</pre></div>
+</div>
+<p>You should now be logged into the image as indicated by the prompt:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@image-shell:~#</span>
+</pre></div>
+</div>
+<p>Now install <code class="docutils literal notranslate"><span class="pre">netcat</span></code> to set up a lightweight client/server
+architecture.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@image-shell:~# </span>apt<span class="w"> </span>update
+<span class="gp">root@image-shell:~# </span>apt<span class="w"> </span>install<span class="w"> </span>netcat-openbsd
+</pre></div>
+</div>
+<p>Now go to the root directory, create and edit a file named pong.sh. It
+will be our master server:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@image-shell:~# </span><span class="nb">cd</span><span class="w"> </span>root/
+<span class="gp">root@image-shell:~# </span>vim<span class="w"> </span>pong.sh
+</pre></div>
+</div>
+<p>And copy the following script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># This function is used by netcat to write the appropriate</span>
+<span class="c1"># response when receiving a specific message</span>
+<span class="k">function</span><span class="w"> </span>nc_fct<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>line
+<span class="w">        </span><span class="k">do</span>
+<span class="w">                </span><span class="c1"># Here we check if the received message is a</span>
+<span class="w">                </span><span class="c1"># &quot;ping&quot; string. If so, we will respond by sending</span>
+<span class="w">                </span><span class="c1"># a &quot;pong&quot; message</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">                </span><span class="k">then</span>
+<span class="w">                        </span><span class="c1"># Sleep to avoid heavy useless load</span>
+<span class="w">                        </span>sleep<span class="w"> </span><span class="m">0</span>.1
+<span class="w">                        </span><span class="c1"># This actually write into the FIFO</span>
+<span class="w">                        </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;pong&#39;</span>
+<span class="w">                        </span><span class="c1"># This is used to print on stderr in order to</span>
+<span class="w">                        </span><span class="c1"># monitor and be used with walt-monitor</span>
+<span class="w">                        </span><span class="c1"># in order to log the activity.</span>
+<span class="w">                        </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;pong&#39;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">        </span><span class="k">done</span>
+<span class="o">}</span>
+
+<span class="nv">fifo</span><span class="o">=</span><span class="s2">&quot;fifo&quot;</span><span class="p">;</span>
+<span class="c1"># Create fifo if not created</span>
+<span class="c1"># This will be used by netcat in order to listen/send messages</span>
+<span class="o">[</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>mkfifo<span class="w"> </span><span class="nv">$fifo</span><span class="p">;</span>
+
+<span class="c1"># Start a listening server on port 12345</span>
+netcat<span class="w"> </span>-l<span class="w"> </span>-p<span class="w"> </span><span class="m">12345</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>nc_fct<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Make the file executable:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@image-shell:~# </span>chmod<span class="w"> </span>+x<span class="w"> </span>pong.sh
+</pre></div>
+</div>
+<p>Now create and edit a file named ping.sh and put it the following code.
+This will be our client:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">server</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="c1"># This function is used by netcat to write the appropriate</span>
+<span class="c1"># response when receiving a specific message</span>
+<span class="k">function</span><span class="w"> </span>nc_fct<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>line
+<span class="w">        </span><span class="k">do</span>
+<span class="w">                </span><span class="c1"># Here we check if the received message is a</span>
+<span class="w">                </span><span class="c1"># &quot;pong&quot; string. If so, we will respond by sending</span>
+<span class="w">                </span><span class="c1"># a &quot;ping&quot; message</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">                </span><span class="k">then</span>
+<span class="w">                        </span><span class="c1"># Sleep to avoid heavy useless load</span>
+<span class="w">                        </span>sleep<span class="w"> </span><span class="m">0</span>.1
+<span class="w">                        </span><span class="c1"># This actually write into the FIFO</span>
+<span class="w">                        </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;ping&#39;</span>
+<span class="w">                        </span><span class="c1"># This is used to print on stderr in order to</span>
+<span class="w">                        </span><span class="c1"># monitor and be used with walt-monitor</span>
+<span class="w">                        </span><span class="c1"># in order to log the activity.</span>
+<span class="w">                        </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;ping&#39;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">        </span><span class="k">done</span>
+<span class="o">}</span>
+<span class="nv">fifo</span><span class="o">=</span><span class="s2">&quot;fifo&quot;</span><span class="p">;</span>
+<span class="c1"># Create fifo if not created</span>
+<span class="c1"># This will be used by netcat in order to listen/send messages</span>
+<span class="o">[</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>mkfifo<span class="w"> </span><span class="nv">$fifo</span><span class="p">;</span>
+
+<span class="c1"># Connect to the server running on the other node</span>
+netcat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$server</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">12345</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>nc_fct<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span><span class="nv">$fifo</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="c1"># Send the first ping to initialize the game</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;ping&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$fifo</span>
+<span class="c1"># Print it on stderr in order to see it. We could have use stdout</span>
+<span class="c1"># on this one.</span>
+&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;ping&#39;</span>
+</pre></div>
+</div>
+<p>Make the file executable:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@image-shell:~# </span>chmod<span class="w"> </span>+x<span class="w"> </span>pong.sh
+</pre></div>
+</div>
+<p>Now exit the container by pressing <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">D</span></code> or by typing <code class="docutils literal notranslate"><span class="pre">exit</span></code> in
+the terminal. You will be asked for an image name. You can keep
+<code class="docutils literal notranslate"><span class="pre">rpi-debian</span></code> or save this modified image with a new name. Let’s call
+it <code class="docutils literal notranslate"><span class="pre">rpi-entertainment</span></code> for example.</p>
+<p>Your freshly customized image should now appear if you type
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">show</span></code>.</p>
+</section>
+<section id="workflow-step-2-letting-nodes-boot-our-modified-image">
+<h2>Workflow step 2: Letting nodes boot our modified image<a class="headerlink" href="#workflow-step-2-letting-nodes-boot-our-modified-image" title="Link to this heading"></a></h2>
+<p>In order to make two of our Raspberry Pi play together, we will have to
+boot our new image on them.</p>
+<p>First, choose two Raspberry Pi we will use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span>show<span class="w"> </span>--all
+<span class="go">[...]</span>
+<span class="go">The following nodes are free:</span>
+
+<span class="go">name       type  ip             reachable</span>
+<span class="go">---------  ----  -------------  ---------</span>
+<span class="go">rpi-sw3-3  rpi   192.168.12.16  yes</span>
+<span class="go">rpi-sw3-2  rpi   192.168.12.56  yes</span>
+
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p>We will boot our image on <code class="docutils literal notranslate"><span class="pre">rpi-sw3-3</span></code> and <code class="docutils literal notranslate"><span class="pre">rpi-sw3-2</span></code>, but first we
+will rename them:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>device<span class="w"> </span>rename<span class="w"> </span>rpi-sw3-3<span class="w"> </span>rpi-sw3-3-pong
+<span class="gp">$ </span>walt<span class="w"> </span>device<span class="w"> </span>rename<span class="w"> </span>rpi-sw3-2<span class="w"> </span>rpi-sw3-2-ping
+</pre></div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Naming Convention:</strong> <em>We propose the following naming convention
+at LIG:</em></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[shortenedDeviceType]-[geographicalLocation|switchLocation]-[freeSuffix]</span></code></div>
+<div class="line"><em>We prefer the geographical (i.e. office name) over switchLocation
+as it eases maintenance if needed. For example a Raspberry Pi
+located in office D317 could be named:</em></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">rpi-D317-tutorial</span></code></div>
+</div>
+</div></blockquote>
+<p>Then we boot nodes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span>boot<span class="w"> </span>rpi-sw3-2-ping,rpi-sw3-3-pong<span class="w"> </span>rpi-entertainment
+<span class="go">Nodes rpi-sw3-2-ping and rpi-sw3-3-pong will now boot rpi-entertainment.</span>
+<span class="go">Nodes rpi-sw3-2-ping and rpi-sw3-3-pong: rebooted ok.</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>Nodes are now booting the OS contained in our image. You could wait
+until they are fully booted by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>rpi-sw3-2-ping,rpi-sw3-3-pong
+</pre></div>
+</div>
+<p>The command will return when nodes are ready.</p>
+</section>
+<section id="workflow-step-3-connecting-to-nodes-and-monitoring-the-experiment">
+<h2>Workflow step 3: Connecting to nodes and monitoring the experiment<a class="headerlink" href="#workflow-step-3-connecting-to-nodes-and-monitoring-the-experiment" title="Link to this heading"></a></h2>
+<p>Now that our image is running on two nodes, we can connect to them and
+start the ping pong game.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span>shell<span class="w"> </span>rpi-sw3-3-pong
+<span class="go">Caution: changes outside /persist will be lost on next node reboot.</span>
+<span class="go">Run &#39;walt help show shells&#39; for more info.</span>
+
+<span class="gp">root@rpi-sw3-3-pong:~# </span>./pong.sh
+</pre></div>
+</div>
+<p>On another terminal connect to the other Raspberry Pi and start the
+client side.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>node<span class="w"> </span>shell<span class="w"> </span>rpi-sw3-2-ping
+<span class="go">Caution: changes outside /persist will be lost on next node reboot.</span>
+<span class="go">Run &#39;walt help show shells&#39; for more info.</span>
+
+<span class="gp">root@rpi-sw3-2-ping:~# </span>./ping.sh<span class="w"> </span>rpi-sw3-3-pong
+</pre></div>
+</div>
+<p>They should start playing ping pong together!</p>
+<p>Now if you want to monitor the ping pong logs, you can use the
+<code class="docutils literal notranslate"><span class="pre">walt-monitor</span></code> command in order to send logs into the walt server. On
+the pong server:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@rpi-sw3-3-pong:~# </span>walt-monitor<span class="w"> </span>./pong.sh
+</pre></div>
+</div>
+<p>On the ping client:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@rpi-sw3-2-ping:~# </span>walt-monitor<span class="w"> </span>./ping.sh<span class="w"> </span>rpi-sw3-3-pong
+</pre></div>
+</div>
+<p>You can then see the logs by typing the <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">log</span> <span class="pre">show</span> <span class="pre">--realtime</span></code>
+command in another terminal.</p>
+</section>
+<section id="workflow-step-4-publishing-your-image">
+<h2>Workflow step 4: Publishing your image<a class="headerlink" href="#workflow-step-4-publishing-your-image" title="Link to this heading"></a></h2>
+<p>If you are happy with your new <code class="docutils literal notranslate"><span class="pre">rpi-entertainment</span></code> image, you might
+want to publish it on the docker hub. This will allow researchers around
+the world to clone your image and replay your experiment.</p>
+<p>Publishing it is as simple as:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>walt<span class="w"> </span>image<span class="w"> </span>publish<span class="w"> </span>rpi-entertainment
+</pre></div>
+</div>
+</section>
+<section id="whats-next">
+<h2>What’s next?<a class="headerlink" href="#whats-next" title="Link to this heading"></a></h2>
+<p>Now you can start doing serious business using walt platform!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shells.html" class="btn btn-neutral float-right" title="Shell usage notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

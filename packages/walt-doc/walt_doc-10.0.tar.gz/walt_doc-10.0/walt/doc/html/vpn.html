@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to use WalT built-in VPN and distant nodes &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="WalT VPN Security notes" href="vpn-security.html" />
+    <link rel="prev" title="Using the web API" href="web-api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to use WalT built-in VPN and distant nodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typical-setups">Typical setups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-setup-a-vpn-node">How to setup a VPN node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-note">Performance note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-setup-a-vpn-entrypoint">How to setup a VPN entrypoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enforced-vs-permissive-vpn-boot-modes">Enforced vs permissive VPN boot modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to use WalT built-in VPN and distant nodes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-use-walt-built-in-vpn-and-distant-nodes">
+<h1>How to use WalT built-in VPN and distant nodes<a class="headerlink" href="#how-to-use-walt-built-in-vpn-and-distant-nodes" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>WalT provides a built-in VPN subsystem allowing to deploy distant nodes.
+This feature is particularly useful when experimenting with long-range
+protocols.</p>
+<p>Obviously, this feature applies to static network environments, not to a
+mobile WalT platform.</p>
+<p>The WalT VPN is based on <strong>HTTP</strong> and <strong>SSH</strong> protocols, which allow an
+easy integration in existing infrastructures.</p>
+<p>Let’s start with some important notes and vocabulary:</p>
+<ul class="simple">
+<li><p>VPN nodes can reach the WALT server by traversing HTTP and SSH
+proxies. These proxies are called <strong>HTTP entrypoint</strong> and <strong>SSH
+entrypoint</strong>.</p></li>
+<li><p>The WalT server itself can be used as a VPN entrypoint, both for HTTP
+and SSH. Unless the hostname configuration is wrong on the WalT
+server machine, <code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code> proposes this
+default configuration when enabling the VPN feature.</p></li>
+</ul>
+</section>
+<section id="typical-setups">
+<h2>Typical setups<a class="headerlink" href="#typical-setups" title="Link to this heading"></a></h2>
+<p>With the default configuration of a WalT server, nodes can only be
+connected on the dedicated platform network, called <code class="docutils literal notranslate"><span class="pre">walt-net</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">---------------</span>
+         <span class="o">|</span>  <span class="n">WalT</span> <span class="n">server</span>  <span class="o">|</span>            <span class="n">gateway</span> <span class="n">to</span> <span class="n">internet</span>
+          <span class="o">---|------|----</span>                     <span class="o">|</span>
+     <span class="n">walt</span><span class="o">-</span><span class="n">net</span><span class="o">|</span>      <span class="o">|</span><span class="n">company</span><span class="o">/</span><span class="n">lab</span> <span class="n">network</span>      <span class="o">|</span>
+             <span class="o">|</span>       <span class="o">-------------------------</span>
+             <span class="o">|</span>
+     <span class="o">-----------------</span>
+    <span class="o">|</span>        <span class="o">|</span>        <span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>
+<span class="o">|</span><span class="n">Node</span> <span class="mi">1</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">2</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">3</span><span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>
+</pre></div>
+</div>
+<p>For enabling the VPN one must run <code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code> and
+use the corresponding menu entry on the VPN configuration screen.</p>
+<p>Unless the domain name configuration is wrong, the WalT server itself is
+proposed to serve as a VPN entrypoint. So unless SSH or HTTP are
+filtered by this company/lab network, nodes 4 and 5 of the following
+figure can now use the VPN booting procedure and boot as WalT nodes too.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">---------------</span>
+         <span class="o">|</span>  <span class="n">WalT</span> <span class="n">server</span>  <span class="o">|</span>            <span class="n">gateway</span> <span class="n">to</span> <span class="n">internet</span>
+          <span class="o">---|------|----</span>                     <span class="o">|</span>
+     <span class="n">walt</span><span class="o">-</span><span class="n">net</span><span class="o">|</span>      <span class="o">|</span><span class="n">company</span><span class="o">/</span><span class="n">lab</span> <span class="n">network</span>      <span class="o">|</span>
+             <span class="o">|</span>       <span class="o">-------------------------</span>
+             <span class="o">|</span>                       <span class="o">|</span>
+     <span class="o">-----------------</span>            <span class="o">--------</span>
+    <span class="o">|</span>        <span class="o">|</span>        <span class="o">|</span>          <span class="o">|</span>        <span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>
+<span class="o">|</span><span class="n">Node</span> <span class="mi">1</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">2</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">3</span><span class="o">|</span>   <span class="o">|</span><span class="n">Node</span> <span class="mi">4</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">5</span><span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>
+</pre></div>
+</div>
+<p>Usually, the WalT server is not directly reachable from the Internet.
+However, as a second step, one can extend the scope of the VPN by
+configuring a machine reachable from the internet as the entrypoint, as
+shown in the next figure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">---------------</span>                        <span class="o">------------</span>
+         <span class="o">|</span>  <span class="n">WalT</span> <span class="n">server</span>  <span class="o">|</span>                      <span class="o">|</span> <span class="n">Entrypoint</span> <span class="o">|</span>
+          <span class="o">---|------|----</span>                        <span class="o">------------</span>
+     <span class="n">walt</span><span class="o">-</span><span class="n">net</span><span class="o">|</span>      <span class="o">|</span>       <span class="n">company</span><span class="o">/</span><span class="n">lab</span> <span class="n">network</span>    <span class="o">|</span>     <span class="o">|</span>
+             <span class="o">|</span>       <span class="o">------------------------------</span>    <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="n">internet</span>
+             <span class="o">|</span>                       <span class="o">|</span>                  <span class="o">|</span> <span class="o">|</span>
+     <span class="o">-----------------</span>            <span class="o">--------</span>            <span class="o">--</span>   <span class="o">---</span>
+    <span class="o">|</span>        <span class="o">|</span>        <span class="o">|</span>          <span class="o">|</span>        <span class="o">|</span>          <span class="o">|</span>        <span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>
+<span class="o">|</span><span class="n">Node</span> <span class="mi">1</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">2</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">3</span><span class="o">|</span>   <span class="o">|</span><span class="n">Node</span> <span class="mi">4</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">5</span><span class="o">|</span>   <span class="o">|</span><span class="n">Node</span> <span class="mi">6</span><span class="o">|</span> <span class="o">|</span><span class="n">Node</span> <span class="mi">7</span><span class="o">|</span>
+ <span class="o">------</span>   <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>     <span class="o">------</span>   <span class="o">------</span>
+</pre></div>
+</div>
+<p>This allows to deploy nodes 6 and 7 in much more distant places.</p>
+</section>
+<section id="how-to-setup-a-vpn-node">
+<h2>How to setup a VPN node<a class="headerlink" href="#how-to-setup-a-vpn-node" title="Link to this heading"></a></h2>
+<p>For now, the VPN feature is limited to Raspberry Pi 5B boards only.</p>
+<p>As soon as the VPN is enabled on server side, the node enrollment
+procedure is fully automated: on the first boot in the WalT network,
+Raspberry Pi 5B boards automatically become VPN-capable nodes.</p>
+<p>For instance, if “Node 3” of the figure is a Raspberry Pi 5, then after
+the first boot one can reconnect it next to “Node 5” or “Node 7”, and it
+will just work.</p>
+</section>
+<section id="performance-note">
+<h2>Performance note<a class="headerlink" href="#performance-note" title="Link to this heading"></a></h2>
+<p>Distant nodes can be much slower than local ones. The performance impact
+is nearly proportional to the network latency between the server and the
+node.</p>
+<p>Since nodes are booting their OS image over the network, reading files
+and directories require network requests to the server. However,
+excluding RAM intensive scenarios, the OS should be able to keep the
+response data in memory and avoid sending twice the same requests.
+Therefore, the first shell session after startup may be very slow for
+example, while the second and subsequent ones should be much faster. The
+boot delay can also be quite long.</p>
+</section>
+<section id="how-to-setup-a-vpn-entrypoint">
+<h2>How to setup a VPN entrypoint<a class="headerlink" href="#how-to-setup-a-vpn-entrypoint" title="Link to this heading"></a></h2>
+<p>Setting up a VPN entrypoint is a two-steps process:</p>
+<ol class="arabic simple">
+<li><p>Configure a machine as a proxy (HTTP or SSH or both);</p></li>
+<li><p>Change WalT VPN configuration by running
+<code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code>.</p></li>
+</ol>
+<p>The VPN nodes already deployed will automatically take the change into
+account.</p>
+<p>See <a class="reference internal" href="vpn-http-entrypoint.html"><span class="doc">walt help show vpn-http-entrypoint</span></a>
+and <a class="reference internal" href="vpn-ssh-entrypoint.html"><span class="doc">walt help show vpn-ssh-entrypoint</span></a>
+for the details.</p>
+</section>
+<section id="enforced-vs-permissive-vpn-boot-modes">
+<h2>Enforced vs permissive VPN boot modes<a class="headerlink" href="#enforced-vs-permissive-vpn-boot-modes" title="Link to this heading"></a></h2>
+<p>The VPN server setup screen, accessible by running
+<code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code>, proposes another setting called
+<code class="docutils literal notranslate"><span class="pre">VPN</span> <span class="pre">boot</span> <span class="pre">mode</span></code>. It defines which boot procedures are allowed for VPN
+nodes.</p>
+<p>Two values are possible:</p>
+<ul class="simple">
+<li><p>enforced: only allow the VPN boot procedure. Recommended when VPN
+nodes are installed in public places.</p></li>
+<li><p>permissive: try the VPN boot procedure; if this fails, try an
+unsecure TFTP boot, and if this fails too, try to boot from the SD
+card.</p></li>
+</ul>
+<p>See <a class="reference internal" href="vpn-security.html"><span class="doc">walt help show vpn-security</span></a> for more info.</p>
+<p>This choice can be reverted at any time by returning again to the server
+setup screens (i.e., <code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code>).</p>
+<p>On bootup, VPN nodes automatically reflash their EEPROM to reflect
+changes in VPN settings.</p>
+<p>Even if “enforced” mode was selected, it is always possible to
+reinitialize the EEPROM of a board, by using an SD card and the archive
+called <code class="docutils literal notranslate"><span class="pre">rpi-5-sd-recovery.tar.gz</span></code>. See
+<a class="reference internal" href="node-install.html"><span class="doc">walt help show node-install</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="web-api.html" class="btn btn-neutral float-left" title="Using the web API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vpn-security.html" class="btn btn-neutral float-right" title="WalT VPN Security notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

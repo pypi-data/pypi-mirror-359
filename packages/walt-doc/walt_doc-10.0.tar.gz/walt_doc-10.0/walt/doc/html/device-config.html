@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updating configuration settings about devices &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Viewing and updating switch ports configuration" href="device-port-config.html" />
+    <link rel="prev" title="Device and node sets: use several devices at once" href="device-sets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Updating configuration settings about devices</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="updating-configuration-settings-about-devices">
+<h1>Updating configuration settings about devices<a class="headerlink" href="#updating-configuration-settings-about-devices" title="Link to this heading"></a></h1>
+<p>WalT allows users to show or modify device configuration settings by
+using commands <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">device</span> <span class="pre">config</span></code> or <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">node</span> <span class="pre">config</span></code>. For
+instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device config switch1                    # show
+$ walt device config switch1 lldp.explore=true  # modify
+$ walt node config virt-node ram=384M           # modify
+</pre></div>
+</div>
+<p>One may also show or change several settings at once, and/or show or
+update them on several devices at once. (See also:
+<a class="reference internal" href="device-sets.html"><span class="doc">walt help show device-sets</span></a>) For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device config all-switches               # show
+$ walt device config all-switches lldp.explore=true poe.reboots=true
+$ walt node config virt-node-1,virt-node-2 ram=384M
+</pre></div>
+</div>
+<p>However, in some cases, the semantic of a particular setting may
+restrict syntax. For instance, the <code class="docutils literal notranslate"><span class="pre">expose</span></code> setting can only be
+applied to a single device at once, because it would otherwise mean
+redirecting a single server TCP port to several devices, an impossible
+operation.</p>
+<p>You can also use this command to indicate to walt server that an unknown
+device is actually a switch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ walt device config unknown-a2f2d3 type=switch
+</pre></div>
+</div>
+<p>Here is the set of settings currently allowed:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>possible values</p></th>
+<th class="head"><p>Applies to:</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boot.delay</p></td>
+<td><p>e.g. 2 or ‘random’</p></td>
+<td><p>virtual nodes</p></td>
+<td><ol class="arabic simple" start="9">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>boot.retries</p></td>
+<td><p>e.g. 0 or 9</p></td>
+<td><p>virtual nodes</p></td>
+<td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>boot.timeout</p></td>
+<td><p>e.g. ‘none’ or 180</p></td>
+<td><p>nodes</p></td>
+<td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>cpu.cores</p></td>
+<td><p>e.g. 1 or 4</p></td>
+<td><p>virtual nodes</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>disks</p></td>
+<td><p>e.g. ‘8G’ or ‘32G,1T’</p></td>
+<td><p>virtual nodes</p></td>
+<td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>expose</p></td>
+<td><p>e.g. ‘80:8080,443:8443’</p></td>
+<td><p>devices of walt-net</p></td>
+<td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>kexec.allow</p></td>
+<td><p>true or false</p></td>
+<td><p>nodes</p></td>
+<td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>lldp.explore</p></td>
+<td><p>true or false</p></td>
+<td><p>switches</p></td>
+<td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>netsetup</p></td>
+<td><p>‘NAT’ or ‘LAN’</p></td>
+<td><p>devices of walt-net</p></td>
+<td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>networks</p></td>
+<td><p>e.g. ‘walt-net,ext-net’</p></td>
+<td><p>virtual nodes</p></td>
+<td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>poe.reboots</p></td>
+<td><p>true or false</p></td>
+<td><p>switches</p></td>
+<td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ram</p></td>
+<td><p>e.g. ‘384M’ or ‘1G’</p></td>
+<td><p>virtual nodes</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>snmp.version</p></td>
+<td><p>1 or 2</p></td>
+<td><p>switches</p></td>
+<td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>snmp.community</p></td>
+<td><p>e.g. ‘private’</p></td>
+<td><p>switches</p></td>
+<td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>‘switch’</p></td>
+<td><p>‘unknown’ devices</p></td>
+<td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol class="arabic simple">
+<li><p>See <a class="reference internal" href="switch-install.html"><span class="doc">walt help show switch-install</span></a></p></li>
+<li><p>Only allowed when changing device type from ‘unknown’ to ‘switch’</p></li>
+<li><p>See <a class="reference internal" href="device-netsetup.html"><span class="doc">walt help show device-netsetup</span></a></p></li>
+<li><p>See <a class="reference internal" href="vnode-disks.html"><span class="doc">walt help show vnode-disks</span></a></p></li>
+<li><p>See <a class="reference internal" href="vnode-networks.html"><span class="doc">walt help show vnode-networks</span></a></p></li>
+<li><p>Default is true: allow kexec-rebooting if the optional script
+<code class="docutils literal notranslate"><span class="pre">[walt-image]:/bin/walt-reboot</span></code> implements it.</p></li>
+<li><p>See <a class="reference internal" href="device-expose.html"><span class="doc">walt help show device-expose</span></a></p></li>
+<li><p>Settings allowing WalT to detect and automatically hard-reboot nodes
+failing to boot.</p></li>
+<li><p>Default is ‘random’, to better share CPU resources when all virtual
+nodes are started at the same time (server bootup).</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="device-sets.html" class="btn btn-neutral float-left" title="Device and node sets: use several devices at once" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="device-port-config.html" class="btn btn-neutral float-right" title="Viewing and updating switch ports configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

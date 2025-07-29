@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repository: walt-python-packages &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Repository: walt-python-packages; walt-client code." href="dev-client.html" />
+    <link rel="prev" title="Developer documentation summary" href="developer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-network-config.html">WalT server-side network configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Repository: walt-python-packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sub-directories-relation-with-pip-packages">Sub-directories, relation with pip packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#about-the-code-of-each-package">About the code of each package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#makefile-targets">Makefile targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versions-and-dependencies">Versions and dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-versions-and-dependencies">Specifying versions and dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functional-dependencies">Functional dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility-with-python-3-9">Compatibility with python 3.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package-entry-points-and-special-embedded-content">Package entry points and special embedded content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-and-writing-new-tests">Testing and writing new tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writting-new-documentation-files">Writting new documentation files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checklist-for-a-new-feature">Checklist for a new feature</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Repository: walt-python-packages</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="repository-walt-python-packages">
+<h1>Repository: walt-python-packages<a class="headerlink" href="#repository-walt-python-packages" title="Link to this heading"></a></h1>
+<p>This section explains various topics helpful to understand how is
+organised the main WalT platform code repository at
+<a class="reference external" href="https://github.com/drakkar-lig/walt-python-packages">https://github.com/drakkar-lig/walt-python-packages</a>.</p>
+<section id="sub-directories-relation-with-pip-packages">
+<h2>Sub-directories, relation with pip packages<a class="headerlink" href="#sub-directories-relation-with-pip-packages" title="Link to this heading"></a></h2>
+<p>This single github repository allows to build and upload various
+pip-installable python packages on pypi.org:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Package on pypi</p></th>
+<th class="head"><p>Sub-dir</p></th>
+<th class="head"><p>Most of python code at:</p></th>
+<th class="head"><p>Imported as:</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>walt-client</p></td>
+<td><p>client</p></td>
+<td><p>client/walt/client</p></td>
+<td><p>walt.client</p></td>
+</tr>
+<tr class="row-odd"><td><p>walt-client-g5k</p></td>
+<td><p>client-g5k</p></td>
+<td><p>client-g5k/walt/client/g5k</p></td>
+<td><p>walt.client.g5k</p></td>
+</tr>
+<tr class="row-even"><td><p>walt-common</p></td>
+<td><p>common</p></td>
+<td><p>common/walt/common</p></td>
+<td><p>walt.common</p></td>
+</tr>
+<tr class="row-odd"><td><p>walt-doc</p></td>
+<td><p>doc</p></td>
+<td><p>doc/walt/doc</p></td>
+<td><p>walt.doc</p></td>
+</tr>
+<tr class="row-even"><td><p>walt-node</p></td>
+<td><p>node</p></td>
+<td><p>node/walt/node</p></td>
+<td><p>walt.node</p></td>
+</tr>
+<tr class="row-odd"><td><p>walt-server</p></td>
+<td><p>server</p></td>
+<td><p>server/walt/server</p></td>
+<td><p>walt.server</p></td>
+</tr>
+<tr class="row-even"><td><p>walt-virtual</p></td>
+<td><p>virtual</p></td>
+<td><p>virtual/walt/virtual</p></td>
+<td><p>walt.virtual</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can find walt-server package at <a class="reference external" href="https://pypi.org/project/walt-server">https://pypi.org/project/walt-server</a>
+for instance (this is the same for others).</p>
+<p>Developing all these python packages in the same git repository makes
+development of features involving several components easier. The actual
+location of python code results from this structure. For instance,
+subdirectory <code class="docutils literal notranslate"><span class="pre">common</span></code> is the root of <code class="docutils literal notranslate"><span class="pre">walt-common</span></code> package code. So
+one can find the file <code class="docutils literal notranslate"><span class="pre">common/setup.py</span></code> there (only after running
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> at least once, since this file is generated), but most
+other files of the package are at <code class="docutils literal notranslate"><span class="pre">common/walt/common/&lt;some-file&gt;.py</span></code>
+in order to allow statements such as
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">walt.common</span> <span class="pre">import</span> <span class="pre">&lt;some-file&gt;</span></code>.</p>
+<p>As can be seen in the last column, all python packages share the same
+parent source package called <code class="docutils literal notranslate"><span class="pre">walt</span></code>. This is called a “namespace
+package”. There are several ways to handle namespace packages, as can be
+seen <a class="reference external" href="https://packaging.python.org/en/latest/guides/packaging-namespace-packages/">in the
+doc</a>.
+Currently the code is using the <code class="docutils literal notranslate"><span class="pre">pkgutil</span></code> method described there.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">walt.client</span></code> is also a namespace package, which allows to
+manage optional client plugins. <code class="docutils literal notranslate"><span class="pre">walt-client-g5k</span></code> is the only such
+plugin at the moment (extension for running walt on Grid’5000).</p>
+<p>The remaining sub-directories are:</p>
+<ul class="simple">
+<li><p>dev: a collection of development scripts or metadata involved in
+Makefile targets</p></li>
+<li><p>test: the collection of tests involved in <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code></p></li>
+</ul>
+</section>
+<section id="about-the-code-of-each-package">
+<h2>About the code of each package<a class="headerlink" href="#about-the-code-of-each-package" title="Link to this heading"></a></h2>
+<p>The purpose of each package should be obvious given its name. The only
+exception is <code class="docutils literal notranslate"><span class="pre">walt-node</span></code>. It is an optional package which may be
+installed on some WalT images (for instance the default images have it).
+It currently allows more powerful logging features, handling faster
+kexec-based reboots, etc.</p>
+<p>We have dedicated documentation pages for the following components:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">walt-client</span></code>: see
+<a class="reference internal" href="dev-client.html"><span class="doc">walt help show dev-client</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">walt-server</span></code>: see
+<a class="reference internal" href="dev-server.html"><span class="doc">walt help show dev-server</span></a></p></li>
+</ul>
+<p>If you need documentation about another component, please email us:
+<code class="docutils literal notranslate"><span class="pre">walt-contact</span> <span class="pre">at</span> <span class="pre">univ-grenoble-alpes.fr</span></code></p>
+</section>
+<section id="makefile-targets">
+<h2>Makefile targets<a class="headerlink" href="#makefile-targets" title="Link to this heading"></a></h2>
+<p>Most often used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">install</span></code>: build and install everything
+needed on the server, i.e., all pip packages except
+<code class="docutils literal notranslate"><span class="pre">walt-client-g5k</span></code> and <code class="docutils literal notranslate"><span class="pre">walt-node</span></code>. Option <code class="docutils literal notranslate"><span class="pre">-j</span></code> runs a parallel
+build.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">quick-venv-update</span></code>: very lightweight version of
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>, which just copies to the virtual environment
+directory the files git reports as modified in the working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc.install</span></code>: compile markdown docs into html, update virtual
+env (hitting the refresh button of your browser pointing at
+<code class="docutils literal notranslate"><span class="pre">http://&lt;walt-server&gt;/doc</span></code> should then be enough to reflect
+modifications).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>: run the test suite.</p></li>
+</ul>
+<p>Little used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">&lt;subdir&gt;.build</span></code>: build a specific pip package. For instance:
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">node.build</span></code>. Built files are generated at <code class="docutils literal notranslate"><span class="pre">&lt;subdir&gt;/dist/</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">upload</span></code>: upload packages to the PyPI when a new walt version
+is published.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">freeze-deps</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">unfreeze-deps</span></code>: see management of
+dependencies below.</p></li>
+</ul>
+</section>
+<section id="versions-and-dependencies">
+<h2>Versions and dependencies<a class="headerlink" href="#versions-and-dependencies" title="Link to this heading"></a></h2>
+<section id="specifying-versions-and-dependencies">
+<h3>Specifying versions and dependencies<a class="headerlink" href="#specifying-versions-and-dependencies" title="Link to this heading"></a></h3>
+<p>Files <code class="docutils literal notranslate"><span class="pre">&lt;subdir&gt;/setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">server/requirements.txt</span></code> are
+generated, so do not try to modify them directly. Modify
+<code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code> instead.</p>
+<p>Dependencies between walt packages are simple: for instance,
+<code class="docutils literal notranslate"><span class="pre">walt-client</span></code> version <code class="docutils literal notranslate"><span class="pre">8.0</span></code> has a dependency on <code class="docutils literal notranslate"><span class="pre">walt-common==8.0</span></code>
+and <code class="docutils literal notranslate"><span class="pre">walt-doc==8.0</span></code>. We do not support dependencies between walt
+packages of different versions.</p>
+<p>The main reasons for generating <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> files and
+<code class="docutils literal notranslate"><span class="pre">server/requirements.txt</span></code> dynamically are:</p>
+<ul class="simple">
+<li><p>To have the current walt version number written at only one place (it
+is at <code class="docutils literal notranslate"><span class="pre">common/walt/common/version.py</span></code>).</p></li>
+<li><p>To avoid duplicating information in <code class="docutils literal notranslate"><span class="pre">server/setup.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">server/requirements.txt</span></code>.</p></li>
+<li><p>To factorize some code present in all <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> files.</p></li>
+</ul>
+<p>Package <code class="docutils literal notranslate"><span class="pre">walt-client</span></code>, and its dependencies <code class="docutils literal notranslate"><span class="pre">walt-doc</span></code> and
+<code class="docutils literal notranslate"><span class="pre">walt-common</span></code> should be easily installable, because some people may
+install it on other machines (instead of just using the client installed
+on the walt server). This case became more common since we now provide
+python scripting features in the walt client package. Easily installable
+means we must avoid depending on complex packages, such as packages
+involving compiled extensions. Packages <code class="docutils literal notranslate"><span class="pre">walt-client</span></code>, <code class="docutils literal notranslate"><span class="pre">walt-doc</span></code>
+and <code class="docutils literal notranslate"><span class="pre">walt-common</span></code> must rely on pure-python dependencies only. And we
+should try to limit the number of dependencies of those packages.</p>
+<p>The other packages installed on the server do not have those
+restrictions, because server installation docs describe quite fine
+requirements about the OS and machine on which <code class="docutils literal notranslate"><span class="pre">walt-server</span></code> should be
+installed, so even complex dependencies should install just fine.</p>
+<p>Package dependencies are described in <code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code>, in a loose
+way: <code class="docutils literal notranslate"><span class="pre">&lt;dependency&gt;</span> <span class="pre">&gt;=</span> <span class="pre">&lt;version&gt;</span></code> (unless a specific issue requires
+more elaborate criteria).</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> files (auto-generated) contain the same dependency
+specifications as in <code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code>, except <code class="docutils literal notranslate"><span class="pre">server/setup.py</span></code>.</p>
+<p>Files <code class="docutils literal notranslate"><span class="pre">server/setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">server/requirements.txt</span></code> are special:
+they specify a fixed version number for all dependencies and
+sub-dependencies (dependencies of dependencies). Since the list is long,
+we have had quite a few issues in the past, for instance a newer version
+of a sub-dependency could break the direct server dependency which was
+using it. Fixing all version numbers solved this kind of problem. We can
+afford this because the walt server is not designed to be directly
+accessible from the internet, so fixing a security issue which happen to
+be discovered on one of its dependencies is never an urgent matter. We
+favor stability over frequent security updates.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">unfreeze-deps</span></code> allows to release the fixed version
+requirements in <code class="docutils literal notranslate"><span class="pre">server/setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">server/requirements.txt</span></code>.
+This can be used in case of a development requiring a significant python
+environment upgrade (OS upgrade, adding a dependency conflicting with
+others, etc.). After running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">unfreeze-deps</span></code>, run
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>. Check if everything works. You can also run
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">check</span></code> to verify that no package conflict remains. If all is
+fine, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">freeze-deps</span></code> to restore a setup with fixed version
+requirements, but with the versions of the libraries you just tested,
+those of the virtual environment you modified.</p>
+</section>
+<section id="functional-dependencies">
+<h3>Functional dependencies<a class="headerlink" href="#functional-dependencies" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">walt-client</span></code> will not work with a server running a different version.
+It will however detect the version mismatch and propose to upgrade or
+downgrade.</p>
+<p>As a reminder, the package <code class="docutils literal notranslate"><span class="pre">walt-node</span></code> is optional and may be
+installed on some WalT images (e.g., default ones, but not minimalistic
+ones). Since we want to be able to use old walt images on a newer walt
+platform and vice versa, the code in <code class="docutils literal notranslate"><span class="pre">walt-node</span></code> should not depend on
+specific walt server features (and vice versa), or there should be a way
+to detect and adapt to the situation.</p>
+</section>
+</section>
+<section id="compatibility-with-python-3-9">
+<span id="compatibility-with-python-39"></span><h2>Compatibility with python 3.9<a class="headerlink" href="#compatibility-with-python-3-9" title="Link to this heading"></a></h2>
+<p>We must avoid using bleeding-edge python features in <code class="docutils literal notranslate"><span class="pre">walt-client</span></code>
+code, and it dependencies (<code class="docutils literal notranslate"><span class="pre">walt-common</span></code>, <code class="docutils literal notranslate"><span class="pre">walt-doc</span></code>) because we
+want the client to be installable on machines with a python version a
+little older than the one on the server.</p>
+<p>The same kind of restriction applies to the code involved in
+<code class="docutils literal notranslate"><span class="pre">walt-server-setup</span></code>: in some cases, this tool has to upgrade the OS,
+which implies it is first called with the python interpreter of the old
+OS. The code of <code class="docutils literal notranslate"><span class="pre">walt-server-setup</span></code> is at
+<code class="docutils literal notranslate"><span class="pre">server/walt/server/setup/</span></code> and relies on some code of <code class="docutils literal notranslate"><span class="pre">walt-common</span></code>
+and <code class="docutils literal notranslate"><span class="pre">walt-doc</span></code>.</p>
+<p>The remaining server code can theoretically use modern python features,
+but for coherency we avoid using python features not supported by python
+3.9.</p>
+</section>
+<section id="package-entry-points-and-special-embedded-content">
+<h2>Package entry points and special embedded content<a class="headerlink" href="#package-entry-points-and-special-embedded-content" title="Link to this heading"></a></h2>
+<p>In addition to the python code, each package may define:</p>
+<ul class="simple">
+<li><p>python console scripts to be installed</p></li>
+<li><p>shell scripts to be installed</p></li>
+<li><p>arbitrary files to embed with the source code</p></li>
+<li><p>compiled extensions</p></li>
+</ul>
+<p>Note: see above for restrictions about <code class="docutils literal notranslate"><span class="pre">walt-client</span></code>, <code class="docutils literal notranslate"><span class="pre">walt-common</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">walt-doc</span></code> which must be easily installable and usable on any
+machine; those packages should not define shell scripts or compiled
+extensions.</p>
+<p>Defining a python console script requires adding an entry in the
+<code class="docutils literal notranslate"><span class="pre">&quot;console_scripts&quot;</span></code> table of the relevant package in
+<code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code>. An obvious example is the <code class="docutils literal notranslate"><span class="pre">walt</span></code> command defined
+in the <code class="docutils literal notranslate"><span class="pre">walt-client</span></code> package.</p>
+<p>Defining a shell script to be installed with the package requires adding
+an entry in the <code class="docutils literal notranslate"><span class="pre">&quot;scripts&quot;</span></code> table of the relevant package in
+<code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code>. Check-out existing definitions for reference.</p>
+<p>Embedding arbitrary files requires two steps:</p>
+<ul class="simple">
+<li><p>To ensure the relevant package defines a flag
+<code class="docutils literal notranslate"><span class="pre">include_package_data=True</span></code> in <code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code></p></li>
+<li><p>To have the files declared in <code class="docutils literal notranslate"><span class="pre">&lt;subdir&gt;/MANIFEST.in</span></code></p></li>
+</ul>
+<p>Those arbitrary files are then installed next to the python source code.
+The source code can load them when needed. Various examples in current
+source code use module <code class="docutils literal notranslate"><span class="pre">importlib.resources</span></code> for that purpose. See
+<code class="docutils literal notranslate"><span class="pre">server/walt/server/processes/main/network/tftp.py</span></code> for instance.</p>
+<p>For compiled extensions, refer to the definition of package
+<code class="docutils literal notranslate"><span class="pre">walt-server</span></code> in <code class="docutils literal notranslate"><span class="pre">dev/metadata.py</span></code>.</p>
+</section>
+<section id="testing-and-writing-new-tests">
+<h2>Testing and writing new tests<a class="headerlink" href="#testing-and-writing-new-tests" title="Link to this heading"></a></h2>
+<p>A collection of tests is implemented in the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory. Some of
+them are shell scripts, others are python scripts.</p>
+<p>Tests are very high-level (e.g. test walt client tool sub-commands, API
+functions), so they must be run on a working WALT development platform.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> to test all.</p>
+<p>If you want to run the reduced set of tests contained in a file
+<code class="docutils literal notranslate"><span class="pre">test/&lt;name&gt;.[sh|py]</span></code>, run <code class="docutils literal notranslate"><span class="pre">dev/test.sh</span> <span class="pre">&lt;name&gt;</span></code>. For instance
+<code class="docutils literal notranslate"><span class="pre">dev/test.sh</span> <span class="pre">walt-node</span></code> will only run the tests defined in
+<code class="docutils literal notranslate"><span class="pre">test/walt-node.sh</span></code>; Similarly, <code class="docutils literal notranslate"><span class="pre">dev/test.sh</span> <span class="pre">api-logs</span></code> will only run
+the tests defined in <code class="docutils literal notranslate"><span class="pre">test/api-logs.py</span></code>.</p>
+<p>Notes and requirements to follow when adding new tests:</p>
+<ul class="simple">
+<li><p>The format of sh and py files should be obvious when looking at the
+existing tests.</p></li>
+<li><p>Each file <code class="docutils literal notranslate"><span class="pre">test/&lt;name&gt;.[sh|py]</span></code> must be “self-contained”: if all
+tests succeed, it should leave the platform in a clean state. Side
+effects are allowed for a given test as long as next tests of the
+file clean them up. For instance, one of the first tests in
+<code class="docutils literal notranslate"><span class="pre">test/walt-image.py</span></code> is about <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">clone</span></code>, so this test
+downloads an image from the docker hub; but the last test is about
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">image</span> <span class="pre">remove</span></code>, so this image is finally removed before the
+file ends. The only case which may require the developer to manually
+clean things up should be the case of failing tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includes/common.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">includes/common.py</span></code> define several
+useful functions, for instance <code class="docutils literal notranslate"><span class="pre">test_suite_node</span></code> and
+<code class="docutils literal notranslate"><span class="pre">test_suite_image</span></code>; checkout current tests for usage.</p></li>
+</ul>
+</section>
+<section id="writting-new-documentation-files">
+<h2>Writting new documentation files<a class="headerlink" href="#writting-new-documentation-files" title="Link to this heading"></a></h2>
+<p>Documentation is written in <code class="docutils literal notranslate"><span class="pre">doc/walt/doc/md/&lt;topic&gt;.md</span></code> markdown
+files. The left column on <code class="docutils literal notranslate"><span class="pre">http://&lt;walt-server&gt;/doc</span></code> is generated from
+file <code class="docutils literal notranslate"><span class="pre">doc/walt/doc/sphinx/index_rst_tables</span></code>. It is mandatory to have
+all markdown files referenced in this <code class="docutils literal notranslate"><span class="pre">index_rst_tables</span></code> file. If not,
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc.install</span></code> (and, by extension, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>) fails.</p>
+<p>The file must start with a short level-1 header (i.e. prefixed with 1
+hashtag), starting with an uppercase char. This level-1 header is quite
+important since it is visible in <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">list</span></code> and displayed when
+autocompleting help topics in <code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span> <span class="pre">&lt;topic&gt;</span></code>.</p>
+<p>In the remaining of the file you can use level-2 or level-3 headers to
+organize the content. Avoid level-4 or more headers (write other help
+topics instead).</p>
+<p>You can refer to another topic, say <code class="docutils literal notranslate"><span class="pre">log-echo</span></code>, by writting something
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See [`walt help show log-echo`](log-echo.md) for more info.
+</pre></div>
+</div>
+<p>Those links are automatically detected and adapted for proper rendering
+and linking in html docs (e.g., on <code class="docutils literal notranslate"><span class="pre">http://&lt;walt-server&gt;/doc</span></code>), or
+when viewing source markdown directly on github.com, and when using the
+command line viewer (<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span> <span class="pre">&lt;topic&gt;</span></code>).</p>
+<p>You can test your modifications by typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc.install</span></code> and then
+viewing <code class="docutils literal notranslate"><span class="pre">http://&lt;walt-server&gt;/doc</span></code> on your browser, or typing
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span> <span class="pre">&lt;topic&gt;</span></code>.</p>
+</section>
+<section id="checklist-for-a-new-feature">
+<h2>Checklist for a new feature<a class="headerlink" href="#checklist-for-a-new-feature" title="Link to this heading"></a></h2>
+<p>When commiting a new feature, check that your modifications include,
+when relevant:</p>
+<ul class="simple">
+<li><p>new tests in <code class="docutils literal notranslate"><span class="pre">test/</span></code> subdir (at least for new walt client
+subcommands or API features)</p></li>
+<li><p>new documentation in <code class="docutils literal notranslate"><span class="pre">doc/walt/doc/md/&lt;topic&gt;.md</span></code> files and related
+entries in <code class="docutils literal notranslate"><span class="pre">doc/walt/doc/sphinx/index_rst_tables</span></code> – test it with
+<code class="docutils literal notranslate"><span class="pre">walt</span> <span class="pre">help</span> <span class="pre">show</span> <span class="pre">&lt;topic&gt;</span></code></p></li>
+<li><p>in case of a new walt client subcommand involving specific arguments,
+appropriate auto-completion processing for these arguments in
+<code class="docutils literal notranslate"><span class="pre">server/walt/server/processes/main/autocomplete.py</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="developer.html" class="btn btn-neutral float-left" title="Developer documentation summary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dev-client.html" class="btn btn-neutral float-right" title="Repository: walt-python-packages; walt-client code." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+commonmark>=0.7.5
+pygments>=2.2.0
+setuptools>=70.0.0
+walt-common==10.0

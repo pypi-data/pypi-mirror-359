@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WalT server-side network configuration &mdash; WalT 10.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo-walt.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=864e5427"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="WalT node installation" href="node-install.html" />
+    <link rel="prev" title="WalT server upgrade" href="server-upgrade.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: gray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WalT
+              <img src="_static/logo-walt.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Admin / Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-install.html">WalT server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-upgrade.html">WalT server upgrade</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">WalT server-side network configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenario-0-virtual-only-platform">Scenario 0: virtual-only platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenario-1-very-simple-setup">Scenario 1: very simple setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenario-2-reusing-a-building-network">Scenario 2: reusing a building network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenario-3-server-with-single-wired-lan-interface">Scenario 3: server with single wired LAN interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-using-a-wireless-interface">3a: Using a wireless interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-using-vlans-it-expert">3b: Using VLANs (IT expert)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#concluding-remarks">Concluding remarks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="node-install.html">WalT node installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switch-install.html">Switch installation in WalT network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-install.html">WalT client software installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">WalT network structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registries.html">WalT image registries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">User Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Shell usage notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-ownership.html">Node ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-reboot.html">Rebooting WalT nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-config.html">Updating configuration settings about nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-console.html">Connecting to a node’s serial console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-cp.html">Transfering files to or from a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-save.html">Saving the current OS state of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-expose.html">Exposing the TCP port of a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node-netsetup.html">Changing network mode for a WalT node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-networks.html">Configuring secondary networks on virtual nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vnode-disks.html">Configuring disks on virtual nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using images</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="image-build.html">Building a WalT image from a Dockerfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-cp.html">Transfering files to or from a walt image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-spec-file.html">Writting image spec files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-from-scratch.html">Creating a WalT image from scratch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using devices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="device-sets.html">Device and node sets: use several devices at once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-config.html">Updating configuration settings about devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-port-config.html">Viewing and updating switch ports configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-expose.html">Exposing the TCP port of a device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-netsetup.html">Changing network mode of a WalT node or device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unmanaged-devices.html">Managing devices which do not implement WalT network booting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recording logs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">How to use WalT logging system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-show.html">How to query &amp; display experiment logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-wait.html">Synchronizing a script based on expected logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-checkpoint.html">Log checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-history.html">Displaying past logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-realtime.html">Displaying logs in realtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-issuers.html">Selecting log issuers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-format.html">Adapting log display format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-echo.html"><code class="docutils literal notranslate"><span class="pre">walt-log-echo</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-cat.html"><code class="docutils literal notranslate"><span class="pre">walt-log-cat</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-tee.html"><code class="docutils literal notranslate"><span class="pre">walt-log-tee</span></code> logging tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log-monitor.html"><code class="docutils literal notranslate"><span class="pre">walt-log-monitor</span></code> logging tool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting WalT experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-nodes.html">scripting API: node management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-images.html">scripting API: image management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-logs.html">scripting API: logs management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting-tools.html">scripting API: miscellaneous tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-server.html">Web server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web-api.html">Using the web API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VPN / distant nodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vpn.html">How to use WalT built-in VPN and distant nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-security.html">WalT VPN Security notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-http-entrypoint.html">How to setup a WalT VPN HTTP entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpn-ssh-entrypoint.html">How to setup a WalT VPN SSH entrypoint</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How it works</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node-bootup.html">Node bootup procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-modes.html">Boot modes: network boot and hybrid boot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer documentation summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-walt-python-packages.html">Repository: walt-python-packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-client.html">Repository: walt-python-packages; walt-client code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server.html">Repository: walt-python-packages; walt-server code.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-server-db.html">WalT server database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trackexec.html">Repository: walt-python-packages; trackexec tooling.</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">Scope and design notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional-features.html">Optional features of a WalT platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-completion.html">Shell completion setup (bash and zsh)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-node-support.html">Adding support for a new node in WalT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi-serial.html">Using the serial port of a Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="g5k.html">Deploying WalT on Grid’5000</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WalT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">WalT server-side network configuration</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="walt-server-side-network-configuration">
+<h1>WalT server-side network configuration<a class="headerlink" href="#walt-server-side-network-configuration" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>These instructions assume you are familiar with WALT network structure
+(cf. networks <code class="docutils literal notranslate"><span class="pre">walt-net</span></code>, <code class="docutils literal notranslate"><span class="pre">walt-out</span></code>, and optionally <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code>,
+see <a class="reference internal" href="networking.html"><span class="doc">walt help show networking</span></a>) and with Debian
+operating systems.</p>
+<p>In order to adapt to various network environments, the network
+configuration of WalT has to be edited. It is most easily modified by
+running <code class="docutils literal notranslate"><span class="pre">walt-server-setup</span> <span class="pre">--edit-conf</span></code>. However, expert users can
+still edit the file <code class="docutils literal notranslate"><span class="pre">/etc/walt/server.conf</span></code> manually and then restart
+the server machine.</p>
+<p>Content of file <code class="docutils literal notranslate"><span class="pre">/etc/walt/server.conf</span></code> should be YAML-compliant or,
+for backward compatibility, JSON-compliant. Note: even in the case of
+JSON, our parser accepts single line comments started by char <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+<p>The following examples will clarify how this file should be configured.
+It is advised to read these examples in the order they are presented
+below. At the end, you should be able to combine them to match your own
+network setup.</p>
+</section>
+<section id="scenario-0-virtual-only-platform">
+<h2>Scenario 0: virtual-only platform<a class="headerlink" href="#scenario-0-virtual-only-platform" title="Link to this heading"></a></h2>
+<p>In this scenario we have:</p>
+<ul class="simple">
+<li><p>Your usual LAN network (with DHCP service and internet connectivity)
+connected on eth0</p></li>
+<li><p>A secondary interface eth1 currently disconnected.</p></li>
+</ul>
+<p>The plan is to later connect WALT equipment (network switches and nodes)
+to eth1, but due to supply chain issues, they were not received yet. In
+the meantime, we will configure a virtual-only platform, in order to
+start experimenting with WALT and its virtual nodes.</p>
+<p>First, we keep the default OS-configured connectivity about the <code class="docutils literal notranslate"><span class="pre">eth0</span></code>
+interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp
+$
+</pre></div>
+</div>
+<p>And we configure walt network using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/walt/server.conf
+network:
+    # platform network
+    walt-net:
+        raw-device: null
+        ip: 192.168.183.1/24
+$
+</pre></div>
+</div>
+<p>This means that:</p>
+<ul class="simple">
+<li><p>our WALT network is virtual: it is <em>not</em> connected to a physical
+interface (<code class="docutils literal notranslate"><span class="pre">raw-device</span></code> is null).</p></li>
+<li><p>the DHCP service of our WALT server will deliver IP addresses in the
+range <code class="docutils literal notranslate"><span class="pre">192.168.183.1/24</span></code> (to virtual nodes).</p></li>
+<li><p>the WALT server will use IP address <code class="docutils literal notranslate"><span class="pre">192.168.183.1</span></code> in this virtual
+network.</p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>It is mandatory to declare <code class="docutils literal notranslate"><span class="pre">walt-net</span></code> in <code class="docutils literal notranslate"><span class="pre">/etc/walt/server.conf</span></code>
+as we did, because this configuration file is read by several walt
+software services, and they will need to find the configuration of
+this network.</p></li>
+<li><p>Once the WALT equipment is received and connected, the platform can
+obviously be reconfigured to communicate with it (see next scenario).</p></li>
+</ul>
+</section>
+<section id="scenario-1-very-simple-setup">
+<h2>Scenario 1: very simple setup<a class="headerlink" href="#scenario-1-very-simple-setup" title="Link to this heading"></a></h2>
+<p>In this scenario we have:</p>
+<ul class="simple">
+<li><p>Your usual LAN network (with DHCP service and internet connectivity)
+connected on eth0</p></li>
+<li><p>A dedicated WALT network (with dedicated network switches) connected
+on eth1</p></li>
+</ul>
+<p>This can be configured as follows. We let Debian manage our <code class="docutils literal notranslate"><span class="pre">eth0</span></code>
+interface the usual way again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp
+$
+</pre></div>
+</div>
+<p>And we configure walt network using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/walt/server.conf
+network:
+    # platform network
+    walt-net:
+        raw-device: eth1
+        ip: 192.168.183.1/24
+$
+</pre></div>
+</div>
+<p>This time, our WALT network is connected to physical interface <code class="docutils literal notranslate"><span class="pre">eth1</span></code>.
+Compared to the previous scenario, the DHCP service of our WALT server
+will now deliver IP addresses not only to virtual nodes but also to
+physical devices (nodes and switches).</p>
+<p>Note: since this plaform network is dedicated to WALT, the range of
+private IP addresses you select is not really important. Just set it
+large enough to support platform growth. Each device connected to this
+network will get a permanent IP address lease, thus a “/24” network is
+perfectly fine for a reduced setup (for instance a demo), not for a
+platform in a large building.</p>
+</section>
+<section id="scenario-2-reusing-a-building-network">
+<h2>Scenario 2: reusing a building network<a class="headerlink" href="#scenario-2-reusing-a-building-network" title="Link to this heading"></a></h2>
+<p>In this scenario we have:</p>
+<ul class="simple">
+<li><p>A WalT server in the datacenter with 3 or more wired network
+interfaces</p></li>
+<li><p>The usual LAN network for servers (with DHCP service and internet
+connectivity) connected on eth0</p></li>
+<li><p>A dedicated WALT VLAN (configured in the building network equipments)
+connected on eth1 (this is <code class="docutils literal notranslate"><span class="pre">walt-net</span></code>)</p></li>
+<li><p>The VLAN allowing remote management of building network equipments
+connected on eth2 (this one should be called <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code>)</p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>This is a classical setup for a WALT platform with a large number of
+nodes. It is obviously interesting to reuse the existing wired
+network of the building, especially if network equipments provide
+optional WalT-related features (remote management through SNMP, LLDP
+neighbor discovery, and PoE). In this case, connecting a new walt
+node just requires to assign WALT VLAN to the target wall plug and
+connect the node to it.</p></li>
+<li><p>For more information about the remote switch administration features
+WALT can use, see <a class="reference internal" href="networking.html"><span class="doc">walt help show networking</span></a>.</p></li>
+<li><p>Of course, if you are not in charge of the building network, you will
+have to ask relevant people if they allow this configuration, and get
+relevant configuration parameters from them.</p></li>
+</ul>
+<p>This scenario can be configured as follows. Again, we rely on the
+default Debian setup to manage interface <code class="docutils literal notranslate"><span class="pre">eth0</span></code> (cf. scenario 1). And
+we configure walt networks using the following file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/walt/server.conf
+network:
+    # platform network
+    walt-net:
+        raw-device: eth1
+        ip: 192.168.180.1/22
+    # building network admin
+    walt-adm:
+        raw-device: eth2
+        ip: 10.10.52.23/27
+$
+</pre></div>
+</div>
+<p>Comparing to previous scenario, we just added the configuration for
+network <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code> (and selected a larger IP address range for
+<code class="docutils literal notranslate"><span class="pre">walt-net</span></code>). The IP address and range of network <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code> should
+be given by buiding network admins. This kind of administration LAN
+usually uses a static IP configuration. If this is not the case, and
+DHCP is available instead, you can also write <code class="docutils literal notranslate"><span class="pre">ip:</span> <span class="pre">dhcp</span></code> in
+<code class="docutils literal notranslate"><span class="pre">walt-adm</span></code> section.</p>
+</section>
+<section id="scenario-3-server-with-single-wired-lan-interface">
+<h2>Scenario 3: server with single wired LAN interface<a class="headerlink" href="#scenario-3-server-with-single-wired-lan-interface" title="Link to this heading"></a></h2>
+<p>Let’s consider the case where the machine you want to setup as a WALT
+server has only one wired interface (<code class="docutils literal notranslate"><span class="pre">eth0</span></code>). The simplest workaround
+is to use a USB-ethernet dongle as a secondary wired interface. However,
+a few other options listed below exist.</p>
+<section id="a-using-a-wireless-interface">
+<span id="id1"></span><h3>3a: Using a wireless interface<a class="headerlink" href="#a-using-a-wireless-interface" title="Link to this heading"></a></h3>
+<p>If this machine has a wireless interface (<code class="docutils literal notranslate"><span class="pre">wlan0</span></code>) you can obviously
+configure <code class="docutils literal notranslate"><span class="pre">walt-net</span></code> on <code class="docutils literal notranslate"><span class="pre">eth0</span></code> and use <code class="docutils literal notranslate"><span class="pre">wlan0</span></code> for internet
+connectivity. However, keep in mind that this internet connectivity will
+be used to upload or download walt images, usually several hundreds of
+megabytes each. Thus, your wireless connection may not be the best
+option for this kind of usage. If you think it will be good enough,
+configuration setup should be pretty straightforward as long as you have
+read scenario 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+    wpa-ssid &quot;&lt;your-ssid&gt;&quot;
+    wpa-psk  &quot;&lt;psk-key&gt;&quot;    # tip: $ wpa_passphrase &lt;your-ssid&gt; &lt;your-password&gt;
+$
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/walt/server.conf
+network:
+    # platform network
+    walt-net:
+        raw-device: eth0
+        ip: 192.168.183.1/24
+$
+</pre></div>
+</div>
+<p>We just let Debian configure our <code class="docutils literal notranslate"><span class="pre">wlan0</span></code> interface, and let WalT
+manage <code class="docutils literal notranslate"><span class="pre">eth0</span></code> for its own usage.</p>
+</section>
+<section id="b-using-vlans-it-expert">
+<span id="id2"></span><h3>3b: Using VLANs (IT expert)<a class="headerlink" href="#b-using-vlans-it-expert" title="Link to this heading"></a></h3>
+<p>For better performance, there is another alternative: use VLANs to
+manage both internet connectivity and WALT platform LAN on the same
+physical interface. An example of such a setup would be the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">----------------------------------------</span>
+<span class="o">|</span> <span class="n">switch</span>
+ <span class="o">-----</span><span class="mi">1</span><span class="o">---------</span><span class="mi">2</span><span class="o">---------</span><span class="mi">3</span><span class="o">---------</span><span class="mi">4</span><span class="o">----</span>
+      <span class="o">|</span>         <span class="o">|</span>
+      <span class="o">|</span>         <span class="o">|</span>              <span class="o">---------</span>
+      <span class="o">|</span>          <span class="o">-------------|</span><span class="n">WALT</span> <span class="n">node</span><span class="o">|</span>
+      <span class="o">|</span>                        <span class="o">---------</span>
+     <span class="o">----</span>
+ <span class="o">---|</span><span class="n">eth0</span><span class="o">|-------------------------------</span>
+<span class="o">|</span>    <span class="o">----</span>                    <span class="n">WALT</span> <span class="n">server</span>
+<span class="o">|</span>     <span class="o">|---------</span>
+<span class="o">|</span>     <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>  <span class="o">-------</span>   <span class="o">-------</span>
+<span class="o">|</span> <span class="o">|</span><span class="n">eth0</span><span class="mf">.33</span><span class="o">|</span> <span class="o">|</span><span class="n">eth0</span><span class="mf">.34</span><span class="o">|</span>
+<span class="o">|</span>  <span class="o">-------</span>   <span class="o">-------</span>
+<span class="o">|</span>     <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>     <span class="o">|</span>          <span class="o">------</span> <span class="n">walt</span><span class="o">-</span><span class="n">out</span>
+<span class="o">|</span>      <span class="o">----------------</span> <span class="n">walt</span><span class="o">-</span><span class="n">net</span>
+</pre></div>
+</div>
+<p>As usual the VLAN dedicated to WALT platform (with VLAN ID 33 in this
+example) is called <code class="docutils literal notranslate"><span class="pre">walt-net</span></code>. Let us call <code class="docutils literal notranslate"><span class="pre">walt-out</span></code> the VLAN
+allowing internet connectivity (with VLAN ID 34 in this example).</p>
+<p>This setup allows:</p>
+<ul class="simple">
+<li><p>The OS to get internet connectivity on virtual interface <code class="docutils literal notranslate"><span class="pre">eth0.34</span></code></p></li>
+<li><p>WALT to communicate on its dedicated VLAN by using virtual interface
+<code class="docutils literal notranslate"><span class="pre">eth0.33</span></code>. For instance WALT will be able to reach the node
+connected on port 2 of the switch (if the switch is configured
+appropriately).</p></li>
+</ul>
+<p>We describe below the appropriate configuration to set up those virtual
+interfaces, on WALT server side:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/network/interfaces
+# internet connectivity (walt-out)
+auto eth0.34
+iface eth0.34 inet dhcp
+    vlan-raw-device eth0
+$
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/walt/server.conf
+network:
+    # platform network
+    walt-net:
+        raw-device: eth0
+        vlan: 33
+        ip: 192.168.180.1/22
+$
+</pre></div>
+</div>
+<p>In this configuration, we can notice usage of the <code class="docutils literal notranslate"><span class="pre">vlan</span></code> configuration
+entry. The rest of the configuration should be obvious given previous
+scenarios.</p>
+<p>Of course, this setup also requires appropriate VLAN configuration on
+the switch side, but this is outside the scope of this documentation.</p>
+</section>
+</section>
+<section id="concluding-remarks">
+<h2>Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Link to this heading"></a></h2>
+<p>You will probably have to adapt these scenarios to your own case, but
+this should be pretty obvious. For instance, you may install WALT in a
+building with a server equipped with only 2 wired interfaces. In this
+case you could connect <code class="docutils literal notranslate"><span class="pre">walt-net</span></code> and <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code> on a single
+physical interface (using VLANs) and <code class="docutils literal notranslate"><span class="pre">walt-out</span></code> on the other. This
+should be easily done by combining scenario 2 and 3b.</p>
+<p>Only <code class="docutils literal notranslate"><span class="pre">walt-net</span></code> and <code class="docutils literal notranslate"><span class="pre">walt-adm</span></code> have a special meaning for walt
+software. Thus, naming the interface <code class="docutils literal notranslate"><span class="pre">walt-out</span></code> of scenario 3b
+differently in file <code class="docutils literal notranslate"><span class="pre">/etc/walt/server.conf</span></code> is not a problem. This
+section of file <code class="docutils literal notranslate"><span class="pre">/etc/walt/server.conf</span></code> could even be removed and
+replaced by an equivalent configuration in <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code>.</p>
+<p>One can also use other OS network management systems (such as
+systemd-networkd), instead of using <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code> as we
+propose here.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="server-upgrade.html" class="btn btn-neutral float-left" title="WalT server upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="node-install.html" class="btn btn-neutral float-right" title="WalT node installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2023, Members of the WALT project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
