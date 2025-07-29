@@ -1,0 +1,36 @@
+name: JSON Validation
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+  schedule:
+  - cron: "0 4 * * *"
+    
+jobs:
+  validation:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+    - name: Set up Python
+      uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+      with:
+        python-version: "3.11"
+    - name: Install dependencies (Common)
+      run: |
+        pip install check-jsonschema
+    - name: Validate JSON file
+      run: |
+        check-jsonschema --schemafile cpu/microarchitectures_schema.json cpu/microarchitectures.json
+        check-jsonschema --schemafile cpu/cpuid_schema.json cpu/cpuid.json
+    - name: Check JSON file formatting
+      run: |
+        diff cpu/microarchitectures_schema.json <(jq . cpu/microarchitectures_schema.json)
+        diff cpu/cpuid_schema.json <(jq . cpu/cpuid_schema.json)
+
+        diff cpu/microarchitectures.json <(jq . cpu/microarchitectures.json)
+        diff cpu/cpuid.json <(jq . cpu/cpuid.json)
