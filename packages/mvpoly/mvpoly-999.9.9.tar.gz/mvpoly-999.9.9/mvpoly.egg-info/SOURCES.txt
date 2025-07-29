@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+mvpoly.egg-info/PKG-INFO
+mvpoly.egg-info/SOURCES.txt
+mvpoly.egg-info/dependency_links.txt
+mvpoly.egg-info/top_level.txt
