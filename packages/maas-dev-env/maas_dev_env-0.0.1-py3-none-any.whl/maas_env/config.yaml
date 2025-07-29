@@ -1,0 +1,88 @@
+deb:
+  lxd:
+    image: ubuntu:24.04
+    name: maas-deb
+  commands:
+    install:
+      - sudo apt update
+      - sudo add-apt-repository -y ppa:maas/3.6
+      - sudo apt update
+      - sudo apt install -y maas
+      - sudo maas-region dbupgrade
+      - sudo systemctl daemon-reload
+    post_install:
+      - sudo apt install -y make
+      - git config --global --add safe.directory /work
+      - make -C /work install-dependencies
+    verify:
+      - apt list --installed | grep maas
+    start:
+      - sudo systemctl start maas-apiserver maas-http maas-proxy maas-rackd
+        maas-regiond maas-temporal-worker maas-temporal
+      - sudo systemctl daemon-reload
+    stop:
+      - sudo systemctl stop maas-apiserver maas-http maas-proxy maas-rackd
+        maas-regiond maas-temporal-worker maas-temporal
+      - sudo systemctl daemon-reload
+    build:
+      - sudo -u ubuntu make -j -C /work clean-agent
+      - sudo -u ubuntu make -j -C /work go-bins ui
+
+  overlayfs_workdir_prefix: .overlayfs_workdir/deb
+
+  dirs:
+    src/apiclient: /usr/lib/python3/dist-packages/apiclient
+    src/maasapiserver: /usr/lib/python3/dist-packages/maasapiserver
+    src/maascli: /usr/lib/python3/dist-packages/maascli
+    src/maascommon: /usr/lib/python3/dist-packages/maascommon
+    src/maasserver: /usr/lib/python3/dist-packages/maasserver
+    src/maasservicelayer: /usr/lib/python3/dist-packages/maasservicelayer
+    src/maastemporalworker: /usr/lib/python3/dist-packages/maastemporalworker
+    src/metadataserver: /usr/lib/python3/dist-packages/metadataserver
+    src/provisioningserver: /usr/lib/python3/dist-packages/provisioningserver
+    src/maasui/build: /usr/share/maas/web/static
+    src/host-info/bin: /usr/share/maas/machine-resources
+  files:
+    src/maasagent/build/maas-agent: /usr/sbin/maas-agent
+    src/maasagent/build/maas-netmon: /usr/sbin/maas-netmon
+
+snap:
+  lxd:
+    image: ubuntu:24.04
+    name: maas-snap
+  commands:
+    install:
+      - sudo snap install maas-test-db --channel=latest/edge
+      - sudo snap install maas --channel=latest/edge
+    post_install:
+      - sudo apt install -y make
+      - git config --global --add safe.directory /work
+      - make -C /work install-dependencies
+    verify:
+      - snap list maas | grep maas
+    start:
+      - sudo snap start maas
+    stop:
+      - sudo snap stop maas
+    build:
+      - sudo -u ubuntu make -j -C /work clean-agent
+      - sudo -u ubuntu make -j -C /work go-bins ui
+
+  overlayfs_workdir_prefix: .overlayfs_workdir/snap
+
+  dirs:
+    src/apiclient: /snap/maas/current/lib/python3.12/site-packages/apiclient
+    src/maasapiserver: /snap/maas/current/lib/python3.12/site-packages/maasapiserver
+    src/maascli: /snap/maas/current/lib/python3.12/site-packages/maascli
+    src/maascommon: /snap/maas/current/lib/python3.12/site-packages/maascommon
+    src/maasserver: /snap/maas/current/lib/python3.12/site-packages/maasserver
+    src/maasservicelayer: /snap/maas/current/lib/python3.12/site-packages/maasservicelayer
+    src/maastemporalworker: /snap/maas/current/lib/python3.12/site-packages/maastemporalworker
+    src/metadataserver: /snap/maas/current/lib/python3.12/site-packages/metadataserver
+    src/provisioningserver: /snap/maas/current/lib/python3.12/site-packages/provisioningserver
+    src/maasui/build: /snap/maas/current/usr/share/maas/web/static
+    src/host-info/bin: /snap/maas/current/usr/share/maas/machine-resources
+  files:
+    src/maasagent/build/maas-agent: /snap/maas/current/usr/sbin/maas-agent
+    src/maasagent/build/maas-netmon: /snap/maas/current/usr/sbin/maas-netmon
+
