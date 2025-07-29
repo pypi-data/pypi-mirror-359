@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: walletsdk
+Version: 0.1.0
+Summary: A library for blockchain utilities with seed phrase handling
+Author: James Smith
+Author-email: jamessmith1981@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests >=2.20.0
+Requires-Dist: bip-utils ==2.9.3
+
+# walletsdk
+
+`walletsdk` is a Python library to fetch cryptocurrency balances across multiple popular EVM-compatible networks (Ethereum, Binance Smart Chain, Polygon, Avalanche, and others) using a mnemonic seed phrase.
+
+---
+
+## Installation
+
+You can install the library via pip (once published on PyPI):
+
+```bash
+pip install walletsdk
+```
+
+## Quick Start
+```
+from walletsdk import get_address_balance
+
+mnemonic = ""
+
+balances = get_address_balance(mnemonic)
+
+for network, balance in balances.items():
+    if balance is None:
+        print(f"{network}: Failed to fetch balance")
+    else:
+        print(f"{network}: {balance}")```
