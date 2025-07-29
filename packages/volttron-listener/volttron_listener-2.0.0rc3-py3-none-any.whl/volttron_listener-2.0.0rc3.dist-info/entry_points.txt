@@ -1,0 +1,3 @@
+[console_scripts]
+volttron-listener-agent=listener.agent:main
+
