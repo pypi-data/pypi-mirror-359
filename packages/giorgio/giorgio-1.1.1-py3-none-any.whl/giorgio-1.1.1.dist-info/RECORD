@@ -1,0 +1,15 @@
+giorgio/__init__.py,sha256=y4gEwC0Q8o2BsM98PtyuCntN1nW-ViBe6bKQWBL7isA,21
+giorgio/__main__.py,sha256=0g3iknXOS9gZUcpL_trgAcuCJnZZKjdsT_xt61WOVb4,60
+giorgio/cli.py,sha256=aETXHv-ROB5nwDFfVxvFeVTXzj9Ym7F5F0OiJtfHE58,5580
+giorgio/execution_engine.py,sha256=4J8FqeC4avV5Zlh5_QqwbPccsQT0SMKeNLziofOoXWY,11662
+giorgio/project_manager.py,sha256=yKxtm-KzRuCLTeAgUcSLlYCWlLApqZwzG2ydzI6TTHk,9061
+giorgio/prompt.py,sha256=RKLUOgrNIY7DcIBiVseXN48TJ2o4oGb18LrOYR4OphY,12444
+giorgio/ui_cli.py,sha256=g1EjsFc1TgAKynMZSeEXSsJRNOeVpW4kWFk0QxZfUag,1971
+giorgio/ui_renderer.py,sha256=8zXl-rn52QzMDxU3leq77N9a_FPLWlyPqMwwfszZTEE,885
+giorgio/templates/script_template.py,sha256=cg1avfA4RotL2Xt33Ty1mewOT_-eQ5JGnFB6RTeVEag,363
+giorgio-1.1.1.dist-info/licenses/LICENSE,sha256=zFhSxpAhW4xw6HOxZnayoUfACYyHveGwElmaGt84FCo,1081
+giorgio-1.1.1.dist-info/METADATA,sha256=n0la7_LomPYk5Kwn3KpUo8ckBnc6ABWvW5mo4Dk4lR8,11221
+giorgio-1.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+giorgio-1.1.1.dist-info/entry_points.txt,sha256=dfpSHl6QiokNRppZyY9lhK6w6G0zH3Lm150CGSJc8so,44
+giorgio-1.1.1.dist-info/top_level.txt,sha256=wGMJ3yzRaFa_0eG6qPR7RoIwFtt7L6i-K8Gp2raSqh8,8
+giorgio-1.1.1.dist-info/RECORD,,
