@@ -1,0 +1,3 @@
+[console_scripts]
+keyword-injector = keyword_generator.main:main
+resume-keyword-injector = keyword_generator.main:main
