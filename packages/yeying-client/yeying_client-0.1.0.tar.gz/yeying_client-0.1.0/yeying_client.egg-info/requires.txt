@@ -1,0 +1,4 @@
+pytest
+mnemonic
+web3
+bip44
