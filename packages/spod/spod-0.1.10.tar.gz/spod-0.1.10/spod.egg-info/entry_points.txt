@@ -1,0 +1,2 @@
+[console_scripts]
+spod = spod.spod:cli

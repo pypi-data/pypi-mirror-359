@@ -1,0 +1,15 @@
+setup.py
+spod/__init__.py
+spod/spod.py
+spod.egg-info/PKG-INFO
+spod.egg-info/SOURCES.txt
+spod.egg-info/dependency_links.txt
+spod.egg-info/entry_points.txt
+spod.egg-info/requires.txt
+spod.egg-info/top_level.txt
+spod/templates/accelerate.sh
+spod/templates/accelerate_org.sh
+spod/templates/accelerate_rsc.sh
+spod/templates/ava_rsc.sh
+spod/templates/basic_cmd.sh
+spod/templates/basic_cmd_nodelist.sh
