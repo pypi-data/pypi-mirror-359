@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: arcade-ytx
+Version: 0.2
+Summary: 😎 Bring back retro arcade vibes with this Python game pack! All addictive gameplay built with love(and the rich library).
+Home-page: https://github.com/A-ryan-Kalra/arcade-ytx/tree/feat/all-game
+Author: {'name': 'Aryan Kalra', 'email': 'aryan.kalra363@gmail.com'}
+Dynamic: author
+Dynamic: home-page
+Dynamic: summary
