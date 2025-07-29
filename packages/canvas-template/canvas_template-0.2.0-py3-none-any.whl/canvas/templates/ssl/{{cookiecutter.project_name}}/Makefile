@@ -1,0 +1,54 @@
+{% if cookiecutter.environment_manager == 'venv' %}
+PYTHON = ".venv/bin/python"
+
+.venv:
+	python -m venv .venv
+
+.PHONY: install
+install: .venv
+	@echo "Installing Dependencies.."
+	$(PYTHON) -m pip install --upgrade pip
+	$(PYTHON) -m pip install -r requirements.txt
+	$(PYTHON) -m spacy download de_core_news_sm
+	$(PYTHON) -m spacy download en_core_web_sm
+	@echo "Dependencies installed."
+
+.PHONY: train
+train:
+	$(PYTHON) src/main.py
+{% elif cookiecutter.environment_manager == 'uv' %}
+.PHONY: install
+install:
+	uv sync
+	uv run spacy download de_core_news_sm
+	uv run spacy download en_core_web_sm
+
+.PHONY: train
+train:
+	uv run src/main.py
+{% else %}
+PYTHON = python
+
+.PHONY: install
+install:
+	$(PYTHON) -m pip install -r requirements.txt
+
+.PHONY: train
+train:
+	$(PYTHON) src/main.py
+{% endif %}
+.PHONY: clean
+clean:
+	@echo "Cleaning up project artifacts.."
+	find . -name '*.pyc' -delete
+	find . -name '__pycache__' -delete
+	rm -rf build dist src/*.egg-info
+{% if cookiecutter.documentation == 'mkdocs' %}
+.PHONY: docs-build
+docs-build:
+		mkdocs build
+
+.PHONY: docs-serve
+docs-serve:
+		mkdocs serve
+{% endif %}
