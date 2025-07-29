@@ -1,0 +1,8 @@
+crouton_client/UUID.py,sha256=zL_FOp-_LC0-EnHgM__o4h5yR6GHae3jFyP5knu9k4w,540
+crouton_client/__init__.py,sha256=_ZmWudUEz0Ioi6tvKnrXURCCKIFpIQFeF5zwSxF7R04,37
+crouton_client/async.py,sha256=HnzxwlsiztkQ1HKyBeYvlExPoh4HHtlzXmizjIOU_2s,443
+crouton_client/blocking.py,sha256=nwgmSRL-8-RJ6I1Z8bAmLXFWGc_b9cXtvFO-_4bRvQY,441
+crouton_client/client.py,sha256=YiwJaYMsKAQwfPWSp21n18ydKr-mB7hYjLLK9JMHs40,9671
+crouton_client-0.1.4.dist-info/METADATA,sha256=Or85-y7ZDSnJ37zw9t8StWKaLPJofGm4g7Aouv1m3l8,3079
+crouton_client-0.1.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+crouton_client-0.1.4.dist-info/RECORD,,
