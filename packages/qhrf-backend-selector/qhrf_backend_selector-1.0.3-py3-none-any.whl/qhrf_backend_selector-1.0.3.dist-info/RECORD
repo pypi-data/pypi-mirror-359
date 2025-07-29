@@ -1,0 +1,10 @@
+qhrf_backend_selector/__init__.py,sha256=CuuotAjw1psCa0QSy-xd2fXgndnXdsY_gqgzatils9c,596
+qhrf_backend_selector/cli.py,sha256=yWPb12C9HrzGEg1fN76mrQTFiJYezKGK_wZoyHfUgaQ,1469
+qhrf_backend_selector/selector.py,sha256=ZokCZg4OEGtIjxmRWTVbLlg4UlfNh9yCXaaF16TnDQk,8291
+qhrf_backend_selector/utils.py,sha256=Kt21vgZS8F2fJJzW8tJDFz8mwQSEe2RvDzOVSmpuWSM,2523
+qhrf_backend_selector-1.0.3.dist-info/licenses/LICENSE,sha256=qvLTpiFMKAjDUfCFmBWSq6z6rIJfeX1-9iOPTE5Bl_g,1098
+qhrf_backend_selector-1.0.3.dist-info/METADATA,sha256=8J561Z1-vzmXr002a6QXKu0Gkreqv6cI9QI42xqMg0c,5964
+qhrf_backend_selector-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qhrf_backend_selector-1.0.3.dist-info/entry_points.txt,sha256=vDX7D3jHmFer5eAhA4IaSleo5fmDZORhX9b4Fv75aAc,65
+qhrf_backend_selector-1.0.3.dist-info/top_level.txt,sha256=NGX-RIVi0VyjxD1WlWWUKPkqJTLuOI2cCGh6P5vnyHI,22
+qhrf_backend_selector-1.0.3.dist-info/RECORD,,
