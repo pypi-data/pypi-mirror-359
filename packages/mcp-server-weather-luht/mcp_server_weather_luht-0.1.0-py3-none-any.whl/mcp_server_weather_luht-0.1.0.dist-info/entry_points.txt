@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-server-weather-luht = mcp_server_weather_luht:main
