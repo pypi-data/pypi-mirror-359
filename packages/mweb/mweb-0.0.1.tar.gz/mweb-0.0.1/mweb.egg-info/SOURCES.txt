@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+mweb/__init__.py
+mweb.egg-info/PKG-INFO
+mweb.egg-info/SOURCES.txt
+mweb.egg-info/dependency_links.txt
+mweb.egg-info/not-zip-safe
+mweb.egg-info/top_level.txt
