@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: fr8
+Version: 0.0.3
+Summary: Calculate your distance from fr8.
+Project-URL: Homepage, https://github.com/kiankyars/pypi
+Author-email: Kian Kyars <kiankyars@gmail.com>
+License-Expression: MIT
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: geopy
+Description-Content-Type: text/markdown
+
+# fr8
+
+Calculate your distance from fr8.
