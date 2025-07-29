@@ -1,0 +1,10 @@
+teamly/__init__.py,sha256=q7UJdZsq2nQPLJHYYQBsoZnGvYAT72GDqloF4JHvaiQ,394
+teamly/client.py,sha256=rdtk6i6FmQOGs3OYitFM9RysiS2jnkLPognn5DJmo8M,5336
+teamly/gateway.py,sha256=l9K4znHtTJQ1ABOtwyb36xJVO_jQ0iEkGTc2KBlT7Qo,2943
+teamly/http.py,sha256=jYomDb41C6FedBvuhW5mIJhMA4xSjC1EV5xx9lUpuc8,3762
+teamly/utils.py,sha256=TbunDuJo5cJcrNOhfedga1BfJANt2vxmlHIRPxH1Msc,1410
+teamly_py-0.1.0a0.dist-info/licenses/LICENSE,sha256=1A6NARfqgHvfKQCnGNXGpN7TpKGWd4UeCn2VGMToOqU,1070
+teamly_py-0.1.0a0.dist-info/METADATA,sha256=I5iQafY_j7X5jV-2ZoIy_lw6akLgrICnrHR7iI_Vh-k,1063
+teamly_py-0.1.0a0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+teamly_py-0.1.0a0.dist-info/top_level.txt,sha256=Eslt2c1G0IpYHmnSzfXEPI5N0M2ECq5_8KLyjDUgOF8,7
+teamly_py-0.1.0a0.dist-info/RECORD,,
