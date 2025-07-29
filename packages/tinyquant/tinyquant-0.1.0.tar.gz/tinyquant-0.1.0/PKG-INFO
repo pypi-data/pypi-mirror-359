@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: tinyquant
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Vladimir Malinovskii <galqiwi@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: torch>=2.7.1

@@ -1,0 +1,37 @@
+[project]
+name = "tinyquant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vladimir Malinovskii", email = "galqiwi@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.2.6",
+    "torch>=2.7.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+bnb = [
+    "bitsandbytes>=0.46.0",
+]
+dev = [
+    "pytest>=8.4.1",
+    "mypy>=1.0.0",
+    "pytest-cov>=4.0.0",
+    "flake8>=7.0.0",
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = "bitsandbytes.*"
+ignore_missing_imports = true
