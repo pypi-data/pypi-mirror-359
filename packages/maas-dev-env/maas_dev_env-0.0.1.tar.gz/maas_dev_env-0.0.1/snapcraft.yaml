@@ -1,0 +1,27 @@
+name: dev-maas
+title: MAAS dev environment utility
+summary: utility to manage your MAAS dev environment
+version: "0.0.1"
+description: |
+  dev-maas is a command-line tool to sync your local changes to a snap or a deb
+  installation by using overlays. It works with a YAML configuration file. You
+  can find the default at https://github.com/alemar99/maas-dev-env/blob/main/maas_env/config.yaml.
+base: core24
+
+grade: devel
+confinement: classic
+
+parts:
+  maas-env:
+    plugin: python
+    source: .
+    stage-packages:
+      - python3.12-minimal
+      - libpython3.12-minimal
+      - libpython3.12-stdlib
+
+apps:
+  dev-maas:
+    command: bin/maas-dev-env
+    environment:
+      PYTHONPATH: $SNAP/lib/python3.12/site-packages
