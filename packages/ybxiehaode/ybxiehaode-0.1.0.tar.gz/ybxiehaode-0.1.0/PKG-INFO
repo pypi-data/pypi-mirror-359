@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: ybxiehaode
+Version: 0.1.0
+Summary: 一个炫酷的 AI 烟花秀动画，展示三生万物
+Author: yb
+Author-email: xuanjiyv@163.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pygame>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# ybxiehaode
+
+🎆 一个使用 Pygame 实现的 AI 烟花秀，展示 “三生万物” 哲理意境。
+
+## 安装
+
+```bash
+pip install ybxiehaode
