@@ -1,0 +1,2 @@
+[console_scripts]
+encryptool = encryptool.cli:main
