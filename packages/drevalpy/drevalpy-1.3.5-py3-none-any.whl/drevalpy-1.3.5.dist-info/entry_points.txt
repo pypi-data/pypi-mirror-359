@@ -1,0 +1,4 @@
+[console_scripts]
+drevalpy=drevalpy.cli:cli_main
+drevalpy-report=drevalpy.visualization.create_report:main
+
