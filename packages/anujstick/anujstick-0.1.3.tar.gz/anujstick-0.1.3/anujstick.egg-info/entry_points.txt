@@ -1,0 +1,4 @@
+[console_scripts]
+anujstick = anujstick.main:main
+anujstick-gui = anujstick.gui_app:launch_gui
+anujstrike = anujstick.advanced_gui:main
