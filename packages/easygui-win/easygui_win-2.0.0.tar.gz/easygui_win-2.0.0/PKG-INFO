@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: easygui-win
+Version: 2.0.0
+Summary: A super simple Windows GUI library for Python
+Home-page: https://github.com/shutussx/easygui-win
+Author: Mr. Alien
+Author-email: shutussx@gmail.com
+Project-URL: Bug Reports, https://github.com/shutussx/easygui-win/issues
+Project-URL: Source, https://github.com/shutussx/easygui-win
+Project-URL: Documentation, https://github.com/shutussx/easygui-win/blob/main/README.md
+Keywords: gui windows ui desktop simple easy
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: User Interfaces
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-python
+Dynamic: summary
+
+# EasyGUI - The Easiest Windows GUI Library
+
+A super simple Windows GUI library for Python — with **no external dependencies**!
+
+---
+
+## 🚀 Features
+
+- ✅ **Super simple API**
+- 🔥 **No external dependencies**
+- 💨 **Pure Python**, powered by the Windows API
+- 🎨 Customizable **colors and styling**
+- 🧱 Supports **method chaining**
+- ⚡ **Lightweight and fast**
+
+---
+
+## 📦 Installation
+
+```bash
+pip install easygui-win
+```
+
+---
+
+## 🧪 Quick Start
+
+### Basic Style
+
+```python
+import easygui as gui
+
+app = gui.App("My App")
+app.text("Hello World!")
+app.button("Click me!", lambda: print("Clicked!"))
+app.run()
+```
+
+### Decorator Style
+
+```python
+import easygui as gui
+
+@gui.app("My App")
+def my_app():
+    gui.text("Welcome!")
+    gui.button("OK", gui.close)
+```
+
+---
+
+## 🖼️ Examples
+
+Run the included demos:
+
+```bash
+easygui-demo
+```
+
+---
+
+## 📋 Requirements
+
+- Python **3.7+**
+- Windows OS
+
+---
+
+## 📄 License
+
+MIT License — see the `LICENSE` file for details.

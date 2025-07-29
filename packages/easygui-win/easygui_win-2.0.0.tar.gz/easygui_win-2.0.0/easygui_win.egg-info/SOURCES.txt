@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements-dev.txt
+setup.py
+easygui/__init__.py
+easygui/core.py
+easygui/demos.py
+easygui_win.egg-info/PKG-INFO
+easygui_win.egg-info/SOURCES.txt
+easygui_win.egg-info/dependency_links.txt
+easygui_win.egg-info/entry_points.txt
+easygui_win.egg-info/not-zip-safe
+easygui_win.egg-info/requires.txt
+easygui_win.egg-info/top_level.txt
