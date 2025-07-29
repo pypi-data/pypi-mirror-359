@@ -1,0 +1,124 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "e84-geoai-common"
+authors = [{ name = "Jason Gilman", email = "jason@element84.com" }]
+maintainers = [{ name = "Jason Gilman", email = "jason@element84.com" }]
+description = "Contains common Geospatial AI/ML code for Element 84 projects."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+  "boto3>=1.35.20",
+  "boto3-stubs[bedrock, bedrock-runtime, s3]>=1.35.20",
+  "pydantic>=2.9.1",
+  "shapely>=2.0.6",
+  "types-shapely>=2.0.0.20240820",
+  "function_schema>=0.4.4",
+  "rich",
+  "mypy-boto3-bedrock-runtime>=1.37.0"]
+dynamic = ["version"]
+
+[tool.setuptools-git-versioning]
+enabled = true
+dev_template = "{tag}"
+dirty_template = "{tag}"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
+
+[project.urls]
+Github = "https://github.com/Element84/e84-geoai-common"
+
+[project.optional-dependencies]
+debugging = ["folium>=0.17.0"]
+dev = [
+  "pytest>=8.3.3",
+  "pytest-watch",
+  "ipykernel>=6.29.5",
+  "ruff>=0.6.8",
+  "pyright>=1.1.381",
+  "build>=1.2.2",
+  "pre-commit>=3.8.0",
+  "pre-commit-hooks>=4.6.0",
+  "moto[s3]>=5.0.0",
+]
+
+
+[tool.pyright]
+pythonVersion = "3.12"
+include = ["src/", "tests/"]
+ignore = ["**/venv/**", "*.pyc", "temp/", "build/"]
+typeCheckingMode = "strict"
+reportGeneralTypeIssues = true
+reportImplicitStringConcatenation = "none"
+reportPropertyTypeMismatch = "error"
+reportShadowedImports = "error"
+reportTypedDictNotRequiredAccess = "none"
+reportUninitializedInstanceVariable = "error"
+reportUnknownArgumentType = "error"
+reportUnknownMemberType = "error"
+reportUnknownVariableType = "error"
+reportUnnecessaryComparison = "error"
+reportIncompatibleVariableOverride = "none"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint]
+# http://docs.astral.sh/ruff/rules/
+select = ['ALL']
+ignore = [
+  # Unnecessary assignment before return statement
+  'RET504',
+  # Trailing comma missing
+  'COM812',
+  # Missing docstring for module
+  'D100',
+  # Docstring in public class
+  'D101',
+  # Documentation in public method
+  'D102',
+  # Missing docstring in magic method
+  'D105',
+  # 1 blank line required before class docstring
+  'D203',
+  # Multi-line docstring summary should start at the second line
+  'D213',
+  # Allow messages in exception declarations
+  'TRY003',
+  'EM101',
+  'EM102',
+  # TO DO comment missing author
+  'TD002',
+  # TO DO comment missing linked issue
+  'TD003',
+  # TO DO missing colon
+  'TD004']
+
+[tool.ruff.lint.per-file-ignores]
+'__init__.py' = [
+  # Module level import not at top of cell
+  'E402',
+  # Imported but unused
+  'F401']
+'tests/**/*' = [
+  # Use of assert detected
+  'S101',
+  # Missing return type annotation for public function
+  'ANN201',
+  # Missing docstrings
+  'D1',
+  # Private member accessed
+  'SLF001',
+  # magic values
+  'PLR2004',
+  #unused parameters
+  'ARG001']
