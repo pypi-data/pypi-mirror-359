@@ -1,0 +1,29 @@
+[project]
+name = "method-override"
+version = "0.3.0"
+description = "A Python WSGI middleware for HTTP method override functionality"
+authors = [
+    {name = "Marcus Almeida", email = "mpereirassa@gmail.com"}
+]
+readme = "README.md"
+license = "MIT"
+keywords = ["wsgi", "web server", "method override", "http", "middleware"]
+requires-python = ">=3.10.0"
+
+repository = "https://github.com/marcuxyz/method-override"
+homepage = "https://github.com/marcuxyz/method-override"
+
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "method_override", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+black = "^25.1.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
