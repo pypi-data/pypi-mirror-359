@@ -1,0 +1,29 @@
+[build-system]
+requires = ['setuptools>=42']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "temod-flask"
+version = "2.2.4"
+authors = [
+  { name="PyAxolotl", email="abdellatifzied.saada@gmail.com" },
+]
+description = "Connects python-flask features with Temod data models"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    'oauthlib >= 3.2.2',
+    'python-json-logger >= 2.0.4',
+    'requests >= 2.28.2',
+    'temod-forms >= 2.0.0',
+    'temod-open-api >= 1.0.0'
+]
+
+[project.urls]
+"Homepage" = "https://github.com/TuburboMajus/temod-flask"
+"Bug Tracker" = "https://github.com/TuburboMajus/temod-flask/issues"
