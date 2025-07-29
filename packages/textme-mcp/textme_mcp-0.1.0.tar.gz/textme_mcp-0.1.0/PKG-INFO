@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: textme_mcp
+Version: 0.1.0
+Summary: 大模型调用textme的服务发送推送消息
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: bs4>=0.0.2
+Requires-Dist: dashscope>=1.23.6
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.10.1
+Requires-Dist: requests>=2.32.4
+
+## 用途
+
+把生成的内容通过textme的服务推送给用户，textme支持多种渠道的自定义。
+
+## 配置
+
+参考如下
+
+```json
+{
+  "mcpServers": {
+    "textme-mcp-server": {
+      "command": "/path/to/uv",
+      "args": [
+        "--directory",
+        "/path/to/mcpserver-textme",
+        "run",
+        "server.py"
+      ],
+      "env": {
+        "TEXTME_BASE_URL": "https://some-textme-url-here",
+        "TEXTME_TOKEN": "some-webhook-token"
+      },
+      "autoApprove": [
+        "信息发送工具"
+      ]
+    }
+  }
+}
+```
