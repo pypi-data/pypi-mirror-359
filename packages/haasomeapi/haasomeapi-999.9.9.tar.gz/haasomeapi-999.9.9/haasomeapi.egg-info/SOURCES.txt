@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+haasomeapi.egg-info/PKG-INFO
+haasomeapi.egg-info/SOURCES.txt
+haasomeapi.egg-info/dependency_links.txt
+haasomeapi.egg-info/top_level.txt
