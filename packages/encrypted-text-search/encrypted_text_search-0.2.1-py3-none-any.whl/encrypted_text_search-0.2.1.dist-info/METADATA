@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: encrypted_text_search
+Version: 0.2.1
+Summary: Efficient Privacy-Preserving Search in Encrypted Databases using Heapsort and String Matching Techniques
+Home-page: https://github.com/yourusername/encrypted_text_search
+Author: Wangchen T T
+Author-email: wangchentt.cy23@rvce.edu.in
+License: MIT
+Project-URL: Bug Tracker, https://github.com/yourusername/encrypted_text_search/issues
+Project-URL: Documentation, https://github.com/yourusername/encrypted_text_search#readme
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: cryptography>=3.0
+Requires-Dist: matplotlib>=3.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Encrypted Text File Search
+
+- Encrypt any `.txt` file (entire file, as a single document).
+- Search for a keyword (exact/Boyer-Moore and approximate) in the encrypted text.
+- All data is stored only in encrypted form (`data.enc`).
+
+## Usage
+
+1. `pip install cryptography`
+2. `python main.py`
+3. Encrypt a `.txt` file, then search keywords as you wish!
