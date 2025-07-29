@@ -1,0 +1,11 @@
+cloud189/__init__.py,sha256=qxNnG2kK9zEc57DYLk_jie55VyGuoydV_OSc8B-OWvo,156
+cloud189/auth.py,sha256=E8-nGv8Es0K68SjlUXonC02tej6FSHE43cIuNwroBoc,5851
+cloud189/client.py,sha256=EfKbS5GSDxOF469yPL9PoA5E2uTuBEPh9fotgst1yuo,18172
+cloud189/constants.py,sha256=8vsFyu6NMrnHHrnNNzh7aAU3EfRHZAKZ6Ivn0EsBpzk,558
+cloud189/store.py,sha256=AVGzt5TYNHrsNnXkPknkYPE_D1HlFnpSl6wWWADULSA,601
+cloud189/utils.py,sha256=bKapIr75vcIOY5vuasCZsW6pWJjJlTWNLXZeX79dwOA,5289
+cloud189-0.1.6.dist-info/licenses/LICENSE,sha256=qf3IHw78Ur_UNejPk8oUuaLtMEtI4IrFkyrfVjSh1rQ,1060
+cloud189-0.1.6.dist-info/METADATA,sha256=4vgE5RtErx9M19gQFZAZ1aeRTM1PhsQdR3HjYJcDtb0,1669
+cloud189-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cloud189-0.1.6.dist-info/top_level.txt,sha256=YvO7SsF5IozzOHoZDdYKbKX_cYBW2wCtB4THq5ZX0jc,9
+cloud189-0.1.6.dist-info/RECORD,,
