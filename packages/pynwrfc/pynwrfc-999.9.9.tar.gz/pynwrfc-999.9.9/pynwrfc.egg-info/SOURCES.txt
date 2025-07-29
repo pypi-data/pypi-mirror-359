@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pynwrfc.egg-info/PKG-INFO
+pynwrfc.egg-info/SOURCES.txt
+pynwrfc.egg-info/dependency_links.txt
+pynwrfc.egg-info/top_level.txt
