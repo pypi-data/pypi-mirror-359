@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/gcc_slycooper50/SPIRV-Headers-vulkan-sdk-1.4.313.0.tar.gz
+src/gcc_slycooper50/SPIRV-LLVM-Translator-20.1.4.tar.gz
+src/gcc_slycooper50/libbpf-1.5.1.zip
+src/gcc_slycooper50/libcap-2.76.tar.xz
+src/gcc_slycooper50.egg-info/PKG-INFO
+src/gcc_slycooper50.egg-info/SOURCES.txt
+src/gcc_slycooper50.egg-info/dependency_links.txt
+src/gcc_slycooper50.egg-info/top_level.txt
