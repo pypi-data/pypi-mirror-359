@@ -1,0 +1,7 @@
+PyQt5
+PyQtWebEngine
+Pillow
+requests
+toml
+appdirs
+pixellab
