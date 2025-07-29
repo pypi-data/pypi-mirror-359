@@ -1,0 +1,10 @@
+piqp-0.6.0.dist-info/RECORD,,
+piqp-0.6.0.dist-info/WHEEL,sha256=Fy7H9MFDwPuxU3JWU1vScWf4D5PS8kj4uUYrdtc0piQ,150
+piqp-0.6.0.dist-info/METADATA,sha256=gh_S37pCJgfpG-B0N8we1V4soU0wi_9K8tszjlhGygk,6804
+piqp-0.6.0.dist-info/licenses/LICENSE,sha256=Ql0WXOWsYrw_0c74NzT6Z4C8hEZYv8XpBMpFoBHf7HA,1313
+piqp/piqp_python_avx2.pypy310-pp73-darwin.so,sha256=9pF0ZtxQXj9Me2VK8Y9Mtdcuhf1GG7Yf1DScc8hXd98,1708968
+piqp/__init__.pyi,sha256=bmDasThSlMcRpZqoBN8JLz5nKQWr18w_GClQGI7j7Bg,10475
+piqp/piqp_python.pypy310-pp73-darwin.so,sha256=uS-lw-0BAuEDaNS3g8SlOoSVGGIwZiPNJ2uDHH8GCPU,1449752
+piqp/piqp_python_avx512.pypy310-pp73-darwin.so,sha256=-FpvcHZlOur6-zV_hytxysBTxaaJZvdQaYAGK-ufbHc,1543888
+piqp/__init__.py,sha256=Wjb2QcsWaVeit-n248L7l7u603eEeamLdQOmJPjiE2Q,965
+piqp/instruction_set.pypy310-pp73-darwin.so,sha256=9Ui9eZZViBhXKFjnq6eJxghqAw-SkFuMkM0FEZCMlcg,147280
