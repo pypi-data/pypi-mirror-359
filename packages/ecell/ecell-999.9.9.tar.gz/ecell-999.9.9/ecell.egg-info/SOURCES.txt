@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+ecell.egg-info/PKG-INFO
+ecell.egg-info/SOURCES.txt
+ecell.egg-info/dependency_links.txt
+ecell.egg-info/top_level.txt
