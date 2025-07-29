@@ -1,0 +1,6 @@
+README.md
+setup.py
+byted_volc_embedding_dao.egg-info/PKG-INFO
+byted_volc_embedding_dao.egg-info/SOURCES.txt
+byted_volc_embedding_dao.egg-info/dependency_links.txt
+byted_volc_embedding_dao.egg-info/top_level.txt
