@@ -1,0 +1,8 @@
+djangorestframework_guardian-0.4.0.dist-info/licenses/LICENSE,sha256=GgNoQFUfQdfqZrKVeXM7MdozBL7i8iTaMezrtPSznx4,1512
+rest_framework_guardian/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rest_framework_guardian/filters.py,sha256=BBQtLzJK7DrX9donXp8b1_S6Aye92EheTigGOL-ubcU,1013
+rest_framework_guardian/serializers.py,sha256=DZ5mtPQ92WLQss8v1ukbJfOKDL-fAkOh6Zdj1hu2hzY,2193
+djangorestframework_guardian-0.4.0.dist-info/METADATA,sha256=vfZkNN-hIPxsZ2RMU4U2JiVFaG7xrALIQHnvXYDSvsg,6065
+djangorestframework_guardian-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+djangorestframework_guardian-0.4.0.dist-info/top_level.txt,sha256=EeE3jeP3hE6wLrWz3HgsnbknSlaVGaZxlOqalKR0Q4I,24
+djangorestframework_guardian-0.4.0.dist-info/RECORD,,
