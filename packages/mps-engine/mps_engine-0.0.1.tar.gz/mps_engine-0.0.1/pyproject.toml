@@ -1,0 +1,195 @@
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "mps-engine"
+authors = [
+    { name = "Mohanad Ghali", email = "mghalix@gmail.com" },
+]
+dynamic = []
+description = "MPS Engine Python SDK"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Development Status :: 4 - Beta",
+    "Framework :: Pydantic :: 2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "case-converter>=1.2.0",
+    "jinja2>=3.1.6",
+    "loguru>=0.7.3",
+    "pydantic>=2.11.4",
+    "pydantic-settings>=2.9.1",
+    "markitdown[pdf, docx, xlsx, xls]",
+]
+version = "0.0.1"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/mghalix/mps"
+Documentation = "https://github.com/mghalix/mps#readme"
+Issues = "https://github.com/mghalix/mps/issues"
+Respository = "https://github.com/mghalix/mps.git"
+Changelog = "https://github.com/mghalix/release-notes/"
+
+[project.optional-dependencies]
+standard = [
+    "markitdown[pdf, docx, xlsx, xls]",
+]
+all = [
+    "markitdown[all]",
+]
+semantic-kernel = [
+    "semantic-kernel>=1.29.0",
+]
+
+[project.scripts]
+mps = "mps.cli:main"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.version]
+source = "file"
+path = "mps/__init__.py"
+
+[tool.pdm.build]
+source-includes = [
+    "tests/",
+]
+
+[tool.mypy]
+strict = true
+
+[tool.coverage.html]
+show_contexts = true
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "D",
+    "B",
+    "W",
+    "C4",
+    "PIE",
+    "ANN",
+    "UP",
+    "N",
+    "RUF",
+    "ISC",
+    "INP",
+    "RSE",
+    "RET",
+    "SIM",
+    "TD",
+    "FIX",
+]
+ignore = [
+    "E501",
+    "B008",
+    "C901",
+    "W191",
+    "ANN401",
+    "D100",
+    "D104",
+    "TD003",
+    "FIX002",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401",
+]
+"tests/**" = [
+    "D",
+    "INP",
+    "TD",
+    "ERA001",
+    "RUF",
+    "ANN201",
+    "D102",
+]
+"notebooks/**" = [
+    "D",
+    "INP",
+    "ERA001",
+    "RUF",
+]
+"*_test.py" = [
+    "D",
+    "ANN201",
+    "D102",
+]
+"*.ipynb" = [
+    "E501",
+]
+
+[tool.ruff.lint.isort]
+known-third-party = [
+    "pydantic",
+]
+
+[tool.ruff.lint.pyupgrade]
+keep-runtime-typing = true
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "mps",
+]
+testpaths = [
+    "tests",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.mps]
+base_dir = "./tests/test_samples/mps/"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "mypy>=1.15.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "ruff>=0.11.8",
+]
