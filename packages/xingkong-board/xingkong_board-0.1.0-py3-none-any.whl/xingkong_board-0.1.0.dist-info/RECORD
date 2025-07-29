@@ -1,0 +1,10 @@
+kid_duplex_controller.py,sha256=rvXDncaVGk_OWAPrgfmAGs0r3hUEdDChCaVST0p0-Xk,5411
+kid_protocol.py,sha256=ggOPbnB_Tu3h-AJFPpIIRVJRQMzcVfYuAkCHCQg1klU,3151
+kid_serial.py,sha256=hK9mMMOeU5g_1oVenBZJvWEaICYh1JMqXbK7Xbx9qmU,1615
+kid_speech.py,sha256=RxRIRqXyjRR0IMwDOU82uZrIE_iLcdvuo3Q0DR0Rr-U,1433
+kid_vision.py,sha256=HAAiE5-Ge7y47WJjsts06ppGjK-w-VT52ihpZKVs3-M,4567
+xingkong_board.py,sha256=RfeA2og6Ec7AYmIxjABrGAZfZ-uCIn02xfMPGbQ66pI,4804
+xingkong_board-0.1.0.dist-info/METADATA,sha256=IP9Zw6bLa9fL3HWJTCO68lTiNHeFVvShlhPrPoHdgbg,6690
+xingkong_board-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xingkong_board-0.1.0.dist-info/top_level.txt,sha256=upcfHGTj-ibQKRaEfWbMOavTrISYKNQMl6C1JbiL9PM,83
+xingkong_board-0.1.0.dist-info/RECORD,,
