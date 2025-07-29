@@ -1,0 +1,46 @@
+# MANIFEST.in - Controls what gets included in PyPI package
+# This ensures ONLY safe files are distributed
+
+# Include only the package code
+recursive-include chat_ideyalabs *.py
+include chat_ideyalabs/__init__.py
+
+# Include safe documentation
+include PYPI_PUBLISHING_GUIDE.md
+include PYPI_QUICKSTART.md
+
+# Include package metadata
+include setup.py
+include requirements.txt
+include .env.example
+
+# Include only secure examples
+include examples/secure_setup_example.py
+include examples/basic_usage.py
+include examples/fastapi_client.py
+
+# EXCLUDE sensitive files explicitly
+exclude .env
+exclude .env.*
+exclude *.env
+exclude GITLAB_DEPLOYMENT.md
+exclude DEPLOYMENT.md
+exclude DEPLOYMENT_GUIDE.md
+exclude USER_MANAGEMENT.md
+exclude README.md
+exclude create_user_laynaik.py
+exclude test_installation.py
+
+# EXCLUDE sensitive examples
+exclude examples/api_key_management.py
+exclude examples/create_user_laynaik_api.py
+
+# EXCLUDE development files
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .git*
+recursive-exclude * .idea*
+recursive-exclude * .vscode*
+recursive-exclude * *.log
+recursive-exclude * *.db
+recursive-exclude * *.sqlite* 
