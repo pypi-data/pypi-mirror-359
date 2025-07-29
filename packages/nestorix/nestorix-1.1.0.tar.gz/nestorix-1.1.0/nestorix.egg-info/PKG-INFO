@@ -1,0 +1,581 @@
+Metadata-Version: 2.1
+Name: nestorix
+Version: 1.1.0
+Summary: Nestorix: A proprietary Python toolkit for deeply nested data manipulation and analysis.
+Home-page: https://github.com/yourusername/nestorix
+Author: Ayush Agrawal
+Author-email: youremail@example.com
+License: Proprietary
+Keywords: nested-data,tree-structure,linked-list,data-structure,educational-data,data-manipulation,python-tools,dstruct,data-analysis,curriculum-parser,matrix-conversion,glaze,ayushlist,nestorix
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+# Nestorix : Advanced Data Manipulation
+
+Nestorix is a Python library designed to simplify the exploration, manipulation, and transformation of arbitrarily nested list structures. It introduces two primary tools:
+
+- **Nexel**, a custom data structure that turns nested Python lists into a level-indexed, doubly-linked list tree
+- **Glaze**, a structural analyzer that inspects any nested iterable and converts it into a manageable form based on your needs
+
+Nestorix is ideal for scenarios where standard Python lists fall short—such as when working with tree-like data, requiring flattening, duplication removal, functional transformation, or level-wise access.
+
+---
+
+## Installation
+
+```bash
+pip install nestorix
+```
+
+---
+
+## Core Structures
+
+### Nexel
+
+Nexel represents nested data as a set of doubly-linked `Node` objects. Each node holds:
+
+- `data`: the actual value (a primitive or a nested structure)
+- `level`: the depth of the node(The node property starts depth from 1 but indexing starts depth from 0)
+- `count`: its index within its level(The node property starts count from 1 but indexing starts count from 0)
+- `prev` and `next`: pointers to previous and next sibling nodes at the same level
+
+This structure enables both linked list operations and level × count indexing.
+
+#### Creating an Nexel
+
+```python
+from nestorix import Nexel
+
+alist = Nexel([1, [2, [3, 4]], 5])
+```
+
+---
+
+## Core Features and Their Usage
+
+### Accessing Original Data: `.info`
+
+Returns the full, nested structure as a standard Python list.
+
+```python
+alist.info
+# Output: [1, [2, [3, 4]], 5]
+```
+
+---
+
+### Fetching Nodes by Level and Count: `.fetch(level, count)`
+
+Access a node by its depth (`level`) and its index within that level (`count`). Both are 0-based.
+
+```python
+alist.fetch(2, 0).data  # Returns: 3
+```
+
+---
+
+### Accessing Tree: `.tree`
+
+Returns a list of levels, where each level is a list of `Node` objects.
+
+```python
+alist.tree[1][0].data  # Returns: 2
+```
+
+---
+
+### Getting Shape and Size
+
+- `shape`: returns a tuple (max_depth, max_count)
+- `size`: total number of primitive values
+- `symmetric_size`: total capacity of a full tree (depth × width)
+- `missing_to_make_tree`: number of missing values to fill the tree
+
+```python
+alist.shape                    # (3, 2)
+alist.size                     # 5
+alist.symmetric_size           # 6
+alist.missing_to_make_tree     # 1
+```
+
+---
+
+### Indexing like a list: `[index]`
+
+Returns a new Nexel of the requested index (at level 0).
+
+```python
+alist[1].info  # [2, [3, 4]]
+```
+
+---
+
+### Appending Items: `alist.append(value)`
+
+Adds a new value to the end.
+
+```python
+alist.append([6, 7])
+```
+
+---
+
+### Inserting at Position: `alist.insert(index, value)`
+
+Replaces the node at the given index with a new value.
+
+```python
+alist.insert(0, 100)
+```
+
+---
+
+### Removing a Value: `alist.remove(value)`
+
+Removes the first occurrence of the value.
+
+```python
+alist.remove(100)
+```
+
+---
+
+### Popping an Index: `alist.pop(index)`
+
+Removes the node at the specified level-0 index.
+
+```python
+alist.pop(1)
+```
+
+---
+
+### Applying a Function to All Nodes: `alist.apply(function)`
+
+Returns a new Nexel where the function has been applied to each primitive.
+
+```python
+alist.apply(lambda x: x * 2).info
+# Output: [2, [4, [6, 8]], 10]
+```
+
+---
+
+### Finding Index of a Value: `alist.index(value)`
+
+Works for level-0 elements only.
+
+```python
+alist.index(5)  # Output: 2
+```
+
+---
+
+### Finding Index in Tree: `alist.index_node(value)`
+
+Returns (level, count) for any value in the tree.
+
+```python
+alist.index_node(3)  # Output: (2, 0)
+```
+
+---
+
+### Getting Previous/Next Nodes
+
+```python
+alist.fetch_prev_of(3)  # get previous Node of 2 Output is Node object
+alist.fetch_next_of(2)  # 3
+```
+
+---
+
+### Equality Check: `==`
+
+Two Nexels are equal if their `.info` is equal.
+
+```python
+Nexel([1, 2]) == Nexel([1, 2])  # True
+```
+
+---
+
+### Adding Two Nexels: `+`
+
+Appends the second list (or value) to the end of the first.
+
+```python
+Nexel([1, 2]) + [3, 4]
+# Output: [1, 2, [3, 4]]
+```
+
+---
+
+### In-place Add (`+=`)
+
+Appends new values to the same Nexel.
+
+```python
+alist += [8]
+```
+
+---
+
+### Iteration Support
+
+You can iterate through the nodes using `for node in alist:`.
+
+```python
+for node in alist:
+    print(node.data)
+```
+
+---
+
+### Copying
+
+Creates a deep copy.
+
+```python
+copy = alist.__copy__()
+```
+
+---
+
+### Depth of a Value: `.depth_of(value)`
+
+Returns the level of a given value.
+
+```python
+alist.depth_of(4)  # 2
+```
+
+---
+
+### Convert to Matrix: `.make_matrix()`
+
+Returns a 2D list (level × count) of `Node` objects with empty slots filled as dummy nodes.
+
+---
+
+### Convert to NumPy Arrays
+
+```python
+alist.make_numpy_tree()     # Tree view to numpy
+alist.make_numpy_original() # Orignal array of values to numpy
+```
+
+---
+
+## Glaze: Structure Analyzer
+
+Glaze helps you understand and reformat any nested list, tuple, or set.
+
+### Usage
+
+```python
+from nestorix import Glaze
+
+g = Glaze([1, [2, 3], [4, [5]]])
+```
+
+### Features
+
+- `.max_depth`: levels of nesting
+- `.size`: number of primitive values
+- `._type`: type summary (e.g., “list of int and list”)
+
+---
+
+### Organizing Data
+
+```python
+g.organize_data(preserveNesting=True, preserveDuplication=True)
+```
+
+**Modes:**
+
+| Flags                             | Output                     |
+|----------------------------------|----------------------------|
+| `True, True`                     | Nexel (default)        |
+| `False, False`                   | Flatten + unique tuple     |
+| `True, False`                    | Deduplicated Nexel     |
+| `False, True`                    | Tuple preserving order     |
+
+---
+
+## Full Example Program
+
+```python
+from nestorix import Glaze
+
+data = [1, [2, [3, 4]], 5]
+
+# Analyze and organize
+g = Glaze(data)
+alist = g.organize_data(preserveNesting=True)
+
+print("Shape:", alist.shape)
+print("All values:", alist.info)
+print("Access level 2, item 0:", alist.fetch(2, 0).data)
+print("Squared:", alist.apply(lambda x: x ** 2).info)
+print("Depth of 3:", alist.depth_of(3))
+```
+
+---
+
+## ✅ Real-World Example: Organizing a Multi-Department Feedback System
+
+### 🎯 Problem Statement
+
+You manage a company that receives structured feedback from multiple departments. Each department may contain multiple teams, and each team submits multiple comments (suggestions, issues, praise).
+
+This results in a **deeply nested list** of feedback. You want to:
+
+* Traverse this feedback easily
+* Transform or clean every comment
+* Access feedback from a particular team or level
+* Flatten, count, remove duplicates if needed
+* Export to grid/matrix or NumPy format
+* Find out which department gave a certain comment
+* Track missing slots in a complete department × team × member grid
+
+---
+
+
+## ✅ Use Case: Organizing an Educational Curriculum
+
+Let’s say you’re working with data from an **educational platform**. The curriculum is nested as:
+
+**Subjects → Chapters → Topics → Subtopics**
+
+You’re tasked with:
+
+* Structuring and cleaning it
+* Searching content by title
+* Indexing topics
+* Flattening, deduplication
+* Exporting in matrix/array form
+* Transforming titles
+* Finding how complete the structure is
+* Accessing content by coordinates
+* Comparing course versions
+* Iterating and modifying content
+
+Let’s use Nestorix to do this **fully practically**.
+
+---
+
+## 🔁 Full Working Program
+
+```python
+from nestorix import Glaze
+
+# Step 1: Raw nested curriculum data
+curriculum = [
+    [  # Subject: Math
+        ["Algebra", ["Linear Equations", "Quadratics"]],
+        ["Geometry", "Trigonometry"]
+    ],
+    [  # Subject: Science
+        ["Biology", ["Cells", "Genetics"]],
+        ["Chemistry", ["Atoms", "Periodic Table"]]
+    ],
+    [  # Subject: CS
+        ["Programming", ["Python", "Loops"]],
+        "Data Structures"
+    ]
+]
+
+# Step 2: Analyze the structure
+g = Glaze(curriculum)
+print("=== Curriculum Type ===")
+print(g._type)  # Should detect list of list of mixed nesting
+print("Max Depth:", g.max_depth)
+print("Number of actual topics:", g.size)
+
+# Step 3: Convert to structured tree
+tree = g.organize_data(preserveNesting=True, preserveDuplication=True)
+
+print("\n=== Full Curriculum Tree ===")
+print(tree.info)
+
+# Step 4: How complete is the tree?
+print("\nTree Shape (depth x count):", tree.shape)
+print("Total capacity:", tree.symmetric_size)
+print("Topics actually filled:", tree.size)
+print("Missing to make tree complete:", tree.missing_to_make_tree)
+
+# Step 5: Access a specific subtopic (e.g., "Quadratics")
+depth, count = tree.index_node("Quadratics")
+print(f"\n'Quadratics' is at Level {depth}, Count {count}")
+print("Accessed via fetch():", tree.fetch(depth, count).data)
+
+# Step 6: Access previous/next content
+print("Previous of 'Quadratics':", tree.fetch_prev_of("Quadratics"))
+print("Next of 'Algebra':", tree.fetch_next_of("Algebra"))
+
+# Step 7: Functional update – make all topic titles UPPERCASE
+uppercased = tree.apply(lambda x: str(x).upper())
+print("\n=== UPPERCASED Curriculum ===")
+print(uppercased.info)
+
+# Step 8: Modify content using index and assignment
+print("\nOriginal at index 1:", tree[1].info)
+tree.insert(1, ["Physics", "Thermodynamics"])
+print("After Inserting Physics at index 1:", tree[1].info)
+
+# Step 9: Append new topic
+tree.append(["Robotics", "AI"])
+print("\nAfter Appending Robotics:", tree.info)
+
+# Step 10: Remove a topic
+tree.remove("Geometry")
+print("\nAfter Removing 'Geometry':", tree.info)
+
+# Step 11: Pop index
+tree.pop(0)
+print("\nAfter Popping Subject 0:", tree.info)
+
+# Step 12: Check depth of a topic
+print("Depth of 'Genetics':", tree.depth_of("Genetics"))
+
+# Step 13: Iteration (print all topics)
+print("\nAll topics (Level-0):")
+for node in tree:
+    print(node.data)
+
+# Step 14: Matrix form for Excel/DataFrame
+print("\nMatrix View:")
+matrix = tree.make_matrix()
+for row in matrix:
+    print([n.data for n in row])
+
+# Step 15: NumPy Tree
+print("\nNumPy Tree View:")
+print(tree.make_numpy_tree())
+
+# Step 16: NumPy flat
+print("\nFlat NumPy Array of topics:")
+print(tree.make_numpy_original())
+
+# Step 17: Equality check
+copy = tree.__copy__()
+print("\nCopy is equal to tree:", copy == tree)
+
+# Step 18: Index in level-0
+try:
+    idx = tree.index(["Programming", ["Python", "Loops"]])
+    print("Index of CS topic in level-0:", idx)
+except:
+    print("Topic not found in level-0")
+
+# Step 19: Add with +
+new = Nexel(["Cybersecurity", ["Networking"]])
+combined = tree + new
+print("\nCombined Tree Info (after +):", combined.info)
+
+# Step 20: In-place add with +=
+tree += ["IoT", ["Sensors"]]
+print("\nAfter += ['IoT', ['Sensors']]:", tree.info)
+
+```
+
+---
+
+### ✅ Sample Output
+
+```plaintext
+=== Curriculum Type ===
+list of list and list and list
+Max Depth: 4
+Number of actual topics: 14
+
+=== Full Curriculum Tree ===
+[[['Algebra', ['Linear Equations', 'Quadratics']], ['Geometry', 'Trigonometry']], [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures']]
+
+Tree Shape (depth x count): (4, 3)
+Total capacity: 12
+Topics actually filled: 14
+Missing to make tree complete: -2
+
+'Quadratics' is at Level 3, Count 1
+Accessed via fetch(): Quadratics
+Previous of 'Quadratics': Linear Equations
+Next of 'Algebra': Geometry
+
+=== UPPERCASED Curriculum ===
+[[['ALGEBRA', ['LINEAR EQUATIONS', 'QUADRATICS']], ['GEOMETRY', 'TRIGONOMETRY']], [['BIOLOGY', ['CELLS', 'GENETICS']], ['CHEMISTRY', ['ATOMS', 'PERIODIC TABLE']]], [['PROGRAMMING', ['PYTHON', 'LOOPS']], 'DATA STRUCTURES']]
+
+Original at index 1: [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]]
+After Inserting Physics at index 1: ['Physics', 'Thermodynamics']
+
+After Appending Robotics: [[['Algebra', ['Linear Equations', 'Quadratics']], ['Physics', 'Thermodynamics'], ['Geometry', 'Trigonometry']], [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures'], ['Robotics', 'AI']]
+
+After Removing 'Geometry': [[['Algebra', ['Linear Equations', 'Quadratics']], ['Physics', 'Thermodynamics']], [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures'], ['Robotics', 'AI']]
+
+After Popping Subject 0: [[['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures'], ['Robotics', 'AI']]
+
+Depth of 'Genetics': 4
+
+All topics (Level-0):
+[['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]]
+[['Programming', ['Python', 'Loops']], 'Data Structures']
+['Robotics', 'AI']
+
+Matrix View:
+['Biology', 'Chemistry', 'Programming']
+['Data Structures', 'Robotics', 'AI']
+
+NumPy Tree View:
+[['Biology' 'Chemistry' 'Programming']
+ ['Data Structures' 'Robotics' 'AI']]
+
+Flat NumPy Array of topics:
+['Biology' ['Cells', 'Genetics'] 'Chemistry' ['Atoms', 'Periodic Table'] 'Programming' ['Python', 'Loops'] 'Data Structures' 'Robotics' 'AI']
+
+Copy is equal to tree: True
+
+Index of CS topic in level-0: 1
+
+Combined Tree Info (after +): [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures'], ['Robotics', 'AI'], ['Cybersecurity', ['Networking']]]
+
+After += ['IoT', ['Sensors']]: [['Biology', ['Cells', 'Genetics']], ['Chemistry', ['Atoms', 'Periodic Table']]], [['Programming', ['Python', 'Loops']], 'Data Structures'], ['Robotics', 'AI'], ['Cybersecurity', ['Networking']], ['IoT', ['Sensors']]]
+```
+
+---
+
+## ✅ Result
+
+This is **not just a demo** but a real mini-application where:
+
+* Data structure is complex and nested
+* Access and transformation need to be smart
+* Matrix conversion helps export to Excel/DataFrame
+* Tree traversal, slicing, updating, and checking are real problems
+
+---
+
+
+
+## Author
+
+**Ayush Agrawal**  
+Library: `nestorix` on PyPI  
+All rights reserved. For educational and personal use.
+
