@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: python-ligo-lw
+Version: 2.2.0
+Summary: Python LIGO Light-Weight XML I/O Library
+Home-page: https://git.ligo.org/kipp.cannon/python-ligo-lw
+Author: Kipp Cannon
+Author-email: Kipp Cannon <kipp@g.ecc.u-tokyo.ac.jp>
+Project-URL: Homepage, https://git.ligo.org/kipp/python-ligo-lw
+Classifier: Development Status :: 6 - Mature
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Text Processing :: Markup :: XML
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+
+The LIGO Light-Weight XML format is used by gravitational-wave detection pipelines and associated tool sets.  This package provides a Python I/O library for reading, writing, and interacting with documents in this format.

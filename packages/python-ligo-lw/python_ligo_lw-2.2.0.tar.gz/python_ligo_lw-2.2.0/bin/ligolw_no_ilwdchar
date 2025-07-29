@@ -1,0 +1,90 @@
+#!/usr/bin/python3
+#
+# Copyright (C) 2017--2020  Kipp Cannon
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 3 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+# Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+
+#
+# =============================================================================
+#
+#                                   Preamble
+#
+# =============================================================================
+#
+
+
+from optparse import OptionParser
+import ligolw
+from ligolw import __author__, __date__, __version__
+import ligolw.utils.ilwd
+
+
+#
+# =============================================================================
+#
+#                                 Command Line
+#
+# =============================================================================
+#
+
+
+def parse_command_line():
+	parser = OptionParser(
+		version = "Name: %%prog\n%s" % __version__,
+		usage = "%prog [filename ...]",
+		description = "Convert ilwd:char columns to int_8s.  Also ensure table name prefixes are removed from columns that shouldn't have them, according to the specifications in lsctables.  Files are converted *in place*.  Make a copy before conversion if you wish to preserve the original.  If no filenames are given, stdin is converted to stdout.  Files are overwritten even if no changes are made."
+	)
+	parser.add_option("-v", "--verbose", action = "store_true", help = "Be verbose.")
+	options, filenames = parser.parse_args()
+	return options, filenames
+
+
+#
+# =============================================================================
+#
+#                                     Main
+#
+# =============================================================================
+#
+
+
+options, filenames = parse_command_line()
+
+
+if options.verbose:
+	ligolw.set_verbose(True, application = "ligolw_no_ilwdchar")
+
+
+# disable lsctables compliance checking, but maintain a copy of the look-up
+# table to use in strip_ilwdchar()
+TableByName = ligolw.Table.TableByName.copy()
+ligolw.Table.TableByName.clear()
+
+
+for filename in filenames or [None]:
+	xmldoc = ligolw.utils.load_filename(filename)
+
+	# temporarily restore table-by-name look-up
+	TableByName, ligolw.Table.TableByName = ligolw.Table.TableByName, TableByName
+
+	# run ID foramt conversion
+	ligolw.utils.ilwd.strip_ilwdchar(xmldoc)
+
+	# re-disable table-by-name look-up
+	TableByName, ligolw.Table.TableByName = ligolw.Table.TableByName, TableByName
+
+	ligolw.utils.write_filename(xmldoc, filename)
+	xmldoc.unlink()

@@ -1,0 +1,1 @@
+The LIGO Light-Weight XML format is used by gravitational-wave detection pipelines and associated tool sets.  This package provides a Python I/O library for reading, writing, and interacting with documents in this format.
