@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  cyborgdb-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cyborgdb-service
+    ports:
+      - "8000:8000"
+    environment:
+      - KMP_DUPLICATE_LIB_OK=TRUE
+      - PYTHONUNBUFFERED=1
+      # Required: API Key for package download
+      - CYBORGDB_API_KEY=${CYBORGDB_API_KEY}
+      # Optional: Package manager API endpoint
+      - CYBORGDB_PACKAGE_ENDPOINT=${CYBORGDB_PACKAGE_ENDPOINT}
+      # Optional: Package version (defaults to latest)
+      - CYBORGDB_VERSION=${CYBORGDB_VERSION:-latest}
+    volumes:
+      # Mount license file if using local build option
+      - ./.cyborglicense:/app/.cyborglicense:ro
+      # Optional: mount logs directory
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

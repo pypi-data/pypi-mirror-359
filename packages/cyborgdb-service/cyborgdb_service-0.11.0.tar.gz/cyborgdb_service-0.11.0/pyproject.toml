@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools_scm>=8,<8.6", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyborgdb-service"
+# version = "0.10.1"
+dynamic = ["version"]
+description = "CyborgDB Service"
+readme = "README.md"
+requires-python = ">= 3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "Cyborg Inc." }]
+keywords = ["CyborgDB Service"]
+dependencies = [
+    "fastapi>=0.68.0",
+    "uvicorn[standard]>=0.15.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "requests>=2.25.0",
+    "numpy>=1.21.0",
+    "packaging>=21.0",
+    "redis>=6.2.0",
+    "psycopg>=3.2.9"
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: C++",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.scripts]
+cyborgdb-service = "cyborgdb_service.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cyborgdb_service*"]
+
+[project.urls]
+"Homepage" = "https://www.cyborg.co"
+"Documentation" = "https://docs.cyborg.co"
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "no-local-version"

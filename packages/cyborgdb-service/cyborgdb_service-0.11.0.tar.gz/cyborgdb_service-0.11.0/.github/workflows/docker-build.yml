@@ -1,0 +1,443 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: ["main"]
+    tags:
+      - "v*"
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:  # Allow manual triggering
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ${{ vars.DOCKER_IMAGE_NAME || 'cyborgdb-service' }}
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    
+    # Determine environment based on trigger
+    environment:
+      name: ${{ startsWith(github.ref, 'refs/tags/') && (endsWith(github.ref, '-staging') && 'staging' || 'prod') || 'dev' }}
+    
+    permissions:
+      contents: read
+      packages: write
+    
+    outputs:
+      version: ${{ steps.version.outputs.VERSION }}
+      image-tags: ${{ steps.meta.outputs.tags }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        if: false  # Disabled - Docker Hub login moved to separate job
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # Branch-based tags
+            type=ref,event=branch,suffix=-dev
+            type=ref,event=pr,prefix=pr-
+            # Tag-based versioning
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            # Latest tag for stable releases only
+            type=raw,value=latest,enable={{is_default_branch}},priority=100
+            # Add staging suffix for staging releases
+            type=semver,pattern={{version}}-staging,enable=${{ endsWith(github.ref, '-staging') }}
+          labels: |
+            org.opencontainers.image.title=CyborgDB Service
+            org.opencontainers.image.description=CyborgDB service with sentence transformers and CPU-optimized PyTorch
+            org.opencontainers.image.vendor=CyborgDB
+            org.opencontainers.image.url=https://github.com/${{ github.repository }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}#readme
+
+      - name: Get version for Docker build
+        id: version
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            VERSION=${GITHUB_REF_NAME#v}  # Strip the 'v' prefix if present
+          else
+            # For branches/PRs, use git describe or short SHA
+            if git describe --tags --exact-match HEAD 2>/dev/null; then
+              VERSION=$(git describe --tags --exact-match HEAD | sed 's/^v//')
+            else
+              VERSION=$(git describe --tags --always --dirty 2>/dev/null || git rev-parse --short HEAD)
+            fi
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Building Docker image with version: $VERSION"
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        id: build
+        with:
+          context: .
+          platforms: linux/amd64  # Remove ARM64 for faster builds and better compatibility
+          push: false  # Never push in build job - moved to separate publish job
+          load: true  # Load image into local Docker daemon for artifact creation
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Save Docker image as artifact
+        if: always()  # Always save artifact, even for PRs
+        run: |
+          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n1)
+          VERSION=${{ steps.version.outputs.VERSION }}
+          
+          echo "Saving Docker image: $IMAGE_TAG"
+          docker save $IMAGE_TAG | gzip > cyborgdb-service-${VERSION}-docker.tar.gz
+          
+          # Create metadata file
+          cat > docker-image-info.json << EOF
+          {
+            "image_name": "$IMAGE_TAG",
+            "version": "$VERSION",
+            "build_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "git_ref": "${{ github.ref }}",
+            "git_sha": "${{ github.sha }}",
+            "platforms": ["linux/amd64"],
+            "usage": {
+              "pull": "docker load < cyborgdb-service-${VERSION}-docker.tar.gz",
+              "run": "docker run -p 8000:8000 -e CYBORGDB_API_KEY=your-key -e CYBORGDB_DB_TYPE=redis -e CYBORGDB_CONNECTION_STRING=host:localhost,port:6379,db:0 $IMAGE_TAG"
+            }
+          }
+          EOF
+          
+          echo "Docker image size:"
+          ls -lh cyborgdb-service-${VERSION}-docker.tar.gz
+
+      - name: Upload Docker image artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyborgdb-service-docker-${{ steps.version.outputs.VERSION }}
+          path: |
+            cyborgdb-service-${{ steps.version.outputs.VERSION }}-docker.tar.gz
+            docker-image-info.json
+          retention-days: 30
+
+      - name: Generate Docker usage instructions
+        if: github.ref_type == 'tag'
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}"
+          
+          echo "## Docker Image Built Successfully! 🐳" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Image:** \`${IMAGE_TAG}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${VERSION}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Quick Start" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "docker run -p 8000:8000 \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_API_KEY=\"your-api-key\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_DB_TYPE=\"redis\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_CONNECTION_STRING=\"host:localhost,port:6379,db:0\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  ${IMAGE_TAG}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Available Tags" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.meta.outputs.tags }}" | sed 's/^/- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY
+
+      - name: Test Docker image
+        run: |
+          # Test that the image builds and shows help when missing env vars
+          echo "Testing Docker image..."
+          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n1)
+          
+          # Test that container shows error message for missing env vars
+          if docker run --rm $IMAGE_TAG 2>&1 | grep -q "Required environment variables are missing"; then
+            echo "Docker image test passed - shows proper error for missing env vars"
+          else
+            echo "Docker image test failed - does not show expected error message"
+            exit 1
+          fi
+
+      - name: Image size and details
+        run: |
+          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n1)
+          echo "Image Details:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          docker images $IMAGE_TAG --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: build-docker
+    if: github.event_name != 'pull_request'
+    
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cyborgdb-service-docker-${{ needs.build-docker.outputs.version }}
+          path: docker-artifacts
+
+      - name: Load Docker image
+        run: |
+          gunzip docker-artifacts/cyborgdb-service-${{ needs.build-docker.outputs.version }}-docker.tar.gz
+          docker load < docker-artifacts/cyborgdb-service-${{ needs.build-docker.outputs.version }}-docker.tar
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-docker.outputs.version || 'main-dev' }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  publish-to-dockerhub:
+    runs-on: ubuntu-latest
+    needs: [build-docker, security-scan]
+    if: |
+      always() && 
+      (needs.build-docker.result == 'success') &&
+      (needs.security-scan.result == 'success' || needs.security-scan.result == 'skipped') &&
+      github.event_name != 'pull_request'
+    environment:
+      name: docker-hub
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata for publishing
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # Branch-based tags
+            type=ref,event=branch,suffix=-dev
+            # Tag-based versioning
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            # Latest tag for stable releases only
+            type=raw,value=latest,enable={{is_default_branch}},priority=100
+            # Add staging suffix for staging releases
+            type=semver,pattern={{version}}-staging,enable=${{ endsWith(github.ref, '-staging') }}
+
+      - name: Get version for publishing
+        id: version
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            VERSION=${GITHUB_REF_NAME#v}  # Strip the 'v' prefix if present
+          else
+            # For branches, use git describe or short SHA
+            if git describe --tags --exact-match HEAD 2>/dev/null; then
+              VERSION=$(git describe --tags --exact-match HEAD | sed 's/^v//')
+            else
+              VERSION=$(git describe --tags --always --dirty 2>/dev/null || git rev-parse --short HEAD)
+            fi
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing Docker image with version: $VERSION"
+
+      - name: Build and push to Docker Hub
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: |
+            org.opencontainers.image.title=CyborgDB Service
+            org.opencontainers.image.description=CyborgDB service with sentence transformers and CPU-optimized PyTorch
+            org.opencontainers.image.vendor=CyborgDB
+            org.opencontainers.image.url=https://github.com/${{ github.repository }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}#readme
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Generate Docker Hub success summary
+        run: |
+          echo "## Successfully Published to Docker Hub!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Published Tags:**" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.meta.outputs.tags }}" | sed 's/^/- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Quick Start:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n1)
+          echo "docker run -p 8000:8000 \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_API_KEY=\"your-api-key\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_DB_TYPE=\"redis\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_CONNECTION_STRING=\"host:localhost,port:6379,db:0\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  $IMAGE_TAG" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+  create_release_artifacts:
+    needs: [build-docker]
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v')
+    environment:
+      name: ${{ endsWith(github.ref, '-staging') && 'staging' || 'prod' }}
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cyborgdb-service-docker-${{ needs.build-docker.outputs.version }}
+          path: docker-artifacts
+
+      - name: Create Docker usage instructions
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          DOCKER_IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
+          
+          cat > DOCKER-USAGE.md << EOF
+          # CyborgDB Service Docker Image - v${VERSION}
+          
+          ## Quick Start
+          
+          ### Option 1: Pull from Docker Hub (if available)
+          \`\`\`bash
+          docker pull ${DOCKER_IMAGE}:${VERSION}
+          docker run -p 8000:8000 \\
+            -e CYBORGDB_API_KEY="your-api-key" \\
+            -e CYBORGDB_DB_TYPE="redis" \\
+            -e CYBORGDB_CONNECTION_STRING="host:localhost,port:6379,db:0" \\
+            ${DOCKER_IMAGE}:${VERSION}
+          \`\`\`
+          
+          ### Option 2: Load from downloaded tar.gz
+          \`\`\`bash
+          # Extract and load the image
+          gunzip cyborgdb-service-${VERSION}-docker.tar.gz
+          docker load < cyborgdb-service-${VERSION}-docker.tar
+          
+          # Run the loaded image
+          docker run -p 8000:8000 \\
+            -e CYBORGDB_API_KEY="your-api-key" \\
+            -e CYBORGDB_DB_TYPE="redis" \\
+            -e CYBORGDB_CONNECTION_STRING="host:localhost,port:6379,db:0" \\
+            ${DOCKER_IMAGE}:${VERSION}
+          \`\`\`
+          
+          ### Option 3: Docker Compose
+          \`\`\`yaml
+          version: '3.8'
+          services:
+            cyborgdb-service:
+              image: ${DOCKER_IMAGE}:${VERSION}
+              ports:
+                - "8000:8000"
+              environment:
+                - CYBORGDB_API_KEY=your-api-key-here
+                - CYBORGDB_DB_TYPE=redis
+                - CYBORGDB_CONNECTION_STRING=host:redis,port:6379,db:0
+              depends_on:
+                - redis
+            redis:
+              image: redis:7-alpine
+              ports:
+                - "6379:6379"
+          \`\`\`
+          
+          ## Environment Variables
+          
+          | Variable | Description | Example | Required |
+          |----------|-------------|---------|----------|
+          | \`CYBORGDB_API_KEY\` | Your CyborgDB API key | \`cyborg_abc123...\` | ✅ |
+          | \`CYBORGDB_DB_TYPE\` | Database type | \`redis\` | ✅ |
+          | \`CYBORGDB_CONNECTION_STRING\` | Database connection | \`host:localhost,port:6379,db:0\` | ✅ |
+          
+          ## Health Check
+          
+          Once running, verify the service:
+          \`\`\`bash
+          curl http://localhost:8000/v1/health
+          open http://localhost:8000/docs
+          \`\`\`
+          
+          ## Image Details
+          - **Platform**: linux/amd64
+          - **Base**: continuumio/miniconda3:latest
+          - **Python**: 3.12
+          - **PyTorch**: CPU-optimized
+          - **Size**: ~1.8GB
+          EOF
+
+      - name: Create combined release archive
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          
+          # Create release directory
+          mkdir -p release-v${VERSION}
+          
+          # Copy Docker artifacts
+          cp docker-artifacts/* release-v${VERSION}/
+          cp DOCKER-USAGE.md release-v${VERSION}/
+          
+          # Create combined archive
+          zip -r cyborgdb-service-v${VERSION}-complete.zip release-v${VERSION}/
+          
+          echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            cyborgdb-service-v${{ env.RELEASE_VERSION }}-complete.zip
+            docker-artifacts/cyborgdb-service-${{ env.RELEASE_VERSION }}-docker.tar.gz
+            docker-artifacts/docker-image-info.json
+            DOCKER-USAGE.md
+          body_path: DOCKER-USAGE.md
+          generate_release_notes: true
+          draft: false
+          tag_name: ${{ github.ref_name }}
+          prerelease: ${{ endsWith(github.ref, '-staging') }}
