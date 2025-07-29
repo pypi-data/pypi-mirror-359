@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+grAPI/__init__.py
+grAPI/cli.py
+grAPI/core.py
+grapix.egg-info/PKG-INFO
+grapix.egg-info/SOURCES.txt
+grapix.egg-info/dependency_links.txt
+grapix.egg-info/entry_points.txt
+grapix.egg-info/requires.txt
+grapix.egg-info/top_level.txt
+tests/test_core.py
