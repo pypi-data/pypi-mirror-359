@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pkinter.egg-info/PKG-INFO
+pkinter.egg-info/SOURCES.txt
+pkinter.egg-info/dependency_links.txt
+pkinter.egg-info/top_level.txt
