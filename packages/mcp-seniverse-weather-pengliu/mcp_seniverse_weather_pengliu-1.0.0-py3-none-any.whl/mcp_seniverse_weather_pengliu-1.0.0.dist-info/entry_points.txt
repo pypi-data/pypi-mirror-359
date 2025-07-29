@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-seniverse-weather-pengliu = mcp_seniverse_weather_pengliu:main
