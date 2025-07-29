@@ -1,0 +1,12 @@
+twrapform/__init__.py,sha256=bOQDwYlD7ShIngpN9SzGweiJ0A49jp1ESMiit1kLKOo,154
+twrapform/core.py,sha256=2Jd91EDMjJb6CI1GlS-5mvLM99Q0uA7wHPLNCzpXmmo,5131
+twrapform/exception.py,sha256=zIh2FE4SyjIBDWKRSi7Id28y-BwrdS1Aj-ZhfcNck3A,1032
+twrapform/result.py,sha256=PwwY6wicVnlopZcnXHrWeNrsKoyGNGrUSilbftcacbs,2913
+twrapform/task/__init__.py,sha256=3dvMkwAgRC3Hh9smLaR_lOJvw0UXwM1TQ9qxM4pSlsI,470
+twrapform/task/opt_name.py,sha256=EqSwgXEHaaCXAemuUTerx1TaeEwlbsA1rDRs_xWEzyg,84
+twrapform/task/opt_value.py,sha256=aYC94h2X3dkbK2EpnMXwYVgy-tIZIAeDiMHbX4QWKbk,2012
+twrapform/task/options.py,sha256=j3IXfcL9rBAAYzaN7_vVj9abDbGCxe3r3PfPVFJV0QE,14996
+twrapform-0.0.1.post0.dist-info/METADATA,sha256=My77AYoz3Gp233xSpyvG7UF_NmZAEoasv7Z9mGviOMA,1480
+twrapform-0.0.1.post0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+twrapform-0.0.1.post0.dist-info/licenses/LICENSE,sha256=YtG2915hu6qu6OiXmZH6q0RemgdBlnEqWkKH4AvOuig,1064
+twrapform-0.0.1.post0.dist-info/RECORD,,
