@@ -1,0 +1,15 @@
+[project]
+name = "rola"
+version = "0.0.1"
+authors = [
+    { name = "Serban Giuroiu", email = "giuroiu@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+rola = "rola:main"
+
+[build-system]
+requires = ["uv_build>=0.7.17,<0.8"]
+build-backend = "uv_build"
