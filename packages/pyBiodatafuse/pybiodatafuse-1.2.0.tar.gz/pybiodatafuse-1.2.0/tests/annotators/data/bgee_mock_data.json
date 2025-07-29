@@ -1,0 +1,3402 @@
+[
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000178"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "blood"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.326400000000006685"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000178"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "blood"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.326400000000006685"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002371"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "bone marrow"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "93.199569999999994252"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002371"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "bone marrow"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "93.199569999999994252"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000955"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "brain"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "77.726780000000005089"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000955"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "brain"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "77.726780000000005089"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000310"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "breast"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.068129999999996471"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000310"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "breast"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.068129999999996471"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0004535"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "cardiovascular system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.835329999999999018"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0004535"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "cardiovascular system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.835329999999999018"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001007"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "digestive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.024690000000006762"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001007"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "digestive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.024690000000006762"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000948"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "heart"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "81.590090000000003556"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000948"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "heart"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "81.590090000000003556"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0005057"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "immune organ"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.426900000000003388"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0005057"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "immune organ"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.426900000000003388"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002113"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "kidney"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.233639999999994075"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002113"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "kidney"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "82.233639999999994075"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002107"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "liver"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.324899999999999523"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002107"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "liver"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.324899999999999523"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002048"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "lung"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.928349999999994679"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002048"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "lung"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.928349999999994679"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001016"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "nervous system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "78.755589999999997985"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001016"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "nervous system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "78.755589999999997985"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001264"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "pancreas"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.748940000000004602"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001264"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "pancreas"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.748940000000004602"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001987"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "placenta"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.915090000000006398"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001987"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "placenta"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.915090000000006398"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000990"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "reproductive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.272419999999996776"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000990"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "reproductive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.272419999999996776"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001004"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "respiratory system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.363320000000001642"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001004"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "respiratory system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "86.363320000000001642"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001434"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "skeletal system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.517939999999995848"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000163635"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000163635"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001434"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "skeletal system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.517939999999995848"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000178"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "blood"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "67.35327999999999804"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000178"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "blood"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "67.35327999999999804"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002371"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "bone marrow"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "71.32529999999999859"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002371"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "bone marrow"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "71.32529999999999859"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000955"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "brain"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "88.21244000000000085"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000955"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "brain"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "88.21244000000000085"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000310"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "breast"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.397450000000006298"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000310"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "breast"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.397450000000006298"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0004535"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "cardiovascular system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.488979999999997972"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0004535"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "cardiovascular system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.488979999999997972"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001007"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "digestive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.718519999999998049"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001007"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "digestive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.718519999999998049"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000948"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "heart"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.082380000000000564"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000948"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "heart"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.082380000000000564"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0005057"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "immune organ"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "80.202020000000004529"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0005057"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "immune organ"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "80.202020000000004529"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002113"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "kidney"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.801760000000001583"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002113"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "kidney"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "91.801760000000001583"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002107"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "liver"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.282870000000002619"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002107"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "liver"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "84.282870000000002619"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002048"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "lung"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "90.177689999999998349"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0002048"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "lung"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "90.177689999999998349"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001016"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "nervous system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.823210000000003106"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001016"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "nervous system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.823210000000003106"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001264"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "pancreas"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "89.982089999999999463"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001264"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "pancreas"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "89.982089999999999463"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001987"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "placenta"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "76.735039999999997917"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001987"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "placenta"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "76.735039999999997917"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000990"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "reproductive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.260000000000005116"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000990"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "reproductive system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "85.260000000000005116"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001004"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "respiratory system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.164109999999993761"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001004"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "respiratory system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "87.164109999999993761"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "head": {
+            "link": [],
+            "vars": [
+                "gene_id",
+                "ensembl_id",
+                "anatomical_entity_id",
+                "anatomical_entity_name",
+                "developmental_stage_id",
+                "developmental_stage_name",
+                "expression_level",
+                "confidence_level_id",
+                "confidence_level_name"
+            ]
+        },
+        "results": {
+            "distinct": false,
+            "ordered": true,
+            "bindings": [
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http: //omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001434"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "skeletal system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "70.552269999999992933"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                },
+                {
+                    "gene_id": {
+                        "type": "uri",
+                        "value": "http://omabrowser.org/ontology/oma#GENE_ENSG00000188157"
+                    },
+                    "ensembl_id": {
+                        "type": "literal",
+                        "value": "ENSG00000188157"
+                    },
+                    "anatomical_entity_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0001434"
+                    },
+                    "anatomical_entity_name": {
+                        "type": "literal",
+                        "value": "skeletal system"
+                    },
+                    "developmental_stage_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/UBERON_0000104"
+                    },
+                    "developmental_stage_name": {
+                        "type": "literal",
+                        "value": "life cycle"
+                    },
+                    "expression_level": {
+                        "type": "typed-literal",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                        "value": "70.552269999999992933"
+                    },
+                    "confidence_level_id": {
+                        "type": "uri",
+                        "value": "http://purl.obolibrary.org/obo/CIO_0000029"
+                    },
+                    "confidence_level_name": {
+                        "type": "literal",
+                        "value": "high confidence level"
+                    }
+                }
+            ]
+        }
+    }
+]

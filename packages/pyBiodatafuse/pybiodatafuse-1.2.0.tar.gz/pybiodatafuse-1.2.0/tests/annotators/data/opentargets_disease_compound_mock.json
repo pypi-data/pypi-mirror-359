@@ -1,0 +1,1457 @@
+{
+    "data": {
+        "diseases": [
+            {
+                "id": "EFO_0004992",
+                "name": "Otitis media",
+                "knownDrugs": {
+                    "rows": [
+                        {
+                            "drug": {
+                                "id": "CHEMBL384467",
+                                "name": "DEXAMETHASONE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "dexamethasone"
+                                        ]
+                                    },
+                                    {
+                                        "source": "EMA",
+                                        "ids": [
+                                            "human/EPAR/ozurdex"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB01234"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "41879"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 6,
+                                    "rows": [
+                                        {
+                                            "name": "plasma cell myeloma"
+                                        },
+                                        {
+                                            "name": "febrile neutropenia"
+                                        },
+                                        {
+                                            "name": "neutropenia"
+                                        },
+                                        {
+                                            "name": "thrombocytopenia"
+                                        },
+                                        {
+                                            "name": "neuropathy peripheral"
+                                        },
+                                        {
+                                            "name": "febrile bone marrow aplasia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL1504",
+                                "name": "TRIAMCINOLONE ACETONIDE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "triamcinolone%20acetonide"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "71418"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 70,
+                                    "rows": [
+                                        {
+                                            "name": "cushing's syndrome"
+                                        },
+                                        {
+                                            "name": "endophthalmitis"
+                                        },
+                                        {
+                                            "name": "non-infectious endophthalmitis"
+                                        },
+                                        {
+                                            "name": "adrenal insufficiency"
+                                        },
+                                        {
+                                            "name": "injection site atrophy"
+                                        },
+                                        {
+                                            "name": "macular degeneration"
+                                        },
+                                        {
+                                            "name": "intraocular pressure increased"
+                                        },
+                                        {
+                                            "name": "ocular hypertension"
+                                        },
+                                        {
+                                            "name": "skin atrophy"
+                                        },
+                                        {
+                                            "name": "visual acuity reduced"
+                                        },
+                                        {
+                                            "name": "eye infection toxoplasmal"
+                                        },
+                                        {
+                                            "name": "human antichimeric antibody positive"
+                                        },
+                                        {
+                                            "name": "joint destruction"
+                                        },
+                                        {
+                                            "name": "cytomegalovirus chorioretinitis"
+                                        },
+                                        {
+                                            "name": "wheelchair user"
+                                        },
+                                        {
+                                            "name": "body height below normal"
+                                        },
+                                        {
+                                            "name": "polyarthritis"
+                                        },
+                                        {
+                                            "name": "retinal artery occlusion"
+                                        },
+                                        {
+                                            "name": "eye inflammation"
+                                        },
+                                        {
+                                            "name": "maculopathy"
+                                        },
+                                        {
+                                            "name": "obesity"
+                                        },
+                                        {
+                                            "name": "adrenal suppression"
+                                        },
+                                        {
+                                            "name": "necrotising retinitis"
+                                        },
+                                        {
+                                            "name": "hypothalamic pituitary adrenal axis suppression"
+                                        },
+                                        {
+                                            "name": "glaucoma"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL655",
+                                "name": "MIDAZOLAM",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "midazolam"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00683"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "6931"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "status epilepticus"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "seizure"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "sedation"
+                                        },
+                                        {
+                                            "name": "drug reaction with eosinophilia and systemic symptoms"
+                                        },
+                                        {
+                                            "name": "multiple-drug resistance"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        },
+                                        {
+                                            "name": "intestinal ischaemia"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "anaphylactic shock"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "anaesthetic complication neurological"
+                                        },
+                                        {
+                                            "name": "necrosis ischaemic"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "systemic inflammatory response syndrome"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL778",
+                                "name": "DEXMEDETOMIDINE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00633"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "4466"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 80,
+                                    "rows": [
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "hyperthermia"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "diabetes insipidus"
+                                        },
+                                        {
+                                            "name": "intestinal pseudo-obstruction"
+                                        },
+                                        {
+                                            "name": "acute motor axonal neuropathy"
+                                        },
+                                        {
+                                            "name": "drug withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "polyuria"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "tachyphylaxis"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        },
+                                        {
+                                            "name": "paradoxical drug reaction"
+                                        },
+                                        {
+                                            "name": "laryngospasm"
+                                        },
+                                        {
+                                            "name": "sedation complication"
+                                        },
+                                        {
+                                            "name": "confusional arousal"
+                                        },
+                                        {
+                                            "name": "quality of life decreased"
+                                        },
+                                        {
+                                            "name": "tachypnoea"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL655",
+                                "name": "MIDAZOLAM",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "midazolam"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00683"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "6931"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "status epilepticus"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "seizure"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "sedation"
+                                        },
+                                        {
+                                            "name": "drug reaction with eosinophilia and systemic symptoms"
+                                        },
+                                        {
+                                            "name": "multiple-drug resistance"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        },
+                                        {
+                                            "name": "intestinal ischaemia"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "anaphylactic shock"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "anaesthetic complication neurological"
+                                        },
+                                        {
+                                            "name": "necrosis ischaemic"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "systemic inflammatory response syndrome"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL384467",
+                                "name": "DEXAMETHASONE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "dexamethasone"
+                                        ]
+                                    },
+                                    {
+                                        "source": "EMA",
+                                        "ids": [
+                                            "human/EPAR/ozurdex"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB01234"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "41879"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 6,
+                                    "rows": [
+                                        {
+                                            "name": "plasma cell myeloma"
+                                        },
+                                        {
+                                            "name": "febrile neutropenia"
+                                        },
+                                        {
+                                            "name": "neutropenia"
+                                        },
+                                        {
+                                            "name": "thrombocytopenia"
+                                        },
+                                        {
+                                            "name": "neuropathy peripheral"
+                                        },
+                                        {
+                                            "name": "febrile bone marrow aplasia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL655",
+                                "name": "MIDAZOLAM",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "midazolam"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00683"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "6931"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "status epilepticus"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "seizure"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "sedation"
+                                        },
+                                        {
+                                            "name": "drug reaction with eosinophilia and systemic symptoms"
+                                        },
+                                        {
+                                            "name": "multiple-drug resistance"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        },
+                                        {
+                                            "name": "intestinal ischaemia"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "anaphylactic shock"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "anaesthetic complication neurological"
+                                        },
+                                        {
+                                            "name": "necrosis ischaemic"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "systemic inflammatory response syndrome"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL778",
+                                "name": "DEXMEDETOMIDINE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00633"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "4466"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 80,
+                                    "rows": [
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "hyperthermia"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "diabetes insipidus"
+                                        },
+                                        {
+                                            "name": "intestinal pseudo-obstruction"
+                                        },
+                                        {
+                                            "name": "acute motor axonal neuropathy"
+                                        },
+                                        {
+                                            "name": "drug withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "polyuria"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "tachyphylaxis"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        },
+                                        {
+                                            "name": "paradoxical drug reaction"
+                                        },
+                                        {
+                                            "name": "laryngospasm"
+                                        },
+                                        {
+                                            "name": "sedation complication"
+                                        },
+                                        {
+                                            "name": "confusional arousal"
+                                        },
+                                        {
+                                            "name": "quality of life decreased"
+                                        },
+                                        {
+                                            "name": "tachypnoea"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL655",
+                                "name": "MIDAZOLAM",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "midazolam"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00683"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "6931"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "status epilepticus"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "seizure"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "sedation"
+                                        },
+                                        {
+                                            "name": "drug reaction with eosinophilia and systemic symptoms"
+                                        },
+                                        {
+                                            "name": "multiple-drug resistance"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        },
+                                        {
+                                            "name": "intestinal ischaemia"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "anaphylactic shock"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "anaesthetic complication neurological"
+                                        },
+                                        {
+                                            "name": "necrosis ischaemic"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "systemic inflammatory response syndrome"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL277474",
+                                "name": "ANTIPYRINE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB01435"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "31225"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 3,
+                                    "rows": [
+                                        {
+                                            "name": "miosis"
+                                        },
+                                        {
+                                            "name": "electrocardiogram q wave abnormal"
+                                        },
+                                        {
+                                            "name": "glucose-6-phosphate dehydrogenase deficiency"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL596",
+                                "name": "FENTANYL",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "fentanyl"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00813"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "119915"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 46,
+                                    "rows": [
+                                        {
+                                            "name": "serotonin syndrome"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "somnolence"
+                                        },
+                                        {
+                                            "name": "drug withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "inadequate analgesia"
+                                        },
+                                        {
+                                            "name": "miosis"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "drug dependence"
+                                        },
+                                        {
+                                            "name": "confusional state"
+                                        },
+                                        {
+                                            "name": "drug abuse"
+                                        },
+                                        {
+                                            "name": "withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "hyperaesthesia"
+                                        },
+                                        {
+                                            "name": "toxicity to various agents"
+                                        },
+                                        {
+                                            "name": "depressed level of consciousness"
+                                        },
+                                        {
+                                            "name": "breakthrough pain"
+                                        },
+                                        {
+                                            "name": "presbyacusis"
+                                        },
+                                        {
+                                            "name": "pharmaceutical product complaint"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "drug interaction"
+                                        },
+                                        {
+                                            "name": "coma"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL655",
+                                "name": "MIDAZOLAM",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "midazolam"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB00683"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "6931"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "hypotension"
+                                        },
+                                        {
+                                            "name": "status epilepticus"
+                                        },
+                                        {
+                                            "name": "respiratory depression"
+                                        },
+                                        {
+                                            "name": "anaphylactic reaction"
+                                        },
+                                        {
+                                            "name": "delirium"
+                                        },
+                                        {
+                                            "name": "seizure"
+                                        },
+                                        {
+                                            "name": "oxygen saturation decreased"
+                                        },
+                                        {
+                                            "name": "sedation"
+                                        },
+                                        {
+                                            "name": "drug reaction with eosinophilia and systemic symptoms"
+                                        },
+                                        {
+                                            "name": "multiple-drug resistance"
+                                        },
+                                        {
+                                            "name": "tachycardia"
+                                        },
+                                        {
+                                            "name": "intestinal ischaemia"
+                                        },
+                                        {
+                                            "name": "cardiac arrest"
+                                        },
+                                        {
+                                            "name": "anaphylactic shock"
+                                        },
+                                        {
+                                            "name": "generalised tonic-clonic seizure"
+                                        },
+                                        {
+                                            "name": "anaesthetic complication neurological"
+                                        },
+                                        {
+                                            "name": "necrosis ischaemic"
+                                        },
+                                        {
+                                            "name": "hyperthermia malignant"
+                                        },
+                                        {
+                                            "name": "agitation"
+                                        },
+                                        {
+                                            "name": "unresponsive to stimuli"
+                                        },
+                                        {
+                                            "name": "systemic inflammatory response syndrome"
+                                        },
+                                        {
+                                            "name": "bradycardia"
+                                        },
+                                        {
+                                            "name": "apnoea"
+                                        },
+                                        {
+                                            "name": "upper airway obstruction"
+                                        },
+                                        {
+                                            "name": "myoclonus"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL384467",
+                                "name": "DEXAMETHASONE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "dexamethasone"
+                                        ]
+                                    },
+                                    {
+                                        "source": "EMA",
+                                        "ids": [
+                                            "human/EPAR/ozurdex"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB01234"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "41879"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 6,
+                                    "rows": [
+                                        {
+                                            "name": "plasma cell myeloma"
+                                        },
+                                        {
+                                            "name": "febrile neutropenia"
+                                        },
+                                        {
+                                            "name": "neutropenia"
+                                        },
+                                        {
+                                            "name": "thrombocytopenia"
+                                        },
+                                        {
+                                            "name": "neuropathy peripheral"
+                                        },
+                                        {
+                                            "name": "febrile bone marrow aplasia"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL240163",
+                                "name": "PAZUFLOXACIN",
+                                "isApproved": false,
+                                "maximumClinicalTrialPhase": 3,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB11774"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 2,
+                                    "rows": [
+                                        {
+                                            "name": "oculomucocutaneous syndrome"
+                                        },
+                                        {
+                                            "name": "chlamydia serology positive"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL240163",
+                                "name": "PAZUFLOXACIN",
+                                "isApproved": false,
+                                "maximumClinicalTrialPhase": 3,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB11774"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 2,
+                                    "rows": [
+                                        {
+                                            "name": "oculomucocutaneous syndrome"
+                                        },
+                                        {
+                                            "name": "chlamydia serology positive"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL1201231",
+                                "name": "PREDNISOLONE PHOSPHORIC ACID",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB14631"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": null
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL1201014",
+                                "name": "PREDNISOLONE SODIUM PHOSPHATE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "prednisolone%20sodium%20phosphate"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 60,
+                                    "rows": [
+                                        {
+                                            "name": "choroiditis"
+                                        },
+                                        {
+                                            "name": "intraocular pressure increased"
+                                        },
+                                        {
+                                            "name": "endophthalmitis"
+                                        },
+                                        {
+                                            "name": "uveitis"
+                                        },
+                                        {
+                                            "name": "hepatitis b reactivation"
+                                        },
+                                        {
+                                            "name": "visual acuity reduced"
+                                        },
+                                        {
+                                            "name": "chorioretinopathy"
+                                        },
+                                        {
+                                            "name": "eye pain"
+                                        },
+                                        {
+                                            "name": "osteonecrosis"
+                                        },
+                                        {
+                                            "name": "bedridden"
+                                        },
+                                        {
+                                            "name": "condition aggravated"
+                                        },
+                                        {
+                                            "name": "lower limb fracture"
+                                        },
+                                        {
+                                            "name": "osteoporosis"
+                                        },
+                                        {
+                                            "name": "loss of personal independence in daily activities"
+                                        },
+                                        {
+                                            "name": "hypogammaglobulinaemia"
+                                        },
+                                        {
+                                            "name": "hepatitis e"
+                                        },
+                                        {
+                                            "name": "meningomyelitis herpes"
+                                        },
+                                        {
+                                            "name": "foot fracture"
+                                        },
+                                        {
+                                            "name": "epstein-barr virus infection"
+                                        },
+                                        {
+                                            "name": "neutropenia"
+                                        },
+                                        {
+                                            "name": "corneal deposits"
+                                        },
+                                        {
+                                            "name": "cytomegalovirus infection"
+                                        },
+                                        {
+                                            "name": "post transplant lymphoproliferative disorder"
+                                        },
+                                        {
+                                            "name": "diarrhoea"
+                                        },
+                                        {
+                                            "name": "meningitis cryptococcal"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "drug": {
+                                "id": "CHEMBL1161",
+                                "name": "MOMETASONE FUROATE",
+                                "isApproved": true,
+                                "maximumClinicalTrialPhase": 4,
+                                "crossReferences": [
+                                    {
+                                        "source": "DailyMed",
+                                        "ids": [
+                                            "mometasone%20furoate"
+                                        ]
+                                    },
+                                    {
+                                        "source": "drugbank",
+                                        "ids": [
+                                            "DB14512"
+                                        ]
+                                    },
+                                    {
+                                        "source": "chEBI",
+                                        "ids": [
+                                            "47564"
+                                        ]
+                                    }
+                                ],
+                                "adverseEvents": {
+                                    "count": 40,
+                                    "rows": [
+                                        {
+                                            "name": "poor quality device used"
+                                        },
+                                        {
+                                            "name": "dyspnoea"
+                                        },
+                                        {
+                                            "name": "asthma"
+                                        },
+                                        {
+                                            "name": "wheezing"
+                                        },
+                                        {
+                                            "name": "cough"
+                                        },
+                                        {
+                                            "name": "product dose omission issue"
+                                        },
+                                        {
+                                            "name": "gastrooesophageal reflux disease"
+                                        },
+                                        {
+                                            "name": "pneumonia aspiration"
+                                        },
+                                        {
+                                            "name": "wrong technique in device usage process"
+                                        },
+                                        {
+                                            "name": "steroid withdrawal syndrome"
+                                        },
+                                        {
+                                            "name": "poor quality product administered"
+                                        },
+                                        {
+                                            "name": "coma"
+                                        },
+                                        {
+                                            "name": "chest discomfort"
+                                        },
+                                        {
+                                            "name": "nasal congestion"
+                                        },
+                                        {
+                                            "name": "dysphonia"
+                                        },
+                                        {
+                                            "name": "poor quality drug administered"
+                                        },
+                                        {
+                                            "name": "nasal polyps"
+                                        },
+                                        {
+                                            "name": "sleep disorder due to a general medical condition"
+                                        },
+                                        {
+                                            "name": "rhinitis allergic"
+                                        },
+                                        {
+                                            "name": "anosmia"
+                                        },
+                                        {
+                                            "name": "productive cough"
+                                        },
+                                        {
+                                            "name": "diarrhoea"
+                                        },
+                                        {
+                                            "name": "product availability issue"
+                                        },
+                                        {
+                                            "name": "nasal discomfort"
+                                        },
+                                        {
+                                            "name": "product odour abnormal"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "EFO_0700136",
+                "name": "apolipoprotein A-I deficiency",
+                "knownDrugs": {
+                    "rows": []
+                }
+            }
+        ]
+    }
+}

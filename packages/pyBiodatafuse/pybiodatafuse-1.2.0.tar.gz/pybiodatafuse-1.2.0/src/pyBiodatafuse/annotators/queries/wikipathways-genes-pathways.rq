@@ -1,0 +1,25 @@
+SELECT DISTINCT ?gene_id ?pathway_id ?pathway_label ?pathway_gene_count
+WHERE {
+	
+  	VALUES ?gene_id { $gene_list }
+  	BIND(IRI(CONCAT("https://identifiers.org/ncbigene/", ?gene_id)) AS ?gene_id_url)
+	
+	?geneProduct a wp:GeneProduct .
+	?geneProduct rdfs:label ?geneLabel .
+    ?geneProduct wp:bdbEntrezGene ?gene_id_url .
+	?geneProduct dcterms:isPartOf ?pathway .
+
+	?pathway a wp:Pathway .
+  	?pathway dc:title ?pathway_label .
+	?pathway dcterms:identifier ?pathway_id .
+  
+  	{
+    	SELECT ?pathway (count(distinct ?gene) AS ?pathway_gene_count) 
+        WHERE {
+          
+          ?gene a wp:GeneProduct .
+		  ?gene dcterms:isPartOf ?pathway .
+        
+        } GROUP BY ?pathway  
+    }
+}
