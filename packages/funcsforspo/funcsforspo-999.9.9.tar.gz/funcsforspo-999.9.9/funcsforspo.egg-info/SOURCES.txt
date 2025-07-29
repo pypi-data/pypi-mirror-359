@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+funcsforspo.egg-info/PKG-INFO
+funcsforspo.egg-info/SOURCES.txt
+funcsforspo.egg-info/dependency_links.txt
+funcsforspo.egg-info/top_level.txt
