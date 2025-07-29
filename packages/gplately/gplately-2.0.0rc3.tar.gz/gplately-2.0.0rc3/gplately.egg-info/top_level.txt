@@ -1,0 +1,5 @@
+conda
+dist
+docker
+gplately
+sphinx-doc
