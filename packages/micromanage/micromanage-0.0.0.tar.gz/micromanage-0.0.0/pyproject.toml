@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "micromanage"
+dynamic = ["version"]
+authors = [
+    {name = "Dimitris P. Triandafillidis", email = "64985525+dtriand@users.noreply.github.com"}
+]
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+
+[tool.setuptools.dynamic]
+version = {attr = "micromanage.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

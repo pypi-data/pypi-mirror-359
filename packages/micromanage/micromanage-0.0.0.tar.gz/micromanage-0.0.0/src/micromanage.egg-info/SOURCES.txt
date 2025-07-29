@@ -1,0 +1,8 @@
+LICENSE
+pyproject.toml
+setup.py
+src/micromanage/__init__.py
+src/micromanage.egg-info/PKG-INFO
+src/micromanage.egg-info/SOURCES.txt
+src/micromanage.egg-info/dependency_links.txt
+src/micromanage.egg-info/top_level.txt
