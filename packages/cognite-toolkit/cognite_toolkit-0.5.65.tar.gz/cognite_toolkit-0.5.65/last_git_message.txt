@@ -1,0 +1,30 @@
+[CDF-25015] 🏭 Migrate assets (#1649)
+
+# Description
+
+<del>Stacked on #1644, #1645, #1643</del>
+
+This introduces a command for migration of assets. This creates the
+CogniteAssets, but it also populates the mapping view which can then be
+used in later migrations of Charts, Canvas, 3D, annotaions, Infield, etc
+
+
+![image](https://github.com/user-attachments/assets/52f54793-364f-4d59-a9df-b58550bbbb27)
+
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Added
+
+- [alpha] New command `cdf migrate assets` for moving asset-centric
+assets to CogniteAssets.
+ 
+## templates
+
+No changes.
