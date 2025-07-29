@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: my-demo-cli
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Nahuel Defossé <nahuel.deofsse@ibm.com>
+Requires-Python: <3.14,>=3.10
+Requires-Dist: click>=8.2.1
+Requires-Dist: rich>=14.0.0
