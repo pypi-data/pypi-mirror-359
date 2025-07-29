@@ -1,0 +1,2 @@
+[console_scripts]
+qhrf-backends = qhrf_backend_selector.cli:main
