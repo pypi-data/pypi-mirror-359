@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: meshtrade
+Version: 0.0.7
+Summary: Integration SDK for Mesh API Services
+Author-email: Bernard Bussy <bernard@meshtrade.co>
+License-Expression: LicenseRef-My-Custom-License
+Project-URL: Repository, https://github.com/meshtrade/api
+Keywords: meshtrade,mesh,mesh-sdk,grpc,betterproto,grpclib
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: grpcio<2.0,>=1.73.0
+Requires-Dist: protobuf<7.0,>=6.31.1
+Requires-Dist: googleapis-common-protos<2.0.0,>=1.70.0
+Provides-Extra: dev
+Requires-Dist: ruff~=0.11.13; extra == "dev"
+Requires-Dist: pytest~=8.4.0; extra == "dev"
+Requires-Dist: build~=1.2.2; extra == "dev"
+Requires-Dist: twine~=6.1.0; extra == "dev"
+Requires-Dist: tox~=4.26.0; extra == "dev"
+Requires-Dist: types-protobuf~=6.30.2.20250516; extra == "dev"
+Dynamic: license-file
+
+# Python SDK
+
+Please find the complete Python SDK documentation here: [docs/pages/python.md](../docs/pages/python.md)
