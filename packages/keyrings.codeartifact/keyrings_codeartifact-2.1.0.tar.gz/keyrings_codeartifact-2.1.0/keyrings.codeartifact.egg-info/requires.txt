@@ -1,0 +1,10 @@
+keyring~=25.0
+boto3~=1.36
+
+[devel]
+flake8
+black
+
+[testing]
+pytest>=6
+pytest-cov
