@@ -1,0 +1,102 @@
+Metadata-Version: 2.4
+Name: axmp-openapi-mcp-server
+Version: 0.1.0
+Summary: This is a template mcp server for the axmp-ai-agent-studio
+Project-URL: homepage, https://github.com/cloudz-mp
+Project-URL: repository, https://github.com/cloudz-mp/axmp-openapi-mcp-server
+Project-URL: documentation, https://github.com/cloudz-mp/axmp-openapi-mcp-server
+Project-URL: Bug Tracker, https://github.com/cloudz-mp/axmp-openapi-mcp-server/issues
+Author-email: Kilsoo Kang <kilsoo75@gmail.com>
+Requires-Python: <4.0,>=3.12
+Requires-Dist: click>=8.2.1
+Requires-Dist: mcp>=1.10.1
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: python-dotenv>=1.1.1
+Requires-Dist: zmp-openapi-helper>=0.2.1
+Description-Content-Type: text/markdown
+
+# MCP Inspector CLI for lowlevel server
+```bash
+$ npx @modelcontextprotocol/inspector uv --directory /Users/kks/IdeaProjects/aiops/axmp-openapi-mcp-server run axmp-openapi-mcp-server --transport stdio --endpoint https://api.ags.cloudzcp.net --access-key xxx --spec-path /Users/kks/IdeaProjects/aiops/axmp-openapi-mcp-server/openapi/zmp_mixed_api_spec.json
+```
+
+# fastmcp cli command
+```bash
+$ mcp dev src/axmp_openapi_mcp_server/fastmcp/zcp_alert_manager.py
+$ mcp run src/axmp_openapi_mcp_server/fastmcp/zcp_alert_manager.py -t sse
+$ mcp install src/axmp_openapi_mcp_server/fastmcp/zcp_alert_manager.py --name alert-manager --with zmp-openapi-toolkit,pyyaml
+```
+
+# How to run the lowlevel.server
+## sse
+```bash
+axmp-openapi-mcp-server --port 20004 --transport sse --endpoint https://api.ags.cloudzcp.net --server-name axmp-logging-openapi-mcp-server --auth-type Custom --custom-auth-header-key X-Access-Key --custom-auth-header-value zmp-xxx --tool-spec-base-path  /Users/kks/IdeaProjects/aiops/axmp-openapi-mcp-server/openapi/ --tool-spec-file-name zmp_logging_tool_api_spec.json
+```
+
+## stdio
+first install the axmp-openapi-mcp-server
+```bash
+pip install axmp-openapi-mcp-server
+```
+
+then configure the mcp server into the mcp host like claude desktop or cursor
+```json
+{
+  "mcpServers": {
+    "axmp-openapi-mcp-server": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "axmp_openapi_mcp_server",
+        "--transport",
+        "stdio",
+        "--endpoint",
+        "https://api.ags.cloudzcp.net",
+        "--access-key",
+        "xxxxx",
+        "--spec-path",
+        "/Users/kks/IdeaProjects/aiops/axmp-openapi-mcp-server/openapi/zmp_mixed_api_spec.json"
+      ]
+    }
+  }
+}
+```
+
+
+# backup the claude desktop mcp conf
+```json
+{
+  "mcpServers": {
+    "axmp-openapi-mcp-server": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "axmp_openapi_mcp_server",
+        "--transport",
+        "stdio",
+        "--endpoint",
+        "https://api.ags.cloudzcp.net",
+        "--access-key",
+        "xxxx",
+        "--spec-path",
+        "/Users/kks/IdeaProjects/aiops/axmp-openapi-mcp-server/openapi/zmp_mixed_api_spec.json"
+      ]
+    },
+    "tavily-mcp": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@0.1.4"],
+      "env": {
+        "TAVILY_API_KEY": "xxxxx"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/kks/Desktop"
+      ]
+    }
+  }
+}
+ ```
