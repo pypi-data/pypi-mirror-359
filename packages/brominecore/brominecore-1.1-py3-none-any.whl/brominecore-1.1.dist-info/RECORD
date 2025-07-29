@@ -1,0 +1,13 @@
+brcore/__init__.py,sha256=vbZ2-tcnFCu14zO9FuKqMgt7HyEEr3xrFAKqTVSCcQY,64
+brcore/core.py,sha256=FEZeoNbS9YvtAuXQ0znL6VLOwFk1nssAOl0xTzAJcRg,21887
+brcore/util.py,sha256=7IK0rQWv5daDoKVSFa1QdOI3A-q2057bbanccrvHycU,521
+brcore/enum/__init__.py,sha256=VyyswuLToOjZWuEsSE3szf8qOqjTmgU1QPjLE_PdKxo,204
+brcore/enum/exception_texts.py,sha256=Z_lz0F5EwA-Q4uoBChUoO8EiY60V2Z8dY-9U-k213zc,699
+brcore/enum/channels/__init__.py,sha256=boFtoVAltZpj5h3sFi7ubgQT836ZLw5NYjiUBtcXOLs,140
+brcore/enum/channels/channel_argtype.py,sha256=ubl7wFbmmjWJE-XrW0gAQLKSIJ4IxHO_mxP8rg7QxGI,683
+brcore/enum/channels/channels.py,sha256=yjyA3pfqb_I0OJTcItlUBoGLxvEOtrUfwSK82S0UeD8,2635
+brominecore-1.1.dist-info/licenses/LICENSE,sha256=9z-qttWTySG7CeV72m9XyX8AEO-VG-xogWlFLQVLSQw,1065
+brominecore-1.1.dist-info/METADATA,sha256=-iiA9A4laYGfTdTQyB_FCilbXZS4OEqEcEeDsYxHvO0,3969
+brominecore-1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+brominecore-1.1.dist-info/top_level.txt,sha256=q-RFjELVjiz1gXVNoUP1MamVSQBUjEd5QZ3swzSU5X8,7
+brominecore-1.1.dist-info/RECORD,,
