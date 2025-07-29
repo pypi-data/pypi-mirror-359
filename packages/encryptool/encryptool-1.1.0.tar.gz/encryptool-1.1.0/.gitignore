@@ -1,0 +1,10 @@
+# Miscellaneous
+**/__pycache__
+dist/**
+
+# App output
+output/**
+
+# Critical files
+*_key.pem
+.pass
