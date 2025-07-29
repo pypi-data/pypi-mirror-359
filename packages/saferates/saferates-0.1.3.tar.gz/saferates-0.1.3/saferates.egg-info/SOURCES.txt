@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+saferates/__init__.py
+saferates/api.py
+saferates/channels.py
+saferates/friends.py
+saferates/guilds.py
+saferates/user.py
+saferates/utils.py
+saferates/webhook.py
+saferates.egg-info/PKG-INFO
+saferates.egg-info/SOURCES.txt
+saferates.egg-info/dependency_links.txt
+saferates.egg-info/requires.txt
+saferates.egg-info/top_level.txt
