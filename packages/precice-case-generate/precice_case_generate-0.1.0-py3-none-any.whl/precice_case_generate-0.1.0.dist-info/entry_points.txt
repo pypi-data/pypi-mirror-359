@@ -1,0 +1,2 @@
+[console_scripts]
+precice-case-generate = precicecasegenerate.cli:main
