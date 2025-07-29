@@ -1,0 +1,6 @@
+rich
+pandas
+streamlit
+plotly[express]
+browser-history
+setuptools==66.1.1
