@@ -1,0 +1,15 @@
+ats_resume_scorer/__init__.py,sha256=fN70mYuBO9LcB3ErGZiq7pye1Q8LtIVD1Yz29R7rJRc,937
+ats_resume_scorer/main.py,sha256=UsXrt-L5P2TTHTTPcxcRrNk42kOE11i6Jl7z2wozMQA,19020
+ats_resume_scorer/parsers/__init__.py,sha256=nCRWKv4EJqJVviHCzapys9R1KRaHpKFIv2IUMGybAE0,397
+ats_resume_scorer/parsers/jd_parser.py,sha256=mApOX1lkoB60rtpsR3fJh3TlTCIxoLJUYINQ9sSACm8,11306
+ats_resume_scorer/parsers/resume_parser.py,sha256=cVucPCR2rF0_Xubaer43xVfSJurS1Wsqjwd2TH4sVgc,14330
+ats_resume_scorer/scoring/__init__.py,sha256=TtfmT2zgfarFZsqMIfjLBwD71DlZxcHoyHFwlxn-qY0,187
+ats_resume_scorer/scoring/scoring_engine.py,sha256=FNjhB9q7tMbPVIk6OtmHebW3PPQTUZbR7c8PXNhbc0I,18061
+ats_resume_scorer/utils/__init__.py,sha256=oHerXwrvILjqoBy92-wnbiY5IdUVApxyhv6Di-qv7UA,192
+ats_resume_scorer/utils/report_generator.py,sha256=diqAP3GPHbnKFewSEiGRoubJEhG2dxUB1N7q6POxgoA,47588
+ats_resume_scorer-2.0.0.dist-info/licenses/LICENSE,sha256=4X4KhaI9HZHUIM7bijhLWvT0382WrqdxJuReQwigO_I,1071
+ats_resume_scorer-2.0.0.dist-info/METADATA,sha256=1PftRFRJTTCgqwHKh5QZdr3JfakG8cqzrW4YhWNfU68,23703
+ats_resume_scorer-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ats_resume_scorer-2.0.0.dist-info/entry_points.txt,sha256=Qv0XjxbMIG4l_wnxSGVqD0wsDeKzu2H-ZHmjKk8ARWY,99
+ats_resume_scorer-2.0.0.dist-info/top_level.txt,sha256=rfeXEYhuTSekJCq0gZDetdGTM8beFwYrI0HtLis0YW0,18
+ats_resume_scorer-2.0.0.dist-info/RECORD,,
