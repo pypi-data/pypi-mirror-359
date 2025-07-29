@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: jsonblob
+Version: 0.0.2
+Summary: Non official jsonblob api client
+Author-email: Roman Smolnyk <poma23324@gmail.com>
+Project-URL: Homepage, https://github.com/roman-smolnyk/python-jsonblob
+Keywords: jsonblob
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+Requires-Dist: requests
+Dynamic: license-file
+
+# jsonblob
+
+Non official jsonblob api client
+
+```bash
+pip install jsonblob
+```
+
+## Official API
+
+<https://jsonblob.com/api>
+
+## Usage
+
+```python
+from jsonblob import JSONBlobClient
+
+json_blob_client = JSONBlobClient()
+
+blob_id = json_blob_client.create({"hello": "world"})
+json_blob_client.update({"zebra": "bebra"})
+
+print(json_blob_client.get(blob_id))
+```
+
+Custom Json Blob storage
+
+```python
+from jsonblob import JSONBlobStorage
+
+# Create blob to store keys. Usually once and than keys_blob_id is hardcoded
+keys_blob_id = JSONBlobStorage.create()
+# Create storage
+json_blob_storage = JSONBlobStorage(keys_blob_id)
+
+# Print keys blob id (stores keys map)
+print(json_blob_storage.keys_blob_id)
+# Print keys
+print(json_blob_storage.keys)
+
+# Check if key exists
+if "my_key" in json_blob.keys:
+    print(json_blob_storage.get("my_key"))
+
+# Set key and value
+is_new_key = json_blob_storage.set("zebra", {"hello": "world"})
+
+# Get value
+value = json_blob_storage.get("zebra")
+print(value)
+```
