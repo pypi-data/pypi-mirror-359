@@ -1,0 +1,2 @@
+[console_scripts]
+protoc-gen-connect_python = connectrpc.protoc_gen_connect_python.main:main
