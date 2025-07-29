@@ -1,0 +1,72 @@
+
+#ifdef ECL_DYNAMIC_VV
+static cl_object *VV;
+#else
+static cl_object VV[VM];
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+static cl_object L2550_tbagg__table_s_1_(cl_object );
+static cl_object L2551_tbagg__table_ls_2_(cl_object , cl_object );
+static cl_object L2552_tbagg__insert__r2s_3_(cl_object , cl_object , cl_object );
+static cl_object L2553_tbagg__indices_sl_4_(cl_object , cl_object );
+static cl_object L2554_tbagg__coerce_sof_5_(cl_object , cl_object );
+static cl_object L2555_tbagg__elt_skeyentry_6_(cl_object , cl_object , cl_object );
+static cl_object L2556_tbagg__elt_skey2entry_7_(cl_object , cl_object , cl_object , cl_object );
+static cl_object L2557_tbagg__map__m2s_8_(cl_object , cl_object , cl_object );
+static cl_object L2558_tbagg__map_m3s_9_(cl_object , cl_object , cl_object , cl_object );
+static cl_object L2559_tbagg__parts_sl_10_(cl_object , cl_object );
+static cl_object L2560_tbagg__parts_sl_11_(cl_object , cl_object );
+static cl_object L2561_tbagg__entries_sl_12_(cl_object , cl_object );
+static cl_object L2562_tbagg____2sb_13_(cl_object , cl_object , cl_object );
+static cl_object L2563_tbagg__map_m2s_14_(cl_object , cl_object , cl_object );
+static cl_object L2564_tbagg__map__m2s_15_(cl_object , cl_object , cl_object );
+static cl_object L2565_tbagg__inspect_sr_16_(cl_object , cl_object );
+static cl_object L2566_tbagg__find_msu_17_(cl_object , cl_object , cl_object );
+static cl_object L2567_tbagg__index__keysb_18_(cl_object , cl_object , cl_object );
+static cl_object L2568_tbagg__remove__r2s_19_(cl_object , cl_object , cl_object );
+static cl_object L2569_tbagg__extract__sr_20_(cl_object , cl_object );
+static cl_object L2570_tbagg__any__msb_21_(cl_object , cl_object , cl_object );
+static cl_object L2571_tbagg__every__msb_22_(cl_object , cl_object , cl_object );
+static cl_object L2572_tbagg__count_msnni_23_(cl_object , cl_object , cl_object );
+static cl_object L2573_tableaggregate__(cl_object , cl_object , cl_object );
+static cl_object Cblock;
+#define VM 68
+#define VMtemp 67
+#define ECL_DEFINE_SETF_FUNCTIONS 
+#ifdef __cplusplus
+}
+#endif
+/*
+ * Exported Lisp functions
+ */
+#define compiler_cfuns_size 24
+static const struct ecl_cfunfixed compiler_cfuns[] = {
+ /*t,m,narg,padding,name=function-location,block=name-location,entry,entry_fixed,file,file_position*/
+{0,0,1,0,ecl_make_fixnum(33),ecl_make_fixnum(0),(cl_objectfn)L2550_tbagg__table_s_1_,NULL,ECL_NIL,ecl_make_fixnum(0)},
+{0,0,2,0,ecl_make_fixnum(34),ecl_make_fixnum(1),(cl_objectfn)L2551_tbagg__table_ls_2_,NULL,ECL_NIL,ecl_make_fixnum(63)},
+{0,0,3,0,ecl_make_fixnum(35),ecl_make_fixnum(2),(cl_objectfn)L2552_tbagg__insert__r2s_3_,NULL,ECL_NIL,ecl_make_fixnum(225)},
+{0,0,2,0,ecl_make_fixnum(36),ecl_make_fixnum(3),(cl_objectfn)L2553_tbagg__indices_sl_4_,NULL,ECL_NIL,ecl_make_fixnum(430)},
+{0,0,2,0,ecl_make_fixnum(37),ecl_make_fixnum(4),(cl_objectfn)L2554_tbagg__coerce_sof_5_,NULL,ECL_NIL,ecl_make_fixnum(532)},
+{0,0,3,0,ecl_make_fixnum(38),ecl_make_fixnum(6),(cl_objectfn)L2555_tbagg__elt_skeyentry_6_,NULL,ECL_NIL,ecl_make_fixnum(1890)},
+{0,0,4,0,ecl_make_fixnum(40),ecl_make_fixnum(8),(cl_objectfn)L2556_tbagg__elt_skey2entry_7_,NULL,ECL_NIL,ecl_make_fixnum(2227)},
+{0,0,3,0,ecl_make_fixnum(41),ecl_make_fixnum(9),(cl_objectfn)L2557_tbagg__map__m2s_8_,NULL,ECL_NIL,ecl_make_fixnum(2516)},
+{0,0,4,0,ecl_make_fixnum(42),ecl_make_fixnum(10),(cl_objectfn)L2558_tbagg__map_m3s_9_,NULL,ECL_NIL,ecl_make_fixnum(3277)},
+{0,0,2,0,ecl_make_fixnum(43),ecl_make_fixnum(11),(cl_objectfn)L2559_tbagg__parts_sl_10_,NULL,ECL_NIL,ecl_make_fixnum(4325)},
+{0,0,2,0,ecl_make_fixnum(44),ecl_make_fixnum(12),(cl_objectfn)L2560_tbagg__parts_sl_11_,NULL,ECL_NIL,ecl_make_fixnum(5171)},
+{0,0,2,0,ecl_make_fixnum(45),ecl_make_fixnum(13),(cl_objectfn)L2561_tbagg__entries_sl_12_,NULL,ECL_NIL,ecl_make_fixnum(5884)},
+{0,0,3,0,ecl_make_fixnum(46),ecl_make_fixnum(14),(cl_objectfn)L2562_tbagg____2sb_13_,NULL,ECL_NIL,ecl_make_fixnum(5989)},
+{0,0,3,0,ecl_make_fixnum(47),ecl_make_fixnum(15),(cl_objectfn)L2563_tbagg__map_m2s_14_,NULL,ECL_NIL,ecl_make_fixnum(7635)},
+{0,0,3,0,ecl_make_fixnum(48),ecl_make_fixnum(16),(cl_objectfn)L2564_tbagg__map__m2s_15_,NULL,ECL_NIL,ecl_make_fixnum(8608)},
+{0,0,2,0,ecl_make_fixnum(51),ecl_make_fixnum(18),(cl_objectfn)L2565_tbagg__inspect_sr_16_,NULL,ECL_NIL,ecl_make_fixnum(10550)},
+{0,0,3,0,ecl_make_fixnum(53),ecl_make_fixnum(20),(cl_objectfn)L2566_tbagg__find_msu_17_,NULL,ECL_NIL,ecl_make_fixnum(11120)},
+{0,0,3,0,ecl_make_fixnum(54),ecl_make_fixnum(21),(cl_objectfn)L2567_tbagg__index__keysb_18_,NULL,ECL_NIL,ecl_make_fixnum(12142)},
+{0,0,3,0,ecl_make_fixnum(55),ecl_make_fixnum(22),(cl_objectfn)L2568_tbagg__remove__r2s_19_,NULL,ECL_NIL,ecl_make_fixnum(12273)},
+{0,0,2,0,ecl_make_fixnum(56),ecl_make_fixnum(23),(cl_objectfn)L2569_tbagg__extract__sr_20_,NULL,ECL_NIL,ecl_make_fixnum(12550)},
+{0,0,3,0,ecl_make_fixnum(57),ecl_make_fixnum(24),(cl_objectfn)L2570_tbagg__any__msb_21_,NULL,ECL_NIL,ecl_make_fixnum(12869)},
+{0,0,3,0,ecl_make_fixnum(58),ecl_make_fixnum(25),(cl_objectfn)L2571_tbagg__every__msb_22_,NULL,ECL_NIL,ecl_make_fixnum(13713)},
+{0,0,3,0,ecl_make_fixnum(59),ecl_make_fixnum(26),(cl_objectfn)L2572_tbagg__count_msnni_23_,NULL,ECL_NIL,ecl_make_fixnum(14594)},
+{0,0,3,0,ecl_make_fixnum(60),ecl_make_fixnum(27),(cl_objectfn)L2573_tableaggregate__,NULL,ECL_NIL,ecl_make_fixnum(15481)},
+};
