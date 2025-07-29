@@ -1,0 +1,2 @@
+[console_scripts]
+walt-g5k-deploy-helper = walt.client.g5k.deploy.helper:run
