@@ -1,0 +1,12 @@
+snapshot_integration_package/EULA,sha256=vJu4RdIeE6m_5uDN02dGdKsqQ4239PsuEeeLP6Re_B0,723
+snapshot_integration_package/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snapshot_integration_package/semiauto_main.py,sha256=1o0j4-Y0-igBXfUMxa7QL5DW1ko51aKDaEUPpZvStDY,21151
+snapshot_integration_package/semiauto_misc.py,sha256=6YU7_d_zGulo-RzGMB_hFrP2aY1PyWgfyR0rpu0zzFY,20751
+snapshot_integration_package/semiauto_ps.py,sha256=pJ0RmmmgsUsDP3EeLuGofCSXjHd16_hBDAG2y3K-5Gg,54438
+snapshot_integration_package/semiauto_rc.py,sha256=ue9bSRscvkknu76z9AObTsAJLs_-IAeMaGgXThoX3CU,5425
+snapshot_integration_package/setup.py,sha256=g0G1N_H3J0s-kSyVWsTPnoE1zPVx6qZloRgBP8pI5ak,2372
+snapshot_integration_package-1.0.7.dev0.dist-info/licenses/LICENSE,sha256=j-g8_e7-I-8IzD7kvRopkb_JAkn6CexepOEXfSRYnkA,1073
+snapshot_integration_package-1.0.7.dev0.dist-info/METADATA,sha256=9MvLHOJb5fW1HxM5tvox9ZXekKDaSYO73ckWhoY0IpE,3535
+snapshot_integration_package-1.0.7.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+snapshot_integration_package-1.0.7.dev0.dist-info/top_level.txt,sha256=HMU4jM6SRQ48qxVAkWSHAsulmtYSqY9qwQSROo11AVM,29
+snapshot_integration_package-1.0.7.dev0.dist-info/RECORD,,
