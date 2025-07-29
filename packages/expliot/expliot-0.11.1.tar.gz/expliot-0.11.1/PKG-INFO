@@ -1,0 +1,78 @@
+Metadata-Version: 2.3
+Name: expliot
+Version: 0.11.1
+Summary: IoT security testing and exploitation framework
+License: AGPLv3+
+Keywords: IoT,IIoT,security,hacking,hardware,expliot,exploit framework
+Author: The EXPLIoT authors
+Author-email: info@expliot.io
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: License :: Other/Proprietary License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Software Development :: Testing
+Requires-Dist: aiocoap (>=0.4.9,<0.5.0)
+Requires-Dist: awsiotpythonsdk (>=1.5.4,<2.0.0)
+Requires-Dist: bluepy (>=1.3.0,<2.0.0)
+Requires-Dist: cmd2 (>=2.4.3,<3.0.0)
+Requires-Dist: cryptography (>=42.0.7,<43.0.0)
+Requires-Dist: distro (>=1.9.0,<2.0.0)
+Requires-Dist: jsonschema (>=4.22.0,<5.0.0)
+Requires-Dist: paho-mqtt (<=2.0)
+Requires-Dist: pyi2cflash (>=0.2.2,<0.3.0)
+Requires-Dist: pymodbus (>=3.6.9,<4.0.0)
+Requires-Dist: pynetdicom (>=2.0.2,<3.0.0)
+Requires-Dist: pyparsing (>=3.1.2,<4.0.0)
+Requires-Dist: pyserial (>=3.5,<4.0)
+Requires-Dist: pyspiflash (>=0.6.3,<0.7.0)
+Requires-Dist: python-can (>=4.4.2,<5.0.0)
+Requires-Dist: python-magic (>=0.4.27,<0.5.0)
+Requires-Dist: pyudev (>=0.24.3,<0.25.0)
+Requires-Dist: setuptools (>=70.0.0,<71.0.0)
+Requires-Dist: upnpy (>=1.1.8,<2.0.0)
+Requires-Dist: xmltodict (>=0.13.0,<0.14.0)
+Requires-Dist: zeroconf (<=0.40)
+Project-URL: Bug Tracker, https://github.com/python-poetry/poetry/issues
+Project-URL: Discord chat rooms, https://discord.gg/AafG232
+Project-URL: Issues, https://gitlab.com/expliot_framework/expliot/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D=
+Project-URL: Online shop, https://expliot.io/collections/frontpage
+Project-URL: documentation, https://expliot.readthedocs.io/
+Project-URL: homepage, https://expliot.io
+Project-URL: repository, https://gitlab.com/expliot_framework/expliot
+Description-Content-Type: text/markdown
+
+# EXPLIoT
+
+Noun: /ɛkˈsplʌɪəti:/
+
+A Framework for security testing and exploiting IoT products and IoT
+infrastructure. It provides a set of plugins (test cases) which are used to
+perform the assessment and can be extended easily with new ones.
+
+The name **EXPLIoT** (pronounced *expl-aa-yo-tee*) is a pun on the word
+*exploit* and explains the purpose of the framework i.e. IoT exploitation.
+
+It is written in Python.
+
+- [Website](https://expliot.io)
+- [Online shop](https://expliot.io/collections/frontpage) (for related hardware)
+- [Documentation](https://expliot.readthedocs.io/)
+- [Discord chat rooms](https://discord.gg/AafG232)
+
+## Additional resources
+
+- [Issues and bug reports](https://gitlab.com/expliot_framework/expliot/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D=)
+- [Source repository](https://gitlab.com/expliot_framework/expliot)
+

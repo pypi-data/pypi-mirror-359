@@ -1,0 +1,64 @@
+"""Main part to start."""
+
+import argparse
+from importlib.metadata import version
+
+from expliot.constants import BANNER
+from expliot.core.tests.test import TLog
+from expliot.core.ui.cli import Cli
+from expliot.update import Updater
+
+
+class EfCli:
+    """The interactive console and CLI interface for EXPLIoT framework."""
+
+    cli = Cli(prompt="ef> ", intro=BANNER)
+
+    @classmethod
+    def main(cls):
+        """Run a single command given on the command line.
+
+        Or run the main command
+        loop of the console if no command line arguments given.
+
+        :return:
+        """
+        TLog.init()
+
+        parser = argparse.ArgumentParser(
+            description="EXPLIoT - Internet Of Things Security Testing and "
+            "Exploitation Framework Command Line Interface."
+        )
+
+        parser.add_argument("-v", "--version", action="version", version=version("expliot"))
+
+        parser.add_argument(
+            "cmd",
+            nargs="?",
+            help="Command to execute. If no command is given, it enters an "
+            "interactive console. To see the list of available commands "
+            "use the help command",
+        )
+        parser.add_argument(
+            "cmd_args",
+            nargs=argparse.REMAINDER,
+            help="Sub-command and/or (optional) arguments",
+        )
+
+        # Check for updates and notify the user
+        upd = Updater()
+        upd.check()
+
+        args = parser.parse_args()
+
+        if args.cmd:
+            # Execute a single command and exit
+            cmd_arg = " ".join(args.cmd_args)
+            cls.cli.onecmd_plus_hooks(f"{args.cmd} {cmd_arg}")
+        else:
+            # No command line argument specified, drop into interactive mode
+            cls.cli.cmdloop()
+
+
+if __name__ == "__main__":
+    EfCli.main()
