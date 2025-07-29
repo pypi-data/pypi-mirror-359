@@ -1,0 +1,2 @@
+[console_scripts]
+docbinder = docbinder_oss.main:app
