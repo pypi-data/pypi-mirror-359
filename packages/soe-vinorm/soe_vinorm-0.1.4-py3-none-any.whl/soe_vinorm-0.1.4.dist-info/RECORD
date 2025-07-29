@@ -1,0 +1,13 @@
+soe_vinorm/__init__.py,sha256=7UNOcvrHszGJfthsJv-rS-nK3mystLWSn1CAb3MgwVE,825
+soe_vinorm/constants.py,sha256=oZYqf_SXLpIkRFc1xFDl1fce8EnLDZ2OZD3CpoJ0EMs,5987
+soe_vinorm/normalizer.py,sha256=J5_Dk7VVysRsH41bPGf0x7bNlcna0dAf1hNFHFNdXec,6014
+soe_vinorm/nsw_detector.py,sha256=jMArIjSjkcdaWkusps-DlE75qNWX2clOHjqXk14OdsY,13029
+soe_vinorm/nsw_expander.py,sha256=AVsXU-xxOqjz8L8ELAY8Whj1mxan0SzYa97EBCCCZx0,36270
+soe_vinorm/text_processor.py,sha256=iwl-5GglFvQKMewFuOTEz_78hSdleYvkd-2ssB8Ti5Y,12147
+soe_vinorm/utils.py,sha256=E5QZIDwk11NRAxth-mxUvIq1YWVmnMVibu6ukooewNc,2474
+soe_vinorm/data/dictionaries/abbreviations.txt,sha256=UIYRCbMv-1ZlnFDDH4GXfT-BDzwol5a-cFKbcQsIQwg,71177
+soe_vinorm/data/dictionaries/vietnamese-syllables.txt,sha256=j_I5DirfHFVtqjWpkBJA2EssyyEQiITFXR5kbfaan9o,135375
+soe_vinorm-0.1.4.dist-info/METADATA,sha256=tRmaorymI11GPEbnO3NY-Ekjy-Slr2BSgXGQOsSL8g4,6069
+soe_vinorm-0.1.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+soe_vinorm-0.1.4.dist-info/licenses/LICENSE,sha256=ygWK8yYErK8sawfuHofy4C2QOUF59A4wc2vH4yjQrss,1087
+soe_vinorm-0.1.4.dist-info/RECORD,,
