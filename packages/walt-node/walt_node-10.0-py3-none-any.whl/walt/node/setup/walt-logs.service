@@ -1,0 +1,24 @@
+# walt-logs-daemon - WalT log management daemon
+#
+# The WalT platform provides a lightweight distributed testbed for
+# sensor networks, distributed protocols, distributed data
+# management.
+
+[Unit]
+Description=WalT logs daemon
+# The service relies on walt-log-cat, which is provided by the server
+# on the image export. So it only works on booted nodes, not in
+# "walt image shell".
+ConditionVirtualization=!container
+# start the daemon after network is ready
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/walt-logs
+EnvironmentFile=-/etc/sysconfig/walt-logs
+ExecStart=/usr/local/bin/walt-logs-daemon $DAEMON_ARGS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
