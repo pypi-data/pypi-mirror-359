@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+parlay.egg-info/PKG-INFO
+parlay.egg-info/SOURCES.txt
+parlay.egg-info/dependency_links.txt
+parlay.egg-info/top_level.txt
