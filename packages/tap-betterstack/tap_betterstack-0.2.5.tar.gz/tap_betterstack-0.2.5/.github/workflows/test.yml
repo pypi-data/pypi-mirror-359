@@ -1,0 +1,87 @@
+name: Test tap-betterstack
+
+on:
+  push:
+    branches: [main]
+    paths:
+    - tap_betterstack/**
+    - tests/**
+    - noxfile.py
+    - pyproject.toml
+    - uv.lock
+    - .github/workflows/test.yml
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+    - tap_betterstack/**
+    - tests/**
+    - noxfile.py
+    - pyproject.toml
+    - uv.lock
+    - .github/workflows/test.yml
+  workflow_dispatch:
+  schedule:
+  # Run weekly on Monday at 12:00 PM UTC
+  - cron: "0 12 * * 1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  FORCE_COLOR: "1"
+  # renovate: datasource=pypi depName=nox
+  NOX_VERSION: 2025.5.1
+  # renovate: datasource=pypi depName=uv
+  UV_VERSION: 0.7.13
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    env:
+      NOXFORCEPYTHON: ${{ matrix.python-version }}
+      NOXSESSION: tests
+      PYO3_USE_ABI3_FORWARD_COMPATIBILITY: "1"
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        python-version:
+        - "3.9"
+        - "3.10"
+        - "3.11"
+        - "3.12"
+        - "3.13"
+        - "3.14"
+
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    - uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb # v6.1.0
+      with:
+        version: ${{ env.UV_VERSION }}
+    - name: Run tests
+      env:
+        TAP_BETTERSTACK_TOKEN: ${{ secrets.TAP_BETTERSTACK_TOKEN }}
+        TAP_BETTERSTACK_START_DATE: ${{ secrets.TAP_BETTERSTACK_START_DATE }}
+      run: >
+        uvx
+        --managed-python
+        --python ${{ matrix.python-version }}
+        --with nox==${{ env.NOX_VERSION }}
+        nox --verbose
+
+  typing:
+    runs-on: ubuntu-24.04
+    env:
+      NOXSESSION: mypy
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    - uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb # v6.1.0
+      with:
+        version: ${{ env.UV_VERSION }}
+    - name: Run typing checks
+      run: >
+        uvx
+        --no-python-downloads
+        --with nox==${{ env.NOX_VERSION }}
+        nox --verbose
