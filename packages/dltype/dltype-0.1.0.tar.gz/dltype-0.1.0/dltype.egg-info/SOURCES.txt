@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+dltype/__init__.py
+dltype.egg-info/PKG-INFO
+dltype.egg-info/SOURCES.txt
+dltype.egg-info/dependency_links.txt
+dltype.egg-info/requires.txt
+dltype.egg-info/top_level.txt
+dltype/_lib/__init__.py
+dltype/_lib/_core.py
+dltype/_lib/_parser.py
+dltype/tests/__init__.py
+dltype/tests/dltype_test.py
+dltype/tests/parser_test.py
