@@ -1,0 +1,49 @@
+# Default configuration for sonusai
+
+# The values in this file are the defaults used if they are not specified in a
+# local config.
+
+feature: ""
+
+class_indices: 1
+
+num_classes: 1
+
+class_labels: [ ]
+
+seed: 0
+
+class_weights_threshold: 0.5
+
+asr_configs: { }
+
+class_balancing: false
+
+class_balancing_effect:
+  - norm -3.5
+  - pitch rand(-300, 300)
+  - tempo -s rand(0.8, 1.2)
+  - equalizer rand(50, 250) rand(0.2, 2.0) rand(-6, 6)
+  - equalizer rand(250, 1200) rand(0.2, 2.0) rand(-6, 6)
+  - equalizer rand(1200, 6000) rand(0.2, 2.0) rand(-6, 6)
+
+spectral_masks:
+  - f_max_width: 27
+    f_num: 0
+    t_max_width: 100
+    t_num: 0
+    t_max_percent: 100
+
+sources:
+  primary:
+    files: [ ]
+  noise:
+    files: [ ]
+
+level_type: default
+
+impulse_responses: [ ]
+
+summed_source_effects: [ ]
+
+mixture_effects: [ ]
