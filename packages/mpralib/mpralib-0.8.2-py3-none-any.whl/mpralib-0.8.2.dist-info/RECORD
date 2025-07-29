@@ -1,0 +1,16 @@
+mpralib/__init__.py,sha256=B7GiO0rd49YwtLYjvPg4lmCZEDlMTonslQKdSImaMJk,22
+mpralib/cli.py,sha256=qb4euV7OpP78IA9nEuHuzjINisscQgOme3TQgCPL4gQ,40327
+mpralib/exception.py,sha256=zc4WQQ_1pSaQo-yuVRVU0XK1aShuuGX6a9x8Dkue5cc,916
+mpralib/mpradata.py,sha256=GUhBappMJ4LWQH30TPmr7Byn36jBXfzsoY3gLvn3OnA,40753
+mpralib/data/hg19.chromAlias.txt,sha256=I5yzOqOJbb8BVUO7W7wzL7uVPKYqeI5C5irKrx6PRSk,4902
+mpralib/data/hg38.chromAlias.txt,sha256=JpA4kEXK0OQuP8LwUV96m69K4mAjUKppFwFKZJ_oPFQ,27287
+mpralib/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mpralib/utils/file_validation.py,sha256=tQPnn_YvHpQ09lG8aHMvwCmq_Oym3ZnhdBPDHBxq-Uk,7487
+mpralib/utils/io.py,sha256=5gse_g8jzOsTni57GuvHR3sM-AKo1kL3ju_j9dsHOao,10212
+mpralib/utils/plot.py,sha256=8iPkJ4graIVDn5kU-NPPJAQG1QkAL8EllyuJI05Fnms,6636
+mpralib-0.8.2.dist-info/licenses/LICENSE,sha256=ijQ3r6od9D0AbfDSb4_k4ie4V81Sy6Nc7ClIYx-Wi48,1138
+mpralib-0.8.2.dist-info/METADATA,sha256=U0drUcazwhhd8ldqr6GTwumVTyDs39-GBkkHhCPDJzs,3075
+mpralib-0.8.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mpralib-0.8.2.dist-info/entry_points.txt,sha256=GmUeaV6JaSR2kt-4TcILvkMh1pAM7wlDgxb4yD8vA34,44
+mpralib-0.8.2.dist-info/top_level.txt,sha256=yWcChiatJc25jSRTfpUsStQYYs-StNQHWX69ZvQuRtE,8
+mpralib-0.8.2.dist-info/RECORD,,
