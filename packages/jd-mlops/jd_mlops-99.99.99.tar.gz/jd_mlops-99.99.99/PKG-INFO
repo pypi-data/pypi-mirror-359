@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: jd-mlops
+Version: 99.99.99
+Summary: Just prints hello from thruster and triggers a pingback
+Author: thruster
+Author-email: thruster@wearehackerone.com
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
