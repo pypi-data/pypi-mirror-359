@@ -1,0 +1,5 @@
+fcio/__init__.py,sha256=v2hTPUAB-iK3eBZrUNLzcEcnIvj1BI8cnLCCQP0DJ4k,649
+fcio/fcio.cpython-312-x86_64-linux-gnu.so,sha256=U0ygA1m-uz5Bt94wZ5sDeUwA0fkmwcDt1SoXLiG9_wY,788360
+fcio-0.7.9.dist-info/METADATA,sha256=6SWgf_YptmYDDksfcsi32AHm5w0BY7c8NazfbobsXc4,3343
+fcio-0.7.9.dist-info/WHEEL,sha256=3qIDcXCk577AXiK3pDifO-gE9U_MYWYGgtD78gLa2_U,137
+fcio-0.7.9.dist-info/RECORD,,
