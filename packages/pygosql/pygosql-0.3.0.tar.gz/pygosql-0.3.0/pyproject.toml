@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygosql"
+version = "0.3.0"
+description = "Python wrapper for HTTPS requesting SQL via Go"
+authors = [{ name = "genderlesspit" }]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = [
+  "loguru>=0.5.3",
+  "toomanyports>=0.1",
+  "aiohttp>=3.8.1",
+  "pygops"
+]
+
+[project.urls]
+Homepage = "https://github.com/genderlesspit/pygosql"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"pygosql" = ["gosql/*", "gosql/**/*"]
