@@ -1,0 +1,6 @@
+polars_readstat-0.4.2.dist-info/METADATA,sha256=T7MAhWfnTE43ZtYhkvy96guL_34stF3elY3R_adTF7c,12230
+polars_readstat-0.4.2.dist-info/WHEEL,sha256=zammIWK4vLFNLBv_nxErqOlA0yQO0WD_QgBw_wILXzo,106
+polars_readstat-0.4.2.dist-info/licenses/LICENSE,sha256=7h6TAGCjKnqvNCadfXK6eq0RXksYjiCqxQQbdw7EHCA,11882
+polars_readstat/__init__.py,sha256=05NcPTvmPkvTIsDk-rqOpPGW32N_jlPmNKAfXYb2wZs,2291
+polars_readstat/polars_readstat_rs.abi3.so,sha256=iCOuVBNas7l2eBEhresud5KTIsxkcJnRbsfMKzA8tbE,27938592
+polars_readstat-0.4.2.dist-info/RECORD,,
