@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+amlopsvueelements.egg-info/PKG-INFO
+amlopsvueelements.egg-info/SOURCES.txt
+amlopsvueelements.egg-info/dependency_links.txt
+amlopsvueelements.egg-info/top_level.txt
