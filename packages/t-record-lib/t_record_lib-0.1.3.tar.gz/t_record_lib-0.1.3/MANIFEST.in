@@ -1,0 +1,3 @@
+include requirements.txt
+include t_record/report/skript.txt
+include t_record/report/style.txt
