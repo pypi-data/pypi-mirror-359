@@ -1,0 +1,122 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.pytest.ini_options]
+testpaths = ["c2cgeoform/tests"]
+
+[tool.poetry]
+exclude = ["c2cgeoform/static/node_modules/**"]
+
+[tool.poetry.plugins."paste.app_factory"]
+main = "c2cgeoform:main"
+
+[tool.poetry.plugins."pyramid.scaffold"]
+c2cgeoform = "c2cgeoform.scaffolds:C2cgeoformTemplate"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+babel = "2.17.0"
+
+colanderalchemy = "0.3.4"
+deform = "2.0.15"
+geoalchemy2 = "0.17.1"
+geojson = "3.2.0"
+lingua = "4.15.0"
+psycopg2 = { version = "2.9.10", optional = true }
+psycopg2-binary = { version = "2.9.10", optional = true }
+pyramid = "2.0.2"
+pyramid-beaker = "0.9"
+pyramid-chameleon = "0.3"
+pyramid-jinja2 = "2.10.1"
+pyproj = "3.7.1"
+shapely = "2.1.1"
+sqlalchemy = "2.0.41"
+zope-sqlalchemy = "3.1"
+requests = "2.32.4"
+
+[tool.poetry.group.dev.dependencies]
+prospector = { version = "1.17.2", extras = [
+  "with-bandit",
+  "with-mypy",
+  "with-pyroma", "with_ruff", "with_pyroma"
+] }
+prospector-profile-duplicated = "1.10.5"
+prospector-profile-utils = "1.23.0"
+webtest = "3.0.6"
+sphinx = "8.2.3"
+sphinx-rtd-theme = "3.0.2"
+types-requests = "2.32.4.20250611"
+pytest = "8.4.1"
+cookiecutter = "2.6.0"
+
+[tool.poetry.extras]
+psycopg2 = ["psycopg2"]
+psycopg2-binary = ["psycopg2-binary"]
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+pattern = "^(?P<base>\\d+(\\.\\d+)*)"
+format-jinja = """
+{%- if env.get("VERSION_TYPE") == "default_branch" -%}
+{{serialize_pep440(bump_version(base, 1), dev=distance)}}
+{%- elif env.get("VERSION_TYPE") == "stabilization_branch" -%}
+{{serialize_pep440(bump_version(base, 2), dev=distance)}}
+{%- elif distance == 0 -%}
+{{serialize_pep440(base)}}
+{%- else -%}
+{{serialize_pep440(bump_version(base), dev=distance)}}
+{%- endif -%}
+"""
+
+[tool.poetry-plugin-tweak-dependencies-version]
+default = "present"
+
+[project]
+classifiers = [
+    'Framework :: Pyramid',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Topic :: Internet :: WWW/HTTP',
+    'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
+    'Typing :: Typed',
+]
+dynamic = ["dependencies"]
+name = "c2cgeoform"
+description = "c2cgeoform"
+readme = "README.md"
+keywords = ["web", "wsgi", "bfg", "pylons", "pyramid"]
+authors = [{name = "Camptocamp",email = "info@camptocamp.com"}]
+packages = [{ include = "c2cgeoform" }]
+include = [
+  "c2cgeoform/py.typed",
+  "c2cgeoform/scaffolds/c2cgeoform/**",
+  "c2cgeoform/templates/**",
+  "c2cgeoform/static/**",
+  "c2cgeoform/static/dist/*",
+]
+requires-python = ">=3.11"
+dependencies = ["babel", "colanderalchemy", "deform", "geoalchemy2", "geojson", "lingua", "pyramid", "pyramid-beaker", "pyramid-chameleon", "pyramid-jinja2", "pyproj", "shapely", "sqlalchemy", "zope-sqlalchemy", "requests"]
+version = "2.5.0"
+
+[project.urls]
+repository = "https://github.com/camptocamp/c2cgeoform"
+"Bug Tracker" = "https://github.com/camptocamp/c2cgeoform/issues"
+
+[project.optional-dependencies]
+psycopg2 = ["psycopg2"]
+psycopg2-binary = ["psycopg2-binary"]
+
+[build-system]
+requires = [
+  "poetry-core>=1.0.0",
+  "poetry-dynamic-versioning",
+]
+build-backend = "poetry.core.masonry.api"
