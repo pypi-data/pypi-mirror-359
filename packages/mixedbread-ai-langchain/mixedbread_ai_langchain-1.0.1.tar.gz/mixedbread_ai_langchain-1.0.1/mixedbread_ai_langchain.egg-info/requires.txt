@@ -1,0 +1,7 @@
+langchain-core>=0.3.61
+mixedbread>=0.8.1
+pydantic>=2.0.0
+
+[dev]
+pytest>=7.0
+pytest-asyncio>=0.20.0
