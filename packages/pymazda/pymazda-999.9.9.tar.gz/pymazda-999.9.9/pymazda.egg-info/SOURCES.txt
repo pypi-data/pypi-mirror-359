@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+pymazda.egg-info/PKG-INFO
+pymazda.egg-info/SOURCES.txt
+pymazda.egg-info/dependency_links.txt
+pymazda.egg-info/top_level.txt
