@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+bluetrain.egg-info/PKG-INFO
+bluetrain.egg-info/SOURCES.txt
+bluetrain.egg-info/dependency_links.txt
+bluetrain.egg-info/top_level.txt
