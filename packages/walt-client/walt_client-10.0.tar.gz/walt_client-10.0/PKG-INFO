@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: walt-client
+Version: 10.0
+Summary: WalT control tool.
+Home-page: https://walt-project.liglab.fr
+Author: WalT developers
+Author-email: walt-contact@univ-grenoble-alpes.fr
+License: 3-Clause BSD
+Keywords: WalT testbed
+Requires-Dist: plumbum>=1.7.2
+Requires-Dist: walt-common==10.0
+Requires-Dist: walt-doc==10.0
+Provides-Extra: g5k
+Requires-Dist: walt-client-g5k==10.0; extra == "g5k"
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
