@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jtmv"
+dynamic = ["version"]
+description = "Rename jupytext paired files while maintaining sync."
+readme = "README.md"
+authors = [
+    {name = "Luke Smith"}
+]
+keywords = ["jupyter", "jupytext", "notebook", "rename", "git"]
+requires-python = ">=3.7"
+dependencies = [
+    "jupytext>=1.14.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "pytest",
+    "twine",
+]
+
+[project.scripts]
+jtmv = "jtmv.jtmv:main"
+
+[project.urls]
+Homepage = "https://github.com/lukeSmth/jtmv"
+Repository = "https://github.com/lukeSmth/jtmv"
+Issues = "https://github.com/lukeSmth/jtmv/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "jtmv.__version__"}

@@ -1,0 +1,6 @@
+jupytext>=1.14.0
+
+[dev]
+build
+pytest
+twine
