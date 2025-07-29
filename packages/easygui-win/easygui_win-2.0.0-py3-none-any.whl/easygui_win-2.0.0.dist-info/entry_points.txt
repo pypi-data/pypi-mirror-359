@@ -1,0 +1,2 @@
+[console_scripts]
+easygui-demo = easygui.demos:main
