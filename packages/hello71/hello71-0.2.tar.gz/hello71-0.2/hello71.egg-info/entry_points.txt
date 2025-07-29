@@ -1,0 +1,2 @@
+[console_scripts]
+hello71 = hello71.main:hello
