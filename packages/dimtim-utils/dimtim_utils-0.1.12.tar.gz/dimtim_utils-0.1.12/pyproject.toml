@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+name = "dimtim-utils"
+description = "\"Dim-Tim, Inc.\" python utils"
+readme = "readme.md"
+license = "MIT"
+authors = [{name = "Dim-Tim, Inc.", email = "info@dim-tim.com"}]
+maintainers = [{name = "Bobsans", email = "mr.bobsans@gmail.com"}]
+keywords = ["utils", "debug", "decorator", "json", "proxy", "random", "terminal", "timezone"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries"
+]
+requires-python = ">= 3.10"
+dependencies = [
+    "asgiref>=3.5.2",
+    "frozendict>=2.3.4",
+    "tzdata>=2023.3"
+]
+
+[project.optional-dependencies]
+full = ["beautifulsoup", "markdown"]
+
+[project.scripts]
+dtrun = "dimtim.run:main"
+
+[project.urls]
+Repository = "https://github.com/dim-tim-inc/dimtim-utils"
+
+[tool.setuptools.dynamic]
+version = {attr = "dimtim.__version__"}

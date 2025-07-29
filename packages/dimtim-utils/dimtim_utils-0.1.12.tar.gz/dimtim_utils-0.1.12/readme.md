@@ -1,0 +1,1340 @@
+# dimtim-utils
+
+Python utils for Dim-Tim projects
+
+## Documentation
+
+### Module: debug
+
+The `debug` module provides tools for measuring and logging execution time of code blocks.
+
+#### Classes
+
+##### `timeit(tag='-', out=None)`
+
+A context decorator for measuring execution time of code blocks.
+
+**Parameters:**
+- `tag` (str): A tag to identify the timing in the output. Default is `-`.
+- `out` (Logger, optional): A logger to output the timing information. If `None`, prints to stdout.
+
+**Example:**
+```python
+from dimtim.utils.debug import timeit
+
+# As a context manager
+with timeit('database-query'):
+    # Code to measure
+    result = db.execute_query()
+
+# As a decorator
+@timeit('slow-function')
+def process_data():
+    # Code to measure
+    return processed_data
+```
+
+### Module: decorators
+
+The `decorators` module provides useful decorators for Python classes and functions.
+
+#### Classes
+
+##### `classproperty`
+
+A decorator that allows creating properties at the class level.
+
+**Example:**
+```python
+from dimtim.utils.decorators import classproperty
+
+class MyClass:
+    _value = 10
+
+    @classproperty
+    def value(cls):
+        return cls._value
+
+# Access the property at the class level
+print(MyClass.value)  # Output: 10
+```
+
+##### `cachedproperty`
+
+A decorator that caches the result of a property method.
+
+**Example:**
+```python
+from dimtim.utils.decorators import cachedproperty
+
+class MyClass:
+    @cachedproperty
+    def expensive_calculation(self):
+        # This will only be calculated once per instance
+        return sum(range(10000000))
+
+obj = MyClass()
+print(obj.expensive_calculation)  # Calculated
+print(obj.expensive_calculation)  # Retrieved from cache
+```
+
+##### `cachedclassproperty`
+
+A decorator that combines the functionality of classproperty and cachedproperty.
+
+**Example:**
+```python
+from dimtim.utils.decorators import cachedclassproperty
+
+class MyClass:
+    @cachedclassproperty
+    def expensive_class_calculation(cls):
+        # This will only be calculated once for the class
+        return sum(range(10000000))
+
+print(MyClass.expensive_class_calculation)  # Calculated
+print(MyClass.expensive_class_calculation)  # Retrieved from cache
+```
+
+#### Functions
+
+##### `freezeargs(fn)`
+
+A decorator that freezes dictionary arguments to make them immutable.
+
+**Example:**
+```python
+from dimtim.utils.decorators import freezeargs
+
+@freezeargs
+def process_config(config):
+    # config is now immutable
+    # This prevents accidental modification of the config
+    return config['value']
+```
+
+### Module: duration
+
+The `duration` module provides functions for working with datetime.timedelta objects.
+
+#### Functions
+
+##### `duration_string(duration)`
+
+Formats a timedelta as a human-readable string.
+
+**Parameters:**
+- `duration` (timedelta): The duration to format.
+
+**Returns:**
+- A string in the format `days hh:mm:ss.microseconds`.
+
+**Example:**
+```python
+from datetime import timedelta
+from dimtim.utils.duration import duration_string
+
+duration = timedelta(days=1, hours=2, minutes=30, seconds=45, microseconds=123456)
+print(duration_string(duration))  # Output: "1 02:30:45.123456"
+```
+
+##### `duration_iso_string(duration)`
+
+Formats a timedelta as an ISO 8601 duration string.
+
+**Parameters:**
+- `duration` (timedelta): The duration to format.
+
+**Returns:**
+- A string in the format `P1DT02H30M45.123456S`.
+
+**Example:**
+```python
+from datetime import timedelta
+from dimtim.utils.duration import duration_iso_string
+
+duration = timedelta(days=1, hours=2, minutes=30, seconds=45, microseconds=123456)
+print(duration_iso_string(duration))  # Output: "P1DT02H30M45.123456S"
+```
+
+##### `duration_microseconds(delta)`
+
+Converts a timedelta to microseconds.
+
+**Parameters:**
+- `delta` (timedelta): The duration to convert.
+
+**Returns:**
+- The duration in microseconds.
+
+**Example:**
+```python
+from datetime import timedelta
+from dimtim.utils.duration import duration_microseconds
+
+duration = timedelta(seconds=1, microseconds=500000)
+print(duration_microseconds(duration))  # Output: 1500000
+```
+
+### Module: environ
+
+The `environ` module provides functions for working with environment variables.
+
+#### Functions
+
+##### `to_bool(value)`
+
+Converts a string, int, or bool value to a boolean.
+
+**Parameters:**
+- `value` (str, int, bool): The value to convert.
+
+**Returns:**
+- A boolean value.
+
+**Example:**
+```python
+from dimtim.utils.environ import to_bool
+
+print(to_bool('true'))    # Output: True
+print(to_bool('false'))   # Output: False
+print(to_bool('1'))       # Output: True
+print(to_bool('0'))       # Output: False
+```
+
+##### `to_int(value, default=None)`
+
+Converts a string or int value to an integer, with an optional default.
+
+**Parameters:**
+- `value` (str, int): The value to convert.
+- `default` (int, optional): The default value to return if conversion fails.
+
+**Returns:**
+- An integer value, or the default if conversion fails.
+
+**Example:**
+```python
+from dimtim.utils.environ import to_int
+
+print(to_int('123'))      # Output: 123
+print(to_int('abc', 0))   # Output: 0
+```
+
+##### `to_list(value, cast=None, separator=',')`
+
+Converts a string to a list, with optional type casting and separator.
+
+**Parameters:**
+- `value` (str): The string to convert.
+- `cast` (type, optional): A function to cast each item in the list.
+- `separator` (str, optional): The separator to split the string by. Default is ','.
+
+**Returns:**
+- A list of values.
+
+**Example:**
+```python
+from dimtim.utils.environ import to_list
+
+print(to_list('a,b,c'))           # Output: ['a', 'b', 'c']
+print(to_list('1,2,3', int))      # Output: [1, 2, 3]
+print(to_list('a|b|c', separator='|'))  # Output: ['a', 'b', 'c']
+```
+
+##### `get_bool(name, default=False)`
+
+Gets a boolean value from an environment variable.
+
+**Parameters:**
+- `name` (str): The name of the environment variable.
+- `default` (bool, optional): The default value to return if the variable is not set.
+
+**Returns:**
+- A boolean value.
+
+**Example:**
+```python
+import os
+from dimtim.utils.environ import get_bool
+
+os.environ['DEBUG'] = 'true'
+print(get_bool('DEBUG'))          # Output: True
+print(get_bool('NONEXISTENT'))    # Output: False
+```
+
+##### `get_int(name, default=None)`
+
+Gets an integer value from an environment variable.
+
+**Parameters:**
+- `name` (str): The name of the environment variable.
+- `default` (int, optional): The default value to return if the variable is not set or conversion fails.
+
+**Returns:**
+- An integer value, or the default.
+
+**Example:**
+```python
+import os
+from dimtim.utils.environ import get_int
+
+os.environ['PORT'] = '8000'
+print(get_int('PORT'))            # Output: 8000
+print(get_int('NONEXISTENT', 80)) # Output: 80
+```
+
+##### `get_list(name, cast=None, separator=',', default=None)`
+
+Gets a list value from an environment variable.
+
+**Parameters:**
+- `name` (str): The name of the environment variable.
+- `cast` (type, optional): A function to cast each item in the list.
+- `separator` (str, optional): The separator to split the string by. Default is ','.
+- `default` (list, optional): The default value to return if the variable is not set.
+
+**Returns:**
+- A list of values, or the default.
+
+**Example:**
+```python
+import os
+from dimtim.utils.environ import get_list
+
+os.environ['ALLOWED_HOSTS'] = 'localhost,example.com'
+print(get_list('ALLOWED_HOSTS'))  # Output: ['localhost', 'example.com']
+print(get_list('NONEXISTENT', default=['default']))  # Output: ['default']
+```
+
+### Module: hashing
+
+The `hashing` module provides functions for generating hash values.
+
+#### Functions
+
+##### `md5(val)`
+
+Generates an MD5 hash for a string or bytes value.
+
+**Parameters:**
+- `val` (str, bytes): The value to hash.
+
+**Returns:**
+- A hexadecimal string of the MD5 hash.
+
+**Example:**
+```python
+from dimtim.utils.hashing import md5
+
+print(md5('hello'))  # Output: "5d41402abc4b2a76b9719d911017c592"
+```
+
+##### `sha1(val)`
+
+Generates a SHA1 hash for a string or bytes value.
+
+**Parameters:**
+- `val` (str, bytes): The value to hash.
+
+**Returns:**
+- A hexadecimal string of the SHA1 hash.
+
+**Example:**
+```python
+from dimtim.utils.hashing import sha1
+
+print(sha1('hello'))  # Output: "aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d"
+```
+
+##### `secret_hmac(key, message)`
+
+Generates an HMAC-SHA1 hash using a key and message.
+
+**Parameters:**
+- `key` (str): The secret key.
+- `message` (str): The message to hash.
+
+**Returns:**
+- A hexadecimal string of the HMAC-SHA1 hash.
+
+**Example:**
+```python
+from dimtim.utils.hashing import secret_hmac
+
+print(secret_hmac('secret', 'message'))  # Output: HMAC-SHA1 hash
+```
+
+### Module: importing
+
+The `importing` module provides functions for importing modules and classes.
+
+#### Functions
+
+##### `safe_import(module, silence=True, reraise=False)`
+
+Safely imports a module, with options to silence errors or reraise exceptions.
+
+**Parameters:**
+- `module` (str): The name of the module to import.
+- `silence` (bool, optional): Whether to silence import errors. Default is True.
+- `reraise` (bool, optional): Whether to reraise import errors. Default is False.
+
+**Returns:**
+- The imported module, or None if import fails.
+
+**Example:**
+```python
+from dimtim.utils.importing import safe_import
+
+# Import a module that might not be installed
+requests = safe_import('requests')
+if requests:
+    response = requests.get('https://example.com')
+else:
+    print("Requests module not available")
+```
+
+##### `import_string(path)`
+
+Imports a class or function from a module using a string path.
+
+**Parameters:**
+- `path` (str): The path to the class or function, in the format `module.submodule.Class`.
+
+**Returns:**
+- The imported class or function.
+
+**Example:**
+```python
+from dimtim.utils.importing import import_string
+
+# Import a class from a module
+HttpResponse = import_string('django.http.HttpResponse')
+response = HttpResponse('Hello, world!')
+```
+
+##### `load_file_as_module(path, name=None, execute=True)`
+
+Loads a Python file as a module, with an option to execute it.
+
+**Parameters:**
+- `path` (str): The path to the Python file.
+- `name` (str, optional): The name to give the module. If None, uses the filename.
+- `execute` (bool, optional): Whether to execute the module. Default is True.
+
+**Returns:**
+- A tuple of (loader, module).
+
+**Example:**
+```python
+from dimtim.utils.importing import load_file_as_module
+
+# Load a Python file as a module
+loader, module = load_file_as_module('/path/to/script.py')
+# Access functions and variables from the module
+result = module.some_function()
+```
+
+### Module: itertools
+
+The `itertools` module provides functions for working with iterables.
+
+#### Functions
+
+##### `chunked(value, size)`
+
+A generator function that splits a sequence into chunks of a specified size.
+
+**Parameters:**
+- `value` (Sequence): The sequence to split.
+- `size` (int): The size of each chunk.
+
+**Returns:**
+- A generator yielding chunks of the sequence.
+
+**Example:**
+```python
+from dimtim.utils.itertools import chunked
+
+# Split a list into chunks of size 3
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for chunk in chunked(data, 3):
+    print(chunk)
+# Output:
+# [1, 2, 3]
+# [4, 5, 6]
+# [7, 8, 9]
+```
+
+### Module: json
+
+The `json` module provides enhanced JSON serialization and deserialization.
+
+#### Classes
+
+##### `JSONEncoder`
+
+A custom JSON encoder that can handle various Python types like datetime, decimal, UUID, sets, and custom Serializable objects.
+
+**Example:**
+```python
+from dimtim.utils.json import JSONEncoder
+import json
+from datetime import datetime
+
+data = {
+    'date': datetime.now(),
+    'set': {1, 2, 3},
+    'decimal': decimal.Decimal('10.5'),
+    'uuid': uuid.uuid4()
+}
+
+json_str = json.dumps(data, cls=JSONEncoder)
+print(json_str)
+```
+
+#### Functions
+
+##### `load(fp, *, cls=None, **kwargs)`
+
+Loads JSON from a file-like object.
+
+**Parameters:**
+- `fp` (file-like object): A file-like object containing JSON.
+- `cls` (JSONDecoder, optional): A custom JSON decoder.
+- `**kwargs`: Additional arguments to pass to `json.load`.
+
+**Returns:**
+- The deserialized JSON data.
+
+**Example:**
+```python
+from dimtim.utils.json import load
+
+with open('data.json', 'r') as f:
+    data = load(f)
+```
+
+##### `loads(data, *, cls=None, **kwargs)`
+
+Loads JSON from a string.
+
+**Parameters:**
+- `data` (str, bytes): A string or bytes containing JSON.
+- `cls` (JSONDecoder, optional): A custom JSON decoder.
+- `**kwargs`: Additional arguments to pass to `json.loads`.
+
+**Returns:**
+- The deserialized JSON data.
+
+**Example:**
+```python
+from dimtim.utils.json import loads
+
+json_str = '{"name": "John", "age": 30}'
+data = loads(json_str)
+```
+
+##### `dump(obj, fp, *, ensure_ascii=False, cls=None, indent=None, **kwargs)`
+
+Dumps an object as JSON to a file-like object.
+
+**Parameters:**
+- `obj` (Any): The object to serialize.
+- `fp` (file-like object): A file-like object to write the JSON to.
+- `ensure_ascii` (bool, optional): Whether to escape non-ASCII characters. Default is `False`.
+- `cls` (JSONEncoder, optional): A custom JSON encoder. Default is `JSONEncoder`.
+- `indent` (int, optional): The number of spaces to indent. Default is `None`.
+- `**kwargs`: Additional arguments to pass to `json.dump`.
+
+**Example:**
+```python
+from dimtim.utils.json import dump
+from datetime import datetime
+
+data = {
+    'date': datetime.now(),
+    'set': {1, 2, 3}
+}
+
+with open('data.json', 'w') as f:
+    dump(data, f, indent=2)
+```
+
+##### `dumps(obj, *, ensure_ascii=False, cls=None, indent=None, **kwargs)`
+
+Dumps an object as JSON to a string.
+
+**Parameters:**
+- `obj` (Any): The object to serialize.
+- `ensure_ascii` (bool, optional): Whether to escape non-ASCII characters. Default is `False`.
+- `cls` (JSONEncoder, optional): A custom JSON encoder. Default is `JSONEncoder`.
+- `indent` (int, optional): The number of spaces to indent. Default is `None`.
+- `**kwargs`: Additional arguments to pass to `json.dumps`.
+
+**Returns:**
+- A JSON string.
+
+**Example:**
+```python
+from dimtim.utils.json import dumps
+from datetime import datetime
+
+data = {
+    'date': datetime.now(),
+    'set': {1, 2, 3}
+}
+
+json_str = dumps(data, indent=2)
+print(json_str)
+```
+
+### Module: proxy
+
+The `proxy` module provides proxy classes for working with objects.
+
+#### Classes
+
+##### `DictProxy(obj)`
+
+A proxy class that inherits from Mapping, Iterable, and list, and wraps a dictionary or object, allowing modifications without changing the original.
+
+**Parameters:**
+- `obj` (Any): The dictionary or object to wrap.
+
+**Example:**
+```python
+from dimtim.utils.proxy import DictProxy
+
+# Create a proxy for a dictionary
+original = {'a': 1, 'b': 2}
+proxy = DictProxy(original)
+
+# Modify the proxy
+proxy['c'] = 3
+del proxy['a']
+
+print(proxy)  # Output: {'b': 2, 'c': 3}
+print(original)  # Output: {'a': 1, 'b': 2}
+
+# Create a proxy for an object
+class MyClass:
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+
+obj = MyClass()
+proxy = DictProxy(obj)
+
+# Modify the proxy
+proxy.c = 3
+del proxy.a
+
+print(proxy.b)  # Output: 2
+print(proxy.c)  # Output: 3
+print(obj.a)    # Output: 1
+```
+
+### Module: random
+
+The `random` module provides functions for generating random strings and making random choices.
+
+#### Functions
+
+##### `get_random_string(length, charset=DEFAULT_CHARSET)`
+
+Generates a random string of a specified length using a given character set.
+
+**Parameters:**
+- `length` (int): The length of the string to generate.
+- `charset` (str, optional): The character set to use. Default is DEFAULT_CHARSET.
+
+**Returns:**
+- A random string.
+
+**Example:**
+```python
+from dimtim.utils.random import get_random_string
+
+# Generate a random string of length 10
+print(get_random_string(10))  # Output: "a1b2c3d4e5"
+```
+
+##### `string4()`, `string8()`, `string16()`, `string32()`, `string64()`
+
+Generate random strings of specified lengths using the default character set.
+
+**Returns:**
+- A random string of the specified length.
+
+**Example:**
+```python
+from dimtim.utils.random import string8, string16
+
+print(string8())   # Output: "a1b2c3d4"
+print(string16())  # Output: "a1b2c3d4e5f6g7h8"
+```
+
+##### `hex4()`, `hex8()`, `hex16()`, `hex32()`, `hex64()`
+
+Generate random hexadecimal strings of specified lengths.
+
+**Returns:**
+- A random hexadecimal string of the specified length.
+
+**Example:**
+```python
+from dimtim.utils.random import hex8, hex16
+
+print(hex8())   # Output: "a1b2c3d4"
+print(hex16())  # Output: "a1b2c3d4e5f6g7h8"
+```
+
+##### `string8upper()`
+
+Generates a random 8-character string using uppercase letters and digits.
+
+**Returns:**
+- A random 8-character string.
+
+**Example:**
+```python
+from dimtim.utils.random import string8upper
+
+print(string8upper())  # Output: "A1B2C3D4"
+```
+
+##### `username(underscores=True)`
+
+Generates a random username by combining adjectives and nouns.
+
+**Parameters:**
+- `underscores` (bool, optional): Whether to use underscores between words. Default is True.
+
+**Returns:**
+- A random username.
+
+**Example:**
+```python
+from dimtim.utils.random import username
+
+print(username())  # Output: "happy_blue_sky"
+print(username(underscores=False))  # Output: "HappyBlueSky"
+```
+
+##### `choice(variants)`
+
+Selects a random item from a sequence.
+
+**Parameters:**
+- `variants` (Sequence): The sequence to choose from.
+
+**Returns:**
+- A random item from the sequence.
+
+**Example:**
+```python
+from dimtim.utils.random import choice
+
+colors = ['red', 'green', 'blue']
+print(choice(colors))  # Output: A random color
+```
+
+### Module: terminal
+
+The `terminal` module provides functions for terminal output formatting.
+
+#### Functions
+
+#### `colorize(text='', opts=(), **kwargs)`
+
+Adds ANSI color codes to text, with options for foreground color, background color, and text styles.
+
+**Parameters:**
+- `text` (str, optional): The text to colorize.
+- `opts` (tuple, optional): A tuple of options like 'bold', 'underscore', etc.
+- `**kwargs`: Keyword arguments for foreground ('fg') and background ('bg') colors.
+
+**Returns:**
+- The colorized text.
+
+**Example:**
+```python
+from dimtim.utils.terminal import colorize
+
+print(colorize('Hello', fg='red', bg='blue', opts=('bold',)))
+print(colorize('Error', fg='red', opts=('bold',)))
+print(colorize('Warning', fg='yellow'))
+```
+
+##### `make_style(opts=(), **kwargs)`
+
+Creates a function with default parameters for colorize.
+
+**Parameters:**
+- `opts` (tuple, optional): A tuple of options like 'bold', 'underscore', etc.
+- `**kwargs`: Keyword arguments for foreground ('fg') and background ('bg') colors.
+
+**Returns:**
+- A function that applies the specified style to text.
+
+**Example:**
+```python
+from dimtim.utils.terminal import make_style
+
+# Create style functions
+error = make_style(fg='red', opts=('bold',))
+warning = make_style(fg='yellow')
+info = make_style(fg='blue')
+
+# Use the style functions
+print(error('Error message'))
+print(warning('Warning message'))
+print(info('Info message'))
+```
+
+##### `show_progress(count, total, text='', out=None)`
+
+Displays a progress bar in the terminal.
+
+**Parameters:**
+- `count` (int): The current progress count.
+- `total` (int): The total count for 100% progress.
+- `text` (str, optional): Text to display before the progress bar.
+- `out` (file-like object, optional): A file-like object to write the progress to. If None, prints to stdout.
+
+**Example:**
+```python
+from dimtim.utils.terminal import show_progress
+import time
+
+total = 100
+for i in range(total + 1):
+    show_progress(i, total, 'Processing:')
+    time.sleep(0.05)
+```
+
+### Module: text
+
+The `text` module provides functions for text manipulation.
+
+#### Functions
+
+##### `inline(value)`
+
+Converts multiline text to a single line.
+
+**Parameters:**
+- `value` (str): The text to convert.
+
+**Returns:**
+- A single-line string.
+
+**Example:**
+```python
+from dimtim.utils.text import inline
+
+text = """
+This is a
+multiline
+text
+"""
+print(inline(text))  # Output: "This is a multiline text"
+```
+
+##### `slugify(value, allow_unicode=False)`
+
+Converts text to a URL-friendly slug.
+
+**Parameters:**
+- `value` (str): The text to convert.
+- `allow_unicode` (bool, optional): Whether to allow Unicode characters. Default is False.
+
+**Returns:**
+- A slug string.
+
+**Example:**
+```python
+from dimtim.utils.text import slugify
+
+print(slugify('Hello World!'))  # Output: "hello-world"
+print(slugify('Привет, мир!', allow_unicode=True))  # Output: "привет-мир"
+```
+
+##### `strip_markdown(value)`
+
+Removes Markdown formatting from text.
+
+**Parameters:**
+- `value` (str): The Markdown text to strip.
+
+**Returns:**
+- Plain text without Markdown formatting.
+
+**Example:**
+```python
+from dimtim.utils.text import strip_markdown
+
+markdown = "# Title\n\nThis is **bold** and *italic* text."
+print(strip_markdown(markdown))  # Output: "Title This is bold and italic text."
+```
+
+##### `to_snake_case(text)`
+
+Converts text to snake_case.
+
+**Parameters:**
+- `text` (str): The text to convert.
+
+**Returns:**
+- A snake_case string.
+
+**Example:**
+```python
+from dimtim.utils.text import to_snake_case
+
+print(to_snake_case('HelloWorld'))  # Output: "hello_world"
+print(to_snake_case('GetHTTPResponse'))  # Output: "get_http_response"
+```
+
+##### `to_kebab_case(text)`
+
+Converts text to kebab-case.
+
+**Parameters:**
+- `text` (str): The text to convert.
+
+**Returns:**
+- A kebab-case string.
+
+**Example:**
+```python
+from dimtim.utils.text import to_kebab_case
+
+print(to_kebab_case('HelloWorld'))  # Output: "hello-world"
+print(to_kebab_case('GetHTTPResponse'))  # Output: "get-http-response"
+```
+
+##### `to_camel_case(text)`
+
+Converts text to CamelCase.
+
+**Parameters:**
+- `text` (str): The text to convert.
+
+**Returns:**
+- A CamelCase string.
+
+**Example:**
+```python
+from dimtim.utils.text import to_camel_case
+
+print(to_camel_case('hello_world'))  # Output: "HelloWorld"
+print(to_camel_case('get-http-response'))  # Output: "GetHttpResponse"
+```
+
+##### `format_size(size)`
+
+Formats a file size in bytes to a human-readable string.
+
+**Parameters:**
+- `size` (int): The size in bytes.
+
+**Returns:**
+- A human-readable size string.
+
+**Example:**
+```python
+from dimtim.utils.text import format_size
+
+print(format_size(1024))  # Output: "1.00 Kb"
+print(format_size(1048576))  # Output: "1.00 Mb"
+print(format_size(1073741824))  # Output: "1.00 Gb"
+```
+
+##### `normalize_email(email)`
+
+Normalizes an email address.
+
+**Parameters:**
+- `email` (str): The email address to normalize.
+
+**Returns:**
+- A normalized email address, or None if the input is not a valid email.
+
+**Example:**
+```python
+from dimtim.utils.text import normalize_email
+
+print(normalize_email('User@Example.COM'))  # Output: "user@example.com"
+print(normalize_email('invalid'))  # Output: None
+```
+
+##### `normalize_username(username)`
+
+Normalizes a username.
+
+**Parameters:**
+- `username` (str): The username to normalize.
+
+**Returns:**
+- A normalized username.
+
+**Example:**
+```python
+from dimtim.utils.text import normalize_username
+
+print(normalize_username('User123'))  # Output: "User123" (normalized Unicode form)
+```
+
+##### `pluralize(locale, value, one, two, five)`
+
+Returns the appropriate plural form based on a number and locale.
+
+**Parameters:**
+- `locale` (str): The locale ('en' or 'ru').
+- `value` (int): The number to determine the plural form for.
+- `one` (str): The form for one item.
+- `two` (str): The form for two items (or few in Russian).
+- `five` (str): The form for five items (or many in Russian).
+
+**Returns:**
+- The appropriate plural form.
+
+**Example:**
+```python
+from dimtim.utils.text import pluralize
+
+# English
+print(pluralize('en', 1, 'apple', 'apples', 'apples'))  # Output: "apple"
+print(pluralize('en', 2, 'apple', 'apples', 'apples'))  # Output: "apples"
+
+# Russian
+print(pluralize('ru', 1, 'яблоко', 'яблока', 'яблок'))  # Output: "яблоко"
+print(pluralize('ru', 2, 'яблоко', 'яблока', 'яблок'))  # Output: "яблока"
+print(pluralize('ru', 5, 'яблоко', 'яблока', 'яблок'))  # Output: "яблок"
+```
+
+### Module: timezone
+
+The `timezone` module provides utilities for working with timezones.
+
+#### Functions
+
+##### `get_fixed_timezone(offset)`
+
+Creates a fixed timezone with a given offset.
+
+**Parameters:**
+- `offset` (timedelta, int): The timezone offset in minutes or as a timedelta.
+
+**Returns:**
+- A timezone object.
+
+**Example:**
+```python
+from dimtim.utils.timezone import get_fixed_timezone
+from datetime import timedelta
+
+# Create a timezone with a +2 hour offset
+tz = get_fixed_timezone(120)
+# Or using a timedelta
+tz = get_fixed_timezone(timedelta(hours=2))
+```
+
+##### `get_default_timezone()`
+
+Gets the default timezone (from TIME_ZONE environment variable or 'Europe/Moscow').
+
+**Returns:**
+- A timezone object.
+
+**Example:**
+```python
+from dimtim.utils.timezone import get_default_timezone
+
+tz = get_default_timezone()
+```
+
+##### `get_default_timezone_name()`
+
+Gets the name of the default timezone.
+
+**Returns:**
+- The timezone name as a string.
+
+**Example:**
+```python
+from dimtim.utils.timezone import get_default_timezone_name
+
+print(get_default_timezone_name())  # Output: "Europe/Moscow"
+```
+
+##### `get_current_timezone()`
+
+Gets the currently active timezone.
+
+**Returns:**
+- A timezone object.
+
+**Example:**
+```python
+from dimtim.utils.timezone import get_current_timezone
+
+tz = get_current_timezone()
+```
+
+##### `get_current_timezone_name()`
+
+Gets the name of the currently active timezone.
+
+**Returns:**
+- The timezone name as a string.
+
+**Example:**
+```python
+from dimtim.utils.timezone import get_current_timezone_name
+
+print(get_current_timezone_name())  # Output: "Europe/Moscow"
+```
+
+##### `activate(timezone)`
+
+Activates a timezone.
+
+**Parameters:**
+- `timezone` (str, tzinfo): The timezone to activate.
+
+**Example:**
+```python
+from dimtim.utils.timezone import activate
+
+activate('Europe/London')
+```
+
+##### `deactivate()`
+
+Deactivates the current timezone.
+
+**Example:**
+```python
+from dimtim.utils.timezone import deactivate
+
+deactivate()
+```
+
+##### `override(timezone)`
+
+Context manager for temporarily overriding the current timezone.
+
+**Parameters:**
+- `timezone` (str, tzinfo): The timezone to activate.
+
+**Example:**
+```python
+from dimtim.utils.timezone import override
+
+with override('Europe/London'):
+    # Code that uses the London timezone
+    pass
+# Back to the previous timezone
+```
+
+##### `localtime(value=None, timezone=None)`
+
+Converts a datetime to the local timezone.
+
+**Parameters:**
+- `value` (datetime, optional): The datetime to convert. If None, uses now().
+- `timezone` (tzinfo, optional): The timezone to convert to. If None, uses the current timezone.
+
+**Returns:**
+- A datetime in the local timezone.
+
+**Example:**
+```python
+from dimtim.utils.timezone import localtime, now
+
+# Get the current time in the local timezone
+local_now = localtime(now())
+```
+
+##### `localdate(value=None, timezone=None)`
+
+Gets the date in the local timezone.
+
+**Parameters:**
+- `value` (datetime, optional): The datetime to convert. If None, uses now().
+- `timezone` (tzinfo, optional): The timezone to convert to. If None, uses the current timezone.
+
+**Returns:**
+- A date in the local timezone.
+
+**Example:**
+```python
+from dimtim.utils.timezone import localdate, now
+
+# Get the current date in the local timezone
+local_date = localdate(now())
+```
+
+##### `now()`
+
+Gets the current UTC datetime.
+
+**Returns:**
+- A timezone-aware datetime in UTC.
+
+**Example:**
+```python
+from dimtim.utils.timezone import now
+
+current_time = now()
+```
+
+##### `is_aware(value)`
+
+Checks if a datetime is timezone-aware.
+
+**Parameters:**
+- `value` (datetime): The datetime to check.
+
+**Returns:**
+- True if the datetime is timezone-aware, False otherwise.
+
+**Example:**
+```python
+from dimtim.utils.timezone import is_aware, now
+from datetime import datetime
+
+print(is_aware(now()))  # Output: True
+print(is_aware(datetime.now()))  # Output: False
+```
+
+##### `is_naive(value)`
+
+Checks if a datetime is timezone-naive.
+
+**Parameters:**
+- `value` (datetime): The datetime to check.
+
+**Returns:**
+- True if the datetime is timezone-naive, False otherwise.
+
+**Example:**
+```python
+from dimtim.utils.timezone import is_naive, now
+from datetime import datetime
+
+print(is_naive(now()))  # Output: False
+print(is_naive(datetime.now()))  # Output: True
+```
+
+##### `make_aware(value, timezone=None)`
+
+Makes a naive datetime timezone-aware.
+
+**Parameters:**
+- `value` (datetime): The naive datetime to make aware.
+- `timezone` (tzinfo, optional): The timezone to use. If None, uses the current timezone.
+
+**Returns:**
+- A timezone-aware datetime.
+
+**Example:**
+```python
+from dimtim.utils.timezone import make_aware
+from datetime import datetime
+
+naive_dt = datetime.now()
+aware_dt = make_aware(naive_dt)
+```
+
+##### `make_naive(value, timezone=None)`
+
+Makes an aware datetime timezone-naive.
+
+**Parameters:**
+- `value` (datetime): The aware datetime to make naive.
+- `timezone` (tzinfo, optional): The timezone to convert to before removing the timezone. If None, uses the current timezone.
+
+**Returns:**
+- A timezone-naive datetime.
+
+**Example:**
+```python
+from dimtim.utils.timezone import make_naive, now
+
+aware_dt = now()
+naive_dt = make_naive(aware_dt)
+```
+
+##### `parse(value, format, timezone=None)`
+
+Parses a datetime string with a given format and timezone.
+
+**Parameters:**
+- `value` (str): The datetime string to parse.
+- `format` (str): The format string.
+- `timezone` (tzinfo, optional): The timezone to use. If None, uses the current timezone.
+
+**Returns:**
+- A timezone-aware datetime.
+
+**Example:**
+```python
+from dimtim.utils.timezone import parse
+
+dt = parse('2023-01-01 12:00:00', '%Y-%m-%d %H:%M:%S')
+```
+
+##### `has_overlap(start1, end1, start2, end2)`
+
+Checks if two date ranges overlap.
+
+**Parameters:**
+- `start1` (datetime, date): The start of the first range.
+- `end1` (datetime, date): The end of the first range.
+- `start2` (datetime, date): The start of the second range.
+- `end2` (datetime, date): The end of the second range.
+
+**Returns:**
+- True if the ranges overlap, False otherwise.
+
+**Example:**
+```python
+from dimtim.utils.timezone import has_overlap
+from datetime import datetime
+
+# Check if two meetings overlap
+meeting1_start = datetime(2023, 1, 1, 10, 0)
+meeting1_end = datetime(2023, 1, 1, 11, 0)
+meeting2_start = datetime(2023, 1, 1, 10, 30)
+meeting2_end = datetime(2023, 1, 1, 11, 30)
+
+print(has_overlap(meeting1_start, meeting1_end, meeting2_start, meeting2_end))  # Output: True
+```
+
+### Module: data
+
+The `data` module contains data used by other modules.
+
+#### Submodules
+
+##### `wordlists`
+
+Contains lists of words used by the random module for generating usernames.
+
+**Constants:**
+- `ADJECTIVES`: A list of adjective words.
+- `NOUNS`: A list of noun words.
+
+**Example:**
+```python
+from dimtim.utils.data.wordlists import ADJECTIVES, NOUNS
+import random
+
+# Generate a random adjective-noun pair
+print(f"{random.choice(ADJECTIVES)}_{random.choice(NOUNS)}")
+```
