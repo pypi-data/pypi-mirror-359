@@ -1,0 +1,245 @@
+# ChatIdeyalabs PyPI Publishing Guide
+
+## 🚀 **Publishing to PyPI**
+
+This guide explains how to securely publish the ChatIdeyalabs package to PyPI while keeping sensitive information hidden.
+
+## 📋 **Prerequisites**
+
+1. **PyPI Account**: Create account at [pypi.org](https://pypi.org)
+2. **PyPI API Token**: Generate API token in PyPI account settings
+3. **Environment Setup**: Configure environment variables for security
+
+## 🔐 **Security Setup**
+
+### **Environment Variables (Required)**
+
+Create a `.env` file for local development (DO NOT commit this):
+
+```bash
+# .env file (for local development only)
+CHATIDEYALABS_LLM_BASE_URL=https://your-llm-endpoint.com
+CHATIDEYALABS_LLM_API_KEY=your-llm-api-key-here
+CHATIDEYALABS_VALIDATION_ENDPOINT=https://your-api-server.com
+CHATIDEYALABS_MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net/database
+CHATIDEYALABS_MONGODB_DATABASE=your_database
+CHATIDEYALABS_MONGODB_COLLECTION=apiKeys
+CHATIDEYALABS_ENABLE_LOGGING=true
+CHATIDEYALABS_LOG_SENSITIVE=false
+```
+
+### **Add .env to .gitignore**
+
+```bash
+echo ".env" >> .gitignore
+echo "*.env" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+echo "dist/" >> .gitignore
+echo "build/" >> .gitignore
+echo "*.egg-info/" >> .gitignore
+```
+
+## 📦 **Publishing Workflow**
+
+### **Step 1: Install Publishing Tools**
+
+```bash
+pip install build twine
+```
+
+### **Step 2: Update Version**
+
+Edit `setup.py`:
+```python
+setup(
+    name="chat-ideyalabs",
+    version="0.2.0",  # Increment version
+    # ... rest of setup
+)
+```
+
+### **Step 3: Clean Previous Builds**
+
+```bash
+rm -rf dist/ build/ *.egg-info/
+```
+
+### **Step 4: Build the Package**
+
+```bash
+python -m build
+```
+
+This creates:
+- `dist/chat_ideyalabs-0.2.0.tar.gz`
+- `dist/chat_ideyalabs-0.2.0-py3-none-any.whl`
+
+### **Step 5: Test Upload (Optional)**
+
+```bash
+# Upload to TestPyPI first
+python -m twine upload --repository testpypi dist/*
+
+# Test installation from TestPyPI
+pip install --index-url https://test.pypi.org/simple/ chat-ideyalabs
+```
+
+### **Step 6: Upload to PyPI**
+
+```bash
+python -m twine upload dist/*
+```
+
+Enter your PyPI API token when prompted.
+
+## 👥 **User Installation & Setup**
+
+### **For Package Users**
+
+**Installation:**
+```bash
+pip install chat-ideyalabs
+```
+
+**Environment Setup (Required for Users):**
+
+Users need to set environment variables:
+
+```bash
+# Required: API validation endpoint
+export CHATIDEYALABS_VALIDATION_ENDPOINT=https://your-api-server.com
+
+# Required: LLM configuration (set by admin)
+export CHATIDEYALABS_LLM_BASE_URL=https://your-llm-endpoint.com
+export CHATIDEYALABS_LLM_API_KEY=your-llm-api-key-here
+
+# Optional: Logging configuration
+export CHATIDEYALABS_ENABLE_LOGGING=false
+export CHATIDEYALABS_LOG_SENSITIVE=false
+```
+
+**Usage:**
+```python
+from chat_ideyalabs import ChatIdeyalabs
+
+# User provides their API key
+chat = ChatIdeyalabs(api_key="user-api-key-from-admin")
+response = chat.invoke("Hello, world!")
+print(response.content)
+```
+
+## 🔧 **Administrator Setup**
+
+### **Server Environment Variables**
+
+Set these on your API server:
+
+```bash
+# Production environment
+export CHATIDEYALABS_LLM_BASE_URL=https://your-llm-endpoint.com
+export CHATIDEYALABS_LLM_API_KEY=your-llm-api-key-here
+export CHATIDEYALABS_VALIDATION_ENDPOINT=https://your-api-server.com
+export CHATIDEYALABS_MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net/database
+export CHATIDEYALABS_MONGODB_DATABASE=your_database
+export CHATIDEYALABS_MONGODB_COLLECTION=apiKeys
+export CHATIDEYALABS_ENABLE_LOGGING=true
+export CHATIDEYALABS_LOG_SENSITIVE=false
+```
+
+### **Docker Deployment Example**
+
+```dockerfile
+# Dockerfile
+FROM python:3.10-slim
+
+ENV CHATIDEYALABS_LLM_BASE_URL=https://your-llm-endpoint.com
+ENV CHATIDEYALABS_LLM_API_KEY=your-llm-api-key-here
+ENV CHATIDEYALABS_VALIDATION_ENDPOINT=https://your-api-server.com
+
+COPY . /app
+WORKDIR /app
+RUN pip install -e .
+
+CMD ["uvicorn", "chat_ideyalabs.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+## 📋 **User Documentation Template**
+
+Create this for your users:
+
+### **ChatIdeyalabs Package Usage Guide**
+
+**Installation:**
+```bash
+pip install chat-ideyalabs
+```
+
+**Environment Setup:**
+```bash
+# Set the validation endpoint (provided by admin)
+export CHATIDEYALABS_VALIDATION_ENDPOINT=https://your-api-server.com
+export CHATIDEYALABS_LLM_BASE_URL=https://your-llm-endpoint.com
+export CHATIDEYALABS_LLM_API_KEY=your-llm-api-key-here
+```
+
+**Get API Key:**
+Contact your administrator to get an API key.
+
+**Usage:**
+```python
+from chat_ideyalabs import ChatIdeyalabs
+
+# Initialize with your API key
+chat = ChatIdeyalabs(
+    api_key="your-api-key-here",
+    response_format={"type": "json_object"},
+    temperature=0.7
+)
+
+# Basic usage
+response = chat.invoke("What is AI?")
+print(response.content)
+
+# Async usage
+response = await chat.ainvoke("Explain machine learning")
+print(response.content)
+
+# Streaming
+async for chunk in chat.astream("Write a poem"):
+    print(chunk, end="", flush=True)
+```
+
+## 🔒 **Security Benefits**
+
+✅ **Sensitive data hidden** - All secrets in environment variables  
+✅ **No hardcoded credentials** - Package safely distributed  
+✅ **User authentication** - Each user needs valid API key  
+✅ **Configurable logging** - Can disable/mask sensitive data  
+✅ **Easy deployment** - Environment-based configuration  
+
+## 🚨 **Important Notes**
+
+1. **Never commit `.env` files** to version control
+2. **Always test on TestPyPI first** before publishing to PyPI
+3. **Users need environment setup** - provide clear instructions
+4. **API keys expire** - implement key rotation if needed
+5. **Monitor usage** - track package downloads and API usage
+
+## 📈 **Version Management**
+
+- **Patch**: Bug fixes (0.1.0 → 0.1.1)
+- **Minor**: New features (0.1.0 → 0.2.0)
+- **Major**: Breaking changes (0.1.0 → 1.0.0)
+
+## 🆘 **Troubleshooting**
+
+### **Publishing Issues**
+- Check PyPI API token
+- Verify package name availability
+- Ensure version number is incremented
+
+### **User Issues**
+- Verify environment variables are set
+- Check API key validity
+- Confirm validation endpoint is accessible 
