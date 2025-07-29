@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+statum.egg-info/PKG-INFO
+statum.egg-info/SOURCES.txt
+statum.egg-info/dependency_links.txt
+statum.egg-info/top_level.txt
