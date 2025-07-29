@@ -1,0 +1,7 @@
+(will experiment with these as my job allows (using the typechecking script from there as a model)){
+  TODO: allow for custom behavior thru a typegun_special file or something.
+
+  TODO: allow for flexibility in what arguments/files the typecheckers are called on?
+
+  TODO: mypy daemon, faster storage with orjson?
+}
