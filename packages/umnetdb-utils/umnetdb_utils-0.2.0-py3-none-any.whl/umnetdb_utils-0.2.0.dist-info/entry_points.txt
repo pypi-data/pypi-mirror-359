@@ -1,0 +1,3 @@
+[console_scripts]
+umnetdb=umnetdb_utils.cli:main
+
