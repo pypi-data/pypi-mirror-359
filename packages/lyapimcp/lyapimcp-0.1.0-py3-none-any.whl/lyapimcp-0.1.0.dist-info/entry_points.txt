@@ -1,0 +1,2 @@
+[console_scripts]
+lyapimcp = lyapimcp.server:main
