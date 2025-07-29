@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "MCPCurrentTime"
+version = "0.0.3"
+dependencies = ["mcp","pytz"]
+authors = [
+  { name="Matthew Warren", email="matt.j.warren@gmail.com" },
+]
+description = "A simple MCP server providing a single tool that agents can use to get the current time in a given timezone."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/mattjwarren/MCPCurrentTime"
+Issues = "https://github.com/mattjwarren/MCPCurrentTime/issues"
