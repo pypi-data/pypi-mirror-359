@@ -1,0 +1,10 @@
+open_af3/__init__.py,sha256=Kw0MKz312Bme5MKrPYESTtHflDYEfJ-BRWGCTvCEQCI,221
+open_af3/constants.py,sha256=bp1aroH87_NzPYIai-ms5dUJMqGmM6AQqL3d4hbQJgY,4196
+open_af3/diffusion.py,sha256=AJBbYqkKKmAj0dXVMANNoZUQswxagzB7F7QOH_xiOMU,5449
+open_af3/model.py,sha256=lTQhvdm5O7KkhyJerMAANuQ1_5ehEhPYU0Y2DpYjDhk,4892
+open_af3/pairformer.py,sha256=lyCk2ecA_wGv7Lp_P_HndIf7xu0Focq5UkGSuGNGc70,16667
+open_af3/template_embedder.py,sha256=FLTTQFeedL1_F7qDOEjNatn5FDwPJ730o8KmR2VMHXM,2748
+open_af3-0.0.8.dist-info/LICENSE,sha256=GHYD0Vn7cqu6O1FibXB1ix_cx8js09uZI1rKjCjW5sY,1074
+open_af3-0.0.8.dist-info/METADATA,sha256=-UCLUa9orNYGUo1xq5bYG4U0HKfOHmZYcY4hjnYnqUY,12479
+open_af3-0.0.8.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+open_af3-0.0.8.dist-info/RECORD,,
