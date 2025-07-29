@@ -1,0 +1,141 @@
+[build-system]
+requires = ["setuptools>=80.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stampr_ai"
+version = "0.1.0a10"
+authors = [
+    { name = "Vasilios Mavroudis", email = "mavroudisv@gmail.com" },
+    { name = "Dan Ristea", email = "dan.ristea.19@ucl.ac.uk" },
+]
+description = "Live verification of AI model signatures to detect model changes"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Monitoring",
+]
+keywords = ["ai", "model", "verification", "signature", "security", "llm", "monitoring", "testing"]
+dependencies = [
+    "requests>=2.32.4",
+    "tiktoken>=0.9.0",
+    "python-dotenv>=1.1.0",
+    "tqdm>=4.67.0",
+    "transformers[hf-xet]>=4.52.4",
+    "zstandard",
+    "brotli",
+]
+
+[project.optional-dependencies]
+openai = ["openai"]
+all = [
+    "stampr_ai[openai]",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "pytest-recording",
+    "ruff>=0.12.0",
+    "mypy",
+    "freezegun",
+    "pre-commit",
+]
+typestubs = [  # from .mypy_cache/missing_stubs
+    "pandas-stubs",
+    "scipy-stubs",
+    "types-PyYAML",
+    "types-beautifulsoup4",
+    "types-psutil",
+    "types-regex",
+    "types-requests",
+    "types-simplejson",
+    "types-tensorflow",
+    "types-tqdm",
+]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme",
+]
+all = [
+    {include-group = "dev"},
+    {include-group = "typestubs"},
+    {include-group = "docs"},
+]
+
+[project.urls]
+Homepage = "https://stampr-ai.com"
+Documentation = "https://stampr-ai.com/docs"
+Repository = "https://github.com/stampr-ai/stampr_ai"
+"Bug Tracker" = "https://github.com/stampr-ai/stampr_ai/issues"
+Changelog = "https://github.com/stampr-ai/stampr_ai/blob/main/CHANGELOG.md"
+
+[project.scripts]
+stampr = "stampr_ai.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+    "--tb=short",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = [
+    "RUF",  # Ruff rules
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "PLE",  # Pylint error
+    "PLC",  # Pylint convention
+    "F",  # Pyflakes
+    "B",  # flake8-bugbear
+    "FA",  # flake8-future-annotations
+    "EXE",  # flake8-executable
+    "Q",  # flake8-quotes
+    "I",  # isort
+    "UP",  # pyupgrade
+]
+
+ignore=[
+    "E501",  # line length, ignored for now
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.lint.per-file-ignores]
+"*/__init__.py" = ["PLC0414"]
+
+[tool.mypy]
+python_version = "3.9"
+files = [
+    "src/",
+    "tests/",
+    "examples/",
+]
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
