@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+cozytouchpy.egg-info/PKG-INFO
+cozytouchpy.egg-info/SOURCES.txt
+cozytouchpy.egg-info/dependency_links.txt
+cozytouchpy.egg-info/top_level.txt
