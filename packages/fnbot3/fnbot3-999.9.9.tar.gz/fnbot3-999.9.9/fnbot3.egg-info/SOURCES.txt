@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+fnbot3.egg-info/PKG-INFO
+fnbot3.egg-info/SOURCES.txt
+fnbot3.egg-info/dependency_links.txt
+fnbot3.egg-info/top_level.txt
