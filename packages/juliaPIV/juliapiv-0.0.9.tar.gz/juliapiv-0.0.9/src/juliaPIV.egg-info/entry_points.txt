@@ -1,0 +1,3 @@
+[console_scripts]
+batcher = juliaPIV.batcher.batcher:batcher_cli
+pivpipe = juliaPIV.pivpipe.pivpipe:pivpipe_main
