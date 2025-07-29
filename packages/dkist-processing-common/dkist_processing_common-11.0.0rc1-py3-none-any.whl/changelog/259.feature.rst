@@ -1,0 +1,1 @@
+Add ability to store and build a quality metric showing the results of wavelength calibration.
