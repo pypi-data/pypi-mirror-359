@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+python_string_fuzzy_clustering.egg-info/PKG-INFO
+python_string_fuzzy_clustering.egg-info/SOURCES.txt
+python_string_fuzzy_clustering.egg-info/dependency_links.txt
+python_string_fuzzy_clustering.egg-info/requires.txt
+python_string_fuzzy_clustering.egg-info/top_level.txt
+sgfcmed/__init__.py
+sgfcmed/sgfcmed_parallel.py
+tests/__init__.py
+tests/test_sgfcmed.py
