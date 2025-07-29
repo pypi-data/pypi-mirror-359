@@ -1,0 +1,5 @@
+tools_create_tables/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tools_create_tables/modulo.py,sha256=GUipxYEjX3jDWxcJ5kbRcecCWFZs7guT8nSNU6jFNsk,11294
+create_tables_storage-0.1.12.dist-info/METADATA,sha256=yddg_wtotrxRhP4O6ZUDecJRI2uFuO2zKXPKOA_8nFA,569
+create_tables_storage-0.1.12.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+create_tables_storage-0.1.12.dist-info/RECORD,,
