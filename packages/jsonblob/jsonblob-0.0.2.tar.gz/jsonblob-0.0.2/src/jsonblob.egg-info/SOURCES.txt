@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+pyproject.toml
+src/jsonblob/__init__.py
+src/jsonblob/jsonblob.py
+src/jsonblob.egg-info/PKG-INFO
+src/jsonblob.egg-info/SOURCES.txt
+src/jsonblob.egg-info/dependency_links.txt
+src/jsonblob.egg-info/requires.txt
+src/jsonblob.egg-info/top_level.txt
+tests/test.py

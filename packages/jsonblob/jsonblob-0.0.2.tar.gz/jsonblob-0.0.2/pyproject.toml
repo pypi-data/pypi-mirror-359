@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsonblob"
+version = "0.0.2"
+authors = [{ name = "Roman Smolnyk", email = "poma23324@gmail.com" }]
+description = "Non official jsonblob api client"
+readme = "README.md"
+requires-python = ">=3.8" # Optional
+keywords = ["jsonblob"] # Optional
+classifiers = [ # Optional
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+dependencies = ["requests"]
+
+
+[project.urls] # Optional
+Homepage = "https://github.com/roman-smolnyk/python-jsonblob"
