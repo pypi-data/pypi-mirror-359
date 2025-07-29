@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+systemcontrol.egg-info/PKG-INFO
+systemcontrol.egg-info/SOURCES.txt
+systemcontrol.egg-info/dependency_links.txt
+systemcontrol.egg-info/top_level.txt
