@@ -1,0 +1,3 @@
+[console_scripts]
+laoshu=laoshu.__main__:main
+

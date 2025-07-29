@@ -1,0 +1,17 @@
+laoshu/__init__.py,sha256=_6ctxP2DNcNPOXrJx5BnuJzFWXC7sE7P_1k5rqTTlYo,25
+laoshu/checks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+laoshu/checks/faithfulness.py,sha256=UJt6NhVze7BBUyM4KGS7PHZKHs8vtKuz5NDGVrYRhpg,2274
+laoshu/citations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+laoshu/citations/extraction.py,sha256=RNWNs94x62Cf7TBLVSs2mpNLuWsbUYkvwbV5VFxKWYk,1903
+laoshu/config/__init__.py,sha256=ESpDSgPl10TrDBApq85ocWkdrKwyGDnyZhr8V-jmWKk,389
+laoshu/config/envs.py,sha256=-DdEBWzyigfmbdHT7VrJigufOBixOOEvyl5-iY_xhqc,885
+laoshu/config/logger.py,sha256=FzSFM1RZUKjxEGD666JMcJH_q2Avq0QGRj3kwxojlp0,183
+laoshu/scraping/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+laoshu/scraping/interface.py,sha256=n-b__K7X0tSBClJqkmNa0Z7df6tGfgp5roG0H8smQhI,1222
+laoshu/scraping/scrapingant.py,sha256=7sZLA2xS8qEygs6wWoPvamjbHR8Ka8rg9Bxy7ayzoWY,2457
+laoshu/verification/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+laoshu/verification/verification.py,sha256=SCIPzR2rjKZ6imBdKJh9hs7g54RD7_R6jlmmaQkb1cQ,1882
+laoshu-0.1.1.dev0.dist-info/METADATA,sha256=Bdn6jThx-DRaOSVkfZxpQtfhJ_OPmFOpEFEG574PeWU,761
+laoshu-0.1.1.dev0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+laoshu-0.1.1.dev0.dist-info/entry_points.txt,sha256=OOIRQpf6BQ28AshpqcrDaLNe_9HQVgNtKap0s5TZPa4,47
+laoshu-0.1.1.dev0.dist-info/RECORD,,
