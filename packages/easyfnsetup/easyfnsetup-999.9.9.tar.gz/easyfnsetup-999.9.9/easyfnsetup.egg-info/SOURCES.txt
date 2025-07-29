@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+easyfnsetup.egg-info/PKG-INFO
+easyfnsetup.egg-info/SOURCES.txt
+easyfnsetup.egg-info/dependency_links.txt
+easyfnsetup.egg-info/top_level.txt
