@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+sefazetllib.egg-info/PKG-INFO
+sefazetllib.egg-info/SOURCES.txt
+sefazetllib.egg-info/dependency_links.txt
+sefazetllib.egg-info/top_level.txt
