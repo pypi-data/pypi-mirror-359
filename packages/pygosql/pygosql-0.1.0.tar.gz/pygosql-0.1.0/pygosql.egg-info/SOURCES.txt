@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+pygosql/__init__.py
+pygosql/pygosql.py
+pygosql/pygosql.pyi
+pygosql.egg-info/PKG-INFO
+pygosql.egg-info/SOURCES.txt
+pygosql.egg-info/dependency_links.txt
+pygosql.egg-info/requires.txt
+pygosql.egg-info/top_level.txt
