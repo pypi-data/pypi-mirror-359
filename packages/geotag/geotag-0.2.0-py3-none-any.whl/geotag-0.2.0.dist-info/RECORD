@@ -1,0 +1,7 @@
+src/__init__.py,sha256=p3wN1nC2kkpWiBW-mOlcUlnJ_WjXkknHAsjTzlIefwc,48
+src/dateexpr.py,sha256=HVVbhKheGPhJ8RP40FOEIi22kFjGRKxHW0x_VnodTI0,30923
+src/main.py,sha256=ovBBOHyN-M2Q4XyEdSB5hod_Q-SXK8cI5BRrA-L-hug,9127
+geotag-0.2.0.dist-info/METADATA,sha256=SzSgnjkxr9GoK_S09Upb7kxaFErTZTqlAQ6oRt5tjvM,2561
+geotag-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+geotag-0.2.0.dist-info/entry_points.txt,sha256=nMaHDgHIV1EBeNUMK_7JeckSzNif03rA4QkGrlk4hDQ,41
+geotag-0.2.0.dist-info/RECORD,,
