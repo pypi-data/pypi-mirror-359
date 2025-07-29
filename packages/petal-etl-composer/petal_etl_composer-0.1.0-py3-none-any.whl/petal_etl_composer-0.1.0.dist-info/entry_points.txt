@@ -1,0 +1,2 @@
+[console_scripts]
+petal = etl_composer.cli:main
