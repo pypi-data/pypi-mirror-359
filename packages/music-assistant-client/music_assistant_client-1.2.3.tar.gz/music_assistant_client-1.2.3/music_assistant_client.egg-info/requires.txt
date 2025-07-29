@@ -1,0 +1,12 @@
+aiohttp>=3.8.6
+music_assistant_models==1.1.50
+orjson>=3.9
+
+[test]
+codespell==2.4.1
+isort==6.0.1
+mypy==1.16.1
+pre-commit==4.2.0
+pre-commit-hooks==5.0.0
+tomli==2.2.1
+ruff==0.12.1
