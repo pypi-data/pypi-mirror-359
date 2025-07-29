@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: dataruns
+Version: 0.1.2a0
+Summary: A library with Pandas-Like api used for data manipulation and function pipeline execution
+Author: Daniel
+License-Expression: MIT
+Project-URL: Bug Tracker, https://github.com/DanielUgoAli/Dataruns/issues
+Project-URL: Source Code, https://github.com/DanielUgoAli/Dataruns
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=2.2.5
+Requires-Dist: openpyxl>=3.1.5
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: requests>=2.32.3
+Dynamic: license-file
+
+# Dataruns
+
+A Python library for data extraction, transformation, and pipeline creation.
+
+## Installation
+
+```bash
+pip install dataruns
+```
+
+## Quick Start
+
+```python
+from dataruns.source import CSVSource
+from dataruns.core.pipeline import Pipeline
+from dataruns.core.transforms import StandardScaler, FillNA, TransformComposer
+import pandas as pd
+
+# Extract data
+source = CSVSource(file_path='data.csv')
+data = source.extract_data()
+
+# Create preprocessing pipeline
+preprocessor = TransformComposer(
+    FillNA(method='mean'),
+    StandardScaler()
+)
+
+# Apply transformations
+processed_data = preprocessor.fit_transform(data)
+```
+
+## Features
+
+- Extract data from CSV, SQLite, and Excel files
+- Build custom data processing pipelines
+- Comprehensive data transformations (scaling, missing values, column operations)
+- Works with pandas DataFrames and numpy arrays
+
+## License
+
+MIT License
