@@ -1,0 +1,2 @@
+[console_scripts]
+spin-and-heave = spinandheave.main:main
