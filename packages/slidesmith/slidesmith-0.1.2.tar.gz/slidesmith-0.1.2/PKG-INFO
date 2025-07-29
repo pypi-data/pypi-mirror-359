@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: slidesmith
+Version: 0.1.2
+Summary: An on-device MCP server that converts Markdown to pixel-perfect slide decks
+Project-URL: Homepage, https://github.com/markov/slidesmith
+Project-URL: Documentation, https://slidesmith.readthedocs.io
+Project-URL: Repository, https://github.com/markov/slidesmith.git
+Project-URL: Issues, https://github.com/markov/slidesmith/issues
+Author-email: Slidesmith Team <slidesmith@example.com>
+License: MIT
+Keywords: markdown,mcp,presentation,react,slides,tailwind
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Office/Business :: Office Suites
+Classifier: Topic :: Text Processing :: Markup
+Requires-Python: >=3.11
+Requires-Dist: click<9.0.0,>=8.0.0
+Requires-Dist: fastmcp<3.0.0,>=2.9.2
+Requires-Dist: jsonpatch<2.0.0,>=1.33
+Requires-Dist: playwright<2.0.0,>=1.44.0
+Requires-Dist: pydantic<3.0.0,>=2.0.0
+Requires-Dist: python-dotenv<2.0.0,>=1.0.0
+Requires-Dist: rich<15.0.0,>=14.0.0
+Provides-Extra: dev
+Requires-Dist: mypy<2.0.0,>=1.10.0; extra == 'dev'
+Requires-Dist: openai<2.0.0,>=1.0.0; extra == 'dev'
+Requires-Dist: pytest-asyncio<1.0.0,>=0.23.0; extra == 'dev'
+Requires-Dist: pytest-cov<6.0.0,>=5.0.0; extra == 'dev'
+Requires-Dist: pytest<9.0.0,>=8.0.0; extra == 'dev'
+Requires-Dist: ruff<1.0.0,>=0.5.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Slidesmith MCP Server
+
+An on-device Model Context Protocol (MCP) server that converts Markdown briefs into pixel-perfect Tailwind/React slide decks and print-ready PDFs.
+
+## Quick Start
+
+### Virtual Environment Setup
+
+```bash
+# Create and activate virtual environment
+python3.12 -m venv slidesmith-env
+source slidesmith-env/bin/activate  # macOS/Linux
+# or
+slidesmith-env\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install Playwright browsers
+python -m playwright install chromium
+```
+
+### Development
+
+```bash
+# Always activate venv first
+source slidesmith-env/bin/activate
+
+# Run MCP server
+slidesmith serve
+
+# Run tests
+pytest
+```
+
+## Features
+
+- 🏠 **Local-first**: No Docker, no network I/O, no telemetry
+- 🤖 **AI-optimized**: Designed for Claude Code to create professional presentations
+- ✨ **Quality gates**: Automated linting ensures pixel-perfect output
+- 📄 **Export ready**: Generate print-quality PDFs with embedded fonts
+- 🎨 **Token-based theming**: Easy brand customization via JSON
+
+## MCP Tools
+
+- `list_templates` - List available slide templates
+- `init_deck` - Initialize a new slide deck
+- `theme_base` - Get base theme tokens
+- `apply_tokens` - Apply custom theme tokens
+- `html_preview` - Generate HTML preview
+- `slide_lint` - Check slide quality
+- `snapshot` - Generate PNG screenshots
+- `pdf_export` - Export to PDF
+- `get_component_doc` - Get component documentation
+- `svg_icon` - Get SVG icons
+- `cleanup` - Clean up deck workspace
+
+## Technology Stack
+
+- **Framework**: FastMCP 2.9.2 (MCP 2025-06 spec)
+- **Frontend**: React + Tailwind + MDX
+- **Build**: esbuild + Node.js
+- **Quality**: Playwright for linting & PDF generation
+- **Language**: Python 3.12+
