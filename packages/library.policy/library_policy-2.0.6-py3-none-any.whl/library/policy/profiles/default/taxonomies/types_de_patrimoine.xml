@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="false" profileType="hierarchicalTokenTerms" language="fr">
+  <vocabName>
+    <langstring language="fr">Types de patrimoine</langstring>
+  </vocabName>
+  <vocabIdentifier>patrimoine</vocabIdentifier>
+  <term>
+    <termIdentifier>1rc6uqjlv7</termIdentifier>
+    <caption>
+      <langstring language="fr">Registres</langstring>
+    </caption>
+    <term>
+      <termIdentifier>pqnkr0d1vj</termIdentifier>
+      <caption>
+        <langstring language="fr">Acte d'Etat civil</langstring>
+      </caption>
+      <term>
+        <termIdentifier>kyra0tvacw</termIdentifier>
+        <caption>
+          <langstring language="fr">Décès</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>90gi0hhk19</termIdentifier>
+        <caption>
+          <langstring language="fr">Mariage</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>4qp742m09n</termIdentifier>
+        <caption>
+          <langstring language="fr">Certificat d'identité</langstring>
+        </caption>
+      </term>
+      <term>
+        <termIdentifier>k6mgn73d0b</termIdentifier>
+        <caption>
+          <langstring language="fr">Naissance</langstring>
+        </caption>
+      </term>
+    </term>
+    <term>
+      <termIdentifier>qbb4c89i34</termIdentifier>
+      <caption>
+        <langstring language="fr">Délibérations du conseil communal</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>iltc78dunv</termIdentifier>
+    <caption>
+      <langstring language="fr">Objets</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>tpdndkfwvc</termIdentifier>
+    <caption>
+      <langstring language="fr">Médias</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>ly7nbqvudj</termIdentifier>
+    <caption>
+      <langstring language="fr">Immobilier</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>daeubhmpgv</termIdentifier>
+    <caption>
+      <langstring language="fr">Mobilier</langstring>
+    </caption>
+  </term>
+  <term>
+    <termIdentifier>j6ycuismqv</termIdentifier>
+    <caption>
+      <langstring language="fr">Papier</langstring>
+    </caption>
+    <term>
+      <termIdentifier>ehp924u4rp</termIdentifier>
+      <caption>
+        <langstring language="fr">Cartes postales</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>fjv9sqdegh</termIdentifier>
+      <caption>
+        <langstring language="fr">Journaux</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>iwk5u6x5ij</termIdentifier>
+      <caption>
+        <langstring language="fr">Photos</langstring>
+      </caption>
+    </term>
+  </term>
+  <term>
+    <termIdentifier>43ne6x7e65</termIdentifier>
+    <caption>
+      <langstring language="fr">Textile</langstring>
+    </caption>
+    <term>
+      <termIdentifier>12804fyudk</termIdentifier>
+      <caption>
+        <langstring language="fr">Drapeaux</langstring>
+      </caption>
+    </term>
+    <term>
+      <termIdentifier>utbepox9vn</termIdentifier>
+      <caption>
+        <langstring language="fr">Toiles de glacerie</langstring>
+      </caption>
+    </term>
+  </term>
+</vdex>
