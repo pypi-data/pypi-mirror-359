@@ -1,0 +1,5 @@
+aiohttp>=3.12.13
+dotenv>=0.9.9
+mcp[cli]>=1.10.1
+requests>=2.32.4
+requests-oauthlib>=2.0.0
