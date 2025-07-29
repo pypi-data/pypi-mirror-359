@@ -1,0 +1,16 @@
+include README.md
+include LICENSE
+include pyproject.toml
+recursive-include config *.py
+recursive-include tgstattools *.py
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude *.db
+global-exclude *.log
+prune data/
+prune image/
+prune tgstattools.egg-info/
+prune build/
+prune dist/ 
