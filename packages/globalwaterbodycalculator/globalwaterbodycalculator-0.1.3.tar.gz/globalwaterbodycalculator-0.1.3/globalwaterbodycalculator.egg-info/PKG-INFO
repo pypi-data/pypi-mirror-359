@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: globalwaterbodycalculator
+Version: 0.1.3
+Summary: A package for calculating water storage based on global water body depth-area-volume equation and visualizing waterbody geometries.
+Home-page: https://github.com/SYubaby/Globalwaterbodycalculator
+Author: Shengde Yu, Yukai Wu, Weikun Liao, Zhijian Zhuo
+Author-email: s228yu@uwaterloo.ca, yukai.wu@mail.utoronto.ca, weikun.liao@mail.utoronto.ca, zhijian.zhuo@mail.utoronto.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: sympy
+Requires-Dist: geopy
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: rasterio
+Requires-Dist: sympy
+Requires-Dist: scikit-learn
+Requires-Dist: gdal
+Requires-Dist: gdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

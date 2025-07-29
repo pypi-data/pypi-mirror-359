@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+globalwaterbodycalculator/__init__.py
+globalwaterbodycalculator/calculator.py
+globalwaterbodycalculator/data_manager.py
+globalwaterbodycalculator.egg-info/PKG-INFO
+globalwaterbodycalculator.egg-info/SOURCES.txt
+globalwaterbodycalculator.egg-info/dependency_links.txt
+globalwaterbodycalculator.egg-info/requires.txt
+globalwaterbodycalculator.egg-info/top_level.txt
