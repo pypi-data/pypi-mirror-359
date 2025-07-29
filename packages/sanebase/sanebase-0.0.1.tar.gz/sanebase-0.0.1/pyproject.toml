@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sanebase"
+version = "0.0.1"
+description = "Sanebase's Python SDK (coming soon)"
+authors = ["Augustus D'Souza <augustus.dev@gmail.com>"]
+license = "AGPL-3.0"
+readme = "README.md"
+packages = [{ include = "*", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

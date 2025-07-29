@@ -1,0 +1,16 @@
+Metadata-Version: 2.3
+Name: sanebase
+Version: 0.0.1
+Summary: Sanebase's Python SDK (coming soon)
+License: AGPL-3.0
+Author: Augustus D'Souza
+Author-email: augustus.dev@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+Sanebase's Python SDK (coming soon)
+
