@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+brothon.egg-info/PKG-INFO
+brothon.egg-info/SOURCES.txt
+brothon.egg-info/dependency_links.txt
+brothon.egg-info/top_level.txt
