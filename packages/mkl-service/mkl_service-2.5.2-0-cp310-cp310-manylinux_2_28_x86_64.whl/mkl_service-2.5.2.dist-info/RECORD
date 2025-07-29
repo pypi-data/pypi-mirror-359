@@ -1,0 +1,13 @@
+mkl/__init__.py,sha256=F0572ZX_IpLizINsE38sibfry8zkEjzKk2sF4eMBk5Q,2391
+mkl/_init_helper.py,sha256=JuedCuAeKeh5qwPtt2mFNicY0oqdDW892oAnWP3d7xM,2028
+mkl/_mkl_service.pyx,sha256=d6ZQWZtGE_2-ac-BAryDMa172yxo9j6IDBUfFPIhw4Y,33058
+mkl/_mklinit.cpython-310-x86_64-linux-gnu.so,sha256=0TgJ3r1CTPHXSA-7lU7XLAcFhZvxC408VYyWqvF5v3o,17632
+mkl/_mklinitmodule.c,sha256=QGowtARLhsuSCGV0ev_jolTzddHzoOYjNgSGmrLRQMo,6353
+mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so,sha256=B_ak3K9h2lvvQgjqlKoMRYfG5yESG_gkKiL9LV8EO6E,160416
+mkl/_version.py,sha256=V-NiKyTdzd5WY2b4iSwaM1JcbOEyZ0IH2WQKBnjN2DI,22
+mkl/tests/test_mkl_service.py,sha256=krSjH0TYI1atJSjz5Ovyupcbz6x8yE00rBgtPrrvBXw,10017
+mkl_service-2.5.2.dist-info/licenses/LICENSE.txt,sha256=xhp_E_meS9z9YUCpv9FHDK8G7fCxcL335o8uEuq1yBM,1500
+mkl_service-2.5.2.dist-info/METADATA,sha256=Wh9CkhUUPhXFp_mXOOJZIkFc6-QQLsSTm_dsWg4TpNs,2952
+mkl_service-2.5.2.dist-info/WHEEL,sha256=mjwc1EYGOF0nE850DrooO5ZFqNY2Yzk5rmXw0xzN7IM,122
+mkl_service-2.5.2.dist-info/top_level.txt,sha256=sekqQ_0YET7LLHO6NsXQgKDPGGRhmKuANW9ovFuM2TE,4
+mkl_service-2.5.2.dist-info/RECORD,,
