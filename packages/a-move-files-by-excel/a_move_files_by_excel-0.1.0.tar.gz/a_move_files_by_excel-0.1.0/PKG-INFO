@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: a_move_files_by_excel
+Version: 0.1.0
+Summary: 极简批量移动文件脚本，支持Excel批量移动并保留原始路径结构，适合所有用户。
+Home-page: 
+Author: nighm
+Author-email: nighm@sina.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: openpyxl>=3.0.10
+Requires-Dist: lxml==4.9.3
+Requires-Dist: html5lib==1.1
+Requires-Dist: beautifulsoup4>=4.11.0
+Requires-Dist: PyYAML>=6.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+# a_move_files_by_excel
+
+## 简介
+本包用于批量移动文件，自动读取Excel中的"文件名"列，按原始路径结构移动到目标目录。无需参数，适合所有用户。
+
+- 支持自动检测依赖
+- 详细日志与核查报告
+- 纯中文注释，易于学习和维护
+
+## 安装
+```bash
+pip install a_move_files_by_excel
+```
+
+## 用法
+```bash
+python -m a_move_files_by_excel
+```
+或直接调用包内主函数。
+
+## 作者
+- nighm <nighm@sina.com>

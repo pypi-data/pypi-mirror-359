@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+a_move_files_by_excel/__init__.py
+a_move_files_by_excel/move_files_by_excel.py
+a_move_files_by_excel.egg-info/PKG-INFO
+a_move_files_by_excel.egg-info/SOURCES.txt
+a_move_files_by_excel.egg-info/dependency_links.txt
+a_move_files_by_excel.egg-info/entry_points.txt
+a_move_files_by_excel.egg-info/requires.txt
+a_move_files_by_excel.egg-info/top_level.txt
+move_files_by_excel/__init__.py

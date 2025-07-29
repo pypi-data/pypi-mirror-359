@@ -1,0 +1,2 @@
+[console_scripts]
+a_move_files_by_excel = a_move_files_by_excel.move_files_by_excel:main
