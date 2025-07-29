@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: matterlab_shakers
+Version: 1.0.0
+Summary: A Python API for the shakers in the Matter Lab.
+Author: Han Hao, Martin Seifrid, Tony C. Wu
+Keywords: shaker,automation,matterlab
+Platform: win
+Platform: osx
+Platform: unix
+Platform: linux
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: System :: Hardware
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+Classifier: Topic :: System :: Hardware :: Universal Serial Bus (USB)
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matterlab_serial_device
+Dynamic: license-file
+
+whatever
