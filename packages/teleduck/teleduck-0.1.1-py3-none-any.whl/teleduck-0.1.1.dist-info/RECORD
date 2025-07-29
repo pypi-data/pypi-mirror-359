@@ -1,0 +1,10 @@
+teleduck/__init__.py,sha256=nrDNJKoELBWQGsj9qg8c5ispAA1JYfqPHyTBoN-eYic,131
+teleduck/__main__.py,sha256=ATEVuPQrKMvPUBBDXwB0pXBPyzjNOADfL4rVZ4ch-uY,1337
+teleduck/server.py,sha256=Y5VmUD45sXZzgc9Bo01QbX_y5DNLaZOBTZ8-mKCdlW4,8476
+teleduck/certs/server.crt,sha256=jOjhGouQk7uQiRSXuw_zHA-XJnaKH6XWfXsqUljI3CE,1115
+teleduck/certs/server.key,sha256=6Cd2Xhz_LjhsSun6CnwT24sPOBbYS_T-40Wrep1aWr8,1704
+teleduck-0.1.1.dist-info/METADATA,sha256=arsbCDCvDGSdyFYocu0LSiH5fcSw8W1LTs9bf5i5Nvk,2312
+teleduck-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+teleduck-0.1.1.dist-info/entry_points.txt,sha256=-62ee9HoBYSBwWYqOTSLm-NqrOBP9S3K5j3psEnhRIc,52
+teleduck-0.1.1.dist-info/top_level.txt,sha256=AgdRleQTz47RWASY1EC12jtQD8W8X6X_LjbIajZyOAs,9
+teleduck-0.1.1.dist-info/RECORD,,
