@@ -1,0 +1,2 @@
+[console_scripts]
+grapi = grAPI.cli:main
