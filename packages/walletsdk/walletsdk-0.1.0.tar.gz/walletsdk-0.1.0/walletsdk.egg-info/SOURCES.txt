@@ -1,0 +1,8 @@
+setup.py
+walletsdk/__init__.py
+walletsdk/core.py
+walletsdk.egg-info/PKG-INFO
+walletsdk.egg-info/SOURCES.txt
+walletsdk.egg-info/dependency_links.txt
+walletsdk.egg-info/requires.txt
+walletsdk.egg-info/top_level.txt
