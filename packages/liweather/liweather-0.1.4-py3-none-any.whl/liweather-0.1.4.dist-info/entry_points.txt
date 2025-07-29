@@ -1,0 +1,2 @@
+[console_scripts]
+liweather = liweather:main

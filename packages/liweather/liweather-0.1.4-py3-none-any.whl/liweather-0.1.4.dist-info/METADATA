@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: liweather
+Version: 0.1.4
+Summary: Add your description here
+Requires-Python: >=3.13
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: mcp[cli]>=1.10.1
+Requires-Dist: twine>=6.1.0
+Description-Content-Type: text/markdown
+
+cd liweather
+# 安装构建工具
+uv add build twine
+# 构建您的Python包
+uv run -m build
+# 上传您的Python包
+uv run -m twine upload dist/***.whl
+# 通过inspector快速测试
+npx @modelcontextprotocol/inspector uvx liweather
