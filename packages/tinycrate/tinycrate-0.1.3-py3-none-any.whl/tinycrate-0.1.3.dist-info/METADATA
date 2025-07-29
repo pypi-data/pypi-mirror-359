@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: tinycrate
+Version: 0.1.3
+Summary: A lightweight RO-Crate library
+Author-email: Mike Lynch <m.lynch@sydney.edu.au>, Peter Sefton <p.sefton@uq.edu.au>
+Requires-Python: >=3.11
+Requires-Dist: requests>=2.32.3
+Requires-Dist: types-requests>=2.32.0.20250602
+Description-Content-Type: text/markdown
+
+# tinycrate
+
+A minimal RO-Crate library in Python with an emphasis on working transparently
+with crates on disk and crates over the network.
+
+## Usage
+
+    from tinycrate.tinycrate import TinyCrate
+
+    tc_from_json = TinyCrate(jsonld)
+    tc_from_url = TinyCrate(url)
+    tc_from_disk = TinyCrate(crate_path)
+
+    r = tc_from_url.root()
+
+    for entity in tc_from_url.all():
+        for prop.value in entity.items():
+            print(f"{prop}: {value}"")
+        if entity.type == "File":
+            contents = entity.fetch()
+            print(contents)
+    
