@@ -1,0 +1,30 @@
+[project]
+name = "stash-basic"
+version = "1.0.0"
+description = "The CLI tool for recording all your money related transactions!"
+keywords = ["cli", "personal finance", "budget", "transactions", "money"]
+authors = [
+    { name = "Sumeet Hande", email = "hande.sumeet38@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Office/Business :: Financial"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "tabulate>=0.8.0"
+]
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+stash = "stash_basic.main:cli"
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
