@@ -1,0 +1,10 @@
+README.md
+setup.py
+auto_stomp/__init__.py
+auto_stomp/frame.py
+auto_stomp/stomp.py
+auto_stomp.egg-info/PKG-INFO
+auto_stomp.egg-info/SOURCES.txt
+auto_stomp.egg-info/dependency_links.txt
+auto_stomp.egg-info/requires.txt
+auto_stomp.egg-info/top_level.txt
