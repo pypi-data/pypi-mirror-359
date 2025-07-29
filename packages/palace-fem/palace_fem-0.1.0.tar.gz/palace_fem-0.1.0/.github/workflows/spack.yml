@@ -1,0 +1,143 @@
+name: Spack
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  # Note that each spack version needs it's own registry
+  SPACK_VERSION: develop
+  REGISTRY: ghcr.io/awslabs/palace
+  GITHUB_USER: ${{ github.actor }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build-and-test-spack:
+    strategy:
+      fail-fast: false # don't have one build stop others from finishing
+      matrix:
+        compiler: [gcc] #, clang, intel]
+        gpu: [none] #, cuda, rocm]
+        blas: [openblas] # ,intel-oneapi-mkl]
+        spack_version: [develop] # ,v0.23.1]
+        mpi: [openmpi] #, mpich, mvapich]
+    runs-on: palace_ubuntu-latest_16-core
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Clang compiler
+        if: matrix.compiler == 'clang'
+        run: sudo apt-get install -y clang lld
+      - name: Configure Intel oneAPI compiler
+        if: matrix.compiler == 'intel'
+        run: sudo apt-get install -y intel-oneapi-compiler-dpcpp-cpp=2024.2.1-1079 \ intel-oneapi-compiler-fortran=2024.2.1-1079
+      - name: Setup Spack
+        uses: spack/setup-spack@v2
+        with:
+          ref: develop
+          buildcache: true
+          color: true
+          # This seems unecessary, but otherwise we clone into ./spack
+          # This then would override the spack local repo dir, and break CI
+          path: spack-path
+      - name: Setup Environment
+        run: |
+          # Configure GPU variant
+          if [[ "${{ matrix.gpu }}" == 'cuda' ]]; then
+            GPU_VARIANT="+cuda cuda_arch=70"
+          elif [[ "${{ matrix.gpu }}" == 'rocm' ]]; then
+            GPU_VARIANT="+rocm amdgpu_target=gfx900"
+          else
+            GPU_VARIANT=""
+          fi
+
+          # Develop requires ^compiler, not %compiler
+          if [[ "${{ matrix.spack_version }}" == 'v0.23.1' ]]; then
+            PALACE_SPEC="local.palace@develop %${{ matrix.compiler }} ${GPU_VARIANT} ^${{ matrix.mpi }} ^${{ matrix.blas }}"
+          else
+            PALACE_SPEC="local.palace@develop${GPU_VARIANT} ^${{ matrix.mpi }} ^${{ matrix.blas }} ^${{ matrix.compiler }}"
+          fi
+
+          # Spack.yaml with most / all settings configured
+          cat << EOF > spack.yaml
+          spack:
+            specs:
+              - ${PALACE_SPEC}
+            view: false
+            config:
+              install_tree:
+                root: /opt/spack
+                padded_length: False
+            concretizer:
+              reuse: false
+              unify: true
+              targets:
+                granularity: generic
+            packages:
+              petsc:
+                require: ~hdf5
+              rocblas:
+                require: ~tensile
+            repos:
+            - spack/local
+            mirrors:
+              spack:
+                binary: true
+                url: https://binaries.spack.io/${SPACK_VERSION}
+              local-buildcache:
+                binary: true
+                autopush: true
+                url: oci://${{ env.REGISTRY }}-${SPACK_VERSION}
+                signed: false
+                access_pair:
+                  id_variable: GITHUB_USER
+                  secret_variable: GITHUB_TOKEN
+          EOF
+      - name: Configure External Packages
+        run: |
+          # These cause build issues if built as externals
+          #   - python : often distributed python isn't feature complete / not all dependencies get detected
+          #   - OpenSSL / OpenSSH : since they are in /usr, spack struggles. It's common to rebuild these
+          #   - ncurses / bzip2 / xz / curl : caused build issues. We pull these from GHCR cache after first build
+          spack -e . external find --all \
+            --exclude openssl \
+            --exclude openssh \
+            --exclude python \
+            --exclude ncurses \
+            --exclude bzip2 \
+            --exclude xz \
+            --exclude curl
+      - name: Configure Compilers
+        run: spack -e . compiler find && spack -e . compiler list
+      - name: Configure Binary Mirror Keys
+        run: |
+          # If we cached these, that would be faster and safer
+          spack -e . buildcache keys --install --trust
+      - name: Bootstrap
+        run: spack -e . bootstrap now
+      - name: Concretize
+        # In theory we can re-use a concretization and pin a spack to speed this up.
+        # Unfortunately it then becomes difficult to know when to re-concretize.
+        run: |
+          # Using `spack develop` in order to have an in-source build
+          spack -e . develop --path=$(pwd) local.palace@git."${{ github.head_ref || github.ref_name }}"=develop
+          spack -e . concretize -f
+      - name: Build Dependencies
+        run: |
+          spack -e . install --only-concrete --no-check-signature --fail-fast --show-log-on-error --only dependencies
+      - name: Build Palace
+        # Build palace from source using this current directory
+        # We use `--no-cache` in order to force a rebuild
+        run: spack -e . install --only-concrete --keep-stage --show-log-on-error --only package --no-cache
+      # Should we run unit tests as well here?
+      - name: Run Integration Tests
+        if: matrix.gpu == 'none' # Skip tests for GPU builds
+        env:
+          NUM_PROC_TEST_MAX: "8"
+        run: |
+          eval $(spack -e . load --sh palace)
+          # Run tests
+          julia --project=test/examples -e 'using Pkg; Pkg.instantiate()'
+          julia --project=test/examples --color=yes test/examples/runtests.jl

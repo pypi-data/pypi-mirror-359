@@ -1,0 +1,15 @@
+align_assignment = true
+align_conditional = true
+align_matrix = true
+align_pair_arrow = true
+align_struct_field = true
+always_use_return = true
+annotate_untyped_fields_with_any = false
+format_docstrings = true
+indent = 4
+margin = 92
+remove_extra_newlines = true
+trailing_comma = false
+whitespace_in_kwargs = false
+whitespace_ops_in_indices = true
+whitespace_typedefs = true
