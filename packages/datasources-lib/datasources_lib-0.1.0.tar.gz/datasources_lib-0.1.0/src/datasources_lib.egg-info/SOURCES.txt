@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/datasources_lib/__init__.py
+src/datasources_lib/base.py
+src/datasources_lib/config.py
+src/datasources_lib/exceptions.py
+src/datasources_lib/pool.py
+src/datasources_lib.egg-info/PKG-INFO
+src/datasources_lib.egg-info/SOURCES.txt
+src/datasources_lib.egg-info/dependency_links.txt
+src/datasources_lib.egg-info/requires.txt
+src/datasources_lib.egg-info/top_level.txt
+src/datasources_lib/opcua/__init__.py
+src/datasources_lib/opcua/client.py
