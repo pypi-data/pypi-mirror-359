@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fr8"
+version = "0.0.4"
+authors = [
+  { name="Kian Kyars", email="kiankyars@gmail.com" },
+]
+description = "Calculate your distance from fr8."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "geopy"
+]
+
+[project.urls]
+Homepage = "https://github.com/kiankyars/pypi"
