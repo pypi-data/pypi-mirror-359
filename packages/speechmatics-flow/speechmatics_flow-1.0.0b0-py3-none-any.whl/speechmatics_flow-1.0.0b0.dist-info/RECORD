@@ -1,0 +1,16 @@
+speechmatics/__init__.py,sha256=ED6jHcYiuYpr_0vjGz0zx2lrrmJT9sDJCzIljoDfmlM,65
+speechmatics/flow/__init__.py,sha256=VQf6VNwzgQda440LZlKkq2kSPhMu5G3Byao99gfazTo,1848
+speechmatics/flow/_async_client.py,sha256=vVO25sg15ipZ2annfPicQ5-C62V4gThszPRcqVz31Rg,18229
+speechmatics/flow/_auth.py,sha256=5boGBJP0UsvcD-DKH72sngSwgOE1brgdVc9GtFf6oA4,4893
+speechmatics/flow/_events.py,sha256=q8FxX0dHsNS2PNp18AzxztHAOyHjT1054XoSjKXhbXM,4834
+speechmatics/flow/_exceptions.py,sha256=x3SkOHHYpxhSYyLSNMW8Med09FDgHCfzlFJayonArfY,1244
+speechmatics/flow/_logging.py,sha256=YTJWUJgib4NaoEWqSsamBQOHDDphca1NDXN5ME1Ss7c,1557
+speechmatics/flow/_models.py,sha256=IzLBRmbvu3bYKQPRDnRTdX80Ohz_rmaPQDJYsrnuGjw,6939
+speechmatics/flow/_transport.py,sha256=uyxEAbb7V_8qNrgYr8rOpcM-kgtOKN23S3bYgZRVygY,10822
+speechmatics/flow/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+speechmatics/flow/_utils/audio.py,sha256=VG_hK6VyiJNxjrL5TimZTkoQELOoFieyLOIZzllJDfs,1281
+speechmatics/flow/_utils/version.py,sha256=WlSYjRNPAVupcZXEk6hW7ZlfIhccglcN6KJCNpF64ME,457
+speechmatics_flow-1.0.0b0.dist-info/METADATA,sha256=c0AJgnD3XERW3-lro9sJMrmiiBEysFywqHuEbB66YCs,3334
+speechmatics_flow-1.0.0b0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+speechmatics_flow-1.0.0b0.dist-info/top_level.txt,sha256=ZS3Qz-FwYvfrJJHlVLJCKAavrNZSp9Z708A1YtmJvaM,13
+speechmatics_flow-1.0.0b0.dist-info/RECORD,,
