@@ -1,0 +1,136 @@
+Metadata-Version: 2.4
+Name: mpdd-alignn
+Version: 1.2.0
+Summary: Our version of the NIST-JARVIS ALIGNN optimized in terms of model performance and to some extent reliability, for large-scale deployments over the MPDD infrastructure by Phases Research Lab.
+Author-email: "Adam M. Krajewski" <adam@phaseslab.org>
+Project-URL: Homepage, https://github.com/PhasesResearchLab/mpdd-alignn
+Project-URL: Bug Tracker, https://github.com/PhasesResearchLab/mpdd-alignn/issues
+Project-URL: Research Page, https://phaseslab.com/mpdd
+Project-URL: MPDD OPTIMADE Access, https://optimade.mpdd.org
+Project-URL: MPDD Simple GUI, http://mpdd.org
+Project-URL: ALIGNN, https://github.com/usnistgov/alignn
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: spglib==2.0.2
+Requires-Dist: numpy<2.0.0,>=1.26.0
+Requires-Dist: scipy>=1.11.0
+Requires-Dist: jarvis-tools>=2021.07.19
+Requires-Dist: torch>=2.1.0
+Requires-Dist: torchdata==0.9.0
+Requires-Dist: dgl>=1.1.3
+Requires-Dist: scikit-learn>=1.3.1
+Requires-Dist: matplotlib>=3.4.1
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: pandas>=1.2.3
+Requires-Dist: pydantic_settings
+Requires-Dist: ruamel.yaml
+Requires-Dist: pysmartdl2
+Provides-Extra: full
+Requires-Dist: pytorch-ignite>=0.5.0.dev20221024; extra == "full"
+Requires-Dist: ase; extra == "full"
+Requires-Dist: flake8>=3.9.1; extra == "full"
+Requires-Dist: pycodestyle>=2.7.0; extra == "full"
+Requires-Dist: pydocstyle>=6.0.0; extra == "full"
+Requires-Dist: pyparsing<3,>=2.2.1; extra == "full"
+Requires-Dist: accelerate>=0.20.3; extra == "full"
+Dynamic: license-file
+
+# MPDD - ALIGNN Calculator
+
+This tool is a modified version of the **NIST-JARVIS** [**`ALIGNN`**](https://github.com/usnistgov/alignn) optimized in terms of model performance and to some extent reliability, for large-scale deployments over the [**`MPDD`**](https://phaseslab.org/mpdd) infrastructure by Phases Research Lab.
+
+## Critical Changes
+
+Key modifications that were made here:
+- A set of models of interest has been selected and defined in [**`config.yaml`**](alignn/config.yaml) for consistency, readability, and easy tracking. These are the models which will be populating MPDD.
+- **Dependency optimizations for running models**, skipping by default installation of several packages needed only for training and auxiliary tasks. Full
+set can still be installed by `pip install "mpdd-alignn[full]"`.
+- The process of model fetching was far too slow using `pretrained.get_figshare_model()`; thus, we reimplemented it similar to [`pySIPFENN`](https://pysipfenn.org) by multi-threading connection to Figshare via `pysmartdl2` we maintain, and parallelize the process on per-model basis. **Model download is now 7 times faster**, fetching all 7 default models in 6.1 vs 41.4 seconds.
+- Optimized what is included in the built package. Now, its **package size is reduced 33.5 times**, from 21.7MB to 0.65MB.
+- Streamlined operation, where we can get results for a directory of POSCARS for all default models in just 3 quick lines
+    ```python
+    from alignn import pretrained
+    pretrained.download_default_models()
+    result = pretrained.run_models_from_directory('example.SigmaPhase', mode='serial')
+    ```
+
+    Which give us neat:
+
+    ```
+    [
+        {
+            'name': '22-Fe10Ni20.POSCAR',
+            'ALIGNN-Alexandria Bandgap [eV]': 0.001391,
+            'ALIGNN-Alexandria Formation Energy [eV/atom]': 0.095294,
+            'ALIGNN-Alexandria Volume Per Atom [A^3]': 11.140231,
+            'ALIGNN-JARVIS Bulk Modulus [GPa]': 183.945847,
+            'ALIGNN-JARVIS Exfoliation Energy [meV/atom]': 350.855591,
+            'ALIGNN-JARVIS Formation Energy [eV/atom]': 0.027578,
+            'ALIGNN-JARVIS MBJ Bandgap [eV]': 0.017667,
+            'ALIGNN-JARVIS Shear Modulus [GPa]': 74.540077,
+            'ALIGNN-MP Formation Energy [eV/atom]': -0.045874,
+            'ALIGNN-MP PBE Bandgap [eV]': 0.01164,
+        },
+        {
+            'name': '2-Fe8Ni22.POSCAR',
+            'ALIGNN-Alexandria Bandgap [eV]': 0.001679,
+            'ALIGNN-Alexandria Formation Energy [eV/atom]': 0.25086,
+            'ALIGNN-Alexandria Volume Per Atom [A^3]': 10.656669,
+            'ALIGNN-JARVIS Bulk Modulus [GPa]': 187.983017,
+            'ALIGNN-JARVIS Exfoliation Energy [meV/atom]': 352.69455,
+            'ALIGNN-JARVIS Formation Energy [eV/atom]': 0.025119,
+            'ALIGNN-JARVIS MBJ Bandgap [eV]': 0.010531,
+            'ALIGNN-JARVIS Shear Modulus [GPa]': 80.09848,
+            'ALIGNN-MP Formation Energy [eV/atom]': -0.042081,
+            'ALIGNN-MP PBE Bandgap [eV]': 0.019553,
+        },
+        {
+            'name': '11-Fe10Ni20.POSCAR',
+            'ALIGNN-Alexandria Bandgap [eV]': 0.001165,
+            'ALIGNN-Alexandria Formation Energy [eV/atom]': 0.217117,
+            'ALIGNN-Alexandria Volume Per Atom [A^3]': 10.583747,
+        ...
+    ```
+
+## ALIGNN Compatibility and Install
+
+In general, we tried to retain full compatibility with the original `ALIGNN`, so this should be a drop-in replacement. You have to simply:
+
+    pip install mpdd-alignn
+
+or (as recommended) clone this repository and
+
+    pip install -e .
+
+## `DGL` Issues
+
+On some platforms, `pip` may struggle to get the `dgl` from PyPI that is compatible with the `torch` version you need for other dependencies and so on. In such case, we recommend to install lightweight (CPU) version of `torch` and matching `dgl` that should work well together by:
+```shell
+pip install torch==2.3.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
+and
+```shell
+pip install  dgl -f https://data.dgl.ai/wheels/torch-2.3/repo.html
+```
+adjusting the torch version in both to your needs.
+
+## Contributions
+
+Please direct all contributions to [the ALIGNN repository](https://github.com/usnistgov/alignn). We will be synching our fork with them every once in a while and can do it quickly upon reasonable request. 
+
+The only contributions we will accept here are:
+- Expanding the list of default models.
+- Performance improvements to our section of the code.
