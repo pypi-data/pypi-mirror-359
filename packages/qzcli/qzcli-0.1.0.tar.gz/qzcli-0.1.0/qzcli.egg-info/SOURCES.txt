@@ -1,0 +1,8 @@
+setup.py
+qz/__init__.py
+qz/qz.py
+qzcli.egg-info/PKG-INFO
+qzcli.egg-info/SOURCES.txt
+qzcli.egg-info/dependency_links.txt
+qzcli.egg-info/entry_points.txt
+qzcli.egg-info/top_level.txt
