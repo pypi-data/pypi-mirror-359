@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+bigtiger.egg-info/PKG-INFO
+bigtiger.egg-info/SOURCES.txt
+bigtiger.egg-info/dependency_links.txt
+bigtiger.egg-info/top_level.txt
