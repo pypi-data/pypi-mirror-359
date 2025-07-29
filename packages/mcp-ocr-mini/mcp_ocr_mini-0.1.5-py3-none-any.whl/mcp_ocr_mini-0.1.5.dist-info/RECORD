@@ -1,0 +1,9 @@
+mcp_ocr_mini/__init__.py,sha256=8656CqSlekr-ZdMspHE7DxvenYvGbSbi1YyJ8wBgeNI,246
+mcp_ocr_mini/__main__.py,sha256=Y2zJ8pOn0TsRNk1fcaL4UjExJc8EEfeXiXOlUBPKNQg,426
+mcp_ocr_mini/install_tesseract.py,sha256=8gmwk9Kr4qWbYvQ6JccLEy61ibtUWoBWSvb41LOVAvk,6517
+mcp_ocr_mini/server.py,sha256=kpQc5FC76UP5rn_uvEvO8Z0RFUscX0kShXr-tfuFhfg,8394
+mcp_ocr_mini-0.1.5.dist-info/METADATA,sha256=71EO7SylhE9q5menZtaroZb9ycxEkKNMNBR-WXFo42U,946
+mcp_ocr_mini-0.1.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_ocr_mini-0.1.5.dist-info/entry_points.txt,sha256=XIEiVge4zza7utjT96rTFdga_Xv34XHIU9RZrd1uXHs,60
+mcp_ocr_mini-0.1.5.dist-info/licenses/LICENSE,sha256=h3qrVk4QvPQCvb0OIO7fnfDodeRXU-DbJU6eXLAvbM8,1077
+mcp_ocr_mini-0.1.5.dist-info/RECORD,,
