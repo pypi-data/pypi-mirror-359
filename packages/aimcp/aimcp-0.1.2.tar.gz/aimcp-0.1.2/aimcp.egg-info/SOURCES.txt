@@ -1,0 +1,16 @@
+.gitignore
+CONTRIBUTING.md
+LICENSE
+Makefile
+README.md
+pyproject.toml
+aimcp/__init__.py
+aimcp/_prompt.py
+aimcp/aimcp.py
+aimcp.egg-info/PKG-INFO
+aimcp.egg-info/SOURCES.txt
+aimcp.egg-info/dependency_links.txt
+aimcp.egg-info/requires.txt
+aimcp.egg-info/top_level.txt
+tests/__init__.py
+tests/test_aimcp.py
