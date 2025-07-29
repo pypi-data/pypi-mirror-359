@@ -1,0 +1,56 @@
+# file: /trustloop-python/pyproject.toml
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trustloop"
+version = "0.1.0"
+description = "TrustLoop Python client for interacting with TrustLoop servers"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "TrustLoop", email = "hello@trustloop.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["trustloop", "api", "client", "data", "domains"]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/trustloop/trustloop-python"
+Repository = "https://github.com/trustloop/trustloop-python"
+Documentation = "https://docs.trustloop.com"
+"Bug Tracker" = "https://github.com/trustloop/trustloop-python/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "isort>=5.0",
+    "flake8>=4.0",
+    "build>=0.8.0",
+    "twine>=4.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["trustloop*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
