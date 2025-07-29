@@ -1,0 +1,11 @@
+NOTES
+=====
+
+
+Everything comes back as an array
+
+type can be an array
+
+reverse links - get properties coming from elsewhere
+
+- if values is an object
