@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+codeagents/__init__.py
+codeagents/core.py
+codeagents.egg-info/PKG-INFO
+codeagents.egg-info/SOURCES.txt
+codeagents.egg-info/dependency_links.txt
+codeagents.egg-info/top_level.txt
