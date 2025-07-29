@@ -1,0 +1,2 @@
+[console_scripts]
+jtmv = jtmv.jtmv:main
