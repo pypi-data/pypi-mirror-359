@@ -1,0 +1,23 @@
+[project]
+name = "freshfiles"
+version = "0.2.0"
+description = "Checks if all specified files are fresher (younger) than a given expiry age"
+readme = "README.md"
+authors = [
+    { name = "Max", email = "max@noreply.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.16.0",
+]
+
+[project.urls]
+homepage = "https://github.com/maximehk/freshfiles"
+repository = "https://github.com/maximehk/freshfiles"
+
+[project.scripts]
+freshfiles = "freshfiles:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
