@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+deepseek_code.egg-info/PKG-INFO
+deepseek_code.egg-info/SOURCES.txt
+deepseek_code.egg-info/dependency_links.txt
+deepseek_code.egg-info/top_level.txt
+demo/app.py
