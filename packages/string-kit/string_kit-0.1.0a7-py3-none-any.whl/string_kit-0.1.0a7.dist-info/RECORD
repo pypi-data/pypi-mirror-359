@@ -1,0 +1,11 @@
+string_kit-0.1.0a7.dist-info/METADATA,sha256=iLS_tlWpTg75t3N-4Aw4T8dxiECVssatN6om3Y0VPL4,5460
+string_kit-0.1.0a7.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+string_kit-0.1.0a7.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+string_kit-0.1.0a7.dist-info/licenses/LICENSE,sha256=lkDJ2S0r25IJgsMinNoUrOmA-T90o_dMlgb_BMaYSb0,1066
+string_kit/__init__.py,sha256=bRLihG9Ct8nRkiLoJ1GE6k_iMkbJ46KVptgSeDd4tkU,181
+string_kit/formatter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+string_kit/formatter/convertors.py,sha256=vdCkXADjfOkQCQHVQ3DUJvBAqqRR8_ymVl0H_CW2SQ8,783
+string_kit/formatter/formatter.py,sha256=aWq1FH7D2YQGrGXgS2yXhPstp-c9AN96_2Qzzf1sSvw,13284
+string_kit/formatter/formatter_iterator.py,sha256=_56egG7Q0eNg_NShTzehXUJ7HMgjrxENz5TNuAiAzQo,13703
+string_kit/version.py,sha256=o8GzRMaxIvJYblikhCwLR78bLgWbywsCK_QUjN0komg,23
+string_kit-0.1.0a7.dist-info/RECORD,,
