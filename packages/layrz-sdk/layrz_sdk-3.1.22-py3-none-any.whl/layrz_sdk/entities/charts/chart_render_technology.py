@@ -1,0 +1,31 @@
+"""Chart rendering technology / library"""
+
+import sys
+
+if sys.version_info >= (3, 11):
+  from enum import StrEnum
+  from typing import Self
+else:
+  from strenum import StrEnum
+  from typing_extensions import Self
+
+
+class ChartRenderTechnology(StrEnum):
+  """
+  Chart Alignment
+  """
+
+  CANVAS_JS = 'CANVAS_JS'
+  GRAPHIC = 'GRAPHIC'
+  SYNCFUSION_FLUTTER_CHARTS = 'SYNCFUSION_FLUTTER_CHARTS'
+  FLUTTER_MAP = 'FLUTTER_MAP'
+  APEX_CHARTS = 'APEX_CHARTS'
+  FLUTTER = 'FLUTTER'
+
+  def __str__(self: Self) -> str:
+    """Readable property"""
+    return self.name
+
+  def __repr__(self: Self) -> str:
+    """Readable property"""
+    return f'ChartRenderTechnology.{self.value}'
