@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+Ntfy_CSV_Reminders/Ntfy_CSV_Reminders.py
+Ntfy_CSV_Reminders/__init__.py
+Ntfy_CSV_Reminders/__main__.py
+ntfy_csv_reminders.egg-info/PKG-INFO
+ntfy_csv_reminders.egg-info/SOURCES.txt
+ntfy_csv_reminders.egg-info/dependency_links.txt
+ntfy_csv_reminders.egg-info/entry_points.txt
+ntfy_csv_reminders.egg-info/requires.txt
+ntfy_csv_reminders.egg-info/top_level.txt
