@@ -1,0 +1,48 @@
+# pyproject.toml (最终版 - 无 GitHub 仓库)
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "EEBD-GESAM2"
+version = "0.1.133" # 发布前可以再增加版本号
+authors = [
+  { name="Yaopeng Han", email="hanyp@qibebt.ac.cn" },
+]
+description = "一个基于 SAM2 和 Tkinter 的交互式图像分割与标注工具。"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file="LICENSE" }
+keywords = ["sam", "sam2", "segmentation", "annotation", "gui", "tkinter", "pytorch", "labelme"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+    "torch>=1.8",
+    "numpy",
+    "Pillow",
+    "opencv-python",
+    "appdirs>=1.4.4"
+]
+
+# --- [project.urls] 部分已完全删除 ---
+
+
+# --- Setuptools 特定配置 ---
+
+[project.scripts]
+eebd-gesam2 = "sam2_annotator.main:start"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sam2_annotator = ["configs/sam2/*.yaml"]
