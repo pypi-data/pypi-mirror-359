@@ -1,0 +1,5 @@
+[console_scripts]
+mps = mps.cli:main
+
+[gui_scripts]
+

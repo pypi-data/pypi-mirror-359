@@ -1,0 +1,2 @@
+When displaying mathematical formulas, use standard markdown math notation
+with $ for inline math and $$ for block math, not square brackets.

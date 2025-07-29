@@ -1,0 +1,2 @@
+If opening a text editor is required in a specific step always default to
+{{editor}} in your response and command line examples
