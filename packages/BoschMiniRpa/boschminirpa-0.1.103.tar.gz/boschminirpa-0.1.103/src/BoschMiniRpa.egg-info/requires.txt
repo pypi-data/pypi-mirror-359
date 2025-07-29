@@ -1,0 +1,9 @@
+selenium==4.8.0
+BoschRpaMagicBox
+opencv-python
+pillow
+pandas
+openpyxl
+XlsxWriter
+natsort
+truststore
