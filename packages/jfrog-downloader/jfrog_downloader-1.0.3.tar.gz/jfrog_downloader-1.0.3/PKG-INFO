@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: jfrog-downloader
+Version: 1.0.3
+Summary: Downloading Images from Jfrog
+Author: abi-sheak
+Author-email: abisheakkumarasamy@gmail.com
+License: Apache License 2.0
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jfrgdownload
+Requires-Dist: abisheak
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Jfrog-Downloader
+Download Files and Folders from jfrog Repository

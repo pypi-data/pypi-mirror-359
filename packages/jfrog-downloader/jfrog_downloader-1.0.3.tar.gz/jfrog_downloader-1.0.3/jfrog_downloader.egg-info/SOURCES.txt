@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+Library/JFROGDownloader.py
+Library/__init__.py
+jfrog_downloader.egg-info/PKG-INFO
+jfrog_downloader.egg-info/SOURCES.txt
+jfrog_downloader.egg-info/dependency_links.txt
+jfrog_downloader.egg-info/requires.txt
+jfrog_downloader.egg-info/top_level.txt
