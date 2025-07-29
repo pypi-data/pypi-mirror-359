@@ -1,0 +1,7 @@
+pydantic
+typing
+zodable-idschema
+zodable-sample-package-multiplatform
+uuid
+zodable-kotlin-primitives
+datetime
