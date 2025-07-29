@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+gan_face_generate/__init__.py
+gan_face_generate/dataset.py
+gan_face_generate/inference.py
+gan_face_generate/models.py
+gan_face_generate/train.py
+gan_face_generate/weights.tar
+gan_face_generate.egg-info/PKG-INFO
+gan_face_generate.egg-info/SOURCES.txt
+gan_face_generate.egg-info/dependency_links.txt
+gan_face_generate.egg-info/entry_points.txt
+gan_face_generate.egg-info/requires.txt
+gan_face_generate.egg-info/top_level.txt
+tests/test_inference.py

@@ -1,0 +1,2 @@
+[console_scripts]
+gan_face_generate = gan_face_generate.inference:main

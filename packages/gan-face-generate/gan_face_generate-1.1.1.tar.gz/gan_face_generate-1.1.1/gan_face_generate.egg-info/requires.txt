@@ -1,0 +1,16 @@
+matplotlib>=3.8.0
+numpy>=1.26.0
+platformdirs>=4.3.8
+requests>=2.32.4
+torch>=2.1.0
+torchvision>=0.16.0
+tqdm>=4.67.1
+wandb[media]>=0.20.1
+
+[dev]
+mypy==1.16.1
+pandas-stubs>=2.0.0
+pre-commit>=3.0.0
+pytest>=8.4.1
+ruff==0.12.1
+types-requests>=2.32
