@@ -1,0 +1,22 @@
+# UU Battery Package
+This is a package intended for interacting with the UU battery data handler project. For more information, see [UU-Battery-Data-Handler on GitHub]("https://github.com/fabianwilson/UU-Battery-Data-Handler").
+
+**Installation:** `pip install uu-battery`
+
+## Requires
+- [Pandas]("https://pandas.pydata.org/") (`pip install pandas`)
+- [Requests]("https://requests.readthedocs.io/en/latest/") (`pip install requests`)
+## Features
+Currently the package consists of a single function `get_data(file_id, cas_key)` which fetches data with a specific ID and outputs it as a pandas dataframe. As input the function requires a string with the ID of the file with the data and a CAS key of a user-session which is authorized to access to data. Both of these can be obtained at https://researchcloud.kemi.uu.se/datasets, for more information please refer to [UU-Battery-Data-Handler on GitHub]("https://github.com/fabianwilson/UU-Battery-Data-Handler"). While the file ID is constant for a specific file, note that the cas_key expires on session. The length of a session is configured by the CAS setup but by default this is 2 hours for an active session and 1 hour for an inactive session. After the end of a session the user needs to reauthenticate at https://researchcloud.kemi.uu.se to obtain a new CAS key.
+
+**Example code:**
+```python
+import pandas as pd
+import uu_battery
+
+file_id="6316ffd3-67f3-4bd0-98c5-2beb6e944938" #Obtain from the frontend
+cas_key="0cb1ab7c3196a6ac3263d24c34f248d7" #Obtain a new key for each new session
+
+data=uu_battery.get_data(file_id, cas_key)
+print(data.head(5))
+```
