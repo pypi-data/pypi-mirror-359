@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: textbuddy
+Version: 0.3.4
+Summary: Simple string and text utilities for Indian contexts for beginners.
+Author-email: Amit Dutta <amitdutta4255@gmail.com>
+Project-URL: Homepage, https://github.com/notamitgamer/textbuddy
+Project-URL: Bug Tracker, https://github.com/notamitgamer/textbuddy/issues
+Keywords: india,text,string,currency,phone,date,beginner,utilities
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Office/Business
+Classifier: Intended Audience :: Education
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# textbuddy
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Simple and easy-to-use Python utilities for common string and text manipulation tasks in an Indian context. Designed with beginners in mind!
+
+## Features
+
+* **`format_rupee(amount)`**: Formats numbers into Indian Rupees (e.g., `₹ 12,34,567.89`).
+* **`standardize_indian_phone(number_string)`**: Standardizes Indian phone numbers (e.g., `+919876543210`).
+* **`parse_indian_date(date_string)`**: Parses common Indian date formats (e.g., `DD-MM-YYYY`).
+* **`clean_text_basic(text)`**: Basic text cleaning (removes extra spaces, strips whitespace).
+* **`remove_emoji(text)`**: Strips emojis from strings.
+
+## Installation
+
+You can install `textbuddy` using pip. First, make sure you have Python installed (version 3.7 or higher).
+
+Then, open your Command Prompt (Windows) or Terminal (Mac/Linux) and type:
+
+```bash
+pip install textbuddy

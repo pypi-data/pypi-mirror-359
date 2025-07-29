@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+textbuddy/__init__.py
+textbuddy/utils.py
+textbuddy.egg-info/PKG-INFO
+textbuddy.egg-info/SOURCES.txt
+textbuddy.egg-info/dependency_links.txt
+textbuddy.egg-info/top_level.txt
