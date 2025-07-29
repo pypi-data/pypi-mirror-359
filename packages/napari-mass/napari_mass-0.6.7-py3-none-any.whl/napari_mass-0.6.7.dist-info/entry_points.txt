@@ -1,0 +1,2 @@
+[napari.manifest]
+napari-mass = napari_mass:napari.yaml
