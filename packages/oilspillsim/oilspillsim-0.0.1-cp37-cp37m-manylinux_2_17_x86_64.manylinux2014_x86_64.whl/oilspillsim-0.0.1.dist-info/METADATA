@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: oilspillsim
+Version: 0.0.1
+Summary: First package version of Oil Spill simulator
+Home-page: https://github.com/AloePacci/cpp_oil_simulator
+Author: Alejandro Casado Pérez
+Author-email: acasado4@us.es
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
