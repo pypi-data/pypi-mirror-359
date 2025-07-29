@@ -1,0 +1,3 @@
+[console_scripts]
+anujstrike = anujstrike.main:main
+anujstrike-gui = anujstrike.gui:main
