@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pynvtt"
+version = "0.0.2"
+description = "A simple Python wrapper for NVTT3 (NVIDIA Texture Tools 3)"
+authors = ["MrVicho13 <vicho0202@gmail.com>"]
+license = "CC0-1.0"
+readme = "README.md"
+homepage = "https://github.com/Hancapo/pynvtt"
+repository = "https://github.com/Hancapo/pyNVTT"
+
+packages = [
+    { include = "nvtt", from = "src" }
+]
+
+include = [
+    "src/nvtt/libs/*.dll",  # Windows libraries
+    "src/nvtt/libs/*.so*",  # Linux libraries
+    "src/nvtt/libs/__init__.py",
+    "src/nvtt/libs/py.typed"
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
