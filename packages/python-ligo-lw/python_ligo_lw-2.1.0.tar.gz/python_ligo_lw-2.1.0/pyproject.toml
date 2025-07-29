@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-ligo-lw"
+version = "2.1.0"
+authors = [
+	{ name = "Kipp Cannon", email = "kipp@g.ecc.u-tokyo.ac.jp" },
+]
+description = "Python LIGO Light-Weight XML I/O Library"
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+	"Development Status :: 6 - Mature",
+	"Intended Audience :: Science/Research",
+	"License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+	"Natural Language :: English",
+	"Operating System :: POSIX",
+	"Programming Language :: Python :: 3",
+	"Topic :: Scientific/Engineering :: Astronomy",
+	"Topic :: Scientific/Engineering :: Physics",
+	"Topic :: Software Development :: Libraries",
+	"Topic :: Text Processing :: Markup :: XML",
+]
+
+[project.urls]
+Homepage = "https://git.ligo.org/kipp/python-ligo-lw"
