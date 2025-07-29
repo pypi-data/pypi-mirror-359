@@ -1,0 +1,10 @@
+anisoap
+benchmarks
+build
+dist
+docs
+notebooks
+paper
+rust
+target
+tests

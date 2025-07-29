@@ -1,0 +1,11 @@
+featomic
+ase
+coverage[toml]
+pytest
+scipy
+setuptools-rust
+tqdm
+metatensor
+wigners
+matplotlib
+skmatter
