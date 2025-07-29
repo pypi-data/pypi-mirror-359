@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+FERS.egg-info/PKG-INFO
+FERS.egg-info/SOURCES.txt
+FERS.egg-info/dependency_links.txt
+FERS.egg-info/not-zip-safe
+FERS.egg-info/requires.txt
+FERS.egg-info/top_level.txt
