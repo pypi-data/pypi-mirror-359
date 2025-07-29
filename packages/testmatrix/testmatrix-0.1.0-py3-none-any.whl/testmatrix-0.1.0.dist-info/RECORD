@@ -1,0 +1,11 @@
+test_matrix.py,sha256=R0sMyNFGzxAWFfUv1KidE5VJIMm5z6LRAC2s_tBwHFg,2248
+src/testmatrix/__init__.py,sha256=a1XzZZL56h4MLTXdxEqV8F3zaC-zFZC3o4M0ZdGAay0,380
+src/testmatrix/jwtauth.py,sha256=tXYRpWPpXElhNZlx26dy7y6884zmOYZi6-RJDk-lMcU,4863
+src/testmatrix/matrixserver.py,sha256=xnns3Vd-H0jF6oYkVIK5rgDGY7G_NakswPo-YNw5tzA,21089
+src/testmatrix/utils.py,sha256=ED6g2JhBMyIfEDc33Jm51bqKMx_xR7_TnejM-uxZDlE,647
+testmatrix-0.1.0.dist-info/licenses/LICENSE,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+testmatrix-0.1.0.dist-info/METADATA,sha256=JxLI25iNdzFWvWomcfHN4U6nqaXKCkt0v-Of3ye6FGU,2505
+testmatrix-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+testmatrix-0.1.0.dist-info/entry_points.txt,sha256=0shtD9k2yycAR5jpdZL63ToT0lSWvXLcEPyOr4bVlIE,48
+testmatrix-0.1.0.dist-info/top_level.txt,sha256=ZA9vDGIexuqslq25dJMPMqZJEmmXgjfxTQRVfEbh_QE,16
+testmatrix-0.1.0.dist-info/RECORD,,
