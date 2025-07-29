@@ -1,0 +1,14 @@
+garmin_daily/__init__.py,sha256=n4PGVW8zPs3zrza9wa0xQS4OF05fusBcYfM7rV5E8P0,361
+garmin_daily/columns_mapper.py,sha256=198K2UYCfBuZuMDhNgAQPiemU-oMNEsgGaJ-YTwfDiY,3974
+garmin_daily/garmin_aggregations.py,sha256=94BUsKECHRVspnipX-Tg43--_PKSZYzUblEjcXAIbJU,16275
+garmin_daily/google_sheet.py,sha256=qKdc9qb7m0h34COsn1WCRFHSB9YmXRLOw-xxAJ87BnI,10399
+garmin_daily/main.py,sha256=P7_cZOvCXtaVJMNTg80lRXz0tg18-3P8lUA3VRPTf8Q,6585
+garmin_daily/mappers.py,sha256=tdrAaL9KXxWCwxaNk8PgV2t_xROdGVExzPJFAaGOQYQ,2617
+garmin_daily/snake_to_camel.py,sha256=N_wBwSSRFXEBus0lbeDRUHOpuUPUIqpM6f-fA57C_hE,1572
+garmin_daily/version.py,sha256=J4GhnlgyqG1LcvJcXZj8d1n1Y7b3zRlYLW5Gqkz8XSI,18
+garmin_daily-1.4.2.dist-info/licenses/LICENSE.txt,sha256=lXOJNkYonDE3JYr3iPX04gTgzdwcZCBQHyuirlkUJsU,1084
+garmin_daily-1.4.2.dist-info/METADATA,sha256=PUb-N81fYDAp3bJLruoj0Vtd3TzjdIw32GV3qH7Bkpk,2577
+garmin_daily-1.4.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+garmin_daily-1.4.2.dist-info/entry_points.txt,sha256=rmq7YQGWZBO8QjZAAmFhNw2oJFVsaPXlu2eOjZnYXTI,56
+garmin_daily-1.4.2.dist-info/top_level.txt,sha256=Om5QfQDCYqKfFzM-pQfChn7RCCL8f8bfOPvLdZMtP44,13
+garmin_daily-1.4.2.dist-info/RECORD,,
