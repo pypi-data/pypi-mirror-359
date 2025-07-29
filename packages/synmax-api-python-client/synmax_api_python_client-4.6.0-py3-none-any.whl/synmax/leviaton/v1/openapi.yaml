@@ -1,0 +1,3707 @@
+components:
+  schemas:
+    400ErrorResponse:
+      properties:
+        error:
+          example: Bad Request
+          type: string
+        message:
+          example: Request body must be a valid JSON object
+          type: string
+      type: object
+    405ErrorResponse:
+      properties:
+        error:
+          example: Method Not Allowed
+          type: string
+        message:
+          example: GET method is not allowed for this endpoint
+          type: string
+      type: object
+    500ErrorResponse:
+      properties:
+        error:
+          example: Internal Server Error
+          type: string
+        message:
+          example: An unexpected error occurred while processing the request
+          type: string
+      type: object
+    501ErrorResponse:
+      properties:
+        error:
+          example: Not Implemented
+          type: string
+        message:
+          example: This endpoint is not implemented yet
+          type: string
+      type: object
+    CountryInformation:
+      properties:
+        code:
+          description: The country code.
+          example: TW
+          nullable: true
+          type: string
+        country_id:
+          description: The unique identifier for the country.
+          example: TWFIWRVIT
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the country information
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        name:
+          description: The name of the country.
+          example: Taiwan
+          type: string
+        polygon:
+          description: The polygon coordinates of the country.
+          example:
+          - - - - 121.0
+                - 22.0
+              - - 121.0
+                - 25.0
+              - - 123.0
+                - 25.0
+              - - 123.0
+                - 22.0
+              - - 121.0
+                - 22.0
+          nullable: true
+          properties:
+            coordinates:
+              items:
+                items:
+                  items:
+                    items:
+                      type: number
+                    type: array
+                  type: array
+                type: array
+              type: array
+            type:
+              enum:
+              - Polygon
+              - MultiPolygon
+              type: string
+          type: object
+      required:
+      - country_id
+      - name
+      - code
+      - polygon
+      - modified_at
+      type: object
+    CountryQuery:
+      properties:
+        ids:
+          description: Filter by country id.
+          example:
+          - TWFIWRVIT
+          items:
+            format: uuid
+            type: string
+          type: array
+        names:
+          description: Filter by country name.
+          example:
+          - Malaysia
+          - Japan
+          items:
+            type: string
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          type: array
+        unrefcodes:
+          description: Filter by port codes.
+          example:
+          - AUGLT
+          - AUSAB
+          items:
+            type: string
+          type: array
+      type: object
+    ForecastTimestamps:
+      properties:
+        forecast_model_package_version:
+          description: The version of the forecast service used to generate the forecast.
+          example: 0.48.1
+          type: string
+        forecast_run_at_timestamp:
+          description: The UTC timestamp of when the forecast was generated.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        forecast_run_uuid:
+          description: The UUID of the generated forecast.
+          example: 667957fd-6905-4c62-afa5-c9fc3cdd7757
+          type: string
+        modified_at:
+          description: The UTC timestamp of when the table was updated.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+      type: object
+    ForecastTransaction:
+      properties:
+        destination_country:
+          description: The country where the transaction is forecasted to occur.
+          example: USA
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to occur.
+          example: US
+          type: string
+        destination_terminal:
+          description: The terminal where the transaction is forecasted to occur.
+          example: Sabine Pass
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_220d7ad08
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9020766
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: USA
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: US
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: Sabine Pass
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_220d7ad08
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          description: The UTC timestamp of the forecasted origin of the transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the forecast
+            transaction in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        timestamp:
+          description: The UTC timestamp of the forecasted transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        transaction_number:
+          description: The unique identifier for the transaction.
+          example: 1
+          type: integer
+        transaction_type:
+          description: The type of a forecast transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: INEOS INTUITION
+          type: string
+        volume:
+          description: The forecasted volume of LNG.
+          example: 2694400.0
+          format: float
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          example: mcf
+          type: string
+      required:
+      - imo
+      - destination_terminal
+      - timestamp
+      - volume
+      - volume_unit
+      - transaction_type
+      - modified_at
+      type: object
+    ForecastTransactionHistory:
+      properties:
+        destination_country:
+          description: The country where the transaction is forecasted to occur.
+          example: USA
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to occur.
+          example: US
+          type: string
+        destination_terminal:
+          description: The terminal where the transaction is forecasted to occur.
+          example: Everett
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_28c27df09
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 7359785
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: USA
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: US
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: Cove Point L
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_28c27df09
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          description: The UTC timestamp of the forecasted origin of the transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the forecast
+            transaction in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        timestamp:
+          description: The UTC timestamp of the actual transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        transaction_number:
+          description: The unique identifier for the transaction.
+          example: 3
+          type: integer
+        transaction_type:
+          description: The type of a forecast transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: offloading
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: BUBUK
+          type: string
+        volume:
+          description: The forecasted volume of LNG.
+          example: 3143155.6788808666
+          format: float
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          example: mcf
+          type: string
+      required:
+      - imo
+      - loading_origin_terminal
+      - loading_origin_country
+      - loading_origin_timestamp
+      - destination_terminal
+      - destination_country
+      - timestamp
+      - volume
+      - volume_unit
+      - transaction_type
+      - forecast_run_at
+      - modified_at
+      type: object
+    RegionInformation:
+      properties:
+        created_at:
+          description: The UTC timestamp of when the region was created.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the region information
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        name:
+          description: The name of the region.
+          example: JKTC
+          type: string
+        region_id:
+          description: The unique identifier for the region.
+          example: region_b7aa7495e
+          type: string
+      required:
+      - region_id
+      - name
+      - modified_at
+      type: object
+    RegionQuery:
+      properties:
+        ids:
+          description: Filter by region id.
+          example:
+          - region_b7aa7495e
+          items:
+            format: uuid
+            type: string
+          type: array
+        include_polygons:
+          default: true
+          description: Whether to include polygons in the response. Set to false to
+            exclude them.
+          example: true
+          type: boolean
+        names:
+          description: Filter by region name.
+          example:
+          - JKTC
+          items:
+            type: string
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          type: array
+      type: object
+    TerminalInfo:
+      properties:
+        berth_count:
+          description: The number of berths at the terminal.
+          example: 1
+          nullable: true
+          type: integer
+        captains_destination_names:
+          description: List of captains destinations associated with this terminal
+          example:
+          - Sabine Pass
+          - Freeport LNG
+          items:
+            type: string
+          nullable: true
+          type: array
+        category:
+          description: The category of the terminal (Liquefaction/Regasification).
+          enum:
+          - Liquefaction
+          - Regasification
+          example: Liquefaction
+          type: string
+        country:
+          description: The country where the terminal is located.
+          example: Australia
+          type: string
+        country_code:
+          description: The ISO 3166-1 alpha-2 country code of the terminal.
+          example: AU
+          type: string
+        first_operation_year:
+          description: The year when the terminal first started operations.
+          example: 2017
+          nullable: true
+          type: integer
+        latitude:
+          description: The latitude of the terminal.
+          example: -13.76867
+          format: float
+          type: number
+        longitude:
+          description: The longitude of the terminal.
+          example: 123.315025
+          format: float
+          type: number
+        modified_at:
+          description: The timestamp of the last modification to the terminal information
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        name:
+          description: The name of the terminal.
+          example: Prelude FLNG
+          type: string
+        nameplate_capacity:
+          description: The nameplate capacity of the terminal.
+          example: 3.6
+          format: float
+          nullable: true
+          type: number
+        nameplate_capacity_unit:
+          description: The unit of measurement for the nameplate capacity.
+          example: mcf
+          nullable: true
+          type: string
+        polygon:
+          description: The polygon coordinates of the terminal.
+          example:
+          - - - - 123.282394
+                - -13.759394
+              - - 123.333035
+                - -13.740219
+              - - 123.340931
+                - -13.770732
+              - - 123.325481
+                - -13.789238
+              - - 123.304195
+                - -13.797573
+              - - 123.291492
+                - -13.78657
+              - - 123.301449
+                - -13.773233
+              - - 123.283596
+                - -13.761562
+              - - 123.282394
+                - -13.759394
+          nullable: true
+          properties:
+            coordinates:
+              items:
+                items:
+                  items:
+                    items:
+                      type: number
+                    type: array
+                  type: array
+                type: array
+              type: array
+            type:
+              enum:
+              - Polygon
+              - MultiPolygon
+              type: string
+          type: object
+        storage_capacity:
+          description: The storage capacity of the terminal.
+          example: 0.0
+          format: float
+          nullable: true
+          type: number
+        storage_capacity_unit:
+          description: The unit of measurement for the storage capacity.
+          example: mcf
+          nullable: true
+          type: string
+        terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_656a17536
+          format: uuid
+          type: string
+        unrefcode:
+          description: The UNREF code of the terminal.
+          example: AUPRL
+          type: string
+      required:
+      - terminal_id
+      - name
+      - unrefcode
+      - category
+      - country_code
+      - country
+      - longitude
+      - latitude
+      - modified_at
+      type: object
+    TerminalQuery:
+      properties:
+        category:
+          description: Filter by terminal category (Liquefaction/Regasification).
+          enum:
+          - Liquefaction
+          - Regasification
+          example: Liquefaction
+          type: string
+        countries:
+          description: Filter by ISO 3166 country names.
+          example:
+          - USA
+          - Japan
+          items:
+            type: string
+          type: array
+        ids:
+          description: Filter by terminal id.
+          example:
+          - terminal_5f9a9c5bb
+          items:
+            format: uuid
+            type: string
+          type: array
+        names:
+          description: Filter by terminal name.
+          example:
+          - Sabine Pass
+          - Mugardos R
+          items:
+            type: string
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          type: array
+        regions:
+          description: Filter by country region.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          type: array
+        unrefcodes:
+          description: Filter by terminal unref code.
+          example:
+          - AUGLT
+          - AUSAB
+          items:
+            type: string
+          type: array
+      type: object
+    TerminalUtilization:
+      properties:
+        berth_count:
+          description: The number of berths at the terminal.
+          type: integer
+        captains_destination_names:
+          description: List of captains destinations associated with this terminal
+          items:
+            type: string
+          type: array
+        category:
+          description: The category of the terminal (Liquefaction/Regasification).
+          enum:
+          - Liquefaction
+          - Regasification
+          type: string
+        country:
+          description: The country where the terminal is located.
+          type: string
+        first_operation_year:
+          description: The year when the terminal first started operations.
+          type: integer
+        id:
+          description: The unique identifier for the terminal.
+          format: uuid
+          type: string
+        latitude:
+          description: The latitude of the terminal.
+          format: float
+          type: number
+        liquefaction_capacity:
+          description: The liquefaction capacity of the terminal.
+          format: float
+          nullable: true
+          type: number
+        longitude:
+          description: The longitude of the terminal.
+          format: float
+          type: number
+        modified_at:
+          description: The timestamp of the last modification to the terminal utilization
+            record in the database.
+          format: date-time
+          type: string
+        name:
+          description: The name of the terminal.
+          type: string
+        polygon:
+          description: The polygon coordinates of the terminal.
+          items:
+            items:
+              format: float
+              type: number
+            type: array
+          nullable: true
+          type: array
+        terminal_timestamp:
+          description: The timestamp of the terminal utilization record.
+          format: date-time
+          type: string
+        unrefcode:
+          description: The UNREF code of the terminal.
+          type: string
+        vessel_count:
+          description: The number of vessels associated with the terminal.
+          type: integer
+        volume_loaded:
+          description: The volume of LNG loaded at the terminal.
+          format: float
+          type: number
+        volume_loaded_unit:
+          description: The unit of measurement for the volume loaded.
+          type: string
+      type: object
+    Transaction:
+      properties:
+        destination_country:
+          description: The country where the terminal is located.
+          example: USA
+          nullable: true
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the terminal is located.
+          example: US
+          nullable: true
+          type: string
+        destination_terminal:
+          description: The name of the terminal where the transaction occurred.
+          example: Sabine Pass
+          nullable: true
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_25cd7fc53
+          format: uuid
+          nullable: true
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        forecasted_transaction:
+          description: Indicates whether the transaction is forecasted.
+          example: true
+          type: boolean
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 8608872
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: Australia
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: AU
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: North West Shelf
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the origin terminal.
+          example: terminal_25cd7fc53
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the transaction
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        timestamp:
+          description: The UTC timestamp of the actual transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        transaction_number:
+          description: The number of the transaction.
+          example: 1
+          nullable: true
+          type: integer
+        transaction_type:
+          description: The type of transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          nullable: true
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: LNGT ANTARCTICA
+          nullable: true
+          type: string
+        volume:
+          description: The volume of LNG involved in the transaction.
+          example: 2667035.0
+          format: float
+          nullable: true
+          type: number
+        volume_unit:
+          description: The unit of measurement for the volume.
+          example: mcf
+          nullable: true
+          type: string
+      required:
+      - imo
+      - loading_origin_terminal
+      - loading_origin_country
+      - loading_origin_timestamp
+      - destination_terminal
+      - destination_terminal_id
+      - destination_country
+      - timestamp
+      - volume
+      - volume_unit
+      - modified_at
+      type: object
+    TransactionDetails:
+      properties:
+        destination_country:
+          description: The country where the terminal is located.
+          example: Japan
+          nullable: true
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the terminal is located.
+          example: JP
+          nullable: true
+          type: string
+        destination_terminal:
+          description: The name of the terminal where the transaction occurred.
+          example: Tobata Kitakyushu
+          nullable: true
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_9a3564cac
+          format: uuid
+          nullable: true
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        forecasted_transaction:
+          description: Indicates whether the transaction is forecasted.
+          example: true
+          type: boolean
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9433884
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: Japan
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: JP
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: Terminal 9220
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the origin terminal.
+          example: terminal_df01c7aa2
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          description: The UTC timestamp of the forecasted origin of the transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the transaction
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        route_score:
+          description: The forecast route score is the product of forecast scores
+            along a given forecast route.
+          example: 0.6942790140289807
+          format: float
+          nullable: true
+          type: number
+        route_score_weighted_volume:
+          description: The forecast volume multiplied by the forecast route score.
+          example: 1826821.6556637555
+          format: float
+          nullable: true
+          type: number
+        score:
+          description: The forecast score is the probability of a single forecast.
+          example: 0.6942790140289807
+          format: float
+          nullable: true
+          type: number
+        timestamp:
+          description: The UTC timestamp of the actual transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        transaction_number:
+          description: The number of the transaction.
+          example: 1
+          nullable: true
+          type: integer
+        transaction_type:
+          description: The type of transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: offloading
+          nullable: true
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: SHINJU MARU NO.2
+          type: string
+        volume:
+          description: The volume of LNG involved in the transaction.
+          example: 0.008897133333333333
+          format: float
+          type: number
+        volume_unit:
+          description: The unit of measurement for the volume.
+          example: bcf
+          type: string
+      required:
+      - imo
+      - loading_origin_country
+      - loading_origin_terminal
+      - loading_origin_timestamp
+      - destination_terminal
+      - destination_terminal_id
+      - destination_country
+      - timestamp
+      - volume
+      - volume_unit
+      - modified_at
+      type: object
+    TransactionForecastDetails:
+      properties:
+        destination_country:
+          description: The country where the transaction is forecasted to occur.
+          example: Spain
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to occur.
+          example: ES
+          type: string
+        destination_terminal:
+          description: The terminal where the transaction is forecasted to occur.
+          example: Mugardos R
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_7e1c3aad4
+          nullable: true
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9020766
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: USA
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: US
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: Sabine Pass
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_220d7ad08
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          description: The UTC timestamp of the forecasted origin of the transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the forecast
+            transaction in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        route_score:
+          description: The forecast route score is the product of forecast scores
+            along a given forecast route.
+          example: 0.6942790140289807
+          format: float
+          type: number
+        route_score_weighted_volume:
+          description: The forecast volume multiplied by the forecast route score.
+          example: 1826821.6556637555
+          format: float
+          type: number
+        score:
+          description: The forecast score is the probability of a single forecast.
+          example: 0.6942790140289807
+          format: float
+          type: number
+        timestamp:
+          description: The UTC timestamp of the actual transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        transaction_number:
+          description: The unique identifier for the transaction.
+          example: 1
+          type: integer
+        transaction_type:
+          description: The type of a forecast transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: offloading
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: INEOS INTUITION
+          type: string
+        volume:
+          description: The forecasted volume of LNG.
+          example: 2631250.0
+          format: float
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          example: mcf
+          type: string
+      required:
+      - imo
+      - loading_origin_terminal
+      - loading_origin_country
+      - loading_origin_timestamp
+      - destination_terminal
+      - destination_country
+      - timestamp
+      - volume
+      - volume_unit
+      - score
+      - route_score
+      - route_score_weighted_volume
+      - transaction_type
+      - forecast_run_at
+      - modified_at
+      type: object
+    TransactionHistory:
+      properties:
+        destination_country:
+          description: The country where the terminal is located.
+          example: Japan
+          type: string
+        destination_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the terminal is located.
+          example: JP
+          type: string
+        destination_terminal:
+          description: The name of the terminal where the transaction occurred.
+          example: Yufutsu
+          type: string
+        destination_terminal_id:
+          description: The unique identifier for the terminal.
+          example: terminal_5c68727c3
+          format: uuid
+          nullable: true
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9554729
+          type: integer
+        loading_origin_country:
+          description: The country where the transaction is forecasted to originate
+            from.
+          example: Japan
+          nullable: true
+          type: string
+        loading_origin_country_code:
+          description: The ISO 3166-1 alpha-2 country code where the transaction is
+            forecasted to originate from.
+          example: JP
+          nullable: true
+          type: string
+        loading_origin_terminal:
+          description: The terminal where the transaction is forecasted to originate
+            from.
+          example: Ishikari
+          nullable: true
+          type: string
+        loading_origin_terminal_id:
+          description: The unique identifier for the origin terminal.
+          example: terminal_1c148436c
+          format: uuid
+          nullable: true
+          type: string
+        loading_origin_timestamp:
+          description: The UTC timestamp of the forecasted origin of the transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        modified_at:
+          description: The UTC timestamp of the last modification to the transaction
+            in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        timestamp:
+          description: The UTC timestamp of the actual transaction.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        transaction_type:
+          description: The type of transaction, either loading or offloading.
+          enum:
+          - loading
+          - offloading
+          example: offloading
+          type: string
+        vessel_name:
+          description: The name of the vessel.
+          example: AKEBONO MARU
+          type: string
+        volume:
+          description: The volume of LNG involved in the transaction.
+          example: 0.0062378166666666665
+          format: float
+          type: number
+        volume_unit:
+          description: The unit of measurement for the volume.
+          example: bcf
+          type: string
+      required:
+      - imo
+      - loading_origin_terminal
+      - loading_origin_country
+      - loading_origin_timestamp
+      - destination_terminal
+      - destination_terminal_id
+      - destination_country
+      - timestamp
+      - volume
+      - volume_unit
+      - modified_at
+      type: object
+    TransactionsForecastQuery:
+      properties:
+        destination_countries:
+          description: A list of destination ISO 3166 country names to filter the
+            transactions.
+          example:
+          - Japan
+          - Malaysia
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_country_codes:
+          description: A list of destination ISO 3166-1 alpha-2 country codes to filter
+            the transactions.
+          example:
+          - JP
+          - MY
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - -125.0
+              - 24.5
+            - - -125.0
+              - 49.5
+            - - -66.9
+              - 49.5
+            - - -66.9
+              - 24.5
+            - - -125.0
+              - 24.5
+          - - - 122.9
+              - 24.0
+            - - 122.9
+              - 45.5
+            - - 146.0
+              - 45.5
+            - - 146.0
+              - 24.0
+            - - 122.9
+              - 24.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        destination_regions:
+          description: A list of destination regions to filter the transactions.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_terminals:
+          description: A list of destination terminal names to filter the transactions.
+          example:
+          - Higashi-Ohgishima
+          - PFLNG DUA
+          items:
+            type: string
+          nullable: true
+          type: array
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run to filter the transactions.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        imos:
+          description: A list of IMO numbers to filter the transactions.
+          example:
+          - 9030838
+          items:
+            type: integer
+          nullable: true
+          type: array
+        origin_countries:
+          description: A list of origin ISO 3166 country names to filter the transactions.
+          example:
+          - Malaysia
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_country_codes:
+          description: A list of origin ISO 3166-1 alpha-2 country codes to filter
+            the transactions.
+          example:
+          - MY
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        origin_regions:
+          description: A list of origin regions to filter the transactions.
+          example:
+          - Asia
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_terminal_ids:
+          description: A list of origin terminal ids to filter the transactions.
+          example:
+          - terminal_75375a6e8
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        origin_terminals:
+          description: A list of origin terminal names to filter the transactions.
+          example:
+          - Chita
+          - Sodeshi
+          - MLNG
+          items:
+            type: string
+          nullable: true
+          type: array
+        transaction_type:
+          description: The type of transaction to filter the transactions.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          nullable: true
+          type: string
+      type: object
+    TransactionsQuery:
+      properties:
+        destination_countries:
+          description: A list of destination ISO 3166 country names to filter the
+            transactions.
+          example:
+          - Japan
+          - Malaysia
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_country_codes:
+          description: A list of destination ISO 3166-1 alpha-2 country codes to filter
+            the transactions.
+          example:
+          - JP
+          - MY
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - -125.0
+              - 24.5
+            - - -125.0
+              - 49.5
+            - - -66.9
+              - 49.5
+            - - -66.9
+              - 24.5
+            - - -125.0
+              - 24.5
+          - - - 122.9
+              - 24.0
+            - - 122.9
+              - 45.5
+            - - 146.0
+              - 45.5
+            - - 146.0
+              - 24.0
+            - - 122.9
+              - 24.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        destination_regions:
+          description: A list of destination regions to filter the transactions.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_terminals:
+          description: A list of destination terminal names to filter the transactions.
+          example:
+          - Higashi-Ohgishima
+          - PFLNG DUA
+          items:
+            type: string
+          nullable: true
+          type: array
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run to filter the transactions.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        from_timestamp:
+          description: The start UTC timestamp to filter the transactions.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        imos:
+          description: A list of IMO numbers to filter the transactions.
+          example:
+          - 9030838
+          items:
+            type: integer
+          nullable: true
+          type: array
+        origin_countries:
+          description: A list of origin ISO 3166 country names to filter the transactions.
+          example:
+          - Malaysia
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_country_codes:
+          description: A list of origin ISO 3166-1 alpha-2 country codes to filter
+            the transactions.
+          example:
+          - MY
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        origin_regions:
+          description: A list of origin regions to filter the transactions.
+          example:
+          - Asia
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_terminal_ids:
+          description: A list of origin terminal ids to filter the transactions.
+          example:
+          - terminal_75375a6e8
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        origin_terminals:
+          description: A list of origin terminal names to filter the transactions.
+          example:
+          - Chita
+          - Sodeshi
+          - MLNG
+          items:
+            type: string
+          nullable: true
+          type: array
+        to_timestamp:
+          description: The end UTC timestamp to filter the transactions.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        transaction_type:
+          description: The type of transaction to filter the transactions.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          nullable: true
+          type: string
+      type: object
+    VesselDetails:
+      properties:
+        callsign:
+          description: The international radio call sign assigned to the vessel.
+          example: 9HA4285
+          nullable: true
+          type: string
+        captains_destination:
+          description: The destination provided by the vessel's captain.
+          example: NORAF>USMAH
+          nullable: true
+          type: string
+        captains_eta:
+          description: The estimated time of arrival at the destination provided by
+            the vessel's captain.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        charterer:
+          description: The name of the charterer of the vessel.
+          example: SHELL
+          nullable: true
+          type: string
+        first_active_date:
+          description: The date when the vessel was first active in the system.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        first_operation_date:
+          description: The date when the vessel first started operations.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        flag_state:
+          description: The flag state of the vessel, indicating the country under
+            which the vessel is registered.
+          example: USA
+          nullable: true
+          type: string
+        forecast_destination_terminal:
+          description: The terminal where the vessel is forecasted to arrive.
+          example: Gibbstown LNG
+          nullable: true
+          type: string
+        forecast_destination_terminal_id:
+          description: The unique identifier for the forecasted destination terminal.
+          example: terminal_28c27df09
+          format: uuid
+          nullable: true
+          type: string
+        forecast_destination_timestamp:
+          description: The UTC timestamp of the forecasted destination.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        heading:
+          description: The current heading of the vessel in degrees.
+          example: 511.0
+          format: float
+          nullable: true
+          type: number
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9771523
+          nullable: true
+          type: integer
+        is_loaded:
+          description: Indicates whether the vessel is currently loaded with cargo.
+          example: false
+          nullable: true
+          type: boolean
+        last_ais_signal_timestamp:
+          description: The UTC timestamp of the last received AIS signal from the
+            vessel.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        latitude:
+          description: The current latitude of the vessel in decimal degrees.
+          example: 39.1794283333333
+          format: float
+          nullable: true
+          type: number
+        length:
+          description: The overall length of the vessel in meters
+          example: 180
+          nullable: true
+          type: number
+        longitude:
+          description: The current longitude of the vessel in decimal degrees.
+          example: -70.1175833333333
+          format: float
+          nullable: true
+          type: number
+        maximum_capacity:
+          description: The maximum capacity of the vessel in cubic meters.
+          example: 27500.0
+          nullable: true
+          type: number
+        maximum_capacity_unit:
+          description: The unit of measurement for the maximum capacity.
+          example: CUBIC_METER
+          nullable: true
+          type: string
+        mmsi:
+          description: The Maritime Mobile Service Identity, a unique 9-digit identifier
+            for maritime communications.
+          example: 249557000
+          nullable: true
+          type: integer
+        modified_at:
+          description: The UTC timestamp of the last modification to the vessel's
+            information in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        name:
+          description: The name of the vessel.
+          example: INEOS INTUITION
+          nullable: true
+          type: string
+        route_score:
+          description: The forecast route score is the product of forecast scores
+            along a given forecast route.
+          example: 0.75
+          format: float
+          nullable: true
+          type: number
+        route_score_weighted_volume:
+          description: The forecast volume multiplied by the forecast route score.
+          example: 1000.0
+          format: float
+          nullable: true
+          type: number
+        score:
+          description: The forecast score is the probability of a single forecast.
+          example: 0.85
+          format: float
+          nullable: true
+          type: number
+        speed:
+          description: The current speed of the vessel in knots.
+          example: 11.1
+          format: float
+          nullable: true
+          type: number
+        status:
+          description: The current status of the vessel, such as "active", "inactive",
+            etc.
+          example: ACTIVE
+          nullable: true
+          type: string
+        vessel_type:
+          description: The type of vessel, such as "LNG Tanker", etc.
+          example: COMBINATION_GAS_CARRIER
+          nullable: true
+          type: string
+        width:
+          description: The overall width of the vessel in meters
+          example: 26
+          nullable: true
+          type: number
+      type: object
+    VesselForecast:
+      properties:
+        captains_destination:
+          description: The destination provided by the vessel's captain.
+          nullable: true
+          type: string
+        captains_eta:
+          description: The estimated time of arrival at the destination provided by
+            the vessel's captain.
+          format: date-time
+          nullable: true
+          type: string
+        country:
+          description: The country where the vessel is forecasted to arrive.
+          nullable: true
+          type: string
+        forecast_destination_terminal:
+          description: The terminal where the vessel is forecasted to arrive.
+          nullable: true
+          type: string
+        forecast_destination_terminal_id:
+          description: The unique identifier for the forecasted destination terminal.
+          format: uuid
+          nullable: true
+          type: string
+        forecast_destination_timestamp:
+          description: The UTC timestamp of the forecasted destination.
+          format: date-time
+          nullable: true
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          format: date-time
+          nullable: true
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          nullable: true
+          type: integer
+        modified_at:
+          description: The UTC timestamp of the last modification to the forecast
+            in the database.
+          format: date-time
+          nullable: true
+          type: string
+        origin_country:
+          description: The country where the vessel is forecasted to depart from.
+          nullable: true
+          type: string
+        origin_terminal:
+          description: The terminal where the vessel is forecasted to depart from.
+          nullable: true
+          type: string
+        origin_terminal_ids:
+          description: A list of unique identifiers for the forecasted origin terminals.
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        origin_timestamp:
+          description: The UTC timestamp of the forecasted departure of the vessel.
+          format: date-time
+          nullable: true
+          type: string
+        volume:
+          description: The forecasted volume of LNG.
+          format: float
+          nullable: true
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          nullable: true
+          type: string
+      required:
+      - imo
+      - origin_terminal
+      - origin_country
+      - origin_timestamp
+      - captains_destination
+      - captains_eta
+      - forecast_destination_timestamp
+      - forecast_destination_terminal
+      - country
+      - volume
+      - volume_unit
+      - forecast_run_at
+      - modified_at
+      type: object
+    VesselForecastDetails:
+      properties:
+        captains_destination:
+          description: The destination provided by the vessel's captain.
+          nullable: true
+          type: string
+        captains_eta:
+          description: The estimated time of arrival at the destination provided by
+            the vessel's captain.
+          format: date-time
+          nullable: true
+          type: string
+        country:
+          description: The country where the vessel is forecasted to arrive.
+          nullable: true
+          type: string
+        forecast_destination_terminal:
+          description: The terminal where the vessel is forecasted to arrive.
+          nullable: true
+          type: string
+        forecast_destination_terminal_id:
+          description: The unique identifier for the forecasted destination terminal.
+          format: uuid
+          nullable: true
+          type: string
+        forecast_destination_timestamp:
+          description: The UTC timestamp of the forecasted destination.
+          format: date-time
+          nullable: true
+          type: string
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run.
+          format: date-time
+          nullable: true
+          type: string
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          nullable: true
+          type: integer
+        modified_at:
+          description: The UTC timestamp of the last modification to the forecast
+            in the database.
+          format: date-time
+          nullable: true
+          type: string
+        origin_country:
+          description: The country where the vessel is forecasted to depart from.
+          nullable: true
+          type: string
+        origin_terminal:
+          description: The terminal where the vessel is forecasted to depart from.
+          nullable: true
+          type: string
+        origin_terminal_ids:
+          description: A list of unique identifiers for the forecasted origin terminals.
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        origin_timestamp:
+          description: The UTC timestamp of the forecasted departure of the vessel.
+          format: date-time
+          nullable: true
+          type: string
+        route_score:
+          description: The forecast route score is the product of forecast scores
+            along a given forecast route.
+          format: float
+          nullable: true
+          type: number
+        route_score_weighted_volume:
+          description: The forecast volume multiplied by the forecast route score.
+          format: float
+          nullable: true
+          type: number
+        score:
+          description: The forecast score is the probability of a single forecast.
+          format: float
+          nullable: true
+          type: number
+        volume:
+          description: The forecasted volume of LNG.
+          format: float
+          nullable: true
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          nullable: true
+          type: string
+      required:
+      - imo
+      - origin_terminal
+      - origin_country
+      - origin_timestamp
+      - captains_destination
+      - captains_eta
+      - forecast_destination_timestamp
+      - forecast_destination_terminal
+      - country
+      - volume
+      - volume_unit
+      - score
+      - route_score
+      - route_score_weighted_volume
+      - forecast_run_at
+      - modified_at
+      type: object
+    VesselForecastHistoryQuery:
+      properties:
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run to filter the vessels.
+          format: date-time
+          nullable: true
+          type: string
+        from_timestamp:
+          description: The start UTC timestamp to filter the vessels.
+          format: date-time
+          nullable: true
+          type: string
+        imos:
+          description: A list of IMO numbers to filter the vessels.
+          items:
+            type: integer
+          nullable: true
+          type: array
+        mmsis:
+          description: A list of MMSI numbers to filter the vessels.
+          items:
+            type: integer
+          nullable: true
+          type: array
+        names:
+          description: A list of vessel names to filter the vessels.
+          items:
+            type: string
+          nullable: true
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        to_timestamp:
+          description: The end UTC timestamp to filter the vessels.
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    VesselForecastQuery:
+      properties:
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run to filter the vessels.
+          format: date-time
+          nullable: true
+          type: string
+        imos:
+          description: A list of IMO numbers to filter the vessels.
+          items:
+            type: integer
+          nullable: true
+          type: array
+        mmsis:
+          description: A list of MMSI numbers to filter the vessels.
+          items:
+            type: integer
+          nullable: true
+          type: array
+        names:
+          description: A list of vessel names to filter the vessels.
+          items:
+            type: string
+          nullable: true
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+      type: object
+    VesselHistoryQuery:
+      properties:
+        from_timestamp:
+          description: The start UTC timestamp to filter the vessels.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        imos:
+          description: A list of IMO numbers to filter the vessels.
+          example:
+          - 9771523
+          items:
+            type: integer
+          nullable: true
+          type: array
+        mmsis:
+          description: A list of MMSI numbers to filter the vessels.
+          example:
+          - 249557000
+          items:
+            type: integer
+          nullable: true
+          type: array
+        names:
+          description: A list of vessel names to filter the vessels.
+          example:
+          - INEOS INTUITION
+          - LNG ENDEAVOUR
+          items:
+            type: string
+          nullable: true
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        to_timestamp:
+          description: The end UTC timestamp to filter the vessels.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    VesselInfo:
+      properties:
+        callsign:
+          description: The international radio call sign assigned to the vessel.
+          example: 9HA4285
+          nullable: true
+          type: string
+        captains_destination:
+          description: The destination provided by the vessel's captain.
+          example: NORAF>USMAH
+          nullable: true
+          type: string
+        captains_eta:
+          description: The estimated time of arrival at the destination provided by
+            the vessel's captain.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        charterer:
+          description: The name of the charterer of the vessel.
+          example: SHELL
+          nullable: true
+          type: string
+        first_active_date:
+          description: The UTC date when the vessel was first active in the system.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        first_operation_date:
+          description: The UTC date when the vessel first started operations.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        flag_state:
+          description: The flag state of the vessel, indicating the country under
+            which the vessel is registered.
+          example: USA
+          nullable: true
+          type: string
+        forecast_destination_terminal:
+          description: The terminal where the vessel is forecasted to arrive.
+          example: Gibbstown LNG
+          nullable: true
+          type: string
+        forecast_destination_terminal_id:
+          description: The unique identifier for the forecasted destination terminal.
+          example: terminal_28c27df09
+          format: uuid
+          nullable: true
+          type: string
+        forecast_destination_timestamp:
+          description: The UTC timestamp of the forecasted destination.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        heading:
+          description: The current heading of the vessel in degrees.
+          example: 511.0
+          format: float
+          nullable: true
+          type: number
+        imo:
+          description: International Maritime Organization number identifying the
+            vessel.
+          example: 9771523
+          nullable: true
+          type: integer
+        is_loaded:
+          description: Indicates whether the vessel is currently loaded with cargo.
+          example: true
+          nullable: true
+          type: boolean
+        last_ais_signal_timestamp:
+          description: The UTC timestamp of the last received AIS signal from the
+            vessel.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        latitude:
+          description: The current latitude of the vessel in decimal degrees.
+          example: 39.1794283333333
+          format: float
+          nullable: true
+          type: number
+        length:
+          description: The overall length of the vessel in meters
+          example: 180
+          format: integer
+          nullable: true
+          type: number
+        longitude:
+          description: The current longitude of the vessel in decimal degrees.
+          example: -70.1175833333333
+          format: float
+          nullable: true
+          type: number
+        maximum_capacity:
+          description: The maximum capacity of the vessel in cubic meters.
+          example: 27500.0
+          nullable: true
+          type: number
+        maximum_capacity_unit:
+          description: The unit of measurement for the maximum capacity.
+          example: CUBIC_METER
+          nullable: true
+          type: string
+        mmsi:
+          description: The Maritime Mobile Service Identity, a unique 9-digit identifier
+            for maritime communications.
+          example: 249557000
+          nullable: true
+          type: integer
+        modified_at:
+          description: The UTC timestamp of the last modification to the vessel's
+            information in the database.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        name:
+          description: The name of the vessel.
+          example: INEOS INTUITION
+          nullable: true
+          type: string
+        speed:
+          description: The current speed of the vessel in knots.
+          example: 11.1
+          format: float
+          nullable: true
+          type: number
+        status:
+          description: The current status of the vessel, such as "active", "inactive",
+            etc.
+          example: ACTIVE
+          nullable: true
+          type: string
+        vessel_type:
+          description: The type of vessel, such as "LNG Tanker", etc.
+          example: COMBINATION_GAS_CARRIER
+          nullable: true
+          type: string
+        width:
+          description: The overall width of the vessel in meters
+          example: 26
+          format: integer
+          nullable: true
+          type: number
+      type: object
+    VesselQuery:
+      properties:
+        imos:
+          description: A list of IMO numbers to filter the vessels.
+          example:
+          - 9771523
+          items:
+            type: integer
+          nullable: true
+          type: array
+        mmsis:
+          description: A list of MMSI numbers to filter the vessels.
+          example:
+          - 249557000
+          items:
+            type: integer
+          nullable: true
+          type: array
+        names:
+          description: A list of vessel names to filter the vessels.
+          example:
+          - INEOS INTUITION
+          - LNG ENDEAVOUR
+          items:
+            type: string
+          nullable: true
+          type: array
+        polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+      type: object
+    VolumeConversion:
+      properties:
+        from_unit:
+          $ref: '#/components/schemas/units_literal'
+        input_volume:
+          description: The input volume to be converted.
+          format: float
+          type: number
+        output_volume:
+          description: The converted volume in the specified unit.
+          format: float
+          type: number
+        to_unit:
+          $ref: '#/components/schemas/units_literal'
+      type: object
+    VolumeConversionQuery:
+      properties:
+        from_unit:
+          $ref: '#/components/schemas/units_literal'
+          description: The unit of the input volume.
+        to_unit:
+          $ref: '#/components/schemas/units_literal'
+          description: The unit of the desired output.
+        volumes:
+          description: The volume value to be converted.
+          items:
+            format: float
+            type: number
+          type: array
+      type: object
+    VolumeFlow:
+      properties:
+        count:
+          description: The mean count of the volume of the forecasted flow.
+          example: 13.0
+          format: float
+          type: number
+        count_std:
+          description: The standard deviation of the count of the volume of the forecasted
+            flow.
+          example: 0.0
+          format: float
+          nullable: true
+          type: number
+        timestamp:
+          description: The UTC timestamp of the forecasted flow.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          type: string
+        volume:
+          description: The mean volume of the forecasted flow.
+          example: 41.011715
+          format: float
+          type: number
+        volume_std:
+          description: The standard deviation of the volume of the forecasted flow.
+          example: 0.0
+          format: float
+          nullable: true
+          type: number
+        volume_unit:
+          description: The unit of measurement for the forecasted volume.
+          example: bcf
+          type: string
+      required:
+      - timestamp
+      - volume
+      - volume_unit
+      - count
+      type: object
+    VolumeFlowHistoryQuery:
+      anyOf:
+      - required:
+        - imos
+      - required:
+        - destination_terminals
+      - required:
+        - destination_countries
+      - required:
+        - destination_country_codes
+      - required:
+        - origin_terminals
+      - required:
+        - origin_countries
+      - required:
+        - origin_country_codes
+      - required:
+        - origin_polygons
+      - required:
+        - destination_polygons
+      - required:
+        - destination_regions
+      - required:
+        - origin_regions
+      - required:
+        - transaction_type
+      - required:
+        - from_timestamp
+      - required:
+        - to_timestamp
+      properties:
+        destination_countries:
+          description: A list of destination ISO 3166 country names to filter by.
+          example:
+          - Spain
+          - USA
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_country_codes:
+          description: A list of destination ISO 3166-1 alpha-2 country codes to filter
+            by.
+          example:
+          - ES
+          - US
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - -125.0
+              - 24.5
+            - - -125.0
+              - 49.5
+            - - -66.9
+              - 49.5
+            - - -66.9
+              - 24.5
+            - - -125.0
+              - 24.5
+          - - - 122.9
+              - 24.0
+            - - 122.9
+              - 45.5
+            - - 146.0
+              - 45.5
+            - - 146.0
+              - 24.0
+            - - 122.9
+              - 24.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        destination_regions:
+          description: A list of destination regions to filter by.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_terminals:
+          description: A list of destination terminal names to filter by.
+          example:
+          - Sabine Pass
+          - Mugardos R
+          items:
+            type: string
+          nullable: true
+          type: array
+        from_timestamp:
+          description: The start UTC timestamp to filter by.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        origin_countries:
+          description: A list of origin ISO 3166 country names to filter by.
+          example:
+          - Malaysia
+          - Japan
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_country_codes:
+          description: A list of origin ISO 3166-1 alpha-2 country codes to filter
+            by.
+          example:
+          - MY
+          - JP
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        origin_regions:
+          description: A list of origin regions to filter by.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_terminals:
+          description: A list of origin terminal names to filter by.
+          example:
+          - Chita
+          - Sodeshi
+          - MLNG
+          items:
+            type: string
+          nullable: true
+          type: array
+        to_timestamp:
+          description: The end UTC timestamp to filter by.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        transaction_type:
+          description: The type of transaction to filter by.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          nullable: true
+          type: string
+      type: object
+    VolumeFlowQuery:
+      anyOf:
+      - required:
+        - imos
+      - required:
+        - destination_terminals
+      - required:
+        - destination_countries
+      - required:
+        - destination_country_codes
+      - required:
+        - origin_terminals
+      - required:
+        - origin_terminal_ids
+      - required:
+        - origin_countries
+      - required:
+        - origin_country_codes
+      - required:
+        - origin_polygons
+      - required:
+        - destination_polygons
+      - required:
+        - destination_regions
+      - required:
+        - origin_regions
+      - required:
+        - transaction_type
+      - required:
+        - from_timestamp
+      - required:
+        - to_timestamp
+      - required:
+        - forecast_run_at
+      properties:
+        destination_countries:
+          description: A list of destination ISO 3166 country names to filter by.
+          example:
+          - Spain
+          - USA
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_country_codes:
+          description: A list of destination ISO 3166-1 alpha-2 country codes to filter
+            by.
+          example:
+          - ES
+          - US
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - -125.0
+              - 24.5
+            - - -125.0
+              - 49.5
+            - - -66.9
+              - 49.5
+            - - -66.9
+              - 24.5
+            - - -125.0
+              - 24.5
+          - - - 122.9
+              - 24.0
+            - - 122.9
+              - 45.5
+            - - 146.0
+              - 45.5
+            - - 146.0
+              - 24.0
+            - - 122.9
+              - 24.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        destination_regions:
+          description: A list of destination regions to filter by.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        destination_terminal_ids:
+          example:
+          - terminal_7e1c3aad4
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        destination_terminals:
+          description: A list of destination terminal names to filter by.
+          example:
+          - Sabine Pass
+          - Mugardos R
+          items:
+            type: string
+          nullable: true
+          type: array
+        forecast_run_at:
+          description: The UTC timestamp of the forecast run to filter by.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        from_timestamp:
+          description: The start UTC timestamp to filter by.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        origin_countries:
+          description: A list of origin ISO 3166 country names to filter by.
+          example:
+          - Malaysia
+          - Japan
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_country_codes:
+          description: A list of origin ISO 3166-1 alpha-2 country codes to filter
+            by.
+          example:
+          - MY
+          - JP
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_polygons:
+          description: A closed list of closed EPSG:4326 lon, lat coordinate pairs
+            to filter by.
+          example:
+          - - - 99.6
+              - 1.0
+            - - 99.6
+              - 7.5
+            - - 104.5
+              - 7.5
+            - - 104.5
+              - 1.0
+            - - 99.6
+              - 1.0
+          - - - 109.0
+              - 1.0
+            - - 109.0
+              - 7.5
+            - - 115.0
+              - 7.5
+            - - 115.0
+              - 1.0
+            - - 109.0
+              - 1.0
+          items:
+            items:
+              items:
+                format: float
+                type: number
+              type: array
+            type: array
+          nullable: true
+          type: array
+        origin_regions:
+          description: A list of origin regions to filter by.
+          example:
+          - Asia
+          - Europe
+          items:
+            type: string
+          nullable: true
+          type: array
+        origin_terminal_ids:
+          description: A list of origin terminal ids to filter by.
+          example:
+          - terminal_75375a6e8
+          items:
+            format: uuid
+            type: string
+          nullable: true
+          type: array
+        origin_terminals:
+          description: A list of origin terminal names to filter by.
+          example:
+          - Chita
+          - Sodeshi
+          - MLNG
+          items:
+            type: string
+          nullable: true
+          type: array
+        to_timestamp:
+          description: The end UTC timestamp to filter by.
+          example: '2025-07-27T22:43:41.371622+00:00'
+          format: date-time
+          nullable: true
+          type: string
+        transaction_type:
+          description: The type of transaction to filter by.
+          enum:
+          - loading
+          - offloading
+          example: loading
+          nullable: true
+          type: string
+      type: object
+    units_literal:
+      description: Supported units for volume conversion.
+      enum:
+      - cf
+      - mcf
+      - bcf
+      - tcf
+      - cubic_meter
+      - cubic_meter_gas
+      - gas_bcm
+      - LNG_t
+      - LNG_mt
+      type: string
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: Access-Key
+      type: apiKey
+info:
+  description: An api to use as an example of a spec driven project
+  title: Example API
+  version: 0.0.1
+openapi: 3.0.3
+paths:
+  /countries:
+    post:
+      operationId: routes.countries.countries.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CountryInformation'
+                type: array
+          description: A list of ISO 3166 country information
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_countries
+      summary: Returns a list of ISO 3166 country names, ISO 3166 Alpha-2 country
+        codes, and the countries polygons including their EEZ (except United States
+        of America -> USA). Any of these values can be used to narrow down API requests
+        on other endpoints.
+      x-method-name: countries
+  /forecast_run_at_timestamps:
+    get:
+      operationId: routes.transactions.transactions_forecast_metadata.get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ForecastTimestamps'
+                type: array
+          description: A list of distinct forecast run timestamps
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns the distinct timestamps and the IDs of all previous forecast
+        runs
+      x-method-name: forecast_run_at_timestamps
+  /healthcheck:
+    get:
+      operationId: routes.healthcheck.healthcheck.get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    example: healthy
+                    type: string
+                type: object
+          description: The API is healthy
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+      summary: Returns the health status of the API
+      x-method-name: healthcheck
+  /regions:
+    post:
+      operationId: routes.countries.regions.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegionQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/RegionInformation'
+                type: array
+          description: A list of regions
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_regions
+      summary: |
+        Returns a list of polygons commonly used regions in an LNG context. These polygons can be used to narrow down results on other endpoints. Example polygons are "JKTC"
+        "North West Europe", "Europe w/o Norway",  "Europe w. Turkey", "North America",
+        "South America", "Middle East", "West Africa", "South East Asia", "South Asia",
+        "Asia w/o Middle East"
+      x-method-name: regions
+  /terminals:
+    post:
+      operationId: routes.terminals.terminal_info.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TerminalQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TerminalInfo'
+                type: array
+          description: A list of terminals
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_terminals
+      summary: Returns a list of detailed information about all liquefaction and regasification
+        LNG terminals.
+      x-method-name: terminals
+  /transactions:
+    post:
+      operationId: routes.transactions.transactions.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Transaction'
+                type: array
+          description: Successful transaction response
+        '400':
+          content:
+            application/json:
+              schema:
+                properties:
+                  error:
+                    example: Invalid input
+                    type: string
+                  message:
+                    example: The 'from_timestamp' field is required.
+                    type: string
+                type: object
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a detailed list of historic and forecasted future transactions,
+        including the volume, vessels, and terminals involved. The data is refreshed
+        every hour.
+      x-method-name: transactions
+  /transactions/details:
+    post:
+      operationId: routes.transactions.transactions_details.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TransactionDetails'
+                type: array
+          description: Successful transaction response
+        '400':
+          content:
+            application/json:
+              schema:
+                properties:
+                  error:
+                    example: Invalid input
+                    type: string
+                  message:
+                    example: The 'from_timestamp' field is required.
+                    type: string
+                type: object
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a list of transaction details with multi-step ahead predicted
+        transactions including prediction scores. The data is refreshed every hour.
+      x-method-name: transactions_details
+  /transactions/forecast:
+    post:
+      operationId: routes.transactions.transaction_forecast.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsForecastQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ForecastTransaction'
+                type: array
+          description: Successful transaction forecast history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a list of forecasted transactions, including the volume, vessels,
+        and terminals involved. The forecasts are refreshed on an hourly basis.
+      x-method-name: transactions_forecast
+  /transactions/forecast/details:
+    post:
+      operationId: routes.transactions.transaction_forecast_details.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsForecastQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TransactionForecastDetails'
+                type: array
+          description: Successful transaction forecast history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a list of forecasted transactions, including a detailed route
+        prediction breakdown. The forecasts are refreshed on an hourly basis.
+      x-method-name: transactions_forecast_details
+  /transactions/forecast/history:
+    post:
+      operationId: routes.transactions.transaction_forecast_history.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsForecastQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ForecastTransactionHistory'
+                type: array
+          description: Successful transaction forecast history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns historic versions of Leviaton's forecasted transactions, including
+        the volume, vessels, and terminals involved. Fetch a *forecast_run_at_timestamp*
+        using /forecast_run_at_timestamps endpoints and use that date to view a historic
+        version of our forecasted transactions.
+      x-method-name: transactions_forecast_history
+  /transactions/forecast/history/details:
+    post:
+      operationId: routes.transactions.transaction_forecast_history_details.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsForecastQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TransactionForecastDetails'
+                type: array
+          description: Successful transaction forecast history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a version of Leviaton's detailed history of forecasted transactions,
+        including a detailed route prediction breakdown. Fetch a *forecast_run_at_timestamp*
+        using /forecast_run_at_timestamps endpoints and use that date to view a historic
+        version of our forecasted transactions.
+      x-method-name: transactions_forecast_history_details
+  /transactions/history:
+    post:
+      operationId: routes.transactions.transaction_history.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionsQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TransactionHistory'
+                type: array
+          description: Successful transaction history response
+        '400':
+          content:
+            application/json:
+              schema:
+                properties:
+                  error:
+                    example: Invalid input
+                    type: string
+                  message:
+                    example: The 'from_timestamp' field is required.
+                    type: string
+                type: object
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_transactions
+      summary: Returns a history of transactions, including the volume, vessels, and
+        terminals involved
+      x-method-name: transactions_history
+  /vessels:
+    post:
+      operationId: routes.vessels.vessel_info.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VesselQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VesselInfo'
+                type: array
+          description: A list of vessels
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_vessels
+      summary: Returns detailed information about vessels, their position, and next
+        most likely destination.
+      x-method-name: vessels
+  /vessels/details:
+    post:
+      operationId: routes.vessels.vessel_details.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VesselQuery'
+          application/x-ndjson:
+            schema:
+              $ref: '#/components/schemas/VesselQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VesselDetails'
+                type: array
+            application/x-ndjson:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VesselDetails'
+                type: array
+          description: A list of vessels
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_vessels
+      summary: Returns detailed information about vessels, their position, and detailed
+        predictions incl. prediction scores about their next destination.
+      x-method-name: vessels_details
+  /vessels/history:
+    post:
+      operationId: routes.vessels.vessel_history.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VesselHistoryQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VesselInfo'
+                type: array
+            application/x-ndjson:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VesselInfo'
+                type: array
+          description: Successful vessel history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_vessels
+      summary: Returns detailed information about vessel activity and their position
+        history.
+      x-method-name: vessels_history
+  /volume_flows:
+    post:
+      operationId: routes.volume_flows.volume_flows.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VolumeFlowQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VolumeFlow'
+                type: array
+          description: Successful volume flows response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_volume_flows
+      summary: |
+        Returns LNG volumes transferred to specified terminals or countries over a given time period.
+        The volume_flows endpoint calculates the LNG volume transferred to a set of destination terminals/countries (and optionally from a set of origin terminals/countries) for a given time range. For historical time periods this is simply the observed number of transactions that occurred at the destinations.
+        For future time periods, forecasted volumes are calculated. Forecasted volumes are calculated using the route_score_weighted_volume field from the transactions/forecast endpoint. The route_score_weighted_volume is the volume of a potential transaction multiplied by the likelihood of that transaction occurring. Forecast volumes are the sum of the route_score_weighted_volume for the destinations in the given time period. Note that this means partial transactions are included in the forecast volume. Uncertainties in the forecast volume are estimated using our uncertainty in the forecast transaction timestamp.
+
+        - Historical data:
+
+          - Shows actual observed transaction volumes.
+
+        - Forecasted data:
+
+          - Predicts future volumes based on:
+
+            - Potential vessel arrivals and their cargo volumes
+            - Probability of each arrival occurring
+            - Arrival time uncertainties
+      x-method-name: volume_flows
+  /volume_flows/history:
+    post:
+      operationId: routes.volume_flows.volume_flows_history.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VolumeFlowHistoryQuery'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/VolumeFlow'
+                type: array
+          description: Successful volume flows history response
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400ErrorResponse'
+          description: Bad Request - Invalid query parameters
+        '405':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/405ErrorResponse'
+          description: Method Not Allowed
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500ErrorResponse'
+          description: Internal Server Error
+        '501':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/501ErrorResponse'
+          description: Not Implemented
+      security:
+      - ApiKeyAuth:
+        - leviaton_volume_flows
+      summary: |
+        Returns historic versions of Leviaton's LNG volumes transferred to specified terminals or countries over a given time period.
+        The volume_flows endpoint calculates the LNG volume transferred to a set of destination terminals/countries (and optionally from a set of origin terminals/countries) for a given time range. For historical time periods this is simply the observed number of transactions that occurred at the destinations.
+        For future time periods, forecasted volumes are calculated. Forecasted volumes are calculated using the route_score_weighted_volume field from the transactions/forecast endpoint. The route_score_weighted_volume is the volume of a potential transaction multiplied by the likelihood of that transaction occurring. Forecast volumes are the sum of the route_score_weighted_volume for the destinations in the given time period. Note that this means partial transactions are included in the forecast volume. Uncertainties in the forecast volume are estimated using our uncertainty in the forecast transaction timestamp.
+
+        - Historical data:
+
+          - Shows actual observed transaction volumes.
+
+        - Forecasted data:
+
+          - Predicts future volumes based on:
+
+            - Potential vessel arrivals and their cargo volumes
+            - Probability of each arrival occurring
+            - Arrival time uncertainties
+      x-method-name: volume_flows_history
+servers:
+- url: /v1
