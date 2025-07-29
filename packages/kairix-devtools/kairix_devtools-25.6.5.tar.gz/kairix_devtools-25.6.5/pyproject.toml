@@ -1,0 +1,149 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kairix-devtools"
+description = "Professional Python development tools for async/await analysis and code quality"
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Unlicense"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+authors = [
+    {name = "Kairix Devteam", email = "devteam@kairix.dev"},
+]
+
+dependencies = [
+    "click>=8.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/kairix-dev/devtools-python"
+Documentation = "https://github.com/kairix-dev/devtools-python/blob/main/docs/README.md"
+Repository = "https://github.com/kairix-dev/devtools-python"
+"Bug Tracker" = "https://github.com/kairix-dev/devtools-python/issues"
+Changelog = "https://github.com/kairix-dev/devtools-python/blob/main/CHANGELOG.md"
+
+[project.scripts]
+kairix-devtools = "kairix_devtools.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "radon>=6.0.0",
+]
+
+ci = [
+    "black>=23.0.0",
+    "pyright>=1.1.0",
+    "mypy>=1.0.0",
+    "isort>=5.0.0",
+    "autoflake>=2.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kairix_devtools*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "kairix_devtools.__version__"}
+
+
+[tool.black]
+line-length = 79
+force-exclude = """
+/(
+\\.git
+| build
+| node_modules
+| data
+)/
+"""
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+]
+
+[tool.coverage.run]
+source = ["kairix_devtools"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "setup.py",
+    "*/__main__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+show_missing = true
+precision = 2
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[[tool.mypy.overrides]]
+module = "kairix_devtools.asyncio.await_checker"
+disallow_untyped_decorators = false
+
+[tool.autoflake]
+ignore-init-module-imports = true
+remove-all-unused-imports = true
+remove-duplicate-keys = true
+in-place = true
+recursive = true
+
+
+# ... other project metadata fields as specified in:
+#     https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
