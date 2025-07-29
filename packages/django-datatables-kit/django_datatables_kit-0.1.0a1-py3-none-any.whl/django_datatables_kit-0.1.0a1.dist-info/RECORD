@@ -1,0 +1,9 @@
+django_datatables_kit-0.1.0a1.dist-info/METADATA,sha256=egRaN1R_G3HazFDTvaz4GfngcbJpjtYxrfbGdLnEPSc,10727
+django_datatables_kit-0.1.0a1.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+django_datatables_kit-0.1.0a1.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+django_datatables_kit-0.1.0a1.dist-info/licenses/LICENSE,sha256=lkDJ2S0r25IJgsMinNoUrOmA-T90o_dMlgb_BMaYSb0,1066
+migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+settings/__init__.py,sha256=DizL4QIrgNly-mLQAlLRXzV6WA6isrX_1nu2OhyPpzw,171
+settings/config.py,sha256=AINZZN88Vxutee0WrJNdK32WGxVCN845fsQWnUceWXo,574
+settings/defaults.py,sha256=w8i-BXW4F7RdjqaAK5P56EmlE1neKrYkAQltmJW7sTY,2861
+django_datatables_kit-0.1.0a1.dist-info/RECORD,,
