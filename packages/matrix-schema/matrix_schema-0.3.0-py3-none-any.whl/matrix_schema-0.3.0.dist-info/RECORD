@@ -1,0 +1,16 @@
+matrix_schema/_version.py,sha256=9_PpJA80c3rcLE52V6csAU7dPSLuplcFsvYRebrvqDc,186
+matrix_schema/datamodel/__init__.py,sha256=yevK33eH2oaYc0D_tFXGOLlcDHr60LAX6s6AX9bD_zQ,196
+matrix_schema/datamodel/matrix_schema.py,sha256=fsaSwj1cqHGCno-88EAuTG6KLP8H_BRgrms0IMf8Jng,113263
+matrix_schema/datamodel/matrix_schema_pydantic.py,sha256=yGm60EdsNZ0qCPf-BYm4UVfa07a8x-HeShXijpkv3G4,43068
+matrix_schema/datamodel/pandera-schema.py,sha256=1Xytb_tvjKIZr0LoXBDRGP2SDKRBFg5xnrUDCD8rSYM,194
+matrix_schema/datamodel/pandera.py,sha256=WXO5B01UZdIjcYFcVTL1nQNgOMwpWO4Cd8FdvYQKH1k,4321
+matrix_schema/schema/biolink_imports.yaml,sha256=VgUZ2SOehEcUHs_aJOTe-ZnzKCUeBrKWKyrsNbUc8F0,53730
+matrix_schema/schema/disease_list.yaml,sha256=X-tL3y6Vdq9n0PshG0l69PwtCxXYnJuzIeuXvrBq11s,25641
+matrix_schema/schema/matrix_kg.yaml,sha256=_Xgue0O4YsxJNZcCzuEoc_3VTklNpHeaEXhDXJrdTJI,4581
+matrix_schema/schema/matrix_schema.yaml,sha256=h390OSC8yAj8_oBZd9XuQWwruKJYqKqU6LqUyVOrtz4,528
+matrix_schema/schema/valid_biolink_edge_types.tsv,sha256=CIZsCSAnSdDuRcCrI6kK7blbTKyx-UNi7MNgVvX_AdM,25630622
+matrix_schema/utils/pandera_utils.py,sha256=ne178JZSaTQ-fK6FnqtYt9rEFrCv_eHFYtp6BLJyqqE,4278
+matrix_schema-0.3.0.dist-info/LICENSE,sha256=H39ZachxhCZuZeYlt3QQO6qCkKEBXjJSl90bsqNNcYw,1498
+matrix_schema-0.3.0.dist-info/METADATA,sha256=wF4LYYKG_LXikHZ2IKEUbicT1TrdT1uLKK5pqq-6xdQ,2167
+matrix_schema-0.3.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+matrix_schema-0.3.0.dist-info/RECORD,,
