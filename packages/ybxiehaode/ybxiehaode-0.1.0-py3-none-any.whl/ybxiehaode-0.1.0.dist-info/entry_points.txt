@@ -1,0 +1,2 @@
+[console_scripts]
+ybxiehaode = ybxiehaode.main:main
