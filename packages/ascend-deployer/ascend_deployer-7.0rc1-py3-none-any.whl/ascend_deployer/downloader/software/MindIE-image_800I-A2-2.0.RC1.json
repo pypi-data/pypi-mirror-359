@@ -1,0 +1,20 @@
+{
+  "name": "MindIE-image",
+  "version": "800I-A2-2.0.RC1",
+  "default": false,
+  "other": [
+    {
+      "filename": "Ascend-mindie-image-800i-a2_2.0.rc1_linux_x86_64.tar.gz",
+      "url": "https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/images/ascend-mindie/Ascend-mindie-image-800i-a2_2.0.rc1_linux_x86_64.tar.gz",
+      "sha256": "62b3dfcd03bb740d9b9c35d35be0625ed607eeccbe7df640ed6644fd8e5e7dfe",
+      "dest": "resources/MindIE-image"
+    },
+    {
+      "filename": "Ascend-mindie-image-800i-a2_2.0.rc1_linux_aarch64.tar.gz",
+      "url": "https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/images/ascend-mindie/Ascend-mindie-image-800i-a2_2.0.rc1_linux_aarch64.tar.gz",
+      "sha256": "d5c68adb7d5bd43a0c5dd0d8b0efcb4f176ee3e338bda59aa5de6ac28b62b301",
+      "dest": "resources/MindIE-image"
+    }
+  ]
+}
+

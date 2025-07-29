@@ -1,0 +1,5 @@
+deb https://mirrors.huaweicloud.com/debian/ buster main
+deb https://mirrors.huaweicloud.com/debian/ buster-updates main
+deb https://mirrors.huaweicloud.com/debian-security/ buster updates/main
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ buster/updates main contrib non-free
+deb https://mirrors.huaweicloud.com/docker-ce/linux/debian/ buster stable

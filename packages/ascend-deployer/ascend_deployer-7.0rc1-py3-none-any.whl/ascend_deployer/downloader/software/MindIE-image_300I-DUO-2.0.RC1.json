@@ -1,0 +1,20 @@
+{
+  "name": "MindIE-image",
+  "version": "300I-DUO-2.0.RC1",
+  "default": false,
+  "other": [
+    {
+      "filename": "Ascend-mindie-image-300i-duo_2.0.rc1_linux_x86_64.tar.gz",
+      "url": "https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/images/ascend-mindie/Ascend-mindie-image-300i-duo_2.0.rc1_linux_x86_64.tar.gz",
+      "sha256": "6341a6ece2c21b3978a155b7a4652f1635ab777572fefcbda5cb3eda5684329c",
+      "dest": "resources/MindIE-image"
+    },
+    {
+      "filename": "Ascend-mindie-image-300i-duo_2.0.rc1_linux_aarch64.tar.gz",
+      "url": "https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/images/ascend-mindie/Ascend-mindie-image-300i-duo_2.0.rc1_linux_aarch64.tar.gz",
+      "sha256": "3ecb3a59c1513b37194f6761df400e755787d6f083a9d743d9eb76e0fa62258b",
+      "dest": "resources/MindIE-image"
+    }
+  ]
+}
+
