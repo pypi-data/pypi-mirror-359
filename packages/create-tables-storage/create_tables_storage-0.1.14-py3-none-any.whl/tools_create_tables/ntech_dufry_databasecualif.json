@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ntech-dufry-databasecualif",
+  "private_key_id": "551fa25c13922252334a0e9f32713f616ae0e22a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4Ufw9MJw+nX3S\nwClqW2S9o5cv0ELC0tSuB+96Q0OuD/wiik+33Ndu65yhnrEQ8x6wnNeHNLqdAQXy\nxGxdMjGxBVeSZs4Nw1fKr08M62rFL+rAg5LjsYhXJiG6P/GDx7brdITo3368U9wn\nIlZo8oLPrBq1nK4tOdN+tJwj6FB0hrUDuOMt0UU8ea/a1/uAjp/XNXQ+UXsHJj8P\nxMW2eeNfc+/VhTzf2yLZuCbnRh1UlxQ4KxgvTWJMYrOrmUlDlvDw6M5A7cseu0bp\ndw3oynFwBOUTVgt4rJ2dHF+zdj6rLHpKNOwG5wKl/xoUJxdd0sNCnjrCxCeDJvbD\nNbYvgRGHAgMBAAECggEAG12At4z6BYnYXmvNOk8rW8Rn899VqhsnHFdtRJer+rHA\n21fxkfilu4Ablxs6aqvNyKbgkOBRPHIkcfCbrhJ/sip63++HdB+mbx8r+10QUwpU\nLhTawBdhiJ7OrxpDPy9thvObr/9Oj6Nbsiu07Ivkw/RnWsNSUMCfF9a0v9gD6ei8\n9FT4iAnqYe4AI9JefkA42ZvEKiRub1KRccdCYIf0Mwe90bPv9O17lmuLixEVPJnf\nyj6QgttjFV/seIuJxL34C3u9wGXK4VAMGylf7GJlKryq4p6XLwl5+F5Dy8GKTA1/\ndXSx6oPRf32l2/yNv5WsoLv5DUQAhgYPAh3E/OnvoQKBgQD3s19dtGSHFhacjQfE\nSZG/cLSjKvFoyohd4U0qvQ7WZuFigkpJNvJjYKtEksYcaUnHCQTpj8csgWrt8MrV\nLkuzYLx2KCKXJ5IvyLQUG0xgMWEx3sOVS01dje1jp8Z8T6KwMyOdl4qOuX3QqG70\nBVaCD74xtXSl3f1oZ/eE7O8FmQKBgQC+fvlBW0Ll73DcNvZo+kwYLtBwGRhi9qhH\nQbU4XlYJKAm3OdIj4+lrH9QN/T0CZp2kowK/m8p1+FpjQ5FMxKIYvjjV21g+4aq1\n59bxcT1og0LjRFHLv5Z5vFouj5/QUBKC0QZ7qDLUV9+0nm9RYpqPA5sbmDOfev9u\nrJL87+EEHwKBgEQt7EcHm1APhWPL8eJWebafGCl9bXtxm/1zQWFNLqNXKByMTlQ+\nupMeDaZPXBZ/6J3PXrnHKISYjs01pS7ukkmqi9VeEL9YVgWvEdoi9W/Yx68JaP5T\n/tSMd1Yh3SFkbhxfxyLejnXgmr/vTLMAMSKVoL1f+96X7uNpEplU+impAoGBAI72\ne9mww+QMbobWONdQAQulFokKTGL4+hGAHqDPK4Jzqdb4bdzBjsv2dw6InuDOYkDM\nlaN3J9qhKDSW4NTcPUqUd9MHapLGiXc7JvTMJ2noGKq2+ywN/MAfuw52e1m6vimu\n9U6YTI1P5XOH88MAXT43VpC/CP8HL+u/WBC7dgPBAoGAV3XQILClRDYN5aAAAxys\nWqtLhqiAp4yYCjg87MMfuQ6avv9pYpzkcL7FMq2534reqKRDo0d77f2Y306lv1vn\nP8cIop41RcxC41Tz4cZ3H7aMjHgpTYc338G/z3IEv6Vb0YEtn99JJrSqfF4MdDTL\nLV0fcuSS4LLRS1hWbGRFKsQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ga-reporting-phyton@ntech-dufry-databasecualif.iam.gserviceaccount.com",
+  "client_id": "108960733153357661426",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ga-reporting-phyton%40ntech-dufry-databasecualif.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
