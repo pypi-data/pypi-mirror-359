@@ -1,0 +1,2 @@
+[console_scripts]
+contest-helper-make-postprocessor = contest_helper.cli.make_postprocessor:main
