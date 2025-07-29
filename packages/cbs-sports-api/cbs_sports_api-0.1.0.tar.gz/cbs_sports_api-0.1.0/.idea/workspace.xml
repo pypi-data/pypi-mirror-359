@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe47d7f9-5e5d-403e-99bf-8ce0948c83a3" name="Changes" comment="Change version to 0.1.0" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2zCCdRkV015U3ufkXWyhhcKnjv2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johnc\PycharmProjects\cbs-sports-api\src\cbs_sports_api" />
+      <recent name="C:\Users\johnc\PycharmProjects\cbs-sports-api\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c69650fc56ca-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15619.17" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe47d7f9-5e5d-403e-99bf-8ce0948c83a3" name="Changes" comment="" />
+      <created>1751225754788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751225754788</updated>
+      <workItem from="1751225757732" duration="7091000" />
+      <workItem from="1751254955288" duration="7886000" />
+    </task>
+    <task id="LOCAL-00001" summary="Formatting for package">
+      <option name="closed" value="true" />
+      <created>1751241074943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751241074943</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1751242601551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751242601551</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add targets.wheel to pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1751243349234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751243349234</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add build.sources to pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1751256233351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751256233351</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update version to fix package upload">
+      <option name="closed" value="true" />
+      <created>1751257653465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751257653465</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update pyproject.toml to fix build">
+      <option name="closed" value="true" />
+      <created>1751259274607</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751259274607</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update pyproject.toml to fix build">
+      <option name="closed" value="true" />
+      <created>1751259536465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751259536465</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update version">
+      <option name="closed" value="true" />
+      <created>1751259575885</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751259575885</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update file structure to fix build">
+      <option name="closed" value="true" />
+      <created>1751260009204</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751260009204</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1751260145105</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751260145105</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1751260174605</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751260174605</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update import paths">
+      <option name="closed" value="true" />
+      <created>1751315732517</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1751315732517</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Change version to 0.1.0">
+      <option name="closed" value="true" />
+      <created>1751326699592</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1751326699592</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Formatting for package" />
+    <MESSAGE value="Add targets.wheel to pyproject.toml" />
+    <MESSAGE value="Add build.sources to pyproject.toml" />
+    <MESSAGE value="Update version to fix package upload" />
+    <MESSAGE value="Update pyproject.toml to fix build" />
+    <MESSAGE value="Update version" />
+    <MESSAGE value="Update file structure to fix build" />
+    <MESSAGE value="Update pyproject.toml" />
+    <MESSAGE value="Update import paths" />
+    <MESSAGE value="Change version to 0.1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change version to 0.1.0" />
+  </component>
+</project>
