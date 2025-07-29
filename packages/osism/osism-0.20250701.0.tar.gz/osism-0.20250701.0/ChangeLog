@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+v0.20250701.0
+-------------
+
+* Skip UUID resolution for image URLs in conductor config (#1542)
