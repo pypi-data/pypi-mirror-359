@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+dataupdater/dataupdater.egg-info/PKG-INFO
+dataupdater/dataupdater.egg-info/SOURCES.txt
+dataupdater/dataupdater.egg-info/dependency_links.txt
+dataupdater/dataupdater.egg-info/top_level.txt
