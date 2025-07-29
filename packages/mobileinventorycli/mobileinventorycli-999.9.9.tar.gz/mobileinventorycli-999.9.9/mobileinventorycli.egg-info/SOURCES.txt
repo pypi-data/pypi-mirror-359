@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+mobileinventorycli.egg-info/PKG-INFO
+mobileinventorycli.egg-info/SOURCES.txt
+mobileinventorycli.egg-info/dependency_links.txt
+mobileinventorycli.egg-info/top_level.txt
