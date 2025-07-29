@@ -1,0 +1,2 @@
+labjack-ljm>=1.23.0
+nidaqmx>=1.0.2
