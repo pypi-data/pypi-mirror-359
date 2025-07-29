@@ -1,0 +1,14 @@
+stv_create_file/main.py,sha256=8n3Al_XoTCNAYTGL6CjvLmy_0LuiSq0NMjTuaM5q6Mc,189
+stv_create_file/core/FileCreator.py,sha256=N14uZbUNbzNOZNODJyeN2hUoT7aglIe-cwLllYoUSy0,10188
+stv_create_file/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stv_create_file/core/stv_parse.py,sha256=2LW38o5nRVardZoqaVueaglf_jqTWBe4-95hW3tQb48,3943
+stv_create_file/mul_lang/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stv_create_file/mul_lang/change_text.py,sha256=6cHfd7J168cqAIYFa8qHTzgJez7XNDzBlOQl_wR8C14,8090
+stv_create_file/utils/GetConfig.py,sha256=iXemXXULNfPrLZevZQ59RL0QBIRi2290WxF4NBHhF6M,3368
+stv_create_file/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stv_create_file/utils/utils.py,sha256=z0E7ijEYUAlhIG0BxpTsGO07n4Dt63pmJ6MfIemr2L4,732
+stv_create_file-0.0.5.dist-info/METADATA,sha256=MsYCuBz8EUqVwuhh6It0pkR1gb35jc8LVEAvnX7ldUY,5842
+stv_create_file-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+stv_create_file-0.0.5.dist-info/entry_points.txt,sha256=o2Ma5QZUE_7q_WQ5OmQ3CbOCT6LiFM5rI_SPGgcV7yA,120
+stv_create_file-0.0.5.dist-info/top_level.txt,sha256=4_3cecveMYSHlBag0lxhlY2YAYm7CWAzpFnwf1vv3c8,16
+stv_create_file-0.0.5.dist-info/RECORD,,
