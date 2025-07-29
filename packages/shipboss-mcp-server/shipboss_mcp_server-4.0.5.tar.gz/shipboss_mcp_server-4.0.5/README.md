@@ -1,0 +1,269 @@
+# ShipBoss MCP Server
+
+A Model Context Protocol (MCP) server that provides shipping and logistics tools through the ShipBoss API. Get parcel rates, create shipping labels, track packages, manage pickups, and handle freight shipments directly from Claude Desktop or any MCP-compatible client.
+
+## Features
+
+- **Parcel Shipping**: Get rates, create labels, and track packages with FedEx, UPS, and DHL
+- **Freight Services**: Get rates, create labels, and track freight shipments
+- **Pickup Management**: Schedule and cancel carrier pickups
+- **Address Parsing**: Intelligent address format parsing for multiple countries
+- **Auto Package Detection**: Automatic package type selection based on dimensions
+- **Service Name Mapping**: User-friendly service aliases (e.g., "GROUND" → "UPS Ground")
+
+## Installation
+
+```bash
+pip install shipboss-mcp-server
+```
+
+## Setup Guide
+
+### 1. Get Your ShipBoss API Token
+
+1. Sign up at [ShipBoss](https://shipboss.io)
+2. Navigate to your account settings
+3. Generate an API token
+4. Copy the token - you'll need it for configuration
+
+### 2. MCP Server Configuration
+
+#### Claude Desktop
+
+**Step 1**: Open Claude Desktop settings
+- **macOS**: Claude Desktop → Settings → Developer
+- **Windows**: Settings → Developer
+
+**Step 2**: Click "Edit Config" to open your configuration file
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+**Step 3**: Add the ShipBoss MCP server to your configuration:
+
+```json
+{
+  "mcpServers": {
+    "shipboss": {
+      "command": "shipboss-mcp-server",
+      "env": {
+        "SHIPBOSS_API_TOKEN": "your_api_token_here"
+      }
+    }
+  }
+}
+```
+
+**Step 4**: Save the file and restart Claude Desktop
+
+**Step 5**: Verify installation
+- Look for the 🔌 icon in the Claude Desktop input area
+- You should see "shipboss" listed as an available server
+- The server provides tools like `get_parcel_rates`, `create_parcel_label`, etc.
+
+#### Cursor IDE
+
+Add to your Cursor MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "shipboss": {
+      "command": "shipboss-mcp-server",
+      "env": {
+        "SHIPBOSS_API_TOKEN": "your_api_token_here"
+      }
+    }
+  }
+}
+```
+
+#### Other MCP Clients
+
+For other MCP-compatible clients, use the same configuration format with:
+- **Command**: `shipboss-mcp-server`
+- **Environment variable**: `SHIPBOSS_API_TOKEN=your_token_here`
+
+### 3. Alternative: Environment Variable Setup
+
+Instead of putting the token in the config file, you can set it as a system environment variable:
+
+**Linux/macOS**:
+```bash
+export SHIPBOSS_API_TOKEN="your_api_token_here"
+```
+
+**Windows PowerShell**:
+```powershell
+$env:SHIPBOSS_API_TOKEN="your_api_token_here"
+```
+
+**Windows Command Prompt**:
+```cmd
+set SHIPBOSS_API_TOKEN=your_api_token_here
+```
+
+Then use this simplified config:
+```json
+{
+  "mcpServers": {
+    "shipboss": {
+      "command": "shipboss-mcp-server"
+    }
+  }
+}
+```
+
+### 4. Using .env Files
+
+You can also create a `.env` file in your working directory:
+```
+SHIPBOSS_API_TOKEN=your_api_token_here
+```
+
+## Usage Examples
+
+### Get Parcel Shipping Rates
+
+```
+Get shipping rates from New York to Los Angeles for a 5-pound package, dimensions 12x8x6 inches, shipping tomorrow.
+```
+
+### Create a Shipping Label
+
+```
+Create a FedEx Ground shipping label from "123 Main St, New York, NY 10001, US" to "456 Oak Ave, Los Angeles, CA 90210, US" for a 3-pound package, shipping date 2024-12-20. Include sender name "John Doe" and recipient name "Jane Smith".
+```
+
+### Track a Package
+
+```
+Track UPS package with tracking number 1Z999AA1234567890.
+```
+
+### Schedule a Pickup
+
+```
+Schedule a UPS pickup at "123 Business Blvd, New York, NY 10001, US" for December 20, 2024, ready time 10:00, close time 17:00, for 5 packages weighing 25 pounds total.
+```
+
+### Get Freight Rates
+
+```
+Get freight rates from "3500 Sunset Ave, Ocean, NJ, 07712, US" to "1000 Industrial Way, Chicago, IL 60601, US" for 2 pallets, each 500 pounds, 48x40x60 inches, commodity "Electronics", freight class 125.
+```
+
+## Available Tools
+
+### Parcel Tools
+- `get_parcel_rates` - Get shipping rates from multiple carriers
+- `create_parcel_label` - Create shipping labels with full customization
+- `track_parcel` - Track packages by carrier and tracking number
+- `create_pickup` - Schedule carrier pickups
+- `cancel_pickup` - Cancel existing pickups
+
+### Freight Tools
+- `get_freight_rates` - Get LTL freight shipping rates
+- `create_freight_label` - Create freight shipping labels
+- `track_freight` - Track freight shipments
+
+### Utility Tools
+- `ping` - Health check for the server
+
+## Address Format
+
+The server accepts addresses in flexible formats:
+
+**Format 1**: `Street, City, State ZIP, Country`
+```
+123 Main St, New York, NY 10001, US
+```
+
+**Format 2**: `Street, City, State, ZIP, Country`
+```
+10 cottage ave, long branch, NJ, 07740, US
+```
+
+**Supported Countries**: US, CA, MX, GB, AU, DE, FR, ES, IT, NL, BE, CH, AT, DK, SE, NO, FI, PL, CZ
+
+## Service Name Shortcuts
+
+Use convenient shortcuts instead of full service names:
+
+| Carrier | Shortcut | Full Service Name |
+|---------|----------|-------------------|
+| UPS | `GROUND` | UPS Ground |
+| UPS | `EXPRESS` | UPS Worldwide Express |
+| UPS | `2DAY` | UPS Second Day Air |
+| UPS | `NEXT_DAY` | UPS Next Day Air |
+| FedEx | `GROUND` | FedEx Ground |
+| FedEx | `2DAY` | FedEx 2Day |
+| FedEx | `OVERNIGHT` | FedEx Priority Overnight |
+| DHL | `EXPRESS_WORLDWIDE` | Express Worldwide |
+
+## Package Types
+
+Auto-detected based on weight and dimensions, or specify manually:
+- `ENVELOPE` - Documents and small items
+- `PAK` - FedEx Pak or similar
+- `BOX_SM` - Small box (≤8" max dimension)
+- `BOX_MD` - Medium box (≤12" max dimension)  
+- `BOX_LG` - Large box (≤18" max dimension)
+- `BOX_XL` - Extra large box (≤24" max dimension)
+- `CUSTOMER_PACKAGING` - Custom packaging
+
+## Troubleshooting
+
+### Common Issues
+
+1. **"shipboss-mcp-server command not found"**
+   - Make sure you installed the package: `pip install shipboss-mcp-server`
+   - Verify the command works: `shipboss-mcp-server --help`
+
+2. **"Server not appearing in Claude Desktop"**
+   - Check your `claude_desktop_config.json` syntax is valid JSON
+   - Restart Claude Desktop after making config changes
+   - Verify the config file is in the correct location
+
+3. **"API Token Error"** 
+   - Verify your token is correct and active in your ShipBoss account
+   - Check that the environment variable or config is set properly
+   - Try regenerating your API token
+
+4. **"Address Format Error"**
+   - Ensure addresses include country codes (e.g., "US", "CA")
+   - Use the supported address formats shown above
+
+5. **"Service Not Found"**
+   - Use supported service shortcuts or full service names
+   - Check the service name shortcuts table above
+
+### Debug Mode
+
+To see detailed logs, set the log level before starting:
+```bash
+export PYTHONPATH=.
+python -c "import logging; logging.basicConfig(level=logging.DEBUG)"
+shipboss-mcp-server
+```
+
+### Checking Configuration
+
+Test your installation:
+```bash
+# Verify the command is available
+shipboss-mcp-server --help
+
+# Test with your API token
+export SHIPBOSS_API_TOKEN="your_token_here"
+shipboss-mcp-server
+```
+
+## Support
+
+- **Documentation**: [ShipBoss API Docs](https://docs.shipboss.io)
+- **Support**: [support@shipboss.io](mailto:support@shipboss.io)
+- **Issues**: [GitHub Issues](https://github.com/shipb/shipboss-mcp-server/issues)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details. 
