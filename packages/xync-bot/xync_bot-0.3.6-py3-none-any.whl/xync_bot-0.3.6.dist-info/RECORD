@@ -1,0 +1,16 @@
+xync_bot/__init__.py,sha256=_x9GUhAIfaovmgeptj1Y5z7HI32oQhqc1Bg6mXhIsyc,494
+xync_bot/loader.py,sha256=FJNVcBr4K475Bbfe8kQapr87pMVD9H-TH4j2NFkbFok,771
+xync_bot/shared.py,sha256=MlKkTrsT29l7fF6-qAN9FO14cSuXuOuYxbNY5F4S2w4,137
+xync_bot/typs.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+xync_bot/routers/__init__.py,sha256=0CwHTSgAWzKRZ7PtsaLGA8PtjWQtZqsEXKyncNbCKLA,374
+xync_bot/routers/main.py,sha256=eIgorrJXzRJfsO7fx1XxVHFJDfMiJyWt7myS4qSqS8U,9521
+xync_bot/routers/order.py,sha256=ZKWDLyiWrXzcR-aHKLBTBCACwp-P0Vvnr22T-EuLHaM,274
+xync_bot/routers/photo.py,sha256=aq6ImIOoZQYTW-lEy26qjgj5TYAuk4bQjgiCv64mPJs,1203
+xync_bot/routers/vpn.py,sha256=qKK55UrjEZeDvu7ljWXNUFBFgXTPTIEaCT2OAmKWky4,2219
+xync_bot/routers/xicon.png,sha256=O57_kvzhVcCXSoGYZ61m0dW9pizY6gxR8Yj5aeCP0RQ,429283
+xync_bot/routers/cond/__init__.py,sha256=UuOw71_8EQaVfJaj0EoxXNj6o19Am2lho8RdB3QYoSE,7101
+xync_bot/routers/cond/cond.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+xync_bot-0.3.6.dist-info/METADATA,sha256=9opPDdum0Kx-tJXJnuFL8lxc7G1qVbeGckX7Im7Jc1w,695
+xync_bot-0.3.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xync_bot-0.3.6.dist-info/top_level.txt,sha256=O2IjMc1ryAf0rwIXWohSNT5Kzcs9johgKRDz8lCC0rs,9
+xync_bot-0.3.6.dist-info/RECORD,,
