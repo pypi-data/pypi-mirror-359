@@ -1,0 +1,17 @@
+requests~=2.28
+pyrate-limiter~=2.10
+redis~=4.3
+marshmallow~=3.19
+marshmallow-dataclass~=8.5
+
+[dev]
+build
+black
+mypy
+twine
+pre-commit
+types-requests
+
+[test]
+pytest
+vcrpy>=4.2

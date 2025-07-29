@@ -1,0 +1,2 @@
+[console_scripts]
+api-entreprise = api_entreprise.cli:main

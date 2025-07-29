@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://staging.entreprise.api.gouv.fr/v3/insee/sirene/etablissements/26350579400028?context=test&object=test&recipient=26350579400028
+  response:
+    body:
+      string: "{\"errors\":[{\"code\":\"00211\",\"title\":\"Le param\xE8tre recipient
+        est identique au SIRET/SIREN appel\xE9.\",\"detail\":\"Le param\xE8tre recipient
+        est identique au SIRET/SIREN appel\xE9, or ce param\xE8tre de tra\xE7abilit\xE9
+        doit correspondre au SIRET de l'organisation publique habilit\xE9e \xE0 utiliser
+        la donn\xE9e. Si vous \xEAtes une collectivit\xE9 ou une administration, ce
+        param\xE8tre doit donc \xEAtre votre num\xE9ro de SIRET ; si vous \xEAtes
+        un \xE9diteur, il s'agit du SIRET de l'organisation publique cliente demandant
+        la donn\xE9e.\",\"source\":{\"parameter\":\"recipient\"},\"meta\":{}}]}"
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 31 Mar 2023 13:52:24 GMT
+      RateLimit-Limit:
+      - '250'
+      RateLimit-Remaining:
+      - '246'
+      RateLimit-Reset:
+      - '1680270780'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - nginx + Phusion Passenger(R) 6.0.17
+      Status:
+      - 422 Unprocessable Entity
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      - max-age=63072000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Phusion Passenger(R) 6.0.17
+      X-Request-Id:
+      - b0275dd0-fd0d-489b-9aa5-b329f4b0a35a
+      X-Response-Cached:
+      - 'false'
+      X-Runtime:
+      - '0.013906'
+      X-XSS-Protection:
+      - 1; mode=block
+      vary:
+      - Accept, Origin
+    status:
+      code: 422
+      message: Unprocessable Entity
+version: 1

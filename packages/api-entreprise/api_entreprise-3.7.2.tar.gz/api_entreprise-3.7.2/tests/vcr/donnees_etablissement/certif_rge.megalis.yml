@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://staging.entreprise.api.gouv.fr/v3/ademe/etablissements/25351449100047/certification_rge?context=test&object=test&recipient=26350579400028
+  response:
+    body:
+      string: "{\"data\":[{\"data\":{\"url\":\"https://www.qualypso.fr/download_file.php?id=545cf132-b12f-445d-bcde-56a5b235b1d0\",\"nom_certificat\":\"Qualisol
+        CESI\",\"domaine\":\"dummy\",\"meta_domaine\":\"anciens domaines avant 2021\",\"qualification\":{\"code\":\"32\",\"nom\":\"QualiPV
+        Elec - Pose de g\xE9n\xE9rateur photovolta\xEFque raccord\xE9 au r\xE9seau
+        (32)\"},\"organisme\":\"qualibat\",\"date_attribution\":\"2020-12-24\",\"date_expiration\":\"2025-08-01\",\"meta\":{\"internal_id\":\"Q112379-8611M12D10-2017-03-23\",\"updated_at\":\"2021-02-25\",\"archived\":true}},\"links\":{},\"meta\":{}}],\"meta\":{},\"links\":{}}"
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/vnd.api+json
+      Date:
+      - Fri, 31 Mar 2023 13:52:24 GMT
+      ETag:
+      - W/"f1c51a86dda052865cc5dc9764e0e696"
+      RateLimit-Limit:
+      - '250'
+      RateLimit-Remaining:
+      - '249'
+      RateLimit-Reset:
+      - '1680270780'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - nginx + Phusion Passenger(R) 6.0.17
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      - max-age=63072000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Phusion Passenger(R) 6.0.17
+      X-Request-Id:
+      - 86f5137d-f42f-4300-a7f0-73f16a7b41c3
+      X-Response-Cached:
+      - 'false'
+      X-Runtime:
+      - '0.133533'
+      X-XSS-Protection:
+      - 1; mode=block
+      vary:
+      - Accept, Origin
+    status:
+      code: 200
+      message: OK
+version: 1
