@@ -1,0 +1,29 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rwimodeling" # Must match the name in setup.py
+version = "10.0.1"       # Must match the version in setup.py
+authors = [
+  { name="abc", email="abc@abc.com" },
+]
+description = "A simple PoC package for supply chain research demonstrating code execution on install."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["poc", "supply-chain", "security", "research"]
+
+[project.urls]
+"Homepage" = "https://github.com" # POC
+"Bug Tracker" = "https://github.com" # POC
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rwimodeling*"] # Ensure your package directory is found
+
