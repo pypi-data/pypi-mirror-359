@@ -1,0 +1,6 @@
+PyCO2SYS<2,>=1.8
+matplotlib
+numpy
+openpyxl
+pandas
+scipy
