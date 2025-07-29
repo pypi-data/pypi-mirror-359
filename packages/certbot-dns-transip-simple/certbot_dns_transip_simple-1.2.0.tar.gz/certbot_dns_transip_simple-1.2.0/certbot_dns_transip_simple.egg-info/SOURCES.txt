@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+certbot_dns_transip/__init__.py
+certbot_dns_transip/dns_transip.py
+certbot_dns_transip/dns_transip_test.py
+certbot_dns_transip_simple.egg-info/PKG-INFO
+certbot_dns_transip_simple.egg-info/SOURCES.txt
+certbot_dns_transip_simple.egg-info/dependency_links.txt
+certbot_dns_transip_simple.egg-info/entry_points.txt
+certbot_dns_transip_simple.egg-info/requires.txt
+certbot_dns_transip_simple.egg-info/top_level.txt
