@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+notecron.egg-info/PKG-INFO
+notecron.egg-info/SOURCES.txt
+notecron.egg-info/dependency_links.txt
+notecron.egg-info/top_level.txt
