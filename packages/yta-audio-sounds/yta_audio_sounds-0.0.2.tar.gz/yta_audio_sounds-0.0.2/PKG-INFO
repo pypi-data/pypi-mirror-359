@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: yta-audio-sounds
+Version: 0.0.2
+Summary: Youtube Autonomous Audio Sounds Module.
+Author: danialcala94
+Author-email: danielalcalavalera@gmail.com
+Requires-Python: ==3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: yta_audio_base (>=0.0.1,<1.0.0)
+Requires-Dist: yta_constants (>=0.0.1,<1.0.0)
+Requires-Dist: yta_file_downloader (>=0.0.1,<1.0.0)
+Requires-Dist: yta_google_drive_downloader (>=0.0.1,<1.0.0)
+Requires-Dist: yta_programming (>=0.0.1,<1.0.0)
+Requires-Dist: yta_temp (>=0.0.1,<1.0.0)
+Requires-Dist: yta_temp (>=0.0.1,<1.0.0)
+Requires-Dist: yta_validation (>=0.0.1,<1.0.0)
+Requires-Dist: yta_web_scraper (>=0.0.1,<1.0.0)
+Description-Content-Type: text/markdown
+
+# Youtube Autonomous Audio Sounds Module
+
+The Audio Sounds module.
+
+Please, check the 'pyproject.toml' file to see the dependencies.
