@@ -1,0 +1,17 @@
+django_helper_kit-0.1.0a2.dist-info/METADATA,sha256=we40ajHbfKd1ygZHjxTOfguRGKl66D57HKulYZ7rS9U,2886
+django_helper_kit-0.1.0a2.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+django_helper_kit-0.1.0a2.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+django_helper_kit-0.1.0a2.dist-info/licenses/LICENSE,sha256=lkDJ2S0r25IJgsMinNoUrOmA-T90o_dMlgb_BMaYSb0,1066
+django_helper_kit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_helper_kit/admin.py,sha256=p6xop1PuuDG2Uwv3G_aRfldxOfBzTRfMaoZmORVkqyU,66
+django_helper_kit/apps.py,sha256=w5843Bc6ymf6rlLg2gz7ve2wG1pIT0-Ddk6c80_saZ4,170
+django_helper_kit/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_helper_kit/models.py,sha256=4OVMcDDx9fVgBEJ91B7dfMEG2Ni1LRSLJOKzIkVPsKo,60
+django_helper_kit/static/django_helper_kit/js/django-helper-kit.js,sha256=OdKLNODL_p8_FJKz6n6j0pMKeNxglLdPOgwtJ5Ev82E,1546
+django_helper_kit/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_helper_kit/templatetags/djhk_templatetags.py,sha256=e_uIEcvLq-r2HSv2JagvFILnFJ0ZTXPYdWxsyUIGHZk,2476
+django_helper_kit/tests.py,sha256=2uDafv3Ns6f7Vy1ekUtgYxCZEi1KRyesZDTAFhYcX-E,63
+django_helper_kit/utils/__init__.py,sha256=9M2krAEpJ0qY8p_LVvHDT5Ia_wQfx_B3BB3KxiscW10,228
+django_helper_kit/utils/funcs.py,sha256=_RNnGPzLEjHdS_lRjq495XjPVnwIy2xVU6mTBEjEF8o,4081
+django_helper_kit/views.py,sha256=u0FhL7RT5byf5IlcnZEMrcH2TOnQkdfRQU2SjtA26m0,66
+django_helper_kit-0.1.0a2.dist-info/RECORD,,
