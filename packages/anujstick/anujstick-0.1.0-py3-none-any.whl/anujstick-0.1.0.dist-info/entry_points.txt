@@ -1,0 +1,2 @@
+[console_scripts]
+anujstick = anujstick.main:main
