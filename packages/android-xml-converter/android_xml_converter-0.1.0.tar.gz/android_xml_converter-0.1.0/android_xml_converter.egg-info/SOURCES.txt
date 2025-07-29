@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+android_xml_converter.egg-info/PKG-INFO
+android_xml_converter.egg-info/SOURCES.txt
+android_xml_converter.egg-info/dependency_links.txt
+android_xml_converter.egg-info/entry_points.txt
+android_xml_converter.egg-info/top_level.txt
+main/__init__.py
+main/abx2xml.py
+main/xml2abx.py
