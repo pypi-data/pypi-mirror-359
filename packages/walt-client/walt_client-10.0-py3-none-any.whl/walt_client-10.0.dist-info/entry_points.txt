@@ -1,0 +1,3 @@
+[console_scripts]
+walt = walt.client.client:run
+walt-autocomplete-helper = walt.client.autocomplete:ac_helper
