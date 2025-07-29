@@ -1,0 +1,12 @@
+mkdocs_ansible_collection/__init__.py,sha256=8CVNnD-ezJ75MO2_n-520LLwZtmQjXZGtWCVklNM4dE,515
+mkdocs_ansible_collection/plugin.py,sha256=zcLNSq4oiEVnyeIs8pkCz3RnHeG6rSVdCoySMAI--Qs,9737
+mkdocs_ansible_collection/templates/_templates/environment.md.j2,sha256=PPq0_SbrgsznQqY3GZHKIrFm5EZsjAeRCYQoxWFkEA4,401
+mkdocs_ansible_collection/templates/collection_index.md.jinja,sha256=cH2wECBS9w2eMIN8PNS9bCopVCZLpG1x9njcfN_50cQ,1242
+mkdocs_ansible_collection/templates/default.md.jinja,sha256=H5U3t9uVFNrd8IipDbIdD8uxSeJ5PL9Rs3eyDbn16ds,97
+mkdocs_ansible_collection/templates/plugin.md.jinja,sha256=pDdbLi4v8p2B4YrBlPbUb1mSX_vZeNpnN2NAHDNA1R0,3927
+mkdocs_ansible_collection/templates/plugin_list.md.jinja,sha256=tPoAx_WNHmMyoWNy9iFouTxjtP25sys1WsFI0Toif78,344
+mkdocs_ansible_collection-1.1.0.dist-info/LICENSE,sha256=QJi9pqZzpOgvUlkHzbjXXTcNt-zJ8Y0C7n2g2C7rM8A,1071
+mkdocs_ansible_collection-1.1.0.dist-info/METADATA,sha256=gj1W6YEBDY2G5qRGilwNIFIlU_RE4D3pL4zHmVhay14,3338
+mkdocs_ansible_collection-1.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+mkdocs_ansible_collection-1.1.0.dist-info/entry_points.txt,sha256=iIpiAJCGT63h8YWLJ7kHKpqQVrVp2PQvhUL3UyCcTSI,88
+mkdocs_ansible_collection-1.1.0.dist-info/RECORD,,
