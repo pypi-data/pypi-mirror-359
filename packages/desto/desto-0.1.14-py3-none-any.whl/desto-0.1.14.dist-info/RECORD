@@ -1,0 +1,17 @@
+desto/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+desto/app/config.py,sha256=LKckbfiUnT5fuORxsNlgJOhO3kP4EtnA5n52Q3Se4Nk,2213
+desto/app/dashboard.py,sha256=6-Esvdg--L0xjwnleSzltEfqE-JzdcACDF9Gb515Yns,1654
+desto/app/sessions.py,sha256=kCgrX0jau5e7g-JonYrQwEYLvHVHb00o2gIRGHMmEg4,24785
+desto/app/ui.py,sha256=mmXvAAiDnP_SA5k8_hD0QShaUMVJPu434y-pS32hwmQ,54229
+desto/cli/README.md,sha256=vZuK_a8EKtXjlrnGUPpJEGKRLtcr88X3RvBaLOuvYCo,3415
+desto/cli/__init__.py,sha256=qjMVOmc35NP3YMA5Vzs98ogteex-y5Ue5tNE_pKA4dw,198
+desto/cli/cli.py,sha256=GbULekqSOvLnvpHCKOE-ntgW2L3OnTPCZaDnAwd_xME,2494
+desto/cli/main.py,sha256=EdYKT0xGIPbpdJHzAPh4TkpStccifu2uVKX3d89kx3Q,4736
+desto/cli/session_manager.py,sha256=Zw7ovisKwUfHuCF8U91SzNyqRWAb1AW3WMSwMrIXxjU,13509
+desto/cli/sessions.py,sha256=UbGvxW-wge-K12ufvqZqwHKOSe2x_xMRisDRCgHWlME,10633
+desto/cli/utils.py,sha256=LGsGDuEIhX5XjPaVrA53K-5naHlcuxc02wuiKhUOOl0,3269
+desto-0.1.14.dist-info/METADATA,sha256=wIMY4pAzr-jI163gCRxlXa4sCzXsEyIm9-ak6DK0kyQ,6412
+desto-0.1.14.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+desto-0.1.14.dist-info/entry_points.txt,sha256=MSFxPlKvdvn5VWWeN0Thb8N7m9Hf8GKSR_9oH6oU5c0,86
+desto-0.1.14.dist-info/licenses/LICENSE,sha256=fnFw486_iKn2DHuEIUGDI8CTBNoa9NXpD02h3ByKJmE,18650
+desto-0.1.14.dist-info/RECORD,,
