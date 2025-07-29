@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: multinut
+Version: 0.2.1
+Summary: A completely unnecessary multitool module.
+Home-page: https://github.com/ChipperFluff/multinut
+Author: Chipperfluff
+Author-email: i96774080@gmail.com
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# multinut 
+
+The multitool nobody asked for. Includes stuff like `greet()`, `add()`, and other functions you'll forget are here.
