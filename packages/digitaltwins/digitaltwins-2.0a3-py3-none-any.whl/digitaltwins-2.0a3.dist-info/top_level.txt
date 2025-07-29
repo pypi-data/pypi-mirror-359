@@ -1,0 +1,10 @@
+digitaltwins
+docs
+examples
+my_workspace
+venv_310_airflow
+venv_311_dev
+venv_38_airflow
+venv_38_airflow_new
+venv_38_dev
+venv_39_dev
