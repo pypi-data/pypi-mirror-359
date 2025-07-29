@@ -1,0 +1,22 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="casrel_datautils",
+    version="0.1.4",
+    packages=find_packages(),
+    install_requires=[
+        "torch",
+        "transformers>=4.0.0",  # 指定最低版本为 4.0.0
+    ],
+    author="Your Name",
+    description="A Chinese relation extraction data utility toolkit based on CasRel model",
+    long_description=open("README.md", encoding='utf-8').read(),  # 显式指定 UTF-8 编码,
+    long_description_content_type="text/markdown",
+    url="https://github.com/yourusername/casrel_datautils",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.7",
+)
