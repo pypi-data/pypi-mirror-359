@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+chiquito.egg-info/PKG-INFO
+chiquito.egg-info/SOURCES.txt
+chiquito.egg-info/dependency_links.txt
+chiquito.egg-info/top_level.txt
