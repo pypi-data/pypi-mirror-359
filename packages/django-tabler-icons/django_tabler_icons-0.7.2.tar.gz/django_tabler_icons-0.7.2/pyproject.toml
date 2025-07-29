@@ -1,0 +1,59 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+
+requires = [ "setuptools" ]
+
+[project]
+name = "django-tabler-icons"
+version = "0.7.2"
+description = "Use tabler icons with django templates"
+readme = "README.md"
+authors = [
+  { name = "Demetris Stavrou" },
+]
+requires-python = ">=3.9"
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "django>4.2",
+]
+urls.Repository = "https://github.com/demestav/django_tabler_icons"
+scripts.django_tabler_icons = "tabler_icons.cli:main"
+
+[dependency-groups]
+test = [
+  "coverage",
+  "pytest",
+  "pytest-django",
+]
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.pytest.ini_options]
+addopts = """\
+    --strict-config
+    --strict-markers
+    """
+DJANGO_SETTINGS_MODULE = "tests.settings"
+django_find_project = "false"
+
+[tool.coverage.run]
+branch = true
+source = [
+  "tabler_icons",
+]
+
+[tool.coverage.paths]
+source = [
+  "src",
+]
