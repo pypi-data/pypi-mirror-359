@@ -1,0 +1,37 @@
+# HyperPod elastic agent
+
+The HyperPod elastic agent is an extension of [PyTorch’s ElasticAgent](https://docs.pytorch.org/docs/stable/elastic/agent.html). It orchestrates lifecycles of training workers on each container and communicates with the HyperPod training operator. To use the HyperPod training operator, you must first install the HyperPod elastic agent into your training image before you can submit and run jobs using the operator. The following is a docker file that installs elastic agent and uses hyperpodrun to create the job launcher. For more information about the HyperPod training operator, installation of the operator, and how to use it, see the [official AWS documentation](http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-eks-operator.html).
+
+```
+RUN pip install hyperpod-elastic-agent
+
+ENTRYPOINT ["entrypoint.sh"]
+# entrypoint.sh
+...
+hyperpodrun --nnodes=node_count --nproc-per-node=proc_count \
+            --rdzv-backend hyperpod \ # Optional
+            ... # Other torchrun args
+            # pre-traing arg_group
+            --pre-train-script pre.sh --pre-train-args "pre_1 pre_2 pre_3" \
+            # post-train arg_group
+            --post-train-script post.sh --post-train-args "post_1 post_2 post_3" \
+            training.py --script-args
+```
+You can now submit jobs with `kubectl`.
+
+## HyperPod elastic agent arguments
+
+The HyperPod elastic agent supports all of the  original arguments from the PyTorch Elastic Agent [official documentation](https://docs.pytorch.org/docs/stable/elastic/agent.html). The following is a list of additional arguments available in the HyperPod elastic agent:
+
+| **Argument**              | **Description**                                             | **Default Value** |
+|---------------------------|-------------------------------------------------------------|-------------------|
+| --shutdown-signal         | Signal to send to workers for shutdown (SIGTERM or SIGKILL) | "SIGKILL"         |
+| --shutdown-timeout        | Timeout in seconds between SIGTERM and SIGKILL signals      | 30                |
+| --server-host             | Agent server address                                        | "0.0.0.0"         |
+| --server-port             | Agent server port                                           | 8080              |
+| --server-log-level        | Agent server log level                                      | "info"            |
+| --server-shutdown-timeout | Server shutdown timeout in seconds                          | 300               |
+| --pre-train-script        | Path to pre-training script                                 | None              |
+| --pre-train-args          | Arguments for pre-training script                           | None              |
+| --post-train-script       | Path to post-training script                                | None              |
+| --post-train-args         | Arguments for post-training script                          | None              |
