@@ -1,0 +1,17 @@
+slidesmith/__init__.py,sha256=RJlE9n0iuIRrgC_6t_YBTrIXxBMcB84B07yJEdoussk,386
+slidesmith/cli.py,sha256=dgYELiKK9e55-5z9-7Sld4EunvlijldMKpGK0zY560s,3685
+slidesmith/models.py,sha256=uz3elwf1x69C0deSRme4LLq5SJ534SePk9hEpNV5Zmk,9407
+slidesmith/server.py,sha256=bKl0HKq7_RwR9Cz-HVulSeATYOakYmw7OXLQvZp4JPU,1311
+slidesmith/setup.py,sha256=bsMAWBz2okpwPA008Ol5j9P6WXWyphf4yrVlUJu0S5k,3207
+slidesmith/tools/__init__.py,sha256=_a38MukTb34rDeUgjjLp7aB7Unaa6NHUXIZXrFO__2g,1138
+slidesmith/tools/build.py,sha256=RpERCstKeM3sNC_uYchTprRhN4NliKOFDz7Xaw8_qXQ,2780
+slidesmith/tools/deck_management.py,sha256=n2p8swGXzLUScPleTgDQDROxM1UnTUSWHI0q8Eaw63Q,8725
+slidesmith/tools/export.py,sha256=NCN65KQKR_hemPIR-FcNnENq-gBxxnFvP7mKHRE4-4U,4338
+slidesmith/tools/quality.py,sha256=GpuzswlzynyD3lGMuQR1WpW0jx2tEE2jJYcbeLwirbQ,6459
+slidesmith/tools/theming.py,sha256=B0lkRj4N3pXObv4KAhPPfviLNyppERYlbACjiqttJOU,6087
+slidesmith/tools/utilities.py,sha256=ByYPb3s1DJcUS0TJSX2X29Z_VW7WXyTeCOWnT_cVHUY,7889
+slidesmith-0.1.3.dist-info/METADATA,sha256=ZUyyXXmTbxP4_jEfHsCaoo4HR3iI0xxpyJbRADE-Gok,6684
+slidesmith-0.1.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+slidesmith-0.1.3.dist-info/entry_points.txt,sha256=CB0U2GAK6dOwGy2-lTx4zP0CyhxFmLeV4msqsCsOP-w,51
+slidesmith-0.1.3.dist-info/licenses/LICENSE,sha256=sejgsn5aA_jgXdGYLlSrZzY-IUY7b-NSGOY0K8WT5qY,1071
+slidesmith-0.1.3.dist-info/RECORD,,
