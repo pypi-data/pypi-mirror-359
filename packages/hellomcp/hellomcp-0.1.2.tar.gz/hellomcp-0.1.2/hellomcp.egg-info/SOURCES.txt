@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+hellomcp/__init__.py
+hellomcp/__main__.py
+hellomcp/main.py
+hellomcp.egg-info/PKG-INFO
+hellomcp.egg-info/SOURCES.txt
+hellomcp.egg-info/dependency_links.txt
+hellomcp.egg-info/entry_points.txt
+hellomcp.egg-info/requires.txt
+hellomcp.egg-info/top_level.txt
