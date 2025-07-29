@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+oilspillsim.egg-info/PKG-INFO
+oilspillsim.egg-info/SOURCES.txt
+oilspillsim.egg-info/dependency_links.txt
+oilspillsim.egg-info/not-zip-safe
+oilspillsim.egg-info/requires.txt
+oilspillsim.egg-info/top_level.txt
+src/utils/basic_simulator/basic_simulator.cpp
+src/utils/map/map.cpp
+src/utils/pywrap/pywrap.cpp
+tests/test.py
