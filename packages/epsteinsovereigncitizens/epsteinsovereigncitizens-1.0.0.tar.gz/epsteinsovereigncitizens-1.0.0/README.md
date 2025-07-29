@@ -1,0 +1,1 @@
+This is an extension to Epstein's civil violence agent based model. For more information, see the [main repository](https://github.com/pluumenbrownie/abm-assignment).

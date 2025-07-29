@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: epsteinsovereigncitizens
+Version: 1.0.0
+Summary: A spatial alteration to Epstein's civil violence model
+Project-URL: homepage, https://github.com/projectmesa/mesa
+Project-URL: repository, https://github.com/projectmesa/mesa
+Author-email: pluumenbrownie <wessel.beumer@student.uva.nl>
+License: Apache 2.0
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.11
+Requires-Dist: mesa>=2.1.5
+Requires-Dist: numpy>=1.24.4
+Requires-Dist: scipy>=1.10.1
+Description-Content-Type: text/markdown
+
+This is an extension to Epstein's civil violence agent based model. For more information, see the [main repository](https://github.com/pluumenbrownie/abm-assignment).
