@@ -1,0 +1,3 @@
+[console_scripts]
+lb = logbuch.cli:main
+logbuch = logbuch.cli:main
