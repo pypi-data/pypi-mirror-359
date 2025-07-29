@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: gracegit
+Version: 0.1.2
+Summary: A simple, crossplatform, CLI interface for simple Git actions
+Project-URL: Homepage, https://github.com/gyoder/gracegit
+Project-URL: Repository, https://github.com/gyoder/gracegit.git
+Project-URL: Bug Tracker, https://github.com/gyoder/gracegit/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: gitpython>=3.1.44
+Requires-Dist: typer>=0.16.0
+
+# GraceGit
+*Grace's Great Git Abstraction*
+
+I was somewhat fed up with typing multiple commands for every push I made
+so I made a gitpython wrapper in order to make my life a little less
+annoying. I know it is not the best Git hygiene, but it is what my workflow
+is.
+
+## Install instructions
+
+Simpily run the following command, and then use the new `gg` command
+```
+pip install gracegit
+```
+
