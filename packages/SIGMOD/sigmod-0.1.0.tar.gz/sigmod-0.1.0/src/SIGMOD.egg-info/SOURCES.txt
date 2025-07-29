@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/SIGMOD/SIGMOD_CCI.py
+src/SIGMOD/SIGMOD_SVLR.py
+src/SIGMOD/SIGMOD_main.py
+src/SIGMOD/SIGMOD_plot.py
+src/SIGMOD/SIGMOD_utils.py
+src/SIGMOD/__init__.py
+src/SIGMOD.egg-info/PKG-INFO
+src/SIGMOD.egg-info/SOURCES.txt
+src/SIGMOD.egg-info/dependency_links.txt
+src/SIGMOD.egg-info/requires.txt
+src/SIGMOD.egg-info/top_level.txt
