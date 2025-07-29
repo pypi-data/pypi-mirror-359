@@ -1,0 +1,1 @@
+from .georeport import GeoReport
