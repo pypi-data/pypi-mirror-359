@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: efmloader
+Version: 0.1.0
+Summary: A loader for EFM HDF5 waveform data and intensity extraction
+Author-email: Roman Dvořák <your@email.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: h5py
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: tqdm
+
+# efmloader
