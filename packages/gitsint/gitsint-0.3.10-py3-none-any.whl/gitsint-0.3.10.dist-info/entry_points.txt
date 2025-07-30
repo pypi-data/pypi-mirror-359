@@ -1,0 +1,6 @@
+[console_scripts]
+gitsint=gitsint:main
+
+[poetry.plugin]
+dynamic-versioning=poetry_dynamic_versioning.plugin
+
