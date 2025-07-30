@@ -1,0 +1,31 @@
+[project]
+name = "ccd-logger"
+version = "0.1.0"
+description = "Biblioteca padrão de logging estruturado para as aplicações da Conta Comigo Digital. Oferece suporte para logs de APIs, Lambdas e outros serviços, com integração ao AWS CloudWatch e suporte a JSON para SIEMs."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  { name="Iago Santana", email="iago.gomes@contacomigo.digital" }
+]
+keywords = ["logging", "structured-logging", "json-logger", "siem", "lambda", "django"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+  "python-json-logger>=2.0.7",
+  "typing-extensions>=4.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ccd_logger"]
