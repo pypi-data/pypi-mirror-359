@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: wav4py
+Version: 0.0.1
+Summary: Useful re-usable code for Python projects
+Keywords: python,django,htmx
+Author-email: Don Parakin <don@weaddvalue.ca>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-Expression: MIT
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Project-URL: Documentation, https://wav4py.readthedocs.io
+Project-URL: Homepage, https://wav4py.readthedocs.io
+Project-URL: Issues, https://github.com/weaddvalue/wav4py/issues
+Project-URL: Repository, https://github.com/weaddvalue/wav4py.git
+
+# wav4py
+
+Useful re-usable code for Python projects.
+

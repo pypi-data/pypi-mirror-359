@@ -1,0 +1,43 @@
+[project]
+name = "wav4py"
+version = "0.0.1"
+description = "Useful re-usable code for Python projects"
+keywords = ["python", "django", "htmx"]
+authors = [
+    { name="Don Parakin", email="don@weaddvalue.ca" },
+]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+    "Framework :: Django",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://wav4py.readthedocs.io"
+Issues = "https://github.com/weaddvalue/wav4py/issues"
+Documentation = "https://wav4py.readthedocs.io"
+Repository = "https://github.com/weaddvalue/wav4py.git"
+
+[dependency-groups]
+dev = [
+    "django>=5.2",
+    "ruff>=0.12",
+]
+
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+#[pypi]
+#username = "__token__"
+
+#[tool.flit.sdist]
+# include = ["doc/"]
+#exclude = ["docs/", "x-dev/"]
