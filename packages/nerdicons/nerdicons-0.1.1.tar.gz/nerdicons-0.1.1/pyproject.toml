@@ -1,0 +1,19 @@
+
+[project]
+name = "nerdicons"
+version = "0.1.1"
+description = "Nerd Icons In Python"
+authors = [
+    { name = "Obito", email = "obitodih@email.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["requests"]
+
+[project.scripts]
+nerdicons-gen = "nerdicons.nerdicons_gen:main"
+[tool.hatch.metadata]
+license = "MIT"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
