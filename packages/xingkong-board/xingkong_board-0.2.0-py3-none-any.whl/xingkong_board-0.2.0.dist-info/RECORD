@@ -1,0 +1,11 @@
+kid_duplex_controller.py,sha256=G_OdMWwhxLHAppnPDk35I64qxzzC70V50Fi8TOjW_vY,6582
+kid_protocol.py,sha256=ggOPbnB_Tu3h-AJFPpIIRVJRQMzcVfYuAkCHCQg1klU,3151
+kid_serial.py,sha256=hK9mMMOeU5g_1oVenBZJvWEaICYh1JMqXbK7Xbx9qmU,1615
+kid_speech.py,sha256=b4uM_HwSAPfTmds9XOaPwYtYFE1oTHwiKerlaZL294U,8296
+kid_vision.py,sha256=WAl4u2-dCSS1izNAYTwbt_LKSTDqi0Obrv3nU7w37uk,5725
+xingkong_board.py,sha256=RfeA2og6Ec7AYmIxjABrGAZfZ-uCIn02xfMPGbQ66pI,4804
+xingkong_easy.py,sha256=UrLaThmXwhsWS0_Z4Pa_Uk6ltLF5NSjWjYXoCRuZad8,2863
+xingkong_board-0.2.0.dist-info/METADATA,sha256=86quZ51CIkn0hcRNDvusRuqwX4qlblg4iQF_oR6_PH4,9353
+xingkong_board-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xingkong_board-0.2.0.dist-info/top_level.txt,sha256=Xxc24Zo_tn9xb29f-qVOkNb7oRy7rI8V4nGuHNp7zZs,108
+xingkong_board-0.2.0.dist-info/RECORD,,
