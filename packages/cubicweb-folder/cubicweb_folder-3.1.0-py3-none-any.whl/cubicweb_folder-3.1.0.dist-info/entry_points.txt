@@ -1,0 +1,5 @@
+[cubicweb.cubes]
+folder = cubicweb_folder
+
+[cubicweb.i18ncube]
+folder = cubicweb_folder.i18n
