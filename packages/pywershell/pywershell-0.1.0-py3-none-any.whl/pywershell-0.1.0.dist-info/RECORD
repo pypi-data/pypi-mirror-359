@@ -1,0 +1,11 @@
+pywershell/__init__.py,sha256=73jfMBs2TMjerKtWKDQFnhmGyxAfsPPwoz_wYkWVp2s,70
+pywershell/debug.py,sha256=stDcF51J0epjsf8_j6UgELEqOfLPApQTTto3C18TFqc,253
+pywershell/pywershell.ps1,sha256=EtdkD7pXaf55MkXI9TNd_vmcfQqd6K1ANCMd5K1uxFM,5495
+pywershell/pywershell.py,sha256=wJX_NaScHHbVUWBau3m25e2Xa83hixA1SbrjqdX7IFI,8967
+pywershell/pywersl.py,sha256=tjBfDMWSbmzzPQiKpmbgvHI6WA2miL7xFoycpfHRU7I,5394
+pywershell/stream.py,sha256=GK3tkb0RumggONltIIliYpP-uKwRakJIJMDtLng5qgM,2691
+pywershell-0.1.0.dist-info/licenses/LICENSE,sha256=jZXBbBGOMyvdBW69fPqAb5A6Ct_VBhaGOlrduoEKH9g,500
+pywershell-0.1.0.dist-info/METADATA,sha256=mYT0ofao306eQr0leW9uxkOh2GmvUXVMwY3oSbhnP_M,1419
+pywershell-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pywershell-0.1.0.dist-info/top_level.txt,sha256=gBNX2uox1MQAVHhuKvksIJYiExAQxpA8F0VUWwo6f2M,11
+pywershell-0.1.0.dist-info/RECORD,,
