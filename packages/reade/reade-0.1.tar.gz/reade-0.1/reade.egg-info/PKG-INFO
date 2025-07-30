@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: reade
+Version: 0.1
+Summary: Lesen und pruefen Sie die Readme-Datei
+Home-page: https://github.com/
+Author: felipedenis
+Author-email: felipedenis@proton.me
+License: MIT
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
