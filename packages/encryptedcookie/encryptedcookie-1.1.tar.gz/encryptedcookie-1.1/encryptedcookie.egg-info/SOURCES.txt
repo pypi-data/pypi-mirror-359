@@ -1,0 +1,9 @@
+LICENSE
+setup.cfg
+setup.py
+encryptedcookie/__init__.py
+encryptedcookie.egg-info/PKG-INFO
+encryptedcookie.egg-info/SOURCES.txt
+encryptedcookie.egg-info/dependency_links.txt
+encryptedcookie.egg-info/requires.txt
+encryptedcookie.egg-info/top_level.txt

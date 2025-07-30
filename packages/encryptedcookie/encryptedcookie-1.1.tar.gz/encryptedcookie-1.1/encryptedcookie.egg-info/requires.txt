@@ -1,0 +1,11 @@
+pycryptodome>=3.11.0
+brotli>=1.0.1
+
+[lint]
+isort
+flake8
+pyright
+
+[test]
+pytest>=8.3.2
+pytest-cov>=5.0.0
