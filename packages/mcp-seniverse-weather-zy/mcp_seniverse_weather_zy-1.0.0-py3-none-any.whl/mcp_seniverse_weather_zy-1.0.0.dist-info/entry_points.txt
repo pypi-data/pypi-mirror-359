@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-seniverse-weather-zy = mcp_seniverse_weather_zy:main
