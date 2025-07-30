@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: omniformer
+Version: 0.1.0
+Summary: Omniformer: Context-aware Transformer for GW Signal Classification
+Author: Shantanu Parmar
+Requires-Python: >=3.8
+Requires-Dist: torch >=1.13
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: streamlit
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+
