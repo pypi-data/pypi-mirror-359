@@ -1,0 +1,6 @@
+migmig_setup.py
+migmig/__init__.py
+migmig.egg-info/PKG-INFO
+migmig.egg-info/SOURCES.txt
+migmig.egg-info/dependency_links.txt
+migmig.egg-info/top_level.txt
