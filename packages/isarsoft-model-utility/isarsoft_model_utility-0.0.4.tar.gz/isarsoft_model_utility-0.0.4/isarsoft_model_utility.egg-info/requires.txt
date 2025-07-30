@@ -1,0 +1,16 @@
+torch>=1.13.0
+onnx<=1.17.0
+onnxruntime<=1.21.0
+opencv-contrib-python-headless
+numpy
+Pillow
+onnxslim
+rfdetr-isarsoft[onnxexport]
+tensorrt-yolo-isarsoft
+ultralytics
+
+[dev]
+pytest
+black
+flake8
+mypy
