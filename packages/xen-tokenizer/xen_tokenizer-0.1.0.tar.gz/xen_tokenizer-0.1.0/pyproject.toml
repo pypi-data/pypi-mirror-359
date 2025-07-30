@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xen-tokenizer"
+version = "0.1.0"
+description = "XenArcAI's High-Performance Tokenization Library"
+readme = "README.md"
+authors = [
+    {name = "XenArcAI", email = "engineering@xenarc.ai"},
+]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = [
+    "torch>=1.8.0,<3.0.0",
+    "transformers>=4.18.0,<5.0.0",
+    "tqdm>=4.62.0",
+    "numpy>=1.20.0",
+    "filelock>=3.0.0",
+]
+
+[project.optional-dependencies]
+azure = [
+    "azure-storage-blob>=12.8.1",
+    "pyarrow>=6.0.0",
+    "pandas>=1.3.0",
+]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.12.0",
+    "black>=21.7b0",
+    "isort>=5.9.0",
+    "mypy>=0.910",
+    "flake8>=4.0.0",
+    "pre-commit>=2.15.0",
+    "types-PyYAML",
+    "types-requests",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=xen_tokenizer --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["xen_tokenizer"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
+
+[metadata]
+license_file = "LICENSE"
