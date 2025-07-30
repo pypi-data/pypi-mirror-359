@@ -1,0 +1,11 @@
+tree_sitter_epics_msi_template-0.1.0.dist-info/RECORD,,
+tree_sitter_epics_msi_template-0.1.0.dist-info/WHEEL,sha256=Q0jWeiZo_JAX6gR9aD30a5qiFUEFdE46pg4_gp3JfOw,136
+tree_sitter_epics_msi_template-0.1.0.dist-info/top_level.txt,sha256=Es8zaq07COVaiCzvJWktdCkYT81v1caBH1yxQouqqss,40
+tree_sitter_epics_msi_template-0.1.0.dist-info/METADATA,sha256=khjFwzqLSx0L_L4eCw_3hY715yHdL-5jljXf2edupiA,1934
+tree_sitter_epics_msi_template-0.1.0.dist-info/licenses/LICENSE,sha256=ckR_xh2az9qj78KrY8eP5wyYiU5lVZNLxPmqsURI6qQ,1056
+tree_sitter_epics_msi_template/__init__.pyi,sha256=1uhiVqGGL8WdKKMow_5_2RpzNZD7ofluDD98gZ96dz0,169
+tree_sitter_epics_msi_template/binding.c,sha256=8wwswedEH-68asYCq3shfNzeCn09V-0-iXq3RRCwu4k,860
+tree_sitter_epics_msi_template/__init__.py,sha256=oPKc7k5I8mMMJiuAalVQu4xx5LwBuhUcWWnAZRdsyf8,1080
+tree_sitter_epics_msi_template/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tree_sitter_epics_msi_template/_binding.abi3.so,sha256=K2REYjW3lLnEIjpUA26YNoNf7Z3YZsQGh45SkWhuLVY,18704
+tree_sitter_epics_msi_template/queries/highlights.scm,sha256=WMEPHYR8-8IMQ95d2UmH8bqeINW9_xDCfm87Rku2tNg,150
