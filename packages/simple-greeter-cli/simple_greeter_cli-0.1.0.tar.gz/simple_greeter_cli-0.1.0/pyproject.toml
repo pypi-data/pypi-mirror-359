@@ -1,0 +1,29 @@
+[project]
+name = "simple-greeter-cli"
+version = "0.1.0"
+authors = [
+  { name="Thceth", email="your-apurv28sonawane@gmail.com" }, # IMPORTANT: Change your-email@example.com to your actual email
+]
+description = "A very basic command-line interface (CLI) tool that greets a user."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+]
+keywords = ["greeter", "cli", "example"]
+
+[project.urls]
+"Homepage" = "https://github.com/Thceth/simple-greeter-cli"
+"Bug Tracker" = "https://github.com/Thceth/simple-greeter-cli/issues"
+"Source" = "https://github.com/Thceth/simple-greeter-cli" # Added for clarity, though homepage might suffice
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"] # This tells setuptools to look for packages in the 'src' directory
