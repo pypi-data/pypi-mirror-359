@@ -1,0 +1,11 @@
+spliit_client/__init__.py,sha256=D4l0SaNJ9fVnXqfLzkZ85nrbR_yVxUWKXXI8hPT4yDI,457
+spliit_client/__main__.py,sha256=lDPfxwYv8rL30ReJJiOVjZlFHU2zn2jxyIgAdnWbtuE,2770
+spliit_client/client.py,sha256=Gips9hPcwCcGW0mRJLp9GlTVnIayyZS8V-CsyIAfht4,9801
+spliit_client-0.1.0.dist-info/licenses/LICENSE,sha256=pKRn4MqQqP5zAJZRYy0eD9LSL268ccJWlMU8WkA0jck,1064
+tests/__init__.py,sha256=mIkT27LOmLSxD0v2xxZrYQ3SdHLPAauv61PZtJchWd0,34
+tests/test_client.py,sha256=2NeUHc1jW2CsggMpNhNjc54v7cHbDmeScUtAWH24-Kg,17810
+spliit_client-0.1.0.dist-info/METADATA,sha256=mTGAz5-F5NRAAbRR8m3ThZZq7TIGnXL9paj92DzA7gQ,8372
+spliit_client-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spliit_client-0.1.0.dist-info/entry_points.txt,sha256=BYoF7nEqXCf1oTGjN0gFJlLu7cxZRPtdUb6BCkIqSjg,55
+spliit_client-0.1.0.dist-info/top_level.txt,sha256=wsyidPLC7q8AQGU_rKp6-b3Rb6I5kzXn0_Bqdd-RyNk,20
+spliit_client-0.1.0.dist-info/RECORD,,
