@@ -1,0 +1,2 @@
+include README.md LICENSE
+recursive-include gpt_batch_api/config *.yaml
