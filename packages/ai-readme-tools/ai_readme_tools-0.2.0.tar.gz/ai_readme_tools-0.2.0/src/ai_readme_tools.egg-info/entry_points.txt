@@ -1,0 +1,2 @@
+[console_scripts]
+aireadme = aireadme.utils.cli:main
