@@ -1,0 +1,4 @@
+typing-extensions>=4.13.2
+
+[orjson]
+orjson>=3.10.18
