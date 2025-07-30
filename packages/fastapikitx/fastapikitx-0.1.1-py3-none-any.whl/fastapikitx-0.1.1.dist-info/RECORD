@@ -1,0 +1,8 @@
+fastapikit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapikit/database.py,sha256=d91KdDfUoB27lDZSjXTClSEERc4tff88fFDoCyR8pAA,4983
+fastapikit/repository.py,sha256=b3j4RRng4ldeQRaUW8YolINKqkkb0OUFEVz_HO0Q5cM,803
+fastapikit/service.py,sha256=JKuPeJuYIfsrdBrN3JCyKRAOYUoTlokK8LgAC8Kn-Cg,657
+fastapikitx-0.1.1.dist-info/METADATA,sha256=TexXyGY8sfcwZmSvRaC5QELYKPD03qXudb-ga938I5Q,715
+fastapikitx-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fastapikitx-0.1.1.dist-info/licenses/LICENSE,sha256=Jiy6TaUXOoG8K0G9adYUAdVYFhXbr1D0N05r5-8eESU,1065
+fastapikitx-0.1.1.dist-info/RECORD,,
