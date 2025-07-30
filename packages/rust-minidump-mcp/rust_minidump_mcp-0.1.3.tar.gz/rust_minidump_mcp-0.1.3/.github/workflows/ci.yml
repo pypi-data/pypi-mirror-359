@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    if: |
+      ${{ !contains(github.event.pull_request.labels.*.name, 'autorelease: pending') }}
+    runs-on: ubuntu-latest
+    # Skip CI for release-please PRs (they have 'autorelease: pending' label)
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Install deps
+        run: |
+          uv venv
+          uv sync
+      - name: Lint
+        run: uv run -- ruff check .
+      - name: Type check
+        run: uv run -- mypy .
+      - name: Test
+        run: uv run -- pytest -q

@@ -1,0 +1,123 @@
+[project]
+name = "rust-minidump-mcp"
+version = "0.1.3"
+description = "Rust Minidump MCP server"
+authors = [{name = "bahamoth", email = "bahamoth@naver.com"}]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+keywords = ["mcp", "minidump", "rust-minidump", "crash-analysis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "uvicorn",
+    "pydantic>=2",
+    "fastmcp>=2.8.1",
+    "typer>=0.16.0",
+    "pydantic-settings>=2.9.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/bahamoth/rust-minidump-mcp"
+Repository = "https://github.com/bahamoth/rust-minidump-mcp"
+Issues = "https://github.com/bahamoth/rust-minidump-mcp/issues"
+
+[project.scripts]
+rust-minidump-mcp = "minidumpmcp.cli:app"
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["minidumpmcp"]
+include = ["minidumpmcp/tools/bin/**"]
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "N",  # pep8-naming
+    "B",  # flake8-bugbear
+]
+ignore = ["B008"]
+
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+# ── Options implicitly enabled by `strict = true` ───────────────────────────────
+# warn_unused_configs      = true  # Warn about unused [mypy-*] config sections
+# disallow_any_generics    = true  # Reject List[Any] / dict[str, Any], etc.
+# disallow_subclassing_any = true  # Forbid inheriting from `Any`
+# disallow_untyped_calls   = true  # Error on calling untyped functions / methods
+# disallow_untyped_defs    = true  # Every function must have type annotations
+# disallow_incomplete_defs = true  # Reject partially-annotated functions
+# check_untyped_defs       = true  # Type-check bodies of untyped functions
+# disallow_untyped_decorators = true  # Decorators themselves must be typed
+# no_implicit_optional     = true  # Need explicit Optional[T]; None defaults aren’t enough
+# warn_redundant_casts     = true  # Flag cast() calls that aren’t needed
+# warn_unused_ignores      = true  # Alert when a “# type: ignore” is unnecessary
+# warn_return_any          = true  # Error if a function can return `Any`
+# no_implicit_reexport     = true  # Re-export only names listed in __all__
+# strict_equality          = true  # Disallow == / in for incompatible types
+# extra_checks             = true  # Misc extra safety checks (e.g. TypedDict update rules)
+
+# ── Options not implicitly enabled by `strict = true` ──────────────────────────
+warn_unreachable = true
+warn_return_any = true
+warn_unused_ignores = true
+show_error_codes = true
+disable_error_code = ["attr-defined"]
+
+# ── Exclude test files from strict checking ──────────────────────────────────────
+exclude = [
+    "tests/",
+]
+
+# ── Per-module configuration ─────────────────────────────────────────────────────
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+check_untyped_defs = false
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "mypy",
+    "pytest",
+    "black>=25.1.0",
+    "hatchling>=1.27.0",
+    "rust-just>=1.40.0",
+    "pytest-asyncio>=1.0.0",
+]
+
+# TestPyPI publishing configuration
+# Uncomment when publishing to TestPyPI
+# [[tool.uv.index]]
+# name = "testpypi"
+# url = "https://test.pypi.org/simple/"
+# publish-url = "https://test.pypi.org/legacy/"
