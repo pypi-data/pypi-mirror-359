@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+src/ocr_project.egg-info/PKG-INFO
+src/ocr_project.egg-info/SOURCES.txt
+src/ocr_project.egg-info/dependency_links.txt
+src/ocr_project.egg-info/top_level.txt
