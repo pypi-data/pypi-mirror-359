@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="796a5f7c-d1ef-401b-83a1-3f3b81a6296d" name="Changes" comment="dependence fix">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hashtray/__about__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hashtray/__about__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sha256" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;balestek&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/balestek/hashtray.git&quot;,
+    &quot;accountId&quot;: &quot;2c0a3be4-963b-49b7-b735-be3e518aa70c&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;balestek&quot;,
+    &quot;repository&quot;: &quot;hashtray&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2pYvUA34FoTAKvO8MITgyuhGeMm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.cli.executor&quot;: &quot;Run&quot;,
+    &quot;Python.email_enum.executor&quot;: &quot;Run&quot;,
+    &quot;Python.enumerator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_elements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_gravatar.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gravatar.executor&quot;: &quot;Run&quot;,
+    &quot;Python.permutator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.toust.executor&quot;: &quot;Run&quot;,
+    &quot;Python.touts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.black.configuration.BlackFormatterConfigurable&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-53e2683a6804-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26094.141" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="796a5f7c-d1ef-401b-83a1-3f3b81a6296d" name="Changes" comment="" />
+      <created>1732955837201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732955837201</updated>
+    </task>
+    <task id="LOCAL-00001" summary="- Scrap details removed by the new Gravatar API&#10;- Aggregate json and scrapped data&#10;- Simplify the data keys&#10;- Add Bluesky&#10;- Fix Tumblr">
+      <option name="closed" value="true" />
+      <created>1733065787515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733065787515</updated>
+    </task>
+    <task id="LOCAL-00002" summary=" - sha256 hash support&#10; - Scrap the details no longer available due to the new Gravatar API&#10; - Simplify some the data keys&#10; - Add domains found in the links sections to the domains list&#10; - Add Bluesky support and fix some website handling&#10; - Refactor some code">
+      <option name="closed" value="true" />
+      <created>1751487564867</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751487564867</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Clean pipenv">
+      <option name="closed" value="true" />
+      <created>1751487734896</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751487734896</updated>
+    </task>
+    <task id="LOCAL-00004" summary="beta 0.1.0b0">
+      <option name="closed" value="true" />
+      <created>1751489217963</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751489217963</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Table fix">
+      <option name="closed" value="true" />
+      <created>1751489747226</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751489747226</updated>
+    </task>
+    <task id="LOCAL-00006" summary="version fix">
+      <option name="closed" value="true" />
+      <created>1751490050725</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751490050725</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dependence fix">
+      <option name="closed" value="true" />
+      <created>1751490232953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751490232953</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Scrap details removed by the new Gravatar API&#10;- Aggregate json and scrapped data&#10;- Simplify the data keys&#10;- Add Bluesky&#10;- Fix Tumblr" />
+    <MESSAGE value=" - sha256 hash support&#10; - Scrap the details no longer available due to the new Gravatar API&#10; - Simplify some the data keys&#10; - Add domains found in the links sections to the domains list&#10; - Add Bluesky support and fix some website handling&#10; - Refactor some code" />
+    <MESSAGE value="Clean pipenv" />
+    <MESSAGE value="beta 0.1.0b0" />
+    <MESSAGE value="Table fix" />
+    <MESSAGE value="version fix" />
+    <MESSAGE value="dependence fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="dependence fix" />
+  </component>
+</project>
