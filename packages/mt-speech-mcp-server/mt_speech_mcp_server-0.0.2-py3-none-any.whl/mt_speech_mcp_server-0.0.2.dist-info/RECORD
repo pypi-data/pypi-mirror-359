@@ -1,0 +1,16 @@
+src/__main__.py,sha256=e5F2Ny9mOlwlrAmJ1YYMEoLQfZ-Kx0vdWSn8rsJtZck,63
+src/config.py,sha256=fmmzUwON5Ytabe7pxLC4iMbTEZkZ4-aGFHm7ZFkvx-E,1166
+src/server.py,sha256=EvVFwlChsRbZcpdE0JOdzbyBCa_mLP1VREmyGvpa3Es,2312
+src/test.py,sha256=2FPU_ZOc5Ngmvi8SkdZBLJbV1CWwNkgnuMZo3TaDfIQ,1472
+src/clients/asr_client.py,sha256=iBz7aQiNyNhpVSD6NgsPoRZvzDKcbm7fQ0YEGzIus8s,4408
+src/clients/base_client.py,sha256=oHTxZlAm63kRWwFpxaLJA4UeqwqjYwD3PPVcD1JTXuI,3397
+src/clients/tts_client.py,sha256=EZKwAoiCqSNdC4YS2QkQeQ0gT1XY4tlWoFrthi_x2YU,2858
+src/tools/asr_tool.py,sha256=vwLNiT6QHrP49gtqwTnNwtL1xExpdtSxoProQN8HtH0,6485
+src/tools/base.py,sha256=Xnk3BYSFi13F9347UBVqxeWQBuD7h1q6K19ZQMXkrfg,456
+src/tools/manager.py,sha256=lAk1GZKbfmUn5rqPxbOrvl5gDv7y7FyugHLn0Wd6lGw,1155
+src/tools/tts_tool.py,sha256=-9vvCOr6A76-pSnpPoYGC40USETDNfwv2U99SQmGcBU,5552
+src/utils/utils.py,sha256=aD4CG_xy0K8kFW7b_IkMrN0khvBt8xZvyHWmn0PemD8,3520
+mt_speech_mcp_server-0.0.2.dist-info/METADATA,sha256=UyXOwrxTtSX3csV9VDahYaY0AD4PXw6jqESuZl2KROg,4162
+mt_speech_mcp_server-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mt_speech_mcp_server-0.0.2.dist-info/entry_points.txt,sha256=xEwr3Pz49-srrX3HDvnqeSS57b3WrPZEP-J4jOZOI3k,63
+mt_speech_mcp_server-0.0.2.dist-info/RECORD,,
