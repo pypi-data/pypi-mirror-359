@@ -1,0 +1,10 @@
+svg2unicode/README.md,sha256=yrL22tVnzS4zTtEj1aJG_d1b3JR6VOsx3IyUxtQD_xM,640
+svg2unicode/__init__.py,sha256=apdZnBn0H0fuwr3Lk2Zw7Lf05JOViX-3wnOSJOwCjz4,362
+svg2unicode/cli.py,sha256=1ZwsWQghA_atxHnNzUWkb066i01vjfiarD1iCug--9M,1178
+svg2unicode/converter.py,sha256=yNqCj0838_OfbpWcbocWBWkf_onA06LHJvmDjmYd25c,2807
+svg2unicode-0.1.0.dist-info/licenses/LICENSE,sha256=DCq7JH2jxRvqsA9skTUPiCTrghsGPWOn-f7E7TdeFrA,11393
+svg2unicode-0.1.0.dist-info/METADATA,sha256=3zfj8AawX_Ju2QF3jH1QDJ4z3jfSdTWNn_nWitecX8s,34408
+svg2unicode-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+svg2unicode-0.1.0.dist-info/entry_points.txt,sha256=IbS78eG5tANSfUQKZfOA5iIdBume6f_LIhbycFQ7Jrw,53
+svg2unicode-0.1.0.dist-info/top_level.txt,sha256=924hjWN9p4MIB4mBugUVhokCseAEali4HplgLSBT2Pc,12
+svg2unicode-0.1.0.dist-info/RECORD,,
