@@ -1,0 +1,9 @@
+miniduct/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miniduct/datasources/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miniduct/datasources/http.py,sha256=bFiJ_gSicXuKoGIs52NKQB5WKKeQclVwbp8ahY_8fg0,886
+miniduct/outputs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miniduct/outputs/gcs.py,sha256=zLMKg_qthGi3QYCvw2MFdMzVOSuul3IA_IfylWsJSkw,1085
+miniduct/pipeline.py,sha256=q1jQibojsUjaI6mdS1WADvq032cCGu_8eQ3D6jLjr0E,771
+miniduct-0.1.0.dist-info/METADATA,sha256=XReddGUBIiWsmbCvnDOQl44eQ_mqfa7utbB-vs9hJqU,423
+miniduct-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+miniduct-0.1.0.dist-info/RECORD,,
