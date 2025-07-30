@@ -1,0 +1,141 @@
+# clidoku
+
+```text
+ ██████╗██╗     ██╗██████╗  ██████╗ ██╗  ██╗██╗   ██╗
+██╔════╝██║     ██║██╔══██╗██╔═══██╗██║ ██╔╝██║   ██║
+██║     ██║     ██║██║  ██║██║   ██║█████╔╝ ██║   ██║
+██║     ██║     ██║██║  ██║██║   ██║██╔═██╗ ██║   ██║
+╚██████╗███████╗██║██████╔╝╚██████╔╝██║  ██╗╚██████╔╝
+ ╚═════╝╚══════╝╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+
+    A simple command-line sudoku game
+```
+
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Code style: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+clidoku is a command-line sudoku game for your terminal. Not a sudoku solver!
+
+Made completely for fun, so that you can waste time without leaving the comfort of your terminal.
+
+Built by [Barney Jackson](https://github.com/barneyjackson) using only Python's standard library, and finished with the help of [Augment](augmentcode.com) code agent.
+
+## Quick Start
+
+### Install
+
+```bash
+brew tap barneyjackson/clidoku
+brew install clidoku
+```
+
+### Play
+
+```bash
+# Start a new game
+clidoku new
+
+# Add a number to cell a0 (top-left corner)
+clidoku add a0 5
+
+# Show current game (games auto-save)
+clidoku show
+```
+
+## Usage
+
+Games automatically save to `~/.clidoku/savegame.jsonl` and resume when you return.
+
+Supports 4x4 and 9x9 grids with Easy, Medium, and Hard difficulty levels.
+
+### Commands
+
+```bash
+# Start a new game
+clidoku new                           # 9x9 medium difficulty
+clidoku new --difficulty easy         # easier puzzle
+clidoku new --grid-size 4             # 4x4 grid
+
+# Playing (coordinates: rows a-i, columns 0-8)
+clidoku add a0 5                      # add number 5 to cell a0
+clidoku remove a0                     # remove number from cell a0
+clidoku show                          # display current game
+clidoku check                         # validate current grid
+
+# Aliases
+clidoku put a0 5                      # same as 'add'
+clidoku rm a0                         # same as 'remove'
+clidoku ls                            # same as 'show'
+clidoku                               # same as 'show' when game exists
+```
+
+## Installation
+
+### Homebrew
+
+```bash
+brew install clidoku
+```
+
+### From Source
+
+```bash
+git clone https://github.com/barneyjackson/clidoku.git
+cd clidoku
+pip install -e .
+```
+
+## Development
+
+### Setup
+
+```bash
+git clone https://github.com/barneyjackson/clidoku.git
+cd clidoku
+
+# Install rye (if not already installed)
+curl -sSf https://rye-up.com/get | bash
+
+# Sync dependencies
+rye sync
+
+# Run in development mode
+rye run python -m clidoku.main --help
+```
+
+### Testing
+
+```bash
+rye run pytest                        # run tests
+rye run coverage run -m pytest        # with coverage
+rye run coverage report               # coverage report
+```
+
+### Code Quality
+
+```bash
+rye fmt                               # format code
+rye lint                              # lint code
+rye run mypy -p clidoku
+```
+
+### Building
+
+```bash
+rye build                             # build package for distribution
+```
+
+## Contributing
+
+Though I don't plan to actively maintain this project, I'm open to pull requests. If you'd like to contribute, please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting (`rye run pytest && rye lint`)
+5. Submit a Pull Request
+
+## License
+
+This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.

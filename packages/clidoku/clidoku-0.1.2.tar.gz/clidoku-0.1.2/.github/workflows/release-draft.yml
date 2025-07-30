@@ -1,0 +1,70 @@
+name: Draft Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  quality-checks:
+    name: Run Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Rye
+        uses: eifinger/setup-rye@v4
+        with:
+          version: '0.44.0'
+          enable-cache: true
+
+      - name: Sync and install tools
+        run: rye sync
+
+      - name: Run tests with coverage
+        run: rye run coverage run -m pytest
+
+      - name: Show coverage report
+        run: rye run coverage report
+
+      - name: Format code
+        run: rye fmt --check
+
+      - name: Lint code
+        run: rye lint
+
+      - name: Type check
+        run: rye run mypy -p clidoku
+
+  draft-release:
+    name: Create Draft Release
+    runs-on: ubuntu-latest
+    needs: quality-checks
+
+    permissions:
+      # write permission is required to create a github release
+      contents: write
+      # write permission is required for autolabeler
+      # otherwise, read permission is required at least
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Draft Release
+        uses: release-drafter/release-drafter@v6
+        with:
+          config-name: release-drafter.yml
+          disable-releaser: github.ref != 'refs/heads/main'
+          commitish: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
