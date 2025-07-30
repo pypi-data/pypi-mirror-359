@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69.5.1", "requests~=2.31.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "libpfapi"
+version = "0.4.2"
+authors = [
+    { name="Jordi Castells", email="jordi.castells@gilytics.com" },
+    { name="Rafael Ruiz", email="rafael.romero@gilytics.com" },
+]
+description = "Base library providing basic pathfinder REST api access utilities"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://www.gilytics.com/"
+Issues = "https://www.gilytics.com/faqs"
