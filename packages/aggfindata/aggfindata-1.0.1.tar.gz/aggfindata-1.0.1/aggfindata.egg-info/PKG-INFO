@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: aggfindata
+Version: 1.0.1
+Summary: A Flask application for aggregating stock data and financial news
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Flask
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE.txt
