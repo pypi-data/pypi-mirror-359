@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: at-audioutil-pkg
+Version: 0.0.4
+Summary: A utility to examine 24-bit integer and 32-bit floating point audio samples/ranges.
+Author-email: "Ashley R. Thomas" <ashley.r.thomas.701@gmail.com>
+Project-URL: homepage, https://github.com/AshleyT3/Intro-24bit-32bit-float-PCM
+Project-URL: issues, https://github.com/AshleyT3/Intro-24bit-32bit-float-PCM/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: System :: Archiving :: Backup
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: atbu-common-pkg>=0.0.12
+Requires-Dist: numpy>=2.0.2
+Requires-Dist: matplotlib>=3.10.0
+Requires-Dist: pydub>=0.25.1
+Requires-Dist: tinytag>=2.0.0
+Requires-Dist: librosa>=0.10.2.post1
