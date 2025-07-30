@@ -1,0 +1,140 @@
+Metadata-Version: 2.4
+Name: falfilfa4py
+Version: 1.0.7
+Summary: FA/LFI/LFA for Python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: Unix
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: ctypesForFortran<2.0.0
+Requires-Dist: numpy
+
+***FALFILFA***
+==============
+
+Externalized FA - LFI - LFA Formats from IAL
+
+- LFI    : "Logiciel de Fichiers Indexes"
+- FA     : "Format Arpege" - overlay on top of LFI
+- LFA    : format used for DDH outputs
+
+**Installing FALFILFA**
+=======================
+
+***Supported Platforms***
+-------------------------
+
+- Linux
+
+***Requirements***
+------------------
+
+- Fortran and C compiler( tested On Intel & GNU 11.3.0 and later )
+- [CMake](https://cmake.org)
+- [ecbuild](https://github.com/ecmwf/ecbuild)
+- [eccodes](https://github.com/ecmwf/eccodes) : version `ECCODES_REQUIRED_VERSION` in CMakeLists.txt
+- [fiat](https://github.com/ecmwf-ifs/fiat) : version >= commit fdcb622e
+
+***Building FALFILFA***
+-----------------------
+
+Environment variables
+
+    $ export ecbuild_ROOT=`<path-to-ecbuild>`
+    $ export fiat_ROOT=`<path-to-fiat>`
+    $ export eccodes_ROOT=`<path-to-eccodes>`
+
+Compilers could be set while building the libraries or with thoses env variables :
+
+    $ export CC=`<path-to-C-compiler>`
+    $ export FC=`<path-to-Fortran-compiler>`
+
+Since, we are using ecbuild, you must compile FALFILFA out-of-source, so create a build-directory
+
+    $ mkdir build
+Configuration of the build happens through standard CMake
+
+    $ cmake -S FALFILFA -B build
+
+Extra options can be added to the `cmake` command to control the build:
+
+- `-DCMAKE_BUILD_TYPE=<Debug|RelWithDebInfo|Release|Bit>` default=RelWithDebInfo (typically `-O2 -g`)
+- `-DBUILD_SHARED_LIBS=<BOTH|ON|OFF>` default=ON
+- `-DENABLE_SINGLE_PRECISION=<ON|OFF>` default=OFF
+- `-DENABLE_DOUBLE_PRECISION=<ON|OFF>` default=ON
+- `-DCMAKE_INSTALL_PREFIX=<install-prefix>` default=/usr/local (You will need permission to install)
+- `-DCMAKE_Fortran_COMPILER=< fortran compiler>` default=gfortran or the set FC env variable
+- `-DCMAKE_C_COMPILER=< C compiler>` default=gcc or the set CC env variable
+
+- `-DENABLE_UTILITIES=<ON|OFF>` default=ON
+- `-DENABLE_PROGRAMS=<ON|OFF>` default=ON
+- `-DENABLE_TESTS=<ON|OFF>` default=ON
+
+More options to control compilation flags, only when defaults are not sufficient
+
+- `-DCMAKE_Fortran_FLAGS=<fortran-flags>`
+- `-DCMAKE_C_FLAGS=<c-flags>`
+
+Once this has finished successfully, run ``cmake --build .`` and ``cmake --install .``.
+
+***Testing FALFILFA***
+-----------------------
+
+Tests are downloaded in ./tests directory when running cmake command. They are downloaded from https://www.data.gouv.fr/fr/ website. Test data is 200 MB. 
+When running tests, the tests results are written to the current build directory.
+
+***Building falfilfa4py***
+--------------------------
+
+To build the `falfilfa4py` python package (wheel): 
+```
+export ecbuild_ROOT=`<path-to-ecbuild>`
+export gribex_ROOT=`<path-to-your-gribex-root>`
+export fiat_ROOT=`<path-to-fiat>`
+export eccodes_ROOT=`<path-to-eccodes>`
+
+pip install build
+pip install auditwheel
+python -m build --sdist --wheel
+python -m auditwheel repair dist/falfilfa4py-*-linux_x86_64.whl
+```
+
+***Build helper***
+--------------------------
+
+The script `singularity_build.sh`, together with sub-scripts in `bld/`, is designed to 
+help build the libraries and/or the `falfilfa4py` python package (wheel) within a `manylinux` container
+using `singularity`.
+
+See variables in the header of the script to tune dependencies versions in particular.
+
+* `singularity_build.sh get` gets the container image and dependencies clones
+* `singularity_build.sh deps` builds the dependencies (fiat, eccodes...) (req. to have done get)
+* `singularity_build.sh lib` builds the `libfa_[dp|sp].so` (req. to have done get&deps)
+* `singularity_build.sh test` executes the tests (req. to have done lib)
+* `singularity_build.sh wheel` builds `falfilfa4py` wheels for several versions of python (req. to have done get&deps)
+* `singularity_build.sh all` does all of the above
+
+
+***Caveats***
+=============
+
+The current version relies on a copy of the `GRIB_API_INTERFACE` module (`grib_api_interface.F90`) from IAL,
+renamed `ECCODES_INTERFACE` (`src/fa/module/eccodes_interface.F90`).
+
+This is a temporary workaround, several options are considered to fix this caveat in a near future:
+- relying directly on ECCODES library
+- moving this module in a lower-level library, e.g. eccodes or fiat
+
+Same with ELLIPS64 routine, duplicate of ectrans' ELLIPS.
+
+***Reporting Bugs***
+====================
+
+Issues: https://github.com/ACCORD-NWP/FALFILFA/Issues
+Contributions: https://github.com/ACCORD-NWP/FALFILFA/Pulls
