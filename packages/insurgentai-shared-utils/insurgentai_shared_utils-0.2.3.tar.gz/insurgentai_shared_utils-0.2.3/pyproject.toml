@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insurgentai_shared_utils"
+version = "0.2.3"
+description = "A collection of shared utility functions for InsurgentAI microservices."
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Core dependencies that your package needs to run.
+# Use PEP 508 syntax for specifying dependencies and versions.
+dependencies = [
+    "psycopg[binary,pool]>=3.2.6",
+    "pydantic>=2.11.7",
+    "sqlmodel>=0.0.24",
+    "redis"
+]
+
+# Needed to build with hatchling
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shared_utils*"]
