@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/obwikilink/__init__.py
+src/obwikilink/core.py
+src/obwikilink.egg-info/PKG-INFO
+src/obwikilink.egg-info/SOURCES.txt
+src/obwikilink.egg-info/dependency_links.txt
+src/obwikilink.egg-info/requires.txt
+src/obwikilink.egg-info/top_level.txt
+tests/test_main.py
