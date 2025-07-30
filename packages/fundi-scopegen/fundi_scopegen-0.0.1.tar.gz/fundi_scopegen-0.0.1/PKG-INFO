@@ -1,0 +1,122 @@
+Metadata-Version: 2.4
+Name: fundi-scopegen
+Version: 0.0.1
+Summary: Generate scope type that can be used to safely inject values using FunDIs scope values resolution
+Author-email: kuyugama <mail.kuyugama@gmail.com>
+Requires-Python: >=3.10
+Requires-Dist: fundi>=1.2.2
+Requires-Dist: typer>=0.16.0
+Description-Content-Type: text/markdown
+
+# _# fundi-scopegen_
+
+**Type-safe scope declaration generator for `fundi` dependency injection**
+
+`fundi-codegen` generates `TypedDict` classes that describe the expected `scope` structure for `fundi`-based functions.  
+This allows you to call `inject(scope, scan(...), stack)` with full type checking, autocomplete, and IDE support — no plugins or runtime introspection needed.
+
+------------------------
+
+## HOW IT WORKS
+
+`fundi-scopegen` analyzes a function (and its dependency tree) via `scan(...)`, extracts all `from_(...)` and outputs:
+
+- a full list of all keys required in the `scope`
+- expected types (supporting `FromType`, `Literal`, `Optional`, `Union`, `Annotated`, `Parameter`, etc.)
+- import statements for required symbols
+- a `TypedDict` class that serves as a contract for what the `scope` must contain
+
+---
+
+**How it works:**
+
+1. Recursively walks the dependency tree using `scan(...)`
+2. Detects all `from_(...)`-based dependencies
+3. Builds a `TypedDict` based on flattened parameter annotations
+4. Outputs a ready-to-use Python type declaration
+
+------------------------
+
+## USAGE EXAMPLES
+
+### Generate a scope for a function
+
+```bash
+fundi-scopegen play.application
+```
+
+Output:
+
+```python
+from typing import Any, TypedDict, NotRequired
+from fundi import FromType
+from fundi.types import Parameter
+
+class ApplicationScope(TypedDict):
+    parameter: NotRequired[FromType[None | Parameter]]
+    app_name: NotRequired[str | None]
+    some: NotRequired[str]
+    username: Any
+```
+
+---
+
+### With terminal color (for CLI readability)
+
+```bash
+fundi-scopegen play.application --colored
+```
+
+---
+
+### Without imports
+
+```bash
+fundi-scopegen play.application --no-imports
+```
+
+Output:
+
+```python
+class ApplicationScope(TypedDict):
+    parameter: NotRequired[FromType[None | Parameter]]
+    app_name: NotRequired[str | None]
+    some: NotRequired[str]
+    username: Any
+```
+
+---
+
+### Using it in code
+
+```python
+from contextlib import ExitStack
+
+from fundi import inject, scan
+
+from play import application
+from scopes import ApplicationScope
+
+scope: ApplicationScope = {
+    "username": "kuyugama",
+    "some": "waffel",
+}
+
+with ExitStack() as stack:
+    result = inject(scope, scan(application), stack)
+```
+
+---
+
+### Benefits
+
+* Full IDE autocomplete
+* Type-checking with `mypy` or `pyright`
+* Lightweight: no runtime cost or decorators
+* Easy to regenerate on dependency changes
+
+---
+
+> 🐾 Stop guessing your scope shape.
+> Generate it once, and type it forever 😼
+

@@ -1,0 +1,27 @@
+[project]
+name = "fundi-scopegen"
+version = "0.0.1"
+description = "Generate scope type that can be used to safely inject values using FunDIs scope values resolution"
+readme = "README.md"
+authors = [
+    { name = "kuyugama", email = "mail.kuyugama@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fundi>=1.2.2",
+    "typer>=0.16.0",
+]
+
+[project.scripts]
+fundi-scopegen = "fundi_scopegen.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+reportCallInDefaultInitializer = false
+reportAny = false
+
+[tool.black]
+line-length=100
