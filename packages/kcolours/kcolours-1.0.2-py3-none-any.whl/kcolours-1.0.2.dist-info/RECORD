@@ -1,0 +1,10 @@
+kcolours/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kcolours/__main__.py,sha256=uvvGFQLsRFAsC40W_-inw5qDQBB-kYHQhRaMNIRW1Pc,70
+kcolours/cli.py,sha256=uSuvVfNAfMk15Byqp2Aoh7OYmJB7KW9qZXOwV1ewwxY,1452
+kcolours/colours.py,sha256=w5wL6qtd6W7OGmgDkLBmlk0gcZbyLXejAFiADG6JF24,2050
+kcolours-1.0.2.dist-info/licenses/LICENSE.md,sha256=qD-uP1Ul-oy6A9hDmibUrlIZk68qRjyfTq0lnJJHqhI,1069
+kcolours-1.0.2.dist-info/METADATA,sha256=s-8sO4CtexjOeUWQvYHektmxOA2Bw7wLClRXZJxG7qo,2744
+kcolours-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kcolours-1.0.2.dist-info/entry_points.txt,sha256=p9e1GENSEBhNV4e21oJ3O4cQaGrHqKij-8Jh3wcHcmk,46
+kcolours-1.0.2.dist-info/top_level.txt,sha256=vl880iRq2Vd_GA2U4T3aCb0Op7TZkVIVcwwL8f3GP4U,9
+kcolours-1.0.2.dist-info/RECORD,,
