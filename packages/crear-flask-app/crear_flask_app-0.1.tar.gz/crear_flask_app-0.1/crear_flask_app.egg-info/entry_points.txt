@@ -1,0 +1,2 @@
+[console_scripts]
+create-appflask-app = crear_flask_app.__main__:crear_estructura

@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: crear_flask_app
+Version: 0.1
+Summary: Generador de estructura base para proyectos Flask
+Author: Tu Nombre
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Requires-Dist: python-dotenv
+Requires-Dist: flask-cors
+Dynamic: author
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

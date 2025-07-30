@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+crear_flask_app/__init__.py
+crear_flask_app/__main__.py
+crear_flask_app.egg-info/PKG-INFO
+crear_flask_app.egg-info/SOURCES.txt
+crear_flask_app.egg-info/dependency_links.txt
+crear_flask_app.egg-info/entry_points.txt
+crear_flask_app.egg-info/requires.txt
+crear_flask_app.egg-info/top_level.txt
