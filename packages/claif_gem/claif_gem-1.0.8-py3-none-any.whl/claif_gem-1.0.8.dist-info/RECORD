@@ -1,0 +1,12 @@
+claif_gem/__init__.py,sha256=VhmJr6Q3ds4RnFr_u_rjFowZ6kA8rHHKRIbDA81VJZk,1316
+claif_gem/__version__.py,sha256=m5l9g5o8VNj9MUJ7pi9a0oWz64qThmjLunrgA37H-oU,511
+claif_gem/cli.py,sha256=liuJXswaViUCnCpW7JIjYF4tIOxIKNVwpog4cPCXkag,12777
+claif_gem/client.py,sha256=hHt3waw_Bm_-486uSsZh1v6XW4MInmF7n4knJwPYYUw,4104
+claif_gem/install.py,sha256=LgVmtwPWf8Td2Xz_GHWSOlCkVWm3zBtn-NblwhTXf8k,4161
+claif_gem/transport.py,sha256=XIC29KExkQcnz2l8rKhwFioLEJQsclJLiCJ39Cp4WiI,6327
+claif_gem/types.py,sha256=3sbCQht67K56qomYZpvIFdZhAGhFYMRTHONTiz_3rJk,1716
+claif_gem-1.0.8.dist-info/METADATA,sha256=1KqU1y2MwID_cmEHhIC2VD3_ocCSeXYpjCgzZrdK63E,13684
+claif_gem-1.0.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claif_gem-1.0.8.dist-info/entry_points.txt,sha256=DXgtyYsp7sFMZ1X8jvAUBGXnW613xjCho35sF0J0gAI,82
+claif_gem-1.0.8.dist-info/licenses/LICENSE,sha256=owbwpVdTHiU18mRyRzvr1DDQe_Rjs1FCkEdzMGJIU9U,1069
+claif_gem-1.0.8.dist-info/RECORD,,
