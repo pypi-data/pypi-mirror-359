@@ -1,0 +1,133 @@
+Metadata-Version: 2.4
+Name: wcpms
+Version: 0.3.2
+Summary: Python Client of the Web Crop Phenological Metrics Service for Earth Observation Data Cubes
+Home-page: https://github.com/brazil-data-cube/wcpms.py
+Author: Brazil Data Cube Team
+Author-email: bdc.team@inpe.br
+License-File: LICENSE
+Requires-Dist: urllib3==2.2.2
+Requires-Dist: requests==2.32.3
+Requires-Dist: pandas==2.2.2
+Requires-Dist: plotly==6.0.1
+Requires-Dist: scipy==1.13.1
+Requires-Dist: datetime==5.5
+Requires-Dist: geopandas==1.0.1
+Provides-Extra: docs
+Requires-Dist: Sphinx>=2.2; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Provides-Extra: all
+Requires-Dist: Sphinx>=2.2; extra == "all"
+Requires-Dist: sphinx_rtd_theme; extra == "all"
+Requires-Dist: sphinx-copybutton; extra == "all"
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+..
+    This file is part of Python Client Library for WCPMS.
+    Copyright (C) 2025 INPE.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.html>.
+
+
+============================================================
+Python Client Library for Web Crop Phenology Metrics Service
+============================================================
+
+
+.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+        :target: https://github.com/brazil-data-cube/wcpms.py/blob/master/LICENSE
+        :alt: Software License
+
+
+.. image:: https://readthedocs.org/projects/wcpms/badge/?version=latest
+        :target: https://wcpms.readthedocs.io/en/latest/
+        :alt: Documentation Status
+
+
+.. image:: https://img.shields.io/badge/lifecycle-stable-green.svg
+        :target: https://www.tidyverse.org/lifecycle/#stable
+        :alt: Software Life Cycle
+
+
+.. image:: https://img.shields.io/github/tag/brazil-data-cube/wcpms.py.svg
+        :target: https://github.com/brazil-data-cube/wcpms.py/releases
+        :alt: Release
+
+
+.. image:: https://img.shields.io/pypi/v/wcpms
+        :target: https://pypi.org/project/wcpms/
+        :alt: Python Package Index
+
+
+.. image:: https://img.shields.io/discord/689541907621085198?logo=discord&logoColor=ffffff&color=7389D8
+        :target: https://discord.com/channels/689541907621085198#
+        :alt: Join us at Discord
+
+
+About
+=====
+
+Called Web Crop Phenology Metrics Service (WCPMS) the software extracts phenological metrics from big EO image collections, modeled as multidimensional data cubes, produced by the BDC project of INPE. 
+
+It allows analysts to calculate phenological metrics on cloud. The opposite of the on-premises established algorithms, so with no need to download big EO data sets on their personal computers. 
+
+We created the wcpms.py library from scratch to facilitate phenology extraction operations. This library was developed to be interoperable with other Python libraries, thus enabling users to integrate established libraries into their own workflows for pre- or post-processing and analysis. The wcpms.py library has a group of functions, the main ones are:
+
+- ``get_collections``: returns in list format the unique identifier of each of the data cubes available in the BDC's SpatioTemporal Asset Catalogs (STAC).
+
+- ``get_description``: returns in dictionary format the information on each of the phenology metrics, such as code, name, description and method. 	
+
+- ``get_phenometrics``: returns in dictionary form all the phenological metrics calculated for the given spatial location.
+
+- ``get_phenometrics_region``: returns in list format the phenological metrics calculated for each pixel centers within the boundaries of the given region using satellite images time series.
+
+
+Installation
+============
+
+See `INSTALL.rst <https://github.com/brazil-data-cube/wcpms.py/blob/master/INSTALL.rst>`_.
+
+
+Documentation
+=============
+
+See https://wcpms.readthedocs.io/en/latest.
+
+
+References
+==========
+
+
+WIP
+
+
+License
+=======
+
+
+.. admonition::
+    Copyright (C) 2025 INPE.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
