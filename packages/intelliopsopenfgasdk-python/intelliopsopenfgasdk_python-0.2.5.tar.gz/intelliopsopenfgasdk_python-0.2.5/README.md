@@ -1,0 +1,175 @@
+# IntelliOpsOpenFgaSDK-Python
+
+An efficient, asynchronous Python SDK for communicating with the IntelliOps FGA API.
+
+## Features
+- Async API calls using `aiohttp`
+- Fast and efficient client
+- Easy integration with asyncio-based applications
+- Example methods for permission checking and listing
+
+## Installation
+
+Install via pip (after publishing):
+
+```bash
+pip install intelliopsopenfgasdk-python
+```
+
+Or install dependencies for development:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage Examples
+
+
+### 1. Initialize the SDK (Recommended)
+
+```python
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CreateFgaModel
+
+sdk = IntelliOpsOpenFgaSDK()
+fga_model = CreateFgaModel(
+    intelliopsUserUId="your-user-id",
+    intelliopsTenantUId="your-tenant-id",
+    intelliopsConnectorUId="your-connector-id",
+    intelliopsConnectorType="Confluence",
+    datasourceTenantUId="your-datasource-tenant-id",
+    accessToken="your-access-token",
+    refreshToken="your-refresh-token"
+)
+sdk.initialize(fga_model)  # This will call both datasource and FGA initialization
+```
+
+
+### 2. Initialize FGA Data Source (Manual)
+
+```python
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CreateDataSourceModel
+
+sdk = IntelliOpsOpenFgaSDK()
+datasource_model = CreateDataSourceModel(
+    intelliopsTenantUId="your-tenant-id",
+    intelliopsConnectorType="Confluence",
+    datasourceTenantUId="your-datasource-tenant-id"
+)
+sdk._IntelliOpsOpenFgaSDK__init_datasource(datasource_model)  # Not recommended, use initialize() if possible
+```
+
+### 3. Initialize FGA (Manual)
+
+```python
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CreateFgaModel
+
+sdk = IntelliOpsOpenFgaSDK()
+fga_model = CreateFgaModel(
+    intelliopsUserUId="your-user-id",
+    intelliopsTenantUId="your-tenant-id",
+    intelliopsConnectorUId="your-connector-id",
+    intelliopsConnectorType="Confluence",
+    datasourceTenantUId="your-datasource-tenant-id",
+    accessToken="your-access-token",
+    refreshToken="your-refresh-token"
+)
+sdk._IntelliOpsOpenFgaSDK__init_fga(fga_model)  # Not recommended, use initialize() if possible
+```
+
+
+### 4. Check Access (Sync)
+
+```python
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CheckAccessModel, FgaObjectModel
+
+sdk = IntelliOpsOpenFgaSDK()
+model = CheckAccessModel(
+    intelliopsUserUId="your-user-id",
+    fgaObject=FgaObjectModel(
+        intelliopsConnectorUId="your-connector-id",
+        objectId="your-object-id"
+    )
+)
+has_access = sdk.check_access(model)
+print("User has access?", has_access)
+```
+
+
+### 5. Check Access (Async)
+
+```python
+import asyncio
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CheckAccessModel, FgaObjectModel
+
+sdk = IntelliOpsOpenFgaSDK()
+async def main():
+    model = CheckAccessModel(
+        intelliopsUserUId="your-user-id",
+        fgaObject=FgaObjectModel(
+            intelliopsConnectorUId="your-connector-id",
+            objectId="your-object-id"
+        )
+    )
+    has_access = await sdk.async_check_access(model)
+    print("User has access?", has_access)
+
+asyncio.run(main())
+```
+
+
+### 6. Check Multiple Access (Sync)
+
+```python
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CheckMultipleAccessModel, FgaObjectModel
+
+sdk = IntelliOpsOpenFgaSDK()
+model = CheckMultipleAccessModel(
+    intelliopsUserUId="your-user-id",
+    fgaObjects=[
+        FgaObjectModel(intelliopsConnectorUId="your-connector-id", objectId="object-id-1"),
+        FgaObjectModel(intelliopsConnectorUId="your-connector-id", objectId="object-id-2"),
+    ]
+)
+result = sdk.check_multi_access(model)
+print(result)  # {"object-id-1": True, "object-id-2": False}
+```
+
+### 7. Check Multiple Access (Async)
+
+```python
+import asyncio
+from intelliopsopenfgasdk_python.intelliops_openfga_sdk import IntelliOpsOpenFgaSDK
+from intelliopsopenfgasdk_python.models import CheckMultipleAccessModel, FgaObjectModel
+
+sdk = IntelliOpsOpenFgaSDK()
+async def main():
+    model = CheckMultipleAccessModel(
+        intelliopsUserUId="your-user-id",
+        fgaObjects=[
+            FgaObjectModel(intelliopsConnectorUId="your-connector-id", objectId="object-id-1"),
+            FgaObjectModel(intelliopsConnectorUId="your-connector-id", objectId="object-id-2"),
+        ]
+    )
+    result = await sdk.async_check_multi_access(model)
+    print(result)
+
+asyncio.run(main())
+```
+
+## Testing
+
+Run tests using pytest:
+
+```powershell
+pytest
+```
+
+## License
+
+[MIT](LICENSE)
