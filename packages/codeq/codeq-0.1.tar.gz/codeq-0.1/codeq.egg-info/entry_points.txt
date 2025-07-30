@@ -1,0 +1,2 @@
+[console_scripts]
+codeq = codeq.cli:analyze
