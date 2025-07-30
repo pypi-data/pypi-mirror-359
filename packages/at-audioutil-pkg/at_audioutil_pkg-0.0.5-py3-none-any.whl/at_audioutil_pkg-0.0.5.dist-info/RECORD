@@ -1,0 +1,9 @@
+ricochet_tech/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ricochet_tech/audio/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ricochet_tech/audio/audio_util.py,sha256=QmGzjo6jtP2TGbVSs0BcSCe2Q21HC0DS8NgxCKgMg2c,64148
+ricochet_tech/audio/float32_helpers.py,sha256=Df4N4l9vGFdfG8zxcEZzIPcjzUUqZjfVhdXyb73oYE4,9626
+at_audioutil_pkg-0.0.5.dist-info/METADATA,sha256=8d-2Q6IncEXjwxTWdlIgcJTpjlzvuTwEhsHsbi4DaLw,4318
+at_audioutil_pkg-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+at_audioutil_pkg-0.0.5.dist-info/entry_points.txt,sha256=pjOGAWh2o_Q2hg3O-MezMcR5zFiRqSqjE4SWhjK-nFU,66
+at_audioutil_pkg-0.0.5.dist-info/top_level.txt,sha256=Q0jCa2vVIuBx7z-I2uF_I69Q4PDclAxkbam7WDDn6WA,14
+at_audioutil_pkg-0.0.5.dist-info/RECORD,,
