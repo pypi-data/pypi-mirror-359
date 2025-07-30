@@ -1,0 +1,9 @@
+hacs_models/__init__.py,sha256=wLXyhisvOYMKb0yc_VdutLyXIwNgx3k3On2XH6zIQ4g,1285
+hacs_models/agent_message.py,sha256=TR2P-Z7FcLnK8wVL38vIODflnyw46p0WiwvZgvIE5aE,17234
+hacs_models/encounter.py,sha256=k0p_mt65M3aUTBF0j25yJ96wyeYQmGf54oHqCGQB6P4,21517
+hacs_models/observation.py,sha256=FWbyn3OtfrPq9OJEDzv8PuTuSqCri-uETzxv54eBw5Q,13817
+hacs_models/patient.py,sha256=KFKA0gzJMwd7kQIgGBVqWc32y_VASndn8WVm4LpiOg8,15115
+hacs_models/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hacs_models-0.1.0.dist-info/METADATA,sha256=cU2-gc6AgTbjJe4Zdkt9bt34vuoJEXnD2--3VfV_IJw,4358
+hacs_models-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hacs_models-0.1.0.dist-info/RECORD,,
