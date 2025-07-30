@@ -1,0 +1,51 @@
+[project]
+name = "mltune"
+version = "0.2.1"
+description = "Lightweight toolkit for ML feature selection, calibration, voting optimization and reproducibility"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Volodymyr Gnateiko", email = "birrgrrim@email.com" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.optional-dependencies]
+dev = [
+    "setuptools",
+    "pytest",
+    "pytest-cov",
+    "xgboost>=3.0",
+    "lightgbm>=4.0",
+    "matplotlib>=3.0",
+    "seaborn"
+]
+xgboost = ["xgboost>=3.0"]
+lgbm = ["lightgbm>=4.0"]
+catboost = ["catboost"]
+viz = [
+    "matplotlib>=3.0",
+    "seaborn"
+]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme",
+    "sphinx-autodoc-typehints",
+    "myst-parser"
+]
+build = ["build", "twine"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
