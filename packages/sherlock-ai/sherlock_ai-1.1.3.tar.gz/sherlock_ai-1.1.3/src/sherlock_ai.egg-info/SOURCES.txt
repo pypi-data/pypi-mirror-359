@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/sherlock_ai/__init__.py
+src/sherlock_ai/logging_config.py
+src/sherlock_ai/performance.py
+src/sherlock_ai.egg-info/PKG-INFO
+src/sherlock_ai.egg-info/SOURCES.txt
+src/sherlock_ai.egg-info/dependency_links.txt
+src/sherlock_ai.egg-info/top_level.txt
+src/sherlock_ai/config/__init__.py
+src/sherlock_ai/config/logging.py
+src/sherlock_ai/utils/__init__.py
+src/sherlock_ai/utils/helper.py
+tests/test_configuration.py
+tests/test_local.py
