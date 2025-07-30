@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/portal_ctf_python_sdk.egg-info/PKG-INFO
+src/portal_ctf_python_sdk.egg-info/SOURCES.txt
+src/portal_ctf_python_sdk.egg-info/dependency_links.txt
+src/portal_ctf_python_sdk.egg-info/top_level.txt
+src/portalctfapi/__init__.py
+src/portalctfapi/portalctf.py
+src/portalctfapi/apis/__init__.py
+src/portalctfapi/apis/wscopia.py
