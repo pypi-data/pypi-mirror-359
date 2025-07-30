@@ -1,0 +1,11 @@
+numpy
+rasters>=1.7.0
+sentinel-tiles
+
+[dev]
+build
+pytest>=6.0
+pytest-cov
+jupyter
+pytest
+twine
