@@ -1,0 +1,2 @@
+[console_scripts]
+ipython-mcp = ipython_mcp.server:main

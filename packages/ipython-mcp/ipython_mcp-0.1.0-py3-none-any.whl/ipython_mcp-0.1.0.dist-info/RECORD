@@ -1,0 +1,10 @@
+ipython_mcp/__init__.py,sha256=C44EsW1TvgGvfcuooBlSuUoi8j6TUGZ1hUFMxiVLsKs,247
+ipython_mcp/__main__.py,sha256=tY9cS3tGt22WPgzdwLdM8LIlSx04UIehbvuEgN3QlFk,119
+ipython_mcp/default_connection.json,sha256=Svnv2C__qjbNYAxbVdc_oX72iZTny4_JUr6Wvmw3C2M,239
+ipython_mcp/server.py,sha256=liKzeURKA8zc1_HrZdLldqdVsDE3f0qW5EuRTPiKE-U,13466
+ipython_mcp-0.1.0.dist-info/licenses/LICENSE,sha256=0JdHerm1eRfeUMUhSDveYhVE8t4QBCFEooe1_rE7_zI,1068
+ipython_mcp-0.1.0.dist-info/METADATA,sha256=9fa6MVCducSEdMastkiIHk4-oZlFcPyOtCyDUBqhAGs,12222
+ipython_mcp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ipython_mcp-0.1.0.dist-info/entry_points.txt,sha256=1pbdsIBGNLmYd5oWCNBP3Bu_zNeN3S25kx2xl9N95Lg,56
+ipython_mcp-0.1.0.dist-info/top_level.txt,sha256=QQ5_O3FskGuU_nMh_LsffMhDjrg__WFXfdizALySbjY,12
+ipython_mcp-0.1.0.dist-info/RECORD,,
