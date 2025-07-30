@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: cubicweb-sioc
+Version: 1.1.0
+Summary: Specific views for SIOC (Semantically-Interlinked Online Communities)
+Home-page: https://forge.extranet.logilab.fr/cubicweb/cubes/cubicweb-sioc
+Author: LOGILAB S.A. (Paris, FRANCE)
+Author-email: contact@logilab.fr
+License: LGPL
+Classifier: Framework :: CubicWeb
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.9.2
+Requires-Dist: cubicweb<6.0.0,>=4.10.0
+Requires-Dist: cubicweb-web<2.0.0,>=1.5.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Summary
+-------
+Specific views for SIOC (Semantically-Interlinked Online Communities)
