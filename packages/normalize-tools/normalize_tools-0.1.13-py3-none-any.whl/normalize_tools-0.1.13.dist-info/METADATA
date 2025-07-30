@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: normalize_tools
+Version: 0.1.13
+Summary: Herramientas de normalizacion de telefonos, y paises
+Author-email: KC <rmr@keepcoding.io>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/KeepCoding/normalize_tools
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: phonenumbers>=8.12.0
+Requires-Dist: Unidecode==1.4.0
+Requires-Dist: babel==2.17.0
+Requires-Dist: unidecode==1.4.0
+Requires-Dist: tldextract==5.3.0
+Requires-Dist: geocoder==1.38.1
+Requires-Dist: pycountry==24.6.1
+
+
+# normalize_tools
+
+Utilidades de normalización de datos geográficos, lingüísticos y telefónicos. Este paquete permite estandarizar nombres de países, inferir regiones, normalizar números de teléfono e inferir idioma o país a partir de cadenas ambiguas.
+
+## Instalación
+
+Este paquete requiere Python 3.7 o superior.
+
+```bash
+pip install -e .
+```
+
+También puedes instalar las dependencias de desarrollo con:
+
+```bash
+pip install -r dev-requirements.in
+```
+
+## Módulos disponibles
+
+### 1. `countries.py`
+
+Herramientas para trabajar con nombres de países y regiones.
+
+#### Funciones principales:
+
+- `search_country_name(user_input: str) -> str`  
+  Devuelve el nombre de país normalizado a partir de una entrada cualquiera (ej: "Espanya" → "España") o "" si no lo encuentra.
+
+- `get_region(pais: str) -> str`  
+  Devuelve la región a la que pertenece el país. Posibles valores:
+  - `'España'`
+  - `'LATAM'`
+  - `'Otros'`
+   La entrada debe ser un nombre de pais normalizado según la funcion `search_country_name`
+
+
+### 2. `phones.py`
+
+Funciones para estandarización de números de teléfono usando la librería `phonenumbers`.
+
+#### Funciones principales:
+
+- `normalize_phone(candidate: str, default_region: str = 'ES') -> tuple[str, str]`  
+  Devuelve una tupla con el prefijo internacional (`+nn`) y el número limpio. Lanza `ValueError` si no es parseable.
+  
+- `get_phone(candidate: str, default_region: str = 'ES') -> str`
+  Devuelve el teléfono formateado como cadena o bien "" si no es parseable
+
+- `detectar_pais(telefono: str, regiones: list = REGIONES_POR_DEFECTO) -> tuple[str, str]`
+  Detecta el país correspondiente a un número de teléfono. Intenta primero con formato internacional; si falla, prueba con una lista de regiones sugeridas.
+  **Devuelve**: una tupla (código ISO, nombre del país) o ("", "") si no se puede determinar.
+
