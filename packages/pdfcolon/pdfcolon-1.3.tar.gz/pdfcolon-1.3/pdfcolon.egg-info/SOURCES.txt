@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+pdfcolon/__init__.py
+pdfcolon/pdf2image.py
+pdfcolon/pdf2text.py
+pdfcolon.egg-info/PKG-INFO
+pdfcolon.egg-info/SOURCES.txt
+pdfcolon.egg-info/dependency_links.txt
+pdfcolon.egg-info/top_level.txt
