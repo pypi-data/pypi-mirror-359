@@ -1,0 +1,17 @@
+ahttpx/__init__.py,sha256=NjSYWpl_iQaYQqGlPzmB9Sk3JGXm3YFWib8pP24OFIY,1289
+ahttpx/_client.py,sha256=NWNyd9HmhBdGH_4Kqo_JHKDLGZjHjQwyQVso34A8Z5U,4947
+ahttpx/_content.py,sha256=XabSXEOImggvmmU1H1gWPzHvu2822P26vW068NlWE1U,11300
+ahttpx/_headers.py,sha256=0N4cveciHFFqt-fpEUGsYBa7XES3ipmPzsmrFsNtnys,7521
+ahttpx/_network.py,sha256=0CxUs_Fe9SkBxZ4eqsfu5ouL2kzgJtjqaTxMEfVfupw,3127
+ahttpx/_pool.py,sha256=uSoZl8jjdEzXJAXceVgA_8YHzoPqux3d3U4MkCw1SEg,11312
+ahttpx/_quickstart.py,sha256=f5CTEZ-wM_xp4cdBxOrC5nUA_UM18RGnSB9nIVAU3P8,1450
+ahttpx/_request.py,sha256=Edq6-EqW17xwngMrPLzaqtN5y-1ueY8esKRQdzFXcCM,2641
+ahttpx/_response.py,sha256=ynrCFh2fRvD1xO5cvOG67agD3mlZiAPJ8duD3hXMl2o,4591
+ahttpx/_server.py,sha256=Q8GXGhQe-6DuDXV4I_NUHq6L6VsIYi5c-t0RysP_Ec8,5105
+ahttpx/_streams.py,sha256=vaccUqVZ4HaQWvuwK1TpOaFDTwsMX5yjG_SSu2_IOBM,3051
+ahttpx/_urlencode.py,sha256=vlNbf9lv0Ggkcy4ZDefuLvZpoUOosL_KoGrEt9pLKHw,2400
+ahttpx/_urlparse.py,sha256=TtZRExwYhde91BJikANxuXlGhYZ1HUAVPjp_n35QyRw,18746
+ahttpx/_urls.py,sha256=mOuh32C9ydOiZSn4esnbXfwdMLZN1yB6CdTTACV5my8,18051
+ahttpx-1.0.dev1.dist-info/METADATA,sha256=CMHbq7G1P8hp0PGnVx0TkhZwoNuEmZsgvumhZ5tQbaY,680
+ahttpx-1.0.dev1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ahttpx-1.0.dev1.dist-info/RECORD,,
