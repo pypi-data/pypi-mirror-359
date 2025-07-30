@@ -1,0 +1,4 @@
+pydantic
+nagerapi
+five9-python>=0.0.4.dev3
+datetime
