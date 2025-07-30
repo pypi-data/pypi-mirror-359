@@ -1,0 +1,17 @@
+numpy
+lineax
+equinox
+diffrax
+opencv-python
+optimistix
+gdspy
+plotly
+nlopt
+interpax
+cachetools
+scikit-image
+msgpack
+sqlitedict
+msgpack-numpy
+matplotlib
+scipy
