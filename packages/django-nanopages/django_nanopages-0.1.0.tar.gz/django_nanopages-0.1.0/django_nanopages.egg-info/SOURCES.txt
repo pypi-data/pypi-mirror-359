@@ -1,0 +1,17 @@
+CLAUDE.md
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+django_nanopages/__init__.py
+django_nanopages/nanodjango.py
+django_nanopages/pages.py
+django_nanopages/views.py
+django_nanopages.egg-info/PKG-INFO
+django_nanopages.egg-info/SOURCES.txt
+django_nanopages.egg-info/dependency_links.txt
+django_nanopages.egg-info/entry_points.txt
+django_nanopages.egg-info/requires.txt
+django_nanopages.egg-info/top_level.txt
+django_nanopages/templates/django_nanopages/page.html
