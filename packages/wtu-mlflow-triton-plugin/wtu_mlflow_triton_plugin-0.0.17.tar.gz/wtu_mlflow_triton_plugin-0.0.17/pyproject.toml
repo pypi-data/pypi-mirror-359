@@ -1,0 +1,421 @@
+[project]
+name = "wtu-mlflow-triton-plugin"
+dynamic = ["version"]
+description = "MLflow plugin for Triton Inference Server with secure Python function execution"
+authors = [{name = "hbjs", email = "hbjs97@naver.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+keywords = ["mlflow", "triton", "inference", "deployment", "machine-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "boto3>=1.24.0",
+    "mlflow==1.30.1",
+    "numpy>=1.26.4",
+    "tritonclient[http,grpc]>=2.36.0",
+    "requests==2.32.4",
+    "tqdm==4.67.1",
+    "cryptography>=45.0.4",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/hbjs/w-train-utils-mlflow-triton-plugin"
+"Bug Tracker" = "https://github.com/hbjs/w-train-utils-mlflow-triton-plugin/issues"
+"Documentation" = "https://github.com/hbjs/w-train-utils-mlflow-triton-plugin#readme"
+
+[project.scripts]
+keynet = "wtu_mlflow_triton_plugin.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "wtu_mlflow_triton_plugin/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["wtu_mlflow_triton_plugin"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/.vscode",
+    "/.idea",
+    "/docs",
+    "/scripts",
+    "/tests",
+    "/.gitignore",
+    "/.pre-commit-config.yaml",
+    "/uv.lock",
+    "*.pyc",
+    "__pycache__",
+]
+
+[tool.hatch.build]
+include = [
+    "wtu_mlflow_triton_plugin/**/*.py",
+    "wtu_mlflow_triton_plugin/**/*.pyi",
+    "wtu_mlflow_triton_plugin/py.typed",
+    "*.md",
+    "LICENSE",
+    "pyproject.toml",
+]
+exclude = [
+    "tests",
+    "*.pyc",
+    "__pycache__",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "python-dotenv>=1.1.0",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "pytest-asyncio>=1.0.0",
+    "types-requests>=2.31.0,<2.32",  # urllib3 v1.x와 호환되는 버전
+    "types-setuptools>=74.1.0",
+    "ruff>=0.12.1",
+    "mypy>=1.16.1",
+    "pre-commit>=4.2.0",
+    "poethepoet>=0.36.0",
+    "hatch==1.9.7"  # mlflow 1.30.1과 호환되는 버전
+]
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Support Python 3.9+
+target-version = "py39"
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "node_modules",
+    "scripts",
+]
+
+[tool.ruff.lint]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "D",    # pydocstyle
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "TCH",  # flake8-type-checking
+    "RUF",  # Ruff-specific rules
+    "PT",   # flake8-pytest-style
+    "PTH",  # flake8-use-pathlib
+]
+
+ignore = [
+    "D100",  # Missing docstring in public module
+    "D104",  # Missing docstring in public package
+    "D203",  # 1 blank line required before class docstring
+    "D212",  # Multi-line docstring summary should start at the first line
+    "D400",  # First line should end with a period
+    "D415",  # First line should end with a period, question mark, or exclamation point
+    "D401",  # First line of docstring should be in imperative mood
+    "D102",  # Missing docstring in public method
+    "RUF022", # __all__ sorting - we want to keep custom grouping
+    "N803",  # Argument name should be lowercase (for API compatibility)
+    "E501",  # Line too long
+    "PT011", # pytest.raises(ValueError) is too broad
+    "B007",  # Loop control variable not used within loop body
+    "N818",  # Exception naming convention
+    "RUF001", # String contains ambiguous character - for emoji usage
+    "N802",  # Function name should be lowercase
+    "D417",  # Missing argument descriptions in docstring
+    "F841",  # Local variable assigned but never used
+    "B904",  # Use raise from in except - for cleaner error messages
+    "RUF012", # Mutable class attributes should use ClassVar
+    "N811",  # Constant imported as non-constant
+    "N805",  # First argument of a method should be named `self` - Pydantic validators use cls
+    "SIM117", # Use f-string for string formatting
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+# Use single quotes for strings.
+quote-style = "double"
+
+# Indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = ["wtu_mlflow_triton_plugin"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+"__init__.py" = ["D104"]
+"wtu_mlflow_triton_plugin/*" = ["D101", "D105", "D107", "RUF012", "RUF013", "UP008", "B904"]
+"setup.py" = ["SIM115", "PTH123"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = false
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+disallow_untyped_decorators = false
+no_implicit_optional = false
+warn_redundant_casts = false
+warn_unused_ignores = false
+warn_no_return = false
+warn_unreachable = false
+strict_equality = false
+show_error_codes = true
+ignore_missing_imports = true
+allow_untyped_calls = true
+allow_incomplete_defs = true
+strict_optional = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+    "--cov=wtu_mlflow_triton_plugin",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=50"
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+    "e2e: marks tests as end-to-end tests"
+]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning"
+]
+
+[tool.coverage.run]
+source = ["wtu_mlflow_triton_plugin"]
+omit = ["*/tests/*", "*/test_*", "*/__pycache__/*", "*/venv/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+[tool.poe.tasks]
+# Development tasks
+format = [
+    { cmd = "ruff format ." },
+    { cmd = "ruff check --fix ." }
+]
+lint = "ruff check ."
+test = "pytest -v"
+test-cov = "pytest --cov --cov-report=html --cov-report=term"
+typecheck = "mypy ."
+
+# Quality checks
+check = ["lint", "typecheck"]
+ci = ["format", "check", "test"]
+
+# CI for all supported Python versions
+ci-all-versions = [
+    { cmd = "echo '🔍 Running CI for all supported Python versions...'" },
+    { cmd = "echo '🐍 Python 3.9'" },
+    { cmd = "uv sync --python 3.9" },
+    { cmd = "uv run ruff check ." },
+    { cmd = "uv run mypy ." },
+    { cmd = "uv run pytest -v" },
+    { cmd = "echo '🐍 Python 3.10'" },
+    { cmd = "uv sync --python 3.10" },
+    { cmd = "uv run ruff check ." },
+    { cmd = "uv run mypy ." },
+    { cmd = "uv run pytest -v" },
+    { cmd = "echo '🐍 Python 3.11'" },
+    { cmd = "uv sync --python 3.11" },
+    { cmd = "uv run ruff check ." },
+    { cmd = "uv run mypy ." },
+    { cmd = "uv run pytest -v" },
+    { cmd = "echo '🐍 Python 3.12'" },
+    { cmd = "uv sync --python 3.12" },
+    { cmd = "uv run ruff check ." },
+    { cmd = "uv run mypy ." },
+    { cmd = "uv run pytest -v" },
+    { cmd = "echo '✅ All Python versions passed CI!'" }
+]
+
+# Package management
+install = "uv sync --no-dev"  # production dependencies만
+install-dev = "uv sync"  # dev dependencies 포함 (기본값)
+update = "uv lock --upgrade"
+
+# Python version management
+install-pythons = [
+    { cmd = "echo '🐍 Installing Python versions...'"},
+    { cmd = "uv python install 3.9" },
+    { cmd = "uv python install 3.10" },
+    { cmd = "uv python install 3.11" },
+    { cmd = "uv python install 3.12" },
+    { cmd = "echo '✅ All Python versions installed!'" }
+]
+
+# Build and distribution
+build = "uv run hatch build"
+build-check = "uv run hatch build --hooks-only"
+clean = "rm -rf dist build *.egg-info .pytest_cache .mypy_cache .ruff_cache htmlcov"
+
+# Version management with hatch
+version = "uv run hatch version"
+version-patch = "uv run hatch version patch"
+version-minor = "uv run hatch version minor" 
+version-major = "uv run hatch version major"
+version-dev = "uv run hatch version dev"
+version-alpha = "uv run hatch version alpha"
+version-beta = "uv run hatch version beta"
+version-rc = "uv run hatch version rc"
+version-release = "uv run hatch version release"
+
+# Publishing
+publish = "uv run hatch publish"
+
+# Development version workflows
+dev-start = [
+    { cmd = "poe clean" },
+    { cmd = "poe version-dev" },
+    { cmd = "echo '🚀 Development version set! You can now:'" },
+    { cmd = "echo '   - Make changes and test'" },
+    { cmd = "echo '   - Publish dev releases with: poe dev-publish'" },
+    { cmd = "echo '   - Finalize release with: poe dev-finish'" }
+]
+
+dev-publish = [
+    { cmd = "poe ci" },
+    { cmd = "poe build" },
+    { cmd = "poe build-check" },
+    { cmd = "echo '📦 Development version ready to publish!'" },
+    { cmd = "echo 'Run: poe publish to upload to PyPI'" }
+]
+
+dev-finish = [
+    { cmd = "poe version-release" },
+    { cmd = "echo '✅ Development version finalized!'" },
+    { cmd = "echo 'Now run one of: poe release-patch, poe release-minor, or poe release-major'" }
+]
+
+# Release workflows with multi-version testing
+release-patch = [
+    { cmd = "poe clean" },
+    { cmd = "poe version-patch" },
+    { cmd = "poe ci-all-versions" },
+    { cmd = "poe build" },
+    { cmd = "poe build-check" },
+    { cmd = "echo '🎉 Ready to publish! Run: poe publish'" }
+]
+
+release-minor = [
+    { cmd = "poe clean" },
+    { cmd = "poe version-minor" },
+    { cmd = "poe ci-all-versions" },
+    { cmd = "poe build" },
+    { cmd = "poe build-check" },
+    { cmd = "echo '🎉 Ready to publish! Run: poe publish'" }
+]
+
+release-major = [
+    { cmd = "poe clean" },
+    { cmd = "poe version-major" },
+    { cmd = "poe ci-all-versions" },
+    { cmd = "poe build" },
+    { cmd = "poe build-check" },
+    { cmd = "echo '🎉 Ready to publish! Run: poe publish'" }
+]
+
+# Quick release (single version test - for hotfixes)
+release-patch-quick = [
+    { cmd = "poe clean" },
+    { cmd = "poe version-patch" },
+    { cmd = "poe ci" },
+    { cmd = "poe build" },
+    { cmd = "poe build-check" },
+    { cmd = "echo '⚠️  Quick release - only tested on current Python version!'" },
+    { cmd = "echo '🎉 Ready to publish! Run: poe publish'" }
+]
+
+# Show project info
+info = [
+    { cmd = "echo 'Current version:'" },
+    { cmd = "uv run hatch version" },
+    { cmd = "echo '\nInstalled packages:'" },
+    { cmd = "uv pip list | grep -E '(mlflow|triton|boto3|requests|tqdm)'" }
+]
+
+# Multi-version testing with uv
+test-py39 = { cmd = "uv run --python 3.9 pytest -v" }
+test-py310 = { cmd = "uv run --python 3.10 pytest -v" }
+test-py311 = { cmd = "uv run --python 3.11 pytest -v" }
+test-py312 = { cmd = "uv run --python 3.12 pytest -v" }
+
+# Test all versions sequentially
+test-all = [
+    { cmd = "echo '🔍 Running comprehensive tests for all supported Python versions...'" },
+    { cmd = "echo '🐍 Python 3.9'" },
+    { cmd = "uv run --python 3.9 ruff check ." },
+    { cmd = "uv run --python 3.9 mypy ." },
+    { cmd = "uv run --python 3.9 pytest -v --cov --cov-report=term" },
+    { cmd = "echo '🐍 Python 3.10'" },
+    { cmd = "uv run --python 3.10 ruff check ." },
+    { cmd = "uv run --python 3.10 mypy ." },
+    { cmd = "uv run --python 3.10 pytest -v --cov --cov-report=term" },
+    { cmd = "echo '🐍 Python 3.11'" },
+    { cmd = "uv run --python 3.11 ruff check ." },
+    { cmd = "uv run --python 3.11 mypy ." },
+    { cmd = "uv run --python 3.11 pytest -v --cov --cov-report=term" },
+    { cmd = "echo '🐍 Python 3.12'" },
+    { cmd = "uv run --python 3.12 ruff check ." },
+    { cmd = "uv run --python 3.12 mypy ." },
+    { cmd = "uv run --python 3.12 pytest -v --cov --cov-report=term" },
+    { cmd = "echo '✅ All Python versions passed comprehensive tests!'" }
+]
