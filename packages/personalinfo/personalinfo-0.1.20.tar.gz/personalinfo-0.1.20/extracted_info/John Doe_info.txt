@@ -1,0 +1,81 @@
+=== Personal Information ===
+Full Name: John Doe
+Date of Birth: 1990-01-01
+Age: 35
+Email: john@example.com
+Height (cm): 180
+Weight (kg): 75
+BMI: 23.15
+BMI Description: Normal weight: Keep up the good work!
+Blood Group: O+
+Aadhar Number: 1234-5678-9012
+Address: 123 Main St, City, Country
+Bio: Software engineer with a passion for open source.
+
+=== Family ===
+Father: John Sr.
+Mother: Jane Sr.
+Siblings: Jake
+Spouse: Jane Doe
+Children: Junior
+
+=== Contact ===
+Phone Numbers: 123-456-7890
+Email Addresses: john@example.com
+Native Place: Hometown
+Languages Known: English, Hindi
+Communication Address: 123 Main St, City, Country
+Linkedin: john-linkedin
+Facebook: john-facebook
+
+=== Vehicles ===
+Vehicle 1:
+  Vehicle Type: Car
+  Make: Brand
+  Model: Sedan
+  Year: 2018
+  Registration Number: XYZ 1234
+  Color: Red
+  Insurance Number: INS123456
+  Insurance Expiry: 2026-01-01
+  Mileage: 15000.0
+  Engine Number: EN123456
+  Chassis Number: CH123456
+
+=== Education ===
+Education 1:
+  Degree: B.Sc
+  Institution: Example University
+  Year Of Passing: 2020
+  Grade: A
+  Specialization: Computer Science
+  Board: State Board
+  School Name: Example School
+  Start Year: 2016
+  End Year: 2020
+  Location: City
+
+=== Professional Experience ===
+Professional Experience 1:
+  Designation: Engineer
+  Company: Example Corp
+  Start Date: 2020-01-01
+  End Date: Present
+  Location: City
+  Skills: Python, Data Analysis
+  Responsibilities: Development, Testing
+  Achievements: Employee of the Month
+  Salary: 100000.0
+  Employment Type: Full-time
+  Currently Working: True
+
+=== Bank Accounts ===
+Bank Account 1:
+  Bank Name: Bank of Example
+  Account Number: 123456789
+  Ifsc Code: EXAMP001
+  Branch: Main Branch
+  Account Type: Savings
+  Upi Id: john@upi
+  Pan Number: ABCDE1234F
+
