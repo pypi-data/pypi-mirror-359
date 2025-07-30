@@ -1,0 +1,5 @@
+pyproject.toml
+quartermaster_sdk.egg-info/PKG-INFO
+quartermaster_sdk.egg-info/SOURCES.txt
+quartermaster_sdk.egg-info/dependency_links.txt
+quartermaster_sdk.egg-info/top_level.txt
