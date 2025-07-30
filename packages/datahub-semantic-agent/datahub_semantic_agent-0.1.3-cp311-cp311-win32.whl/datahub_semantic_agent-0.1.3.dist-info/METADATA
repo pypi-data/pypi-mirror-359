@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: datahub-semantic-agent
+Version: 0.1.3
+Summary: MCP server for talking to your data, powered by DataHub
+Author-email: Harshal Sheth <harshal@datahub.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: acryl-datahub-cloud>=0.3.12
+Requires-Dist: acryl-datahub[snowflake-slim,sql-parser]>=1.1.0.3
+Requires-Dist: diskcache>=5.6.3
+Requires-Dist: instructor>=1.9.0
+Requires-Dist: litellm>=1.73.1
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: fastmcp>=2.0.0
+Requires-Dist: mlflow-skinny>=3.1.0
+Requires-Dist: pydantic>=2.11
+Requires-Dist: pydantic-settings>=2.6.0
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: snowflake-connector-python==3.16.0
+
+# datahub-semantic-agent
+
+An [MCP server](https://modelcontextprotocol.io/) for talking to your data, powered by DataHub.
+
+## Usage
+
+The datahub-semantic-agent requires a number of environment variables.
+
+```bash
+# DataHub connection details.
+DATAHUB_GMS_URL=...
+DATAHUB_GMS_TOKEN=...
+
+# OpenAI API key.
+# Required for running our internal agentic workflows.
+# We don't currently support any other LLM providers.
+OPENAI_API_KEY=sk-...
+
+# Snowflake connection details.
+# The options mirror the configs available in the DataHub Snowflake integration.
+# https://docs.datahub.com/docs/generated/ingestion/sources/snowflake/
+# e.g. stuff like this is also supported:
+#    SNOWFLAKE__CONNECTION__AUTHENTICATION_TYPE: KEY_PAIR_AUTHENTICATOR
+#    SNOWFLAKE__CONNECTION__PRIVATE_KEY: ...
+#    SNOWFLAKE__CONNECTION__PRIVATE_KEY_PASSWORD: ...
+SNOWFLAKE__CONNECTION__ACCOUNT_ID=...
+SNOWFLAKE__CONNECTION__USERNAME=...
+SNOWFLAKE__CONNECTION__PASSWORD=...
+SNOWFLAKE__CONNECTION__WAREHOUSE=...
+SNOWFLAKE__CONNECTION__ROLE=...
+```
+
+Then, configure your MCP client (Claude Desktop, Cursor, Windsurf, etc.) with the following settings:
+
+```js
+{
+  "mcpServers": {
+    "datahub": {
+      "command": "<path-to-uvx>",  // e.g. "/Users/hsheth/.local/bin/uvx"
+      "args": [
+        "mcp-server-datahub",
+      ],
+      "env": {
+        "DATAHUB_GMS_URL": "...",
+        "DATAHUB_GMS_TOKEN": "...",
+      }
+    },
+    "datahub-semantic-agent": {
+      "command": "<path-to-uvx>",  // e.g. "/Users/hsheth/.local/bin/uvx"
+      "args": [
+        "datahub-semantic-agent",
+      ],
+      "env": {
+        "DATAHUB_GMS_URL": "...",
+        "DATAHUB_GMS_TOKEN": "...",
+        "OPENAI_API_KEY": "sk-...",
+        "SNOWFLAKE__CONNECTION__ACCOUNT_ID": "...",
+        ...
+      }
+    }
+  }
+}
+```
+
+The [DataHub MCP server](https://docs.datahub.com/docs/features/feature-guides/mcp) must also be configured for the datahub-semantic-agent MCP server to work properly.
