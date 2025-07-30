@@ -1,0 +1,14 @@
+claif_cla/__init__.py,sha256=q3DpNvHeBxmXv21_tNegvARC8H2lySyAilTpAwaAbL8,484
+claif_cla/__version__.py,sha256=CjktiUF4FYmIi8u7-B82u38sKQpbDIKiVFrHn5do4dc,513
+claif_cla/approval.py,sha256=bEaXRUkQZh7AqNBXe0x4tVv-a4wItbIapuEUoWtZgDM,6580
+claif_cla/cli.py,sha256=EFy7sKV0COhWDr5-gnwyAEpgNxKQr4fLClV72jLD2vM,34098
+claif_cla/client.py,sha256=YQKEN4PD2wcLnlg38CI3tgg6fTnNUcll6h7MErUhaus,7325
+claif_cla/install.py,sha256=IUaRtaKLp9byz_pXSl9NHIDiiNPynfUYQiw5Mq9EcKI,8424
+claif_cla/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+claif_cla/session.py,sha256=B8UPpCx-juvf2Hw9o6dUEvriAaOLzAdBfxVJbUiB1bg,30910
+claif_cla/wrapper.py,sha256=pSQ9AbR6EOLegKK-RrsD9bMFN7NzYzx7xgAWpIFOkAI,19542
+claif_cla-1.0.27.dist-info/METADATA,sha256=5DGDxCnh73QRS3J0kEU1MJa29LJOtrTdtaOoSFE_dLw,19601
+claif_cla-1.0.27.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claif_cla-1.0.27.dist-info/entry_points.txt,sha256=saRYqDkpZ7sWxZP0fW6vZ3FPEJ5tMbFUfSZAneMWMXc,82
+claif_cla-1.0.27.dist-info/licenses/LICENSE,sha256=owbwpVdTHiU18mRyRzvr1DDQe_Rjs1FCkEdzMGJIU9U,1069
+claif_cla-1.0.27.dist-info/RECORD,,
