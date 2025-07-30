@@ -1,0 +1,2 @@
+[console_scripts]
+things3-mcp = mcp_server_things3.fast_server:main
