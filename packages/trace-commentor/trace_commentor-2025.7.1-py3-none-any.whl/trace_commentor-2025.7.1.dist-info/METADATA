@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: trace_commentor
+Version: 2025.7.1
+Summary: ...
+Author-email: "Yuyao Huang (Sam)" <huangyuyao@outlook.com>
+License: Apache-2.0
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: astor
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-mock; extra == "dev"
+
