@@ -1,0 +1,11 @@
+torch
+tensorflow
+scikit-learn
+transformers
+datasets
+peft
+kaggle
+joblib
+numpy
+matplotlib
+seaborn

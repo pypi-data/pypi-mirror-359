@@ -1,0 +1,2 @@
+[console_scripts]
+mats = mats_lab.__main__:main
