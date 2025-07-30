@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: cdk-tutor
+Version: 0.2.0
+Summary: A CLI application that teaches AWS CDK in Python to software engineers.
+Project-URL: Homepage, https://github.com/amirkarimi/cdk-tutor
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Python: >=3.9
+Requires-Dist: aws-cdk-lib>=2.0.0
+Requires-Dist: deepdiff>=6.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pytest>=8.3.5
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: rich>=13.7.0
+Requires-Dist: typer>=0.9.0
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == 'dev'
+Requires-Dist: isort>=5.0.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# CDK Tutor
+
+A CLI application that teaches AWS CDK to users through interactive challenges.
+
+## Installation
+
+With `pip`:
+
+```bash
+pip install cdk-tutor
+```
+
+With `pipx`:
+
+```bash
+pipx install cdk-tutor
+```
+
+With `uvx`:
+
+```bash
+uvx install cdk-tutor
+```
+
+## Usage
+
+### List available challenges
+
+```bash
+cdk-tutor list-challenges
+```
+
+### Start a challenge
+
+```bash
+cdk-tutor start [CHALLENGE_NAME]
+```
+
+If you don't specify a challenge name, you'll be prompted to choose from available challenges.
+
+### Setup a Python virtual environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows use .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Grade a completed challenge
+
+```bash
+cdk-tutor grade [CHALLENGE_DIR]
+```
+
+## Features
+
+- Interactive CLI with rich text formatting
+- Step-by-step challenges to learn AWS CDK
+- Automatic grading of solutions
+- Detailed feedback to help users improve
+
+## Challenge Structure
+
+Each challenge includes:
+
+- Starter code with TODOs to complete
+- Clear instructions in a README
+- Expected CloudFormation output for grading
+- Solution files for reference
+
+## Development
+
+To add new challenges:
+
+1. Create a new challenge in `src/cdk_tutor/challenges/`
+2. Follow the `Challenge` model structure
+3. Add your challenge to the list in `get_available_challenges()`
+
+## License
+
+MIT
+

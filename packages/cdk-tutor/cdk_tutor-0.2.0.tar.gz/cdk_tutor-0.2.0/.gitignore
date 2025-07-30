@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+dynamodb-table/
+ec2-auto-scaling/
+lambda-function/
+s3-bucket-basics/
+sns-topic-and-sqs-queue/
+vpc-and-networking/
+
