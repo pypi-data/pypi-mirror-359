@@ -1,0 +1,28 @@
+name: check gepetuto
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: check with gepetuto
+        run: uv run gepetuto -vvca all -C tests
+      - name: run unit tests
+        run: cd tests && uv run python -m unittest
+      - name: run mypy
+        run: uv run mypy --explicit-package-bases tests gepetuto
