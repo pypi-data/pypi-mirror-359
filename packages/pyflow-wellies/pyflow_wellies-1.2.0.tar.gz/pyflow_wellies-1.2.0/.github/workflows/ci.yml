@@ -1,0 +1,52 @@
+name: ci-wellies
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  qa:
+    name: qa
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - run: pip install flake8 isort[pyproject]
+      - run: isort -l 79 --force-single-line-imports --profile black --check .
+      - run: flake8 --extend-ignore=E501 .
+
+  setup:
+    name: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+      - run: python -m pip install .
+
+  test:
+    name: pytest
+    env:
+      GIT_PYTHON_TRACE: 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-name: wellies-test
+          environment-file: environment.yml
+      - name: Install wellies and run tests
+        shell: bash -l {0}  # required to load conda environment
+        run: |
+          git config --global user.email "dummy.user@ecmwf.int"
+          git config --global user.name "Dummy User"
+          python -m pip install .[test]
+          pytest .
