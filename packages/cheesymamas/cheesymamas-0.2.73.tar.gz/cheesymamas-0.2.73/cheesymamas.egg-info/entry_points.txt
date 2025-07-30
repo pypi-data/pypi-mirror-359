@@ -1,0 +1,2 @@
+[console_scripts]
+cheesymamas = cheesymamas.main:main
