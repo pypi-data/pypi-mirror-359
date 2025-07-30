@@ -1,0 +1,69 @@
+import logging
+
+import numpy as np
+
+from .dataset import Dataset
+from .sequencing import DAQ_SEQ_ID_RUN, DAQ_SEQ_ID_STOP
+
+logger = logging.getLogger(__name__)
+
+
+class ProfileDataset(Dataset):
+    """
+    Store a dataset generated from a templated profile.
+    """
+    def __init__(self, rendered):
+        channels = {}
+        groups = [{"id": "profiles", "name": "Profiles"},
+                  {"id": "run_seq", "name": "Run Sequences"},
+                  {"id": "stop_seq", "name": "Stop Sequences"}]
+        self.channel_time = {}
+        self.channel_data = {}
+        self.rendered = rendered
+
+        for profile in rendered.profiles:
+            t, p, role, name = profile.to_display()[1][0]
+            channels[role] = {
+                "id": role, "name": name, "format": "%0.3f",
+                "groups": ["profiles"], "units": profile.units,
+            }
+            self.channel_time[role] = np.asarray(t)
+            self.channel_data[role] = np.asarray(p)
+        run_idx = stop_idx = 0
+        digital_channels = []
+        for sequence in rendered.sequences:
+            displays = sequence.to_display()
+            runs = displays[DAQ_SEQ_ID_RUN]
+            stops = displays[DAQ_SEQ_ID_STOP]
+
+            def add_ch(t, d, role, name, group, idx):
+                ch_id = f"{role}-{group}"
+                channels[ch_id] = {
+                    "id": ch_id, "name": name, "format": "%.1f",
+                    "groups": [f"{group}_seq"], "units": "",
+                }
+                digital_channels.append(ch_id)
+                self.channel_time[ch_id] = np.asarray(t)
+                self.channel_data[ch_id] = np.asarray(d)
+            for (t, d, role, name) in runs:
+                add_ch(t, d, role, name, 'run', run_idx)
+                run_idx += 1
+            for (t, d, role, name) in stops:
+                add_ch(t, d, role, name, 'stop', stop_idx)
+                stop_idx += 1
+        idx = 0
+        for ch in sorted(self.channel_data, reverse=True):
+            if ch in digital_channels:
+                self.channel_data[ch] += idx
+                idx += 1
+
+        super().__init__(list(channels.values()), groups)
+
+    def name(self):
+        return "Profile Data"
+
+    def get_channel_data(self, channel_id):
+        time = self.channel_time[channel_id]
+        data = self.channel_data[channel_id]
+        idx = min(time.size, data.size)
+        return time[:idx], data[:idx]
