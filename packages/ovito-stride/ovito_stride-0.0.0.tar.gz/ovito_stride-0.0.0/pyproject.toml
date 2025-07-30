@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ovito-stride"
+dynamic = ["version"]
+description = "STRIDE plugin for OVITO"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [ 
+    { name = "Hrishikesh Belagali", email = "belagal1@msu.edu" },
+]
+keywords = [
+    'OVITO', 
+    'STRIDE',
+    'molecular dynamics'
+]
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "ovito~=3.12.0" 
+]
+
+[project.urls]
+Homepage = "https://github.com/lonelyneutrin0/ovito-stride"
+
+[project.optional-dependencies]
+dev = [
+    "hatchling~=1.27.0",
+    "pytest~=8.0.2",
+    "ruff~=0.9.4",
+    "mypy~=1.13.0",
+    "pdoc~=15.0.4"
+]
+
+[tool.hatch.version]
+path = "ovito_stride/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/ovito_stride",
+]
