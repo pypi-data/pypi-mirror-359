@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: tombstone
+Version: 0.1.0
+Summary: Monitor directories for new files and add tombstone file when static
+Author-email: Jeffrey Duda <jeff.duda@gmail.com>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/jeffduda/tombstone
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# tombstone
+Add a tombstone file to a directory that is considered static

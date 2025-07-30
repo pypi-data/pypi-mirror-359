@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tombstone"
+version = "0.1.0"
+description = "Monitor directories for new files and add tombstone file when static"
+authors = [
+    {name = "Jeffrey Duda", email = "jeff.duda@gmail.com"}
+]
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+"Homepage" = "https://github.com/jeffduda/tombstone"
