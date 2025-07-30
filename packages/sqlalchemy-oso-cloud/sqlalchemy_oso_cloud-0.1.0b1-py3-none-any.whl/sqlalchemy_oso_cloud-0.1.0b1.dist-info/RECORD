@@ -1,0 +1,10 @@
+sqlalchemy_oso_cloud/__init__.py,sha256=J1lcdjMBDV-byzBDretHIbqfohxo7gorw-6Cst2-eIw,851
+sqlalchemy_oso_cloud/orm.py,sha256=9GMA8VNkHsxx-_CnAAKahCEvqPt3ZuRlgsbS1rjxAPo,3251
+sqlalchemy_oso_cloud/oso.py,sha256=RM5JnSrc8nuRqfAaJ-YSVYJqgSErbqXGrfT_ofdkdNw,5785
+sqlalchemy_oso_cloud/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlalchemy_oso_cloud/query.py,sha256=_6Mt2lLn02s4E5i2Wk9eK1xsiQPHH3nJBVNTDShWvZg,2084
+sqlalchemy_oso_cloud/session.py,sha256=WR2c5OAGReZ6zEjaoyAnR2Cp7c5dXNF_SF8SWYcXmaE,1691
+sqlalchemy_oso_cloud-0.1.0b1.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+sqlalchemy_oso_cloud-0.1.0b1.dist-info/METADATA,sha256=OMZeqDGrTUdyHmzCMqhaF8eHhth8oMDDApEi0TSBrEA,3629
+sqlalchemy_oso_cloud-0.1.0b1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+sqlalchemy_oso_cloud-0.1.0b1.dist-info/RECORD,,
