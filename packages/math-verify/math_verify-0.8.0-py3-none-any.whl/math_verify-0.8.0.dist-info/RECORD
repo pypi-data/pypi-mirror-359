@@ -1,0 +1,13 @@
+math_verify/__init__.py,sha256=uY39eaozy7buNkdqcXrKRUa1ZwSvY0O563kNyplgxwY,493
+math_verify/errors.py,sha256=nypoOUUtV44T7XM8QibjG19bNT-3MhoMS94rE9GOn8g,48
+math_verify/few_shots.py,sha256=XdgysLVPJrMNLFMZD3rBVNh-NuKTJf-NDShL2HC-G7E,4038
+math_verify/grader.py,sha256=ugxGtrO12nLEHE95XzzcTmfQy7d6hoDJMF5tuwWKACs,31368
+math_verify/metric.py,sha256=wNGAsDL_KKIgwTodFX5Zo9KOkkcD1EyFpdRC0YPiQ5Y,4407
+math_verify/parser.py,sha256=yHE3dniIglRPUtniouIbGdLwo2G6bufh-ISN2YSJtQc,29206
+math_verify/tasks.py,sha256=b-mAvuwTZTm6Q0mDcsIwGw9lLuLJ9oGbVK1ImEivI5I,9276
+math_verify/utils.py,sha256=HgY4kOE9eLdIm18QgI9NNFg2rP6350yR0xBrrzL7F-g,3896
+math_verify-0.8.0.dist-info/licenses/LICENCE,sha256=diXNYFIkq6WUUuOykV4K_oWXxfC988tnDJrBhSeJ8As,11349
+math_verify-0.8.0.dist-info/METADATA,sha256=Pg6XSF4eprfwQIplu1xZ8oO0cT4ZGTMLQUP-zFtpa4M,1565
+math_verify-0.8.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+math_verify-0.8.0.dist-info/top_level.txt,sha256=7GVGphSppWd7swDW7pnz6hCmW5L9Z1O250iD5eH0MSU,12
+math_verify-0.8.0.dist-info/RECORD,,
