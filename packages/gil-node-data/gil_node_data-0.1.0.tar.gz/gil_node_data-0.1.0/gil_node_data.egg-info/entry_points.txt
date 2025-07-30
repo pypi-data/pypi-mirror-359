@@ -1,0 +1,3 @@
+[gil.nodes]
+Data-ReadFile = gil_node_data.read_file:DataReadFileNode
+Data-Transform = gil_node_data.transform:DataTransformNode

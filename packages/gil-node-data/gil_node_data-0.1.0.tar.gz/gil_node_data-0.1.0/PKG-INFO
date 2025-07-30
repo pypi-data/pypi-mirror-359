@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: gil-node-data
+Version: 0.1.0
+Summary: Data processing and I/O nodes for the Gil-Flow project
+Author-email: iyulab <caveman@iyulab.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: gil-py
+Requires-Dist: pandas
+
+# Gil-Node-Data
+
+This package provides nodes for data processing and I/O within the Gil-Flow ecosystem.
+
+## Provided Nodes
+
+- **Data-ReadFile**: Reads data from a specified file path.
+- **Data-Transform**: Transforms data using a specified function or script.

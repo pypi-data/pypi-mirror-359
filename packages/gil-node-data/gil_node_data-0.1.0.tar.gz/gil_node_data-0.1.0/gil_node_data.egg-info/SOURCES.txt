@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+gil_node_data/__init__.py
+gil_node_data/read_file.py
+gil_node_data/transform.py
+gil_node_data.egg-info/PKG-INFO
+gil_node_data.egg-info/SOURCES.txt
+gil_node_data.egg-info/dependency_links.txt
+gil_node_data.egg-info/entry_points.txt
+gil_node_data.egg-info/requires.txt
+gil_node_data.egg-info/top_level.txt
