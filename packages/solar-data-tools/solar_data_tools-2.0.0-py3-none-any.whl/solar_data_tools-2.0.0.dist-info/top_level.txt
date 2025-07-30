@@ -1,0 +1,3 @@
+pvsystemprofiler
+sdt_dask
+solardatatools
