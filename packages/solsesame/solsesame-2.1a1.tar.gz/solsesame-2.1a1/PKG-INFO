@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: solsesame
+Version: 2.1a1
+Author: Benoit H. Gaury, Phoebe Pearce
+Author-email: p.m.pearce@gmail.com
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.rst
+License-File: AUTHORS.rst
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
