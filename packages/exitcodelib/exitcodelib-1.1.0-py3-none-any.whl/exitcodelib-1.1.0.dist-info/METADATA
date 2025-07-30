@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: exitcodelib
+Version: 1.1.0
+Summary: Standardized exit code system with messages for Python programs
+Author: johny eldry
+Author-email: umyashinderu@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
