@@ -1,0 +1,2 @@
+[edwh.tasks]
+b2 = edwh_b2_plugin.b2_plugin

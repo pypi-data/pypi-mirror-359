@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: edwh-b2-plugin
+Version: 0.2.4
+Summary: Plugin for `edwh` with b2 functionality
+Project-URL: Documentation, https://github.com/educationwarehouse/edwh-b2-plugin#readme
+Project-URL: Issues, https://github.com/educationwarehouse/edwh-b2-plugin/issues
+Project-URL: Source, https://github.com/educationwarehouse/edwh-b2-plugin
+Author-email: Remco Boerma <remco.b@educationwarehouse.nl>, Robin van der Noord <robin.vdn@educationwarehouse.nl>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Requires-Dist: b2
+Requires-Dist: humanize
+Requires-Dist: tabulate
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: edwh; extra == 'dev'
+Requires-Dist: hatch; extra == 'dev'
+Requires-Dist: su6[all]; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# edwh-b2-plugin
+
+[![PyPI - Version](https://img.shields.io/pypi/v/edwh-b2-plugin.svg)](https://pypi.org/project/edwh-b2-plugin)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/edwh-b2-plugin.svg)](https://pypi.org/project/edwh-b2-plugin)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install edwh-b2-plugin
+```
+
+But probably you want to install the whole edwh package:
+
+```console
+pipx install edwh[b2]
+# or
+pipx install edwh[plugins,omgeving]
+```
+
+## License
+
+`edwh-b2-plugin` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
