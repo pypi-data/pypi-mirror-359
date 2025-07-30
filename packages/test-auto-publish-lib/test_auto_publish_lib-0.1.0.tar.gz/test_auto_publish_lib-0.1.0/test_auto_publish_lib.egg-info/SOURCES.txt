@@ -1,0 +1,8 @@
+README.md
+setup.py
+test_auto_publish_lib/__init__.py
+test_auto_publish_lib/get_info.py
+test_auto_publish_lib.egg-info/PKG-INFO
+test_auto_publish_lib.egg-info/SOURCES.txt
+test_auto_publish_lib.egg-info/dependency_links.txt
+test_auto_publish_lib.egg-info/top_level.txt

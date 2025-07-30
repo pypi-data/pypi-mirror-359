@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: test_auto_publish_lib
+Version: 0.1.0
+Summary: A test package for automated PyPI publishing via HEAVEN.
+Home-page: https://github.com/your-org/your-repo
+Author: HEAVEN Test
+Author-email: heaven.demo.agent@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+Testing our auto-publish tool.
