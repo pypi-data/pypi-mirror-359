@@ -1,0 +1,29 @@
+[project]
+name = "shipyard-scraper-api"
+version = "0.1.1a1"
+description = "A local client for connecting and working with Databricks"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.32.3",
+    "shipyard-templates>=0.9.0",
+]
+
+[dependency-groups]
+dev = [
+]
+
+[tool.uv]
+package=true
+
+[[index]]
+name = "pmg"
+default = true
+url = "https://alli-workflows-615299740756.d.codeartifact.us-east-1.amazonaws.com/pypi/alli-workflows-templates-pypi/simple/"
+publish-url = "https://alli-workflows-615299740756.d.codeartifact.us-east-1.amazonaws.com/pypi/alli-workflows-templates-pypi/"
+
+[[index]]
+name = "pypi"
+default = false
+url = "https://pypi.org/simple/"
+
+keyring-provider = "subprocess"
