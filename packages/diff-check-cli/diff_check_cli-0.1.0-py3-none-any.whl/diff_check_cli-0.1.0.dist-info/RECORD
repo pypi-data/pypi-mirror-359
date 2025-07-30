@@ -1,0 +1,7 @@
+diff_check_cli/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+diff_check_cli/cli.py,sha256=a_uNMQw7kmvGcRqYJPaW7KDo_VGYaPX2vlBKY1Q81yo,5260
+diff_check_cli/diff.py,sha256=NqtO6dvzRRE1XtTJvk79oc9JKhIepQ9uC8Hp3SXQzl8,8965
+diff_check_cli-0.1.0.dist-info/METADATA,sha256=NrMLzOaAfazjqeqjfxts2k9m1xzQioGkHCPISEdqJOM,370
+diff_check_cli-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+diff_check_cli-0.1.0.dist-info/top_level.txt,sha256=z84OQ3vnCcMnoavrQp7MknRh8D-TBg3IA4PWLN_Io7k,15
+diff_check_cli-0.1.0.dist-info/RECORD,,
