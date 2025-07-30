@@ -1,0 +1,11 @@
+tcinter-0.0.6.dist-info/RECORD,,
+tcinter-0.0.6.dist-info/WHEEL,sha256=aJP9VHfFEgbnUsD-lsidbChggV8qvE5_IQddd2pzloY,136
+tcinter-0.0.6.dist-info/top_level.txt,sha256=NSeH6ofM6Lid4UzDslO0IYe9CWEM8di3eZIVbJP5SkY,11
+tcinter-0.0.6.dist-info/METADATA,sha256=T-VkWINlB1CLcxUAXfNCwkjZnEg6R9TXap0FujVWOQY,16887
+tcinter-0.0.6.dist-info/licenses/LICENSE,sha256=8D4XzVlMIIX2akVOaVx-vltNPA7_U09PGUq8L9FkYhs,13931
+tcinter/constants.py,sha256=wBMU3FHRyO_-uiUocgpl2hM1ltQUMgDGhZXAIGe_HaI,1493
+tcinter/__init__.py,sha256=qrHxPNt0sRmWzUlheIKGtEO4FK87dpi8pMVSKeIEpsQ,170563
+tcinter/_tcinter.so,sha256=xMr5WuZ6jgWFC3Do5Ad3j0XE1zWHnkRTH8mpNjeFW1Y,99248
+tcinter/interp.py,sha256=oxsMg1oBFy-IR5QZZwf9LY_wCKKCXbxJ7QrvYdSYQLY,325
+tcinter/__main__.py,sha256=aPiifNxpaXJv8oIixU6phyaYVgBQAXl2zZVG481UkSQ,2516
+tcinter/.dylibs/Python,sha256=JWylF_I1vthaHLIQLAIfmHILVJo8YVfe_GfCaxLhoHI,15889088
