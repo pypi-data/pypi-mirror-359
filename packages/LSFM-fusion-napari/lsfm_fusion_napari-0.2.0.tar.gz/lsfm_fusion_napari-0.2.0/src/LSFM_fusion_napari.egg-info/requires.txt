@@ -1,0 +1,13 @@
+numpy
+qtpy
+bioio
+leonardo_toolset
+napari[all]
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5
