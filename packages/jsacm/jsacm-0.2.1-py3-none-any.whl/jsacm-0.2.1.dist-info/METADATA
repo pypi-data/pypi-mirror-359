@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: jsacm
+Version: 0.2.1
+Summary: A python package to aid in programming (calculator credit to Oliver)
+Author: Jacob Browning
+Author-email: <jacobbrowning2008@gmail.com>
+Keywords: python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: aspose.words
+Requires-Dist: datetime
+Requires-Dist: deep-translator
+Requires-Dist: names
+Requires-Dist: pytubefix
+Requires-Dist: tqdm
+
+jsacm was made for myself as a personal project, however all can use its features; simply type '01: import jsacm 02: jsacm.aid()' to be given a list of all its features and functionalities
