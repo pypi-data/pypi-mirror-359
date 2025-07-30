@@ -1,0 +1,2 @@
+fp_NGFW_SMC_python>=1.0.19
+websocket-client>=1.5.0
