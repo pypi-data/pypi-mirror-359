@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+atrax/__init__.py
+atrax/version.py
+atrax.egg-info/PKG-INFO
+atrax.egg-info/SOURCES.txt
+atrax.egg-info/dependency_links.txt
+atrax.egg-info/requires.txt
+atrax.egg-info/top_level.txt
