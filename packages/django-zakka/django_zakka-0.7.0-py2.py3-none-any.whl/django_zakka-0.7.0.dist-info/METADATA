@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: django-zakka
+Version: 0.7.0
+Author: Paul Traylor
+License: MIT License
+Project-URL: Issues, http://github.com/kfdm/django-zakka/issues
+Project-URL: Source Code, http://github.com/kfdm/django-zakka
+Keywords: django
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: Django>=3.2
+Requires-Dist: importlib-metadata>=1.0; python_version < "3.8"
+Provides-Extra: requests
+Requires-Dist: requests; extra == "requests"
+
+# django-zakka - Assorted Django helpers
+
+**django-zakka** is a collection of assorted mini apps and helpers to be reused in various Django projects
+
+# Django Apps
+
+## zakka.contrib.celery
+
+Small celery view and custom command to help with viewing and running arbitrary tasks
+
+## zakka.contrib.utils
+
+Small app to collect assorted, useful [template tags and filters].
+
+# Other Tools
+
+## zakka.http
+
+Wraps [requests] library with some tools to make it easier to assign a User-Agent to all requests.
+
+## zakka.mixins.command
+
+Helpers for writing [django-admin commands].
+
+## zakka.permissions
+
+Useful permissions Mixins
+
+## zakka.test:TestCase
+
+TestCase base class to make it easier to load other test data
+
+[django-admin commands]: https://docs.djangoproject.com/en/3.2/howto/custom-management-commands
+[requests]: https://github.com/psf/requests
+[template tags and filters]: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/
