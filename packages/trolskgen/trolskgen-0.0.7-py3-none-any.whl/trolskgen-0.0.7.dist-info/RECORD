@@ -1,0 +1,11 @@
+trolskgen/__init__.py,sha256=k4OkJAXk-BVFfGnU7Hy7DsLIRxpgtN6vGOtVPCITtJU,388
+trolskgen/ast_types.py,sha256=twJcyoe0KdyJ76vBPwZ1PgzWTsq9pmn0d0eW-1hLPXw,7787
+trolskgen/converters.py,sha256=K2uFhIOu33wTwdPI6m30mUhJNyVXQ5w7EomVKb7vdWo,11763
+trolskgen/core.py,sha256=7mE_d1m4OC6eJ9F_CJlC1-VKuy-qfWdZipChgLu0O7M,2507
+trolskgen/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+trolskgen/templates.py,sha256=7Pn7qVQORxoYvWWj6hW3sryv1ff3RfWaUPhaN2VLkQQ,2404
+trolskgen-0.0.7.dist-info/licenses/LICENCE,sha256=jpcl6JKJdeKotYCJv0d4vXrgrcA0qF9HpZFuHXLeAyE,1071
+trolskgen-0.0.7.dist-info/METADATA,sha256=ls2zPG7r1XmJSZY2vWtm-qMtS9pS-4_YOYFQEfbRaTU,5661
+trolskgen-0.0.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+trolskgen-0.0.7.dist-info/top_level.txt,sha256=fuq0ig8rydmYzXSo1OWmXnX5VBOQAKnDLTi7pEzLsx0,10
+trolskgen-0.0.7.dist-info/RECORD,,
