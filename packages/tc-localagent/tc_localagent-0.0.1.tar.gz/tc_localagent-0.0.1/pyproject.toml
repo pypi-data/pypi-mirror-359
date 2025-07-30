@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tc-localagent"
+version = "0.0.1"
+description = "Local AI QA Agent for testing with local browser contexts"
+authors = [
+    { name="Your Name", email="your.email@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "playwright",
+    "langchain",
+    "torch",
+    "sentence-transformers",
+    "faiss-cpu",
+    "mem0ai",
+    "browser-use"  # ✅ Just add this line
+]
+
+[project.scripts]
+tc-localagent = "tc_localagent.main:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

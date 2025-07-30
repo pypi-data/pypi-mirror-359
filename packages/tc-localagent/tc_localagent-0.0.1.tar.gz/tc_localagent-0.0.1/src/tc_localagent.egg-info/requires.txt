@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+playwright
+langchain
+torch
+sentence-transformers
+faiss-cpu
+mem0ai
+browser-use

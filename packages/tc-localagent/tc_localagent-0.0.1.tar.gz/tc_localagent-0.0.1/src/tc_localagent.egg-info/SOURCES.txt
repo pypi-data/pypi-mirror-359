@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/tc_localagent/agent_runner.py
+src/tc_localagent/browser_context.py
+src/tc_localagent/cli.py
+src/tc_localagent/datas.py
+src/tc_localagent/main.py
+src/tc_localagent/server.py
+src/tc_localagent.egg-info/PKG-INFO
+src/tc_localagent.egg-info/SOURCES.txt
+src/tc_localagent.egg-info/dependency_links.txt
+src/tc_localagent.egg-info/entry_points.txt
+src/tc_localagent.egg-info/requires.txt
+src/tc_localagent.egg-info/top_level.txt

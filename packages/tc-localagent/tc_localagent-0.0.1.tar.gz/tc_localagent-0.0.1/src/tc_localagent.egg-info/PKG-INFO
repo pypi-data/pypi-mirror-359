@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: tc-localagent
+Version: 0.0.1
+Summary: Local AI QA Agent for testing with local browser contexts
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-dotenv
+Requires-Dist: playwright
+Requires-Dist: langchain
+Requires-Dist: torch
+Requires-Dist: sentence-transformers
+Requires-Dist: faiss-cpu
+Requires-Dist: mem0ai
+Requires-Dist: browser-use
+
+# TestChimp Local Agent
+
+This is the local agent of TestChimp, enabling you to run with locally installed browsers.
