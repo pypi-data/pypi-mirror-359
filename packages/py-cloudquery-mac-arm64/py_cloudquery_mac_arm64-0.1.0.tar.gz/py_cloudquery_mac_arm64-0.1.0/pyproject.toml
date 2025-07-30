@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-cloudquery-mac-arm64"
+version = "0.1.0"
+description = "CloudQuery CLI for macOS arm64, bundled with the binary."
+authors = [
+    { name = "Your Name", email = "your@email.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+
+[tool.setuptools]
+packages = ["cloudquery"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+cloudquery = ["bin/cloudquery"]
