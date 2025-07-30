@@ -1,0 +1,10 @@
+indipyclient/__init__.py,sha256=ujaLcVgmCtgpguGXxIMCXdKtSh2tVprpCzFoWhaFfsI,1968
+indipyclient/events.py,sha256=KgtbYHqSnEv8VFVzJUfNaUNp_XsQJwPL65zZIxUEHoA,27707
+indipyclient/ipyclient.py,sha256=-p-wcJHE6JXlvFUDMZLhDdaIA-JRUa4IWv-dodNoqM4,53547
+indipyclient/propertymembers.py,sha256=uEnbg5nuFGF7Z0jLLhHn__pBVoWTa63pYJXQYrw1vKA,18774
+indipyclient/propertyvectors.py,sha256=uWeZQ19OV3tI7tXTpjPG1IDhskVKn289bTbehIjD5iU,36457
+indipyclient/queclient.py,sha256=trc2wuRdcv92wDQyUaId0DRdwvAPmmxitE9U8LtJweU,9103
+indipyclient-0.8.0.dist-info/licenses/LICENSE,sha256=Ewre6DzPIFbp0guwsGTiBHwr1lGZnCQANOcfZ7CHDA0,1078
+indipyclient-0.8.0.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+indipyclient-0.8.0.dist-info/METADATA,sha256=Z381MhyGp-49_uIBYX7EcNuOxrY9OXH4keWhiEYTl3I,3564
+indipyclient-0.8.0.dist-info/RECORD,,
