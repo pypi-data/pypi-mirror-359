@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+'''
+Copyright © 2024 by Teradata.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Primary Owner: Saroop Samra (saroop.samra@teradata.com)
+Secondary Owner: 
+'''
+
+
+from teradatamlwidgets.vector_store.UiImpl import _UiImpl
+
+
+class Ui:
+    """
+    The teradatamlwidgets Interactive Vector Store UI.
+    """
+
+    def __init__(
+        self):
+        """
+        DESCRIPTION:
+            Constructor for teradatamlwidgets Describe UI.
+
+        PARAMETERS:
+            None.
+                
+        RETURNS:
+            Instance of the Vector Store UI Implementation.
+
+        RAISES:
+            None.
+        """
+        
+        
+        self._ui_impl = _UiImpl()
+
+    def get_answer_dataframe(self, vs_name):
+        """
+        Access the output dataframe.
+
+        PARAMETERS:        
+            vs_name: 
+                Required Argument. 
+                The name of the vector store.
+                Type: str
+                
+        RAISES:
+            None.
+
+        RETURNS: 
+            teradataml.DataFrame
+        
+        EXAMPLE:
+            df = ui.get_output_dataframe(0)
+        """
+        return self._ui_impl._get_answer_dataframe(vs_name)
+
+
+
