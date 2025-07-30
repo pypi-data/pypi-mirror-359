@@ -1,0 +1,2 @@
+[console_scripts]
+shizheng-mcpdemo-server = MCPServer:main
