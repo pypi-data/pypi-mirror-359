@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{% url 'skyhookintel:upcoming_timers' %}">{% translate "Upcoming timers" %}</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{% url 'skyhookintel:no_timers' %}">{% translate "Skyhooks without timers" %}</a>
+</li>

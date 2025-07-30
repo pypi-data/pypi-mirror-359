@@ -1,0 +1,113 @@
+{% extends 'skyhookintel/base.html' %}
+{% load i18n %}
+
+{% block content %}
+	<h2>
+        {% blocktranslate with planet=skyhook.planet.name trimmed %}
+            Add a timer for the skyhook on planet {{ planet }}
+        {% endblocktranslate %}
+    </h2>
+
+    <div class="m-5"></div>
+
+    <h3>{% translate 'Parse the timer from skyhook info:' %}</h3>
+
+    <form method="post" action="{% url 'skyhookintel:add_skyhook_timer' skyhook.pk %}">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="regex">
+
+        <div>
+            <label for="vuln_string" class="form-label">{% translate 'Vulnerable string from skyhook window' %}</label>
+            <input id="vuln_string"
+                   size="80"
+                   name="vuln_string"
+                   type="text"
+                   pattern="Secure \(vulnerable in( (\d)d)?( (\d+)h)?( (\d+)m)?\)"
+                   title="Secure (vulnerable in 2d 5h 52m)"
+                   class="form-control"
+                   required
+            >
+            <span class="validity"></span>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+        </div>
+    </form>
+
+    <div class="m-4"></div>
+
+    <h3>{% translate 'Add information manually:' %}</h3>
+
+    <form method="post" action="{% url 'skyhookintel:add_skyhook_timer' skyhook.pk %}">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="input">
+
+        <div class="mb-3">
+            <label for="vuln_days" class="form-label">{% translate 'Days before vulnerable' %}</label>
+            <input id="vuln_days"
+                   name="vuln_days"
+                   type="number"
+                   min="0"
+                   max="4"
+                   value="0"
+                   class="form-control"
+                   required
+            >
+        </div>
+        <div class="mb-3">
+            <label for="vuln_hours" class="form-label">{% translate 'Hours before vulnerable' %}</label>
+            <input id="vuln_hours"
+                   name="vuln_hours"
+                   type="number"
+                   min="0"
+                   max="23"
+                   value="0"
+                   class="form-control"
+                   required
+            >
+        </div>
+        <div class="mb-3">
+            <label for="vuln_minutes" class="form-label">{% translate 'Minutes before vulnerable' %}</label>
+            <input id="vuln_minutes"
+                   name="vuln_minutes"
+                   type="number"
+                   min="0"
+                   max="60"
+                   value="0"
+                   class="form-control"
+                   required
+            >
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+        </div>
+    </form>
+
+
+{% endblock %}
+
+{% block extra_css %}
+    <style>
+
+        input + span {
+            padding-right: 30px;
+        }
+
+        input:invalid + span::after {
+            position: absolute;
+            content: "✖";
+            padding-left: 5px;
+        }
+
+        input:valid + span::after {
+            position: absolute;
+            content: "✓";
+            padding-left: 5px;
+        }
+    </style>
+
+
+{{ block.super }}
+{% endblock %}

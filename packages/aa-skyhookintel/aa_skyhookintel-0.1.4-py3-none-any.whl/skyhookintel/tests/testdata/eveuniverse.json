@@ -1,0 +1,761 @@
+{
+    "EveCategory": [
+        {
+            "id": 2,
+            "name": "Celestial",
+            "published": true
+        },
+        {
+            "id": 46,
+            "name": "Orbitals",
+            "published": true
+        }
+    ],
+    "EveConstellation": [
+        {
+            "eve_region_id": 10000023,
+            "id": 20000300,
+            "name": "S4GH-I",
+            "position_x": -2.8788109163518234e+17,
+            "position_y": 5.886086073060813e+16,
+            "position_z": 2.018971342559366e+17
+        }
+    ],
+    "EveGroup": [
+        {
+            "eve_category_id": 2,
+            "id": 7,
+            "name": "Planet",
+            "published": false
+        },
+        {
+            "eve_category_id": 46,
+            "id": 4736,
+            "name": "Skyhook",
+            "published": true
+        }
+    ],
+    "EvePlanet": [
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 2016,
+            "id": 40129872,
+            "name": "MQ-NPY I",
+            "position_x": 38869951997.0,
+            "position_y": 626186489.0,
+            "position_z": 97100104898.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 11,
+            "id": 40129874,
+            "name": "MQ-NPY II",
+            "position_x": -168801248790.0,
+            "position_y": -2719351474.0,
+            "position_z": 106634168701.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 13,
+            "id": 40129876,
+            "name": "MQ-NPY III",
+            "position_x": -467087580738.0,
+            "position_y": -7524679528.0,
+            "position_z": 788366164928.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 2015,
+            "id": 40129895,
+            "name": "MQ-NPY IV",
+            "position_x": 250247434657.0,
+            "position_y": 4031431847.0,
+            "position_z": 2071867947989.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 12,
+            "id": 40129898,
+            "name": "MQ-NPY V",
+            "position_x": -2104455172791.0,
+            "position_y": -33902315989.0,
+            "position_z": 4550473094216.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002035,
+            "eve_type_id": 2016,
+            "id": 40129927,
+            "name": "MQ-NPY VI",
+            "position_x": 7809760528967.0,
+            "position_y": 125813546742.0,
+            "position_z": -10645509118480.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 2063,
+            "id": 40129931,
+            "name": "D2-HOS I",
+            "position_x": 10616533751.0,
+            "position_y": 2049866518.0,
+            "position_z": -50343438804.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 2017,
+            "id": 40129932,
+            "name": "D2-HOS II",
+            "position_x": -100424665437.0,
+            "position_y": -19390242058.0,
+            "position_z": 117551970829.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 2017,
+            "id": 40129935,
+            "name": "D2-HOS III",
+            "position_x": -73522480316.0,
+            "position_y": -14195901812.0,
+            "position_z": 270075602297.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 13,
+            "id": 40129939,
+            "name": "D2-HOS IV",
+            "position_x": 180324779386.0,
+            "position_y": 34817553100.0,
+            "position_z": -641584552919.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 13,
+            "id": 40129960,
+            "name": "D2-HOS V",
+            "position_x": 1846299124886.0,
+            "position_y": 356487988161.0,
+            "position_z": 125471960.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002036,
+            "eve_type_id": 2016,
+            "id": 40129985,
+            "name": "D2-HOS VI",
+            "position_x": -3261967961784.0,
+            "position_y": -629828818346.0,
+            "position_z": 182956930383.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 2016,
+            "id": 40129987,
+            "name": "Y2-6EA I",
+            "position_x": 24929513746.0,
+            "position_y": 1701321813.0,
+            "position_z": 9733110033.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 2015,
+            "id": 40129988,
+            "name": "Y2-6EA II",
+            "position_x": -3345661937.0,
+            "position_y": -228325658.0,
+            "position_z": -65093176554.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 2017,
+            "id": 40129991,
+            "name": "Y2-6EA III",
+            "position_x": -140134776859.0,
+            "position_y": -9563538026.0,
+            "position_z": 69066870379.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 13,
+            "id": 40129993,
+            "name": "Y2-6EA IV",
+            "position_x": 362029379419.0,
+            "position_y": 24706798798.0,
+            "position_z": -236592784917.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 13,
+            "id": 40129999,
+            "name": "Y2-6EA V",
+            "position_x": -533229169447.0,
+            "position_y": -36390377554.0,
+            "position_z": 766823121527.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002037,
+            "eve_type_id": 13,
+            "id": 40130025,
+            "name": "Y2-6EA VI",
+            "position_x": 88998173791.0,
+            "position_y": 6073705888.0,
+            "position_z": 3079328176658.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 2016,
+            "id": 40130043,
+            "name": "TFA0-U I",
+            "position_x": 13172335628.0,
+            "position_y": -1214493383.0,
+            "position_z": 36693280092.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 2015,
+            "id": 40130044,
+            "name": "TFA0-U II",
+            "position_x": -28442907672.0,
+            "position_y": 2622444806.0,
+            "position_z": -51997895335.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 2015,
+            "id": 40130047,
+            "name": "TFA0-U III",
+            "position_x": 27111048449.0,
+            "position_y": -2499646977.0,
+            "position_z": -68499647890.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 2016,
+            "id": 40130048,
+            "name": "TFA0-U IV",
+            "position_x": 24104684973.0,
+            "position_y": -2222459343.0,
+            "position_z": 160432036517.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 13,
+            "id": 40130050,
+            "name": "TFA0-U V",
+            "position_x": -185909709587.0,
+            "position_y": 17140932210.0,
+            "position_z": 225343286610.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 13,
+            "id": 40130054,
+            "name": "TFA0-U VI",
+            "position_x": -160664275482.0,
+            "position_y": 14813295447.0,
+            "position_z": 369394544759.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 13,
+            "id": 40130058,
+            "name": "TFA0-U VII",
+            "position_x": 557204282738.0,
+            "position_y": -51374405665.0,
+            "position_z": -254675104693.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 13,
+            "id": 40130078,
+            "name": "TFA0-U VIII",
+            "position_x": -354031999336.0,
+            "position_y": 32641858858.0,
+            "position_z": -1081078579057.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 13,
+            "id": 40130099,
+            "name": "TFA0-U IX",
+            "position_x": 1020993008468.0,
+            "position_y": -94135868339.0,
+            "position_z": -2597131601393.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002038,
+            "eve_type_id": 2014,
+            "id": 40130120,
+            "name": "TFA0-U X",
+            "position_x": -5025813217542.0,
+            "position_y": 463381519188.0,
+            "position_z": 2162411295212.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002039,
+            "eve_type_id": 2016,
+            "id": 40130124,
+            "name": "RQH-MY I",
+            "position_x": 75590494290.0,
+            "position_y": 1139476925.0,
+            "position_z": -14625387718.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002039,
+            "eve_type_id": 13,
+            "id": 40130126,
+            "name": "RQH-MY II",
+            "position_x": -121562631850.0,
+            "position_y": -1832476626.0,
+            "position_z": 26691709407.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002039,
+            "eve_type_id": 13,
+            "id": 40130129,
+            "name": "RQH-MY III",
+            "position_x": -48508271454.0,
+            "position_y": -731230249.0,
+            "position_z": -367350383834.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002039,
+            "eve_type_id": 13,
+            "id": 40130152,
+            "name": "RQH-MY IV",
+            "position_x": 2081519048643.0,
+            "position_y": 31377528975.0,
+            "position_z": 2055229068331.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002039,
+            "eve_type_id": 12,
+            "id": 40130172,
+            "name": "RQH-MY V",
+            "position_x": -9021060857314.0,
+            "position_y": -135986552043.0,
+            "position_z": -4109184725259.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 2015,
+            "id": 40130179,
+            "name": "HPS5-C I",
+            "position_x": 40664665262.0,
+            "position_y": 7927899938.0,
+            "position_z": -47627590767.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 2017,
+            "id": 40130181,
+            "name": "HPS5-C II",
+            "position_x": -65121992873.0,
+            "position_y": -12696050488.0,
+            "position_z": -90841408109.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 11,
+            "id": 40130183,
+            "name": "HPS5-C III",
+            "position_x": 95170666528.0,
+            "position_y": 18554278423.0,
+            "position_z": -111125732149.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 11,
+            "id": 40130186,
+            "name": "HPS5-C IV",
+            "position_x": 99165304863.0,
+            "position_y": 19333064940.0,
+            "position_z": 198340069102.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 13,
+            "id": 40130189,
+            "name": "HPS5-C V",
+            "position_x": 847379942350.0,
+            "position_y": 165203459786.0,
+            "position_z": -216644502304.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002040,
+            "eve_type_id": 12,
+            "id": 40130211,
+            "name": "HPS5-C VI",
+            "position_x": -3517598131598.0,
+            "position_y": -685783734586.0,
+            "position_z": 5759897381582.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2016,
+            "id": 40130215,
+            "name": "DT-TCD I",
+            "position_x": -58851015690.0,
+            "position_y": 4446161602.0,
+            "position_z": -67057778785.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2016,
+            "id": 40130218,
+            "name": "DT-TCD II",
+            "position_x": 154529870488.0,
+            "position_y": -11674646027.0,
+            "position_z": -103968168167.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2015,
+            "id": 40130222,
+            "name": "DT-TCD III",
+            "position_x": -147611695428.0,
+            "position_y": 11151981737.0,
+            "position_z": 261840491898.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 11,
+            "id": 40130225,
+            "name": "DT-TCD IV",
+            "position_x": 448806791535.0,
+            "position_y": -33907104233.0,
+            "position_z": -10868267734.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 13,
+            "id": 40130227,
+            "name": "DT-TCD V",
+            "position_x": -332543301520.0,
+            "position_y": 25123462031.0,
+            "position_z": -518739164099.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2016,
+            "id": 40130239,
+            "name": "DT-TCD VI",
+            "position_x": 438466309209.0,
+            "position_y": -33125886527.0,
+            "position_z": -633995406592.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2017,
+            "id": 40130240,
+            "name": "DT-TCD VII",
+            "position_x": 79463019929.0,
+            "position_y": -6003387093.0,
+            "position_z": 877286084588.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 13,
+            "id": 40130243,
+            "name": "DT-TCD VIII",
+            "position_x": 1113820256627.0,
+            "position_y": -84148502764.0,
+            "position_z": 1124986521835.0
+        },
+        {
+            "enabled_sections": 0,
+            "eve_solar_system_id": 30002041,
+            "eve_type_id": 2017,
+            "id": 40130271,
+            "name": "DT-TCD IX",
+            "position_x": -3149561715140.0,
+            "position_y": 237947641117.0,
+            "position_z": 734346002244.0
+        }
+    ],
+    "EveRegion": [
+        {
+            "description": "When Pure Blind was first properly mapped, it was earmarked to become the Caldari's Fourth District. A long chain of logistical and political difficulties ensued, and the plan was shelved numerous times but never quite died. Recent population pressures brought the plans back from death yet again, and for a while it seemed as if they might finally go ahead. However, it turned out that the moment had already passed - the region was now home to both the Caldari Loyalist forces of Mordu's famous Legion and the avowedly neutral Servant Sisters of EVE, and the remaining volumes were gripped tightly by various capsuleer factions who were undeterred by its comparative lack of resources. Frustrated, the State turned its attentions elsewhere, and it seems that Pure Blind will remain a turgid melting pot of competing traditional and capsuleer forces for the foreseeable future.",
+            "id": 10000023,
+            "name": "Pure Blind"
+        }
+    ],
+    "EveSolarSystem": [
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002035,
+            "name": "MQ-NPY",
+            "position_x": -2.8079887869041245e+17,
+            "position_y": 5.5343692459288056e+16,
+            "position_z": 2.0685882226900592e+17,
+            "security_status": -0.02912771888077259
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002036,
+            "name": "D2-HOS",
+            "position_x": -2.8614099566969347e+17,
+            "position_y": 5.997056016529067e+16,
+            "position_z": 2.030192492587279e+17,
+            "security_status": -0.029948916286230087
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002037,
+            "name": "Y2-6EA",
+            "position_x": -2.8822059456335414e+17,
+            "position_y": 5.381323116488113e+16,
+            "position_z": 2.0276146598308554e+17,
+            "security_status": -0.02535703405737877
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002038,
+            "name": "TFA0-U",
+            "position_x": -2.9496330457995226e+17,
+            "position_y": 5.435914463466932e+16,
+            "position_z": 2.0427428008436912e+17,
+            "security_status": -0.029275260865688324
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002039,
+            "name": "RQH-MY",
+            "position_x": -2.8097564856911872e+17,
+            "position_y": 5.6373760660890504e+16,
+            "position_z": 1.969354462428673e+17,
+            "security_status": -0.028505804017186165
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002040,
+            "name": "HPS5-C",
+            "position_x": -2.853945424081295e+17,
+            "position_y": 6.636743854149541e+16,
+            "position_z": 1.9812361821000147e+17,
+            "security_status": -0.03536699339747429
+        },
+        {
+            "enabled_sections": 1,
+            "eve_constellation_id": 20000300,
+            "eve_star_id": null,
+            "id": 30002041,
+            "name": "DT-TCD",
+            "position_x": -2.878492512806665e+17,
+            "position_y": 5.135428291972085e+16,
+            "position_z": 1.9916714021209414e+17,
+            "security_status": -0.021528882905840874
+        }
+    ],
+    "EveType": [
+        {
+            "capacity": 0.0,
+            "description": "Life-bearing worlds are often referred to as \"temperate\", as their mild temperatures are one of their defining features. Planets with existing, stable ecosystems are prime targets for colonization efforts as they are generally easier to make fully habitable; as a result, the majority of highly populated worlds are of this type. Indeed, it is not altogether uncommon for detailed surveys to reveal signs of previous settlements from various stages of New Eden's history.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10136,
+            "id": 11,
+            "mass": 1e+35,
+            "name": "Planet (Temperate)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "The majority of icy planets went through a period of being barren terrestrials, before being surfaced with ice over the course of many millennia. The exact process for this varies from case to case, but the end result is both common and visually uniform - a bright, reflective planet scored by countless fractures and crevasses. A few icy planets are hypothesized to have been warmer, liquid-bearing planets in the past that have subsequently frozen, as a result of either stellar cooling or failed terraforming projects.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10137,
+            "id": 12,
+            "mass": 1e+35,
+            "name": "Planet (Ice)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "Gas planets are characterized by a deep, opaque upper atmosphere, usually composed primarily of light elements such as hydrogen or helium. Simple chemicals can add a range of hues and shades in the visual spectrum, and the interaction between upwellings and rapidly circulating pressure bands result in a huge variety of visible surface structures. A similar level of diversity can be found beneath the cloud-tops: the inner composition of a given gas planet might belong to any one of a dozen broad groups, with no two planets entirely alike in this regard.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10139,
+            "id": 13,
+            "mass": 1e+35,
+            "name": "Planet (Gas)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "Oceanic worlds are a class of terrestrial world covered entirely by liquids, usually in the form of mundane water. While the liquid surface is exceptionally smooth, the ocean floor on most worlds of this type exhibits significant topographic variety. It is this subsurface irregularity which causes the formation of complex weather systems, which would otherwise revert to more uniform patterns.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10142,
+            "id": 2014,
+            "mass": 1e+35,
+            "name": "Planet (Oceanic)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "So-called \"lava planets\" (properly \"magmatic planets\") fall into one of three groups: solar magmatics, which orbit sufficiently close to their star that the surface never cools enough to solidify; gravitational magmatics, which experience gravitational shifts sufficiently strong to regularly and significantly fracture cooling crusts; and magmatoids, which are for largely-unexplained reasons simply incapable of cooling and forming a persistent crust. All three types generally exhibit the same external phenomena - huge red-orange lava fields being a defining feature - but the latter two types are sometimes capable of briefly solidifying for a period measured in years or perhaps decades.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10133,
+            "id": 2015,
+            "mass": 1e+35,
+            "name": "Planet (Lava)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "Barren planets are archetypical \"dead terrestrials\": dry, rocky worlds with a minimal atmosphere and an unremarkable composition. They are commonly etched with flood channels, which are often broad enough to be visible from orbit; most such worlds have accumulated significant quantities of ice over their lifetimes, but cannot retain it on their surface. Generally surface liquid evaporates rapidly, contributing to the thin atmosphere, but occasionally it will seep back into the ground and refreeze, ready for another breakout in future when the local temperature rises.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10135,
+            "id": 2016,
+            "mass": 1e+35,
+            "name": "Planet (Barren)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "Storm worlds are usually considered terrestrial planets, although to a casual eye they may appear more similar to gas planets, given their opaque, high-pressure atmospheres. Geomorphically, however, the distinctions are clear: compared to a gas world, the atmosphere of a storm world is usually considerably shallower, and generally composed primarily of more complex chemicals, while the majority of the planet's mass is a rocky terrestrial ball. Their name is derived from the continent-scale electrical storms that invariably flash through their upper atmospheres.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10134,
+            "id": 2017,
+            "mass": 1e+35,
+            "name": "Planet (Storm)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 0.0,
+            "description": "The aptly-named \"plasma planets\" have captured the imagination of countless artists and inspired innumerable works, yet the physics behind them are surprisingly mundane by cosmological standards. A rocky terrestrial with the right kind of atmosphere and magnetic field will, when bombarded with solar radiation, generate sprawling plasma storms as specific atmospheric elements are stripped of their electrons. Over time these storms will generally scorch the surface rock black, adding to the visual impact.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 7,
+            "eve_market_group_id": null,
+            "icon_id": 10138,
+            "id": 2063,
+            "mass": 1e+35,
+            "name": "Planet (Plasma)",
+            "packaged_volume": 1.0,
+            "portion_size": 1,
+            "published": false,
+            "radius": 10000.0,
+            "volume": 1.0
+        },
+        {
+            "capacity": 35000.0,
+            "description": "The Orbital Skyhook stands as the Upwell Consortium's pinnacle achievement in advancing colonization and space infrastructure technology. Harnessing cutting-edge materials science and technology from member corporations and innovative R&D programs, Upwell has brought these marvels to life in record time. These skyhooks exhibit significantly heightened efficiency in construction, maintenance, and the transportation of resources from surface to orbit. When established, they streamline the transfer of power, workforce, and reagents from planets to orbital facilities and beyond.\r\n\r\nTailored variants cater to the diverse environments of different planets, featuring specialized features such as long-range tractor beams for workforces on temperate, ocean, and barren planets, packaging facilities for ice and lava planets' reagents, and power collection platforms for gas, plasma, and storm planets.\r\n\r\nHowever, managers are advised that such structures may inadvertently attract unsavory elements, such as pirates, due to their strategic importance and valuable cargo.",
+            "enabled_sections": 0,
+            "eve_graphic_id": null,
+            "eve_group_id": 4736,
+            "eve_market_group_id": null,
+            "icon_id": null,
+            "id": 81080,
+            "mass": 5000000000.0,
+            "name": "Orbital Skyhook",
+            "packaged_volume": 8000.0,
+            "portion_size": 1,
+            "published": true,
+            "radius": 45000.0,
+            "volume": 8000.0
+        }
+    ]
+}

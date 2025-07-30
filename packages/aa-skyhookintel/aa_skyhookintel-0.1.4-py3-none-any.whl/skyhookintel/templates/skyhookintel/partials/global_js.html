@@ -1,0 +1,62 @@
+<!-- Global Javascript values -->
+
+<script type="text/javascript">
+    "use strict";
+    /* Consts */
+    const DEFAULT_LENGTH_MENU = [[10, 25, 50, 100 -1], [10, 25, 50, 100, "All"]];
+    const DEFAULT_PAGE_LENGTH = 50;
+
+    /*
+    Following functions imported from aa-structuretimers
+    https://gitlab.com/ErikKalkoken/aa-structuretimers/-/blob/master/structuretimers/static/structuretimers/js/timer_list.js
+     */
+
+    /* return duration as countdown string */
+    function durationToCountdownStr(duration) {
+        let out = "";
+        if (duration.years()) {
+            out += duration.years() + "y ";
+        }
+        if (duration.months()) {
+            out += duration.months() + "m ";
+        }
+        if (duration.days()) {
+            out += duration.days() + "d ";
+        }
+        return (
+            out +
+            duration.hours() +
+            "h " +
+            duration.minutes() +
+            "m " +
+            duration.seconds() +
+            "s"
+        );
+    }
+
+
+    /* return countdown to given date as string */
+    function dateToCountdownStr(date) {
+        let duration = moment.duration(moment(date).utc() - moment(), "milliseconds");
+        if (duration > 0) {
+            return durationToCountdownStr(duration);
+        } else {
+            return "ELAPSED";
+        }
+    }
+
+    /* return local time and countdown string to given date as HTML*/
+    function localTimeOutputHtml(date) {
+        return moment(date).format("ddd @ LT") + "<br>" + dateToCountdownStr(date);
+    }
+
+    /* eve clock and timer countdown feature */
+    function updateClock() {
+        document.getElementById("current-time").innerHTML = moment()
+            .utc()
+            .format("YYYY-MM-DD HH:mm:ss");
+    }
+
+
+
+</script>
