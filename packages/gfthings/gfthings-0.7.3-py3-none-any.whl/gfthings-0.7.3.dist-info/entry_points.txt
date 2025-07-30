@@ -1,0 +1,6 @@
+[console_scripts]
+gfbase=gfbase:main
+gfbin=gfbin:main
+gfedge=gfedge:main
+gfpin=gfpin:main
+
