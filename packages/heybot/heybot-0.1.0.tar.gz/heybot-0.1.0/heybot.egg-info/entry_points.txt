@@ -1,0 +1,2 @@
+[console_scripts]
+hey-bot = heybot.bot:run_bot

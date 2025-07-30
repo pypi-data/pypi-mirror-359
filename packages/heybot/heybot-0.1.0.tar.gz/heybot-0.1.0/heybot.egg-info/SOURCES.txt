@@ -1,0 +1,10 @@
+LICENSE
+setup.py
+heybot/__init__.py
+heybot/bot.py
+heybot.egg-info/PKG-INFO
+heybot.egg-info/SOURCES.txt
+heybot.egg-info/dependency_links.txt
+heybot.egg-info/entry_points.txt
+heybot.egg-info/requires.txt
+heybot.egg-info/top_level.txt
