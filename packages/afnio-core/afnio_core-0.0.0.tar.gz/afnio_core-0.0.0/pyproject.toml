@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afnio-core"
+version = "0.0.0"
+description = "A dummy starter package for afnio-core."
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+  { name = "Tellurio", email = "contact@tellurio.ai" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent"
+]
+
+[tool.setuptools]
+packages = ["afnio-core"]
+

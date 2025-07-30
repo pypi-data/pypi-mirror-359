@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+afnio-core/__init__.py
+afnio_core.egg-info/PKG-INFO
+afnio_core.egg-info/SOURCES.txt
+afnio_core.egg-info/dependency_links.txt
+afnio_core.egg-info/top_level.txt
