@@ -1,0 +1,22 @@
+[project]
+name = "positionport"
+version = "0.1.0"
+description = "Official client library for PositionPort API"
+authors = [{ name = "James", email = "devgsbmaster@gmail.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = ["requests>=2.25.0"]
+keywords = ["positionport", "trading", "api", "client", "portfolio", "risk"]
+
+[project.urls]
+Homepage = "https://github.com/PositionPort"
+Repository = "https://github.com/PositionPort/positionport_pypl"
+Issues = "https://github.com/PositionPort/positionport_pypl/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+license-files = [] # ✅ disables LICENSE being injected dynamically
