@@ -1,0 +1,16 @@
+fastapi_ui_auth-0.0.1.dist-info/licenses/LICENSE,sha256=_sOIKJWdD2o1WwwDIwYB2qTP2nlSWqT5Tyg9jr1Xa4w,1070
+fastapiauthenticator/__init__.py,sha256=b8LChxHIMiYL64em-dnSAglCgQwt0qL8NgFaaLWwFUg,213
+fastapiauthenticator/endpoints.py,sha256=9qGQbLny8OtkcJg4D5xT2gJO43ivuQdrY8A6xhQ7ma4,2161
+fastapiauthenticator/enums.py,sha256=FSKEU8QjAvW8kijMgbSATokd6Ig6EQ4G-_xW7hfz5Jk,373
+fastapiauthenticator/models.py,sha256=itH5YsFJa8-eR1iRm_UCkBtrLZ7ypDMNt8tnaJGiMuk,1778
+fastapiauthenticator/secure.py,sha256=ZOH6kT4BD56VqwaKdKocX7eSE8tqZcu-tK0QOmjY58k,1089
+fastapiauthenticator/service.py,sha256=mJURiebq6nugXh6PkFsZkTAbwkkvKXJJb0CJDjsENNc,7013
+fastapiauthenticator/utils.py,sha256=-wLLL7Qd9TSBYL_qla69Ng6gnMQtpHlrnZd_CqIxC2o,5528
+fastapiauthenticator/version.py,sha256=CactNZqrHHYTPrkHKccy2WKXmaiUdtTgPqSjFyVXnJk,18
+fastapiauthenticator/templates/index.html,sha256=mA2R6gk6lvibq_AmPgGHBFQijYtNUD7IIfeBSJWQrM4,9078
+fastapiauthenticator/templates/session.html,sha256=LUCvcEdQOjfIXjRZ2gPx2s5wyzNuCve4OMge0hXaBLM,3053
+fastapiauthenticator/templates/unauthorized.html,sha256=UZo1Jt64-CFfjwWTGicUMdHVWkYkXCJBRxvit4QTiQM,3015
+fastapi_ui_auth-0.0.1.dist-info/METADATA,sha256=XZDh_Vi29aIxQSGJnKEMnn1woBYkvsgTuJ3fR2DPi2c,2402
+fastapi_ui_auth-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastapi_ui_auth-0.0.1.dist-info/top_level.txt,sha256=EpDRP7uLM0f-Vd5rUtLBh4MTMAnpXzw1pr0DSknW_Ds,21
+fastapi_ui_auth-0.0.1.dist-info/RECORD,,
