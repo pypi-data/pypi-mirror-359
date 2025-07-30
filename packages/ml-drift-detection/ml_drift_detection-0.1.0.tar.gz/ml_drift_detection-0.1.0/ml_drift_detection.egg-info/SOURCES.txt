@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+ml_drift_detection.egg-info/PKG-INFO
+ml_drift_detection.egg-info/SOURCES.txt
+ml_drift_detection.egg-info/dependency_links.txt
+ml_drift_detection.egg-info/entry_points.txt
+ml_drift_detection.egg-info/requires.txt
+ml_drift_detection.egg-info/top_level.txt
