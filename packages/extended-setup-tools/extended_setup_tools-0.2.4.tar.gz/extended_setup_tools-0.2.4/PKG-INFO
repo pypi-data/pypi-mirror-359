@@ -1,0 +1,126 @@
+Metadata-Version: 2.4
+Name: extended-setup-tools
+Version: 0.2.4
+Summary: Python tool for helping making shorter and smarter setup.py scripts
+Home-page: https://gitlab.com/Hares-Lab/tools/extended-setup-tools
+Author: Peter Zaitcev / USSX Hares
+Maintainer: Peter Zaitcev / USSX Hares
+License: BSD 2-clause
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools>=72.2.0; python_version >= "3.8"
+Requires-Dist: setuptools; python_version < "3.8"
+Requires-Dist: typing_extensions>=4.1.4; python_version >= "3.8"
+Provides-Extra: test
+Requires-Dist: html-testRunner; extra == "test"
+Requires-Dist: lxml; extra == "test"
+Requires-Dist: unittest-xml-reporting; extra == "test"
+Provides-Extra: all
+Requires-Dist: html-testRunner; extra == "all"
+Requires-Dist: lxml; extra == "all"
+Requires-Dist: unittest-xml-reporting; extra == "all"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Extended SetupTools
+Python tool for helping in making shorter and smarter `setup.py` scripts.
+
+### Features
+ - Automatically extracts application meta-info from the root `__init__.py` file:
+   * Name
+   * Version
+   * License
+ - Automatically finds packages
+ - Finds and attaches ReadMe file
+ - Handles requirements files and maps to the respective `requires` setup arguments:
+   * `setup_requires`: `setup-requirements.txt` and `requirements/setup-requirements.txt`
+   * `install_requires`: `requirements.txt` and `requirements/requirements.txt`
+   * `tests_require`: `test-requirements.txt` and `requirements/test-requirements.txt`
+   * `extras_require`: `requirements/requirements-*.txt`
+   * Also creates extras `all` that contains all available features
+ - Creates test runner with HTML reports
+ - Inserts link to the repository as the homepage
+
+### Usage
+#### Modern Style
+In your `pyproject.toml`, add the following:
+```toml
+[build-system]
+requires = [ 'setuptools', 'extended-setup-tools >= 0.2.2' ]
+build-backend = 'setuptools.build_meta'
+```
+
+#### Legacy Style
+Install package:
+```bash
+python -m pip install extended-setup-tools
+```
+
+Instead of installing to the current scope,
+it is possible to install this package as `setup_requires` step:
+```python
+from setuptools import _install_setup_requires
+_install_setup_requires(dict(setup_requires=[ 'extended-setup-tools' ]))
+```
+
+#### `src/python_package_name/__init__.py`
+```python
+from collections import namedtuple
+
+__title__ = 'my-package'
+__author__ = 'Peter Zaitcev / USSX Hares'
+__license__ = 'BSD 2-clause'
+__copyright__ = 'Copyright 2021 Peter Zaitcev'
+__version__ = '0.1.0'
+
+VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
+version_info = VersionInfo(*__version__.split('.'), releaselevel='alpha', serial=0)
+
+__all__ = \
+[
+    'version_info',
+    '__title__',
+    '__author__',
+    '__license__',
+    '__copyright__',
+    '__version__',
+]
+```
+
+#### `setup.py`
+```python
+from extended_setup import ExtendedSetupManager
+ExtendedSetupManager('python_package_name').setup \
+(
+    short_description = "Some short description",
+    classifiers = [ 'Programming Language :: Python :: 3.7' ],
+)
+```
