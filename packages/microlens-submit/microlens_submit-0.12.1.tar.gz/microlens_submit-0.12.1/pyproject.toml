@@ -1,0 +1,60 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microlens-submit"
+version = "0.12.1"
+authors = [
+  { name="Amber Malpas", email="malpas.1@osu.edu" },
+]
+description = "A stateful submission toolkit for the Microlensing Data Challenge."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "PyYAML>=6.0",
+    "markdown >=3.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AmberLee2427/microlens-submit"
+"Repository" = "https://github.com/AmberLee2427/microlens-submit"
+
+# This defines the command-line script entry point
+[project.scripts]
+microlens-submit = "microlens_submit.cli:app"
+
+# Optional dependencies for development and testing
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "build",
+    "twine",
+    "pre-commit",
+    "black",
+    "isort",
+    "sphinx",
+    "sphinx_rtd_theme",
+]
+
+# Explicitly specify packages to include
+[tool.setuptools.packages.find]
+include = ["microlens_submit*"]
+exclude = ["assets*", "docs*", "tests*"]
+
+[tool.setuptools.package-data]
+microlens_submit = ["assets/rges-pit_logo.png", "assets/github-desktop_logo.png"]
