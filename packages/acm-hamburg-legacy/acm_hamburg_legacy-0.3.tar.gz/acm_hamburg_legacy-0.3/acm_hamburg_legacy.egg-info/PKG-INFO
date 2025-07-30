@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: acm-hamburg-legacy
+Version: 0.3
+Summary: Legacy code of the former ACM group in Hamburg
+Home-page: https://github.com/molinfo-vienna/acm-hamburg-legacy
+Maintainer: Johannes Kirchmair
+Maintainer-email: johannes.kirchmair@univie.ac.at
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rdkit>=2022.3.3
+Requires-Dist: adjustText>=0.7.3
+Requires-Dist: cairosvg>=2.5.2
+Requires-Dist: matplotlib>=3.5.2
+Requires-Dist: molvs>=0.1.1
+Requires-Dist: numpy>=1.19.2
+Requires-Dist: pandas>=1.2.1
+Requires-Dist: scikit_learn>=0.20.0
+Requires-Dist: xlsxwriter>=3.0.3
+Requires-Dist: nerdd-module>=0.1.0
+Provides-Extra: dev
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-watch; extra == "test"
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+# acm-hamburg-legacy
+
+Legacy code used by comp3d NERDD modules.
+
+## Installation
+
+```pip install -U acm-hamburg-legacy```
+
+## Contributors
+
+* Conrad Stork
+* Anke Wilm
+* Steffen Hirte
+* Axinya Tokareva
