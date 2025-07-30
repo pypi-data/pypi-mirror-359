@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/simple_calculator/__init__.py
+src/simple_calculator/calculator.py
+src/yc_calculator.egg-info/PKG-INFO
+src/yc_calculator.egg-info/SOURCES.txt
+src/yc_calculator.egg-info/dependency_links.txt
+src/yc_calculator.egg-info/requires.txt
+src/yc_calculator.egg-info/top_level.txt
+tests/__init__.py
+tests/test_calculator.py
