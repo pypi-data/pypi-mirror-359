@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: shelvr
+Version: 0.1.0
+Summary: A smart CLI file organizer that cleans clutter
+Author: Vaibhav Tiwari
+Requires-Python: >=3.6
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
