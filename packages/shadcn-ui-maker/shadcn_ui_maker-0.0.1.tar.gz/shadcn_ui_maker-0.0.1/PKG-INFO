@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: shadcn-ui-maker
+Version: 0.0.1
+Project-URL: Documentation, https://github.com/pro-grammer-SD/shadcn-ui-maker#readme
+Project-URL: Issues, https://github.com/pro-grammer-SD/shadcn-ui-maker/issues
+Project-URL: Source, https://github.com/pro-grammer-SD/shadcn-ui-maker
+Author-email: pro-grammer-SD <geniussantu1983@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# shadcn_ui_maker
+
+[![PyPI - Version](https://img.shields.io/pypi/v/shadcn-ui-maker.svg)](https://pypi.org/project/shadcn-ui-maker)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/shadcn-ui-maker.svg)](https://pypi.org/project/shadcn-ui-maker)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install shadcn-ui-maker
+```
+
+## License
+
+`shadcn-ui-maker` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
