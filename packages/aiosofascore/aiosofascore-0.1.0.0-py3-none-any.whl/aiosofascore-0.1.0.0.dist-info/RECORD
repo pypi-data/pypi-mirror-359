@@ -1,0 +1,17 @@
+aiosofascore/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiosofascore/client.py,sha256=QCEHiAT9FaHmrExgCoL8Oz6wt0uar_oDSKY65CSOqKc,1075
+aiosofascore/exception.py,sha256=gTSRS9EiHOIzny65DYavRJwyHO6gb77RhNcm-Cafn4w,979
+aiosofascore/adapters/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiosofascore/adapters/http_client.py,sha256=tNNfBKujiuFCg2uVhg5lNGXirJPkbJRZQUfyhoFZGsc,1353
+aiosofascore/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiosofascore/api/soccer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiosofascore/api/soccer/services/__init__.py,sha256=SIKlIPVR8eHb6BE-xJwmopXyyGdaMWzuMmxHXLXzNio,183
+aiosofascore/api/soccer/services/search/__init__.py,sha256=LaJlXFb1z2Fybi6IM7_jXDZU02J9I2OBVQjb7KAvTXw,70
+aiosofascore/api/soccer/services/search/models.py,sha256=wSSBzXet4_kt2e71Kn_hQxWJ8NIot8fMZxFr05XYiuc,2472
+aiosofascore/api/soccer/services/search/repo.py,sha256=nPNRB8K9gAbhQOMPexsrsQXxQaPcQzjs31H_YzAQE80,1534
+aiosofascore/api/soccer/services/search/service.py,sha256=cUXcBN-cPgd4UtPYrRS50YMAgRu2n70yl5beNjWwhTM,593
+aiosofascore-0.1.0.0.dist-info/licenses/LICENSE,sha256=O-0zMbcEi6wXz1DiSdVgzMlQjJcNqNe5KDv08uYzqR0,1055
+aiosofascore-0.1.0.0.dist-info/METADATA,sha256=Yb6OCy9T5GNMMHHL4-wDYeFHUxr5Rb75nvjlA4jTijk,3318
+aiosofascore-0.1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aiosofascore-0.1.0.0.dist-info/top_level.txt,sha256=ClavTMe9yHQjALo6Pa4E1h-HW1HU8Hf5Gx9-j6sRpSQ,13
+aiosofascore-0.1.0.0.dist-info/RECORD,,
