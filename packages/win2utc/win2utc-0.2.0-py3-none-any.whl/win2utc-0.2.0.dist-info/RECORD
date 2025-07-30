@@ -1,0 +1,11 @@
+win2utc/__init__.py,sha256=woGRiirULoOMegNroD5m4R1Do-VvHTPHLuaZImGUkBY,66
+win2utc/cli.py,sha256=kZJYDkTnvdghaH84hKeuMhHec_MtgySoafJWwF5RAog,1537
+win2utc/converter.py,sha256=jBq7UXd10UgmnYX1P4kixIk1LrDED75taPDWrC5A9XQ,6942
+win2utc/data/timezones.json,sha256=iiRV6nZmclbEfBwPvZ6SAc9LBM0C0UtZxcg7iHkyAHM,36793
+win2utc/data/windowsZones.xml,sha256=nPPbajH7OC_uIbcL5v66HoJ2aw_NBuYmH7eTanPlN_8,49378
+win2utc-0.2.0.dist-info/licenses/LICENSE,sha256=VaBTVPISgfb9Wz3RZHhlyEpe2svyVg3JWiHJRW9NGzQ,1079
+win2utc-0.2.0.dist-info/METADATA,sha256=sw9K1_2M1n3LMZvOAYPwlOy9zxEnWtDkIERhgI49OpY,357
+win2utc-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+win2utc-0.2.0.dist-info/entry_points.txt,sha256=gDxEL6lvvarEMRLf1xihXq4o-npWFJWuN_Fw_a3ZAS0,45
+win2utc-0.2.0.dist-info/top_level.txt,sha256=ydt9C2di4ssCpUNtfO1BOJo1nGi7D1XURoI29ggh8sA,8
+win2utc-0.2.0.dist-info/RECORD,,
