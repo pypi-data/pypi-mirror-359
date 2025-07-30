@@ -1,0 +1,64 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.9.0"]
+
+[tool.poetry]
+authors = ["Sergio Garcia @MrCloudSec <hello@mistercloudsec.com>"]
+description = "CloudSecGPT super-charges raw cloud-security findings with AI. Analyzes OCSF/Parquet exports and live data from AWS Security Hub, GCP Security Command Center, and Azure Defender to provide risk scores, summaries, remediation steps, alert clustering, and interactive chat capabilities."
+keywords = [
+  "cloud security",
+  "ai",
+  "llm",
+  "gpt",
+  "openai",
+  "amazon bedrock",
+  "google gemini",
+  "ollama",
+  "mcp",
+  "aws security hub",
+  "gcp scc",
+  "azure defender",
+  "ocsf",
+  "asff",
+  "parquet",
+  "triage",
+  "risk score",
+  "remediation",
+  "devsecops",
+  "cli"
+]
+license = "Apache-2.0"
+name = "cloudsecgpt"
+packages = [{include = "cloudsecgpt"}]
+readme = "README.md"
+version = "0.1.1"
+
+[tool.poetry.dependencies]
+azure-identity = "1.23.0"
+azure-mgmt-resource = "24.0.0"
+azure-mgmt-security = "7.0.0"
+boto3 = "1.39.0"
+google-cloud-resource-manager = "1.14.2"
+google-cloud-securitycenter = "1.38.1"
+google-generativeai = "0.8.3"
+jinja2 = "3.1.6"
+openai = "1.93.0"
+pandas = "2.3.0"
+python = ">=3.9"
+requests = "2.32.4"
+rich = "14.0.0"
+
+[tool.poetry.group.dev.dependencies]
+httpx = "0.28.1"
+pytest = "8.4.1"
+pytest-asyncio = "0.21.0"
+pytest-cov = "6.2.1"
+pytest-mock = "3.14.1"
+responses = "0.25.7"
+
+[tool.poetry.scripts]
+cloudsecgpt = "cloudsecgpt.cli:main"
+
+[tool.poetry.urls]
+homepage = "https://github.com/MrCloudSec/CloudSecGPT"
+issues = "https://github.com/MrCloudSec/CloudSecGPT/issues"
