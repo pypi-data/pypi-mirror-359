@@ -1,0 +1,7 @@
+jsonref
+requests
+
+[test]
+coverage
+jsonschema
+pytest
