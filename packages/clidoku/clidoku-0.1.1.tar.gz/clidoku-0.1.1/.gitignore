@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+__pycache__
+pyvenv.cfg
+bin
+lib
+dist
+.coverage
