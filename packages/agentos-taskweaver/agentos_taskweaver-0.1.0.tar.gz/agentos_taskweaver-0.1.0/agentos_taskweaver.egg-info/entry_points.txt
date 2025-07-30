@@ -1,0 +1,2 @@
+[console_scripts]
+taskweaver = taskweaver.__main__:main
