@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: mygeniuspackage
+Version: 0.2
+Summary: A demo Python package that prints stored data
+Author: Your Name
+Author-email: you@example.com
+Keywords: custom text demo
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: requires-python
+Dynamic: summary
+
+# mygeniuspackage
+
+This package shows a built-in message when imported. Great for demos!
