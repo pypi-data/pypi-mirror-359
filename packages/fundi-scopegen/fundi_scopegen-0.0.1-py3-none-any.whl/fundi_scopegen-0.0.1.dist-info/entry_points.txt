@@ -1,0 +1,2 @@
+[console_scripts]
+fundi-scopegen = fundi_scopegen.cli:app

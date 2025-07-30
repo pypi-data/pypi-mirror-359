@@ -1,0 +1,11 @@
+fundi_scopegen/__init__.py,sha256=mGdBha6Tfj2qUtBHTzW6qUnfNzcIJ_R2jIaOEVfKOMI,299
+fundi_scopegen/build.py,sha256=FuwHPrJTmGRs2Z73m4FL9oCAVrt485Zk6J-9_zufUyk,2124
+fundi_scopegen/cli.py,sha256=ghPeuxiy-OzL_ybxkV3KSEWnMh1ug5G1LmV9RjtvVWA,1807
+fundi_scopegen/flatenize.py,sha256=xXLHoqshJSb6wRyp3Kn_r_dSMFoodKLFqgOzDmNYSdE,757
+fundi_scopegen/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fundi_scopegen/resolve.py,sha256=HsF82UCFmQmLnkMP1H94GciQbfC2rlVRyqWQqR5QMsE,3027
+fundi_scopegen/util.py,sha256=mZifDBWjjD4ERW4YW5kiLoj1tLVR5P_7iAg4R7BZUjE,319
+fundi_scopegen-0.0.1.dist-info/METADATA,sha256=uDjMnqltcgeamIVcjNv3W-Pfpokh_7i8pN2gx8iXtJ0,2825
+fundi_scopegen-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fundi_scopegen-0.0.1.dist-info/entry_points.txt,sha256=MVaeqwwvz5TzxOmosjI_Oc2JkHLdfVbQZvq9o4BN0kc,58
+fundi_scopegen-0.0.1.dist-info/RECORD,,
