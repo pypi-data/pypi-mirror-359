@@ -1,0 +1,194 @@
+# diff-check-cli
+
+Уникальный CLI-инструмент для сравнения, патчинга и интерактивного применения изменений между файлами, директориями и git-объектами.
+
+## Установка
+
+### Быстрая установка через pip
+
+```bash
+pip install diff-check-cli
+```
+
+- Если используешь виртуальное окружение (venv), активируй его перед установкой.
+- Если используешь Linux/macOS и команда не находится, добавь `~/.local/bin` в PATH:
+  ```bash
+  export PATH="$PATH:~/.local/bin"
+  ```
+- Для глобальной установки (требует sudo):
+  ```bash
+  sudo pip install diff-check-cli
+  ```
+
+### Рекомендуется для CLI-утилит: pipx
+
+[pipx](https://pypa.github.io/pipx/) позволяет устанавливать Python-CLI как отдельные приложения:
+
+```bash
+pip install pipx
+pipx install diff-check-cli
+```
+
+---
+
+## Возможности
+- Сравнение файлов с цветной подсветкой изменений
+- Сравнение в две колонки (side-by-side)
+- Мини-карта изменений и резюме (summary)
+- Генерация и применение патчей
+- Интерактивный режим с Undo/Redo
+- Генерация markdown-отчёта о различиях
+- Сравнение директорий с древовидным выводом
+- Сравнение git-объектов (файлов, коммитов, веток)
+
+## Примеры использования
+
+### Сравнение файлов
+```bash
+diff-check file1.txt file2.txt
+```
+
+### Сравнение в две колонки
+```bash
+diff-check file1.txt file2.txt -s
+```
+
+### Мини-карта изменений и резюме
+```bash
+diff-check file1.txt file2.txt -m
+```
+
+### Генерация markdown-отчёта
+```bash
+diff-check file1.txt file2.txt -r diff.md
+```
+
+### Генерация патча
+```bash
+diff-check file1.txt file2.txt -p > changes.patch
+```
+
+### Применение патча
+```bash
+diff-check file1.txt changes.patch -a
+```
+
+### Интерактивный режим с Undo/Redo
+```bash
+diff-check file1.txt file2.txt -i
+```
+
+### Сравнение директорий с древовидным выводом
+```bash
+diff-check dir1 dir2 -t
+```
+
+### Сравнение git-объектов
+```bash
+diff-check file.py HEAD -g
+# или
+# diff-check HEAD~1 HEAD -g -- file.py
+```
+
+## Флаги и опции
+- `-s`, `--side-by-side` — сравнение в две колонки
+- `-m`, `--summary` — мини-карта изменений и резюме
+- `-p`, `--patch` — сгенерировать патч
+- `-a`, `--apply` — применить патч
+- `-i`, `--interactive` — интерактивный режим с Undo/Redo
+- `-r`, `--report` — сохранить отчёт о различиях в markdown-файл
+- `-t`, `--tree` — сравнить директории с древовидным выводом
+- `-g`, `--git` — сравнить git-объекты (файлы, коммиты, ветки)
+
+## Совместимость флагов
+- `-a` несовместим с `-p` и `-i`
+- Можно комбинировать, например, `-s -m`, `-p -i`
+
+## Автор
+[@shelovesuastra](https://github.com/shelovesuastra)
+
+## Диагностика
+
+Проверь следующие шаги:
+
+### 1. Где реально находится diff-check?
+
+```bash
+find ~/.local/bin -name 'diff-check'
+find ~/ -name 'diff-check' 2>/dev/null
+```
+
+### 2. Где pip кладёт скрипты?
+
+```bash
+python3 -m site --user-base
+python3 -m site --user-site
+```
+Путь из `--user-base` + `/bin` — это и есть папка, куда pip кладёт скрипты при установке с `--user`.
+
+### 3. Установлен ли diff-check-cli?
+
+```bash
+pip show diff-check-cli
+```
+
+### 4. Если ты в venv — активируй его
+
+```bash
+source venv/bin/activate
+ls venv/bin/diff-check
+```
+
+---
+
+## Решения
+
+### Если diff-check есть в ~/.local/bin
+
+- Убедись, что экспорт был сделан в текущем терминале:
+  ```bash
+  export PATH="$PATH:$HOME/.local/bin"
+  ```
+- Проверь:
+  ```bash
+  which diff-check
+  diff-check --help
+  ```
+
+### Если diff-check есть только в venv
+
+- Активируй окружение:
+  ```bash
+  source /path/to/venv/bin/activate
+  diff-check --help
+  ```
+
+### Если diff-check нигде нет
+
+- Переустанови пакет:
+  ```bash
+  pip uninstall diff-check-cli
+  pip install --user diff-check-cli
+  ```
+
+---
+
+## Альтернатива: pipx
+
+Если используешь pipx:
+```bash
+pipx install diff-check-cli
+diff-check --help
+```
+pipx гарантирует, что команда будет в PATH.
+
+---
+
+**Если не поможет — пришли вывод:**
+- `pip show diff-check-cli`
+- `find ~/ -name 'diff-check' 2>/dev/null`
+- `echo $PATH`
+- `which python3`
+- `pip --version`
+
+Я помогу довести до рабочего состояния!

@@ -1,0 +1,2 @@
+[console_scripts]
+diff-check = diff_check_cli.cli:main
