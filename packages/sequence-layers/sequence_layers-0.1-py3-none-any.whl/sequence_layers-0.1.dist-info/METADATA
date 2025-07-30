@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: sequence_layers
+Version: 0.1
+Summary: Sequence Layers neural network layer library from Google.
+Keywords: 
+Author-email: RJ Skerry-Ryan <rjryan@google.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Science/Research
+License-File: LICENSE
+Requires-Dist: einops
+Requires-Dist: flax
+Requires-Dist: jax
+Requires-Dist: jaxtyping
+Requires-Dist: numpy
+Requires-Dist: orbax-export
+Requires-Dist: recurrentgemma[jax]
+Requires-Dist: typeguard==2.13.3
+Requires-Dist: absl-py ; extra == "dev"
+Requires-Dist: chex ; extra == "dev"
+Requires-Dist: orbax ; extra == "dev"
+Requires-Dist: pytest ; extra == "dev"
+Requires-Dist: pytest-xdist ; extra == "dev"
+Requires-Dist: pylint>=2.6.0 ; extra == "dev"
+Requires-Dist: pyink ; extra == "dev"
+Requires-Dist: tensorflow ; extra == "dev"
+Requires-Dist: attrs ; extra == "tensorflow"
+Requires-Dist: scipy ; extra == "tensorflow"
+Requires-Dist: tensorflow ; extra == "tensorflow"
+Requires-Dist: tf_keras ; extra == "tensorflow"
+Project-URL: repository, https://github.com/google/sequence-layers
+Provides-Extra: dev
+Provides-Extra: tensorflow
+
+# Sequence Layers
+
+Note: This is not an officially supported Google product
+
+## Overview
+
+A library for sequence modeling in Jax and TensorFlow 2, enabling easy creation
+of sequence models that can be executed both layer-by-layer (e.g. teacher forced
+training) and step-by-step (e.g. autoregressive sampling).
+
+A key feature of the library is that layers support streaming (step-by-step)
+operation. To achieve this, every layer has a notion of state when and a `step`
+function in addition to the typical layer-wise processing feature found in other
+libraries like Keras. When layers support a `step` method, their `layer` method
+produces identical results for the same sequence of input blocks enabling easy
+switching between step-wise and layer-wise processing depending on the use case.
+
+**Note:** Only Jax support is installed by default. Use
+`pip install sequence_layers[tensorflow]` for TensorFlow.
+
+## Goals
+
+Increased development velocity for both research and production applications of
+sequence modeling.
+
+*   Support for layer-by-layer and step-by-step processing in a single
+    implementation.
+*   Declarative API.
+*   Composable, thin abstractions.
+*   Easy mix-and-match of popular sequence modeling paradigms (convolutional,
+    recurrent, attention architectures).
+*   A quick path to deployment with tf.lite support for every layer.
+*   Tracking of invalid timesteps (those computed from padding).
+
