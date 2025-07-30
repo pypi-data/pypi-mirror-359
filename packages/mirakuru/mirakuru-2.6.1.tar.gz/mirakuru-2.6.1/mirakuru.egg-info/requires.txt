@@ -1,0 +1,3 @@
+
+[:sys_platform != "cygwin"]
+psutil>=4.0.0
