@@ -1,0 +1,2 @@
+[console_scripts]
+piper = piper_kit._cli.main:main
