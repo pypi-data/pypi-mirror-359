@@ -1,0 +1,23 @@
+[project]
+name = "smeshariki"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Artem Ivanov", email = "art.ivanov@jetbrains.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "folds",
+    "openai>=1.65.2",
+    "pydantic-settings[yaml]>=2.8.1",
+]
+
+[project.scripts]
+smeshariki = "smeshariki:__main__"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+folds = { workspace = true }

@@ -1,0 +1,19 @@
+[project]
+name = "flexdo"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Artem Ivanov", email = "art.ivanov@jetbrains.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "folds",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+flexdo = "flexdo:__main__"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,2 @@
+on supergroup upgrade
+@channel_message
