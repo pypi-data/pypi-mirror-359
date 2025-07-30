@@ -1,0 +1,18 @@
+# Default file types to exclude
+exclude_extensions:
+  - ".jpg"
+  - ".png"
+  - ".exe"
+  - ".bin"
+  - ".pdf"
+  - ".lock"
+
+# Custom paths to skip
+exclude_paths:
+  - r"(?:^|[\\/])\.[^\\/]+(?:[\\/][^\\/]+)*"
+  - r"(?:^|\/|\\)(?:node_modules|vendor|githush|tests)(\/|\\)" 
+
+# Custom regex patterns (optional)
+custom_patterns:
+  - "foo_secret_[a-zA-Z0-9]{16}"
+  - "some_other_custom_pattern"
