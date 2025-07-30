@@ -1,0 +1,2 @@
+[console_scripts]
+paladin-mcp-server = paladin_mcp_server:main
