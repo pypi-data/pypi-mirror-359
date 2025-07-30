@@ -1,0 +1,13 @@
+ormantism/__init__.py,sha256=3-oETw-imxakMvRQIQNS4r8qJikMY1xUSRYnP_HFNBo,76
+ormantism/base.py,sha256=Tv7X51bEYfwVZObDImYDGcZQT8jwJ1pkGH577jjHFGc,11875
+ormantism/database.py,sha256=WYRAHyX7DnvCdhUc8FFQlc6pXidMgSJBAbJ0Mf0q30E,2858
+ormantism/field.py,sha256=L2MQKw9Kp1r4QlFFcWGK3nRhrINrRE_tToWJ6r60gCk,4171
+ormantism/join_info.py,sha256=V0g7NAi2Sxj0N7X2WXjz-8WpUFAg9HqCiXdWRLPe8KQ,3265
+ormantism/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ormantism/utils/get_base_type.py,sha256=tAXuuxkNrMNcSehVZVqhI5KzTHOtbeRLBmPAiAkg5vs,3869
+ormantism/utils/rebuild_pydantic_model.py,sha256=hsL6gkzX-zAM_OuXQyVCndZnYiuAv3tFo3JrYaOaGFk,2690
+ormantism-0.1.dist-info/licenses/LICENCE,sha256=0PhS3saE9Nw4aFGdzIj1QrARWimBqVym_co-MRUU3-U,1070
+ormantism-0.1.dist-info/METADATA,sha256=1HeMIeVFZidLo7rsSzuwMK-7JmTyBLmh9orUr07V1Mg,6499
+ormantism-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ormantism-0.1.dist-info/top_level.txt,sha256=Vyn_Vil-CDCSrD_RdOwswnOjgec6gbcFUQgYYLC08uE,10
+ormantism-0.1.dist-info/RECORD,,
