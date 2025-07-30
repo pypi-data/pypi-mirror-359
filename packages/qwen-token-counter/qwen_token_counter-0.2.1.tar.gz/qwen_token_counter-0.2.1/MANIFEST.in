@@ -1,0 +1,3 @@
+include README.md
+include LICENSE
+recursive-include qwen_token_counter/tokenizer_files * 
