@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "driizzyyui"
+version = "0.1.0"
+description = "A Discord selfbot client and GUI framework for Python, inspired by discord.py-self."
+authors = [
+    { name="DriizzyyB", email="driizzyyboosts@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["discord", "selfbot", "gui", "pyqt5"]
+dependencies = [
+    "httpx>=0.23.0",
+    "PyQt5>=5.15.0"
+]
+[project.urls]
+Homepage = "https://github.com/driizzyy"
+Repository = "https://github.com/yourusername/driizzyyui"

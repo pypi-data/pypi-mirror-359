@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: driizzyyui
+Version: 0.1.0
+Summary: A Discord selfbot client and GUI framework for Python, inspired by discord.py-self.
+Author-email: DriizzyyB <driizzyyboosts@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/driizzyy
+Project-URL: Repository, https://github.com/yourusername/driizzyyui
+Keywords: discord,selfbot,gui,pyqt5
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: httpx>=0.23.0
+Requires-Dist: PyQt5>=5.15.0
+
+# driizzyyui
+
+A modern Discord selfbot client and GUI toolkit for Python, inspired by `discord.py-self`.
+
+**WARNING:**  
+This is for educational purposes only. Selfbots (user account automation) are strictly against [Discord’s Terms of Service](https://discord.com/terms).  
+Your account may be terminated for using selfbots.
+
+---
+
+## Features
+
+- Interact with Discord’s API using your user token
+- Fetch/send messages, view channels, and more
+- Simple, customizable PyQt5 GUI
+- Ready for extension with your own widgets
+
+---
+
+## Installation
+
+```sh
+pip install driizzyyui
