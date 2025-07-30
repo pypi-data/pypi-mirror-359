@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: bespoken
+Version: 0.2.1
+Summary: An AI-powered coding assistant for editing files with interactive confirmations
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/bespoken
+Project-URL: Documentation, https://github.com/yourusername/bespoken#readme
+Project-URL: Repository, https://github.com/yourusername/bespoken.git
+Project-URL: Issues, https://github.com/yourusername/bespoken/issues
+Keywords: ai,assistant,llm,code-editor,marimo
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: llm>=0.12
+Requires-Dist: rich>=13.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: typer>=0.9.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: markdownify>=0.11.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+Provides-Extra: browser
+Requires-Dist: playwright>=1.40.0; extra == "browser"
+Dynamic: license-file
+
+# bespoken
+
+```
+
+██████╗ ███████╗███████╗██████╗  ██████╗ ██╗  ██╗███████╗███╗   ██╗
+██╔══██╗██╔════╝██╔════╝██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝████╗  ██║
+██████╔╝█████╗  ███████╗██████╔╝██║   ██║█████╔╝ █████╗  ██╔██╗ ██║
+██╔══██╗██╔══╝  ╚════██║██╔═══╝ ██║   ██║██╔═██╗ ██╔══╝  ██║╚██╗██║
+██████╔╝███████╗███████║██║     ╚██████╔╝██║  ██╗███████╗██║ ╚████║
+╚═════╝ ╚══════╝╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝
+
+
+A terminal chat experience that you can configure yourself.
+```
+
+## Installation
+
+Basic installation:
+
+```bash
+uv pip install bespoken
+```
+
+## Usage
+
+This library uses [llm](https://llm.datasette.io/en/stable/) under the hood to provide you with building blocks to make chat interfaces from the commandline. Here's an example. 
+
+```python
+from bespoken import chat
+from bespoken.tools import FileTool, TodoTools, PlaywrightTool
+
+chat(
+    model_name="anthropic/claude-3-5-sonnet-20240620",
+    tools=[FileTool("edit.py"), TodoTools(), PlaywrightTool()],
+    system_prompt="You are a coding assistant that can make edits to a single file that is defined by the filetool.",
+    debug=True,
+)
+```
+
+If you now run this Python file, a chat appears on command line. 
+
+## Why? 
+
+The goal is to host a bunch of tools that you can pass to the LLM, but the main idea here is that you can also make it easy to constrain the chat. The `FileTool`, for example, only allows the LLM to make edits to a single file declared upfront. This significantly reduces any injection risks and still covers a lot of use-cases. It is also a nice exercize to make tools like claude code feel less magical, and you can also swap out the LLM with any other one as you see fit. 
+
+This project is in early days at the moment, but it feels exciting to work on!

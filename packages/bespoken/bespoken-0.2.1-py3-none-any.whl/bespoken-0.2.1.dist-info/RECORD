@@ -1,0 +1,15 @@
+bespoken/__init__.py,sha256=MkRNb_bGgVzIYPMaU0cgLZsn0iOkHxOSXiSUv_5nLvw,145
+bespoken/__main__.py,sha256=WUxntZe-_71iGyHoDj6O9LxQbP4Zz6dQdT5B8yM9lnc,3759
+bespoken/config.py,sha256=hZ4gMHdeZ29Oiq8dj1ENHfNBUFdgLEILNpNeSH9Apxo,885
+bespoken/tools/__init__.py,sha256=c2h56RzqT6GzAHNW1bxTgWMNZIu-2CkKDX9TNfjf4EQ,453
+bespoken/tools/filesystem.py,sha256=5tNAkkLL1WZJL_3Qw0Vzo-Q2Ddm80iHcWA3E94ZIJ0s,12084
+bespoken/tools/not_installed.py,sha256=wCv3WG9Bi4LHJOixWTpx5ADBaXWXzM8eI_qfgux1AxE,868
+bespoken/tools/playwright_browser.py,sha256=nZFdyxs3bKyVTf7N3r3u8KOAmc8ddv6gqQY0jhYsOKM,7967
+bespoken/tools/todo.py,sha256=eIOcWDE4IVeo9E5OsTpn_dBtUCSiHizYL6XDs--JqQs,2278
+bespoken/tools/webfetch.py,sha256=uwjOWpGFO8cPczBMkJr4qJL9n7dFtgZNp0KhooJ4CG4,2244
+bespoken-0.2.1.dist-info/licenses/LICENSE,sha256=gXjKaaJEKZHtteUoZx-FCwZH-yQ7TD9dlC0FWeCWM9A,1077
+bespoken-0.2.1.dist-info/METADATA,sha256=Ws9lALr3SRXmImzErxbT-DvntOr4z-tbdKdnBllZ7Mk,4072
+bespoken-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bespoken-0.2.1.dist-info/entry_points.txt,sha256=4IHnLYMvwJ8ip-eNWKwo5L7hjRotV0meEnbR7iODjGk,52
+bespoken-0.2.1.dist-info/top_level.txt,sha256=EtYl6GyZa_TXJq17eEL7c_5wKvHlxvpg6Y7wORjj1kQ,9
+bespoken-0.2.1.dist-info/RECORD,,
