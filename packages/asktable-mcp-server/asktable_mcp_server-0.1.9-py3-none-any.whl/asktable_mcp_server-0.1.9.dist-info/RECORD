@@ -1,0 +1,10 @@
+asktable_mcp_server/__init__.py,sha256=HBAfkJt5KAaf6AFhv6d4yaTF3og8QwynOAVsApITj84,65
+asktable_mcp_server/server.py,sha256=jX5e2YGeu48ffxwrcMDHaMFw4nF8Hwjsw8GAAnfngWk,6276
+asktable_mcp_server/sse_server.py,sha256=fxaLOQK7NS-rR0clIdK6PRMrjgrQfDnugUoBkp9K6as,9729
+asktable_mcp_server/tools.py,sha256=bqJE-OqGIUM_kNoTwSQfmlgEdhBIojWryUMuDQ41TsA,2110
+asktable_mcp_server/utils.py,sha256=GYZ_l2vK6ZaBIAO6mE5ZJ1URNpRJAEU2E1WXCUHvurQ,3240
+asktable_mcp_server-0.1.9.dist-info/METADATA,sha256=04-gCpqo7O3BG1XbJs7gkRAYZmqlDWrZ-Gs3R0yLOOg,4250
+asktable_mcp_server-0.1.9.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+asktable_mcp_server-0.1.9.dist-info/entry_points.txt,sha256=DrYe0zoSCKdU-yLiSigPs2RiaaAnXcCtQvHFQx6gUM4,72
+asktable_mcp_server-0.1.9.dist-info/licenses/LICENSE,sha256=UCcnHEp2yGdFmyVCVe6KHnGtrD1D1r-3dkEDy2wYYo4,1086
+asktable_mcp_server-0.1.9.dist-info/RECORD,,
