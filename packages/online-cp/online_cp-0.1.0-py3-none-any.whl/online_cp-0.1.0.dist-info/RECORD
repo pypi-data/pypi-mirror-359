@@ -1,0 +1,12 @@
+online_cp/CPS.py,sha256=IXROfXuAEfh1HJm7BoUwlFISEkqoi8R4GQwGBw7TUkU,38443
+online_cp/__init__.py,sha256=tNJffsFPvTDFGvcUREc60sZLEMAMZqY8dox4ON7M3FE,333
+online_cp/classifiers.py,sha256=dkkoOjwEILr-LknzNznYN62DyQ6Sehp15woGip-WYxE,11681
+online_cp/evaluation.py,sha256=TOc6ra41os99JVKry8lt2JiTw_WFvDUG4OxU3ySJva0,13449
+online_cp/kernels.py,sha256=F16WJ_xUFzlIciSw7ICi3r4_G27Y1AO8Q0G3p4bYlIc,3792
+online_cp/martingale.py,sha256=oHZ-fjsqXc4gGM3OndPz9m5GC5igAGWa_c-Udk5z05I,18163
+online_cp/regressors.py,sha256=2TTtPv5kqD6COw9kkbUkkLhSWezSuAIji9EqJnjqtlY,47001
+online_cp-0.1.0.dist-info/licenses/LICENCE,sha256=cGn5eoAGAe-JrZQldcE2hc-jLgCNaGFK5bDEOFZC_pM,1458
+online_cp-0.1.0.dist-info/METADATA,sha256=0rUEmqQO9IHUPFvmPEV2WmsGUxEwRJ_HJ_zZ0h7Pelo,3822
+online_cp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+online_cp-0.1.0.dist-info/top_level.txt,sha256=L5ElaWULhf617l6hfw3b77J1DNuF8Rk25f9zV_frRAg,10
+online_cp-0.1.0.dist-info/RECORD,,
