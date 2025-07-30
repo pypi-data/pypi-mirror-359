@@ -1,0 +1,12 @@
+power_supply_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+power_supply_manager/app.py,sha256=7zwhnCFhvcxkt_ZX_Dj1qMH99VHDORqeUcCKDlHxnC0,20712
+power_supply_manager/demo_device.py,sha256=s75UKLilFFuDgJUus7kMYqfzvUEUa8A-phUmGQWnjyE,8214
+power_supply_manager/device.py,sha256=CCED9POS0bzY8JqfFbRGoWyJk8zKMP9kzc5E3Swy9w4,11427
+power_supply_manager/logger.py,sha256=f6U8HZWcQiwjeuScHeU3yaRVDsO48y0tL6M64rzGkiY,1393
+power_supply_manager/state.py,sha256=GuDGGIAk4oGGuV1Fa1LXvNtCZn2kSu9n4aFPXV4hudo,49247
+power_supply_manager/test_plot.py,sha256=CtnuzQDXLf3C1VMXzMOfbbbWNzkHU5XulShKRrwfDBg,1601
+power_supply_manager-2.0.0.dist-info/LICENSE,sha256=ktk_JePq-vrmKlNGMqiYGq2od1LfM5H0FHs_WrNkjmg,1137
+power_supply_manager-2.0.0.dist-info/METADATA,sha256=vY2NKQPGgUZLEKNdUQ2nKqi4spY9yY7BitiYzDoYhGI,5368
+power_supply_manager-2.0.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+power_supply_manager-2.0.0.dist-info/entry_points.txt,sha256=UWTvCARq6reoe9f7WuGGfHKjohwQREItlpsKEu_UGpM,102
+power_supply_manager-2.0.0.dist-info/RECORD,,
