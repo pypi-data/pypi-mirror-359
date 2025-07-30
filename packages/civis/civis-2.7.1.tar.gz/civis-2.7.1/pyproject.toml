@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools >= 69.5.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civis"
+version = "2.7.1"
+description = "Civis API Python Client"
+readme = "README.rst"
+requires-python = ">= 3.10"
+authors = [ { name = "Civis Analytics", email = "opensource@civisanalytics.com" } ]
+license = { text = "BSD-3-Clause" }
+dependencies = [
+    "click >= 6.0",
+    "cloudpickle >= 0.2",
+    "joblib >= 1.5.0",
+    "jsonref >= 0.1",
+    "jsonschema >= 2.5.1",
+    "PyYAML >= 3.0",
+    "requests >= 2.32.3",
+    "tenacity >= 6.2",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://www.civisanalytics.com"
+Source = "https://github.com/civisanalytics/civis-python"
+
+[project.scripts]
+civis = "civis.cli.__main__:main"
+civis_joblib_worker = "civis.run_joblib_func:main"
+
+[project.optional-dependencies]
+dev-core = [
+    "bandit",  # Install the latest version.
+    "black == 25.1.0",
+    "build == 1.2.2",
+    "flake8 == 7.2.0",
+    "pandas == 2.3.0",
+    "pip-audit",  # Install the latest version.
+    "polars == 1.31.0",
+    "pytest == 8.4.0",
+    "pytest-cov == 6.2.1",
+    "twine == 6.1.0",
+]
+dev-civisml = [
+    "feather-format == 0.4.1",
+    "numpy == 2.2.6",
+    "scikit-learn == 1.7.0",
+    "scipy == 1.15.3",
+]
+docs = [
+    # docs/requirements.txt pins all transitive dependencies for a reproducible doc build.
+    "numpydoc == 1.8.0",
+    "Sphinx == 8.2.3",
+    "sphinx-rtd-theme == 3.0.2",
+]
+
+[tool.setuptools.packages.find]
+where = [ "src" ]
+
+[tool.setuptools.package-data]
+civis = ["resources/*.json", "py.typed", "**/*.pyi"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers -vv --cov=src/civis"
+testpaths = ["tests"]
