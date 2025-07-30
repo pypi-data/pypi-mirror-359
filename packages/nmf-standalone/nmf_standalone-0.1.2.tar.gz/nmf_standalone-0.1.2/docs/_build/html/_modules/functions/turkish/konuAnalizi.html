@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>functions.turkish.konuAnalizi &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">functions.turkish.konuAnalizi</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for functions.turkish.konuAnalizi</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">functions.english.topics</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_topics_to_db</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.distance_two_words</span><span class="w"> </span><span class="kn">import</span> <span class="n">calc_levenstein_distance</span><span class="p">,</span> <span class="n">calc_cosine_distance</span>
+
+
+<div class="viewcode-block" id="konu_analizi">
+<a class="viewcode-back" href="../../../functions.turkish.konuAnalizi.html#functions.turkish.konuAnalizi.konu_analizi">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">konu_analizi</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">konu_sayisi</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sozluk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">documents</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">topics_db_eng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_frame_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">word_per_topic</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">include_documents</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs topic analysis using Non-negative Matrix Factorization (NMF) results for both Turkish and English texts.</span>
+<span class="sd">    </span>
+<span class="sd">    This function extracts meaningful topics from NMF decomposition matrices by identifying the most </span>
+<span class="sd">    significant words for each topic and optionally analyzing the most relevant documents. It supports</span>
+<span class="sd">    both Turkish (using tokenizer) and English (using vocabulary list) processing pipelines.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        H (numpy.ndarray): Topic-word matrix from NMF decomposition with shape (n_topics, n_features).</span>
+<span class="sd">                          Each row represents a topic, each column represents a word/feature.</span>
+<span class="sd">        W (numpy.ndarray): Document-topic matrix from NMF decomposition with shape (n_documents, n_topics).</span>
+<span class="sd">                          Each row represents a document, each column represents a topic.</span>
+<span class="sd">        konu_sayisi (int): Number of topics to analyze. Should match the number of topics in H and W matrices.</span>
+<span class="sd">        tokenizer (object, optional): Turkish tokenizer object with id_to_token() method for converting </span>
+<span class="sd">                                    token IDs to words. Required for Turkish text processing.</span>
+<span class="sd">        sozluk (list, optional): English vocabulary list where indices correspond to feature indices in H matrix.</span>
+<span class="sd">                               Required for English text processing.</span>
+<span class="sd">        documents (pandas.DataFrame or list, optional): Collection of document texts used in the analysis.</span>
+<span class="sd">                                                       Can be pandas DataFrame or list of strings.</span>
+<span class="sd">        topics_db_eng (sqlalchemy.engine, optional): Database engine for saving topic results to database.</span>
+<span class="sd">        data_frame_name (str, optional): Name of the dataset/table, used for file naming and database operations.</span>
+<span class="sd">        word_per_topic (int, optional): Maximum number of top words to extract per topic. Default is 20.</span>
+<span class="sd">        include_documents (bool, optional): Whether to perform document analysis and save document scores.</span>
+<span class="sd">                                          Default is True.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary where keys are topic names in format &quot;Konu XX&quot; and values are lists of </span>
+<span class="sd">              word-score strings in format &quot;word:score&quot;. Scores are formatted to 8 decimal places.</span>
+<span class="sd">              </span>
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If neither tokenizer (for Turkish) nor sozluk (for English) is provided.</span>
+<span class="sd">        </span>
+<span class="sd">    Side Effects:</span>
+<span class="sd">        - Creates directory structure: {project_root}/Output/{data_frame_name}/ (if include_documents=True)</span>
+<span class="sd">        - Saves JSON file: top_docs_{data_frame_name}.json with document analysis results</span>
+<span class="sd">        - Saves topics to database if topics_db_eng is provided</span>
+<span class="sd">        - Prints warning message if no database engine is provided</span>
+<span class="sd">        </span>
+<span class="sd">    Examples:</span>
+<span class="sd">        # Turkish text analysis</span>
+<span class="sd">        result = konu_analizi(</span>
+<span class="sd">            H=topic_word_matrix,</span>
+<span class="sd">            W=doc_topic_matrix, </span>
+<span class="sd">            konu_sayisi=5,</span>
+<span class="sd">            tokenizer=turkish_tokenizer,</span>
+<span class="sd">            documents=turkish_docs,</span>
+<span class="sd">            data_frame_name=&quot;turkish_news&quot;</span>
+<span class="sd">        )</span>
+<span class="sd">        </span>
+<span class="sd">        # English text analysis  </span>
+<span class="sd">        result = konu_analizi(</span>
+<span class="sd">            H=topic_word_matrix,</span>
+<span class="sd">            W=doc_topic_matrix,</span>
+<span class="sd">            konu_sayisi=3,</span>
+<span class="sd">            sozluk=english_vocab,</span>
+<span class="sd">            documents=english_docs,</span>
+<span class="sd">            topics_db_eng=db_engine,</span>
+<span class="sd">            data_frame_name=&quot;english_articles&quot;</span>
+<span class="sd">        )</span>
+<span class="sd">        </span>
+<span class="sd">        # Result format:</span>
+<span class="sd">        # {</span>
+<span class="sd">        #     &quot;Konu 00&quot;: [&quot;machine:0.12345678&quot;, &quot;learning:0.09876543&quot;, ...],</span>
+<span class="sd">        #     &quot;Konu 01&quot;: [&quot;data:0.11111111&quot;, &quot;science:0.08888888&quot;, ...],</span>
+<span class="sd">        #     ...</span>
+<span class="sd">        # }</span>
+<span class="sd">    </span>
+<span class="sd">    Note:</span>
+<span class="sd">        - Subword tokens starting with &quot;##&quot; are automatically filtered out</span>
+<span class="sd">        - Words are ranked by their topic scores in descending order</span>
+<span class="sd">        - Document analysis extracts top 20 documents per topic when enabled</span>
+<span class="sd">        - Function works with both pandas DataFrames and regular lists for documents</span>
+<span class="sd">        - Database saving is optional and warnings are shown if engine is not provided</span>
+<span class="sd">        - File paths are resolved relative to the function&#39;s location in the project structure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">sozluk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either tokenizer (for Turkish) or sozluk (for English) must be provided&quot;</span><span class="p">)</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">dokuman_result</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">konu_sayisi</span><span class="p">):</span>
+        <span class="n">konu_kelime_vektoru</span> <span class="o">=</span> <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">konu_dokuman_vektoru</span> <span class="o">=</span> <span class="n">W</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+
+        <span class="n">sirali_kelimeler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">konu_kelime_vektoru</span><span class="p">))</span>
+        <span class="n">sirali_haberler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">konu_dokuman_vektoru</span><span class="p">))</span>
+
+        <span class="n">ilk_kelimeler</span> <span class="o">=</span> <span class="n">sirali_kelimeler</span>
+        <span class="n">ilk_10_dokuman</span> <span class="o">=</span> <span class="n">sirali_haberler</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+
+        <span class="c1"># Get the words and their corresponding scores in &quot;word:score&quot; format</span>
+        <span class="n">kelime_skor_listesi</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">ilk_kelimeler</span><span class="p">:</span>
+            <span class="c1"># Get word based on whether we&#39;re using tokenizer (Turkish) or sozluk (English)</span>
+            <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">kelime</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">id_to_token</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># Using sozluk for English</span>
+                <span class="k">if</span> <span class="nb">id</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sozluk</span><span class="p">):</span>
+                    <span class="n">kelime</span> <span class="o">=</span> <span class="n">sozluk</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+            <span class="c1"># Skip subword tokens that start with ##</span>
+            <span class="k">if</span> <span class="n">kelime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">kelime</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;##&quot;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># calculate distance between previous word and current word</span>
+            <span class="c1"># if distance is less than 3, skip the current word</span>
+            <span class="k">if</span> <span class="nb">id</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">kelime_skor_listesi</span><span class="p">:</span>  <span class="c1"># Only check distance if we have previous words</span>
+                <span class="c1"># check for all previous words</span>
+                <span class="k">for</span> <span class="n">prev_word</span> <span class="ow">in</span> <span class="n">kelime_skor_listesi</span><span class="p">:</span>
+                    <span class="n">prev_word_org</span> <span class="o">=</span> <span class="n">prev_word</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">prev_word_text</span> <span class="o">=</span> <span class="n">prev_word_org</span>
+                    <span class="k">if</span> <span class="s2">&quot;/&quot;</span> <span class="ow">in</span> <span class="n">prev_word_text</span><span class="p">:</span>
+                        <span class="c1"># If the previous word is already combined, use the first part</span>
+                        <span class="n">prev_word_text</span> <span class="o">=</span> <span class="n">prev_word_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+                    <span class="n">distance</span> <span class="o">=</span> <span class="n">calc_cosine_distance</span><span class="p">(</span><span class="n">prev_word_text</span><span class="p">,</span> <span class="n">kelime</span><span class="p">)</span>
+                    <span class="n">leven_distance</span> <span class="o">=</span> <span class="n">calc_levenstein_distance</span><span class="p">(</span><span class="n">prev_word_text</span><span class="p">,</span> <span class="n">kelime</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">:</span>
+                        <span class="c1"># combine two words</span>
+                        <span class="n">kelime</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prev_word_org</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">kelime</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="n">kelime_skor_listesi</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">prev_word</span><span class="p">)</span>
+
+                    <span class="c1">#elif leven_distance &lt; 3 and len(kelime) != leven_distance:</span>
+                    <span class="c1">#    kelime = f&quot;{prev_word_text} / {kelime}&quot;</span>
+                    <span class="c1">#    kelime_skor_listesi.remove(prev_word)</span>
+
+            <span class="c1"># Add word and score to the list</span>
+            
+            <span class="n">skor</span> <span class="o">=</span> <span class="n">konu_kelime_vektoru</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span>
+            <span class="n">kelime_skor_listesi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kelime</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">skor</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">kelime_skor_listesi</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">word_per_topic</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="n">result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Konu </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kelime_skor_listesi</span>
+        
+        <span class="c1"># Document analysis (optional)</span>
+        <span class="k">if</span> <span class="n">include_documents</span> <span class="ow">and</span> <span class="n">documents</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">document_skor_listesi</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">ilk_10_dokuman</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">id</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">):</span>
+                    <span class="n">skor</span> <span class="o">=</span> <span class="n">konu_dokuman_vektoru</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span>
+                    <span class="n">document_skor_listesi</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">documents</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;iloc&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">documents</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">skor</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">dokuman_result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Konu </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">document_skor_listesi</span>
+
+    <span class="c1"># Save document analysis if it was generated</span>
+    <span class="k">if</span> <span class="n">include_documents</span> <span class="ow">and</span> <span class="n">documents</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data_frame_name</span><span class="p">:</span>
+        <span class="c1"># Create table-specific subdirectory under Output folder  </span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="c1"># Go up two levels to get to the project root, then into Output</span>
+        <span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+        <span class="n">table_output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">data_frame_name</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">table_output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Save document scores to table-specific subdirectory</span>
+        <span class="n">document_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">table_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;top_docs_</span><span class="si">{</span><span class="n">data_frame_name</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">)</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dokuman_result</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">document_file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">),</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Save topics to database</span>
+    <span class="k">if</span> <span class="n">topics_db_eng</span><span class="p">:</span>
+        <span class="n">save_topics_to_db</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">data_frame_name</span><span class="p">,</span> <span class="n">topics_db_eng</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: No database engine provided, skipping database save&quot;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">result</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

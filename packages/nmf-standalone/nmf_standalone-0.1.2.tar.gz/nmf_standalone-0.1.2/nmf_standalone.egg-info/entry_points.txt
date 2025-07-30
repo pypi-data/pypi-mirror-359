@@ -1,0 +1,4 @@
+[console_scripts]
+nmf-coherence = nmf_standalone:coherence_main
+nmf-docs = nmf_standalone:docs_main
+nmf-standalone = nmf_standalone:main

@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilities Package &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Utilities Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utilities-package">
+<h1>Utilities Package<a class="headerlink" href="#utilities-package" title="Link to this heading"></a></h1>
+<p>This package contains utility functions for visualization, export, and analysis support.</p>
+<section id="module-utils.gen_cloud">
+<span id="visualization-utilities"></span><span id="module-utils"></span><h2>Visualization Utilities<a class="headerlink" href="#module-utils.gen_cloud" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.gen_cloud.generate_wordclouds">
+<span class="sig-prename descclassname"><span class="pre">utils.gen_cloud.</span></span><span class="sig-name descname"><span class="pre">generate_wordclouds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/gen_cloud.html#generate_wordclouds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.gen_cloud.generate_wordclouds" title="Link to this definition"></a></dt>
+<dd><p>Generate and save word cloud images for each topic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topics_data</strong> (<em>dict</em>) – Dictionary mapping topic names to lists of words with scores</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Base output directory path</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Analysis identifier for subdirectory naming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Saves word cloud images to disk</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-utils.topic_dist">
+<dt class="sig sig-object py" id="utils.topic_dist.gen_topic_dist">
+<span class="sig-prename descclassname"><span class="pre">utils.topic_dist.</span></span><span class="sig-name descname"><span class="pre">gen_topic_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/topic_dist.html#gen_topic_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.topic_dist.gen_topic_dist" title="Link to this definition"></a></dt>
+<dd><p>Generate and save a bar plot showing document distribution across topics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>numpy.ndarray</em>) – Document-topic matrix from NMF decomposition</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Base output directory path</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Analysis identifier for file naming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Saves distribution plot to disk</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="export-utilities">
+<h2>Export Utilities<a class="headerlink" href="#export-utilities" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-utils.export_excel">
+<dt class="sig sig-object py" id="utils.export_excel.export_topics_to_excel">
+<span class="sig-prename descclassname"><span class="pre">utils.export_excel.</span></span><span class="sig-name descname"><span class="pre">export_topics_to_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/export_excel.html#export_topics_to_excel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.export_excel.export_topics_to_excel" title="Link to this definition"></a></dt>
+<dd><p>Export topics data to Excel with words sorted by topics:
+- First column contains words ordered by their topic appearance
+- Each topic has its own column
+- Cells contain scores only if the word appears in that topic</p>
+</dd></dl>
+
+<dl class="py function" id="module-utils.save_doc_score_pair">
+<dt class="sig sig-object py" id="utils.save_doc_score_pair.save_doc_score_pair">
+<span class="sig-prename descclassname"><span class="pre">utils.save_doc_score_pair.</span></span><span class="sig-name descname"><span class="pre">save_doc_score_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topics_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/save_doc_score_pair.html#save_doc_score_pair"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.save_doc_score_pair.save_doc_score_pair" title="Link to this definition"></a></dt>
+<dd><p>Processes topic word scores and saves them as a JSON file in a structured directory format.</p>
+<p>This function takes topic data containing word-score pairs in string format, parses them
+into a structured dictionary, and saves the result to a JSON file. The output is organized
+in a directory structure under the specified base directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_dir</strong> (<em>str</em>) – The base directory path where the output folder will be created.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Output directory parameter (currently unused in implementation).</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Name of the table/dataset, used for creating subdirectories and naming the output file.</p></li>
+<li><p><strong>topics_data</strong> (<em>dict</em>) – Dictionary where keys are topic names and values are lists of
+word-score strings in format “word:score” or “multi word:score”.</p></li>
+<li><p><strong>result</strong> – Additional result parameter (currently unused in implementation).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary where keys are topic names and values are dictionaries mapping</dt><dd><p>words to their corresponding float scores.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effects:</dt><dd><ul class="simple">
+<li><p>Creates directory structure: {base_dir}/Output/{table_name}/</p></li>
+<li><p>Saves JSON file: {table_name}_wordcloud_scores.json in the created directory</p></li>
+<li><p>Prints status messages for successful saves or errors</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>topics_data = {</dt><dd><p>“topic1”: [“machine learning:0.85”, “data science:0.75”],
+“topic2”: [“neural network:0.90”, “deep learning:0.88”]</p>
+</dd>
+</dl>
+<p>}</p>
+<p>result = save_doc_score_pair(“/path/to/base”, “”, “my_table”, topics_data, None)
+# Creates: /path/to/base/Output/my_table/my_table_wordcloud_scores.json
+# Returns: {“topic1”: {“machine learning”: 0.85, “data science”: 0.75}, …}</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Words containing colons will be handled correctly by joining all parts except the last</p></li>
+<li><p>Invalid word-score entries are skipped with error messages printed to console</p></li>
+<li><p>The function ensures ASCII compatibility is maintained in JSON output</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function" id="module-utils.save_topics_db">
+<dt class="sig sig-object py" id="utils.save_topics_db.save_topics_to_db">
+<span class="sig-prename descclassname"><span class="pre">utils.save_topics_db.</span></span><span class="sig-name descname"><span class="pre">save_topics_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_frame_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topics_db_eng</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/save_topics_db.html#save_topics_to_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.save_topics_db.save_topics_to_db" title="Link to this definition"></a></dt>
+<dd><p>Helper function to save topics directly to database using SQLAlchemy</p>
+</dd></dl>
+
+</section>
+<section id="analysis-utilities">
+<h2>Analysis Utilities<a class="headerlink" href="#analysis-utilities" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-utils.coherence_score">
+<dt class="sig sig-object py" id="utils.coherence_score.p_word_pair">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">p_word_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#p_word_pair"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.p_word_pair" title="Link to this definition"></a></dt>
+<dd><p>Calculates the probability of a word pair in a document
+P(w1,w2) = D(w1,w2) / N
+D(w1,w2) = number of documents containing both word1 and word2</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.p_word">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">p_word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#p_word"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.p_word" title="Link to this definition"></a></dt>
+<dd><p>Calculates the probability of a word in a document
+P(w) = D(w) / N
+D(w) = number of documents containing word w
+N = total number of documents</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.pmi">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">pmi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#pmi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.pmi" title="Link to this definition"></a></dt>
+<dd><p>Calculates the probability of a word pair in a document
+P(w1,w2) = D(w1,w2) / N
+D(w1,w2) = number of documents containing both word1 and word2
+PMI(w1,w2) = log(P(w1,w2) / (P(w1) * P(w2)))</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.get_documents_from_db">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">get_documents_from_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#get_documents_from_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.get_documents_from_db" title="Link to this definition"></a></dt>
+<dd><p>Get documents from SQLite database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_name</strong> (<em>str</em>) – Name of the table containing the documents</p></li>
+<li><p><strong>column_name</strong> (<em>str</em>) – Name of the column containing the text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of document texts</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.c_uci">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">c_uci</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#c_uci"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.c_uci" title="Link to this definition"></a></dt>
+<dd><p>Calculates the UCI coherence score for topics
+UCI(w1,w2) = 2 / (N * (N-1)) * sum_i sum_j PMI(w_i,w_j)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topics_json</strong> (<em>dict</em>) – Dictionary containing topics and their word scores</p></li>
+<li><p><strong>table_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the table containing the documents</p></li>
+<li><p><strong>column_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the column containing the text</p></li>
+<li><p><strong>documents</strong> (<em>list</em><em>, </em><em>optional</em>) – List of documents for co-occurrence calculation.
+If None and table_name is provided, will fetch from database.
+If both None, will use topics themselves as documents.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Small value to prevent log(0)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing topic coherences and average coherence</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.doc_cooccurrence">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">doc_cooccurrence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#doc_cooccurrence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.doc_cooccurrence" title="Link to this definition"></a></dt>
+<dd><p>Counts number of documents where word1 and word2 co-occur</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.word_doc_count">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">word_doc_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#word_doc_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.word_doc_count" title="Link to this definition"></a></dt>
+<dd><p>Counts number of documents containing the word</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.u_mass">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">u_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#u_mass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.u_mass" title="Link to this definition"></a></dt>
+<dd><p>Calculates the U-Mass coherence score for topics
+U-Mass uses log conditional probability: log(P(w2|w1)) = log(P(w1,w2)/P(w1))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topics_json</strong> (<em>dict</em>) – Dictionary containing topics and their word scores</p></li>
+<li><p><strong>table_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the table containing the documents</p></li>
+<li><p><strong>column_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the column containing the text</p></li>
+<li><p><strong>documents</strong> (<em>list</em><em>, </em><em>optional</em>) – List of documents for co-occurrence calculation.
+If None and table_name is provided, will fetch from database.
+If both None, will use topics themselves as documents.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Small value to prevent log(0)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing topic coherences and average coherence</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.coherence_score.calculate_coherence_scores">
+<span class="sig-prename descclassname"><span class="pre">utils.coherence_score.</span></span><span class="sig-name descname"><span class="pre">calculate_coherence_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic_word_scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/coherence_score.html#calculate_coherence_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.coherence_score.calculate_coherence_scores" title="Link to this definition"></a></dt>
+<dd><p>Calculate coherence scores (U-Mass) and optionally save them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic_word_scores</strong> (<em>dict</em>) – Dictionary of topics and their word scores</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory to save the scores. If None, scores won’t be saved</p></li>
+<li><p><strong>table_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the table/analysis for file naming and database access</p></li>
+<li><p><strong>column_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the column containing the document text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing coherence scores</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-utils.word_cooccurrence">
+<dt class="sig sig-object py" id="utils.word_cooccurrence.calc_word_cooccurrence">
+<span class="sig-prename descclassname"><span class="pre">utils.word_cooccurrence.</span></span><span class="sig-name descname"><span class="pre">calc_word_cooccurrence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sozluk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/word_cooccurrence.html#calc_word_cooccurrence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.word_cooccurrence.calc_word_cooccurrence" title="Link to this definition"></a></dt>
+<dd><p>Calculates word co-occurrence matrix from NMF H matrix and saves results to a JSON file.</p>
+<p>This function computes how often words appear together in the same document based on
+the NMF topic-word matrix (H). It identifies the most frequent word pairs, returns
+them as a DataFrame, and saves them to a JSON file in the specified output directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>H</strong> (<em>numpy.ndarray</em>) – Topic-word matrix from NMF decomposition.</p></li>
+<li><p><strong>sozluk</strong> (<em>list</em>) – Vocabulary list where indices correspond to word IDs.</p></li>
+<li><p><strong>base_dir</strong> (<em>str</em>) – Base directory path for saving output.</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Name of the table/dataset for file naming.</p></li>
+<li><p><strong>top_n</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of top pairs to return. Default is 100.</p></li>
+<li><p><strong>min_score</strong> (<em>float</em><em>, </em><em>optional</em>) – Minimum co-occurrence score to consider. Default is 1.</p></li>
+<li><p><strong>tokenizer</strong> (<em>tokenizers.Tokenizer</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>DataFrame with columns ‘Word 1’, ‘Word 2’, and ‘Score’,</dt><dd><p>containing the top word pairs sorted by co-occurrence score.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<dl>
+<dt>Side Effects:</dt><dd><ul class="simple">
+<li><p>Creates directory structure: {base_dir}/Output/{table_name}/</p></li>
+<li><p>Saves JSON file: {table_name}_cooccurrence.json in the created directory</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">param H<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">param sozluk<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">param base_dir<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">param top_n<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">param min_score<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tokenizer</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tokenizer</span></code></span>
+:param tokenizer:)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-utils.distance_two_words">
+<dt class="sig sig-object py" id="utils.distance_two_words.calc_levenstein_distance">
+<span class="sig-prename descclassname"><span class="pre">utils.distance_two_words.</span></span><span class="sig-name descname"><span class="pre">calc_levenstein_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/distance_two_words.html#calc_levenstein_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.distance_two_words.calc_levenstein_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.distance_two_words.calc_cosine_distance">
+<span class="sig-prename descclassname"><span class="pre">utils.distance_two_words.</span></span><span class="sig-name descname"><span class="pre">calc_cosine_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/distance_two_words.html#calc_cosine_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.distance_two_words.calc_cosine_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.distance_two_words.calc_jaccard_distance">
+<span class="sig-prename descclassname"><span class="pre">utils.distance_two_words.</span></span><span class="sig-name descname"><span class="pre">calc_jaccard_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/distance_two_words.html#calc_jaccard_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.distance_two_words.calc_jaccard_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="other-utilities">
+<h2>Other Utilities<a class="headerlink" href="#other-utilities" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-utils.image_to_base">
+<dt class="sig sig-object py" id="utils.image_to_base.image_to_base64">
+<span class="sig-prename descclassname"><span class="pre">utils.image_to_base.</span></span><span class="sig-name descname"><span class="pre">image_to_base64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/image_to_base.html#image_to_base64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.image_to_base.image_to_base64" title="Link to this definition"></a></dt>
+<dd><p>Convert matplotlib figure or WordCloud to base64 string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>figure</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">WordCloud</span></code>]</span>) – Matplotlib figure or WordCloud object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Base64 encoded string of the image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.image_to_base.base64_to_image">
+<span class="sig-prename descclassname"><span class="pre">utils.image_to_base.</span></span><span class="sig-name descname"><span class="pre">base64_to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base64_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/image_to_base.html#base64_to_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.image_to_base.base64_to_image" title="Link to this definition"></a></dt>
+<dd><p>Convert base64 string to PIL Image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>base64_string</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Base64 encoded string of the image</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIL Image object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-utils.redis_bridge">
+<dt class="sig sig-object py" id="utils.redis_bridge.update_progress_emit">
+<span class="sig-prename descclassname"><span class="pre">utils.redis_bridge.</span></span><span class="sig-name descname"><span class="pre">update_progress_emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">progress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">durum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/redis_bridge.html#update_progress_emit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.redis_bridge.update_progress_emit" title="Link to this definition"></a></dt>
+<dd><p>Update the progress of a task and emit the status to Redis Pub/Sub.
+:type progress: 
+:param progress: The progress percentage of the task.
+:type progress: int
+:type message: 
+:param message: A message describing the current status of the task.
+:type message: str
+:type status: 
+:param status: The current status of the task.
+:type status: str
+:type data_name: 
+:param data_name: The name of the data being processed.
+:type data_name: str
+:type tid: 
+:param tid: The ID of the task.
+:type tid: str
+:type task_obj: 
+:param task_obj: The task object to check for abortion status.
+:type durum: 
+:param durum: Optional parameter to check for abortion status.
+:type durum: str, optional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the task is aborted, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
