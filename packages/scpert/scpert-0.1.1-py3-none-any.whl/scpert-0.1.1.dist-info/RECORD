@@ -1,0 +1,17 @@
+scpert/ProcePertdata.py,sha256=bATYs7a79jE9PtBn04e60-ImfACtqvsqxDiJa-xGqIY,24452
+scpert/__init__.py,sha256=ZTu8hZ5PEModFRp_OXbdkn6lzsJ7bnyjZty0WS3iTdc,219
+scpert/data_utils.py,sha256=owpxZxJQTaq6VOpQAsxZpgsCRA1yGKe-1cjxZB-kSfE,19278
+scpert/infer.py,sha256=w7LxwcJXMGMwvcHEtW1fdnVRTaLgtLGW0xx5uNpbTN0,1366
+scpert/inference.py,sha256=GR3YzCEvXalDGkwfzIFLX9VITJUMDt6TUahxcKyt8lY,34288
+scpert/model.py,sha256=BLYsjPd8mVDcn6BL_8eidAJ6sgfPLIDnB9QR_dnHhvo,11415
+scpert/predict.py,sha256=jBDcNQucWXlb72YBlVrSkeKWORO2K__jEQrhnmEvuaU,2389
+scpert/scpert.py,sha256=YWPIzB-HdarHf5a1nh-EyG-PO6Eo_ChxUCxYoJwtUkw,40733
+scpert/train.py,sha256=P7lEcYaGsnDpgouOkRGHdiAFlKUPGxrZmx_j4VnIUNc,1630
+scpert/train_model.py,sha256=sp5zuisjvHJm4Wc0_2UT6v34aMl3Ipn_aTmAKshWUBQ,2790
+scpert/utils.py,sha256=pJlOW7ux39_oqd1bft1skhaqCDraxnFtWjPZwbELvn4,23652
+scpert-0.1.1.dist-info/LICENSE,sha256=sFeF-fGOZxa6tjQksRRUUTuZQ6IiWVtwQRAJIC_FkrU,1078
+scpert-0.1.1.dist-info/METADATA,sha256=w0A9I4rBRns6fzs6o747C6CMvTgoEkTGHJYCsvdFxK4,3344
+scpert-0.1.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+scpert-0.1.1.dist-info/entry_points.txt,sha256=_-0DpGFiceaLZZ7-Fl7FUsMpRZxPGX8G4FHDsJrspw8,103
+scpert-0.1.1.dist-info/top_level.txt,sha256=_Nx0SsLFIbymj9oXQijMGVivJKuYb6oc1KfJLXdmv9Y,7
+scpert-0.1.1.dist-info/RECORD,,
