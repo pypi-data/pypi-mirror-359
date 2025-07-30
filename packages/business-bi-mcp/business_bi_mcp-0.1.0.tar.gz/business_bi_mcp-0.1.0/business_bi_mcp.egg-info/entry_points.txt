@@ -1,0 +1,3 @@
+[console_scripts]
+bi-mcp = main:main
+business-bi-mcp = main:main

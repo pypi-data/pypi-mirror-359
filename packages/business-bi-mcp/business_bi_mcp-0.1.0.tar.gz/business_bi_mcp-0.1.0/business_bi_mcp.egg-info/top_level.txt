@@ -1,0 +1,5 @@
+core
+main
+templates
+tools
+utils
