@@ -1,0 +1,13 @@
+pythagix/__init__.py,sha256=aIeiHnmAm9xFHCTte3c_kzyI6N2J2fI9vjslUjcrQ10,916
+pythagix/figurates.py,sha256=P0qSrGma_D_65FIxBb5tbgN6RIzmbrcLLdcwel-MUH0,427
+pythagix/numbering.py,sha256=U89YHtUZYN8KdnrQd0G_z5qCaQ8zmJnRjelscWUhZh0,1502
+pythagix/percentage.py,sha256=wze_i7NQw9OHYSX0Y8ZgYdpmMmE1BAdMjSum7r47eyE,1111
+pythagix/prime.py,sha256=2vnb953u7-8sYiKsq7Yglkp4Nz16_VYpWCN_rcxU46k,1983
+pythagix/ratio.py,sha256=i2bM74vzRRVA2c9tnqaSq48HB5O9JfcPlV02Y9zJPr0,910
+pythagix/stat.py,sha256=48oi2qDvYRAxP_IHt4sS1W_dOuQL9Ob7JfuOU6_ZqZA,3007
+pythagix/utils.py,sha256=ZOEzhbI7i2-Q5r4A-PqHq-GOpLfcJMb_5fUceFGMnkU,1402
+pythagix-0.2.13.dist-info/licenses/LICENSE,sha256=mAiqjt0kIJZfw70XUmdIrsvPwnhKBMerHN3nDFg8H9c,1096
+pythagix-0.2.13.dist-info/METADATA,sha256=GMulTX14K6cUXk7H0Z1DniT4nk4J-Xt8UGbrgT8HGFo,3768
+pythagix-0.2.13.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pythagix-0.2.13.dist-info/top_level.txt,sha256=U3rm-YGObQkL0gSuVWFPZTakILlqyAd7pUVvtJiMlsE,9
+pythagix-0.2.13.dist-info/RECORD,,
