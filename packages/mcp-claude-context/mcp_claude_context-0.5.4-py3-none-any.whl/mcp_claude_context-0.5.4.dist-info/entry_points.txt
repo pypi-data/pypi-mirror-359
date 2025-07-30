@@ -1,0 +1,4 @@
+[console_scripts]
+mcp-claude-context=src.direct_api_server:cli_main
+migrate-data=deployment.scripts.migrate_data:main
+
