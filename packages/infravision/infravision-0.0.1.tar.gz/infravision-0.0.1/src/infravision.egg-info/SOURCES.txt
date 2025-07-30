@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/infravision/__init__.py
+src/infravision.egg-info/PKG-INFO
+src/infravision.egg-info/SOURCES.txt
+src/infravision.egg-info/dependency_links.txt
+src/infravision.egg-info/top_level.txt
