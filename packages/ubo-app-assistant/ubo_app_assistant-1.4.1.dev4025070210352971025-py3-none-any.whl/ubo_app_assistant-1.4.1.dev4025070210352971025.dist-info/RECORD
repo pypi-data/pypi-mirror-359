@@ -1,0 +1,12 @@
+ubo_assistant/__init__.py,sha256=B8dmHH8hy8-9S8K14TiPAUoJTQ8aSxjVpZ4KPkiT72Y,37
+ubo_assistant/constants.py,sha256=SslpBQhQAi_KqfoVc8GKOkOjXuDlgFXrryKG0TYm2DI,268
+ubo_assistant/file_source.py,sha256=nf-c8V_MtiAKG4F_awyE-Hj6ZrJKYfqRLehO2nLHEjI,1691
+ubo_assistant/main.py,sha256=sm3rlHNHobO-LXNki0TBJ-YKGknKmfEgdA3tJjZ3oBg,13614
+ubo_assistant/parent_version.py,sha256=s74T6XiJVAIi7uyOZwegyEVBPpuutVQ6V1qqdkxc-WM,530
+ubo_assistant/piper.py,sha256=itjipZzRBkTChl5MFq7KO2kA8OkFS88d5__t4HdymP0,4680
+ubo_assistant/switch.py,sha256=5a4nbPd90Vi_RIr5C7l1UZ6GFgnHbHiCJQFe5lvp3LY,3075
+ubo_assistant/vosk.py,sha256=X0WDEJJSgv8LkBY5kZ2MQf7YBMVXiERi5DN2fNoar6Y,6287
+ubo_app_assistant-1.4.1.dev4025070210352971025.dist-info/METADATA,sha256=J2Xte5w3zt6-UCY6QUPDpI6JiG2ZC9g1dAqOyJUPTqI,585
+ubo_app_assistant-1.4.1.dev4025070210352971025.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ubo_app_assistant-1.4.1.dev4025070210352971025.dist-info/entry_points.txt,sha256=QAOClQS21khUwgnRaJqqgsat_SEAW1Ji7mRnR_vIv8c,58
+ubo_app_assistant-1.4.1.dev4025070210352971025.dist-info/RECORD,,
