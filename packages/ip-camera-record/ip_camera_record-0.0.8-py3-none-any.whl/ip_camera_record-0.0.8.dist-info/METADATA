@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: ip_camera_record
+Version: 0.0.8
+Summary: auto road ip camera recording tool
+Author: hanson.sun
+Author-email: 423343922@qq.com
+Requires-Dist: opencv-python
+Requires-Dist: ping3
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: requires-dist
+Dynamic: summary
+
+路口IP摄像头自动抓图工具
