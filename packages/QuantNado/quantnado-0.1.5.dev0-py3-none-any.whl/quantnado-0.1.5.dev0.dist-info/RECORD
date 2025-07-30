@@ -1,0 +1,11 @@
+QuantNado/__init__.py,sha256=sdGDfMng8t5yR6OfnCoL5wOPUv7vseY-2Qng41hRt-c,321
+QuantNado/_version.py,sha256=LvIProhXOXisdtEkJ6ZqmJKoKwiSolypnkVIUcs7cko,524
+QuantNado/call_quantile_peaks.py,sha256=hAp11nAstJPuv7EkFBcnLj1mdidF-VkXSMRnKQzi4n8,4802
+QuantNado/cli.py,sha256=tSybePqoJBnJs-VYxBmRUkM_d7GhVK4W-JIUJ6SbUDU,2637
+QuantNado/make_dataset.py,sha256=vvy-ebAqq9lFHj3nQRh1_gyATl4hCODfCFx5YDSZ3uw,2435
+quantnado-0.1.5.dev0.dist-info/licenses/LICENSE,sha256=dX2_YcaCIHwR76hd4LIQbCacIRGt0J1E8HJVX_bI9J8,1075
+quantnado-0.1.5.dev0.dist-info/METADATA,sha256=lUxoOewIE6xT4qbKRbud_FWwFWCdPf6ehqkVejgPTh4,3162
+quantnado-0.1.5.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quantnado-0.1.5.dev0.dist-info/entry_points.txt,sha256=zz10fsVuhcGP4C4DUoQe5yqtGfY7szCrhbHsmqBomn4,128
+quantnado-0.1.5.dev0.dist-info/top_level.txt,sha256=zWGOy8Kpy3NbS6ct_j85KiH5eAdC3BEuqYG6dUrpNJ4,10
+quantnado-0.1.5.dev0.dist-info/RECORD,,
