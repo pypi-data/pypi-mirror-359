@@ -1,0 +1,12 @@
+gepetuto/__init__.py,sha256=OnsSOH73Vu3sZaAsYdY7Y06mxpWK9h2VC4TEefUFZi4,23
+gepetuto/__main__.py,sha256=nf8Z-yI7qh6ZQqlRq8Y-okViwYoO2qHGfpAD6A1vRZ4,163
+gepetuto/generate.py,sha256=RqR8sWV0IrbViWZcpWFG-Qy8ouySi7JJfVLY28dlqLg,3834
+gepetuto/lint.py,sha256=gCOvgaYwnzr1KVAZBVXYDkRMqNEH6KxO0H9BNoh15I8,710
+gepetuto/magic.py,sha256=fZGX8ayLxekBoXhfVPmL3JA7IY_P0EFLzrJZEfJOW1M,1704
+gepetuto/main.py,sha256=kRyNDA9h-lOF9i4dvr_oPd_ee8RzMntAZ_Lsh_IEzIk,4511
+gepetuto/test.py,sha256=TSRjGEN-fz7n86SgSWPmN99tOHMdL5K8qpIllcqynmc,2003
+gepetuto-2.0.3.dist-info/METADATA,sha256=wQGsOuPZ73aq9D6XJ8OGt3wJT7vhJPZ4EKUgmah_ODE,4012
+gepetuto-2.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gepetuto-2.0.3.dist-info/entry_points.txt,sha256=D-sotAJHCrx6UBpeEUaNfK0IQMHvf-9Uj3ZaCVVc7xc,52
+gepetuto-2.0.3.dist-info/licenses/LICENSE,sha256=LCOe85_3pJAbFoKRGt08VTYzWxzM3THE6athUeynr0Y,1312
+gepetuto-2.0.3.dist-info/RECORD,,
