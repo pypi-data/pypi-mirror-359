@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gil-node-text"
+version = "0.1.0"
+authors = [
+    { name = "iyulab", email = "caveman@iyulab.com" },
+]
+description = "Text processing and generation nodes for the Gil-Flow project"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "gil-py",
+    "openai", # For OpenAI text generation nodes
+]
+
+[project.entry-points."gil.nodes"]
+OpenAI-GenerateText = "gil_node_text.openai_text_generation:OpenAIGenerateTextNode"

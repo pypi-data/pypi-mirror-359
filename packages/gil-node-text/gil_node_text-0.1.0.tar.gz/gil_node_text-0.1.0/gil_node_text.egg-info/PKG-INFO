@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: gil-node-text
+Version: 0.1.0
+Summary: Text processing and generation nodes for the Gil-Flow project
+Author-email: iyulab <caveman@iyulab.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: gil-py
+Requires-Dist: openai
+
+# Gil-Node-Text
+
+This package provides nodes for text processing and generation within the Gil-Flow ecosystem.
+
+## Provided Nodes
+
+- **OpenAI-GenerateText**: Generates text using the OpenAI API.

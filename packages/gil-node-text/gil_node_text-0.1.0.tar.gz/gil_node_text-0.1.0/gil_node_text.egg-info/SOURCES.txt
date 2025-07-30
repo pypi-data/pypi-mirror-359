@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+gil_node_text/__init__.py
+gil_node_text/openai_text_generation.py
+gil_node_text.egg-info/PKG-INFO
+gil_node_text.egg-info/SOURCES.txt
+gil_node_text.egg-info/dependency_links.txt
+gil_node_text.egg-info/entry_points.txt
+gil_node_text.egg-info/requires.txt
+gil_node_text.egg-info/top_level.txt
