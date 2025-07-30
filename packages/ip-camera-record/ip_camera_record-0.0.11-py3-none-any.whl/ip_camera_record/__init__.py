@@ -1,0 +1,1 @@
+from .ip_camera_record import record

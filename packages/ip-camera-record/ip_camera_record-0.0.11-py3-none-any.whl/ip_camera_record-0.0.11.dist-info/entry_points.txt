@@ -1,0 +1,2 @@
+[console_scripts]
+ip_camera_record = ip_camera_record:record
