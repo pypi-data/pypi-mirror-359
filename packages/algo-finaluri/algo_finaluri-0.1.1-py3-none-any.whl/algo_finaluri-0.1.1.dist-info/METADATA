@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: algo_finaluri
+Version: 0.1.1
+Summary: Ghmerti ar gagvwiravs
+Author: Bakuri Tchelidze
+Author-email: bakuritchelidze@btu.com
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
+Dynamic: summary
