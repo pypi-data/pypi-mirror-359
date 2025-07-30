@@ -1,0 +1,9 @@
+uccl/__init__.py,sha256=jk8Bg44CBnnO_HtukiM6W8E25qdaSSD5IQaTp4n-R7k,901
+uccl/lib/libnccl-net-uccl.so,sha256=MJPAkSvFemLuIrc0be_C5vQG8nNJtyKyTukZTyWW0vw,5728400
+uccl.libs/libgflags-8661e189.so.2.2.2,sha256=xAomYCceEBfE06Jwja5awgkTK1qectOEf_QbHs6Xkqw,206480
+uccl.libs/libglog-bb9621e6.so.0.4.0,sha256=5PRWrL0qEs0f1aiuXEKd85GTmj9NRnQVlUta_J9GMGA,273064
+uccl-0.0.1.post2.dist-info/METADATA,sha256=4AsVFdZIsEyDfUL8ZyI5FAZGV35_IWhvrCytJCi3CHA,6050
+uccl-0.0.1.post2.dist-info/WHEEL,sha256=rzWXDAnXSPzjGsRegzAEPeOEnVETdNOyPHFPEwEE3Eg,133
+uccl-0.0.1.post2.dist-info/top_level.txt,sha256=vnFgo7LTC70B4ugBcOD6QMtInbw_LJLSghsmBEHZ4N8,5
+uccl-0.0.1.post2.dist-info/RECORD,,
+uccl-0.0.1.post2.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
