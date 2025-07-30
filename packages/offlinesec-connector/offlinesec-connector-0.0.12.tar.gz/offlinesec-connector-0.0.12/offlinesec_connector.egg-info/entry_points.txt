@@ -1,0 +1,4 @@
+[console_scripts]
+offlinesec_conn_settings = offlinesec_connector.mng_offlinesec_conn:main
+offlinesec_connector = offlinesec_connector.offlinesec_connector:main
+
