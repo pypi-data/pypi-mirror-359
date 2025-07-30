@@ -1,0 +1,4 @@
+db
+main
+notes_semantic_db
+utils

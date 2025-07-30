@@ -1,0 +1,12 @@
+README.md
+db.py
+main.py
+notes_semantic_db.py
+setup.py
+utils.py
+notes_app_cli.egg-info/PKG-INFO
+notes_app_cli.egg-info/SOURCES.txt
+notes_app_cli.egg-info/dependency_links.txt
+notes_app_cli.egg-info/entry_points.txt
+notes_app_cli.egg-info/requires.txt
+notes_app_cli.egg-info/top_level.txt
