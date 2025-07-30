@@ -1,0 +1,9 @@
+zeusdb_vector_database-0.0.3.dist-info/METADATA,sha256=3pdxb0D7onRtX0YfXwj_nwkdOH5mcYa_vtjhb5pFSeI,10214
+zeusdb_vector_database-0.0.3.dist-info/WHEEL,sha256=93OpEVBtP5d34LgYN8DX3VXPS5tUgt4wvwXYtSl7cmI,92
+zeusdb_vector_database-0.0.3.dist-info/licenses/LICENSE,sha256=Tl1woVXzEZSnuYktSg3zeEBiFwe-4cIdbIfaKq6i5OA,11537
+zeusdb_vector_database-0.0.3.dist-info/licenses/NOTICE,sha256=7UGCdmdJDXmoEm4HJR5eptVjgXgYYbcLSE5_UnK3tPc,829
+zeusdb_vector_database/__init__.py,sha256=WcoC1bnFNvtpXCzSLFP8jlTFHv_lEBE-K-kPoJZ78F8,209
+zeusdb_vector_database/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zeusdb_vector_database/vector_database.py,sha256=fVTY5WCLRmupC1DsdYWuiPGxlj8qCnTUkXx5OPUDRMA,1665
+zeusdb_vector_database/zeusdb_vector_database.cp310-win32.pyd,sha256=KDLwUck_G4gLlwlecw0HHTLGAbwqJVIMCt5wcAp2Cso,3333632
+zeusdb_vector_database-0.0.3.dist-info/RECORD,,
