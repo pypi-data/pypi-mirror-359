@@ -1,0 +1,21 @@
+Metadata-Version: 2.3
+Name: anc_data
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: xxx AI Inc.
+Author-email: dev@xxx.ai
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Homepage, https://sj-git.anuttacon.com/train-infra/anc_data
+Project-URL: Repository, https://sj-git.anuttacon.com/train-infra/anc_data
+Description-Content-Type: text/markdown
+
+# anc_data
+
