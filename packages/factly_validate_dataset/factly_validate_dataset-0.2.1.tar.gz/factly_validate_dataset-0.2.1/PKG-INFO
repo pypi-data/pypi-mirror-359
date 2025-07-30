@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: factly_validate_dataset
+Version: 0.2.1
+Summary: Pandera Based data validation library for Dataset Projects
+Author: Factly Labs
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pandas (>=2.0.0,<3.0.0)
+Requires-Dist: pandera (>=0.24.0,<0.25.0)
+Requires-Dist: pydantic-settings (>=2.10.1,<3.0.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: rich (>=14.0.0,<15.0.0)
+Requires-Dist: typer (>=0.16.0,<0.17.0)

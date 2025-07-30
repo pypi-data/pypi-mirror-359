@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "factly_validate_dataset"
+version = "0.2.1"
+description = "Pandera Based data validation library for Dataset Projects"
+authors = ["Factly Labs"]
+packages = [
+    { include = "factly" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.0.0"
+pandera = "^0.24.0"
+rich = "^14.0.0"
+pyyaml = "^6.0.2"
+typer = "^0.16.0"
+pydantic-settings = "^2.10.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.3.4"
+
+[tool.poetry.scripts]
+valid = 'factly.validate_dataset.cli:main'
+
+[build-system]
+requires = ["poetry>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
