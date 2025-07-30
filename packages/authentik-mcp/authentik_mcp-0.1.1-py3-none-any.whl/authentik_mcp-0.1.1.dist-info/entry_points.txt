@@ -1,0 +1,2 @@
+[console_scripts]
+authentik-mcp = authentik_mcp.server:run
