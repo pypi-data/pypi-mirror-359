@@ -1,0 +1,2 @@
+[console_scripts]
+cakesrt2audio = cakesrt2audio.__main__:main
