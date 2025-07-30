@@ -1,0 +1,8 @@
+rich>=13.0
+typer>=0.15.0
+numpy>=2.3.0
+pydantic>=2.11
+pycryptodome>=3.23
+opencv-python>=4.10
+onnxruntime>=1.21
+httpx>=0.28

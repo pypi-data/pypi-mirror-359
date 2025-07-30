@@ -1,0 +1,35 @@
+[project]
+name = "icpquery"
+version = "1.2.0"
+description = "A CLI tool for query keyword in China MIIT ICP Website to get ICP Record"
+license = { text = "MIT" }
+authors = [{ name = "SocialSisterYi", email = "1440239038@qq.com" }]
+dependencies = [
+    "rich>=13.0",
+    "typer>=0.15.0",
+    "numpy>=2.3.0",
+    "pydantic>=2.11",
+    "pycryptodome>=3.23",
+    "opencv-python>=4.10",
+    "onnxruntime>=1.21",
+    "httpx>=0.28",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+keywords = ["MIIT", "ICP"]
+
+[project.urls]
+repository = "https://github.com/SocialSisterYi/ICPQuery"
+
+[project.scripts]
+icpquery = "icpquery.__main__:app"
+
+[tool.pdm]
+distribution = true
+
+[tool.black]
+line-length = 110
+target-version = ['py310']
+
+[dependency-groups]
+dev = ["black<26.0.0,>=25.1.0"]

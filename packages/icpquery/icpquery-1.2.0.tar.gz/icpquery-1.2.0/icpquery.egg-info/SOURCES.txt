@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+icpquery/__init__.py
+icpquery/__main__.py
+icpquery/captcha.py
+icpquery/dto.py
+icpquery/exceptions.py
+icpquery/schema.py
+icpquery/utils.py
+icpquery.egg-info/PKG-INFO
+icpquery.egg-info/SOURCES.txt
+icpquery.egg-info/dependency_links.txt
+icpquery.egg-info/entry_points.txt
+icpquery.egg-info/requires.txt
+icpquery.egg-info/top_level.txt
