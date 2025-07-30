@@ -1,0 +1,11 @@
+cakegeminiapi/__init__.py,sha256=Xo2v5hDqr3CyjNTZCGpBp_yvosbCCngRpwc8oEVr6TI,148
+cakegeminiapi/__main__.py,sha256=7tzuGbeA5JiJWE_g9pzlcTXSsKlR-iEXNEbdYd4jZMs,62
+cakegeminiapi/cake.py,sha256=D-Wo8BpAg_jB5ehwuXBmlqrZg-G7GQH6dRP1DvkIcv8,1465
+cakegeminiapi/core.py,sha256=6-ngI3LH9YEPG8-EAV9dKxyqDQ9cRhQPIPJ0Um1RRAc,1635
+cakegeminiapi/main.py,sha256=A0KpLmaDCtDItSZhNxjWtkrLD5LH9zLBQxCNc_KlWFQ,5974
+cakegeminiapi/prompts.py,sha256=FlAtE5nTjmZEjckce4fLxXtUw9XPuJxwidTB04RtDCc,2220
+cakegeminiapi-0.1.6.dist-info/METADATA,sha256=e0Sx8Ge22vMcKEEWAqNzmTiCY_5I6oLL2SNP95ZcNBk,478
+cakegeminiapi-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cakegeminiapi-0.1.6.dist-info/entry_points.txt,sha256=wdR8MXWaMrOq9OF0vmkYZEV_qvkroHrEvg_fen7zksk,54
+cakegeminiapi-0.1.6.dist-info/top_level.txt,sha256=qGTv8YOLsqTAKfTNOOJ-xRazNki94rwKg_vTCCMDHfU,14
+cakegeminiapi-0.1.6.dist-info/RECORD,,
