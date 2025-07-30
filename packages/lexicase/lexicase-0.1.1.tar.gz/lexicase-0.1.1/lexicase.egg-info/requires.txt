@@ -1,0 +1,16 @@
+
+[all]
+jax
+jaxlib
+numpy
+
+[dev]
+pytest
+pytest-cov
+
+[jax]
+jax
+jaxlib
+
+[numpy]
+numpy
