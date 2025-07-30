@@ -1,0 +1,137 @@
+[tool.poetry]
+name = "dependency-track-api"
+version = "0.1.5"
+packages = [ {include = "./dependency_track_api"}]
+description = "A wrapper for the Dependency Track REST API."
+authors = ["MarcosRigal <riveragavilanmarcos@gmail.com>"]
+readme = "README.md"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+# Dependencies should go here
+python = ">=3.10,<=3.14"
+tomli = "*"
+
+# tox-test extra dependencies
+coverage = {version = "^7.0", optional = true, extras = ["toml"]}
+freezegun = {version = "1.1.0", optional = true}
+pytest = {version = "^7.4", optional = true}
+pytest-cov = {version = "4.0.0", optional = true}
+pytest-emoji = {version = "0.2.0", optional = true}
+pytest-timeout = {version = "2.1.0", optional = true}
+pytest-env = {version = "^0.5.0", optional = true}
+mypy  = {version = "0.910", optional = true}
+
+# tox-lint extra dependencies
+flake8 = {version = "3.8.4", optional = true}
+flake8-eradicate = {version = "1.1.0", optional = true}
+pylama = {version = "7.7.1", optional = true}
+pylint = {version = "2.6.0", optional = true}
+requests = "^2.31.0"
+types-requests = "^2.31.0.20240311"
+pytest-mock = "3.10.0"
+requests-mock = "^1.12.1"
+pylint-pytest = "^1.1.7"
+
+[tool.poetry.extras]
+tox-lint = [
+  "pytest",
+  "faker",
+  "coverage",
+  "pytest-cov",
+  "pytest-emoji",
+  "pytest-timeout",
+  "mypy",
+  "pylint",
+  "pylint-pytest",
+  "flake8",
+  "flake8-eradicate",
+  "pylama",
+  "types-requests"
+]
+tox-test = [
+  "pytest",
+  "faker",
+  "coverage",
+  "pytest-cov",
+  "pytest-emoji",
+  "pytest-timeout",
+  "mypy",
+  "pylint",
+  "pylint-pytest",
+  "flake8",
+  "flake8-eradicate",
+  "pylama",
+  "types-requests"
+]
+
+[tool.black]
+line-length = 99
+preview = true
+
+[tool.isort]
+line_length = 99
+lines_between_types = 1
+profile = "black"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+
+[tool.pylint."MESSAGES CONTROL"]
+good-names-rgxs = "^.$"
+disable = "fixme,duplicate-code,no-self-use"
+
+[tool.coverage.report]
+exclude_lines = ["raise NotImplementedError"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = py310,py311,py312,py313,py314,lint
+skip_missing_interpreters = true
+
+[testenv]
+docker = True
+whitelist_externals = poetry
+skip_install = True
+allowlist_externals = poetry,pytest
+
+commands =
+    poetry install -E tox-test
+    pytest \
+        --junitxml={toxinidir}/junit-reports/unit.xml \
+        -o junit_family=xunit2 \
+        --cov={toxinidir}/dependency_track_api \
+        --cov-report=term-missing \
+        --cov-fail-under=0 \
+        -s -vvv \
+        --timeout=0 \
+        --emoji \
+        {posargs:{toxinidir}/tests/}
+
+[testenv:lint]
+basepython = python3.10
+whitelist_externals = poetry
+skip_install = True
+allowlist_externals = poetry,pydocstyle,flake8,black,isort,mypy,pylint
+commands =
+    poetry install -E tox-lint
+    pydocstyle {toxinidir}/dependency_track_api
+    flake8 {toxinidir}/dependency_track_api --count --max-line-length 99 --ignore E203,W503
+    black {toxinidir}/dependency_track_api
+    isort {toxinidir}/dependency_track_api
+    mypy --no-site-packages {toxinidir}/dependency_track_api
+    pylint {toxinidir}/dependency_track_api
+
+    pydocstyle {toxinidir}/tests
+    flake8 {toxinidir}/tests --count --max-line-length 99 --ignore E203,W503
+    black {toxinidir}/tests
+    isort {toxinidir}/tests
+    mypy --no-site-packages {toxinidir}/tests
+    pylint {toxinidir}/tests
+"""
