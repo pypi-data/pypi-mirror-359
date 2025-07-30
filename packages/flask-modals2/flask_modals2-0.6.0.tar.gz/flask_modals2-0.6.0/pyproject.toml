@@ -1,0 +1,19 @@
+[project]
+name = "flask-modals2"
+version = "0.6.0"
+authors = [
+  { name="Leandro Dariva Pinto", email="leandro.dariva@gmail.com" },
+]
+description = "Use forms in Bootstrap modals with Flask > 2.3"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = ["flask","jinja2"]
+[project.urls]
+Homepage = "https://github.com/ldariva/flask-modals"
+Issues = "https://github.com/ldariva/flask-modals/issues"
