@@ -1,0 +1,2 @@
+[console_scripts]
+climate-zarr = climate_zarr.climate_cli:app
