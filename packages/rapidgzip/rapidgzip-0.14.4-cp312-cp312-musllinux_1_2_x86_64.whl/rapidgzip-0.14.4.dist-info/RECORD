@@ -1,0 +1,10 @@
+rapidgzip.cpython-312-x86_64-linux-musl.so,sha256=5SgrKHi3laVnVOQiHrTDxY1aBHeHxs7i34yi8bSJDCM,33067409
+rapidgzip.libs/libgcc_s-2298274a.so.1,sha256=V2IJwfUuwSSQhJqB29JtMx8hH79dCRjAvTQIGWShH-s,181737
+rapidgzip.libs/libstdc++-08d5c7eb.so.6.0.33,sha256=k0S_imrCh_IE6WpvxrLoVPYiRyMVf15RDWRiXPIywV8,3562401
+rapidgzip-0.14.4.dist-info/LICENSE-APACHE,sha256=6CKTijprZ-4zesrN3AgKEF9X9pN_XPgM6iW19MIMv-4,11354
+rapidgzip-0.14.4.dist-info/LICENSE-MIT,sha256=Rtyic_L_VL-YjSUmMkkzdL9tc_3AW-24Kh8inhsKnQQ,1080
+rapidgzip-0.14.4.dist-info/METADATA,sha256=gRIlSh4yn0eegNDQlNGtNXwLjcuq1EQPfX51tMp6CM4,30492
+rapidgzip-0.14.4.dist-info/WHEEL,sha256=ys8o8O1rguI5PWF-yz_LaQl3liFKzi2MOJAAJZnKBLM,112
+rapidgzip-0.14.4.dist-info/entry_points.txt,sha256=rOgSMtSMrcpVNwyfbUF1YQy8d4CRsv_6omfeGhvN9YI,44
+rapidgzip-0.14.4.dist-info/top_level.txt,sha256=x1bTGH9JdE7a6s5BsCm9jhjpGf1ycVa5NBH5hTVIhSs,10
+rapidgzip-0.14.4.dist-info/RECORD,,
