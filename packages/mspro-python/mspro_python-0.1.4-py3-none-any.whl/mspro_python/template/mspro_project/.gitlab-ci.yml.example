@@ -1,0 +1,62 @@
+stages:
+  - build
+  - upgrade
+  - deploy
+
+variables:
+  DEPLOY_PATH: /path/to/project/
+  TARGET_BRANCH: main
+
+build:
+  stage: build
+  tags:
+    - your_runner
+  script:
+    - echo "🔍 Checking build status at $DEPLOY_PATH ..."
+    - sudo mkdir -p $DEPLOY_PATH
+    - sudo chmod -R 755 $DEPLOY_PATH
+    - if [ -f $DEPLOY_PATH/.build_done ]; then echo "✅ Build already done, skipping..."; exit 0; fi
+    - echo "🚚 Deploying code to $DEPLOY_PATH ..."
+    - sudo cp -rf ./* $DEPLOY_PATH/
+    - cd $DEPLOY_PATH
+    - echo "Creating venv..."
+    - sudo python3 -m venv venv
+    - echo "Writing .env file..."
+    - echo "$ENV_FILE" | sudo tee .env > /dev/null
+    - sudo chmod +x manage.sh
+    - sudo ./manage.sh build
+    - sudo touch $DEPLOY_PATH/.build_done
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $TARGET_BRANCH'
+
+upgrade:
+  stage: upgrade
+  tags:
+    - your_runner
+  script:
+    - echo "📦 Updating code and upgrading dependencies..."
+    - sudo cp -rf ./* $DEPLOY_PATH/
+    - cd $DEPLOY_PATH
+    - sudo ./manage.sh upgrade
+    - sudo ./manage.sh restart
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $TARGET_BRANCH'
+      changes:
+        - requirements.txt
+    - when: never
+
+deploy:
+  stage: deploy
+  tags:
+    - your_runner
+  script:
+    - echo "🚀 Deploying updated code to $DEPLOY_PATH ..."
+    - sudo cp -rf ./* $DEPLOY_PATH/
+    - cd $DEPLOY_PATH
+    - sudo ./manage.sh restart
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $TARGET_BRANCH'
+      changes:
+        - app/**
+        - src/**
+        - main.py
