@@ -1,0 +1,243 @@
+Metadata-Version: 2.1
+Name: radiant-client
+Version: 0.1.2
+Summary: A python client for Radiant AI's Stears Project API
+Home-page: https://getradiant.ai
+Author: localminimum
+Author-email: min@getradiant.ai
+Requires-Python: >=3.13,<4.0
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: aiohttp (>=3.12.13,<4.0.0)
+Requires-Dist: dotenv (>=0.9.9,<0.10.0)
+Requires-Dist: requests (>=2.32.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Stears project Python client for Radiant Polaris server
+
+A lightweight, idiomatic wrapper around the **Stears Project Polaris Server** REST API, covering every public endpoint exposed by the service. Available in both **synchronous** and **asynchronous** variants.
+
+---
+
+## Features
+
+| Capability                                   | Sync Method                                                                                                           | Async Method                                                                                                           | HTTP Endpoint                                              |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Health check                                 | `client.health_check()`                                                                                               | `await client.health_check()`                                                                                          | `GET /health`                                              |
+| List available services                      | `client.get_services()`                                                                                               | `await client.get_services()`                                                                                          | `GET /v1/services`                                         |
+| Extract transactions (URLs **or** free text) | `client.extract_transactions(service_name, urls=[...])` or `client.extract_transactions(service_name, text="…")`      | `await client.extract_transactions(service_name, urls=[...])` or `await client.extract_transactions(service_name, text="…")` | `POST /v1/service/{service_name}/extract-transactions`     |
+| Track a long‑running task                    | `client.get_task_status(task_id)`                                                                                     | `await client.get_task_status(task_id)`                                                                                | `GET /v1/task/{task_id}/status`                            |
+| List resources by type                       | `client.get_resources("task")`                                                                                        | `await client.get_resources("task")`                                                                                   | `GET /v1/resources/{resource_type}`                        |
+| Delete a resource                            | `client.delete_resource("task", "my‑task")`                                                                           | `await client.delete_resource("task", "my‑task")`                                                                      | `POST /v1/resource/{resource_type}/{resource_name}/delete` |
+
+All responses are returned as plain Python dictionaries.
+
+---
+
+## Installation
+
+```bash
+# From PyPI
+pip install radiant-client
+
+# Or directly from the repository
+pip install -e .
+```
+
+### Requirements
+
+**For synchronous client:**
+
+* Python **3.9+**
+* `requests` and `python-dotenv` (installed automatically)
+
+**For asynchronous client:**
+
+* Python **3.9+**
+* `aiohttp` and `python-dotenv` (installed automatically)
+
+---
+
+## Quick start
+
+### Synchronous Client
+
+1. **Add your API key** to a local `.env` file (never commit this!)
+
+   ```text
+   API_KEY=YOUR_REAL_KEY_HERE
+   ```
+
+2. **Use the sync client**
+
+   ```python
+   from polaris_client import Client
+
+   client = Client()          # reads the key from .env
+
+   print(client.health_check())     # {"status": "UP"}
+   print(client.get_services())     # {"services": ["transaction-extractor", …]}
+
+   data = client.extract_transactions(
+       "transaction-extractor",
+       urls=[
+           "https://example.com/statement1",
+           "https://example.com/statement2",
+       ],
+   )
+   print(data)  # → {"task_id": "…"}
+   ```
+
+### Asynchronous Client
+
+1. **Add your API key** to a local `.env` file (never commit this!)
+
+   ```text
+   API_KEY=YOUR_REAL_KEY_HERE
+   ```
+
+2. **Use the async client**
+
+   ```python
+   import asyncio
+   from polaris_client import AsyncClient
+
+   async def main():
+       # Recommended: use as context manager
+       async with AsyncClient() as client:
+           print(await client.health_check())     # {"status": "UP"}
+           print(await client.get_services())     # {"services": ["transaction-extractor", …]}
+
+           data = await client.extract_transactions(
+               "transaction-extractor",
+               urls=[
+                   "https://example.com/statement1",
+                   "https://example.com/statement2",
+               ],
+           )
+           print(data)  # → {"task_id": "…"}
+           # Session automatically closed
+
+   asyncio.run(main())
+   ```
+
+   **Alternative: manual session management**
+
+   ```python
+   async def main():
+       client = AsyncClient()
+       try:
+           health = await client.health_check()
+           print(health)
+       finally:
+           await client.close()  # Important: close the session
+
+   asyncio.run(main())
+   ```
+
+---
+
+## Environment configuration
+
+| Variable         | Purpose                                 | Default                        |
+| ---------------- | --------------------------------------- | ------------------------------ |
+| `API_KEY`  | Your Radiant Stears project API key             | *None* (required)              |
+| `BASE_URL` | Alternative server root (e.g., staging) | *None* |
+
+### Constructor options
+
+**Synchronous client (`Client`):**
+
+```python
+client = Client(
+    api_key="optional_override",
+    base_url="https://custom.server.com",
+    timeout=30,
+    session=custom_requests_session  # Optional pre-configured requests.Session
+)
+```
+
+**Asynchronous client (`AsyncClient`):**
+
+```python
+client = AsyncClient(
+    api_key="optional_override",
+    base_url="https://custom.server.com",
+    timeout=30,
+    session=custom_aiohttp_session  # Optional pre-configured aiohttp.ClientSession
+)
+```
+
+---
+
+## Handling resource types
+
+```python
+# Both sync and async clients support the same resource type handling
+client.get_resources("task")           # simple string
+client.get_resources(ResourceType.TASK)  # safer enum‑like helper
+
+# Async version
+await async_client.get_resources("task")
+await async_client.get_resources(ResourceType.TASK)
+```
+
+Valid values: `agent`, `namespace`, `profile`, `task`, `cron_task`, `service`, `component`, `context_manager`, `provider`, `model`, `server`, `resource`.
+
+---
+
+## Error handling
+
+Any non‑2xx response raises **`ClientError`** with the HTTP status code and the server's JSON/text body for easy debugging.
+
+**Synchronous:**
+
+```python
+from polaris_client import Client, ClientError
+
+try:
+    client.delete_resource("task", "nonexistent")
+except ClientError as err:
+    print(err)  # "POST https://… returned 404: {\"code\":404,…}"
+```
+
+**Asynchronous:**
+
+```python
+from polaris_client import AsyncClient, ClientError
+
+try:
+    await client.delete_resource("task", "nonexistent")
+except ClientError as err:
+    print(err)  # "POST https://… returned 404: {\"code\":404,…}"
+```
+
+---
+
+## Advanced usage
+
+### Synchronous client
+
+* **Retries / Back‑off** – supply a `requests.Session` with an `HTTPAdapter` configured for retries.
+* **Custom headers** – configure a `requests.Session` with default headers.
+* **Logging** – all request details are available; hook in your own logging by subclassing and overriding `_request()`.
+
+### Asynchronous client
+
+* **Connection pooling** – supply a pre-configured `aiohttp.ClientSession` with custom connector settings.
+* **Custom timeouts** – configure different timeouts for connection, read, etc.
+* **Retries** – use `aiohttp-retry` or similar libraries with a custom session.
+* **Concurrent requests** – use `asyncio.gather()` or `asyncio.as_completed()` for parallel operations:
+
+```python
+async def fetch_multiple_services():
+    async with AsyncClient() as client:
+        tasks = [
+            client.get_task_status(task_id) 
+            for task_id in ["task1", "task2", "task3"]
+        ]
+        results = await asyncio.gather(*tasks)
+        return results
+```
+
