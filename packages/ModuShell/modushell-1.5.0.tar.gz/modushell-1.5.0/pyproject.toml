@@ -1,0 +1,26 @@
+[project]
+name = "ModuShell"
+version = "1.5.0"
+description = "ModuShell is a package that you can use to customize any outputs to the console using simple calls within format strings. Requires a modern terminal that can handle ANSI escape sequences."
+requires-python = ">=3.7"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  { name = "Kenneth Irving", email = "contact.kenneth.irving@gmail.com" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/irvingkennet45/ModuShell"
+Repository = "https://github.com/irvingkennet45/ModuShell"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[build-system]
+requires = ["setuptools>=61"]
+
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+"ModuShell" = ["8bit_colors.json"]

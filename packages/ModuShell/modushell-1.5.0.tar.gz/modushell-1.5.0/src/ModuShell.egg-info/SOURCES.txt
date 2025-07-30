@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/ModuShell/8bit_colors.json
+src/ModuShell/__init__.py
+src/ModuShell.egg-info/PKG-INFO
+src/ModuShell.egg-info/SOURCES.txt
+src/ModuShell.egg-info/dependency_links.txt
+src/ModuShell.egg-info/top_level.txt
+tests/test_core.py
