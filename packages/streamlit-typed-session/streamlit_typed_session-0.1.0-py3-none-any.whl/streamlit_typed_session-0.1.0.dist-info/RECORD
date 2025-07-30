@@ -1,0 +1,10 @@
+streamlit_typed_session/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+streamlit_typed_session/bases.py,sha256=n1CcWm2yll_Fo8uIr9x2bh8Y5JGrXrYL8FDsWY0VEtM,6783
+streamlit_typed_session/descriptors.py,sha256=Q_hWxsdP9-Vjwtjr33bv-HDGHc6AEkC0wsKIFoZ-JQM,4034
+streamlit_typed_session/mytypes.py,sha256=iuH68227yxGFt2q9YhVFnu0HXW-6JiGMJ6AYy9HC2Nc,819
+streamlit_typed_session/providers.py,sha256=9j9PG_ioycWPyu7Hxo9yeGiYaayMTzVdN_BNdZEzlao,491
+streamlit_typed_session/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+streamlit_typed_session-0.1.0.dist-info/METADATA,sha256=oYycJ421FiTPPRJgJ49BhAgN7kJVN8yHBap1n6W076Y,225
+streamlit_typed_session-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+streamlit_typed_session-0.1.0.dist-info/licenses/LICENSE,sha256=AUMxZHh96T6JAbrrpSpi6YiQ0H-RADqEP9OtbzggOd0,1094
+streamlit_typed_session-0.1.0.dist-info/RECORD,,
