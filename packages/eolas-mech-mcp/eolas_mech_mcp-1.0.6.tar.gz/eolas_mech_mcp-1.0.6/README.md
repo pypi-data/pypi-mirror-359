@@ -1,0 +1,148 @@
+# Eolas MCP Server (Python Edition)
+
+A Model Context Protocol (MCP) server built with Python that provides tools for AI assistants to interact with an Ethereum wallet. This project follows MCP best practices with secure credential management, comprehensive error handling, and proper lifecycle management.
+
+## What is MCP?
+
+The Model Context Protocol (MCP) is an open standard that enables AI assistants to securely connect to external data sources and tools. MCP servers expose functionality that language models can discover and invoke automatically.
+
+## Features
+
+- 🔧 **Extensible Tool System**: Easy to add custom tools using `FastMCP` decorators.
+- 🐍 **Python-Powered**: Leverages the extensive Python ecosystem for robust development.
+- 🔒 **Secure Wallet**: Encrypted Ethereum wallet management with system keyring integration.
+- 🛡️ **Security First**: Uses environment variables for configuration and secure credential storage.
+- 📊 **Structured Logging**: Provides clear, structured logging for easier debugging.
+- ⚡ **Resource Management**: Implements proper server lifecycle for startup and shutdown.
+
+## Quickstart for Users
+
+This section is for users who want to use the server with an MCP client like Cursor or Claude Desktop.
+
+### Prerequisites
+
+- Node.js and npm (These are bundled with the Claude Desktop app, so no extra installation is usually needed).
+- Python 3.10+ (must be available in your system's PATH).
+
+### One-Step Configuration
+
+This is the only step required. Add the following JSON object to the `mcpServers` key in your client's configuration file. The `npx` command will handle downloading and running the server for you automatically.
+
+```json
+{
+  "mcpServers": {
+    "eolas-mech-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "eolas-mech-mcp"
+      ]
+    }
+  }
+}
+```
+*Note: The server key, `"eolas-mech-mcp"`, can be any unique name you choose.*
+
+The configuration file is typically located at:
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\\Claude\\claude_desktop_config.json`
+
+### Restart Your Client
+
+After adding the configuration, restart your MCP client. The server will be installed automatically on the first run, and the new tools will be available to the AI assistant.
+
+## Available Tools
+
+### `add`
+
+Adds two numbers and returns the result.
+
+**Parameters:**
+- `a` (int): The first number.
+- `b` (int): The second number.
+
+**Example Usage:**
+`"What is 123 + 456?"`
+
+### `top_up`
+
+Provides a deposit address for the user's wallet. If a wallet doesn't exist, it securely creates and stores a new one.
+
+**Parameters:**
+- None
+
+**Example Usage:**
+`"Top up my account"`
+
+## Available Resources
+
+### `wallet://address`
+
+Returns the current public wallet address.
+
+### `wallet://balance`
+
+Returns the current wallet balance in ETH.
+
+## For Developers
+
+This section is for developers who want to modify or contribute to the server. The project now contains two packages:
+
+1.  `eolas-mcp-server`: The Python MCP server.
+2.  `eolas-mcp-wrapper`: A lightweight Node.js wrapper to provide an `npx`-based installation.
+
+### Development Setup
+
+1.  **Clone the repository.**
+2.  **Navigate to the Python server directory:**
+    ```bash
+    cd eolas-mech-mcp/eolas-mcp-server
+    ```
+3.  **Set up a virtual environment and install in editable mode:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -e .
+    ```
+4.  **Run the Python server locally:**
+    ```bash
+    python -m src
+    ```
+
+To test the Node.js wrapper locally before publishing, you can use `npm link`:
+1.  Navigate to the wrapper directory: `cd ../eolas-mcp-wrapper`
+2.  Link the package: `npm link`
+3.  You can now run `npx eolas-mech-mcp` in your terminal to test it.
+
+### Project Structure
+
+```
+eolas-mcp-server/
+├── src/
+│   ├── __init__.py
+│   ├── __main__.py           # Entry point for `python -m src`
+│   ├── server.py             # Main server with tools and resources
+│   └── utils/
+│       ├── __init__.py
+│       └── wallet.py         # Secure wallet management
+├── .env.example              # Example environment file
+├── .gitignore
+├── requirements.txt          # Python dependencies
+├── pyproject.toml            # Packaging configuration
+└── README.md
+```
+
+## Troubleshooting
+
+- **Server Not Connecting**: Check the MCP client logs. For `npx` issues, ensure Node.js is correctly installed and accessible. For Python issues, ensure Python 3.10+ is in your system's PATH.
+- **`command not found: python3`**: If the wrapper script fails, you may need to alias `python` to `python3` or install `python3` if it's missing.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Resources
+
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io/)
+- [FastMCP Documentation](https://github.com/modelcontextprotocol/python-sdk)
+- [Cursor MCP Integration](https://docs.cursor.com/context/mcp) 
