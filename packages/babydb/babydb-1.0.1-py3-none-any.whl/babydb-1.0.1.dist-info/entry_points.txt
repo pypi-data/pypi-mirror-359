@@ -1,0 +1,3 @@
+[console_scripts]
+babydb-cli = babydb.cli:run_cli
+babydb-web = babydb.web:run_web

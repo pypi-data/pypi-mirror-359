@@ -1,0 +1,13 @@
+babydb/__init__.py,sha256=vuh4OgxSHmxcX7ozyI6vMUVZspk3RaNaP3PeU1SSj3E,49
+babydb/cli.py,sha256=RKWEWssvo7axzjcjLh4Tjzi98RR1kNfoOQZKPIBB8G0,7920
+babydb/core.py,sha256=9q54bZU6wgZO381iGediPdTb5RLKtH0i9gnQNsGYC0U,48592
+babydb/test.py,sha256=pnKmQT7nIFupmXbRpAwepMT6998iOJRBCEndlE_1USg,39
+babydb/web.py,sha256=CaNFgSiPjdnZuR8ZDQemnC_hPQfSfGMjt8B3S0FgfAo,2017
+babydb-1.0.1.dist-info/licenses/LICENCE,sha256=MGPMyVZf-ifHyRKzfwuyPJQdx71X74LUxHJ9wSmt1R0,1067
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_simpledb.py,sha256=bD0UMLXjlzN7M6qLNSsxF1Av7lErknfgEC3AYZwmXt4,881
+babydb-1.0.1.dist-info/METADATA,sha256=DRef1AOtCciG--Q3xnwNENHb6grrFwNBkuMaeZfQkSc,1962
+babydb-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+babydb-1.0.1.dist-info/entry_points.txt,sha256=LZUv5ePDwiKSNK1l7Q1Zg8ZKD0AK_4dzhU5LUmaAxXI,82
+babydb-1.0.1.dist-info/top_level.txt,sha256=EqPRz0DRomX3cDglPHYPoMFCXhNV3w5eoa48LeiVtmw,13
+babydb-1.0.1.dist-info/RECORD,,
