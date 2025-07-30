@@ -1,0 +1,32 @@
+[project]
+name = "bib2table"
+version = "0.1.0"
+description = "Convert a .bib file to a table in a variety of output formats"
+authors = [
+    {name = "Andrei Olar",email = "andrei.olar@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+license = {file = "LICENSE"}
+dependencies = [
+    "bibtexparser (>=1.4.3,<2.0.0)",
+    "click (>=8.2.1,<9.0.0)"
+]
+
+[project.scripts]
+bib2table = 'bib2table:run'
+
+[tool.poetry]
+packages = [
+    { include = "bib2table", from = "src" }
+]
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+mypy = "^1.16.1"
+ruff = "^0.12.1"
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
