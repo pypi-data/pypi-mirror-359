@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+lib/python/HackDB.egg-info/PKG-INFO
+lib/python/HackDB.egg-info/SOURCES.txt
+lib/python/HackDB.egg-info/dependency_links.txt
+lib/python/HackDB.egg-info/requires.txt
+lib/python/HackDB.egg-info/top_level.txt
+lib/python/HackDB.egg-info/SOURCES.txt
