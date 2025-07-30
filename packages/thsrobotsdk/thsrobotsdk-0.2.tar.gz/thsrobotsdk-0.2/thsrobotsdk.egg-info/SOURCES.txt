@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+tests/test_thsrobotsdk.py
+thsrobotsdk/__init__.py
+thsrobotsdk/client.py
+thsrobotsdk/exceptions.py
+thsrobotsdk.egg-info/PKG-INFO
+thsrobotsdk.egg-info/SOURCES.txt
+thsrobotsdk.egg-info/dependency_links.txt
+thsrobotsdk.egg-info/requires.txt
+thsrobotsdk.egg-info/top_level.txt

@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: thsrobotsdk
+Version: 0.2
+Summary: A Python SDK for the Thsrobot API
+Home-page: https://github.com/your-repo-url
+Author: linagzxx
+Author-email: Your Name <your.email@example.com>
+Project-URL: Homepage, https://github.com/yourusername/thsrobotsdk
+Project-URL: Bug Tracker, https://github.com/yourusername/thsrobotsdk/issues
+Keywords: thsrobot,sdk
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Dynamic: author
+Dynamic: home-page
+
+# ThsrobotSDK
+
+## 简介
+ThsrobotSDK 是一个强大且易用的 Python 开发工具包，专门用于与 thsrobot API 进行交互。借助该工具包，开发者能够便捷地调用 thsrobot API 的各项功能，简化开发流程，提高开发效率。
+
+## 安装
+你可以通过 `pip` 从 PyPI 安装 `ThsrobotSDK`：
+```bash
+pip install thsrobotsdk

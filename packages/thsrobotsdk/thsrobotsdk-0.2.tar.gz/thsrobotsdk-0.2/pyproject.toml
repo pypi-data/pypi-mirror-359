@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thsrobotsdk"
+version = "0.2"
+authors = [
+  { name = "Your Name", email = "your.email@example.com" },
+]
+description = "A Python SDK for the Thsrobot API"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["thsrobot", "sdk"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/thsrobotsdk"
+"Bug Tracker" = "https://github.com/yourusername/thsrobotsdk/issues"
