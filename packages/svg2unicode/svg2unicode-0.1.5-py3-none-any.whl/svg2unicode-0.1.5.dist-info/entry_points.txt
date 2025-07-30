@@ -1,0 +1,3 @@
+[console_scripts]
+svg2unicode=svg2unicode.cli:main
+
