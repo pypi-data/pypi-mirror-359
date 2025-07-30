@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "natn"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "avvisodisicurezza", email = "avvisodisicurezza@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "httpx>=0.28.1",
+    "ipython>=8.12.3",
+    "nest-asyncio>=1.6.0",
+    "pyperclip>=1.9.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/avvisodisicurezza/natn#readme"
+Issues = "https://github.com/avvisodisicurezza/natn/issues"
+Source = "https://github.com/avvisodisicurezza/natn"
+
+[tool.hatch.version]
+path = "src/natn/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/natn tests}"
+
+[tool.coverage.run]
+source_pkgs = ["natn", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/natn/__about__.py",
+]
+
+[tool.coverage.paths]
+natn = ["src/natn", "*/natn/src/natn"]
+tests = ["tests", "*/natn/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.hatch.build]
+sources = ["src"]
+
+exclude = [
+  "tests",
+  "docs",
+    "publish.sh",
+  "*.md",
+  "*.toml",
+  "*.ini",
+  "*.yml",
+  "__pycache__",
+]
+
