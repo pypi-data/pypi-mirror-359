@@ -1,0 +1,11 @@
+Examples/example.py,sha256=kJl9EOYegRYnv_Q3enzxRw3_-1JahuXrBJlMKQ1lI9c,2480
+PictSure/__init__.py,sha256=JD4sCnhwmPdDvCv4D2Tm5ZlrTVY7Yi1jYNI91hYKR2Q,154
+PictSure/model_PictSure.py,sha256=hAv2Wc7N1sX-OgPB1aTo9lJxc9uEu-unvqTH8tzcgXU,10727
+PictSure/model_ViT.py,sha256=7XXgyyZrT5v_1ReTwaCvR4EJ8VjXLBrmbPElu4reDMc,5372
+PictSure/model_embeddings.py,sha256=o8_T-JE7dOUB7QgTQHMIzjCbNSGQux3css84lZTNxTw,1531
+pictsure-0.1.1.dist-info/licenses/LICENSE,sha256=EWEw5rrEDvPxG3Wz_TSZJoGJ3J9k1Rv6yMluaBojABc,1089
+pictsure-0.1.1.dist-info/METADATA,sha256=N_TO_tZN49teOVyNp6_k-x9PQQDKDNmQTWzCyB2A8ls,4347
+pictsure-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pictsure-0.1.1.dist-info/entry_points.txt,sha256=TROsY1gBQxYsQfyNHKCSwDF6sxsFJYWdRguAtR1O1ec,46
+pictsure-0.1.1.dist-info/top_level.txt,sha256=4c6FfUQfr4v2hzAizS1iifVQaGVSLWweO2DICgcIbe4,18
+pictsure-0.1.1.dist-info/RECORD,,
