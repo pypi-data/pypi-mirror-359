@@ -1,0 +1,18 @@
+[project]
+name = "pve_api"
+version = "1.1.3"
+authors = [
+    { name = "schlibra", email = "schlibra@163.com" }
+]
+description = "Python library for Proxmox VE API"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.32.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/schlibra/pve_api"
+#Documentation = "https://github.com/schlibra/pve_api"
+Source = "https://github.com/schlibra/pve_api"
+Issues = "https://github.com/schlibra/pve_api/issues"
