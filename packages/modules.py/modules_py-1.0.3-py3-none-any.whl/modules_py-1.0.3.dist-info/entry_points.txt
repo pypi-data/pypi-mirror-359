@@ -1,0 +1,6 @@
+[console_scripts]
+modules-demo = modules.cli:main
+modules-oled = modules.cli:oled_cli_entry
+modules-relay = modules.cli:relay_cli_entry
+modules-server = modules.cli:server_cli_entry
+modules-servo = modules.cli:servo_cli_entry
