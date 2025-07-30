@@ -1,0 +1,95 @@
+{
+  "dxt_version": "0.1",
+  "name": "Database Tools",
+  "version": "0.4.5",
+  "description": "MCP server providing database exploration and query tools for AI assistants. Supports PostgreSQL, MySQL, SQL Server, SQLite, and BigQuery.",
+  "author": {
+    "name": "Oriona",
+    "email": "support@oriona.ai"
+  },
+  "license": "MIT",
+  "homepage": "https://oriona.ai",
+  "keywords": ["mcp", "database", "sql", "ai", "assistant"],
+  "icon": "icon.png",
+  "server": {
+    "type": "python",
+    "entry_point": "server/main.py",
+    "mcp_config": {
+      "command": "sh",
+      "args": ["${__dirname}/server/run.sh"],
+      "env": {
+        "PYTHONPATH": "${__dirname}:${__dirname}/src",
+        "DATABASE_URL": "${user_config.database_url}",
+        "LOG_LEVEL": "${user_config.log_level}",
+        "QUERY_TIMEOUT": "${user_config.query_timeout}",
+        "MAX_ROWS": "${user_config.max_rows}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "list_tables",
+      "description": "Lists all tables and optionally views in the connected database. Returns table names, view names, counts, and database type information. Useful for discovering available data sources before querying."
+    },
+    {
+      "name": "explore_table",
+      "description": "Analyzes a specific table to understand its structure and content. Returns column definitions with data types, primary/foreign key relationships, row count, and sample data. Essential for understanding table schema before writing queries."
+    },
+    {
+      "name": "query_database_readonly",
+      "description": "Executes read-only SQL SELECT queries with built-in safety features. Supports SELECT statements and WITH clauses only - blocks INSERT/UPDATE/DELETE operations. Includes configurable timeouts, row limits, and detailed error handling with recommendations."
+    }
+  ],
+  "prompts": [
+    {
+      "name": "database_exploration_workflow",
+      "description": "Guide users through systematic database exploration and analysis",
+      "text": "I'll help explore your database systematically:\n\n1. **Discover** tables with `list_tables`\n2. **Analyze** structure using `explore_table`\n3. **Query** data with `query_database_readonly`\n\nWhat would you like to explore? I can:\n- Find specific data or patterns\n- Analyze relationships and data quality\n- Create reports and summaries\n- Troubleshoot data issues\n\nTell me your goal or let me show available tables."
+    },
+    {
+      "name": "query_optimization_helper",
+      "description": "Assist with SQL query optimization and troubleshooting",
+      "text": "I'll optimize your SQL queries:\n\n**Process:**\n1. Review schema with `explore_table`\n2. Build queries incrementally\n3. Suggest indexing strategies\n4. Apply early filtering\n\n**I can help with:**\n- Performance optimization\n- Complex data types (STRUCT/ARRAY)\n- JOIN strategies\n- Aggregations and window functions\n- Debugging syntax errors\n\n**Safety:** Read-only queries, automatic timeouts, row limits, detailed error messages.\n\nShare your SQL or describe your goal."
+    },
+    {
+      "name": "data_analysis_assistant",
+      "description": "Support comprehensive data analysis and reporting tasks",
+      "text": "I'll help analyze your data:\n\n**Capabilities:**\n- Statistics: counts, averages, trends\n- Quality: missing values, duplicates\n- Relationships: correlations, dependencies\n- Segmentation: groupings, patterns\n\n**Examples:** Sales trends, customer behavior, operational KPIs, data validation\n\n**Workflow:**\n1. Explore structure\n2. Identify relevant data\n3. Extract insights\n4. Provide recommendations\n\nDescribe your business question or analysis goal."
+    }
+  ],
+  "user_config": {
+    "database_url": {
+      "type": "string",
+      "title": "Database URL",
+      "description": "Database connection URL (e.g., postgresql://user:pass@host:port/db, mysql://user:pass@host:port/db, mssql+pymssql://user:pass@host:port/db, sqlite:///path/to/db.sqlite)",
+      "required": true,
+      "sensitive": true
+    },
+    "log_level": {
+      "type": "string",
+      "title": "Log Level",
+      "description": "Logging level for the server",
+      "default": "INFO",
+      "required": false,
+      "enum": ["DEBUG", "INFO", "WARNING", "ERROR"]
+    },
+    "query_timeout": {
+      "type": "number",
+      "title": "Query Timeout",
+      "description": "Default query timeout in seconds",
+      "default": 30,
+      "required": false,
+      "minimum": 1,
+      "maximum": 300
+    },
+    "max_rows": {
+      "type": "number",
+      "title": "Max Rows",
+      "description": "Maximum number of rows to return",
+      "default": 1000,
+      "required": false,
+      "minimum": 1,
+      "maximum": 10000
+    }
+  }
+}
