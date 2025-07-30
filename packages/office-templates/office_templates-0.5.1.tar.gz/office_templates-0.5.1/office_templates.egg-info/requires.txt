@@ -1,0 +1,4 @@
+python-pptx<2,>=1
+
+[xlsx]
+openpyxl<4,>=3
