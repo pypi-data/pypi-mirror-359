@@ -1,0 +1,13 @@
+claif_cla/__init__.py,sha256=ktdXJEB6xlv1VwV0g22XkFChH0GUxXzyT6nu91I5GWc,4778
+claif_cla/__version__.py,sha256=g7FymxsO4UOlQK3_L_LgkfZpg9TaXmdr6hXI3ckiUE0,513
+claif_cla/approval.py,sha256=_S-5LdUo-8BEXe7-WGdzl1r36hVN7x8zYNWENAYrhHg,5722
+claif_cla/cli.py,sha256=c3iOBvLMIIb0nHFxm5e__0R4BfqE3nhnVWP4BYHhSJ0,33576
+claif_cla/install.py,sha256=a1VGNSTfOJcg3RrayVO6eGfrkxVw6vQwo61UVh93ws0,8219
+claif_cla/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+claif_cla/session.py,sha256=KBdkChWolzos81MLGcuFOe2XnPLPGhKL72t49EYQ_7I,30173
+claif_cla/wrapper.py,sha256=g0axL19AVDd6XKrMb0kHlD3PtW-G9mxeY1sBzMU797A,17659
+claif_cla-1.0.21.dist-info/METADATA,sha256=vkdE_fdBWLksIDNyO-rqH2oY8zp4lx7XNMgKBLzJkM0,19601
+claif_cla-1.0.21.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claif_cla-1.0.21.dist-info/entry_points.txt,sha256=saRYqDkpZ7sWxZP0fW6vZ3FPEJ5tMbFUfSZAneMWMXc,82
+claif_cla-1.0.21.dist-info/licenses/LICENSE,sha256=owbwpVdTHiU18mRyRzvr1DDQe_Rjs1FCkEdzMGJIU9U,1069
+claif_cla-1.0.21.dist-info/RECORD,,
