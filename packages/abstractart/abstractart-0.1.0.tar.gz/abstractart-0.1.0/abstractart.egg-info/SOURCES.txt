@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+random_stickman.py
+abstractart.egg-info/PKG-INFO
+abstractart.egg-info/SOURCES.txt
+abstractart.egg-info/dependency_links.txt
+abstractart.egg-info/entry_points.txt
+abstractart.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+[project]
+name = "abstractart"
+version = "0.1.0"
+description = "Randomly generating abstract stickman"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+abstractart = "random_stickman:main"
