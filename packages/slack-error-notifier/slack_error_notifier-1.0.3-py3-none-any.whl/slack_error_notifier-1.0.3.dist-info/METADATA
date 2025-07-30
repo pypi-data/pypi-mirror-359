@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: slack_error_notifier
+Version: 1.0.3
+Summary: Library to send notifications for uncaught exceptions to Slack from Python jobs (cron, ETL, CI pipelines, and services)
+Home-page: https://github.com/Burnwood-ccdocs/Slack-error-notifier
+Author: Sarthak Sharma
+Author-email: sarthak0610@gmail.com
+Project-URL: Homepage, https://github.com/Burnwood-ccdocs/Slack-error-notifier
+Project-URL: Source, https://github.com/Burnwood-ccdocs/Slack-error-notifier
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: slack_sdk>=3.19.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Slack error notification helper.
