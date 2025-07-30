@@ -1,0 +1,13 @@
+Django>=1.1.1
+h5py
+pqdm
+numpy>=1.20.0
+matplotlib
+scipy
+tqdm
+fpdf
+pyqt5
+pytest
+jupyter
+requests
+quadprog
