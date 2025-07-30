@@ -1,0 +1,43 @@
+# Dockerfile for user notebook containers
+FROM quay.io/jupyter/base-notebook:latest
+
+# Install latest escobar package (prebuilt extension)
+RUN pip install --no-cache-dir --upgrade escobar
+
+# Enable server-side part of the extension
+RUN jupyter server extension enable escobar
+
+# Install basic JupyterLab extensions
+RUN pip install --no-cache-dir \
+    jupyterlab-widgets \
+    ipywidgets
+
+# Copy the jupyter config
+COPY jupyter_notebook_config.py /home/jovyan/.jupyter/
+
+# Copy the escobar startup hook script
+COPY start-escobar-hook.sh /usr/local/bin/start-escobar-hook.sh
+
+# Make the startup script executable and set up sudo for jovyan
+USER root
+RUN chmod +x /usr/local/bin/start-escobar-hook.sh
+
+# Create a startup hook directory if it doesn't exist
+RUN mkdir -p /usr/local/bin/start-notebook.d/
+
+# Create a symlink to the startup script in the startup directory
+RUN ln -s /usr/local/bin/start-escobar-hook.sh /usr/local/bin/start-notebook.d/start-escobar-hook.sh
+
+# Install sudo
+RUN apt-get update && apt-get install -y sudo && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Add jovyan to sudoers and set a password
+RUN echo "jovyan ALL=(ALL) ALL" >> /etc/sudoers && \
+    echo "jovyan:jupyter" | chpasswd
+
+USER jovyan
+
+# Add diagnostic information (optional - can be removed in production)
+RUN echo "Escobar extension info:" && \
+    python -c "import escobar; print('✅ Version:', escobar.__version__); print('✅ ExtensionApp available:', hasattr(escobar, 'EscobarExtensionApp'))" && \
+    jupyter server extension list
