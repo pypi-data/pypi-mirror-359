@@ -1,0 +1,10 @@
+ttf2json/__init__.py,sha256=kR5yMYB1qbJ_QR7EqlMpNU_FvWZ8hGY42P_H-FGbKGA,64
+ttf2json/__main__.py,sha256=GcjLBi0qMH9bsRehdhxuapTkTN7UurOXUtvys0mJ7qM,1893
+ttf2json/ttf2json.py,sha256=65FImMC6Y7RAXEzqzvaUZ7iBcPZnCW5G4AoYXIQau-k,2292
+ttf2json/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ttf2json/util/util.py,sha256=XnFgasUB3Gn-PGSYZQTDSEJ73BRZ2a1ZIfbUwXbmurM,3728
+ttf2json-0.0.1.dist-info/licenses/LICENSE,sha256=YsZegh6oCSp8ezmCjnHzgaCgSoHhkFIEWMSAf7x5d7Q,1063
+ttf2json-0.0.1.dist-info/METADATA,sha256=B_5HPjYtBPZaoq6r9JGn5K7iyW4CSEM5wJWEaP9pKUc,3324
+ttf2json-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ttf2json-0.0.1.dist-info/top_level.txt,sha256=ygctSOLHgeDSn0pGE_bsV_UAo_DcuOitJwMrVu-W140,9
+ttf2json-0.0.1.dist-info/RECORD,,
