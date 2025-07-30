@@ -1,0 +1,33 @@
+[build-system]
+requires      = ["poetry"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "langchain-greennode"
+version = "0.0.1"
+authors = [
+        "GreenNode AI <support@greennode.ai>"
+]
+description = "GreenNode Serverless AI integration with LangChain!"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/greennode-ai/langchain-greennode"
+homepage = "https://github.com/greennode-ai/langchain-greennode"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+langchain-core = ">=0.3.35"
+openai = ">=1.0.0"
+langchain_openai = ">=0.3.5"
+greennode = ">=0.0.3"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/greennode-ai/langchain-greennode"
+"Bug Tracker" = "https://github.com/greennode-ai/langchain-greennode/issues"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = ">=24.3.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+langchain-tests = ">=0.3.1"

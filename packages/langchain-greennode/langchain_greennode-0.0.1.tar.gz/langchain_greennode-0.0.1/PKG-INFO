@@ -1,0 +1,34 @@
+Metadata-Version: 2.3
+Name: langchain-greennode
+Version: 0.0.1
+Summary: GreenNode Serverless AI integration with LangChain!
+License: MIT
+Author: GreenNode AI
+Author-email: support@greennode.ai
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: greennode (>=0.0.3)
+Requires-Dist: langchain-core (>=0.3.35)
+Requires-Dist: langchain_openai (>=0.3.5)
+Requires-Dist: openai (>=1.0.0)
+Project-URL: Bug Tracker, https://github.com/greennode-ai/langchain-greennode/issues
+Project-URL: Homepage, https://github.com/greennode-ai/langchain-greennode
+Project-URL: Repository, https://github.com/greennode-ai/langchain-greennode
+Description-Content-Type: text/markdown
+
+# Langchain GreenNode Integration
+
+This package provides LangChain integration for GreenNode Serverless AI, enabling seamless use of GreenNode Serverless AI's chat and embedding models within LangChain.
+
+## Install and Setup
+Install the package using pip:
+```bash
+pip install langchain-greennode
+```
+
