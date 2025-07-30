@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tglib-python"
+description = "TGLib is an open-source temporal graph library focusing on temporal distance and centrality computations, and other local and global temporal graph statistics."
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["temporal", "tglib", "graph"]
+requires-python = ">=3.10"
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://gitlab.com/tgpublic/tglib"
+Repository = "https://gitlab.com/tgpublic/tglib"
+Documentation = "https://tgpublic.gitlab.io/tglib/"
+"Bug Reports" = "https://gitlab.com/tgpublic/tglib/-/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tglib*"]
+
+[tool.setuptools.package-data]
+tglib = ["*.so", "*.pyd", "py.typed"]
+
+[tool.setuptools_scm]
