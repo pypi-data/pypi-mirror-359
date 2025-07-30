@@ -1,0 +1,2 @@
+[console_scripts]
+kfp-doctor = kfp_doctor.cli:main
