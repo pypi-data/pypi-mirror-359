@@ -1,0 +1,67 @@
+{% extends "greenlight/base.html" %}
+{% load static %}
+
+{% block page_title %}Fleet Command Panel{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Fleet Command Panel</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="fleet_status" id="fleet_status_input" value="">
+
+        <div class="row text-center my-3">
+            <div class="col">
+                <form method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="fleet_status" value="green">
+                    <button type="submit" class="btn btn-success btn-lg w-100">🟢 Green</button>
+                </form>
+            </div>
+            <div class="col">
+                <form method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="fleet_status" value="yellow">
+                    <button type="submit" class="btn btn-warning btn-lg w-100">🟡 Yellow</button>
+                </form>
+            </div>
+            <div class="col">
+                <form method="POST" style="display:inline;">
+                    {% csrf_token %}
+                 <input type="hidden" name="fleet_status" value="red">
+                    <button type="submit" class="btn btn-danger btn-lg w-100">🔴 Red</button>
+                </form>
+            </div>
+        </div>
+    </form>
+    
+
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fc">Fleet Commander</label>
+            <select class="form-control" id="fc" name="fc">
+                {% for char in characters %}
+                    <option value="{{ char.id }}" {% if config.current_fc.id == char.id %}selected{% endif %}>
+                        {{ char.character_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="doctrine">Doctrine</label>
+            <select class="form-control" id="doctrine" name="doctrine">
+                {% for doc in doctrines %}
+                    <option value="{{ doc.id }}" {% if config.current_doctrine.id == doc.id %}selected{% endif %}>
+                        {{ doc.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}
