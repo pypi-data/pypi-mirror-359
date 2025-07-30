@@ -1,0 +1,10 @@
+# Includes
+include CHANGELOG.md
+include CONTRIBUTORS
+include examples/example_remote.ipynb
+
+# Excludes
+prune tests
+prune qciconnect.egg-info
+prune setup.cfg
+exclude setup.cfg
