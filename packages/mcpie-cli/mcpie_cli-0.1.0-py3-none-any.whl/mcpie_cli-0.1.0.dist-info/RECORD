@@ -1,0 +1,6 @@
+mcpie_cli/__init__.py,sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0
+mcpie_cli/mcpie.py,sha256=7f091992c2701df93461d598f5c1f98516b2f43aefc0f9c2a2bc91e7d4335717,50483
+mcpie_cli-0.1.0.dist-info/WHEEL,sha256=607c46fee47e440c91332c738096ff0f5e54ca3b0818ee85462dd5172a38e793,79
+mcpie_cli-0.1.0.dist-info/entry_points.txt,sha256=1aa74f1d98a7c70494f103ac317e66a4e27483eca428d5e2484807e3545924b7,81
+mcpie_cli-0.1.0.dist-info/METADATA,sha256=4cac37df893e6c2db593125253b5327e78d7265edee705cccbf7b6ef01a9adb5,2297
+mcpie_cli-0.1.0.dist-info/RECORD,,
