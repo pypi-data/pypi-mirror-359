@@ -1,0 +1,2 @@
+[sopel.plugins]
+deepl = sopel_deepl.plugin
