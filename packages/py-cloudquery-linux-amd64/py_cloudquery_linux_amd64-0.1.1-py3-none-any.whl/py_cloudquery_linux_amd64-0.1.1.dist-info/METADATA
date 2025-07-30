@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: py-cloudquery-linux-amd64
+Version: 0.1.1
+Summary: CloudQuery CLI for Linux amd64, bundled with the binary.
+Author-email: CloudQuery <info@cloudquery.io>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# py-cloudquery-linux-amd64
+
+This package bundles the CloudQuery CLI binary for Linux amd64.
+
+Usage:
+
+```sh
+python -m cloudquery <args>
+```
