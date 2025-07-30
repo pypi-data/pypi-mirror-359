@@ -1,0 +1,269 @@
+import os
+
+os.environ["ACTIVEFENCE_RETRY_MAX"] = "2"
+os.environ["ACTIVEFENCE_RETRY_BASE_DELAY"] = "0.1"
+import unittest
+from unittest.mock import patch, MagicMock
+import responses
+from requests.exceptions import ConnectTimeout
+from activefence_client_sdk.client import ActiveFenceClient
+from activefence_client_sdk.models import AnalysisContext, GuardedResult, CustomField
+import pytest
+
+pytestmark = pytest.mark.citest
+
+
+class TestActiveFenceClient(unittest.TestCase):
+    def setUp(self) -> None:
+        self.api_key = "test_api_key"
+        self.app_name = "test_app"
+        self.client = ActiveFenceClient(api_key=self.api_key, app_name=self.app_name)
+
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_sync_internal_call_success(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "ALLOW",
+            "detections": [],
+        }
+        mock_post.return_value = mock_response
+
+        result = self.client.sync_internal_call(
+            text="test text",
+            type="prompt",
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model="test_model",
+            version="test_version",
+            platform="test_platform",
+        )
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertIsNone(result.reason)
+        self.assertEqual(result.final_response, "test text")
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_sync_internal_call_blocked(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "BLOCK",
+            "detections": [{"type": "test_reason"}],
+        }
+        mock_post.return_value = mock_response
+
+        result = self.client.sync_internal_call(
+            text="test text",
+            type="prompt",
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model="test_model",
+            version="test_version",
+            platform="test_platform",
+        )
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertTrue(result.blocked)
+        self.assertEqual(result.reason, "test_reason")
+        self.assertEqual(result.final_response, "BLOCKED")
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_sync_internal_call_mask(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "MASK",
+            "action_text": "***** text",
+            "detections": [{"type": "test_reason"}],
+        }
+        mock_post.return_value = mock_response
+
+        result = self.client.sync_internal_call(
+            text="test text",
+            type="prompt",
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model="test_model",
+            version="test_version",
+            platform="test_platform",
+        )
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertEqual(result.reason, "test_reason")
+        self.assertEqual(result.final_response, "***** text")
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_evaluate_prompt(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "ALLOW",
+            "detections": [],
+        }
+        mock_post.return_value = mock_response
+
+        context = AnalysisContext(
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model_name="test_model",
+            model_version="test_version",
+            platform="test_platform",
+        )
+        result = self.client.evaluate_prompt_sync(prompt="test prompt", context=context)
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertIsNone(result.reason)
+        self.assertEqual(result.final_response, "test prompt")
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_evaluate_response(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "ALLOW",
+            "detections": [],
+        }
+        mock_post.return_value = mock_response
+
+        context = AnalysisContext(
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model_name="test_model",
+            model_version="test_version",
+            platform="test_platform",
+        )
+        result = self.client.evaluate_response_sync(response="test response", context=context)
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertIsNone(result.reason)
+        self.assertEqual(result.final_response, "test response")
+
+    @responses.activate
+    def test_sync_internal_call_timeout(self) -> None:
+        # Simulate a timeout exception
+        responses.add(
+            responses.POST,
+            "https://apis.activefence.com/v1/evaluate/message",
+            body=ConnectTimeout(),
+        )
+
+        with self.assertRaises(ConnectTimeout):
+            self.client.sync_internal_call(
+                text="test text",
+                type="prompt",
+                session_id="test_session",
+                user_id="test_user",
+                provider="test_provider",
+                model="test_model",
+                version="test_version",
+                platform="test_platform",
+            )
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_evaluate_prompt_custom_fields(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "ALLOW",
+            "detections": [],
+        }
+        mock_post.return_value = mock_response
+
+        context = AnalysisContext(
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model_name="test_model",
+            model_version="test_version",
+            platform="test_platform",
+        )
+        result = self.client.evaluate_prompt_sync(prompt="test prompt", context=context,
+                                                  custom_fields={CustomField(name="test_field", value="test_value"),
+                                                                 CustomField(name="test_field", value="test_value")})
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertIsNone(result.reason)
+        self.assertEqual(result.final_response, "test prompt")
+        mock_post.assert_called_with(
+            "https://apis.activefence.com/v1/evaluate/message",
+            json={
+                "text": "test prompt",
+                "message_type": "prompt",
+                "session_id": "test_session",
+                "user_id": "test_user",
+                "app_name": "test_app",
+                "model_context": {
+                    "provider": "test_provider",
+                    "name": "test_model",
+                    "version": "test_version",
+                    "cloud_platform": "test_platform",
+                },
+                "custom_fields": [{"test_field": "test_value"}],
+            },
+            headers={"af-api-key": f"{self.api_key}", "Content-Type": "application/json"},
+            timeout=5,
+        )
+
+    @patch("activefence_client_sdk.client.requests.post")
+    def test_evaluate_response_custom_fields(self, mock_post: MagicMock) -> None:
+        # Mock the response from requests.post
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "action": "ALLOW",
+            "detections": [],
+        }
+        mock_post.return_value = mock_response
+
+        context = AnalysisContext(
+            session_id="test_session",
+            user_id="test_user",
+            provider="test_provider",
+            model_name="test_model",
+            model_version="test_version",
+            platform="test_platform",
+        )
+        result = self.client.evaluate_response_sync(response="test response", context=context, custom_fields={
+            CustomField(name="test_field", value=["val1", "val2"])})
+
+        self.assertIsInstance(result, GuardedResult)
+        self.assertFalse(result.blocked)
+        self.assertIsNone(result.reason)
+        self.assertEqual(result.final_response, "test response")
+        mock_post.assert_called_with(
+            "https://apis.activefence.com/v1/evaluate/message",
+            json={
+                "text": "test response",
+                "message_type": "response",
+                "session_id": "test_session",
+                "user_id": "test_user",
+                "app_name": "test_app",
+                "model_context": {
+                    "provider": "test_provider",
+                    "name": "test_model",
+                    "version": "test_version",
+                    "cloud_platform": "test_platform",
+                },
+                "custom_fields": [{"test_field": ["val1", "val2"]}],
+            },
+            headers={"af-api-key": f"{self.api_key}", "Content-Type": "application/json"},
+            timeout=5,
+        )
