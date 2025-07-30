@@ -1,0 +1,5 @@
+Django
+
+[pre-commit]
+pre-commit
+django-types
