@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: keynet-train
+Version: 0.0.1.dev6
+Summary: Training utilities for keynet - MLflow and model training support
+Project-URL: Homepage, https://github.com/WIM-Corporation/keynet
+Project-URL: Bug Tracker, https://github.com/WIM-Corporation/keynet/issues
+Author-email: hbjs <hbjs97@naver.com>
+License: MIT
+Keywords: keynet,machine-learning,mlflow,training
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Requires-Dist: keynet-core
+Requires-Dist: mlflow==3.1.1
+Requires-Dist: numpy>=1.25.0
+Requires-Dist: onnx
+Requires-Dist: onnxruntime
+Requires-Dist: pika>=1.3.2
+Requires-Dist: torch
+Description-Content-Type: text/markdown
+
+# keynet-train
+
+MLflow와 통합된 모델 훈련 유틸리티
+
+## 설치
+
+```bash
+pip install keynet-train
+```
+
+## 주요 기능
+
+### 🚀 완전 자동화된 훈련 API
+
+- 모델에서 자동으로 스키마 추론
+- PyTorch 모델을 ONNX로 자동 변환
+- MLflow에 자동 로깅 및 버전 관리
+
+### 📊 지원 프레임워크
+
+- PyTorch (TorchScript, ONNX 변환)
+- ONNX (네이티브 지원)
+- 다중 입력/출력 모델 지원
+
+### 🔧 MLflow 통합
+
+- 실험 자동 생성 및 관리
+- 모델 아티팩트 자동 저장
+- 메트릭 및 파라미터 추적
+
+## 사용 예제
+
+### 자동화된 PyTorch 훈련
+
+```python
+from keynet_train import pytorch_trace_auto
+import torch
+
+# 단일 입력 모델
+@pytorch_trace_auto("my_experiment", torch.randn(1, 3, 224, 224))
+def train_simple_model():
+    model = MyModel()
+
+    # 훈련 로직
+    optimizer = torch.optim.Adam(model.parameters())
+    for epoch in range(10):
+        # ... 훈련 코드 ...
+        pass
+
+    return model  # 모델만 반환!
+
+# 다중 입력 모델
+@pytorch_trace_auto("multi_input_exp", {
+    "image": torch.randn(1, 3, 224, 224),
+    "mask": torch.randn(1, 1, 224, 224)
+})
+def train_multi_input():
+    model = MultiInputModel()
+    # ... 훈련 ...
+    return model
+```
+
+## 라이선스
+
+MIT License
