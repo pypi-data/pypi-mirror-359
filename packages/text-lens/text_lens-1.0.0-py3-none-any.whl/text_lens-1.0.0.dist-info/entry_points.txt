@@ -1,0 +1,2 @@
+[console_scripts]
+text-lens = text_lens.app:main
