@@ -1,0 +1,24 @@
+name: Test, build and publish as PyPI package
+
+on:
+  workflow_dispatch:
+
+  push:
+    tags:
+      - 'v*'
+
+  pull_request:
+    branches:
+      - 'main'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
