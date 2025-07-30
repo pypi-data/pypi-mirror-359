@@ -1,0 +1,160 @@
+from cmake import CMAKE_BIN_DIR
+from enum import Enum
+from pathlib import Path
+from .envs import *
+import shutil
+import subprocess
+import sys
+import os
+
+CURRENT_DIR = Path(__file__).parent.absolute()
+
+
+class BuildType(Enum):
+    Debug = "Debug"
+    Release = "Release"
+
+
+def __clean_screen():
+    if sys.platform == "win32":
+        __execute_cmd("cls")
+    else:
+        __execute_cmd("clear")
+
+
+def __gen_prefix_list(prefixs: list) -> str:
+    if len(prefixs) == 0:
+        return ""
+
+    return f'''-DCMAKE_PREFIX_PATH="{';'.join(prefixs)}"'''
+
+
+def __execute_cmd(cmd: str, cwd: str = None):
+    print(f"执行命令: {cmd}, 工作目录: {cwd}")
+
+    pro = subprocess.run(
+        cmd,
+        shell=True,
+        encoding=("gb2312" if sys.platform == "win32" else "utf-8"),
+        text=True,
+        check=True,
+        cwd=cwd,
+    )
+    if pro.returncode != 0:
+        __clean_screen()
+        print(f"命令执行失败: {cmd}")
+        if pro.stderr:
+            print(f"错误信息: {pro.stderr.strip()}")
+        if sys.platform == "win32":
+            raise Exception(f"命令执行异常: {pro.stderr.strip()}")
+
+
+def __clean_git_source(src_dir: str, install_dir: str, other_cleans: list = []) -> bool:
+    abs_source_path = Path(src_dir).absolute().as_posix()
+    print(f"更新源码工程:{abs_source_path} ...")
+    __execute_cmd("git clean -fdx", cwd=abs_source_path)
+    __execute_cmd("git checkout .", cwd=abs_source_path)
+    __execute_cmd(
+        "git submodule foreach --recursive git clean -fdx", cwd=abs_source_path
+    )
+    __execute_cmd(
+        "git submodule foreach --recursive git checkout .", cwd=abs_source_path
+    )
+    __execute_cmd("git pull", cwd=abs_source_path)
+    __execute_cmd("git submodule update --init --recursive", cwd=abs_source_path)
+    print("更新源码工程成功!")
+
+    for other in other_cleans:
+        __execute_cmd(other, cwd=abs_source_path)
+
+    install_path = Path(install_dir)
+    abs_install_path = install_path.absolute().as_posix()
+
+    if install_path.exists():
+        print(f"删除安装目录:{abs_install_path}...")
+        shutil.rmtree(abs_install_path)
+        print("删除安装目录成功!")
+
+
+def build_and_install(
+    project_path: str,
+    name: str,
+    update_source: bool = False,
+    other_build_params: list = [],
+    cmakelists_subpath: str = "",
+    build_type: BuildType = BuildType.Debug,
+) -> bool:
+    """
+    编译并安装指定的CMake工程。
+
+    参数：
+        project_path (str): 工程根目录路径。
+        name (str): 库名称（用于安装路径和打印信息）。
+        update_source (bool): 是否先更新源码。
+        other_build_params (list): 额外传递给cmake的参数列表。
+        cmakelists_subpath (str): CMakeLists.txt子目录（可选）。
+        build_type (BuildType): 构建类型（Debug/Release）。
+
+    返回：
+        bool: 构建和安装是否成功。
+    """
+
+    source_path = Path(project_path)
+    if len(cmakelists_subpath) > 0:
+        source_path = source_path.joinpath(cmakelists_subpath)
+
+    abs_source_path = source_path.absolute().as_posix()
+
+    if len(name) == 0:
+        raise ("库名称为空")
+
+    install_path = Path(INSTALL_PATH)
+
+    install_path = install_path.joinpath(ARCH)
+    install_path = install_path.joinpath(build_type.value)
+    install_path = install_path.joinpath(name)
+
+    abs_install_path = install_path.absolute().as_posix()
+
+    if update_source:
+        __clean_git_source(abs_source_path, abs_install_path)
+    # else:
+    #     if os.path.exists(abs_install_path):
+    #         print(f"安装目录:{abs_install_path} 已存在, 跳过安装!\n")
+    #         return True
+
+    print(f"编译器信息:{name} / {GENERATOR} / {build_type.value} / {ARCH} ...")
+
+    print(f"工程路径： {abs_source_path}, 安装路径： {abs_install_path}")
+
+    build_dir = f"{CURRENT_DIR}/../{BUILD_DIR}/{name}/build_{ARCH}_{build_type.value}"
+
+    print(f"开始配置工程{name}并保存配置文件到{build_dir}...")
+
+    args = [
+        f"-S {abs_source_path}",
+        f"-B {build_dir}",
+        f'-G "{GENERATOR}"',
+        f"-DCMAKE_BUILD_TYPE={build_type.value}",
+        CMAKE_ARCH,
+        f"-DCMAKE_INSTALL_PREFIX={abs_install_path}",
+        "  ".join(other_build_params),
+    ]
+    __execute_cmd(f"{CMAKE_BIN_DIR}/cmake {' '.join(args)}", cwd=abs_source_path)
+
+    print(f"配置工程{name}成功!开始编译工程{name}...")
+
+    args = [
+        f"--build {build_dir}",
+        f"--config {build_type.value}",
+        "-j32",
+    ]
+    __execute_cmd(f"{CMAKE_BIN_DIR}/cmake {' '.join(args)}", cwd=abs_source_path)
+
+    print(f"编译工程{name}成功! 开始安装工程{name}...")
+
+    args = [f"--install {build_dir}", f"--config {build_type.value}"]
+    __execute_cmd(f"{CMAKE_BIN_DIR}/cmake {' '.join(args)}", cwd=abs_source_path)
+
+    print(f"安装工程{name}成功!\n")
+    return True
