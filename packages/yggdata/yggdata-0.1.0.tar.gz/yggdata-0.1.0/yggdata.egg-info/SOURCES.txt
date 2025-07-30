@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_inputs.py
+tests/test_yggdrasil.py
+yggdata/__init__.py
+yggdata/inputs.py
+yggdata/yggdrasil.py
+yggdata.egg-info/PKG-INFO
+yggdata.egg-info/SOURCES.txt
+yggdata.egg-info/dependency_links.txt
+yggdata.egg-info/requires.txt
+yggdata.egg-info/top_level.txt

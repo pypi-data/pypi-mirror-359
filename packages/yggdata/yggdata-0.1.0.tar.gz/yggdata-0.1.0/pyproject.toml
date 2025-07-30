@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yggdata"
+version = "0.1.0"
+authors = [
+    { name = "Cedric Sascha Wagner", email = "cedric.sascha.wagner@outlook.de" },
+]
+description = "A flexible tree-like data structure for Python and some input features"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = { text = "MIT" }
+dependencies = [
+    "pandas>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/LilLordCedric/YggData"
+Repository = "https://github.com/LilLordCedric/YggData"
+
+[tool.setuptools]
+packages = ["yggdata"]
