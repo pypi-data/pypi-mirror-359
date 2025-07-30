@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: heaven_test_package_herc01
+Version: 0.1.1
+Summary: This test package library was packaged by the HEAVEN agent Herc using the code packager for test purposes. We are in the process of building an automated microservice packaging system.
+Home-page: https://pypi.org/project/heaven_test_package_herc01/
+Author: Isaac Rubin, Herc (HEAVEN agent)
+Author-email: isaacwrubin@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+A simple calculator library for test purposes.
