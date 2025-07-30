@@ -1,0 +1,178 @@
+{
+    "common": {
+        "long_press_release": "Scaoileadh preasa fada",
+        "long_press_timeout": "Br\u00faigh fhada",
+        "short_press_release": "Scaoileadh preasa gearr",
+        "very_long_press_release": "Scaoileadh preasa an-fhada",
+        "very_long_press_timeout": "Br\u00faigh an-fhada"
+    },
+    "entity": {
+        "event": {
+            "bluetooth": {
+                "name": "Bluetooth",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "microphone": {
+                "name": "Micreaf\u00f3n",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "next": {
+                "name": "Ar Aghaidh",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "playpause": {
+                "name": "Seinn / Sos",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "preset1": {
+                "name": "1 is Fearr liom",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "preset2": {
+                "name": "2 is Fearr liom",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "preset3": {
+                "name": "3 is Fearr liom",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "preset4": {
+                "name": "4 is Fearr Leat",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "previous": {
+                "name": "Roimhe Seo",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            },
+            "volume": {
+                "name": "Toirt",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Scaoileadh preasa fada",
+                            "long_press_timeout": "Br\u00faigh fhada",
+                            "short_press_release": "Scaoileadh preasa gearr",
+                            "very_long_press_release": "Scaoileadh preasa an-fhada",
+                            "very_long_press_timeout": "Br\u00faigh an-fhada"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "selector": {
+        "source_ids": {
+            "options": {
+                "beoradio": "ASE Beoradio",
+                "cd": "Tiontaire Beolink NL/ML CD",
+                "deezer": "ASE / Mozart Deezer",
+                "ph": "Tiontaire Beolink NL/ML PH",
+                "radio": "Tiontaire Beolink RAIDI\u00d3 NL/ML",
+                "spotify": "Spotify ASE / Mozart",
+                "tidal": "Mozart Tidal",
+                "tp1": "Tiontaire Beolink NL/ML TP1",
+                "tp2": "Tiontaire Beolink NL/ML TP2"
+            }
+        }
+    },
+    "services": {
+        "beolink_join": {
+            "fields": {
+                "source_id": {
+                    "description": "Sonraigh c\u00e9n fhoinse le bheith p\u00e1irteach inti, athra\u00edonn an t-iompar idir ard\u00e1in crua-earra\u00ed. N\u00ed f\u00e9idir ainmneacha foinse a bhfuil ainm ard\u00e1in roimh a \u00fas\u00e1id ach amh\u00e1in nuair a bh\u00edonn t\u00fa ag ceangal leis an ard\u00e1n sin. Mar shampla, n\u00ed f\u00e9idir \"ASE Beoradio\" a \u00fas\u00e1id ach amh\u00e1in nuair a bh\u00edonn t\u00fa ag ceangal le gl\u00e9as ASE, agus is f\u00e9idir \"ASE / Mozart Deezer\" a \u00fas\u00e1id le gl\u00e9asanna ASE n\u00f3 Mozart. T\u00e1 JID Beolink sainithe ag teast\u00e1il.",
+                    "name": "Foinse"
+                }
+            }
+        }
+    }
+}

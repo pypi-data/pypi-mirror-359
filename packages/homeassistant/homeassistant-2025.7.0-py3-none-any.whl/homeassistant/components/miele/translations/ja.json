@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "pick_implementation": {
+                "data": {
+                    "implementation": "\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u8a8d\u8a3c"
+                },
+                "data_description": {
+                    "implementation": "\u8a8d\u8a3c\u306b\u4f7f\u7528\u3059\u308b\u8cc7\u683c\u60c5\u5831\u3002"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "plate": {
+                "state": {
+                    "power_step_0": "0",
+                    "power_step_1": "1"
+                }
+            },
+            "program_id": {
+                "state": {
+                    "evaporate_water": "\u6c34\u3092\u84b8\u767a\u3055\u305b\u308b"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "email": "An seoladh r\u00edomhphoist a \u00fas\u00e1idtear chun log\u00e1il isteach san aip Nice G.O.",
+                    "password": "An focal faire a \u00fas\u00e1idtear chun log\u00e1il isteach san aip Nice G.O."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "email": "An seoladh r\u00edomhphoist a \u00fas\u00e1idtear chun log\u00e1il isteach san aip Nice G.O.",
+                    "password": "An focal faire a \u00fas\u00e1idtear chun log\u00e1il isteach san aip Nice G.O."
+                }
+            }
+        }
+    }
+}
