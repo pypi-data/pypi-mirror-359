@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fu_downloader"
+version = "0.1.0"
+description = "CLI tool để tải ảnh từ thread FuOverflow"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    { name = "Kappy", email = "your_email@example.com" }
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "click",
+]
+
+[project.scripts]
+fu-download = "fu_downloader.cli:download_images"

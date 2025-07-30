@@ -1,0 +1,10 @@
+pyproject.toml
+setup.py
+fu_downloader/__init__.py
+fu_downloader/cli.py
+fu_downloader.egg-info/PKG-INFO
+fu_downloader.egg-info/SOURCES.txt
+fu_downloader.egg-info/dependency_links.txt
+fu_downloader.egg-info/entry_points.txt
+fu_downloader.egg-info/requires.txt
+fu_downloader.egg-info/top_level.txt
