@@ -1,0 +1,4 @@
+.DS
+.venv/
+dist/
+*__pycache__/
