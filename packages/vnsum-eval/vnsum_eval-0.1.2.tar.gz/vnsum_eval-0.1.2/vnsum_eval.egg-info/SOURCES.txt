@@ -1,0 +1,10 @@
+README.md
+setup.py
+vnsum_eval/__init__.py
+vnsum_eval/metrics.py
+vnsum_eval/setup.py
+vnsum_eval.egg-info/PKG-INFO
+vnsum_eval.egg-info/SOURCES.txt
+vnsum_eval.egg-info/dependency_links.txt
+vnsum_eval.egg-info/requires.txt
+vnsum_eval.egg-info/top_level.txt
