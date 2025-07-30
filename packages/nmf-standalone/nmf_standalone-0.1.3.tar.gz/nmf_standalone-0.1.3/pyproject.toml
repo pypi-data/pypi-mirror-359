@@ -1,0 +1,45 @@
+[project]
+name = "nmf-standalone"
+version = "0.1.3"
+description = "A standalone NMF (Non-negative Matrix Factorization) topic modeling system supporting Turkish and English text processing with advanced tokenization and visualization capabilities."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "emoji~=2.14.1",
+    "gensim==4.3.2",
+    "levenshtein==0.20.9",
+    "matplotlib==3.10.1",
+    "nltk==3.8.1",
+    "numpy==1.26.4",
+    "pandas==2.2.1",
+    "pillow==11.1.0",
+    "redis==5.0.1",
+    "scikit-learn==1.3.2",
+    "scipy==1.10.1",
+    "seaborn~=0.13.2",
+    "sqlalchemy==2.0.27",
+    "tokenizers==0.21.1",
+    "wordcloud==1.9.4",
+]
+
+[project.scripts]
+nmf-standalone = "nmf_cli:main"
+nmf-coherence = "nmf_cli:coherence_main"
+nmf-docs = "nmf_cli:docs_main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/nmf-standalone"
+Repository = "https://github.com/yourusername/nmf-standalone"
+Issues = "https://github.com/yourusername/nmf-standalone/issues"
+
+[tool.setuptools]
+packages = {"find" = {}}
+include-package-data = true
+py-modules = ["nmf_cli", "standalone_nmf", "coherence_eval_nmf", "build_docs"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.txt", "*.md"]

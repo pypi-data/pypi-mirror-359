@@ -1,0 +1,18 @@
+include README.md
+include LICENSE
+include CLAUDE.md
+include requirements.txt
+include pyproject.toml
+recursive-include functions *.py
+recursive-include utils *.py
+recursive-include docs *.rst *.py *.md
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.egg-info
+prune Output
+prune veri_setleri
+prune webapp
+prune instance
+exclude uv.lock
+exclude .gitignore
