@@ -1,0 +1,254 @@
+Metadata-Version: 2.4
+Name: wtu-mlflow-triton-plugin
+Version: 0.0.17.dev2
+Summary: MLflow plugin for Triton Inference Server with secure Python function execution
+Project-URL: Homepage, https://github.com/hbjs/w-train-utils-mlflow-triton-plugin
+Project-URL: Bug Tracker, https://github.com/hbjs/w-train-utils-mlflow-triton-plugin/issues
+Project-URL: Documentation, https://github.com/hbjs/w-train-utils-mlflow-triton-plugin#readme
+Author-email: hbjs <hbjs97@naver.com>
+License: MIT
+License-File: LICENSE
+Keywords: deployment,inference,machine-learning,mlflow,triton
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: boto3>=1.24.0
+Requires-Dist: cryptography>=45.0.4
+Requires-Dist: mlflow==1.30.1
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: requests==2.32.4
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: tritonclient[grpc,http]>=2.36.0
+Description-Content-Type: text/markdown
+
+# w-train-utils-mlflow-triton-plugin
+
+MLflow plugin for Triton Inference Server with secure Python function execution
+
+## 📚 주요 기능
+
+### 🔌 MLflow-Triton 통합
+
+- MLflow 모델을 Triton Inference Server로 자동 배포
+- Python 함수를 Triton 모델로 변환
+- S3/MinIO 기반 모델 저장소 지원
+
+### 🛠️ Keynet CLI
+
+- Python 함수 검증 및 테스트
+- 함수 배포 및 관리
+- 인증 및 자격 증명 관리
+- 다양한 Python 버전 지원 (3.9, 3.10, 3.11, 3.12)
+
+## 🚀 설치
+
+```bash
+pip install wtu-mlflow-triton-plugin
+```
+
+## 📖 사용법
+
+### 1. Python 함수 작성
+
+```python
+# my_function.py
+from wtu_mlflow_triton_plugin.function import keynet_function
+
+@keynet_function("my_model")
+def main(args):
+    """입력을 받아 처리하는 함수"""
+    # args는 딕셔너리 형태의 입력
+    text = args.get("text", "")
+    result = text.upper()
+
+    return {
+        "result": result,
+        "length": len(text)
+    }
+```
+
+### 2. Keynet CLI로 함수 검증
+
+```bash
+# 함수 검증
+keynet validate my_function.py
+
+# 의존성과 함께 검증
+keynet validate my_function.py -r requirements.txt
+
+# 테스트 파라미터로 실행
+keynet test my_function.py --params '{"text": "hello world"}'
+```
+
+### 3. 함수 배포
+
+```bash
+# 로컬 환경에 배포
+keynet deploy my_function.py --name my_model
+
+# 원격 서버에 배포
+keynet deploy my_function.py --name my_model --server https://api.example.com
+```
+
+### 4. MLflow와 통합
+
+```python
+import mlflow
+from wtu_mlflow_triton_plugin import TritonPlugin
+
+# MLflow 설정
+mlflow.set_tracking_uri("http://localhost:5001")
+
+# Triton 플러그인 활성화
+with mlflow.start_run():
+    # 모델 로깅
+    mlflow.pyfunc.log_model(
+        artifact_path="model",
+        python_model=my_model,
+        deployment_flavor="triton"
+    )
+
+    # Triton으로 배포
+    mlflow.deployments.create_deployment(
+        name="my-deployment",
+        model_uri=f"runs:/{run_id}/model",
+        flavor="triton"
+    )
+```
+
+## 🔧 환경 설정
+
+### 필수 환경 변수
+
+| 환경변수               | 설명                   | 예시                    |
+| ---------------------- | ---------------------- | ----------------------- |
+| MLFLOW_S3_ENDPOINT_URL | MinIO 엔드포인트 URL   | `http://localhost:9000` |
+| MLFLOW_TRACKING_URI    | MLflow 트래킹 서버 URI | `http://localhost:5001` |
+| AWS_ACCESS_KEY_ID      | AWS/MinIO 액세스 키    | `minio`                 |
+| AWS_SECRET_ACCESS_KEY  | AWS/MinIO 시크릿 키    | `miniostorage`          |
+| TRITON_URL             | Triton gRPC 엔드포인트 | `http://localhost:8001` |
+| TRITON_MODEL_REPO      | Triton 모델 저장소 URL | `s3://bucket/models`    |
+
+### Triton Inference Server 실행
+
+```bash
+docker run --rm -p8000:8000 -p8001:8001 -p8002:8002 \
+    -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+    -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+    nvcr.io/nvidia/tritonserver:24.01-py3 \
+    tritonserver --model-repository=$TRITON_MODEL_REPO \
+    --model-control-mode=explicit \
+    --log-verbose=1
+```
+
+## 📋 Keynet CLI 명령어
+
+### 기본 명령어
+
+```bash
+# 함수 검증
+keynet validate <python_file> [-r requirements.txt]
+
+# 함수 테스트
+keynet test <python_file> [--params JSON] [-r requirements.txt]
+
+# 함수 배포
+keynet deploy <python_file> --name <model_name> [--server URL]
+```
+
+### 인증 관리
+
+```bash
+# 자격 증명 등록
+keynet login https://api.example.com
+
+# 특정 서버에서 로그아웃
+keynet logout --server api.example.com
+
+# 모든 서버에서 로그아웃
+keynet logout --all
+```
+
+### 고급 옵션
+
+```bash
+# Python 버전 지정
+keynet validate my_function.py --python 3.11
+
+# 타임아웃 설정
+keynet test my_function.py --import-timeout 60 --execution-timeout 120
+
+# 상세 로그 출력
+keynet validate my_function.py -v
+
+# 캐시 정리
+keynet cache clear
+```
+
+## 🏗️ 프로젝트 구조
+
+```
+wtu_mlflow_triton_plugin/
+├── auth/               # 인증 및 자격 증명 관리
+├── function/           # 함수 빌더 및 CLI
+│   ├── cli.py         # Keynet CLI 구현
+│   ├── client.py      # API 클라이언트
+│   ├── models.py      # 데이터 모델
+│   ├── validator.py   # 함수 검증기
+│   └── venv_manager.py # 가상환경 관리
+├── plugin.py          # MLflow 플러그인
+├── storage.py         # S3/MinIO 저장소 관리
+└── config.py          # 설정 관리
+```
+
+## 🔒 보안 기능 상세
+
+### 코드 검증
+
+- AST 기반 구문 분석
+- 필수 함수 시그니처 검사
+- 데코레이터 검증
+
+### 실행 격리
+
+- 독립된 가상환경에서 실행
+- 시스템 리소스 접근 제한
+- 타임아웃 기반 실행 제어
+
+### 메모리 보호
+
+- 최대 512MB 메모리 제한
+- 메모리 폭탄 방지
+- 리소스 고갈 방지
+
+## 🤝 기여하기
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 라이선스
+
+MIT License - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+## 🔗 참고 자료
+
+- [MLflow Documentation](https://www.mlflow.org/docs/latest/index.html)
+- [Triton Inference Server](https://github.com/triton-inference-server/server)
+- [버전 관리 가이드](VERSIONING.md)
+- [개발 가이드](DEVELOPMENT.md)
+
+## 📞 지원
+
+- 이슈 트래커: [GitHub Issues](https://github.com/hbjs/w-train-utils-mlflow-triton-plugin/issues)
+- 이메일: hbjs97@naver.com
