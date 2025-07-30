@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: aratree
+Version: 0.1.1
+Summary: Time Series Forecasting with a touch of spiders and decision trees
+Author-email: C5m7b4 <C5m7b4@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/C5m7b4/aratree
+Project-URL: Issues, https://github.com/C5m7b4/aratree
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
+# AraTree
+
+![logo](images/logo.png)
+

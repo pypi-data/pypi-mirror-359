@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aratree"
+version = "0.1.1"
+description = "Time Series Forecasting with a touch of spiders and decision trees"
+authors = [{ name="C5m7b4", email="C5m7b4@gmail.com" }]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib"
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aratree*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = """
+    --cov=atrax 
+    --cov-report=term-missing 
+    --cov-report=html 
+    --cov-fail-under=80 
+    -v
+"""
+
+[project.urls]
+Homepage="https://github.com/C5m7b4/aratree"
+Issues="https://github.com/C5m7b4/aratree"
