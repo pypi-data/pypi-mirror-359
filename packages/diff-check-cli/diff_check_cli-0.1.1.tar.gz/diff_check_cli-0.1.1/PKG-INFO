@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: diff-check-cli
+Version: 0.1.1
+Summary: CLI для сравнения файлов/директорий/git-объектов
+Author: Daniil Astrouski
+Author-email: Daniil Astrouski <shelovesuastra@gmail.com>
+Requires-Python: >=3.7
+Requires-Dist: click
+Requires-Dist: rich
+Requires-Dist: prompt-toolkit
+Dynamic: author
+Dynamic: requires-python

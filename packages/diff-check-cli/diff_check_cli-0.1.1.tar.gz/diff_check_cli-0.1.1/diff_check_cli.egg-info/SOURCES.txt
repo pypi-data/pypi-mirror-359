@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+diff_check_cli/__init__.py
+diff_check_cli/cli.py
+diff_check_cli/diff.py
+diff_check_cli.egg-info/PKG-INFO
+diff_check_cli.egg-info/SOURCES.txt
+diff_check_cli.egg-info/dependency_links.txt
+diff_check_cli.egg-info/requires.txt
+diff_check_cli.egg-info/top_level.txt
