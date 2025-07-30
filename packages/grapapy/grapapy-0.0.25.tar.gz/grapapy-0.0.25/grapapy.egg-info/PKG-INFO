@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: grapapy
+Version: 0.0.25
+Summary: grammar parser language
+Author: Chris Matichuk
+Requires-Python: >=3.6
+License-File: LICENSE
+
+https://github.com/grapa-dev/grapa/blob/master/docs/PYTHON.md
