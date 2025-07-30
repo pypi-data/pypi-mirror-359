@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: shiyunzi
+Version: 0.2.2
+Requires-Python: ==3.13.2
+Requires-Dist: Pillow>=10.0.0
+Requires-Dist: PyQt6>=6.0.0
+Requires-Dist: setuptools>=69.0.0
+Requires-Dist: wheel>=0.42.0
+Requires-Dist: runwayapi>=0.0.1
+Requires-Dist: PJYSDK>=0.0.1
+Requires-Dist: peewee>=3.15.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: moviepy==1.0.3
+Requires-Dist: cakegeminiapi
+Dynamic: requires-dist
+Dynamic: requires-python
