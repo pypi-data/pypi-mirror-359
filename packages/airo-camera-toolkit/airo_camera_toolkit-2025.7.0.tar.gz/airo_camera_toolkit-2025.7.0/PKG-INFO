@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: airo_camera_toolkit
+Version: 2025.7.0
+Summary: Interfaces and common functionality to work with RGB(D) cameras for robotic manipulation at the Ghent University AI and Robotics Lab
+Author: Thomas Lips
+Author-email: thomas.lips@ugent.be
+Requires-Dist: numpy<2.0
+Requires-Dist: opencv-contrib-python==4.8.1.78
+Requires-Dist: opencv-python-headless==4.8.1.78
+Requires-Dist: matplotlib
+Requires-Dist: rerun-sdk>=0.11.0
+Requires-Dist: click
+Requires-Dist: open3d
+Requires-Dist: loguru
+Requires-Dist: airo-ipc>=0.1.0
+Requires-Dist: airo-typing==2025.4.0
+Requires-Dist: airo-spatial-algebra==2025.4.0
+Requires-Dist: airo-dataset-tools==2025.4.0
+Provides-Extra: hand-eye-calibration
+Requires-Dist: airo-robots; extra == "hand-eye-calibration"
+Dynamic: author
+Dynamic: author-email
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
