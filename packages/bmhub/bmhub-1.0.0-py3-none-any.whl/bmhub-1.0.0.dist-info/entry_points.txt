@@ -1,0 +1,2 @@
+[console_scripts]
+bmhub = bmhub:app
