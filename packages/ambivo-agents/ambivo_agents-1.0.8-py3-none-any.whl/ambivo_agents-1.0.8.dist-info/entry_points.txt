@@ -1,0 +1,7 @@
+[console_scripts]
+ambivo = ambivo_agents.cli:main
+ambivo-agents = ambivo_agents.cli:main
+ambivo-mcp-server = ambivo_agents.mcp.mcp_server:main
+
+[mcp.servers]
+ambivo-agents = ambivo_agents.mcp.server:main
