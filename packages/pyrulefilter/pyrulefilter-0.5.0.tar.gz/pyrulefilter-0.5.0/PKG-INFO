@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: pyrulefilter
+Version: 0.5.0
+Author-email: jgunstone <j.gunstone@maxfordham.com>
+License-Expression: BSD-3-Clause
+License-File: licenses/BSD-3-Clause.txt
+Keywords: revit,rules
+Requires-Python: >=3.11
+Requires-Dist: pydantic>2
