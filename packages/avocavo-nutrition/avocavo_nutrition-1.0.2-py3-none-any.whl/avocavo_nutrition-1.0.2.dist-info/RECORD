@@ -1,0 +1,10 @@
+avocavo_nutrition/__init__.py,sha256=vVY1oXWdpO-KGll4j8r_S_f6rPSXQx0GBA-UCBM82ig,1167
+avocavo_nutrition/auth.py,sha256=BxtNkJ7uVFfmK3t3ACe_Y8BFf6yEdp-5PWr_UE3eGJc,15383
+avocavo_nutrition/client.py,sha256=V1xXbo4pOpeppXRpX95HtFYxWhXGSumuR2MAe8i4h4w,24287
+avocavo_nutrition/exceptions.py,sha256=4vBSRqf2Mgh0hqu9_WqQVmrIAlXj4ljAgizWlzyfPf4,881
+avocavo_nutrition/models.py,sha256=0_nGLVFlr9DU5zeFUnPt_ZRxGWZtS4Sef_1visp_XN4,8537
+avocavo_nutrition-1.0.2.dist-info/licenses/LICENSE,sha256=dolnsuPMdBrQ2kxiYc2t9YxTEwnOWsiwSpkBd1eMxOk,1063
+avocavo_nutrition-1.0.2.dist-info/METADATA,sha256=thIdSosS3AWQwAjcvWNwaGav5v25gLJoaR7jPeI5pAU,14056
+avocavo_nutrition-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+avocavo_nutrition-1.0.2.dist-info/top_level.txt,sha256=a0m7R7hRL81-i6sFBJf7A5CHm3x0Jr0xabFkJGgHYpo,18
+avocavo_nutrition-1.0.2.dist-info/RECORD,,
