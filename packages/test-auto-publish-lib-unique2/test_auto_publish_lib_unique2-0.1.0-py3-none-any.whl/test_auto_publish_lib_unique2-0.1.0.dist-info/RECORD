@@ -1,0 +1,6 @@
+test_auto_publish_lib_unique2/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test_auto_publish_lib_unique2/get_info.py,sha256=0r-xl26sfZS6tOY09XEiMUsBH80se7Od6-ZYSISX0as,133
+test_auto_publish_lib_unique2-0.1.0.dist-info/METADATA,sha256=BAR-GALZa5GSU_kMiJKh4QsIhNU2HXEFudN2CM5qQ-g,715
+test_auto_publish_lib_unique2-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+test_auto_publish_lib_unique2-0.1.0.dist-info/top_level.txt,sha256=DorBjO5dhd6HAsS_iRsAk5Iv3NutWD0nZuKbzHw0P3Y,30
+test_auto_publish_lib_unique2-0.1.0.dist-info/RECORD,,
