@@ -1,0 +1,11 @@
+bib_ami/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+bib_ami/_version.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+bib_ami/bib_ami.py,sha256=8HdAdr_-bo3lBDVmPgiRT7Bkf-B0_vMBcOqFQX8-MP8,3321
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_bib_ami.py,sha256=Y-IeU8QYBpg6zSubp4GyOQEJYJfMd9pgisUwVn-64DM,1318
+bib_ami-0.0.1.dist-info/LICENSE,sha256=YTfBTmxz8N1tc3lyJP2QQpc9ln4B69aDvKDoUZxI2Pw,1102
+bib_ami-0.0.1.dist-info/METADATA,sha256=sm3iN-h2s_qsqc7Mw3EUgxeGXw2Z-u5t7KXbqauo2HQ,720
+bib_ami-0.0.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+bib_ami-0.0.1.dist-info/entry_points.txt,sha256=l_K00_9RbnTjThq_uwBbYj9rUXeAJ9vEh2heuPrR0AE,49
+bib_ami-0.0.1.dist-info/top_level.txt,sha256=XApXpHvCsUKxSYpLsQmbSdaOa55fwHKQX2RL070x6g0,14
+bib_ami-0.0.1.dist-info/RECORD,,
