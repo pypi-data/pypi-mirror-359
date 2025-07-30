@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: winpnp
+Version: 0.0.2
+Summary: A package for interacting with Windows Plug and Play (PnP) entities
+Project-URL: Homepage, https://github.com/SuperPudding98/winpnp
+Project-URL: Issues, https://github.com/SuperPudding98/winpnp/issues
+Author-email: Supper Pudding <31290828+SuperPudding98@users.noreply.github.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: Windows device,device manager,pnp,setupapi,setupdi
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: System :: Hardware
+Classifier: Typing :: Typed
+Requires-Python: >=3.9
+Requires-Dist: more-itertools<11,>=10.2.0
+Requires-Dist: pywin32>=306
+Provides-Extra: deploy
+Requires-Dist: build<2,>=1.2.2; extra == 'deploy'
+Requires-Dist: twine<7,>=6.1.0; extra == 'deploy'
+Provides-Extra: dev
+Requires-Dist: pytest-cases<4,>=3.8.6; extra == 'dev'
+Requires-Dist: pytest<9,>=8.2.1; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# winpnp
+
+This is a package for interacting with Windows Plug and Play (PnP) entities (devices, setup classes, etc.)
+
+It can be used to query properties of PnP devices using the `winpnp.info.device.DeviceInfo` class,<br/>
+and to query properties of PnP setup classes using the `winpnp.info.setup_class.SetupClassInfo` class.<br/>
+Instances of these classes can be used as mappings, with keys of type `winpnp.properties.pnp_property.PnpPropertyKey`.<br/>
+For your convenience, commonly used property keys are defined in `winpnp.properties.keys`.
+
+Here is an example usage:
+```python
+from winpnp.info.device import DeviceInfo
+from winpnp.properties.keys.device import INSTANCE_ID
+
+with DeviceInfo.of_instance_id("HTREE\\ROOT\\0") as device:
+    instance_id = device[INSTANCE_ID]
+
+instance_id
+```
+Output: `PnpProperty(value='HTREE\\ROOT\\0', kind=PnpPropertyType(type_id=18, name='STRING'))`
