@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: cubicweb-sentry
+Version: 1.1.0
+Summary: support for Sentry (getsentry.com)
+Home-page: https://forge.extranet.logilab.fr/cubicweb/cubes/cubicweb-sentry
+Author: LOGILAB S.A. (Paris, FRANCE)
+Author-email: contact@logilab.fr
+License: LGPL
+Classifier: Environment :: Web Environment
+Classifier: Framework :: CubicWeb
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: JavaScript
+Requires-Python: >=3.9.2
+Requires-Dist: cubicweb<6.0.0,>=4.5.2
+Requires-Dist: sentry-sdk<3.0.0,>=2.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CubicWeb-Sentry
+
+## Summary
+
+This cube add support of [Sentry](https://sentry.io/) for [CubicWeb](https://www.cubicweb.org/). It is a plug-in for the framework.
+
+## Install it
+
+1. `pip3 install cubicweb-sentry`
+2. `add_cube("sentry")`.
+
+## Configure it
+
+See `~/etc/cubicweb.d/<instance-name>/all-in-one.conf`

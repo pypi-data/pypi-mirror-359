@@ -1,0 +1,9 @@
+cubicweb_sentry/__init__.py,sha256=G8FLGc5KNQrDZOxLnJyACZLKKAn0rr0GAq7VloZXScM,1125
+cubicweb_sentry/__pkginfo__.py,sha256=wGHBEAEPiZ3hhVxftWWbSeCdfr0XotkmclbXSrUoWac,792
+cubicweb_sentry/entities.py,sha256=qED5VtlMHHpmPdBFPRQfSHWRXwXuC5N2WlVKA12FF_A,890
+cubicweb_sentry/site_cubicweb.py,sha256=X8TwTsuak8svAy6e1aO0PsBaV7ZSWrACEt33nc6OIFQ,1166
+cubicweb_sentry-1.1.0.dist-info/METADATA,sha256=XMGgjIa5XJasiBbdOwzv_nnbtHkZ_6Ea-WUVIg5PzwM,1129
+cubicweb_sentry-1.1.0.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+cubicweb_sentry-1.1.0.dist-info/entry_points.txt,sha256=Y7HwfnowdrJrgO-AuNs44fRJiAmMAOeWrh9PeOsCb0g,42
+cubicweb_sentry-1.1.0.dist-info/top_level.txt,sha256=YXvfCFx_NnRVuuoTZ_ussYKCnTcyEAae_l_TLfQCBZw,16
+cubicweb_sentry-1.1.0.dist-info/RECORD,,
