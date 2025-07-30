@@ -1,0 +1,7 @@
+noyau/__init__.py,sha256=6gVDw5RUFx0eGcjWpiyAf6LNlKhV5v6EbwwqoxhzdlQ,79
+noyau/_maybe.py,sha256=W2xIskOFVYJeB8D-p-zSl3bcDfGBVWivvfl2uzAB-GU,145
+noyau/_result.py,sha256=FERnFFpQsK6JgWJFA4dNTMmdtAA1XHLPX1sUAXlAEgY,151
+noyau/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+noyau-1.0.0.dist-info/METADATA,sha256=muWZJM4vOiTFw3HorTUJ0Q-C3WZMe6Pp2WwNOAKaZbw,159
+noyau-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+noyau-1.0.0.dist-info/RECORD,,
