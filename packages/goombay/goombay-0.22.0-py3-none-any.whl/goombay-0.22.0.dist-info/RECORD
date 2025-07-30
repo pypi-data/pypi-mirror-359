@@ -1,0 +1,13 @@
+goombay/__init__.py,sha256=ZxCeyyNXcZn32rIr4RGsTX14HVII21SbbVASHGBrpMo,2096
+goombay/benchmarks.py,sha256=4NxqXz0_8XA0ndnxZ0HNBYm7xsPJFGrLQLCJkHVvpwE,3506
+goombay/utils.py,sha256=2BDVcC1pBD0HtzfanHuXMq3VImY95njPt9zIE1uKt4k,1450
+goombay/algorithms/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+goombay/algorithms/base.py,sha256=3VG2WvUKQSwQdiuFuMWl4eR7sFBI6OX-9dPUYREUA0o,4998
+goombay/algorithms/edit.py,sha256=Oqmxgh-5ko1aKkeBjc-cApLizXOSwFbJuTmy8NzhAi0,45198
+goombay/algorithms/edit_msa.py,sha256=3KEDnmR44vP3cQkAl7DR4RTEqc1zUUdiDFcGWybfquc,2527
+goombay/algorithms/overlap.py,sha256=po7FTmYAdri3CrtV-NAa7uotEY4KxTqoTFoaeAzveBA,22605
+goombay/algorithms/overlap_msa.py,sha256=sfTqVDyJv3a7EqDpv9JB1YPxS1X2zfA5VUUF0lJnwUQ,3383
+goombay-0.22.0.dist-info/METADATA,sha256=Pq7hK7qhavg9moagC32yZg2GdoRW5-S6xdyeyMGdOfQ,19373
+goombay-0.22.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+goombay-0.22.0.dist-info/licenses/LICENSE,sha256=sw5R9x7YiaESz--wct2pp-gEY_aBiJlnEMnoPHzU0m4,1075
+goombay-0.22.0.dist-info/RECORD,,
