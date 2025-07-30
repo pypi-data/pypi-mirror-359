@@ -1,0 +1,3 @@
+[console_scripts]
+night-sky-pi=night_sky_pi.entry:night_sky_pi
+
