@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-sql-adapter = mcp_sql_adapter:main
