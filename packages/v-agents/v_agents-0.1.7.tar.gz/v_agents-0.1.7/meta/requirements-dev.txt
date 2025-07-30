@@ -1,0 +1,9 @@
+black
+pytest
+pre-commit
+pytest-cov
+coverage
+pytest-asyncio
+dstool
+seaborn
+pyrefly
