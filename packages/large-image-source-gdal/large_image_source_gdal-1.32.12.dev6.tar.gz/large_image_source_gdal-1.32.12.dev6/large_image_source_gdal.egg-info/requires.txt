@@ -1,0 +1,12 @@
+large-image>=1.32.12.dev6
+packaging
+pyproj>=3.5.0
+
+[:python_version < "3.9"]
+gdal<3.11
+
+[:python_version >= "3.9"]
+gdal
+
+[girder]
+girder-large-image>=1.32.12.dev6
