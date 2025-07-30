@@ -1,0 +1,73 @@
+[project]
+name = "km-mcp"
+version = "0.1.1"
+description = "Meituan Knowledge Management MCP Server - A Model Context Protocol server for accessing Meituan internal documents"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Meituan Engineering Team", email = "engineering@meituan.com"},
+]
+keywords = ["mcp", "meituan", "knowledge-management", "wiki", "documentation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "browser-cookie3>=0.19.1",
+    "mcp[cli]>=1.6.0",
+    "python-json-logger>=2.0.0",
+    "beautifulsoup4>=4.13.3",
+    "html2text>=2024.2.26",
+    "Pillow>=10.0.0",
+    "lxml>=4.9.0",
+]
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/meituan/km-mcp"
+Repository = "https://github.com/meituan/km-mcp"
+Documentation = "https://github.com/meituan/km-mcp#readme"
+"Bug Tracker" = "https://github.com/meituan/km-mcp/issues"
+
+[project.scripts]
+km-mcp = "km_mcp.server:main"
+km-mcp-server = "km_mcp.server:main"
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.2.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["km_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/km_mcp",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
