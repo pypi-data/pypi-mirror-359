@@ -1,0 +1,9 @@
+simple_simplex/__init__.py,sha256=rwV6zIngGT6Ts3C3lW9dhndB1_sDnAnUvqtA06WIdlg,347
+simple_simplex/_typing.py,sha256=Cg40xfQFS9djDNI45FIw_SMEaWyKqx70XjViPOV9NHA,175
+simple_simplex/solver.py,sha256=uJecee04HjND38R3ojUFOGQ1Dx_yvE1YVHt7QjC2d5Y,13566
+simple_simplex/test.py,sha256=C4l1JRF7xIK9R-2E9eFhCigBk9A7iUaSJplRGJIHN84,54
+simple_simplex-0.0.1.dist-info/licenses/LICENSE,sha256=SCkb64pChhKjHiBdtd9FFR9A9yijEUquMERCdgeLvbw,1069
+simple_simplex-0.0.1.dist-info/METADATA,sha256=dWvlzVufhEV0dABxTv5FW2AAGfBFhyJV5frjt7YQT_k,5584
+simple_simplex-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+simple_simplex-0.0.1.dist-info/top_level.txt,sha256=TnE7KV3S_aRnvIbNqjGUBkEIFelY6wnnSUGRT7cua80,15
+simple_simplex-0.0.1.dist-info/RECORD,,
