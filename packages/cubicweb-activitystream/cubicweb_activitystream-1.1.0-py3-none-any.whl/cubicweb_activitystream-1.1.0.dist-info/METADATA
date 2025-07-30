@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: cubicweb-activitystream
+Version: 1.1.0
+Summary: activity streams
+Home-page: http://www.cubicweb.org/project/cubicweb-activitystream
+Author: LOGILAB S.A. (Paris, FRANCE)
+Author-email: contact@logilab.fr
+License: LGPL
+Classifier: Environment :: Web Environment
+Classifier: Framework :: CubicWeb
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: JavaScript
+Requires-Python: >=3.9.2
+Requires-Dist: cubicweb<6.0.0,>=4.5.2
+Requires-Dist: cubicweb_web<2.0.0,>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Summary
+-------
+
+activity streams
+
+See https://en.wikipedia.org/wiki/Activity_stream
