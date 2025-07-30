@@ -1,0 +1,3 @@
+[console_scripts]
+bscal = bscal:cal
+bsdate = bscal:bsdate

@@ -1,0 +1,16 @@
+.gitignore
+.pre-commit-config.yaml
+LICENSE
+README.md
+bscal.py
+pyproject.toml
+.github/workflows/build.yml
+.github/workflows/ci.yml
+bscal.egg-info/PKG-INFO
+bscal.egg-info/SOURCES.txt
+bscal.egg-info/dependency_links.txt
+bscal.egg-info/entry_points.txt
+bscal.egg-info/top_level.txt
+tests/__init__.py
+tests/test_cli.py
+tests/test_conversion.py
