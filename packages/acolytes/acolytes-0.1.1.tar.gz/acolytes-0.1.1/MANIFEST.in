@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include pytest.ini
+include mypy.ini
+recursive-include src *.py *.pyi *.typed
+recursive-include src/acolyte *.yaml *.yml *.json *.txt *.md *.sql
+recursive-include src/acolyte/install/resources *
+recursive-include bin *.py
+include bin/acolyte_wrapper.py
+recursive-include docs *.md
+recursive-include examples *
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
