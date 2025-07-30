@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+py_cloudquery.egg-info/PKG-INFO
+py_cloudquery.egg-info/SOURCES.txt
+py_cloudquery.egg-info/dependency_links.txt
+py_cloudquery.egg-info/requires.txt
+py_cloudquery.egg-info/top_level.txt
