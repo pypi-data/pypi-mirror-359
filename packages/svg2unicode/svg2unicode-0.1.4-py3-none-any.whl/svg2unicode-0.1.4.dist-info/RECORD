@@ -1,0 +1,9 @@
+svg2unicode/README.md,sha256=yrL22tVnzS4zTtEj1aJG_d1b3JR6VOsx3IyUxtQD_xM,640
+svg2unicode/__init__.py,sha256=apdZnBn0H0fuwr3Lk2Zw7Lf05JOViX-3wnOSJOwCjz4,362
+svg2unicode/cli.py,sha256=1ZwsWQghA_atxHnNzUWkb066i01vjfiarD1iCug--9M,1178
+svg2unicode/converter.py,sha256=yNqCj0838_OfbpWcbocWBWkf_onA06LHJvmDjmYd25c,2807
+svg2unicode-0.1.4.dist-info/LICENSE,sha256=DCq7JH2jxRvqsA9skTUPiCTrghsGPWOn-f7E7TdeFrA,11393
+svg2unicode-0.1.4.dist-info/METADATA,sha256=BF3kx6epC5T5OnQqIHivVsWwZ6bLvHZKiRg1UzIk1P8,34199
+svg2unicode-0.1.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+svg2unicode-0.1.4.dist-info/entry_points.txt,sha256=UJenDuvkrqeoW_HCp8B8Y9Oidn8fsCcyy3nd6OoiYlo,52
+svg2unicode-0.1.4.dist-info/RECORD,,
