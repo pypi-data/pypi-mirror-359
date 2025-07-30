@@ -1,0 +1,9 @@
+README.md
+setup.py
+cursolfiap/__init__.py
+cursolfiap/core.py
+cursolfiap_package.egg-info/PKG-INFO
+cursolfiap_package.egg-info/SOURCES.txt
+cursolfiap_package.egg-info/dependency_links.txt
+cursolfiap_package.egg-info/top_level.txt
+tests/test_core.py

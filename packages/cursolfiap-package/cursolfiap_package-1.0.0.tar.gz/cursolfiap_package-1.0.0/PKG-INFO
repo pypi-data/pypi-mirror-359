@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: cursolfiap-package
+Version: 1.0.0
+Summary: Minha Primeira Lib Curso FIAP
+Home-page: https://github.com/bwasistemas/fiap
+Author: Bruno Amorim
+Author-email: rm365279@fiap.com.br
+License: MIT
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
+
+# Hellow FIAP Aula IA For Devs
+
+A simple example library
+
+## Licença
+
+Distribuida sob a licença MIT. Veja 'LICENSE' para mais informações. 
