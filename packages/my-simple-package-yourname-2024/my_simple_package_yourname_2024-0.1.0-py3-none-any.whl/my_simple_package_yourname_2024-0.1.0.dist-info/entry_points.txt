@@ -1,0 +1,2 @@
+[console_scripts]
+my-simple-package = my_simple_package.main:main
