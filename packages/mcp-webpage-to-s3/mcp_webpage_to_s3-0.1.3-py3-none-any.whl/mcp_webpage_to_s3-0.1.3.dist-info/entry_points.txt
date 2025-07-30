@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-webpage-to-s3 = src.server:run_server

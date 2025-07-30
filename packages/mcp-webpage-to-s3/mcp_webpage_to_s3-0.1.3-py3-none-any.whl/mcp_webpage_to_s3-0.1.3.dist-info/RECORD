@@ -1,0 +1,10 @@
+src/__init__.py,sha256=6_zZYDL5DoAPpefbA6K7U-d-7tNwDLA65BP8uXfSO-Q,91
+src/config.py,sha256=FHkGBV5wXN_9Pne5HOel9i_ikzryoboub13cV8IQEL0,4264
+src/deploy.py,sha256=xc9NeWILEm0-250rTGB9MLUwZRbILXtzb9REgYcwjFA,1114
+src/logger.py,sha256=q51wdX9YudfKoYJHmPYlHzTpiAAVbhH2FU1JzVzPJxo,464
+src/s3.py,sha256=ZfY6EyuEcnvR0UUsuAxCyY-VxeJ__SMN4YdHuxgyL1M,1715
+src/server.py,sha256=S6WTmFQN60oJLddx7Jb6etRt_QtZdASY9mEdzRbHNHE,2443
+mcp_webpage_to_s3-0.1.3.dist-info/METADATA,sha256=qDu_tB_j7cEasdtxxHk8RsgmGDxJQAP8wKn4TTTITls,3870
+mcp_webpage_to_s3-0.1.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_webpage_to_s3-0.1.3.dist-info/entry_points.txt,sha256=EVgtIMH2gmsx64cGHNHtSf5Jbqm7hsvB5h2m8k0FgIo,60
+mcp_webpage_to_s3-0.1.3.dist-info/RECORD,,
