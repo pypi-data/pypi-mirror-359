@@ -1,0 +1,9 @@
+shred/__init__.py,sha256=ATmHI4kumWJS18z0WGqdRX6MJ-nPKtDZXzQATEIK7Z0,146
+shred/cbase.py,sha256=lN9Qo-NwkUtdWO9ZFBGvohdrKeLmuSES0R7ALqmOxyE,4914
+shred/core.py,sha256=n3wGXwXiTpikJ0a90abZ0j431dRU9ohkqippDpIZOkk,9881
+shred/libtoken.dll.a,sha256=lro9QdIyTCLnBwFlHXO0LQk2gSUhnShEXFytDre8S4c,27600
+shred/libtoken.pyd,sha256=xXPCOv8mU0dRgP0D3FAVGMdxlc0DJa_mraErwpuUnNk,24064
+shredword-0.1.0.dist-info/METADATA,sha256=FeOKm7IBIZWOwTYeih2GzABwp6jh6NkHUDoh5M83Ljs,16733
+shredword-0.1.0.dist-info/WHEEL,sha256=_PdgJ-W7uMAsWwnGnEdiicDU_PKcobRdffEM23gmN6g,106
+shredword-0.1.0.dist-info/licenses/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+shredword-0.1.0.dist-info/RECORD,,
