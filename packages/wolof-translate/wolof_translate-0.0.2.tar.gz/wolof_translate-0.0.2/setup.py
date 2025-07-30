@@ -1,0 +1,36 @@
+from setuptools import setup
+
+setup(
+    name="wolof_translate",
+    version="0.0.2",
+    author="Oumar Kane",
+    author_email="oumar.kane@univ-thies.sn",
+    description="Contain function and classes to process corpora for making translation between wolof text and other languages.",
+    install_requires=[
+        "accelerate",
+        "torch",
+        "spacy",
+        "nltk",
+        "gensim",
+        "furo",
+        "streamlit",
+        "tokenizers",
+        "tensorboard",
+        "evaluate",
+        "transformers",
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "matplotlib",
+        "plotly",
+        "sacrebleu",
+        "nlpaug",
+        "wandb",
+        "pytorch-lightning",
+        "selenium",
+        "sentencepiece",
+        "peft",
+        "rouge-score",
+        "sacrebleu"
+    ],
+)

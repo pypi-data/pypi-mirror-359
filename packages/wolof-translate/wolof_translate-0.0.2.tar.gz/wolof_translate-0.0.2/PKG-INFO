@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: wolof_translate
+Version: 0.0.2
+Summary: Contain function and classes to process corpora for making translation between wolof text and other languages.
+Author: Oumar Kane
+Author-email: oumar.kane@univ-thies.sn
