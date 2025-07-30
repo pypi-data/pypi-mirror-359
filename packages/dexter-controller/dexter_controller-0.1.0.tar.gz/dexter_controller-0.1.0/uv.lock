@@ -1,0 +1,47 @@
+version = 1
+revision = 2
+requires-python = ">=3.11"
+
+[[package]]
+name = "dexter-controller"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "harp-loadcells" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "harp-loadcells", specifier = ">=0.1.0a1" }]
+
+[[package]]
+name = "harp-loadcells"
+version = "0.1.0a1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "harp-protocol" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bf/4e/5c7dfd822e8ebfe21027c6d2c0196fad2a9094c1d00672b8446824c03e00/harp_loadcells-0.1.0a1.tar.gz", hash = "sha256:1c96806dfa4dfe3f97a3f44b699e94e4198081f6916c8973c84fcef98c3503f5", size = 12635, upload-time = "2025-07-02T10:32:37.076Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e5/d1/60ef756842c910185d18124bb3930310ca749310465e2880251470774f81/harp_loadcells-0.1.0a1-py3-none-any.whl", hash = "sha256:f4d31851457487199e1faac977274dab89ce91072c4580ea459b472ff23e57bb", size = 9497, upload-time = "2025-07-02T10:32:35.248Z" },
+]
+
+[[package]]
+name = "harp-protocol"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyserial" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bb/9d/cb689a64faa50b11a96eef252a22d52853d5d057a11e25d741c94aad0665/harp_protocol-0.2.0.tar.gz", hash = "sha256:37483cf538d618d3de5fcbd66673dc61916246dd078a20ce2af0c74954c5621e", size = 86316, upload-time = "2025-07-02T09:29:47.138Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/82/7f/6ee08075cf060311953067589940ad0a132336695ebb4d8337cd849d93c8/harp_protocol-0.2.0-py3-none-any.whl", hash = "sha256:d07fe0f530900fd137a8f3e8d36b4184603e34d407c3c98919d5d7b2e20cf5d6", size = 16831, upload-time = "2025-07-02T09:29:45.809Z" },
+]
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb", size = 159125, upload-time = "2020-11-23T03:59:15.045Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0", size = 90585, upload-time = "2020-11-23T03:59:13.41Z" },
+]
