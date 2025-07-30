@@ -1,0 +1,2 @@
+[salt.loader]
+saltext.mqtt-return = saltext.mqtt_return
