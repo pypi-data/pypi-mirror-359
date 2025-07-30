@@ -1,0 +1,136 @@
+Metadata-Version: 2.4
+Name: chaosorg
+Version: 0.1.0
+Summary: A CLI tool to organize messy data science project folders
+Author-email: Chris Jaimy Antony <chrisjaimyantony@email.com>
+License: MIT License
+        
+        Copyright (c) 2025 Chris Jaimy Antony
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights  
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     
+        copies of the Software, and to permit persons to whom the Software is         
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in    
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN     
+        THE SOFTWARE.
+        
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typer[all]
+Dynamic: license-file
+
+# ⚡ chaosorg — Organize your messy projects with one command
+
+Ever opened your project folder and thought:
+
+> "Why are there 47 files here and none of them are where they should be?"
+
+**ChaosOrg** is a dead-simple Python CLI tool that organizes your project by sorting files into folders like `/data`, `/scripts`, `/notebooks`, etc. It even supports dry runs and undoing your changes — so you're never locked in.
+
+---
+
+## 🧰 What It Does
+
+| File Type              | Goes to Folder |
+| ---------------------- | -------------- |
+| `.csv`, `.xlsx`        | `data/`        |
+| `.ipynb`               | `notebooks/`   |
+| `.py`                  | `scripts/`     |
+| `.pkl`, `.joblib`, etc | `models/`      |
+| `.png`, `.jpg`         | `outputs/`     |
+| `.txt`, `.md`, `.pdf`  | `docs/`        |
+
+And yes, there's an **undo** feature.
+
+---
+
+## 🚀 Installation
+
+Make sure you're in your virtual environment:
+
+```bash
+pip install -e .
+```
+
+---
+
+## 🧪 Usage
+
+### ✅ Organize the current folder
+
+```bash
+chaosorg organize
+```
+
+### 🔍 Preview changes (Dry Run)
+
+```bash
+chaosorg dry-run
+```
+
+### ⏪ Undo the last organization
+
+```bash
+chaosorg undo
+```
+
+Behind the scenes, it saves a `.chaosorg_log.json` to reverse moves. Clean and simple.
+
+---
+
+## 🧠 Why This Exists
+
+I built this because I was working on multiple ML projects and they all looked like digital garbage dumps. I wanted a tool that's:
+
+* **Beginner-friendly**
+* **Undo-able**
+* **Easy to extend**
+* **Kind of fun to use**
+
+---
+
+## 🛠️ Local Dev Setup
+
+```bash
+git clone https://github.com/yourusername/chaosorg.git
+cd chaosorg
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+---
+
+## 🌐 Coming Soon
+
+* Custom folder mappings
+* Exclude folders from being touched
+* Integration with `.chaosconfig` file
+
+---
+
+## 📄 License
+
+MIT — free to use, modify, and even break (but don’t blame me 😅)
+
+---
+
+## 💬 Say Hi!
+
+Pull requests, suggestions, or memes welcome.
+Let's bring **order** to the **chaos**.
