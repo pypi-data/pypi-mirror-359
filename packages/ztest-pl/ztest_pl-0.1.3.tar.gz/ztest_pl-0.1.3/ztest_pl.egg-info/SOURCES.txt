@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+pypi_url_validator/__init__.py
+pypi_url_validator/url_validator.py
+ztest_pl.egg-info/PKG-INFO
+ztest_pl.egg-info/SOURCES.txt
+ztest_pl.egg-info/dependency_links.txt
+ztest_pl.egg-info/top_level.txt
