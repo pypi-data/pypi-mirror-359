@@ -1,0 +1,9 @@
+README.md
+setup.py
+cmo_test/__init__.py
+cmo_test/main.py
+cmo_test.egg-info/PKG-INFO
+cmo_test.egg-info/SOURCES.txt
+cmo_test.egg-info/dependency_links.txt
+cmo_test.egg-info/entry_points.txt
+cmo_test.egg-info/top_level.txt
