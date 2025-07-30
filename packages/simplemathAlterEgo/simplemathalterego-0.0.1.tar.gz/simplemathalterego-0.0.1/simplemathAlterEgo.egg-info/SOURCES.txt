@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+simplemath/__init__.py
+simplemath/operations.py
+simplemathAlterEgo.egg-info/PKG-INFO
+simplemathAlterEgo.egg-info/SOURCES.txt
+simplemathAlterEgo.egg-info/dependency_links.txt
+simplemathAlterEgo.egg-info/top_level.txt
