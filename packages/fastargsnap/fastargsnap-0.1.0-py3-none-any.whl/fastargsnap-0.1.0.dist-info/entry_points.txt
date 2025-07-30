@@ -1,0 +1,2 @@
+[console_scripts]
+fastargsnap = fastargsnap.cli:main
