@@ -1,0 +1,21 @@
+[2025-07-02 16:14:23] [INFO] [fastapi-fastkit] Debug mode enabled. Logging to: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src/fastapi_fastkit/logs/fastkit_debug_20250702_161423.log
+[2025-07-02 16:14:23] [INFO] [fastapi-fastkit] FastAPI-fastkit CLI session started at 2025-07-02 16:14:23.428089
+[2025-07-02 16:14:23] [STDOUT] [34mINFO    [0m CLI invoked with debug mode:                                                                       
+         [35m/Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src/fastapi_fastkit/[0m[95m__main__.py[0m   
+         --debug echo                                                                                       
+[2025-07-02 16:14:23] [INFO] [fastapi-fastkit] CLI invoked with debug mode: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src/fastapi_fastkit/__main__.py --debug echo
+[2025-07-02 16:14:23] [STDOUT] ╭───────────────────────────────────────── About FastAPI-fastkit ──────────────────────────────────────────╮
+│                                                                                                          │
+│     ⚡️ FastAPI fastkit - fastest [1mFastAPI[0m initializer. ⚡️                                                 │
+│                                                                                                          │
+│     Deploy FastAPI app foundation instantly at your local!                                               │
+│                                                                                                          │
+│     ---                                                                                                  │
+│     - Project Maintainer : ]8;id=733200;mailto:bbbong9@gmail.com\bnbong(JunHyeok Lee)]8;;\                                                          │
+│     - Current Version : 1.0.2                                                                            │
+│     - Github : https://github.com/bnbong/FastAPI-fastkit                                                 │
+│                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+[2025-07-02 16:14:23] [STDOUT] FASTKIT_PROJECT_ROOT: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src
+USER_WORKSPACE: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit
+[2025-07-02 16:14:23] [INFO] [fastapi-fastkit] FastAPI-fastkit CLI session ended
