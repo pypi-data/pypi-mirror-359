@@ -1,0 +1,54 @@
+Metadata-Version: 2.3
+Name: ourtils
+Version: 1.0.1
+Summary: Useful code for working with data.
+Author: Anthony
+Author-email: anthony.yoskovich@gmail.com
+Requires-Python: >=3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: black (>=25.1.0)
+Requires-Dist: matplotlib (>=3.10.1,<4.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: plotly (>=6.0.1,<7.0.0)
+Requires-Dist: pytest (>=8.4.1)
+Requires-Dist: pytest-coverage (>=0.0)
+Requires-Dist: ruff (>=0.12.1)
+Requires-Dist: scikit-learn (==1.6.1)
+Requires-Dist: seaborn (>=0.13.2)
+Requires-Dist: spacy (>=3.8.7)
+Requires-Dist: statsmodels (>=0.14.4,<0.15.0)
+Description-Content-Type: text/markdown
+
+# ourtils
+
+[![Documentation Status](https://readthedocs.org/projects/ourtils/badge/?version=latest)](https://ourtils.readthedocs.io/en/latest/?badge=latest)
+
+A collection of useful code for working with data.
+
+## Install from pypi
+
+```
+$ pip install ourtils
+```
+
+## Dev Tips
+
+This package uses `uv`. To run tests:
+
+```
+$ uv sync
+$ uv run pytest
+```
+
+## Buildings docs locally
+
+First make sure you have `make` installed, if you're on windows you can download it here: https://chocolatey.org/install
+
+Then, create and activate a _new_ virtual environment using `requirements.txt` in the `docs/` directory. Then run this from inside the `docs` directory:
+```
+$ make clean html
+```

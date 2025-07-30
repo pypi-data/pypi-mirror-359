@@ -1,0 +1,13 @@
+ourtils/__init__.py,sha256=d4QHYmS_30j0hPN8NmNPnQ_Z0TphDRbu4MtQj9cT9e8,22
+ourtils/diffs.py,sha256=xce7hBhFdEppmyR8acCOD8gQp6JL12b5mKNwxLLNWhk,6053
+ourtils/excel.py,sha256=9gg5nTjb3EYHgEQKGivSPH_84pSv4Y_9QZlCERN0ZB0,781
+ourtils/general.py,sha256=k4aA240pthVDCEtDKxaoVMbRfDxTtaMbAtWVSCHbmLA,2000
+ourtils/managers.py,sha256=UGD95shPjqH_31CXmavs0CUEY2qoLwwtjFQbsH7nzhM,1209
+ourtils/misc.py,sha256=qdjiuQLuhcDpyLYCr-O4-w339mvftPebstVHGZ7JTWk,895
+ourtils/modeling.py,sha256=8vkdV7mU5FkGIimqH4xsN3onHLLjBk14a0HemJnBO34,11677
+ourtils/visualize.py,sha256=aAdAAmUeeR3ijP-T1qmMKl5af8fZnJtRZrRXUEmeBG0,2379
+ourtils/wrangling.py,sha256=omRtwfjsUjLQDe4514hSzsT2bI9YVPHx1w69gjwWB1E,9987
+ourtils-1.0.1.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+ourtils-1.0.1.dist-info/METADATA,sha256=6BxRBqoK2P0R7kUh2ozJpgMLfPwYmNqQyUTdpmASniA,1553
+ourtils-1.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+ourtils-1.0.1.dist-info/RECORD,,
