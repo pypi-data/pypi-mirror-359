@@ -1,0 +1,68 @@
+{% extends "greenlight/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">{% translate "Status" %}</h2>
+
+    {% if config %}
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <h3>
+                    {% if config.fleet_status == "green" %}
+                        🟢 {{ config.green_message }}
+                    {% elif config.fleet_status == "yellow" %}
+                        🟡 {{ config.yellow_message }}
+                    {% else %}
+                        🔴 {{ config.red_message }}
+                    {% endif %}
+                </h3>
+            </div>
+        </div>
+        {% if config.fleet_status != "red" %}
+        <div class="row text-center mb-3">
+            <div class="col-md-6">
+                <h5>{% translate "Fleet Commander" %}</h5>
+                <p>
+                    {% if config.current_fc %}
+                        {{ config.current_fc.character_name }}
+                    {% else %}
+                        <i>{% translate "No FC assigned" %}</i>
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <h5>{% translate "Doctrine" %}</h5>
+                <p>
+                    {% if config.current_doctrine %}
+                        <a href="{% url 'fittings:view_doctrine' config.current_doctrine.pk %}">
+                            {{ config.current_doctrine.name }}
+                        </a>
+                    {% else %}
+                        <i>{% translate "No doctrine assigned" %}</i>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <strong>{% translate "Staging Systems" %}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for system in config.staging_systems.all %}
+                    <li class="list-group-item">{{ system.name }}</li>
+                {% empty %}
+                    <li class="list-group-item text-muted">{% translate "No systems configured" %}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-warning text-center">
+            {% translate "No configuration found." %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
