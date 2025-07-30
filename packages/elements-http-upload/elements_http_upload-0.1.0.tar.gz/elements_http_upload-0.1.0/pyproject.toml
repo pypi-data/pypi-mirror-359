@@ -1,0 +1,135 @@
+# SPDX-FileCopyrightText: 2025 Helmholtz-Zentrum hereon GmbH
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = ['setuptools >= 61.0', 'versioneer[toml]']
+
+[project]
+name = "elements-http-upload"
+dynamic = ["version"]
+description = "A small convenience command-line utility to upload files via HTTP to an elements instance"
+
+readme = "README.md"
+keywords = [
+    "datahub",
+    "elements",
+    "mams",
+    "python",
+    "http",
+    "file transfer",
+]
+
+authors = [
+    { name = 'Philipp S. Sommer', email = 'philipp.sommer@hereon.de' },
+]
+maintainers = [
+    { name = 'Philipp S. Sommer', email = 'philipp.sommer@hereon.de' },
+]
+license = { text = 'Apache-2.0' }
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Typing :: Typed",
+]
+
+requires-python = '>= 3.9'
+dependencies = [
+    # add your dependencies here
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "requests",
+    "progressbar2",
+]
+
+[project.urls]
+Homepage = 'https://codebase.helmholtz.cloud/hcdc/elements/elements-http-upload'
+Documentation = "https://elements-http-upload.readthedocs.io/en/latest/"
+Source = "https://codebase.helmholtz.cloud/hcdc/elements/elements-http-upload"
+Tracker = "https://codebase.helmholtz.cloud/hcdc/elements/elements-http-upload/issues/"
+
+
+[project.optional-dependencies]
+testsite = [
+    "tox",
+    "isort==5.12.0",
+    "black==23.1.0",
+    "blackdoc==0.3.8",
+    "flake8==6.0.0",
+    "pre-commit",
+    "mypy",
+    "pytest-cov",
+    "reuse",
+    "cffconvert",
+    "types-requests",
+
+]
+docs = [
+    "sphinx-argparse",
+    "autodocsumm",
+    "sphinx-rtd-theme",
+    "hereon-netcdf-sphinxext",
+    "sphinx-design",
+    "myst_parser",
+]
+dev = [
+    "elements-http-upload[testsite]",
+    "elements-http-upload[docs]",
+    "reuse-shortcuts>=1.0.1",
+    "types-PyYAML",
+]
+
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.setuptools]
+zip-safe = false
+license-files = ["LICENSES/*"]
+
+[tool.setuptools.package-data]
+elements_http_upload = ["py.typed"]
+
+[tool.setuptools.packages.find]
+namespaces = false
+exclude = [
+    'docs',
+    'tests*',
+    'examples'
+]
+
+[tool.pytest.ini_options]
+addopts = '-v'
+
+[tool.versioneer]
+VCS = 'git'
+style = 'pep440'
+versionfile_source = 'elements_http_upload/_version.py'
+versionfile_build = 'elements_http_upload/_version.py'
+tag_prefix = 'v'
+parentdir_prefix = 'elements-http-upload-'
+
+[tool.isort]
+profile = "black"
+line_length = 79
+src_paths = ["elements_http_upload"]
+float_to_top = true
+known_first_party = "elements_http_upload"
+
+[tool.black]
+line-length = 79
+target-version = ['py39']
+
+[tool.coverage.run]
+omit = ["elements_http_upload/_version.py"]
+
+[project.scripts]
+elements-http-upload = "elements_http_upload.__main__:main"
