@@ -1,0 +1,12 @@
+kid_duplex_controller.py,sha256=TFrI47ZY3dZwmRNh7YXmWvCmts4CPWskwapzNsZ7jlM,6869
+kid_protocol.py,sha256=ggOPbnB_Tu3h-AJFPpIIRVJRQMzcVfYuAkCHCQg1klU,3151
+kid_serial.py,sha256=hK9mMMOeU5g_1oVenBZJvWEaICYh1JMqXbK7Xbx9qmU,1615
+kid_speech.py,sha256=7ArKl6w8f4szWmxTpQlduKwKlxmjXixSKXECK0F1MRE,8849
+kid_vision.py,sha256=epJ4tolfBKqGMtLds72vZ3XPCg6pqD-gXtgyu7ZXrw0,8657
+xingkong_board.py,sha256=B2TuC8bikyzIzFdw4tJYo7M1VThtEZ7LGbwjNGgsA_Y,6409
+xingkong_board_data/__init__.py,sha256=yELa263z9VTfUh14qtZPUrILPMoDpaz89hRTaxZp0UI,517
+xingkong_board_data/vosk-model-small-cn-0.22.zip,sha256=Oviw5-D4Na6dQUzl31gCN6PPsI1YbJ-7sPf_Ka1bFLo,43898754
+xingkong_board-2.0.2.dist-info/METADATA,sha256=RL5RtshQWNcCJvtQuu6LM9SlsMnXiEh-fbWg1v4Pey0,9353
+xingkong_board-2.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xingkong_board-2.0.2.dist-info/top_level.txt,sha256=gH4EYbuzRmLTv3QKlWi3kglm5lmEAdJLaJNWBafW6VM,114
+xingkong_board-2.0.2.dist-info/RECORD,,

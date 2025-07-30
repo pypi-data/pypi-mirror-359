@@ -1,0 +1,332 @@
+Metadata-Version: 2.4
+Name: xingkong-board
+Version: 2.0.2
+Summary: 行空板双工通信与本地视觉控制库 - 支持手势识别、语音控制和传感器数据处理
+Home-page: https://github.com/xingkong/xingkong-board
+Author: XingKong Team
+Author-email: xingkong@example.com
+License: MIT
+Keywords: xingkong board robot control vision speech gesture hardware education
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Education
+Classifier: Topic :: System :: Hardware
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial>=3.5
+Requires-Dist: opencv-python>=4.7.0
+Requires-Dist: mediapipe>=0.10.0
+Requires-Dist: pyttsx3>=2.90
+Requires-Dist: vosk>=0.3.45
+Requires-Dist: pyaudio>=0.2.13
+Requires-Dist: SpeechRecognition>=3.10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 行空板双工通信系统
+
+为开源硬件比赛设计的PC与行空板双工通信解决方案。学生只需写极少代码就能控制行空板并获取传感器数据。
+
+## 快速开始
+
+### 1. 安装依赖
+```bash
+pip install -r requirements.txt
+```
+
+### 2. 下载语音模型（可选）
+如需离线语音识别，下载 Vosk 中文模型：
+- 下载: https://alphacephei.com/vosk/models (vosk-model-small-cn-0.22)
+- 解压到: `models/vosk-model-small-cn-0.22/`
+
+### 3. 运行示例
+```bash
+python quickstart.py
+```
+
+**控制方式**：
+- **手势控制**：
+  - 1个手指：开灯
+  - 2个手指：开风扇  
+  - 5个手指：全关
+- **语音控制**（中文）：
+  - "开灯" / "关灯"
+  - "开风扇" / "关风扇"
+  - "你好" / "停止"
+
+## 系统架构
+
+### 核心文件
+- `simple_robot.py` - 简化的行空板API
+- `student_quickstart.py` - 学生示例代码
+- `kid_duplex_controller.py` - 双工通信控制器
+- `kid_protocol.py` - 通信协议
+- `kid_serial.py` - 串口通信
+- `kid_vision.py` - 视觉识别（手势0-5）
+- `kid_speech.py` - 语音识别与合成
+
+### 通信协议
+**协议 V3（纯 JSON 字典）**
+
+- 电脑 → 单片机: `{"LED":"ON"}`  (支持多个键: `{"LED":"ON", "FAN":"OFF"}`)
+- 单片机 回 -> PC: `{"TEMP":25.4, "HUMI":60, "LIGHT":350}`
+
+保持 **一行一条 JSON**。比 V2 的 `{"message": "LED:ON"}` 更直观且解析简单。
+
+## 学生API
+
+核心思想：**极简的设备控制与事件响应**
+
+### 基础控制
+```python
+from kid_duplex_controller import XingKongController
+
+# 创建控制器（默认使用离线语音识别）
+xingkong = XingKongController(port="COM5", offline_speech=True)
+
+# 发送单个指令
+xingkong.send("LED", "ON")           # 开灯
+xingkong.send("FAN", "OFF")          # 关风扇
+
+# 发送多个指令
+xingkong.send_multi(LED="ON", FAN="OFF", BUZZER="ON")
+```
+
+### 事件响应
+```python
+# 手势控制
+def gesture_handler(gesture, pose):
+    if gesture == "one":   xingkong.send("LED", "ON")
+    elif gesture == "two": xingkong.send("FAN", "ON") 
+    elif gesture == "five": xingkong.send_multi(LED="OFF", FAN="OFF")
+
+# 语音控制（支持中文）
+def speech_handler(text):
+    if "开灯" in text: xingkong.send("LED", "ON")
+    elif "关灯" in text: xingkong.send("LED", "OFF")
+    elif "你好" in text: xingkong.send("TTS", "你好！")
+
+# 传感器响应
+def sensor_handler(data):
+    temp = data.get("temp", 0)
+    if temp > 30: xingkong.send("FAN", "ON")
+    
+    dist = data.get("dist", 0)  
+    if dist < 10: xingkong.send("BUZZER", "ON")
+
+# 原始数据处理
+def raw_handler(line):
+    if "BTN" in line: xingkong.send("LED", "BLINK")
+
+# 注册回调并启动
+xingkong.when_gesture(gesture_handler)\
+        .when_speech(speech_handler)\
+        .when_sensor(sensor_handler)\
+        .when_raw(raw_handler)\
+        .start()
+```
+
+## 行空板端示例
+
+行空板端只需要简单的字符串判断：
+
+```python
+# 行空板Arduino/MicroPython代码示例
+while True:
+    if serial.available():
+        line = serial.readline().decode().strip()
+        
+        # 直接判断设备名
+        if "LED" in line:
+            if "ON" in line:   led_on()
+            if "OFF" in line:  led_off()
+            
+        if "FAN" in line:
+            if "ON" in line:   fan_on()
+            if "OFF" in line:  fan_off()
+            
+        if "MOVE" in line:
+            if "FWD" in line:   move_forward()
+            if "STOP" in line:  stop_motor()
+            
+    # 发送传感器数据
+    temp = read_temperature()
+    dist = read_distance()
+    msg = f"TEMP:{temp}|DIST:{dist}\n"
+    serial.print(msg)
+    delay(1000)
+```
+
+## 开发测试
+
+### 集成测试
+```bash
+python test_simple_protocol.py COM5 [mode]
+```
+
+选择测试模式：
+1. `send` - PC发送模式，测试控制命令
+2. `receive` - PC接收模式，测试传感器数据接收
+3. `device` - 设备模拟模式，模拟行空板进行测试
+
+## 硬件连接
+
+1. 行空板通过USB线连接PC
+2. 确认串口号（Windows: COM5, Linux: /dev/ttyUSB0）
+3. 波特率：115200
+
+## 故障排除
+
+**串口连接失败**
+- 检查USB线连接
+- 确认串口号正确
+- 检查行空板是否正常启动
+
+**视觉识别不工作**
+- 确认摄像头权限
+- 检查光线是否充足
+- 手势要清晰，面向摄像头
+
+**语音识别不工作**
+- 检查麦克风权限
+- 按空格键开始录音
+- 说话清晰，环境安静
+
+**心跳超时**
+- 检查行空板程序是否正常运行
+- 确认协议格式正确
+- 检查串口连接稳定性
+
+## 为什么选择极简协议？
+
+1. **学生友好** - 不需要学习复杂的JSON或XML
+2. **调试简单** - 直接看字符串就知道内容
+3. **代码最少** - `if "LED" in line:` 一行搞定
+4. **性能更好** - 没有解析开销，速度更快
+5. **容错性强** - 即使格式稍有问题也能工作
+
+## 协议详情
+
+详细协议说明请参考 [PROTOCOL_DOC.md](PROTOCOL_DOC.md)
+
+## 视觉 KidVision
+
+现在可以按需开启：
+
+```python
+from kid_vision import KidVision
+
+# 仅手势识别
+vision = KidVision(enable_gesture=True, enable_pose=False)
+
+# 仅姿态识别
+vision = KidVision(enable_gesture=False, enable_pose=True)
+
+vision.run()
+```
+
+这样可显著减少 CPU 占用，避免卡顿。
+
+## 语音功能
+
+### TTS（语音合成）
+```python
+from kid_speech import SpeechIO
+speech = SpeechIO()
+speech.speak("你好，我是行空机器人")
+```
+
+### ASR（语音识别）
+支持在线和离线两种模式：
+
+**离线识别（推荐）**：基于 Vosk，无需网络
+```python
+from kid_speech import OfflineSpeechRecognizer
+
+# 需要先下载中文模型到 models/vosk-model-small-cn-0.22
+rec = OfflineSpeechRecognizer(
+    callback=lambda txt: print("识别到:", txt),
+    model_path="models/vosk-model-small-cn-0.22"
+)
+rec.start()
+```
+
+**在线识别**：使用 Google Speech API
+```python
+from kid_speech import SpeechRecognizer
+rec = SpeechRecognizer(lambda txt: print("识别到:", txt))
+rec.start()
+```
+
+### 控制器集成
+`XingKongController` 会根据 `offline_speech` 参数自动选择识别模式：
+```python
+from kid_duplex_controller import XingKongController
+
+# 使用离线识别（默认）
+xingkong = XingKongController(offline_speech=True)
+
+# 使用在线识别
+xingkong = XingKongController(offline_speech=False)
+
+xingkong.when_speech(lambda text: print(f"语音指令: {text}")).start()
+```
+
+### 语音指令示例
+`quickstart.py` 支持以下中文语音控制：
+- **"开灯" / "打开灯"** → 开启LED
+- **"关灯" / "关闭灯"** → 关闭LED  
+- **"开风扇" / "打开风扇"** → 开启风扇
+- **"关风扇" / "关闭风扇"** → 关闭风扇
+- **"你好"** → 语音回应
+- **"停止" / "全部关闭"** → 关闭所有设备
+
+## 模型配置
+
+### Vosk 中文模型下载
+1. 访问 https://alphacephei.com/vosk/models
+2. 下载 `vosk-model-small-cn-0.22.zip`（约 42MB）
+3. 解压到 `models/vosk-model-small-cn-0.22/`
+4. 确保目录结构：
+   ```
+   models/vosk-model-small-cn-0.22/
+   ├── am/
+   ├── conf/
+   ├── graph/ 
+   ├── ivector/
+   └── README
+   ```
+
+### 依赖安装
+```bash
+pip install vosk pyaudio
+```
+
+**Windows 用户**：如果 `pyaudio` 安装失败，请下载预编译包：
+```bash
+# 从 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio 下载对应版本
+pip install PyAudio-0.2.13-cp311-cp311-win_amd64.whl
+```
+
+---
+
+**适用场景**: 开源硬件比赛、教学演示、机器人控制  
+**技术栈**: Python + MediaPipe + pyttsx3 + speech_recognition + pyserial 
