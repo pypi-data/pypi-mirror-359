@@ -1,0 +1,41 @@
+# Include the README
+include README.md
+
+# Include the license
+include LICENSE
+
+# Include the changelog
+include CHANGELOG.md
+
+# Include requirements files
+include requirements.txt
+include requirements-dev.txt
+
+# Include configuration files
+include *.cfg
+include *.ini
+include *.toml
+include pyproject.toml
+
+# Include documentation
+recursive-include docs *.rst *.md *.txt *.py *.bat Makefile
+recursive-exclude docs/_build *
+
+# Include tests
+recursive-include tests *.py
+
+# Include examples
+recursive-include examples *.py *.json *.md
+
+# Include type stubs
+recursive-include src *.pyi
+
+# Exclude build artifacts
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .coverage
+global-exclude .tox
+global-exclude .pytest_cache
