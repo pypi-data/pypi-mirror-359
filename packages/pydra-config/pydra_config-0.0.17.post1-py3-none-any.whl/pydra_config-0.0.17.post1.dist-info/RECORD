@@ -1,0 +1,11 @@
+pydra/__init__.py,sha256=CVRMgIYmuVKuYxkoCdrHB6vrf28seutBMiISJcguZRE,684
+pydra/cli.py,sha256=4708nAeqGP8wCDhnR9XtI6YzATiqj8H3-0v1DfLuXxY,3762
+pydra/config.py,sha256=zYDlw5nMXjN7phIkX-gR1mL942RLLS5Go7MM6POQif0,4105
+pydra/parser.py,sha256=78QE0fCrVAOFJJq2zlpwbg6sFCjI91QFQmrhCHQgujM,4370
+pydra/utils.py,sha256=MEpCs1PMQ5xIbYRO9JpByGNphLmz3mPolB0rTFkbnMg,5299
+pydra/version.txt,sha256=j8aksNI2sSH9AS2JsMY27vsvR0ven84k4eEn3pXDtw0,12
+pydra_config-0.0.17.post1.dist-info/licenses/LICENSE,sha256=LKLY-wc88eDUIyU1KFN7syJcHx3XlYcUetJxv0StyBw,572
+pydra_config-0.0.17.post1.dist-info/METADATA,sha256=XSY9KUf6sonY4cgijNIo4yQ6RbDN5ld5sViZzKq-zz4,9591
+pydra_config-0.0.17.post1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydra_config-0.0.17.post1.dist-info/top_level.txt,sha256=D8Pw1DC98AV-QvicdBBTYXiBJAzbSKp-h946UGQotHk,6
+pydra_config-0.0.17.post1.dist-info/RECORD,,
