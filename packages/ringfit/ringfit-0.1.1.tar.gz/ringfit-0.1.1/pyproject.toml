@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ringfit"
+version = "0.1.1"
+description = "Ring-fitting utilities for EHT Imaging."
+readme = "README.md"
+authors = [{ name = "Frank Myhre" }]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+
+dependencies = [
+    "ehtim>=0.3",
+    "numpy>=1.23",
+    "matplotlib",
+]
+
+# Console-script entry points go **inside** the project table
+[project.scripts]
+ring-analyze = "ringfit.scripts.analyze_image:main"
