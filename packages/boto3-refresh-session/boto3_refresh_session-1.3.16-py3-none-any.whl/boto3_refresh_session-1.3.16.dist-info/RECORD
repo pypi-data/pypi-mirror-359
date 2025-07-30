@@ -1,0 +1,11 @@
+boto3_refresh_session/__init__.py,sha256=zb1pSAs5tu6DDGFJibXDoMxTB0wxFynt2USx0PWKziw,364
+boto3_refresh_session/custom.py,sha256=xW_OiAO1D6-uPj-JWMjXmgNy1BpQxvF7nWavrGZtrqA,3795
+boto3_refresh_session/ecs.py,sha256=2lLMDWEE_JArBf0sRtcFmrzxiIpo_S6dauHS-TDUn4U,3713
+boto3_refresh_session/exceptions.py,sha256=qcFzdIuK5PZirs77H_Kb64S9QFb6cn2OJtirjvaRLiY,972
+boto3_refresh_session/session.py,sha256=wtaLKf2DOnUpt9wJLP_9j2zJEhhFRcUMBNvKBzWY7-Q,5351
+boto3_refresh_session/sts.py,sha256=gJKbslmNl8kR8oAeZfOGmrHtgUUxMm7e9hPgZO678FE,3174
+boto3_refresh_session-1.3.16.dist-info/LICENSE,sha256=I3ZYTXAjbIly6bm6J-TvFTuuHwTKws4h89QaY5c5HiY,1067
+boto3_refresh_session-1.3.16.dist-info/METADATA,sha256=yoKsAPM28pzClq58vh67pLCVhx_D_ewUHwcj9I9w9WE,7804
+boto3_refresh_session-1.3.16.dist-info/NOTICE,sha256=1s8r33qbl1z0YvPB942iWgvbkP94P_e8AnROr1qXXuw,939
+boto3_refresh_session-1.3.16.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+boto3_refresh_session-1.3.16.dist-info/RECORD,,
