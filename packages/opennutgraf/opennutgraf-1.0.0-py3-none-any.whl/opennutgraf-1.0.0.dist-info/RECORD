@@ -1,0 +1,11 @@
+opennutgraf/__init__.py,sha256=ew6D608qfqT93IloN-M9Dwyk2CEAJQR7pW57Nq4kAT4,525
+opennutgraf/article_extractor.py,sha256=lvoiBIvnDZzZ3Mbq13-vE9j4vsHlLsuxq8VdGGeXPEk,9488
+opennutgraf/client.py,sha256=mcww-Taia9lj7LSBGhLmv6KkcXIt_Pk6TkGdTw9IuFo,3572
+opennutgraf/llm_service.py,sha256=H_uEnQ1nCLsSwOCD2aB1wNA9x42TprBPhuke0rU8PN4,9546
+opennutgraf/models.py,sha256=mKI_2nIGcKjYbVOEknkv50M2WDxjdfe27zijWwaqnog,2033
+opennutgraf/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+opennutgraf-1.0.0.dist-info/licenses/LICENSE,sha256=FyAX9dxt1ce-hfwnUdEMs1bIzT84y1MTDoayTPimHEo,1068
+opennutgraf-1.0.0.dist-info/METADATA,sha256=LCE8GnQIi3uiK9oku6rh0QidzZzsP35_TgcAIjYZ45s,9684
+opennutgraf-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+opennutgraf-1.0.0.dist-info/top_level.txt,sha256=2jPbDn43XJACUT5rPNIwXTHtMvyjJjpGROKGLmC4AcU,12
+opennutgraf-1.0.0.dist-info/RECORD,,
