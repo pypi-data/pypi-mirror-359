@@ -1,0 +1,2 @@
+[console_scripts]
+ring-analyze = ringfit.scripts.analyze_image:main
