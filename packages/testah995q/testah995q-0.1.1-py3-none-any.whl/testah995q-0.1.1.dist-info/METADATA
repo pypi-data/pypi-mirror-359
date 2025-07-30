@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: testah995q
+Version: 0.1.1
+Summary: Capture terminal output and send to Telegram
+Author: YourName
+Author-email: you@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
