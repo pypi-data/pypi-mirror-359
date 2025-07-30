@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "svg2unicode"
+version = "0.1.5"
+description = "Convert SVG files to Unicode block characters for terminal display"
+authors = ["Tom Sapletta <info@softreck.dev>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/veridock/svg2unicode"
+repository = "https://github.com/veridock/svg2unicode"
+documentation = "https://github.com/veridock/svg2unicode#readme"
+keywords = ["svg", "unicode", "terminal", "graphics", "conversion"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Terminals",
+    "Topic :: Utilities"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+Pillow = ">=9.0.0"
+cairosvg = ">=2.5.0"
+
+[tool.poetry.extras]
+dev = ["pytest", "pytest-cov", "black", "isort", "mypy", "flake8"]
+
+[tool.poetry.scripts]
+svg2unicode = "svg2unicode.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\\.pyi?$'
+extend-exclude = '''
+# Exclude generated files
+'''
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
