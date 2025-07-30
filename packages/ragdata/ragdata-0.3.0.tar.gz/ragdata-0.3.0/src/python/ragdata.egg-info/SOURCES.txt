@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/python/ragdata/__init__.py
+src/python/ragdata/base.py
+src/python/ragdata.egg-info/PKG-INFO
+src/python/ragdata.egg-info/SOURCES.txt
+src/python/ragdata.egg-info/dependency_links.txt
+src/python/ragdata.egg-info/requires.txt
+src/python/ragdata.egg-info/top_level.txt
+src/python/ragdata/arxiv/__init__.py
+src/python/ragdata/arxiv/index.py
+src/python/ragdata/wikipedia/__init__.py
+src/python/ragdata/wikipedia/index.py
+src/python/ragdata/wikipedia/views.py
