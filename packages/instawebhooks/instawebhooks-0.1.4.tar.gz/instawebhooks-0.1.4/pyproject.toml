@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instawebhooks"
+description = "Discord webhooks for new Instagram posts from any profile"
+readme = "README.rst"
+requires-python = ">=3.8"
+keywords = ["webhooks", "feed", "embed", "Instagram", "Discord", "CLI"]
+authors = [
+  { name="Ryan Luu", email="ryan.luu@ryanluu.dev" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: Utilities",
+  "Topic :: Internet",
+  "Topic :: Communications",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+  "aiohttp",
+  "discord.py",
+  "requests",
+  "instaloader",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/RyanLua/InstaWebhooks"
+Documentation = "https://github.com/RyanLua/InstaWebhooks/wiki"
+Repository = "https://github.com/RyanLua/InstaWebhooks.git"
+Issues = "https://github.com/RyanLua/InstaWebhooks/issues"
+Sponsor = "https://github.com/sponsors/RyanLua"
+
+[project.scripts]
+instawebhooks = "instawebhooks.__main__:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "instawebhooks.__version__"}
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.format]
+max-line-length = "88"

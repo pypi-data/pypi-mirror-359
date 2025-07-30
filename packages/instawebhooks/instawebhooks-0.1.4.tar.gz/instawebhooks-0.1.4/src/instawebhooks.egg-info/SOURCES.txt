@@ -1,0 +1,12 @@
+LICENSE.txt
+README.rst
+pyproject.toml
+src/instawebhooks/__init__.py
+src/instawebhooks/__main__.py
+src/instawebhooks/parser.py
+src/instawebhooks.egg-info/PKG-INFO
+src/instawebhooks.egg-info/SOURCES.txt
+src/instawebhooks.egg-info/dependency_links.txt
+src/instawebhooks.egg-info/entry_points.txt
+src/instawebhooks.egg-info/requires.txt
+src/instawebhooks.egg-info/top_level.txt
