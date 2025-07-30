@@ -1,0 +1,7 @@
+[project]
+name = "gxl_a1"
+version = "0.0.1"
+dependencies = []
+
+[project.gui-scripts]
+hello-world = "timmins:hello_world"
