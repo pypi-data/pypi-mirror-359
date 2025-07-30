@@ -1,0 +1,370 @@
+Metadata-Version: 2.4
+Name: zhongyao-mcp-server
+Version: 0.0.3
+Summary: 主要实现的是火山引擎的提供的中药文生图，文生视频，使用免费edgett实现文生音频，整合打包合成打包视频MCP-Server
+Author-email: zhouqingyu666 <zhouqingyu666@aisino.com>
+Requires-Python: >=3.11
+Requires-Dist: configparser
+Requires-Dist: cos-python-sdk-v5==1.9.33
+Requires-Dist: httpx
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: moviepy==1.0.3
+Requires-Dist: openai>=1.86.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: sse-starlette
+Requires-Dist: uvicorn
+Description-Content-Type: text/markdown
+
+# ZhongYao MCP Server
+
+## 项目简介
+
+zhongyao-mcp-server 是一个基于火山引擎豆包大模型API和MCP（Model Context Protocol）协议的AI工具服务器。它专注于中草药领域，提供了一系列强大的多模态内容生成工具。通过本服务器，用户可以轻松地在支持MCP的客户端（如 Trae, Cherry Studio）中，一键式地为指定的中草药生成包含详细信息、图片、语音解说和视频的完整短视频。
+
+项目的核心是将复杂的多步骤、多模态生成流程（包括资料查询、文案撰写、语音合成、视频生成、后期合成）封装成简单易用的工具，极大地简化了中草药科普内容的创作过程。
+
+**核心功能特性：**
+
+- **文生图**：根据文本描述生成高质量图片
+- **文字生成语音**: 根据文字生成TTS语音播报
+- **文生视频**：根据文本描述生成视频内容
+- **图生视频**：基于图片和文本描述生成动态视频
+- **模型配置**：支持多种豆包AI模型选择
+
+**支持的AI模型：**
+
+- 语言模型：deepseek-v3-250324
+- 文生图模型：`doubao-seedream-3-0-t2i-250415`
+- 图生视频模型：`doubao-seedance-1-0-lite-i2v-250428`
+- 文生视频模型：`doubao-seedance-1-0-lite-t2v-250428`
+- 文字生成语音：edgetts (免费)
+
+
+## 部署指南
+
+### **环境依赖**
+
+- Python >= 3.11
+- 火山引擎豆包API密钥
+
+  这个MCP 依赖包我们使用uv 管理所以pyproject.toml 
+
+```json
+dependencies = [
+    "mcp[cli]>=1.9.4", # 添加requests依赖
+    "requests>=2.31.0",
+    "openai>=1.86.0",
+    "cos-python-sdk-v5==1.9.33",
+    "moviepy==1.0.3",
+    "httpx",
+]
+```
+
+
+
+### 配置文件说明
+
+这代码配置文件我们使用config.ini 内容如下
+
+```ini
+# config.ini
+[API]
+api_key = YOUR_API_KEY_HERE
+base_url = https://ark.cn-beijing.volces.com/api/v3
+
+[Models]
+# 语言模型
+chat_model = deepseek-v3-250324
+# 文生图模型
+image_model = doubao-seedream-3-0-t2i-250415
+# 文生视频模型
+video_model = doubao-seedance-1-0-lite-t2v-250428
+
+[edgetts]
+tts_api_key =zhouhuizhou
+tts_base_url=https://edgettsapi.duckcloud.fun/v1
+
+[common]
+cos_region  = ap-nanjing                                     # 腾讯云OSS存储Region
+cos_secret_id  = AKID003XXXXXXgO9qPl                         # 腾讯云OSS存储SecretId
+cos_secret_key  = IZhavCXXXXXXXXXXX6i9NXUFqGTUOFvS           # 腾讯云OSS存储SecretKey
+cos_bucket =tts-1258720957                                   # 腾讯云OSS存储bucket
+
+# font_path = /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc
+# [Windows 用户配置]
+imagemagick_binary = D:\develop\ImageMagick-7.1.1-Q16\magick.exe
+font_path = SimHei
+# [Linux 用户配置]
+# imagemagick_binary = /home/ImageMagick/magick
+# font_path = /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc
+```
+
+   需要修改的地方火山引擎的api_key 添加你自己的，腾讯云OSS存储。imagemagick_binary  换成你程序安装的目录
+
+   容器版本config.docker.ini  只需要修改火山引擎的api_key和腾讯云OSS存储，imagemagick 容器镜像默认安装（不需要考虑）
+
+  
+
+
+### **安装方式**
+
+**方式一：使用pip安装**
+
+```bash
+pip install zhongyao-mcp-server
+```
+
+**方式二：使用uvx安装**
+
+```bash
+uvx zhongyao-mcp-server
+```
+
+**方式三：使用docker安装（推荐）**
+
+ 在代码当前目录下输入如下命令
+
+```shell
+docker build -t zhongyao_mcp_server .
+```
+
+![img](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/Obsidian/QQ_1751384048751.png)
+
+打包好镜像，我们可以查看容器镜像
+
+![image-20250702131535935](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131535935.png)
+
+启动运行容器
+
+```shell
+docker run -d -p 8003:8003 --name zhongyao_mcp_server_instance zhongyao_mcp_server 
+```
+
+![image-20250702131512291](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131512291.png)
+
+
+
+### **客户端配置**
+
+#### **trae配置**
+
+添加以下配置。请务必将 `DOUBAO_API_KEY` 替换为您的实际火山引擎豆包 API 密钥。
+
+```json
+{
+  "mcpServers": {
+    "zhongyao-mcp-server": {
+      "name": "中药AI视频生成服务",
+      "description": "提供中药信息查询、文案、语音、视频生成及最终合成的服务。",
+      "command": "uvx",
+      "args": [
+        "zhongyao-mcp-server"
+      ],
+      "env": {
+        "ini": "F:\\work\\code\\AIcode\\zhongyao_mcp_server\\config.ini"
+      }
+    }
+  }
+}
+
+sse配置
+{
+  "mcpServers": {
+    "zhongyao-mcp-server": {
+      "url": "http://192.168.1.3:8003/sse"
+    }
+  }
+}
+```
+
+![image-20250702131450052](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131450052.png)
+
+#### **Cherry Studio配置**
+
+1. 打开 Cherry Studio
+
+2. 进入 **设置 → MCP Servers → 添加服务器**
+
+3. 配置参数：
+   - **名称**: `zhongyao-mcp-server
+   - **描述**: `中药AI生成服务`
+   - **类型**: `STDIO`
+   - **命令**: `uvx`
+   - **参数**: `zhongyao-mcp-server
+   - **环境变量**: ini   程序需要依赖config.ini
+   
+4. 点击保存并启用
+
+   详细图解
+
+   ![image-20250702131429098](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131429098.png)
+
+sse配置
+
+![image-20250702131410104](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131410104.png)
+
+配置好后，可以检查到工具有哪些
+
+![image-20250702131329038](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131329038.png)
+
+```json
+studio配置
+
+```
+
+![image-20250702131307661](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131307661.png)
+
+![image-20250702114757460](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702114757460.png)
+
+### **跨平台注意事项**
+
+为了确保在不同操作系统（如 Linux 和 Windows）上顺利运行，请注意以下几点：
+
+1.  **配置文件 `config.ini`**:
+    *   项目打包后，`config.ini` 文件不会自动安装到系统路径。您需要手动将 `config.docker.ini` 复制到您运行程序的目录下，并将其重命名为 `config.ini`。
+    *   请根据您的实际环境修改 `config.ini` 中的配置项，特别是 API 密钥和外部工具的路径。
+2.  **ImageMagick 和 FFmpeg**:
+    *   `moviepy` 库依赖于外部工具 `ImageMagick` 和 `FFmpeg` 来处理视频和图像。这些工具需要单独安装，并且不会随 Python 包一起分发。
+    *   **安装**: 请根据您的操作系统，从官方网站下载并安装 `ImageMagick` 和 `FFmpeg`。
+        *   ImageMagick: [https://imagemagick.org/](https://imagemagick.org/)
+    *   **配置**: 安装完成后，请确保在 `config.ini` 文件中正确配置 `[common]` 部分的 `imagemagick_binary` 路径。例如：
+        *   Windows: `imagemagick_binary = D:\develop\ImageMagick-7.1.1-Q16-HDRI\magick.exe` (请替换为您的实际安装路径)
+        *   Linux: `imagemagick_binary = /usr/bin/magick` (如果已添加到 PATH，则可能不需要完整路径)
+    *   如果 `imagemagick_binary` 未配置，MoviePy 将尝试在系统 PATH 中查找。建议明确配置以避免潜在问题。
+
+### **API密钥获取**
+
+1. 访问 [火山引擎控制台](https://console.volcengine.com/)
+
+2. 注册并登录账户
+
+3. 开通豆包大模型服务（需要分别授权开通各个模型）
+
+   火山引擎模型，需要分别授权开通，点击开通管理
+
+   ![image-20250702131240244](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131240244.png)
+
+4. 在API管理中创建API密钥
+
+   API 管理
+
+   ![image-20250702131219078](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131219078.png)
+
+## 可用工具
+
+
+
+### **2. get_chinese_herb_info**
+
+获取中药材的详细信息。
+
+- `herb_name` (string): 中药材名称。
+- `model` (string, 可选): 用于获取信息的模型名称，默认为 `DEFAULT_CHAT_MODEL`。
+
+### **3. get_chinese_herb_image**
+
+根据中药材名称生成图片。
+
+- `herb_name` (string): 中药材名称。
+- `size` (string, 可选): 图片尺寸，默认"1024x1024"。
+- `model` (string, 可选): 用于生成图片的模型名称，默认为 `DEFAULT_IMAGE_MODEL`。
+  **支持的图片尺寸**: 512x512, 768x768, 1024x1024, 1024x1792, 1792x1024
+
+### **4. get_chinese_herb_video**
+
+根据中药材名称生成视频。
+
+- `herb_name` (string): 中药材名称。
+- `duration` (string, 可选): 视频时长（秒），默认"8"。
+- `ratio` (string, 可选): 视频比例，默认"16:9"。
+- `model` (string, 可选): 用于生成视频的模型名称，默认为 `DEFAULT_VIDEO_MODEL`。
+  **支持的视频比例**: 16:9, 9:16, 1:1
+
+### **5. generate_audio_from_text**
+
+将文本转换为语音并上传到COS。
+
+- `text` (string): 需要转换为语音的文本。
+- `voice` (string, 可选): 语音模型，默认"zh-CN-XiaoxiaoNeural"。
+- `speed` (float, 可选): 语音播放速度，默认1.0。
+
+### **6. generate_herb_short_video**
+
+生成关于特定中药材的完整短视频，包括信息获取、文案生成、语音合成和视频合成。
+
+- `herb_name` (string): 中药材名称。
+
+
+## 使用示例
+
+### **1. 获取中药材信息示例**
+
+```
+请使用get_chinese_herb_info工具获取"人参"的详细信息
+```
+
+### **2. 生成中药材图片示例**
+
+```
+请使用get_chinese_herb_image工具生成一张"枸杞"的图片
+```
+
+### **3. 生成中药材视频示例**
+
+```
+请使用get_chinese_herb_video工具生成一个"当归"的8秒视频
+```
+
+### **4. 文本转语音示例**
+
+```
+请使用generate_audio_from_text工具将"你好，这是一个测试语音。"转换为语音
+```
+
+![image-20250702131200253](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131200253.png)
+
+### **5. 生成中药材短视频示例**
+
+```
+请使用generate_herb_short_video工具生成"三七"的短视频
+```
+
+![image-20250702131127743](https://mypicture-1258720957.cos.ap-nanjing.myqcloud.com/image-20250702131127743.png)
+
+## 注意事项
+
+- 视频生成任务可能需要较长时间完成，请耐心等待
+- 确保API密钥有足够的配额
+- 生成的内容URL有时效性，请及时保存
+
+
+## 故障排除
+
+### **常见问题**
+
+1. **API密钥错误**: 确保API密钥正确且有效
+2. **网络连接问题**: 检查网络连接和防火墙设置
+3. **模型不可用**: 确认使用的模型名称正确
+
+### **调试模式**
+
+启用详细日志输出：
+
+```bash
+uvx zhongyao-mcp-server --verbose
+```
+
+
+## 项目信息
+
+**许可证**: MIT License
+
+**作者**:  zhouqingyu666  邮箱 ：zhouqingyu666@aisino.com
+
+**版本**: v0.0.3
+
+- 初始版本发布
+- 支持文生图、文生视频、图生视频、文字生成语音、中药短视频功能
+- 集成火山引擎豆包API、edgetts
+
+**贡献**: 欢迎提交Issue和Pull Request来改进这个项目
