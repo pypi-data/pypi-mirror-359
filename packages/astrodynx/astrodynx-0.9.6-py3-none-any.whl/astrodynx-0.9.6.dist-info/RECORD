@@ -1,0 +1,13 @@
+astrodynx/__init__.py,sha256=YawmEIi65Qm2Ob-z4qpXWV-v5eydyp1sRi2t7vTQdBk,1011
+astrodynx/_version.py,sha256=G3-jFbWze_M_s2m1jT5RlklGgUasNateLk3ahPKdxhg,511
+astrodynx/twobody/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+astrodynx/twobody/kepler_equation.py,sha256=hmztteLuwgB2yubb2RwMFFUsnl3FRh40js7uIpoiZ5Q,10172
+astrodynx/twobody/orb_integrals.py,sha256=aKti7qKiW4f4VZdBwjj-JdPjWoObs_-ZoHnORHFYj-Y,12969
+astrodynx/twobody/uniformulas.py,sha256=FO_9pl6D5L3kumSInEHDLhREtiODTLUd68GqpHXj764,12742
+astrodynx/utils/__init__.py,sha256=CwEGieX-RIuSSpwU9aH_m0br0UHZWYokZKQFnSeYhSI,143
+astrodynx/utils/rotation_matrix.py,sha256=U-08Ge5hF4hqq9yyEbA3LrqH-HxEIX3q3JO00YhJ58w,3400
+astrodynx-0.9.6.dist-info/licenses/LICENSE,sha256=_iF1Yjvsqjz8FRsZgpr7-ICYQNqkgceOfUGdQTTHfMk,1079
+astrodynx-0.9.6.dist-info/METADATA,sha256=ADYUl-Itq3f1g2j6tA03RvRZqbtYhC887nK16nNUJYE,3851
+astrodynx-0.9.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+astrodynx-0.9.6.dist-info/top_level.txt,sha256=x0sTceCA9wh8JVuG3_mtl82ka8zfSXD5ZqEwJ_kEkFs,10
+astrodynx-0.9.6.dist-info/RECORD,,
