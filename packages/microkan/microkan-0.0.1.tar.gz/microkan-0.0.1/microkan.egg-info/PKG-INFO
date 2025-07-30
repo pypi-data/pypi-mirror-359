@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: microkan
+Version: 0.0.1
+Summary: FOR FUTURE USE
+Author: Alireza Afzal Aghaei
+Author-email: alirezaafzalaghaei@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.9
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
