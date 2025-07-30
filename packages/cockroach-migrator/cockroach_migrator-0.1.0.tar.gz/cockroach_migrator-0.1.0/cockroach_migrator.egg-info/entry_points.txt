@@ -1,0 +1,3 @@
+[console_scripts]
+cockroach-migrate = cockroach_migrator.cli:main
+crdb-migrate = cockroach_migrator.cli:main

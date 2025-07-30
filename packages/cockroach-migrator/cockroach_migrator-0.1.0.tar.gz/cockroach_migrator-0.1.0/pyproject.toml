@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools>=77.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cockroach-migrator"
+version = "0.1.0"
+description = "A comprehensive tool for migrating data from CockroachDB to PostgreSQL"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Nomos", email = "oss@ordicio.com"},
+]
+maintainers = [
+    {name = "Nomos", email = "oss@ordicio.com"},
+]
+keywords = ["cockroachdb", "postgresql", "migration", "database", "backup", "restore"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: System :: Archiving :: Backup",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0",
+    "psycopg2-binary>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nomos-oss/cockroach-migrator"
+Documentation = "https://github.com/nomos-oss/cockroach-migrator#readme"
+Repository = "https://github.com/nomos-oss/cockroach-migrator.git"
+"Bug Tracker" = "https://github.com/nomos-oss/cockroach-migrator/issues"
+
+[project.scripts]
+cockroach-migrate = "cockroach_migrator.cli:main"
+crdb-migrate = "cockroach_migrator.cli:main"
+
+[tool.setuptools]
+packages = ["cockroach_migrator"]
+
+[tool.setuptools.package-data]
+cockroach_migrator = ["config/*.json", "templates/*.json"]
+
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

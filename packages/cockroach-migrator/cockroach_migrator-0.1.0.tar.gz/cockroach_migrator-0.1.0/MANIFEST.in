@@ -1,0 +1,18 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+recursive-include cockroach_migrator/config *.json
+recursive-include cockroach_migrator/templates *.json
+recursive-include docs *.md
+include tests/*.py
+include tests/__init__.py
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.log
+global-exclude ai_docs*
+global-exclude temp*
+global-exclude cockroach-v*
+global-exclude postgresql-*
+global-exclude .gitignore
