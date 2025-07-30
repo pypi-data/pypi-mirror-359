@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+src/kcolours/__init__.py
+src/kcolours/__main__.py
+src/kcolours/cli.py
+src/kcolours/colours.py
+src/kcolours.egg-info/PKG-INFO
+src/kcolours.egg-info/SOURCES.txt
+src/kcolours.egg-info/dependency_links.txt
+src/kcolours.egg-info/entry_points.txt
+src/kcolours.egg-info/requires.txt
+src/kcolours.egg-info/top_level.txt

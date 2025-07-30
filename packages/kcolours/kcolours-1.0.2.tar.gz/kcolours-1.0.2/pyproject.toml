@@ -1,0 +1,23 @@
+[project]
+name = "kcolours"
+version = "1.0.2"
+description = "CLI tool to extract a colour palette from an image using k-means clustering."
+readme = "README.md"
+license = { file = "LICENSE.md" }
+authors = [{ name = "Chloe Fisher", email = "dev@chlofisher.com" }]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.2.1",
+    "imageio>=2.37.0",
+    "numpy>=2.3.1",
+    "rich>=14.0.0",
+    "scikit-image>=0.25.2",
+    "scipy>=1.16.0",
+]
+
+[project.scripts]
+kcolours = "kcolours.cli:run"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

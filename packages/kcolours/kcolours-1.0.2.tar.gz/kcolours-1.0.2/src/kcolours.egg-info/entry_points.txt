@@ -1,0 +1,2 @@
+[console_scripts]
+kcolours = kcolours.cli:run
