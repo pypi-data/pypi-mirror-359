@@ -1,0 +1,2 @@
+[console_scripts]
+spliit = spliit_client.__main__:main

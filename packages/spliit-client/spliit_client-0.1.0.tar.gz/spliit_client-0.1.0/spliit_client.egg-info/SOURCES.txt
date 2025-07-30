@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+spliit_client/__init__.py
+spliit_client/__main__.py
+spliit_client/client.py
+spliit_client.egg-info/PKG-INFO
+spliit_client.egg-info/SOURCES.txt
+spliit_client.egg-info/dependency_links.txt
+spliit_client.egg-info/entry_points.txt
+spliit_client.egg-info/not-zip-safe
+spliit_client.egg-info/requires.txt
+spliit_client.egg-info/top_level.txt
+tests/__init__.py
+tests/test_client.py
