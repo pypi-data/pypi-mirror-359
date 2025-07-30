@@ -1,0 +1,5 @@
+requests
+selenium
+lxml
+bs4
+progress
