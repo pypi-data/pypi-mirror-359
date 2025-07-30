@@ -1,0 +1,22 @@
+[project]
+name = "php-app-lib-classifier"
+version = "0.1.0"
+description = "A modern, async PHP app library classifier."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.11.7",
+    "pyyaml>=6.0.2",
+    "rich>=14.0.0",
+    "structlog>=25.4.0",
+    "typer[all]>=0.16.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+php-app-lib-classifier = "php_app_lib_classifier.cli:app"
