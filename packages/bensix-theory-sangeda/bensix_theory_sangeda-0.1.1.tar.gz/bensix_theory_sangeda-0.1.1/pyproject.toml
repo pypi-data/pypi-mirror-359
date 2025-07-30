@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bensix-theory-sangeda"
+version = "0.1.1"
+authors = [
+    { name="aaa", email="1821724720@qq.com" },
+]
+description = "一个用于计算苯分子群论的Python包"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/sangeda/bensix-theory" 
