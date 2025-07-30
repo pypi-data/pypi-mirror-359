@@ -1,0 +1,12 @@
+sc/V.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sc/__init__.py,sha256=8owLlihVUd0K_YLQ_yaIFSsZXwoNGwgHhY8frm6PezU,103
+sc/flow_solver.py,sha256=4JKxiC0w6ZPUNZyYWmF9p8kiEhNqw7ccBsySErIudZI,7904
+sc/janitor.py,sha256=TNw04u0BuVaLeYBHFefrk0EmxycYAxESvBu-iobu4Bk,5174
+sc/metrics.py,sha256=A7sKo4Fv-qdbjVpsDnfqOVfOMoKI19-GeFHRqd-swrY,1672
+sc/particle_tracking.py,sha256=nnUCg4fy9kI0EDAxN1JdUeATASQYN9e9VaFG90pGZHc,7375
+sc/random_field.py,sha256=SeYJmrlE31Ee4iV1pZqTVTQkBjPCEO6zmwoFFcKUYHE,2999
+sc/simulation.py,sha256=lntdVicbOgHf9fy8VaQBuiNgALpD2M2PURwikfaPYnI,12435
+PyDDC-1.2.1.dist-info/METADATA,sha256=1WDWQXgW-329UuFYLmaFBZgoi6ahCdVsh8vm_4wIfpo,424
+PyDDC-1.2.1.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+PyDDC-1.2.1.dist-info/top_level.txt,sha256=e3Xerk_LIwwX_RlhLnSZtQvEeWlymYCNmzQccggW-zg,3
+PyDDC-1.2.1.dist-info/RECORD,,
