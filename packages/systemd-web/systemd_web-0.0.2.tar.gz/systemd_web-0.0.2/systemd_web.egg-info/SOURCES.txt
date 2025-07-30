@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+systemd_web.py
+systemd_web.egg-info/PKG-INFO
+systemd_web.egg-info/SOURCES.txt
+systemd_web.egg-info/dependency_links.txt
+systemd_web.egg-info/requires.txt
+systemd_web.egg-info/top_level.txt
