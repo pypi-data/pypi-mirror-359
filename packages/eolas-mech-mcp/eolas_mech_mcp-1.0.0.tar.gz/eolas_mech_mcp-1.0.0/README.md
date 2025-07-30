@@ -1,0 +1,273 @@
+# Eolas MCP Server (Python Edition)
+
+A Model Context Protocol (MCP) server built with Python that provides tools for AI assistants to interact with external systems and perform computations. This project follows MCP best practices with comprehensive error handling, secure configuration management, and proper lifecycle management.
+
+## What is MCP?
+
+The Model Context Protocol (MCP) is an open standard that enables AI assistants to securely connect to external data sources and tools. MCP servers expose functionality through tools that language models can discover and invoke automatically.
+
+## Features
+
+- 🔧 **Extensible Tool System**: Easy-to-add custom tools using FastMCP decorators
+- 🐍 **Python-Powered**: Leverage the extensive Python ecosystem
+- 🔒 **Secure Wallet**: Encrypted wallet management with system keyring integration
+- 🛡️ **Security First**: Environment-based configuration, proper error handling, and secure credential storage
+- 📊 **Comprehensive Logging**: Structured logging with proper error tracking
+- ⚡ **Resource Management**: Proper server lifecycle with startup/shutdown handling
+- 🎯 **Input Validation**: Pydantic-based input validation for all tools
+
+## MCP Best Practices Implemented
+
+This server follows official MCP best practices:
+
+- ✅ **FastMCP with Context**: Uses Context objects for proper logging and error handling
+- ✅ **Environment Configuration**: Uses `.env` files for secure configuration
+- ✅ **Proper Error Handling**: Comprehensive try-catch blocks with meaningful error messages
+- ✅ **Input Validation**: Pydantic models for type-safe input validation
+- ✅ **Lifecycle Management**: Proper server startup and shutdown with resource cleanup
+- ✅ **Security**: Encrypted storage with system keyring integration
+- ✅ **Resources**: Exposes wallet information as MCP resources
+- ✅ **Structured Logging**: Uses Python logging instead of print statements
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- `pip` for package management
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repo-url>
+    cd eolas-mech-mcp/eolas-mcp-server
+    ```
+
+2.  **Set up a virtual environment (recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Configure environment (optional):**
+    ```bash
+    cp env.example .env
+    # Edit .env with your preferred settings
+    ```
+
+## Configuration
+
+The server uses environment variables for configuration. Create a `.env` file:
+
+```bash
+# Optional: Custom file paths
+WALLET_FILE_PATH=./wallet.json
+PASSWORD_FILE_PATH=./password.txt
+```
+
+## Available Tools
+
+### `add`
+
+Adds two numbers and returns the result with comprehensive error handling.
+
+**Parameters:**
+- `a` (int): First number to add
+- `b` (int): Second number to add
+
+**Example Usage:**
+`"Add 42 and 58"`
+
+### `top_up`
+
+Top up the balance of the user. Provides a deposit address or generates a new Ethereum wallet if one doesn't exist. Uses secure wallet management with encrypted storage.
+
+**Parameters:**
+- None
+
+**Example Usage:**
+`"Top up my account"`
+
+## Available Resources
+
+### `wallet://address`
+
+Returns the current wallet address if available.
+
+### `wallet://balance`
+
+Returns the current wallet balance in ETH.
+
+## Security Features
+
+- **Encrypted Private Keys**: Private keys are encrypted using AES-GCM before storage
+- **System Keyring**: Passwords are stored in the system keyring when available
+- **Restricted Permissions**: Wallet and password files have restricted file permissions (600)
+- **Environment Variables**: Sensitive configuration through environment variables
+- **Input Validation**: All inputs are validated using Pydantic models
+- **Error Handling**: Comprehensive error handling prevents information leakage
+
+## Adding New Tools
+
+To add a new tool, simply define a function with the `@mcp.tool()` decorator in the server file:
+
+```python
+@mcp.tool()
+def multiply(a: int, b: int, ctx: Context) -> str:
+    """
+    Multiplies two numbers and returns the result.
+    
+    Args:
+        a: First number to multiply
+        b: Second number to multiply
+        ctx: MCP context for logging and error handling
+    
+    Returns:
+        String representation of the result
+    """
+    try:
+        # Validate inputs if needed
+        if not isinstance(a, int) or not isinstance(b, int):
+            ctx.error("Invalid input types")
+            return "Error: Both inputs must be integers"
+        
+        result = a * b
+        ctx.info(f"Multiplication performed: {a} × {b} = {result}")
+        return f"The result is {result}"
+        
+    except Exception as e:
+        ctx.error(f"Error in multiply tool: {e}")
+        return f"Error: Failed to perform multiplication - {str(e)}"
+```
+
+## Adding to Cursor
+
+To use this MCP server with Cursor:
+
+1.  **Install the package from PyPI:**
+    ```bash
+    pip install eolas-mech-mcp
+    ```
+
+2.  **Open Cursor Settings**:
+    -   Press `Cmd/Ctrl + ,` to open settings.
+    -   Search for "MCP" or navigate to Extensions → MCP.
+
+3.  **Edit your MCP configuration** by adding a new server entry. The command is now much simpler:
+    ```json
+    {
+      "mcpServers": {
+        "eolas-mcp-server-python": {
+          "command": "eolas-mech-mcp",
+          "args": [],
+        }
+      }
+    }
+    ```
+
+4.  **Restart Cursor**: Close and reopen Cursor for the changes to take effect.
+
+## Development
+
+### Running the Server Locally
+
+For development, you can run the server directly from the source code without installing the package.
+
+1.  **Set up a virtual environment and install dependencies:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+2.  **Run the server:**
+    ```bash
+    python -m src
+    ```
+
+You should see structured log output indicating the server is running.
+
+### Packaging for Distribution
+
+To publish your server to PyPI:
+
+1.  **Install build tools:**
+    ```bash
+    pip install build twine
+    ```
+
+2.  **Build the package:**
+    ```bash
+    python -m build
+    ```
+    This will create `dist/` directory with the package files.
+
+3.  **Upload to PyPI:**
+    ```bash
+    twine upload dist/*
+    ```
+    You will need a PyPI account and an API token for this step.
+
+### Testing with MCP Inspector
+
+You can test your server using the MCP Inspector tool:
+
+```bash
+npx @modelcontextprotocol/inspector eolas-mech-mcp
+```
+
+### Project Structure
+
+```
+eolas-mcp-server/
+├── src/
+│   ├── __init__.py
+│   ├── __main__.py           # Entry point for `python -m src`
+│   ├── server.py             # Main server with tools and resources
+│   └── utils/
+│       ├── __init__.py
+│       └── wallet.py         # Secure wallet management
+├── venv/                     # Python virtual environment
+├── requirements.txt          # Python dependencies
+├── pyproject.toml            # Packaging configuration
+└── README.md
+```
+
+## Troubleshooting
+
+### Server not connecting
+- Make sure you have activated the virtual environment (`source venv/bin/activate`)
+- Check that the paths in your `mcp.json` configuration are absolute and correct
+- Ensure all dependencies are installed with `pip install -r requirements.txt`
+- Check the server logs for specific error messages
+
+### Tools not appearing
+- Restart your MCP client (e.g., Cursor) after making changes
+- Check the server's console output for any Python errors on startup
+- Verify that your environment variables are properly set
+
+### Wallet issues
+- Check file permissions on wallet.json and password.txt (should be 600)
+- Verify the Ethereum RPC endpoint is accessible
+- Check that the keyring system is working on your platform
+
+### Connection issues
+- Verify the ETH_RPC_URL is correct and accessible
+- Check your network connection
+- Try using a different RPC endpoint
+
+## License
+
+This project is licensed under the MIT License.
+
+## Resources
+
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io/)
+- [FastMCP Documentation](https://github.com/modelcontextprotocol/python-sdk)
+- [Cursor MCP Integration](https://docs.cursor.com/context/mcp) 
