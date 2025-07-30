@@ -1,0 +1,8 @@
+m9s-trytond<7.1,>=7.0
+m9s_account_batch<7.1,>=7.0
+trytond_account_invoice<7.1,>=7.0
+trytond_bank<7.1,>=7.0
+trytond_company<7.1,>=7.0
+trytond_party<7.1,>=7.0
+
+[test]
