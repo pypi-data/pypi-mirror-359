@@ -1,0 +1,3 @@
+[console_scripts]
+lorenz-attractor = lorenz_attractor.cli:main
+lorenz-web = lorenz_attractor.web.app:main
