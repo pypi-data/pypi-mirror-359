@@ -1,0 +1,10 @@
+pyproject.toml
+SaaS_initializer.egg-info/PKG-INFO
+SaaS_initializer.egg-info/SOURCES.txt
+SaaS_initializer.egg-info/dependency_links.txt
+SaaS_initializer.egg-info/entry_points.txt
+SaaS_initializer.egg-info/requires.txt
+SaaS_initializer.egg-info/top_level.txt
+saas_initializer/__init__.py
+saas_initializer/initializer.py
+saas_initializer/utils.py
