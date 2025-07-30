@@ -1,0 +1,7 @@
+torch_bmv/__init__.py,sha256=PHl5-rqalO9yragZuxeEHGja2PKKa_tbeUdJ-Fzjud0,40
+torch_bmv/bmv.py,sha256=07_ts3E6vvK2kxh-oYubOHBxfFTXEkcWaFwIhzBn4ig,1447
+torch_bmv-0.1.1.dist-info/licenses/LICENSE,sha256=do0DI6wu4mF3VXnEXXPYZqVEatoRSSamgz9t80wU7_o,1068
+torch_bmv-0.1.1.dist-info/METADATA,sha256=Xz3HbVMnuemBja0pN8CI5S5IX9u8H196ceE2aCMFwVw,2626
+torch_bmv-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+torch_bmv-0.1.1.dist-info/top_level.txt,sha256=QZ8ff_fye64397WwEeM8fp-kGC_kh3VFPdf5ebNTl1s,10
+torch_bmv-0.1.1.dist-info/RECORD,,
