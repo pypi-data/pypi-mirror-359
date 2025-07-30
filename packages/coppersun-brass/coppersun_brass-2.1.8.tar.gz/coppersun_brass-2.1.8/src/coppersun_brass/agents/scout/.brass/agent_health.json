@@ -1,0 +1,8 @@
+{
+  "agents": {},
+  "last_updated": "2025-07-02T01:43:24.510988",
+  "monitoring_config": {
+    "heartbeat_timeout": 300,
+    "history_retention_hours": 168
+  }
+}
