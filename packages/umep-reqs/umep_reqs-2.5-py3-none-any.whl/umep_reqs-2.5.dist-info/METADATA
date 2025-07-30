@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: umep-reqs
+Version: 2.5
+Summary: UMEP requirements package
+Author: UMEP dev team
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: supy==2025.6.2.dev0
+Requires-Dist: numba==0.59.0
+Requires-Dist: jaydebeapi==1.2.3
+Requires-Dist: netCDF4
+Requires-Dist: openpyxl
+Requires-Dist: rioxarray
+Requires-Dist: pydantic
+Requires-Dist: target-py
+
+# umep-reqs
+A minimal Python package outlining UMEP dependencies.
