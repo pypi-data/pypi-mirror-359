@@ -1,0 +1,9 @@
+README.md
+setup.py
+sni_requests.py
+./sni_requests.py
+sni_requests.egg-info/PKG-INFO
+sni_requests.egg-info/SOURCES.txt
+sni_requests.egg-info/dependency_links.txt
+sni_requests.egg-info/requires.txt
+sni_requests.egg-info/top_level.txt
