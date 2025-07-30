@@ -1,0 +1,23 @@
+[project]
+name = "framer43"
+version = "0.0.0.0"
+authors = [
+  { name="Senthil Arasu J", email="jaisenthil43@gmail.com" },
+]
+maintainers = [
+  {name = "Senthil Arasu J", email = "jaisenthil43@gmail.com"}
+]
+description = "A text-based 2D graphics library. Handcrafted by Senthil Arasu J"
+readme = "README.md"
+requires-python = ">=3.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://example.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/me/spam.git"
