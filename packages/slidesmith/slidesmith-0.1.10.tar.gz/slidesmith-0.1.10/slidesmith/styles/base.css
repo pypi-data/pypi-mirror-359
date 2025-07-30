@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for presentations */
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply m-0 p-0 overflow-hidden;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .slide-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
