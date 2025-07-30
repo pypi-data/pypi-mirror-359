@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=mBonTVL0hq1NDbi3w788DzhfmdAOHZL06v2syZGxfwQ,631
+tencentcloud/igtm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/igtm/v20231024/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/igtm/v20231024/errorcodes.py,sha256=9cCd4AzvftmCuTaPZedQiT9S32g17eyJQUhdHDYriOk,9500
+tencentcloud/igtm/v20231024/igtm_client.py,sha256=o8nRaxes7GxL3XpEAvP7lqrz5VrWrcsptnbX6EKBqGg,21157
+tencentcloud/igtm/v20231024/models.py,sha256=xJ9pxqVEzVDVJGEI8gHJBTjuj1scUofTHCDtwjNiHcM,188779
+tencentcloud_sdk_python_igtm-3.0.1413.dist-info/METADATA,sha256=KsNpHKRkkCJlQeO87cbDXWJeuqj5GLe9ulHzFDh58MQ,1501
+tencentcloud_sdk_python_igtm-3.0.1413.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_igtm-3.0.1413.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_igtm-3.0.1413.dist-info/RECORD,,
