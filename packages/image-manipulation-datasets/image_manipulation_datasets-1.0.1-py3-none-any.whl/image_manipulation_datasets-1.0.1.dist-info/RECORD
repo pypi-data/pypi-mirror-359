@@ -1,0 +1,17 @@
+imds/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+imds/_dataset.py,sha256=BZ5pSAqT26txajYDWIMVxhFT067e1Xivpp2inhLWk5U,2825
+imds/casia/__init__.py,sha256=kPkHzJs_LT-_CmNup5dDiUzUT1XiEfD5AAOwtz_kVK8,37
+imds/casia/casia2.py,sha256=kZtLL8Ud23_Hyq_GsaRVi-mMAc-pD7-jsXHzkPjAigE,5940
+imds/coverage/__init__.py,sha256=HsgFzTHgbd2feVsjNTUJqKMco-i0Ql49S4j8YRvCtto,44
+imds/coverage/coverage.py,sha256=332fdij8sTpfyfy8P4hRrqDtXSb4Ak3MOEZuVE543D8,3515
+imds/defacto/__init__.py,sha256=Mq_hfPiJ8wd1NyqFQWZawDtTCp6Ofjh4wJfiprf-lKE,133
+imds/defacto/copymove.py,sha256=KfsHlDYLoBBcxR1rWcAwbu8bTQVBL91rQDp-Eksnt2w,5180
+imds/defacto/inpainting.py,sha256=gHZvFRgSTM0JB7drXauhn-bj0gYwwL58C0XJF_IeyUs,5194
+imds/defacto/splicing.py,sha256=CUHENiZsuf0GWc9oBMWSxZckA5jQdMU4dTjE2DGTlNY,6299
+imds/imd/__init__.py,sha256=A9QPQ-8LGbmE0DYHPJh5FuJ0Utkd0bg_-SzUo-5Zv9U,37
+imds/imd/imd2020.py,sha256=LE3QB07sDaBCPbr0kdzjKLNxT_qYvGNeurHF4oxitgs,4141
+imds/utils.py,sha256=1yg_6uZ8LvZO9ocX3jGeI0sFEIn50e8FIRDwTPipLIk,2913
+image_manipulation_datasets-1.0.1.dist-info/LICENSE,sha256=ACwmltkrXIz5VsEQcrqljq-fat6ZXAMepjXGoe40KtE,1069
+image_manipulation_datasets-1.0.1.dist-info/METADATA,sha256=Vg-qDPwapgYM-J9YZirFnYXB3VO7MIQQOucJAybsi6Q,2610
+image_manipulation_datasets-1.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+image_manipulation_datasets-1.0.1.dist-info/RECORD,,
