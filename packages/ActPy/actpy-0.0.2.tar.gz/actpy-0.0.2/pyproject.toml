@@ -1,0 +1,8 @@
+[project]
+name = "ActPy"
+version = "0.0.2"
+authors = [{name="Spece"}]
+description = "Empty project"
+readme = "README.md"
+[tool.setuptools.packages.find]
+where = ["ActPy"]
