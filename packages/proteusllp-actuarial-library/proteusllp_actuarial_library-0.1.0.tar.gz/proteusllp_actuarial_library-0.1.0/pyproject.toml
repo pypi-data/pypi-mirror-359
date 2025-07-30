@@ -1,0 +1,77 @@
+[project]
+name = "proteusllp-actuarial-library"
+dynamic = []
+description = "Proteus Actuarial Library: A package for building and running stochastic actuarial models in Python."
+authors = [
+    { name = "James Norman", email = "james.norman@proteusllp.com" },
+]
+maintainers = [
+    { name = "James Norman", email = "james.norman@proteusllp.com" },
+]
+readme = "README.md"
+keywords = [
+    "actuarial",
+    "insurance",
+    "capital",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.2",
+    "scipy>=1.15",
+    "plotly>=6.0",
+    "pandas>=2.2",
+]
+version = "0.1.0"
+
+[project.license]
+text = "MIT License with Commons Clause"
+
+[project.optional-dependencies]
+gpu = [
+    "cupy-cuda12x",
+]
+
+[project.urls]
+Homepage = "https://github.com/ProteusLLP/proteus-actuarial-library"
+Repository = "https://github.com/ProteusLLP/proteus-actuarial-library"
+Issues = "https://github.com/ProteusLLP/proteus-actuarial-library/issues"
+
+[tool.pdm]
+package-dir = "pal"
+includes = [
+    "README.md",
+    "LICENSE",
+    "examples/*.py",
+    "data/**/*.csv",
+    "docs/**/*.md",
+]
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.pdm.python]
+use_venv = true
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "pytest-xdist>=3.0",
+]
+dev = [
+    "jupyter>=1.0",
+    "jupyterlab>=4.0",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
