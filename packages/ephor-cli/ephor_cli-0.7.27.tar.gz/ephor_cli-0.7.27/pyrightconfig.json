@@ -1,0 +1,72 @@
+{
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "src/experimental",
+    "src/typestubs"
+  ],
+  "defineConstant": {
+    "DEBUG": true
+  },
+  "stubPath": "src/stubs",
+  "reportMissingImports": "warning",
+  "reportMissingTypeStubs": "none",
+  "reportGeneralTypeIssues": "none",
+  "reportArgumentType": "none",
+  "reportAssignmentType": "none",
+  "reportReturnType": "none",
+  "reportOptionalSubscript": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportOptionalCall": "none",
+  "reportOptionalIterable": "none",
+  "reportOptionalContextManager": "none",
+  "reportOptionalOperand": "none",
+  "reportUntypedFunctionDecorator": "none",
+  "reportUntypedClassDecorator": "none",
+  "reportUntypedBaseClass": "none",
+  "reportUntypedNamedTuple": "none",
+  "reportPrivateUsage": "none",
+  "reportConstantRedefinition": "none",
+  "reportIncompatibleMethodOverride": "none",
+  "reportIncompatibleVariableOverride": "none",
+  "reportInconsistentConstructor": "none",
+  "reportAttributeAccessIssue": "none",
+  "reportOperatorIssue": "none",
+  "reportIndexIssue": "none",
+  "reportOverlappingOverload": "warning",
+  "reportMissingSuperCall": "none",
+  "reportUninitializedInstanceVariable": "none",
+  "reportInvalidStringEscapeSequence": "warning",
+  "reportUnknownParameterType": "none",
+  "reportUnknownArgumentType": "none",
+  "reportUnknownLambdaType": "none",
+  "reportUnknownVariableType": "none",
+  "reportUnknownMemberType": "none",
+  "reportMissingParameterType": "none",
+  "reportMissingTypeArgument": "none",
+  "reportInvalidTypeVarUse": "warning",
+  "reportCallInDefaultInitializer": "none",
+  "reportUnnecessaryIsInstance": "none",
+  "reportUnnecessaryCast": "none",
+  "reportUnnecessaryComparison": "none",
+  "reportUnnecessaryContains": "none",
+  "reportAssertAlwaysTrue": "warning",
+  "reportSelfClsParameterName": "warning",
+  "reportImplicitStringConcatenation": "none",
+  "reportUndefinedVariable": "error",
+  "reportUnboundVariable": "error",
+  "reportInvalidStubStatement": "warning",
+  "reportIncompleteStub": "none",
+  "reportUnsupportedDunderAll": "warning",
+  "reportUnusedCoroutine": "warning",
+  "pythonVersion": "3.13",
+  "pythonPlatform": "Linux",
+  "executionEnvironments": [
+    {
+      "root": "src"
+    }
+  ]
+} 
