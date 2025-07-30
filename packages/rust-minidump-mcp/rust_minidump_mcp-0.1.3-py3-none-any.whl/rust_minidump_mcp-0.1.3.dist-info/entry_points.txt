@@ -1,0 +1,2 @@
+[console_scripts]
+rust-minidump-mcp = minidumpmcp.cli:app
