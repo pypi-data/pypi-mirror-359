@@ -1,0 +1,9 @@
+spaceship_dns_updater/__init__.py,sha256=QTYqXqSTHFRkM9TEgpDFcHvwLbvqHDqvqfQ9EiXkcAM,23
+spaceship_dns_updater/config.py,sha256=h4ElPTW3eNADMyoPHypGVM1Fx6AXZZzV2MKd2CEU5Bk,1266
+spaceship_dns_updater/config_model.py,sha256=OsUvnfawx6GVG-AteJiVl9jGoH5X8OQgRK2jbgqSums,441
+spaceship_dns_updater/updater.py,sha256=-9RnNVNnIguqwfcHgm7LCmMEDOxjvoZ3cKZv-hVZ2zg,4401
+spaceship_dns_updater/utils.py,sha256=YZh1rFyrJyyJxt-814kRa4TnSo0hXDWrQuZ8g0gq_Ak,1041
+spaceship_dns_updater-0.1.0.dist-info/entry_points.txt,sha256=H7E5SS9Ro44uX-xOnYU89NuLmtT9f0gCxYcsu-sDLcc,76
+spaceship_dns_updater-0.1.0.dist-info/METADATA,sha256=SY5_Y9FNC34JLbV0TlI5FCVmbHhrtB2lYQRB6lJOrqs,4856
+spaceship_dns_updater-0.1.0.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+spaceship_dns_updater-0.1.0.dist-info/RECORD,,
