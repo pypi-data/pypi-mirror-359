@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: witss
+Version: 1.0.0
+Summary: Python package for computing weighted iterated sums signatures
+Home-page: https://github.com/irkri/witss
+License: MIT
+Keywords: iterated sums signature,feature extraction,time series
+Author: irkri
+Author-email: irkri@irkri.net
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: numba (>=0.60.0,<0.61.0)
+Requires-Dist: numpy (>=2.0.2,<3.0.0)
+Project-URL: Repository, https://github.com/irkri/witss
