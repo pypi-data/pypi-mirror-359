@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: test_auto_publish_lib_unique2
+Version: 0.1.0
+Summary: A unique test package for agent-native PyPI auto-publishing.
+Home-page: https://github.com/heaven-agent/unique-test2
+Author: HEAVEN Agent
+Author-email: heaven.demo.agent@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# test_auto_publish_lib_unique2
+
+This is a unique package created to validate the agent-native PyPI auto-publish pipeline in HEAVEN. If this is on PyPI, it worked.
