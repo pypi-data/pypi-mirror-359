@@ -1,0 +1,9 @@
+pycmakebuild/__init__.py,sha256=26UWatnbm6ZIwQMuu9NNzQ0IW1ACO4Oe9caModuTpWM,4
+pycmakebuild/__main__.py,sha256=fKyuFnbePXc4JxV_8dCw77N1RAXZp-8MfZYIrvSM-h0,1660
+pycmakebuild/api.py,sha256=RaUtaS6PBIebnf98IgBtyJHF7aJ-HZXF1DwdSRZcdaw,5074
+pycmakebuild/envs.py,sha256=lh5OTmGsjhZFXXBnkKY-WxN9S6u6qlFRn3w2YL-wY1A,3503
+pycmakebuild-0.1.8.dist-info/METADATA,sha256=ts46atsfZ4W3UBwJKPucvPYZh3RyAvZULC2HyrfPUk4,2423
+pycmakebuild-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pycmakebuild-0.1.8.dist-info/entry_points.txt,sha256=PnQX6X2ymQpAj2Ff-QOUBMjlJ-w2os7w9rOZSBYEnKY,60
+pycmakebuild-0.1.8.dist-info/top_level.txt,sha256=wLCdprQ7MM5Ld0GFgsJRhe94tUwHYzHXzIn-fg-NuNk,13
+pycmakebuild-0.1.8.dist-info/RECORD,,
