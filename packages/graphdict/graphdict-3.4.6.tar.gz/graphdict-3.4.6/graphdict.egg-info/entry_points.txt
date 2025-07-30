@@ -1,0 +1,2 @@
+[graphdict.backends]
+nx_loopback = graphdict.classes.tests.dispatch_interface:backend_interface
