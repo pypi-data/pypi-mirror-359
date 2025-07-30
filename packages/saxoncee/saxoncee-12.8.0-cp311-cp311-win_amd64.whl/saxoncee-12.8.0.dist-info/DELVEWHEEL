@@ -1,0 +1,2 @@
+Version: 1.10.1
+Arguments: ['C:\\Saxonica\\saxondev\\python\\ee\\build\\pyvenv\\saxon12-3.11-release\\Lib\\site-packages\\delvewheel\\__main__.py', 'repair', 'C:\\Saxonica\\saxondev\\python\\ee\\build\\3.11\\release\\wheel\\saxoncee-12.8.0-cp311-cp311-win_amd64.whl', '--wheel-dir', 'C:\\Saxonica\\saxondev\\python\\ee\\build\\3.11\\release\\repaired-wheel', '--add-path', 'C:\\Saxonica\\saxondev\\libsaxonc\\ee\\build\\staging\\Release\\lib;C:\\Saxonica\\saxondev\\libsaxonc\\ee\\build\\staging\\Release\\bin']
