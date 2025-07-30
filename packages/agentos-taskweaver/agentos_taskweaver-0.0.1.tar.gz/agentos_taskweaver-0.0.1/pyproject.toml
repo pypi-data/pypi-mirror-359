@@ -1,0 +1,109 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentos-taskweaver"
+version = "0.0.1"
+description = "A code-first agent framework for seamlessly planning and executing data analytics tasks"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Microsoft TaskWeaver Team", email = "taskweaver@microsoft.com"}
+]
+maintainers = [
+    {name = "Microsoft TaskWeaver Team", email = "taskweaver@microsoft.com"}
+]
+keywords = ["ai", "agent", "llm", "data-analytics", "code-generation", "planning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.2",
+    "pandas>=2.0.0",
+    "matplotlib>=3.4",
+    "seaborn>=0.11",
+    "python-dotenv>=1.0.0",
+    "openai>=1.42.0",
+    "pydantic>=2.8.2",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.2.2",
+    "click>=8.0.1",
+    "urllib3>=1.26.17",
+    "jsonschema>=4.20.0",
+    "injector>=0.21.0",
+    "ijson>=3.2.3",
+    "requests>=2.31.0",
+    "docker>=7.0.0",
+    "ipykernel==6.26.0",
+    "tenacity>=8.2.2",
+    "plotly>=5.14.1",
+    "colorama>=0.4.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=2.19.0",
+    "pytest>=7.0.0",
+    "vcrpy>=5.0.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=4.0.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "vcrpy>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/microsoft/TaskWeaver"
+Documentation = "https://microsoft.github.io/TaskWeaver/"
+Repository = "https://github.com/microsoft/TaskWeaver"
+"Bug Tracker" = "https://github.com/microsoft/TaskWeaver/issues"
+Changelog = "https://github.com/microsoft/TaskWeaver/blob/main/CHANGELOG.md"
+
+[project.scripts]
+taskweaver = "taskweaver.__main__:main"
+
+[tool.setuptools]
+packages = ["taskweaver"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+taskweaver = ["**/*.yaml", "**/*.yml"]
+"taskweaver.cli" = ["taskweaver-project.zip"]
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+known_first_party = ["taskweaver"]
