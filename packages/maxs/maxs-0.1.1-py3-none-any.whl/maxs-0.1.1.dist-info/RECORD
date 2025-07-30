@@ -1,0 +1,11 @@
+maxs/__init__.py,sha256=vOENPFz9Ot-fVslPQbfwgjq464L8F8RHU_RbcudzoA0,381
+maxs/__main__.py,sha256=KD4kbCvBJpHs1xC5WuRNPcyxdRaPTaU6dKqjL7BFT9M,322
+maxs/main.py,sha256=ajGNzCijDALrvE1mE1opfGM3DyCT8k42ZFaDgI4l254,3333
+maxs/tools/bash.py,sha256=fuq6nfzZ0KiWiOqtzMU2JkigbwyfI_Tr1ONHSKp8hiA,2365
+maxs/tools/file_ops.py,sha256=gdW2Xvm68SuNGKkxUU0wLlckJeJxuM3wNM4ATEmgN9M,4956
+maxs-0.1.1.dist-info/licenses/LICENSE,sha256=XeCFFhs2207WFC3VT7NYypXXVALTVlv3RZbU5FPYLtM,1068
+maxs-0.1.1.dist-info/METADATA,sha256=nEJsBjeG96O-uIJk6sXuqjLZehgCA_5-MGKO-AQZNJ8,2687
+maxs-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+maxs-0.1.1.dist-info/entry_points.txt,sha256=ogpAdeNfegg2dXEindBl3XyoODh4ggOss1UCf4qbwgU,59
+maxs-0.1.1.dist-info/top_level.txt,sha256=9bFCWzT3eXwDtXHiEqdfshHZETp5QA7L8KoAMHxVSnA,5
+maxs-0.1.1.dist-info/RECORD,,
