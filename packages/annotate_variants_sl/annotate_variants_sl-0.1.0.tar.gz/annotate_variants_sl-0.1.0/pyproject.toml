@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "annotate_variants_sl"
+version = "0.1.0"
+description = "Command line tool to annotate files from Ensembl rest api."
+authors = ["slebras"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+requests = "^2.32.4"
+pandas = "^2.3.0"
+responses = "^0.25.7"
+
+[tool.poetry.scripts]
+annotate-variants-sl = "annotate_variants_sl.main:run_cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
