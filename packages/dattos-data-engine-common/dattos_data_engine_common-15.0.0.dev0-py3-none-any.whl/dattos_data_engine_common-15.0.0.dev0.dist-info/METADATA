@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: dattos_data_engine_common
+Version: 15.0.0.dev0
+Summary: Common classes and methods for data engine projects
+Author-email: Matheus Gaspar <matheus.oliveira@dattos.com.br>
+License-Expression: MIT
+Project-URL: Homepage, https://dattos.com.br
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pandas; extra == "dev"
+Requires-Dist: bumpver; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Requires-Dist: wheel; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Requires-Dist: adlfs; extra == "dev"
+Requires-Dist: s3fs; extra == "dev"
+Requires-Dist: gcsfs; extra == "dev"
+Requires-Dist: pydantic; extra == "dev"
+Requires-Dist: structlog; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: furo; extra == "docs"
+Dynamic: license-file
+
+# dattos-data-engine-common
+
+Este repositório contém classes e métodos para abstração de estratégias de armazenamento de dados.
+
+## Estrutura do Projeto
+
+- `aws_strategy.py`: classe que implementa a estratégia de armazenamento para AWS.
+- `azure_strategy.py`: classe que implementa a estratégia de armazenamento para Azure.
+- `base.py`: classe base que define a interface para as estratégias de armazenamento.
+- `__init__.py`: módulo que define a fábrica de instâncias para as estratégias de armazenamento.
+- `requirements.txt`: lista de dependências necessárias para o projeto.
+
+## Como Usar
+
+Para usar as estratégias de armazenamento, é necessário instanciar a classe `StorageStrategy` com a string de conexão para o provedor de armazenamento desejado.
+
+Exemplo:
+
+```python
+from dattos_data_engine_common import StorageStrategy
+
+# Exemplo para AWS
+aws_connection_string = "aws://access_key:secret_key@bucket"
+aws_storage = StorageStrategy(aws_connection_string)
+aws_storage.save("arquivo.txt", b"conteúdo do arquivo")
+
+# Exemplo para Azure
+azure_connection_string = "azure://account_name:account_key@container"
+azure_storage = StorageStrategy(azure_connection_string)
+azure_storage.save("arquivo.txt", b"conteúdo do arquivo")
+```

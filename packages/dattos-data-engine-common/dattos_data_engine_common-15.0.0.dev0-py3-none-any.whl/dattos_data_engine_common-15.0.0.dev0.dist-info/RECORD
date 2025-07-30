@@ -1,0 +1,11 @@
+dattos_data_engine_common/__init__.py,sha256=O4CVuCYc7qrBiITXF56_leN6iBHCRI1_fhXKxFSLaeM,28
+dattos_data_engine_common/storage/__init__.py,sha256=ddi5Z1mybDL7LZZ396ZGCBPikZ642y9oNADevimcsGQ,742
+dattos_data_engine_common/storage/aws_strategy.py,sha256=EE1HKX0m31Bd6j-GpnT-c1OkZYoYhXqrYrmuJ9Sx4Eg,1030
+dattos_data_engine_common/storage/azure_strategy.py,sha256=GUJtpPykiq4ReAVI7mlKdXr45Oh8mOlvBP1TwXPeKL8,1135
+dattos_data_engine_common/storage/base.py,sha256=alADwpbaIQYZNSwkYMmznt1_sR7j6X9HtM4m0R2O6Uo,1949
+dattos_data_engine_common/storage/models.py,sha256=sjkv9L4EaV_2kzne24tL3za5e8XU7wLweBIDvj-lYSE,367
+dattos_data_engine_common-15.0.0.dev0.dist-info/licenses/LICENSE,sha256=VJLbwx5hCCfAvQ5XRG1Q2vHe9tJnarsSEbRccYkztuo,1084
+dattos_data_engine_common-15.0.0.dev0.dist-info/METADATA,sha256=YP2Pa1hyIqStdcuiG_K2kZ75zDHda7nuRFW0Hd2aWM8,2278
+dattos_data_engine_common-15.0.0.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dattos_data_engine_common-15.0.0.dev0.dist-info/top_level.txt,sha256=iyX9bxxO-u2rxmrNde7OACR0lIt9ZybZMMbM5Z77Y6M,26
+dattos_data_engine_common-15.0.0.dev0.dist-info/RECORD,,
