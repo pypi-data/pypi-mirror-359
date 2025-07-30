@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: glycosphingotool
+Version: 0.1.0
+Summary: A CLI to transform glycan nomenclature into SMILES and reactions
+Author-email: Anastasia Sveshnikova <sveshnikova.ana@gmail.com>
+Project-URL: Homepage, https://github.com/anasves/glycosphingotool
+Project-URL: Issues, https://github.com/anasves/glycosphingotool/issues
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.1
+Requires-Dist: rdkit>=2023.03.1
+Requires-Dist: pandas>=1.4
+Requires-Dist: networkx>=3.0
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: rxnsmiles2rinchi
+Requires-Dist: xlrd
+
+
+## Examples
+
+* Convert glyco nomenclature of a sphingolipid into SMILES with defined n-acyl and sphingoid base
+
+```bash
+glycosphingotool convert "NeuAcalpha2-3Galbeta1-4GlcCer" --nacyl CCC --sphingoid "[C@H](O)/C=C/CC"
+```
+* Generate synthesis reactions for glyco nomenclature of a sphingolipid, generate reactions SMILES, RInChI and Web-RInChIKeys with defined n-acyl and sphingoid base
+
+```bash
+glycosphingotool generate "NeuAcalpha2-3Galbeta1-4GlcCer" --nacyl CCC --sphingoid "[C@H](O)/C=C/CC" --output-folder "NeuAcalpha2-3Galbeta1-4GlcCer"
+```
+
+* Process all the Excel file downloaded from SphingoMAP (the original link is currently broken at the original resource)
+
+```bash
+glycosphingotool process-all --output-folder 'results_SphingoMAP' --nacyl CCC --sphingoid "[C@H](O)/C=C/CCCCCC"
+```
+
+The source SphingomapkeyV1.4.xls can be found in src/glycosphingotool/assets

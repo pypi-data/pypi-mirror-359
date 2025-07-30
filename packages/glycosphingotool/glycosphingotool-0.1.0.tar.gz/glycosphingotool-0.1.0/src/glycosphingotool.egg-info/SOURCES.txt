@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/glycosphingotool/__init__.py
+src/glycosphingotool/cli.py
+src/glycosphingotool/dataio.py
+src/glycosphingotool/nomenclature.py
+src/glycosphingotool/reactions.py
+src/glycosphingotool/utils.py
+src/glycosphingotool.egg-info/PKG-INFO
+src/glycosphingotool.egg-info/SOURCES.txt
+src/glycosphingotool.egg-info/dependency_links.txt
+src/glycosphingotool.egg-info/entry_points.txt
+src/glycosphingotool.egg-info/requires.txt
+src/glycosphingotool.egg-info/top_level.txt
