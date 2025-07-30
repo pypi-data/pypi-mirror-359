@@ -1,0 +1,19 @@
+[package]
+name = "api"
+version = "0.1.2"
+edition = "2024"
+
+[dependencies]
+core     = { path = "../core" }
+index    = { path = "../index" }
+storage  = { path = "../storage" }
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["trace","limit"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+anyhow = "1.0"
+tracing-subscriber = "0.3"
+env_logger = "0.11.8"

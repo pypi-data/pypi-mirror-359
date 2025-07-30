@@ -1,0 +1,52 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "nusterdb"
+version = "0.1.6"
+description = "High-performance vector database with advanced indexing algorithms, multiple distance metrics, and enterprise-grade features"
+authors = [
+    {name = "NusterDB Team", email = "support@nusterdb.com"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["vector", "database", "similarity", "search", "machine-learning", "embeddings", "ai", "hnsw", "approximate-search"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research", 
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.19.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "numpy>=1.19.0",
+]
+
+[project.urls]
+Homepage = "https://nusterdb.com"
+Documentation = "https://docs.nusterdb.com"
+Support = "https://support.nusterdb.com"
+"Release Notes" = "https://nusterdb.com/releases"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "nusterdb.nusterdb"
+manifest-path = "nusterdb-python/Cargo.toml"

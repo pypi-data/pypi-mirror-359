@@ -1,0 +1,12 @@
+# Requirements for NusterDB Benchmark Suite
+nusterdb>=0.1.1
+numpy>=1.19.0
+psutil>=5.8.0
+tqdm>=4.62.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Optional dependencies (will be checked at runtime)
+# Install these for full comparison functionality:
+# faiss-cpu>=1.7.0  # or faiss-gpu for GPU support
+# chromadb>=0.4.0

@@ -1,0 +1,10 @@
+# nusterdb/Cargo.toml
+[workspace]
+resolver = "3"
+members = [
+  "core",
+  "index",
+  "storage",
+  "api",
+  "cli",
+]

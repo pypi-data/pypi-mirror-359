@@ -1,0 +1,32 @@
+FROM quay.io/pypa/manylinux2014_x86_64:latest
+
+# Install Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Install Python versions
+RUN /opt/python/cp38-cp38/bin/pip install maturin
+RUN /opt/python/cp39-cp39/bin/pip install maturin  
+RUN /opt/python/cp310-cp310/bin/pip install maturin
+RUN /opt/python/cp311-cp311/bin/pip install maturin
+RUN /opt/python/cp312-cp312/bin/pip install maturin
+
+# Set working directory
+WORKDIR /nusterdb-python
+
+# Copy source code
+COPY . .
+
+# Build wheels for all Python versions
+RUN for PYBIN in /opt/python/cp3{8,9,10,11,12}-*/bin; do \
+        "${PYBIN}/python" -m pip install maturin && \
+        "${PYBIN}/maturin" build --release; \
+    done
+
+# Repair wheels
+RUN for wheel in target/wheels/*.whl; do \
+        auditwheel repair "$wheel" -w target/wheels/; \
+    done
+
+# Create output directory
+RUN mkdir -p /output && cp target/wheels/*-linux_x86_64.whl /output/
