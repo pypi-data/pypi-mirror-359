@@ -1,0 +1,8 @@
+numpy_quaddtype/_quaddtype_main.cp311-win_amd64.lib,sha256=XIvsoLMVSkGl_UsE07f1D-Esl14S4p-InL9ZiZW84sU,2156
+numpy_quaddtype/_quaddtype_main.cp311-win_amd64.pyd,sha256=OKAwW4Ve93UB7bEySiJUr_R2vm316ZsgBtUZTplBb_8,124416
+numpy_quaddtype/__init__.py,sha256=G4-QdckxPWGHafVhGeDjBR5Wx3jO7GcHzD2fOTusg2M,1395
+numpy_quaddtype-0.0.1.dist-info/DELVEWHEEL,sha256=twk3yxJ32Lyv-0JnEK7NbSq_l3sUdHVK_ru7QOmrWpQ,397
+numpy_quaddtype-0.0.1.dist-info/METADATA,sha256=NDKWunrpSUlJpBpdFdsY2zutEOlUefYz-dV-PB9r1D4,1892
+numpy_quaddtype-0.0.1.dist-info/RECORD,,
+numpy_quaddtype-0.0.1.dist-info/WHEEL,sha256=JdLTWhc73oJ-lqTBYGgiVontr_vhzwzbpAOin_2bxTI,85
+numpy_quaddtype.libs/sleefquad-f9b0d0d7565cf730ea51fea43e8c6b04.dll,sha256=Vf6bagraEzLtf4anfVNmwHp6N1rxS-GbkMK3kvFqDUA,6423040
