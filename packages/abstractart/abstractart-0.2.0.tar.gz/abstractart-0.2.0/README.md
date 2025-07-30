@@ -1,0 +1,27 @@
+# AbstractArt
+
+A python script that generates abstract art using turtle. Every time you run this program it will produce a unique art that is never seen before. You are welcome.
+
+This is an experiment by a 12yo and a 9yo.
+
+![screenshot.png](./screenshot.png)
+
+# Getting Started
+
+Install it using uv:
+
+```bash
+uv tool install abstractart
+```
+
+Run it using:
+
+```bash
+abstractart
+```
+
+If you want the non abstract, regular version of this art. Then you can run:
+
+```bash
+stickman
+```
