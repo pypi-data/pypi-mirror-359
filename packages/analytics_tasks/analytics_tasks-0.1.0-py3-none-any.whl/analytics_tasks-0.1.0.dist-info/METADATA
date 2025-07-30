@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: analytics_tasks
+Version: 0.1.0
+Summary: Automation including file search and slide deck preparation.
+Author-email: AshutoshGaur <ashutoshgaur@live.com>
+Project-URL: homepage, https://ashugaur.github.io/analytics_tasks/
+Project-URL: repository, https://github.com/ashugaur/analytics_tasks.git
+Keywords: automation,analytics,search,file search,indexing,text mining,presentations,slides,vba,office automation,powerpoint automation,visualization,data processing
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: art>=6.5
+Requires-Dist: bs4>=0.0.2
+Requires-Dist: docx>=0.2.4
+Requires-Dist: ebooklib>=0.19
+Requires-Dist: extract-msg>=0.54.1
+Requires-Dist: faker>=37.4.0
+Requires-Dist: importlib>=1.0.4
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: numpy>=2.3.0
+Requires-Dist: openpyxl>=3.1.5
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: polars>=1.30.0
+Requires-Dist: psutil>=7.0.0
+Requires-Dist: pyarrow>=20.0.0
+Requires-Dist: pypdf2>=3.0.1
+Requires-Dist: python-docx>=1.1.2
+Requires-Dist: python-pptx>=1.0.2
+Requires-Dist: pywin32>=310
+Requires-Dist: reportlab>=4.4.1
+Requires-Dist: scikit-learn>=1.7.0
+Dynamic: license-file
+
+# analytics_tasks
+
+## About
+
+Automation that saves time doing file search and building presentations, [guide](https://ashugaur.github.io/analytics_tasks/).
+
+work in progress...
