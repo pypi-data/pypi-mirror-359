@@ -1,0 +1,13 @@
+PyYAML
+catkin_pkg>=0.4.3
+empy<4
+packaging
+python-dateutil
+rosdep>=0.15.0
+rosdistro>=0.8.0
+setuptools
+vcstools>=0.1.22
+
+[test]
+pep8
+pytest
