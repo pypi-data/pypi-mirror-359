@@ -1,0 +1,9 @@
+include setup.py
+include README.rst
+
+recursive-include cubicweb_task *
+recursive-include cubicweb_task/data external_resources *.gif
+recursive-include cubicweb_task/i18n *.pot *.po
+recursive-include cubicweb_task/migration *.py
+exclude .gitlab-ci.yml
+exclude CHANGELOG.md
