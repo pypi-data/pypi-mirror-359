@@ -1,0 +1,50 @@
+[project]
+name = "aiocouchdb3"
+version = "0.1.5"
+description = "A client for interacting with CouchDB 3 based on aiohttp"
+authors = [
+    {name = "Curtis Schlak",email = "696163-realistschuckle@users.noreply.gitlab.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "aiohttp (>=3.11.18,<4.0.0)",
+]
+license = { file = "LICENSE" }
+
+[project.optional-dependencies]
+dev = ["pytest (>=8.3.5,<9.0.0)", "pytest-asyncio (>=0.26.0,<0.27.0)", "pyright (>=1.1.400,<2.0.0)", "ruff (>=0.11.8,<0.12.0)", "neovim (>=0.3.1,<0.4.0)", "pytest-watcher (>=0.4.3,<0.5.0)", "pytest-cov (>=6.1.1,<7.0.0)", "pytest-dotenv (>=0.5.2,<0.6.0)"]
+test = ["pytest (>=8.3.5,<9.0.0)", "pytest-asyncio (>=0.26.0,<0.27.0)", "pyright (>=1.1.400,<2.0.0)", "ruff (>=0.11.8,<0.12.0)", "pytest-cov (>=6.1.1,<7.0.0)", "pytest-dotenv (>=0.5.2,<0.6.0)"]
+
+[tool.poetry]
+packages = [{include = "aiocouchdb3", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --cov=aiocouchdb3 --cov-report html"
+asyncio_default_fixture_loop_scope = "function"
+env_files = [
+  ".test.env",
+]
+markers = [
+  "integration: requires a running instance of CouchDB",
+  "network: uses the network",
+]
+
+[tool.pytest-watcher]
+now = true
+clear = true
+delay = 0.2
+runner = "pytest"
+runner_args = []
+patterns = ["*.py"]
+ignore_patterns = []
+
+[tool.ruff]
+line-length = 80
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
