@@ -1,0 +1,2 @@
+Update `dkist-processing-common` to v11.0.0. This requires updating affected `Stem`'s for the new API and changing to imported location of `location_of_dkist`.
+With the new `location_of_dkist` we can also remove its re-definition in the `SPDispersionAxisCorrection` task.
