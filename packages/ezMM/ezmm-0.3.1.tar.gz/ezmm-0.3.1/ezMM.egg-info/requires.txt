@@ -1,0 +1,7 @@
+pillow
+pillow-avif-plugin
+opencv-python
+aiohttp
+uvicorn
+fastapi
+starlette
