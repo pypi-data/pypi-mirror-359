@@ -1,0 +1,61 @@
+[tool.poetry]
+name         = "snl-progress"
+version      = "1.2.0"
+description  = "Used to evaluate the reliability of a power system…"
+readme       = "README.md"
+license      = "BSD-3-Clause"
+authors      = ["Atri Bera <abera@sandia.gov>"]
+homepage     = "https://github.com/sandialabs/snl-progress"
+repository   = "https://github.com/sandialabs/snl-progress"
+documentation= "https://sandialabs.github.io/snl-progress/index.html"
+
+# include only your package
+packages = [
+  { include = "progress" }
+]
+
+# drop docs/ at build time
+exclude = ["docs/*"]
+
+[tool.poetry.dependencies]
+python        = ">=3.7,<3.12"
+numpy         = ">=1.21.0,<2.0.0"
+pyomo         = "6.7.3"
+pandas        = "2.2.2"
+matplotlib    = "3.9.0"
+openpyxl      = "3.1.4"
+seaborn       = "0.13.2"
+scikit-learn  = "1.5.0"
+kneed         = "0.8.5"
+requests      = "2.32.4"
+pvlib         = "0.11.0"
+NREL-rex      = "0.2.86"
+PySide6       = "6.5.2"
+PySide6-Addons= "6.5.2"
+PySide6-Essentials="6.5.2"
+plotly        = "5.22.0"
+kaleido       = "0.2.1"
+Markdown      = "3.7"
+
+[poetry.group.dev.dependencies]
+pytest = "*"
+
+[tool.poetry.scripts]
+progress = "progress.__main__:main"
+
+[[tool.poetry.include]]
+path   = "*.md"
+format = ["sdist", "wheel"]
+
+[[tool.poetry.include]]
+path   = "LICENSE"
+format = ["sdist", "wheel"]
+
+[[tool.poetry.source]]
+name     = "testpypi"
+url      = "https://test.pypi.org/legacy/"
+priority = "primary"
+
+[build-system]
+requires    = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
