@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: vnsum_eval
+Version: 0.1.1
+Summary: Thư viện đánh giá tóm tắt tiếng Việt bằng BERTScore
+Author: Khang Nguyễn
+Author-email: vipboy20031408@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: bert-score>=0.3.13
+Requires-Dist: torch>=1.7.0
+Requires-Dist: transformers>=4.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# vnsum_eval
+
+Thư viện Python đánh giá chất lượng tóm tắt văn bản tiếng Việt bằng BERTScore.
+
+## Cài đặt
+
+```bash
+pip install .
