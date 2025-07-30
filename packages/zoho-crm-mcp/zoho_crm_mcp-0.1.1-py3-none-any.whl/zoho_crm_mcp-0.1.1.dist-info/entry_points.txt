@@ -1,0 +1,3 @@
+[console_scripts]
+zoho-mcp = zoho_mcp.server:main
+zoho-mcp-auth = zoho_mcp.auth_cli:main
