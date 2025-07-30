@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-fooocus-api = mcp_fooocus_api.server:main
