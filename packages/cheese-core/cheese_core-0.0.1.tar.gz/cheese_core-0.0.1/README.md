@@ -1,0 +1,1 @@
+[setup.py](setup.py)[setup.cfg](setup.cfg)
