@@ -1,0 +1,2 @@
+Version: 1.10.1
+Arguments: ['C:\\Windows\\Temp\\cibw-run-_g7ska8p\\cp311-win_amd64\\build\\venv\\Lib\\site-packages\\delvewheel\\__main__.py', 'repair', 'C:\\Windows\\Temp\\cibw-run-_g7ska8p\\cp311-win_amd64\\built_wheel\\AdvsSdkPy-0.8.0a1-cp311-cp311-win_amd64.whl', '--wheel-dir', 'C:\\Windows\\Temp\\cibw-run-_g7ska8p\\cp311-win_amd64\\repaired_wheel']
