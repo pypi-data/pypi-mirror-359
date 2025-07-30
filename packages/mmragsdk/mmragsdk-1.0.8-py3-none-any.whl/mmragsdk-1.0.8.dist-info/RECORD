@@ -1,0 +1,9 @@
+mmragsdk/__init__.py,sha256=PpxCT50wFUOaZxm_ccn8My31PS0Gp0hAQWjk1RKX1O8,62
+mmragsdk/client.py,sha256=Jk6n7b3Y4ACL-mDjEv0LiCCDY4Sgm9XE5Sf78987g1E,1165
+mmragsdk/_requests/__init__.py,sha256=deVx5Oki-lNgIdOoysaCAemX5XDF7In-vJua3VopA5c,220
+mmragsdk/_requests/factory.py,sha256=0xj_GDJZaB8c3XJjKReqBHlY6-NwPE-AIExhT8gL1xA,1367
+mmragsdk/_requests/models.py,sha256=3T0IUvUN1mDS6jSUtR5ajShT-jHARfe_LApQxqnURCM,223
+mmragsdk-1.0.8.dist-info/METADATA,sha256=yRGvqzCVxsWVS9qGpyFoAzJOuW-tYxVi7fhenZWurUk,1750
+mmragsdk-1.0.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mmragsdk-1.0.8.dist-info/licenses/LICENSE,sha256=od9z4Uj-W-mu43aDDwL7Q61lj0JxDazz5mL5rk6fca8,1062
+mmragsdk-1.0.8.dist-info/RECORD,,
