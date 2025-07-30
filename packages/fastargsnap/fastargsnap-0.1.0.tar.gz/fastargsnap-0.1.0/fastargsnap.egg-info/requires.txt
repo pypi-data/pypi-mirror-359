@@ -1,0 +1,7 @@
+argparse
+argcomplete
+
+[dev]
+pytest
+black
+flake8

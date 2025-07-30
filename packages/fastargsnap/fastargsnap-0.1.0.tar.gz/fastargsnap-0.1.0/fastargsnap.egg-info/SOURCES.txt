@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+fastargsnap/__init__.py
+fastargsnap/cli.py
+fastargsnap/core.py
+fastargsnap.egg-info/PKG-INFO
+fastargsnap.egg-info/SOURCES.txt
+fastargsnap.egg-info/dependency_links.txt
+fastargsnap.egg-info/entry_points.txt
+fastargsnap.egg-info/requires.txt
+fastargsnap.egg-info/top_level.txt
