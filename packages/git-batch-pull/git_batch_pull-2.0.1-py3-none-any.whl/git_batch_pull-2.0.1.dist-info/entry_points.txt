@@ -1,0 +1,6 @@
+[console_scripts]
+git-batch-pull=git_batch_pull.cli:app
+
+[git_batch_pull.plugins]
+example=git_batch_pull.plugins.example:ExamplePlugin
+
