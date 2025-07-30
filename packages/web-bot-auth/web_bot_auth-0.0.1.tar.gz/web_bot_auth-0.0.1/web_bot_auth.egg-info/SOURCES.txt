@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+settings.ini
+setup.py
+web_bot_auth/__init__.py
+web_bot_auth/_modidx.py
+web_bot_auth/core.py
+web_bot_auth.egg-info/PKG-INFO
+web_bot_auth.egg-info/SOURCES.txt
+web_bot_auth.egg-info/dependency_links.txt
+web_bot_auth.egg-info/entry_points.txt
+web_bot_auth.egg-info/not-zip-safe
+web_bot_auth.egg-info/requires.txt
+web_bot_auth.egg-info/top_level.txt
