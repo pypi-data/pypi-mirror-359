@@ -1,0 +1,15 @@
+nomadicml/__init__.py,sha256=MyvfjLCGyIXbUXOhYYwYJh3yMyTlAsDjzGHl8T3Y8zs,1083
+nomadicml/client.py,sha256=fO5f1VJXyXTzy7f0SmygnoKoCOlHxadNN47zmaTM-SA,7455
+nomadicml/exceptions.py,sha256=KUE89kMSNKY1TLR14b5v8AlF4tEz2MEtCpPpktFznbg,932
+nomadicml/test.py,sha256=tZ7bAY43uMKei4V6R0PRxlZLXcJr1oGNQNNzCwa1iAs,13592
+nomadicml/types.py,sha256=O1a5lNXt73aQ6edsMv89f1FdXN-Fa9Y_L2O4GS-JiHE,491
+nomadicml/utils.py,sha256=nqlYz-IL-ktngsERVP6VKw07EkdDNLNGwvU_rtaviqs,4088
+nomadicml/video.py,sha256=8WEi1_Oh9p0qmGBd_CgGGVtEVv-V8KjdDkuNAfC_cPo,50019
+nomadicml-0.1.4.dist-info/licenses/LICENSE,sha256=U17alHyNeRv8kOPauOd_8IGhtA6oXJ53Ue6PenIVFmk,1065
+tests/__init__.py,sha256=NV46jnhAxDgqia9R7P0OLKfhNK29XtZN7fMz_61NSXU,35
+tests/test_client.py,sha256=oxeKYAZM6OW0T6JPjg5szQRz0jhugaEmP7JbZNRQq78,4117
+tests/test_video.py,sha256=rat_9QpK4Kb6ADrW_-lVYDLAdRA_rDw3AFpo3HD96mA,15704
+nomadicml-0.1.4.dist-info/METADATA,sha256=D9xbi-Bkw9XBVz4vEp11FWBDlkcaJHwWhr8oxF2qhkI,5995
+nomadicml-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nomadicml-0.1.4.dist-info/top_level.txt,sha256=e6qnahn5rswtMsHpOMhN0U_aIJ0EPvztrpGRUe0SEfQ,16
+nomadicml-0.1.4.dist-info/RECORD,,
