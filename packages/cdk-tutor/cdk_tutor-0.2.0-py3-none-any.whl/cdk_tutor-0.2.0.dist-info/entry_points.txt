@@ -1,0 +1,2 @@
+[console_scripts]
+cdk-tutor = cdk_tutor.cli:app
