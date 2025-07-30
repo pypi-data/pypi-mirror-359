@@ -1,0 +1,10 @@
+sleep_detector/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sleep_detector/cli.py,sha256=dRtJsU-jNztYynmMInqdDVu5uZVmP1L3zw2RIThUNwM,884
+sleep_detector/config.py,sha256=L0MNrlzPA8f0NnJciZiKcDuFMm6VOWBaTrq6XBWiyL8,495
+sleep_detector/core.py,sha256=FE1_QP3H-hFt6kS0P09yMwU9TV4CG9R9JtYdemCH_HU,1045
+sleep_detector-0.1.0.dist-info/licenses/LICENSE,sha256=q7KJbcPCqUAvkBuI1QNc8Kg9XPfBfnNkLN9WKwudO8U,11
+sleep_detector-0.1.0.dist-info/METADATA,sha256=oXRvDRIuh56YOS4t6BcJpp7oAMiom2Z8e-0TVYdEQa8,349
+sleep_detector-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sleep_detector-0.1.0.dist-info/entry_points.txt,sha256=QLUWQNd_VEuMp2gHOnb786PuevrWhc4gHcBn5ZQtQng,59
+sleep_detector-0.1.0.dist-info/top_level.txt,sha256=zODORcHQmRu9_TkpfS9wQyQ3LmRIqS9CgoGq9mfJgBE,15
+sleep_detector-0.1.0.dist-info/RECORD,,

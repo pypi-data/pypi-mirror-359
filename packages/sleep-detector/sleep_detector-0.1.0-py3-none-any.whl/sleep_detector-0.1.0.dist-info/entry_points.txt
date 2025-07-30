@@ -1,0 +1,2 @@
+[console_scripts]
+sleep-detector = sleep_detector.cli:main
