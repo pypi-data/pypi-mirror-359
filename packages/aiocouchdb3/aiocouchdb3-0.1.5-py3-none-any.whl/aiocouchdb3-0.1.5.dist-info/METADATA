@@ -1,0 +1,139 @@
+Metadata-Version: 2.3
+Name: aiocouchdb3
+Version: 0.1.5
+Summary: A client for interacting with CouchDB 3 based on aiohttp
+License: The MIT License (MIT)
+         
+         Copyright © 2025 curtissimo, llc
+         
+         Permission is hereby granted, free of charge, to any person obtaining a copy of
+         this software and associated documentation files (the “Software”), to deal in
+         the Software without restriction, including without limitation the rights to
+         use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+         of the Software, and to permit persons to whom the Software is furnished to do
+         so, subject to the following conditions:
+         
+         The above copyright notice and this permission notice shall be included in all
+         copies or substantial portions of the Software.
+         
+         THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+         IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+         FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+         SOFTWARE.
+Author: Curtis Schlak
+Author-email: 696163-realistschuckle@users.noreply.gitlab.com
+Requires-Python: >=3.9
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: dev
+Provides-Extra: test
+Requires-Dist: aiohttp (>=3.11.18,<4.0.0)
+Requires-Dist: neovim (>=0.3.1,<0.4.0) ; extra == "dev"
+Requires-Dist: pyright (>=1.1.400,<2.0.0) ; extra == "dev"
+Requires-Dist: pyright (>=1.1.400,<2.0.0) ; extra == "test"
+Requires-Dist: pytest (>=8.3.5,<9.0.0) ; extra == "dev"
+Requires-Dist: pytest (>=8.3.5,<9.0.0) ; extra == "test"
+Requires-Dist: pytest-asyncio (>=0.26.0,<0.27.0) ; extra == "dev"
+Requires-Dist: pytest-asyncio (>=0.26.0,<0.27.0) ; extra == "test"
+Requires-Dist: pytest-cov (>=6.1.1,<7.0.0) ; extra == "dev"
+Requires-Dist: pytest-cov (>=6.1.1,<7.0.0) ; extra == "test"
+Requires-Dist: pytest-dotenv (>=0.5.2,<0.6.0) ; extra == "dev"
+Requires-Dist: pytest-dotenv (>=0.5.2,<0.6.0) ; extra == "test"
+Requires-Dist: pytest-watcher (>=0.4.3,<0.5.0) ; extra == "dev"
+Requires-Dist: ruff (>=0.11.8,<0.12.0) ; extra == "dev"
+Requires-Dist: ruff (>=0.11.8,<0.12.0) ; extra == "test"
+Description-Content-Type: text/markdown
+
+# Async I/O for CouchDB built on [aiohttp](https://docs.aiohttp.org/en/stable/)
+
+This project is based on the (seemingly) unmaintained
+[aiocoucdb](https://github.com/aio-libs/aiocouchdb) but is **not** a drop-in
+replacement for that project.
+
+## Example
+
+Using `aiocouchdb3` is pretty easy.
+
+```python
+import aiocouchdb3 as couchdb
+
+user_jwt = get_user_jwt()
+async with couchdb.connect() as client:
+    async with client.with_token(user_jwt) as session:
+        for db in await session.all_dbs:
+            print(await db.info)
+```
+
+## Features
+
+- Allows authentication for both username/password and JWT
+
+## Contribute
+
+Thanks for considering adding your skills to improve this library.
+Please review the [Contributor Covenant Code of Conduct](./COC.md).
+You must comply with it to contribute to `aiocouchdb3`.
+
+### Set up your local development environment
+
+Check [`.python-version`](./.python-version) for the minimum version
+of Python supported by `aiocouchdb3`. Install that and use it to create a
+Poetry environment.
+
+Install dependencies with
+
+```sh 
+poetry install --all-extras
+```
+
+You must provide both mocked and integration tests when contributing. Get 
+a CouchDB v3 instance up and running. (If you use Docker, see the following
+section about using Docker to run a properly configured CouchDB v3 instance.)
+
+### Running tests 
+
+There are two kinds of tests in the project found the `./tests` directory.
+
+* `./tests/mocked` contain proper unit tests isolated from the execution 
+  environment.
+* `./tests/integration` contain integration tests that rely on a running
+  instance of CouchDB. To run these copy `./test.env` to `./.test.env`
+  and provide values for the two empty keys in it (and modify the other
+  two if you want to).
+
+  ```env 
+  # Copy this file to .test.env and provide values for your
+  # instance of CouchDB
+  COUCHDB_USER =
+  COUCHDB_PASSWORD =
+  COUCHDB_DB_BASE_URL = http://locahost:5984
+  COUCHDB_JWT_SECRET = devsecret
+  ```
+
+  There's a Docker compose file in [`tests`](./tests/docker-compose.yaml)
+  available for you to use if you want to use that.
+
+  ```sh 
+  docker compose --env-file .test.env -f tests/docker-compose/docker-compose.yaml up
+  ```
+
+  Run the tests with
+
+  ```sh 
+  poetry run pytest
+  ```
+
+  If you want to run the tests while you're developing
+
+  ```sh 
+  poetry run ptw .
+  ```
+
