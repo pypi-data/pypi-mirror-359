@@ -1,0 +1,9 @@
+lrux/__init__.py,sha256=nD_NrlBN23t7aiwiSdsuHEK8f4FJwt9t5Bmmqmrr1hA,190
+lrux/det_lru.py,sha256=z2ryrYRQoABDL22jvU_ZY5hoPhTS_R33NtsMdLR9XIo,18620
+lrux/pf_lru.py,sha256=p_dR1Oh5Kmxqodh02MGXc4jz1B3zcM_9qtgeI0dcCis,14000
+lrux/pfaffian.py,sha256=3mc7-llb2S0MkVkp6QAY4VC54fAChJ76_CvMhp4R8NY,8600
+lrux-0.1.1.dist-info/licenses/LICENSE,sha256=XK1r3QjKtOz1L8u1S5X9RLysQI1z7JWAvwf6mEgjvco,1064
+lrux-0.1.1.dist-info/METADATA,sha256=Pam3PzOIK1Of80BFqMs7qhAkMr7OU2-fpU8W6wEwfiQ,316
+lrux-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lrux-0.1.1.dist-info/top_level.txt,sha256=O8y6IfUNFFU5hU-DKZ6WGcK-AIh--pAvaoE6gxzkDyc,5
+lrux-0.1.1.dist-info/RECORD,,
