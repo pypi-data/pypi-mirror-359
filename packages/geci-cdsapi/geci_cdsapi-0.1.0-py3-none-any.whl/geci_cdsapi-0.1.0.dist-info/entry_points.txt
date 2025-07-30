@@ -1,0 +1,3 @@
+[console_scripts]
+geci-cdsapi=geci_cdsapi.cli:cli
+

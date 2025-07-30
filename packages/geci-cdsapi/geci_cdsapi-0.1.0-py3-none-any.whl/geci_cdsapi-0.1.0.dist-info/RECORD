@@ -1,0 +1,9 @@
+geci_cdsapi/__init__.py,sha256=7wgp0B-fvafozXBclHVKWfgFjlI0mpeRo_JK7BLUTBg,54
+geci_cdsapi/calculate_wind_speed.py,sha256=WmfjC2LXEltKDeDwvwWJof3wdLxf9ed5XptOKVkPOCI,1604
+geci_cdsapi/cli.py,sha256=iWz1rnbIkt7qHU0JHhiMAqPUM1IGSXNtexz487A0AHE,868
+geci_cdsapi/init_client.py,sha256=MTE2_3GXl7-m2hFzArgWaLszYWxAwzAr-oOGnlBQI_E,1099
+geci_cdsapi-0.1.0.dist-info/entry_points.txt,sha256=N1G7Z1PdVrYtsXjEB-HIg4GLx6EW7LiO4jv86BVDuBQ,51
+geci_cdsapi-0.1.0.dist-info/licenses/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+geci_cdsapi-0.1.0.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+geci_cdsapi-0.1.0.dist-info/METADATA,sha256=JtlW7pQwYt_sSDbNmjegvK3syd9e8lVmvr7qwdnSSPw,2084
+geci_cdsapi-0.1.0.dist-info/RECORD,,
