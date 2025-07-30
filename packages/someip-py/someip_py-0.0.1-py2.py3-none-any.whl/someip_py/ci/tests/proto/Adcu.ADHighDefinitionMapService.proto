@@ -1,0 +1,250 @@
+syntax = "proto3";
+
+package Adcu.ADHighDefinitionMapService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 4;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: event
+ MsgIdHDMapInfo = 1;
+
+}
+
+message HDMapInfo {
+  // Description: 边线
+  repeated BoundaryMap Boundaries = 1;
+
+  // Description: 车道停止线
+  repeated StoplineMap StopLines = 2;
+
+  // Description: 人行道
+  repeated CrossWalkMap CrossMalks = 3;
+
+  // Description: 路面标识
+  repeated RoadMarkMap RoadMarks = 4;
+
+  // Description: 变道目标车道
+  LaneInfoMap TargetLane = 5;
+
+  // Description: 道路面信息
+  repeated LaneInfoMap RoadSurface = 6;
+
+  // DefaultValue: 0
+  // Description: 边线时间（原始数据为linux时间戳，浮点数据）注：车道停止线、人行道、路面标识、道路面信息也用这个时间戳
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double LaneInfoTimeStamp = 7;
+
+  // DefaultValue: 0
+  // Description: 变道目标车道相关时间（原始数据为linux时间戳，浮点数据）
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double LaneChangeTargetTimeStamp = 8;
+
+
+message VehiclePoint {
+  // Description: 车体坐标系下X坐标
+  // Unit: mm
+  int32 Positionx = 1;
+
+  // Description: 车体坐标系下Y坐标
+  // Unit: mm
+  int32 Positiony  = 2;
+
+}
+
+message BoundaryMap {
+  // DefaultValue: 0
+  // Description: 车道线唯一数据标识边线id
+  uint64 BoundaryID = 1;
+
+  // 枚举: LineType
+  // 2:  Lane marking
+  // 3: Guard Rail
+  // 4:  Fence
+  // 5:  Kerb
+  // 6:  Wall
+  // 7:  Pure Nature
+  // 8: reserve1（预留）
+  // 9: reserve2
+  // DefaultValue: 0
+  // Description: 边线类型（类型=2，line_marking才有意义）
+  uint32 LineType  = 2;
+
+  // 枚举: LineMarking
+  // 1: Single solid line
+  // 2: single dash line
+  // 3: short dash line
+  // 4: double solid line
+  // 5: double dash line
+  // 6: left solid and right dash line
+  // 7: right solid and left dash line
+  // 8: drversion line
+  // 9: 待行区线
+  // 10: reserve2
+  // DefaultValue: 0
+  // Description: 边线形状
+  uint32 LineMarking  = 3;
+
+  // 枚举: Idm
+  // 0: 不是鱼骨线
+  // 1: 是鱼骨线
+  // 2: reserve
+  // DefaultValue: 0
+  // Description: 是否是鱼骨线
+  uint32 Idm = 4;
+
+  // DefaultValue: 1
+  // Description: 置信度（数据的可靠度，1：非常可靠；<0.5：不太可靠）
+  float  BoundaryConfidence  = 5;
+
+  // Description: 绘制道路边线的点数组
+  repeated  VehiclePoint GeometryPoints = 6;
+
+  // 枚举: BoundaryColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: reserve1（预留）
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 边线颜色
+  uint32 BoundaryColor = 7;
+
+}
+
+message StoplineMap {
+  // DefaultValue: 0
+  // Description: 停止线id
+  uint64 StopLineID = 1;
+
+  // Description: 绘制停止线的点数组
+  repeated VehiclePoint GeometryPoints = 2;
+
+}
+
+message CrossWalkMap {
+  // DefaultValue: 0
+  // Description: 人行道id
+  uint64 CrossWalkID = 1;
+
+  // Description: 绘制人行道的点数组
+  repeated VehiclePoint GeometryPoints = 2;
+
+  // DefaultValue: 0
+  // Description: 人行道标线角度
+  // Unit: 度
+  int32 CrossWalkDirection = 3;
+
+}
+
+message RoadMarkMap {
+  // DefaultValue: 0
+  // Description: 路面标识id
+  uint64 RoadMarkID = 1;
+
+  // 枚举: RoadMarkType
+  // 1: 直行
+  // 3: 直行或左转
+  // 4: 直行或右转
+  // 5: 直行或掉头
+  // 6: 左转
+  // 7: 左转或掉头
+  // 8: 左弯或向左合流
+  // 9: 右转
+  // 10: 右弯或向右合流
+  // 11: 左右转弯
+  // 12: 掉头
+  // 13: 禁止左弯标记
+  // 14: 禁止右弯标记
+  // 15: 禁止掉头标记
+  // 16: 直行或左转或右转
+  // 17: 直行或掉头或左转
+  // 18: 右转或掉头
+  // 22: 车距确认线
+  // 23: 停车让行线
+  // 24: 减速让行线
+  // 25: 停止线
+  // 26: 禁停区
+  // 99: 其他
+  // 100: reserve1
+  // 101: reserve2
+  // DefaultValue: 0
+  // Description: 路面标识类型
+  uint32 RoadMarkType = 2;
+
+  // Description: 投影后的几何包围框
+  repeated VehiclePoint BoundaryBox = 3;
+
+  // Description: 绘制路面标识的点数组
+  repeated VehiclePoint GeometryPoints = 4;
+
+  // DefaultValue: 0
+  // Description: 地面标识角度
+  // Unit: 度
+  int32 RoadMarkDirection = 5;
+
+}
+
+message LaneInfoMap {
+  // 枚举: LaneColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: 浅蓝色(路沿不会发只有车道线会发)
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 车道颜色
+  uint32 LaneColor  = 1;
+
+  // 枚举: LaneAnimationType
+  // 0: 默认
+  // 1: 向后水波纹特效
+  // 2: 向前水波纹特效
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 车道动效
+  uint32 LaneAnimationType = 2;
+
+  // 枚举: AreaType
+  // 0: 无效值
+  // 1: 车道
+  // 2: 路面
+  // 3: 非行驶区域（路沿区域、花坛等）
+  // 4: 预留
+  // Description: 区域类型
+  uint32 AreaType  = 3;
+
+  // DefaultValue: 1
+  // Description: 置信度：数据的可靠度（1：非常可靠；<0.5：不太可靠）
+  float AreaConfidence = 4;
+
+  // Description: 左边车道线行点
+  repeated VehiclePoint LeftBoundary = 5;
+
+  // Description: 右边车道线行点
+  repeated VehiclePoint RightBoundary = 6;
+
+  // Description: 车道边线组成的四边形区域(预留)
+  repeated VehiclePoint AreaPoints  = 7;
+
+}
+
+}

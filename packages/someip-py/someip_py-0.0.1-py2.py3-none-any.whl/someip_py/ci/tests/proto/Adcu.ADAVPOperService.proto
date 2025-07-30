@@ -1,0 +1,491 @@
+syntax = "proto3";
+
+package Adcu.ADAVPOperService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 7;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: event
+ // Comment: 用户选择的导航目的地信息
+ MsgIdNavigationTarget = 1;
+
+ // Frequency: event
+ // Comment: Parking交互状态信息
+ MsgIdParkingInteractiveStatus = 2;
+
+ // Frequency: event
+ // Comment: 用于传递AVP地图按键命令信息
+ MsgIdAVPMapButtonCmd = 3;
+
+ // Frequency: event
+ // Comment: 用于地图管理命令信息
+ MsgIdAVPMapManageCmd = 4;
+
+ // Frequency: event
+ // Comment: 用于传递泊车功能按键信息
+ MsgIdParkingButtonCmd = 5;
+
+ // Frequency: event
+ // Comment: 用于发送附近的POI信息
+ MsgIdPoiInfo = 6;
+
+}
+
+message NavigationTarget {
+  // 枚举: NavigationTargetType
+  // 0: 无效
+  // 1: 地图中车位
+  // 2: 地图中位置点
+  // 3: 地图中的线路
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 导航目标类型
+  uint32 NavigationTargetType = 1;
+
+  // DefaultValue: 0
+  // Description: 导航目标车位Id
+  uint32 NavigationTargetSlotId = 2;
+
+  // DefaultValue: (0,0,0)
+  // Description: 导航目标位置点
+  CoordinateSys NavigationTargetPoint = 3;
+
+  // DefaultValue: 0
+  // Description: 导航目标线路Id
+  uint32 NavigationLineId = 4;
+
+
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: mm
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: mm
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: mm
+  int32 CoordinateZ = 3;
+
+}
+
+}
+message ParkingInteractiveStatus {
+  // 枚举: PrkgInterSts
+  // 0: 无效
+  // 1: 关闭地锁
+  // 2: 打开地锁
+  // 3: 地锁异常
+  // 4: 充电插枪
+  // 5: 充电拔枪
+  // 6: 充电异常
+  // 7: 查询目的地车位
+  // 8: 预留
+  // 9: 预留
+  // DefaultValue: 0
+  // Description: 状态
+  uint32 PrkgInterSts = 1;
+
+  // DefaultValue: 0
+  // Description: 交互对象ID
+  uint32 PrkgInterID = 2;
+
+  // DefaultValue: 0
+  // Description: 场站ID
+  uint32 PrkgStationID = 3;
+
+
+}
+message AVPMapButtonCmd {
+  // 枚举: MapButtonCmdType
+  // 0: 无效
+  // 1: 进入前台建图
+  // 2: 退出前台建图
+  // 3: 更新地图
+  // 4: 生成地图
+  // 5: 不生成地图
+  // 6: 打开地图
+  // 7: 忽略
+  // 8: 退出导航
+  // 9: 打开AVP
+  // 10: 退出AVP
+  // 11: 去无人充电
+  // 12: 去无人泊车
+  // 13：Re-AVP Back To AVP
+  // 14:Exit Re-AVP
+  // 15: 取消重规划路线
+  // 16: Reserved
+  // DefaultValue: 0
+  // Description: 地图按键命令
+  // Unit: /
+  uint32 MapButtonCmdType = 1;
+
+
+}
+message AVPMapManageCmd {
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: mm
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: mm
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: mm
+  int32 CoordinateZ = 3;
+
+}
+
+  // 枚举: MapManageCmdType
+  // 1: 查询地图信息
+  // 2: 新增收藏的地图（可包括目的地）
+  // 3: 编辑更新收藏的地图（可包括目的地）
+  // 4: 删除收藏的地图（包括目的地）
+  // 5: 新增收藏的目的地
+  // 6: 编辑更新收藏的目的地
+  // 7: 删除收藏的目的地
+  // 8: 选中地图
+  // 9: 取消自动匹配地图
+  // 10: 基于使用时间排序
+  // 11: 基于生效时间排序
+  // DefaultValue: 0
+  // Description: 地图管理命令类型
+  // Unit: /
+  uint32 MapManageCmdType = 1;
+
+  // Description: AVP收藏的地图新增/更新信息
+  repeated AVPCollectedMap MapUpdateInfo = 2;
+
+  // DefaultValue: 0
+  // Description: AVP收藏的地图删除命令
+  repeated uint32 MapDeleteCmd = 3;
+
+  // Description: AVP收藏的目的地新增/更新信息
+  repeated AVPCollectedDestination DestinationUpdateInfo = 4;
+
+  // DefaultValue: 0
+  // Description: AVP收藏的目的地删除命令
+  repeated uint32 DestinationDeleteCmd = 5;
+
+  // 枚举: DestinationTypeDeleteCmd
+  // 0: 无效
+  // 1: 地图中车位
+  // 2: 地图中位置点
+  // 3: 地图中的线路
+  // 4: 自车位置
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: AVP收藏的目的地目标类型删除命令
+  uint32 DestinationTypeDeleteCmd = 6;
+
+
+message AVPCollectedMap {
+  // DefaultValue: 0
+  // Description: 收藏的地图唯一Id
+  uint32 MapId = 1;
+
+  // Description: 停车场地图信息
+  string MapName = 2;
+
+  // DefaultValue: 0
+  // Description: 地图中收藏目的地数目
+  uint32 DestinationNum = 3;
+
+  // Description: 目的地列表
+  repeated AVPCollectedDestination DestinationList = 4;
+
+  // DefaultValue: 0
+  // Description: 收藏的地图时间戳
+  uint64 MapLearningTime = 5;
+
+}
+
+message AVPCollectedDestination {
+  // 枚举: CollectedDestinationType
+  // 0: 无效
+  // 1: 地图中车位
+  // 2: 地图中位置点
+  // 3: 地图中的线路
+  // 4: 自车位置
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 目的地目标类型
+  uint32 CollectedDestinationType = 1;
+
+  // DefaultValue: 0
+  // Description: 目的地车位Id
+  uint32 CollectedDestinationSlotId = 2;
+
+  // DefaultValue: (0,0,0)
+  // Description: 目的地位置点
+  CoordinateSys CollectedDestinationPoint = 3;
+
+  // DefaultValue: 0
+  // Description: 目的地所在楼层
+  int32 CollectedDestinationFloorLevel = 4;
+
+  // DefaultValue: 0
+  // Description: 目的地线路Id
+  uint32 CollectedDestinationLineId = 5;
+
+  // 枚举: CollectedDestinationPriority
+  // 0: invalid
+  // 1: Top Priority
+  // 2: Second Priority
+  // 3: Third Priority
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 目的地默认推荐优先级
+  uint32 CollectedDestinationPriority = 6;
+
+  // Description: 目的地所在停车场地图Id
+  uint32 CollectedParkMapId = 7;
+
+  // Description: 目的地名称
+  string CollectedDestinationName = 8;
+
+  // Description: 目的地标签
+  string CollectedDestinationLabel = 9;
+
+}
+
+}
+message ParkingButtonCmd {
+  // DefaultValue: 0
+  // Description: 用户点击的非可用车位ID
+  uint32 DriverSelectNotAvailableSlotID = 1;
+
+  // 枚举: ApaSlelectedDirection
+  // 0：无效（默认）
+  // 1：车头泊出向左
+  // 2：车头泊出向前
+  // 3：车头泊出向右
+  // 4：车尾泊出向左
+  // 5：车尾泊出向后
+  // 6：车尾泊出向右
+  // 7：水平向左泊出
+  // 8：水平向右泊出
+  // 9：预留
+  // 10：预留
+  // DefaultValue: 0
+  // Description: APA用户选择的泊出方向
+  uint32 ApaSlelectedDirection = 2;
+
+  // 枚举: AutPrkgVoiceSwt
+  // 0: OnOff1_Off
+  // 1: OnOff1_On
+  // DefaultValue: 0
+  // Description: APA voice control switch
+  uint32 AutPrkgVoiceSwt = 3;
+
+  // 枚举: AutPrkgVoiceTyp
+  // 0 = VoiceTyp10_NoReq
+  // 1 = VoiceTyp10_Simple
+  // 2 = VoiceTyp10_Middle
+  // 3 = VoiceTyp10_Complex
+  // DefaultValue: 0
+  // Description: APA voice control type
+  uint32 AutPrkgVoiceTyp = 4;
+
+  // 枚举: DrvrAsscWisdomBtn
+  // 0 = DrvrAsscWisdomBtn_Idle
+  // 1 = DrvrAsscWisdomBtn_LeftIn
+  // 2 = DrvrAsscWisdomBtn_RightIn
+  // 3 = DrvrAsscWisdomBtn_MiddleIn
+  // 4 = DrvrAsscWisdomBtn_APASuspensionball
+  // DefaultValue: 0
+  // Description: APA Wisdom parking in button
+  uint32 DrvrAsscWisdomBtn = 5;
+
+  // 枚举: PrkgInOrOutAndCncl
+  // 0 = PrkgInOrOutAndCncl1_Default
+  // 1 = PrkgInOrOutAndCncl1_ParkingIn
+  // 2 = PrkgInOrOutAndCncl1_ParkingOut
+  // 3 = PrkgInOrOutAndCncl1_Cancel
+  // DefaultValue: 0
+  // Description: cancel park in and park out.
+  uint32 PrkgInOrOutAndCncl = 6;
+
+  // 枚举: PrkgFctSwt
+  // 0 = SwtReq2_NoReq
+  // 1 = SwtReq2_AutomaticParkingButtonInAVM
+  // 2 = SwtReq2_VisualParkButtonInAPA
+  // DefaultValue: 0
+  // Description: Switch parking functions
+  uint32 PrkgFctSwt = 7;
+
+  // 枚举: LSDANotifPushReq
+  // 0 = OnOff1_Off
+  // 1 = OnOff1_On
+  // DefaultValue: 0
+  // Description: User set whether approve push LSDA on APA
+  uint32 LSDANotifPushReq = 8;
+
+  // 枚举: LoSpdDrvgAssiShoPushResp
+  // 0 = CmdType1_Idle
+  // 1 = CmdType1_Confirm
+  // 2 = CmdType1_Cancel
+  // 3 = CmdType1_NoMoreReminder
+  // DefaultValue: 0
+  // Description: AVP short distance push notification response
+  uint32 LoSpdDrvgAssiShoPushResp = 9;
+
+  // 枚举: LoSpdDrvgAssiSwt
+  // 0 = AssiSwt_NoReq
+  // 1 = AssiSwt_Enter
+  // 2 = AssiSwt_Exit
+  // DefaultValue: 0
+  // Description: LSDA function switchs
+  uint32 LoSpdDrvgAssiSwt = 10;
+
+  // 枚举: PrkgFrntOrReSelect
+  // 0 = None
+  // 1 = Frnt
+  // 2 = Rear
+  // 3 = Both
+  // DefaultValue: 0
+  // Description: PrkgFrntOrReSelect
+  uint32 PrkgFrntOrReSelect = 11;
+
+  // 枚举: PdcMuteBtnReq
+  // 0 = OnOffNoReq_NoReq
+  // 1 = OnOffNoReq_On
+  // 2 = OnOffNoReq_Off
+  // DefaultValue: 0
+  // Description: PDC Mute button
+  uint32 PdcMuteBtnReq = 12;
+
+  // 枚举: PrkgDstCtrlReq
+  // 0: No request
+  // 1: User clicks on
+  // 2: User clicks off
+  // DefaultValue: 0
+  // Description: Request to enter/exit PDC interface
+  uint32 PrkgDstCtrlReq = 13;
+
+
+}
+message PoiInfo {
+  // DefaultValue: 0
+  // Description: 任务Id
+  // Unit: /
+  uint64 TaskId = 1;
+
+  // DefaultValue: /
+  // Description: POI列表
+  // Unit: /
+  repeated ADPoiInfo PoiList = 2;
+
+
+message ADPoiInfo {
+  // DefaultValue: /
+  // Description: POI基础信息
+  // Unit: /
+  ADPoiBasicInfo Basic = 1;
+
+  // DefaultValue: /
+  // Description: 权重
+  // Unit: /
+  string Weight = 2;
+
+  // DefaultValue: 0
+  // Description: 城市码
+  // Unit: /
+  int32 CityAdCode = 3;
+
+  // DefaultValue: 0
+  // Description: 区域码
+  // Unit: /
+  int32 AdCode = 4;
+
+  // DefaultValue: /
+  // Description: 子POI列表
+  // Unit: /
+  repeated ADPoiChildInfo ChildrenList = 5;
+
+}
+
+message ADPoiBasicInfo {
+  // DefaultValue: /
+  // Description: ID
+  // Unit: /
+  string PoiId = 1;
+
+  // DefaultValue: /
+  // Description: Name
+  // Unit: /
+  string Name = 2;
+
+  // DefaultValue: /
+  // Description: Address
+  // Unit: /
+  string Address = 3;
+
+  // DefaultValue: /
+  // Description: POI的经纬度
+  // Unit: /
+  Pos2D PoiLoc = 4;
+
+  // DefaultValue: 0
+  // Description: POI的距离
+  // Unit: 米
+  uint32 Distance = 5;
+
+  // DefaultValue: /
+  // Description: 类型码
+  // Unit: /
+  string TypeCode = 6;
+
+  // DefaultValue: /
+  // Description: 类型
+  // Unit: /
+  string Type = 7;
+
+}
+
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0：默认值
+  // Description: 经度（GJC-02）
+  // Unit: 单位：度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0：默认值
+  // Description: 纬度（GJC-02）
+  // Unit: 单位：度
+  double LatitudePos2D = 2;
+
+}
+
+message ADPoiChildInfo {
+  // DefaultValue: /
+  // Description: POI基础信息
+  // Unit: /
+  ADPoiBasicInfo Basic = 1;
+
+  // DefaultValue: /
+  // Description: ID
+  // Unit: /
+  string PPoiId = 2;
+
+  // DefaultValue: /
+  // Description: 关系类型
+  // Unit: /
+  string RelType = 3;
+
+}
+
+}

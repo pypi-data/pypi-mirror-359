@@ -1,0 +1,2 @@
+[twine.registered_commands]
+secureupload = someip_py.secure_upload:main

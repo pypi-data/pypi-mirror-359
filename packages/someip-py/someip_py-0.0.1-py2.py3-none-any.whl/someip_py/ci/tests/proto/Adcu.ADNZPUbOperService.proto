@@ -1,0 +1,1445 @@
+syntax = "proto3";
+
+package Adcu.ADNZPUbOperService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 6;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: event
+ // Comment: 用户GID信息
+ MsgIdCustomerInf = 1;
+
+ // Frequency: event
+ // Comment: 引导状态
+ MsgIdGuidanceStatusUpdateInf = 2;
+
+ // Frequency: event
+ // Comment: 通勤路线信息更新
+ MsgIdFavoriteRouteInfoUpdateInf = 3;
+
+ // Frequency: event
+ // Comment: 导航规划路径（舍弃）
+ MsgIdNavigationRouteInf = 4;
+
+ // Frequency: event
+ // Comment: 驾驶员导航目的地请求
+ MsgIdNavigationDistreqInf = 5;
+
+ // Frequency: event
+ // Comment: 路线记忆满20条 取消保存信号
+ MsgIdCancelSaveInf = 6;
+
+ // Frequency: event
+ // Comment: 导航规划路径（新增）
+ MsgIdNavigationRouteInf1 = 7;
+
+ // Frequency: event
+ // Comment: D2D路线记忆结束开关
+ MsgIdD2DRouteEndSwitchInf = 8;
+
+ // Frequency: event
+ // Comment: 通勤路线选中状态
+ MsgIdCommutingRouteSelectionReqInf = 9;
+
+ // Frequency: event
+ // Comment: 语音变道指令
+ MsgIdHmiDrvrSodReqLaneChgInf = 10;
+
+ // Frequency: event
+ // Comment: 建链后DHU判断是否有导航信息（与2.0保持一致）
+ MsgIdHasNavigationInf = 11;
+
+}
+
+message CustomerInf {
+  // Description: 登录用户GID信息
+  string Gid = 1;
+
+  // Description: 账号登录信息
+  uint32 Auth = 2;
+
+  // Description: 用户保存路线总数
+  uint32 RouteNumLimit = 3;
+
+  // Description: 用户保存路线长度
+  uint32 RouteLengthLimit = 4;
+
+  // Range: [0,6]
+  // DefaultValue: /
+  // Description: 车机端登录的账户信息
+  repeated AvailableCustomersType AvailableCustomersSeN = 5;
+
+
+message AvailableCustomersType {
+  // DefaultValue: 0
+  // Description: 账号ID
+  string CustomerID = 1;
+
+  // 枚举: CustomerType
+  // 0x01: 车主；
+  // 0x02: 普通用户；
+  // 0x03: 账户未登录
+  // 0x04~0x0F: 未定义用户，预留；
+  // DefaultValue: 0
+  // Description: 账户类型
+  uint32 CustomerType = 2;
+
+  // Range: 预留
+  // DefaultValue: 0
+  // Description: 保存路线总数
+  uint32 RouteNumLimit = 3;
+
+  // Range: 预留
+  // DefaultValue: 0
+  // Description: 保存路线长度
+  uint32 RouteLengthLimit = 4;
+
+}
+
+}
+message GuidanceStatusUpdateInf {
+  // Description: 引导状态更新
+  uint32 GuidanceStatus = 1;
+
+  // Description: 父路线ID，偏航时必要
+  uint64 ParentRouteUuid = 2;
+
+  // Description: 导航路线唯一ID
+  uint64 RouteUuid = 3;
+
+  // Description: 导航变更原因
+  uint32 ReasonCode = 4;
+
+  // Description: 记忆路线状态
+  uint32 MemoryRouteFlag = 5;
+
+  // Description: 距离终点的直线距离（单位m）
+  // Unit: m
+  uint32 StraightDist = 6;
+
+  // Description: 距离终点的剩余里程（单位m）
+  // Unit: m
+  uint32 MileageDist = 7;
+
+  // Description: 导航会话id
+  string NaviId = 8;
+
+  // 枚举: GuidanceStatusUpdateInfType
+  // 0: 未知
+  // 1: 选择D2D路线
+  // 2: 选择通勤路线
+  // 3: 预留
+  // 4: 预留
+  // DefaultValue: 0
+  // Description: D2D路线切换为通勤路线
+  uint32 GuidanceStatusUpdateInfType = 9;
+
+
+}
+message FavoriteRouteInfoUpdateInf {
+  // Description: 导航路线唯一ID
+  uint64 RouteUuid = 1;
+
+  // Description: 用户命名路径名称
+  string RouteName = 2;
+
+  // Description: 推荐 / 常用路线标志位
+  uint32 RecommedFlag = 3;
+
+  // Description: 路线是否删除
+  uint32 DeleteRouteFlag = 4;
+
+  // Description: 导航会话id
+  string NaviId = 5;
+
+
+}
+message NavigationRouteInf {
+  // Description: 坐舱输出的导航路径数量
+  uint32 Number = 1;
+
+  // Description: 路线分类
+  uint32 Reason = 2;
+
+  // Description: 旅程信息
+  repeated TripInfo Trips = 3;
+
+  // Description: 路线描述信息
+  repeated RouteDescriptionInfo RouteDescription = 4;
+
+  // Description: route信息
+  repeated NavigationInfo Route = 5;
+
+
+message TripInfo {
+  // Description: 导航路线唯一ID
+  uint64 RouteUuid = 1;
+
+  // Description: 路线长度（公里）
+  // Unit: Km
+  uint64 RouteLength = 2;
+
+  // Description: 旅程时间（分）
+  uint64 TravelTime = 3;
+
+  // Description: 通勤路线创建时间（Unix时间戳）
+  uint64 CreationTime = 4;
+
+  // DefaultValue: 255
+  // Description: 推荐 / 常用路线标志位，0，主动推荐；1，常规使用；
+  uint32 RecommedFlag = 5;
+
+  // Description: 导航会话id
+  string NaviId = 6;
+
+}
+
+message RouteDescriptionInfo {
+  // Description: 用户命名路径名称
+  string RouteNickName = 1;
+
+  // Description: 导航路径起点
+  Pos2D StartPoint = 2;
+
+  // Description: 导航起点所在城市
+  uint32 StartAdcode = 3;
+
+  // Description: 导航路径终点
+  Pos2D DestPoint = 4;
+
+  // Description: 导航终点所在城市
+  uint32 DestAdcode = 5;
+
+  // Description: 记忆路径起始点
+  Pos2D MrStartPoint = 6;
+
+  // Description: 记忆路径结束点
+  Pos2D MrEndPoint = 7;
+
+  // Description: navi起点名称
+  string StartName = 8;
+
+  // Description: navi目的地名称
+  string DestName = 9;
+
+  // Description: 途径点0~5个
+  repeated Pos2D ViaPionts = 10;
+
+}
+
+message NavigationInfo {
+  // Description: 导航路径流水号，当前运行周期唯一
+  uint32 RouteIDSeN = 1;
+
+  // 枚举: NaviStatusSeN
+  // 1: 导航求路成功，生成RouteID，绑定RouteData
+  // 2: 重新求路成功，生成新RouteID，绑定新RouteData
+  // 3: 导航退出成功，当前RouteID表示当前结束的Route
+  // 4: 导航完成，当前RouteID表示当前结束的Route
+  // 5: reserve1
+  // 6: reserve2
+  // DefaultValue: 0
+  // Description: 导航状态
+  uint32 NaviStatusSeN = 2;
+
+  // Description: 导航数据,纬度经度
+  repeated LatLon RouteDatasSeN = 3;
+
+  // Description: 导航路径信息
+  repeated LinkInfo NavigationInfo = 4;
+
+  // Description: 数据总包数
+  uint32 DataGramSumNum = 5;
+
+  // Description: 数据包ID
+  uint32 DataGramNum = 6;
+
+  // Description: route路线上全部红绿灯信息
+  repeated Pos3D RouteTraLightsSeN = 7;
+
+}
+
+message LatLon {
+  double LatSeN = 1;
+
+  double LonSeN = 2;
+
+}
+
+message LinkInfo {
+  // 枚举: LinkPathID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link对应path_id
+  uint64 LinkPathID = 1;
+
+  // 枚举: LinkPathSegmentID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link对应Segment_id
+  uint32 LinkPathSegmentID = 2;
+
+  // 枚举: LinkID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link id
+  uint64 LinkID = 3;
+
+  // Description: Link长度
+  // Unit: m
+  int32 RDLength = 4;
+
+  // Description: Link对应道路名称
+  string RDName = 5;
+
+  // 枚举: RDDirection
+  // 0: FNode->TNode 正方向
+  // 1: TNode->FNode 逆方向
+  // 2: Reserved1
+  // 3: Reserved2
+  // 4: Reserved3
+  // 5: Reserved4
+  // Description: link方向
+  uint32 RDDirection = 6;
+
+  // 枚举: RDMainAction
+  // 0: 无基本导航动作
+  // 1: 左转
+  // 2: 右转
+  // 3: 左前方行驶
+  // 4: 向右前方行驶
+  // 5: 向左后方行驶
+  // 6: 向右后方形式
+  // 7: 左转调头
+  // 8: 直行
+  // 9: 靠左
+  // 10: 靠右
+  // 11: 进入环岛
+  // 12: 离开环岛
+  // 13: 减速行驶
+  // 14: 插入直行
+  // 65: 进入建筑物
+  // 66: 离开建筑物
+  // 67: 电梯换层
+  // 68: 楼梯换层
+  // 69: 扶梯换层
+  // 70: 导航主动作最大个数
+  // 71：预留
+  // 72：预留
+  // 73：预留
+  // 74：预留
+  // Description: 主要引导动作
+  uint32 RDMainAction = 7;
+
+  // 枚举: RDAssistisAction
+  // 0：无辅助导航动作
+  // 1：进入主路
+  // 2：进入辅路
+  // 3：进入高速
+  // 4：进入匝道
+  // 5：进入隧道
+  // 6：进入中间岔道
+  // 7：进入右岔路
+  // 8：进入左岔路
+  // 9：进入右转专用道
+  // 10：进入左转专用道
+  // 11：进入中间道路
+  // 12：进入右侧道路
+  // 13：进入左侧道路
+  // 14：靠右行驶进入辅路
+  // 15：靠左行驶进入辅路
+  // 16：靠右行驶进入主路
+  // 17：靠左行驶进入主路
+  // 18：靠右行驶进入右转专用道
+  // 19：到达航道
+  // 20：驶离轮渡
+  // 23：沿当前道路行驶
+  // 24：沿辅路行驶
+  // 25：沿主路行驶
+  // 32：到达出口
+  // 33：到达服务区
+  // 34：到达收费站
+  // 35：到达途经地
+  // 36：到达目的地的
+  // 37：到达充电站,新能源汽车专用
+  // 48：绕环岛左转
+  // 49：绕环岛右转
+  // 50：绕环岛直行
+  // 51：绕环岛右转
+  // 52：小环岛不数出口
+  // 64：到达复杂路口，走右边第一出口
+  // 65：到达复杂路口，走右边第二出口
+  // 66：到达复杂路口，走右边第三出口
+  // 67：到达复杂路口，走右边第四出口
+  // 68：到达复杂路口，走右边第五出口
+  // 69：到达复杂路口，走左边第一出口
+  // 70：到达复杂路口，走左边第二出口
+  // 71：到达复杂路口，走左边第三出口
+  // 72：到达复杂路口，走左边第四出口
+  // 73：到达复杂路口，走左边第五出口
+  // 80：进入调头专用路
+  // 90：通过人行横道
+  // 91：通过过街天桥
+  // 92：通过地下通道
+  // 93：通过广场
+  // 94：通过公园
+  // 95：通过扶梯
+  // 96：通过直梯
+  // 97：通过索道
+  // 98：通过空中通道
+  // 99：通过建筑物穿越通道
+  // 100：通过行人道路
+  // 101：通过游船路线
+  // 102：通过观光车路线
+  // 103：通过滑道
+  // 105：通过阶梯
+  // 106：通过斜坡
+  // 107：通过桥
+  // 108：通过轮渡
+  // 109：通过地铁通道
+  // 112：即将进入建筑(当前未下发)
+  // 113：即将离开建筑(当前未下发)
+  // 114：进入环岛(骑步特有)
+  // 115：离开环岛(骑步特有)
+  // 116：进入小路
+  // 117：进入内部路
+  // 118：进入左侧第二岔路
+  // 119：进入左侧第三岔路
+  // 120：进入右侧第二岔路
+  // 121：进入右侧第三岔路
+  // 122：进入加油站道路
+  // 123：进入小区道路
+  // 124：进入园区道路
+  // 125：上高架
+  // 126：走中间岔路上高架
+  // 127：走最右侧岔路上高架
+  // 128：走最左侧岔路上高架
+  // 129：沿当前道路直行
+  // 130：下高架
+  // 131：走左侧道路上高架
+  // 132：走右侧道路上高架
+  // 133：上桥
+  // 134：进停车场
+  // 135：进入立交桥
+  // 136：进入桥梁
+  // 137：进入地下通道
+  // 4096：辅动作最大值
+  // Description: 辅助动作
+  uint32 RDAssistisAction = 8;
+
+  // 枚举: RDLinkType
+  // -1: 无效
+  // 0: 普通道路
+  // 1: 航道
+  // 2: 隧道
+  // 3: 桥梁
+  // 4: 高架路
+  // 5: 预留
+  // 6: 预留
+  // 7: 预留
+  // 8: 预留
+  // Description: link 类型
+  int32 RDLinkType = 9;
+
+  // 枚举: RDFormWay
+  // -1: Unknown
+  // 1: MainRoad
+  // 2: WithinIntersection
+  // 3: JCT
+  // 4: Roundabout
+  // 5: ServiceArea
+  // 6: IC
+  // 7: SideRoad
+  // 8: ICAndJCT
+  // 9: Exit
+  // 10: Entry
+  // 11: RightTurn
+  // 12: RightTurn
+  // 13: LeftTurn
+  // 14: LeftTurn
+  // 15: NormalRoad
+  // 16: LeftAndRightTurn,  65:65
+  // 53: ServiceAreaAndJCT,
+  // 56: ServiceAreaAndIC,
+  // 58: ServiceAreaAndJCTAndIC
+  // 59: 预留
+  // 60: 预留
+  // 61: 预留
+  // 62: 预留
+  // Description: link 道路形状
+  int32 RDFormWay = 10;
+
+  // 枚举: RDRoadClass
+  // -1：无
+  // 0：高速公路
+  // 1:  国道
+  // 2:  省道
+  // 3:  县道
+  // 4:  乡公路
+  // 5:  县乡村内部道路
+  // 6:  主要大街、城市快速道
+  // 7:  主要道路
+  // 8:  次要道路
+  // 9:  普通道路
+  // 10:  非导航道路
+  // 11：预留
+  // 12：预留
+  // 13：预留
+  // 14：预留
+  // Description: link等级
+  int32 RDRoadClass = 11;
+
+  // 枚举: RoadDirection
+  // 0：双向通行
+  // 1：单向通行
+  // 2：Reserved1
+  // 3：Reserved2
+  // 4：Reserved3
+  // 5：Reserved4
+  // Description: link通行方向
+  uint32 RoadDirection = 12;
+
+  // 枚举: FreeRoadOrNot
+  // true: 收费, :
+  // false: 免费
+  // Description: 是否是收费道路
+  bool FreeRoadOrNot = 13;
+
+  // 枚举: OverHeadOrNot
+  // true: 高架路,
+  // false: 非高架路
+  // Description: 是否高架路
+  bool OverHeadOrNot = 14;
+
+  // 枚举: HasParallelRoadOrNot
+  // true: 有平行路,
+  // false: 没有平行路
+  // Description: 是否有平行路
+  bool HasParallelRoadOrNot = 15;
+
+  // 枚举: HasMultiOutOrNot
+  // true: 有岔路,
+  // false: 没有岔路
+  // Description: 是否有岔路
+  bool HasMultiOutOrNot = 16;
+
+  // 枚举: HasTrafficLightOrNot
+  // true: 有交通灯,
+  // false: 没有交通灯
+  // Description: 路口是否有交通灯
+  bool HasTrafficLightOrNot = 17;
+
+  // 枚举: AtServiceOrNot
+  // true: 在服务区,
+  // false: 不在服务区
+  // Description: 是否在服务区
+  bool AtServiceOrNot = 18;
+
+  // Description: 限速信息
+  uint32 GetSpeedLimit = 19;
+
+  // Range: 0-255
+  // Description: 道路车道数目
+  uint32 GetLaneNum = 20;
+
+  // 枚举: SlopeInfoStatus
+  // 0: 未采集坡度
+  // 1: 道路有[0,0.5)的坡度，数据中无存储
+  // 3: 表示有异常坡度，数据中无存储
+  // 2: 数据存储了坡度数据
+  // 4: 预留
+  // 5: 预留
+  // Description: link 坡度信息状态
+  uint32 SlopeInfoStatus = 21;
+
+  // Description: 坡度点信息
+  repeated SlopePoint SlopePoints = 22;
+
+  // Description: link上点位置数组
+  repeated LatLonInt LinkPoints = 23;
+
+  // Description: Link拓扑ID
+  uint64 LinkTopoIDSeN = 24;
+
+}
+
+message Pos3D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: deg
+  double LongitudePos3DSeN = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: deg
+  double LatitudePos3DSeN = 2;
+
+  // DefaultValue: 0
+  // Description: 高
+  // Unit: m
+  double ZPos3DSeN = 3;
+
+}
+
+message SlopePoint {
+  // DefaultValue: 0
+  // Description: 经度int
+  int32 LonIntSeN = 1;
+
+  // DefaultValue: 0
+  // Description: 纬度int
+  int32 LatIntSeN = 2;
+
+  // DefaultValue: 0
+  // Description: 坡度角，单位：0.1度
+  // Unit: deg
+  int32 SlopePointAngle = 3;
+
+  // DefaultValue: 0
+  // Description: 坡长（斜边）,单位：分米
+  // Unit: dm
+  int32 SlopePointLength = 4;
+
+  // DefaultValue: 0
+  // Description: 高度差，上坡为正数，下坡为负数v , 单位：分米
+  // Unit: dm
+  int32 SlopePointHight = 5;
+
+}
+
+message LatLonInt {
+  // DefaultValue: 0
+  // Description: 经度int
+  int32 LonIntSeN = 1;
+
+  // DefaultValue: 0
+  // Description: 纬度int
+  int32 LatIntSeN = 2;
+
+}
+
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  double LongitudePos2DSeN = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  double LatitudePos2DSeN = 2;
+
+}
+
+}
+message NavigationDistreqInf {
+  // Description: 驾驶员请求导航终点名称
+  string NavigationDistreqname = 1;
+
+  // Description: 驾驶员请求导航终点经纬度
+  Pos2D NavigationDistpiont = 2;
+
+  // Description: 驾驶员请求导航起点名称
+  string NavigationStartreqname = 3;
+
+  // Description: 驾驶员请求导航起点经纬度
+  Pos2D NavigationStartpiont = 4;
+
+  // Description: 有无目的地
+  uint32 IsNavigationDistpiont = 5;
+
+
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  double LongitudePos2DSeN = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  double LatitudePos2DSeN = 2;
+
+}
+
+}
+message CancelSaveInf {
+  // Description: 取消保存信号
+  uint32 CancelSave = 1;
+
+
+}
+message NavigationRouteInf1 {
+message LatLon {
+  double LatSeN = 1;
+
+  double LonSeN = 2;
+
+}
+
+message LinkInfo {
+  // 枚举: LinkPathID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link对应path_id
+  uint64 LinkPathID = 1;
+
+  // 枚举: LinkPathSegmentID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link对应Segment_id
+  uint32 LinkPathSegmentID = 2;
+
+  // 枚举: LinkID
+  // >0: 有效值
+  // 0: 无效值
+  // Description: link id
+  uint64 LinkID = 3;
+
+  // Description: Link长度
+  // Unit: m
+  int32 RDLength = 4;
+
+  // Description: Link对应道路名称
+  string RDName = 5;
+
+  // 枚举: RDDirection
+  // 0: FNode->TNode 正方向
+  // 1: TNode->FNode 逆方向
+  // 2: Reserved1
+  // 3: Reserved2
+  // 4: Reserved3
+  // 5: Reserved4
+  // Description: link方向
+  uint32 RDDirection = 6;
+
+  // 枚举: RDMainAction
+  // 0: 无基本导航动作
+  // 1: 左转
+  // 2: 右转
+  // 3: 左前方行驶
+  // 4: 向右前方行驶
+  // 5: 向左后方行驶
+  // 6: 向右后方形式
+  // 7: 左转调头
+  // 8: 直行
+  // 9: 靠左
+  // 10: 靠右
+  // 11: 进入环岛
+  // 12: 离开环岛
+  // 13: 减速行驶
+  // 14: 插入直行
+  // 65: 进入建筑物
+  // 66: 离开建筑物
+  // 67: 电梯换层
+  // 68: 楼梯换层
+  // 69: 扶梯换层
+  // 70: 导航主动作最大个数
+  // 71：预留
+  // 72：预留
+  // 73：预留
+  // 74：预留
+  // Description: 主要引导动作
+  uint32 RDMainAction = 7;
+
+  // 枚举: RDAssistisAction
+  // 0：无辅助导航动作
+  // 1：进入主路
+  // 2：进入辅路
+  // 3：进入高速
+  // 4：进入匝道
+  // 5：进入隧道
+  // 6：进入中间岔道
+  // 7：进入右岔路
+  // 8：进入左岔路
+  // 9：进入右转专用道
+  // 10：进入左转专用道
+  // 11：进入中间道路
+  // 12：进入右侧道路
+  // 13：进入左侧道路
+  // 14：靠右行驶进入辅路
+  // 15：靠左行驶进入辅路
+  // 16：靠右行驶进入主路
+  // 17：靠左行驶进入主路
+  // 18：靠右行驶进入右转专用道
+  // 19：到达航道
+  // 20：驶离轮渡
+  // 23：沿当前道路行驶
+  // 24：沿辅路行驶
+  // 25：沿主路行驶
+  // 32：到达出口
+  // 33：到达服务区
+  // 34：到达收费站
+  // 35：到达途经地
+  // 36：到达目的地的
+  // 37：到达充电站,新能源汽车专用
+  // 48：绕环岛左转
+  // 49：绕环岛右转
+  // 50：绕环岛直行
+  // 51：绕环岛右转
+  // 52：小环岛不数出口
+  // 64：到达复杂路口，走右边第一出口
+  // 65：到达复杂路口，走右边第二出口
+  // 66：到达复杂路口，走右边第三出口
+  // 67：到达复杂路口，走右边第四出口
+  // 68：到达复杂路口，走右边第五出口
+  // 69：到达复杂路口，走左边第一出口
+  // 70：到达复杂路口，走左边第二出口
+  // 71：到达复杂路口，走左边第三出口
+  // 72：到达复杂路口，走左边第四出口
+  // 73：到达复杂路口，走左边第五出口
+  // 80：进入调头专用路
+  // 90：通过人行横道
+  // 91：通过过街天桥
+  // 92：通过地下通道
+  // 93：通过广场
+  // 94：通过公园
+  // 95：通过扶梯
+  // 96：通过直梯
+  // 97：通过索道
+  // 98：通过空中通道
+  // 99：通过建筑物穿越通道
+  // 100：通过行人道路
+  // 101：通过游船路线
+  // 102：通过观光车路线
+  // 103：通过滑道
+  // 105：通过阶梯
+  // 106：通过斜坡
+  // 107：通过桥
+  // 108：通过轮渡
+  // 109：通过地铁通道
+  // 112：即将进入建筑(当前未下发)
+  // 113：即将离开建筑(当前未下发)
+  // 114：进入环岛(骑步特有)
+  // 115：离开环岛(骑步特有)
+  // 116：进入小路
+  // 117：进入内部路
+  // 118：进入左侧第二岔路
+  // 119：进入左侧第三岔路
+  // 120：进入右侧第二岔路
+  // 121：进入右侧第三岔路
+  // 122：进入加油站道路
+  // 123：进入小区道路
+  // 124：进入园区道路
+  // 125：上高架
+  // 126：走中间岔路上高架
+  // 127：走最右侧岔路上高架
+  // 128：走最左侧岔路上高架
+  // 129：沿当前道路直行
+  // 130：下高架
+  // 131：走左侧道路上高架
+  // 132：走右侧道路上高架
+  // 133：上桥
+  // 134：进停车场
+  // 135：进入立交桥
+  // 136：进入桥梁
+  // 137：进入地下通道
+  // 4096：辅动作最大值
+  // Description: 辅助动作
+  uint32 RDAssistisAction = 8;
+
+  // 枚举: RDLinkType
+  // -1: 无效
+  // 0: 普通道路
+  // 1: 航道
+  // 2: 隧道
+  // 3: 桥梁
+  // 4: 高架路
+  // 5: 预留
+  // 6: 预留
+  // 7: 预留
+  // 8: 预留
+  // Description: link 类型
+  int32 RDLinkType = 9;
+
+  // 枚举: RDFormWay
+  // -1: Unknown
+  // 1: MainRoad
+  // 2: WithinIntersection
+  // 3: JCT
+  // 4: Roundabout
+  // 5: ServiceArea
+  // 6: IC
+  // 7: SideRoad
+  // 8: ICAndJCT
+  // 9: Exit
+  // 10: Entry
+  // 11: RightTurn
+  // 12: RightTurn
+  // 13: LeftTurn
+  // 14: LeftTurn
+  // 15: NormalRoad
+  // 16: LeftAndRightTurn,  65:65
+  // 53: ServiceAreaAndJCT,
+  // 56: ServiceAreaAndIC,
+  // 58: ServiceAreaAndJCTAndIC
+  // 59: 预留
+  // 60: 预留
+  // 61: 预留
+  // 62: 预留
+  // Description: link 道路形状
+  int32 RDFormWay = 10;
+
+  // 枚举: RDRoadClass
+  // -1：无
+  // 0：高速公路
+  // 1:  国道
+  // 2:  省道
+  // 3:  县道
+  // 4:  乡公路
+  // 5:  县乡村内部道路
+  // 6:  主要大街、城市快速道
+  // 7:  主要道路
+  // 8:  次要道路
+  // 9:  普通道路
+  // 10:  非导航道路
+  // 11：预留
+  // 12：预留
+  // 13：预留
+  // 14：预留
+  // Description: link等级
+  int32 RDRoadClass = 11;
+
+  // 枚举: RoadDirection
+  // 0：双向通行
+  // 1：单向通行
+  // 2：Reserved1
+  // 3：Reserved2
+  // 4：Reserved3
+  // 5：Reserved4
+  // Description: link通行方向
+  uint32 RoadDirection = 12;
+
+  // 枚举: FreeRoadOrNot
+  // true: 收费, :
+  // false: 免费
+  // Description: 是否是收费道路
+  bool FreeRoadOrNot = 13;
+
+  // 枚举: OverHeadOrNot
+  // true: 高架路,
+  // false: 非高架路
+  // Description: 是否高架路
+  bool OverHeadOrNot = 14;
+
+  // 枚举: HasParallelRoadOrNot
+  // true: 有平行路,
+  // false: 没有平行路
+  // Description: 是否有平行路
+  bool HasParallelRoadOrNot = 15;
+
+  // 枚举: HasMultiOutOrNot
+  // true: 有岔路,
+  // false: 没有岔路
+  // Description: 是否有岔路
+  bool HasMultiOutOrNot = 16;
+
+  // 枚举: HasTrafficLightOrNot
+  // true: 有交通灯,
+  // false: 没有交通灯
+  // Description: 路口是否有交通灯
+  bool HasTrafficLightOrNot = 17;
+
+  // 枚举: AtServiceOrNot
+  // true: 在服务区,
+  // false: 不在服务区
+  // Description: 是否在服务区
+  bool AtServiceOrNot = 18;
+
+  // Description: 限速信息
+  uint32 GetSpeedLimit = 19;
+
+  // Range: 0-255
+  // Description: 道路车道数目
+  uint32 GetLaneNum = 20;
+
+  // 枚举: SlopeInfoStatus
+  // 0: 未采集坡度
+  // 1: 道路有[0,0.5)的坡度，数据中无存储
+  // 3: 表示有异常坡度，数据中无存储
+  // 2: 数据存储了坡度数据
+  // 4: 预留
+  // 5: 预留
+  // Description: link 坡度信息状态
+  uint32 SlopeInfoStatus = 21;
+
+  // Description: 坡度点信息
+  repeated SlopePoint SlopePoints = 22;
+
+  // Description: link上点位置数组
+  repeated LatLonInt LinkPoints = 23;
+
+  // Description: Link拓扑ID
+  uint64 LinkTopoIDSeN = 24;
+
+}
+
+message Pos3D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: deg
+  double LongitudePos3DSeN = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: deg
+  double LatitudePos3DSeN = 2;
+
+  // DefaultValue: 0
+  // Description: 高
+  // Unit: m
+  double ZPos3DSeN = 3;
+
+}
+
+message SlopePoint {
+  // DefaultValue: 0
+  // Description: 经度int
+  int32 LonIntSeN = 1;
+
+  // DefaultValue: 0
+  // Description: 纬度int
+  int32 LatIntSeN = 2;
+
+  // DefaultValue: 0
+  // Description: 坡度角，单位：0.1度
+  // Unit: deg
+  int32 SlopePointAngle = 3;
+
+  // DefaultValue: 0
+  // Description: 坡长（斜边）,单位：分米
+  // Unit: dm
+  int32 SlopePointLength = 4;
+
+  // DefaultValue: 0
+  // Description: 高度差，上坡为正数，下坡为负数v , 单位：分米
+  // Unit: dm
+  int32 SlopePointHight = 5;
+
+}
+
+message LatLonInt {
+  // DefaultValue: 0
+  // Description: 经度int
+  int32 LonIntSeN = 1;
+
+  // DefaultValue: 0
+  // Description: 纬度int
+  int32 LatIntSeN = 2;
+
+}
+
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  double LongitudePos2DSeN = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  double LatitudePos2DSeN = 2;
+
+}
+
+  // Description: 导航规划路线
+  repeated NavigationRouteType NavigationRoutSeN = 1;
+
+
+message NavigationRouteType {
+  // Description: 座舱输出的导航路径数量
+  uint32 Number = 1;
+
+  // Description: Route描述信息
+  RouteType Description = 2;
+
+  // Description: Route导航信息
+  NavigationInfo1 Route = 3;
+
+}
+
+message RouteType {
+  // Description: 路网link信息
+  repeated uint64 RouteLinks = 1;
+
+  // Description: 导航路线唯一ID
+  uint64 RouteUuid = 2;
+
+  // Description: 路线长度（公里）
+  uint64 RouteLength = 3;
+
+  // Description: 旅程时间（分）
+  uint64 TravelTime = 4;
+
+  // Description: 通勤路线创建时间（Unix时间戳）
+  uint64 CreationTime = 5;
+
+  // Description: 推荐 / 常用路线标志位，0，主动推荐；1，常规使用；
+  uint32 RecommedFlag = 6;
+
+  // Description: 导航会话id
+  string NaviId = 7;
+
+  // 枚举: QualityInspectionSts
+  // 0: 未知
+  // 1: 质检中
+  // 2: 可使用
+  // 3: 路线不可用，请删除后重新学习
+  // 预留
+  // 4: 删除标识
+  // 100: 不更新routelinks，状态未知；
+  // 101: 不更新routelinks，质检中；
+  // 102: 不更新routelinks，可使用；
+  // 103: 不更新routelinks，路线不使用，请删除后重新学习；
+  // 104: 不更新routelinks，删除标识；
+  // Description: 质量检测状态
+  uint32 QualityInspectionSts = 8;
+
+  // Description: 用户命名路径名称
+  string RouteNickName = 9;
+
+  // Description: 导航路径起点
+  Pos2D StartPoint = 10;
+
+  // Description: 导航起点所在城市
+  uint32 StartAdcode = 11;
+
+  // Description: 导航路径终点
+  Pos2D DestPoint = 12;
+
+  // Description: 导航终点所在城市
+  uint32 DestAdcode = 13;
+
+  // 枚举: ParkingFlag
+  // 0: undefined
+  // 1: start
+  // 2: end
+  // 3: both
+  // 4: none
+  // Description: 车位信息
+  uint32 ParkingFlag = 14;
+
+  // Description: 记忆路径起始点
+  Pos2D MrStartPoint = 15;
+
+  // Description: 记忆路径结束点
+  Pos2D MrEndPoint = 16;
+
+  // Description: navi起点名称
+  string StartName = 17;
+
+  // Description: navi目的地名称
+  string DestName = 18;
+
+  // Description: 途径点0~5个
+  repeated Pos2D ViaPionts = 19;
+
+  // 枚举: Reason
+  // 0: 不明；
+  // 1: navi推荐路线；
+  // 2: navi备选路线（多路线时的非推荐路）
+  // 3: 偏航路线；
+  // 4: 备选路线
+  // Description: 路线分类
+  uint32 Reason = 20;
+
+  // DefaultValue: 0
+  // 枚举: NavigationDisplayDistpiontPOIID
+  // 航终点显示坐标POI ID（有就发 没有就不发）
+  // ID示例“B02000IN0C
+  string NavigationDisplayDistpiontPOIID = 21;
+
+  // 枚举: NavigationDistreqType
+  // 0: 不明
+  // 1: 家
+  // 2: 公司
+  // 3: 其他
+  // DefaultValue: 0
+  // Description: 终点类型属性
+  uint32 NavigationDistreqType = 22;
+
+  // DefaultValue: 0
+  // 枚举: NavigationDistpiontPOIID
+  // 驾驶员请求导航终点引导坐标的POI ID（有就发 没有就不发）
+  // ID示例“B02000IN0C
+  string NavigationDistpiontPOIID = 23;
+
+}
+
+message NavigationInfo1 {
+  // Description: 导航路径流水号，当前运行周期唯一
+  uint64 RouteIDSeN = 1;
+
+  // 枚举: NaviStatusSeN
+  // 1: 导航求路成功，生成RouteID，绑定RouteData
+  // 2: 重新求路成功，生成新RouteID，绑定新RouteData
+  // 3: 导航退出成功，当前RouteID表示当前结束的Route
+  // 4: 导航完成，当前RouteID表示当前结束的Route
+  // 5: reserve1
+  // 6: reserve2
+  // DefaultValue: 0
+  // Description: 导航状态
+  uint32 NaviStatusSeN = 2;
+
+  // Description: 导航数据,纬度经度
+  repeated LatLon RouteDatasSeN = 3;
+
+  // Description: 导航路径信息
+  repeated LinkInfo NavigationInfo = 4;
+
+  // Description: 数据总包数
+  uint32 DataGramSumNum = 5;
+
+  // Description: 数据包ID
+  uint32 DataGramNum = 6;
+
+  // Description: route路线上全部红绿灯信息
+  repeated Pos3D RouteTraLightsSeN = 7;
+
+  repeated SegmentInfo SegmentInfomation = 8;
+
+}
+
+message SegmentInfo {
+  // Range: range [ >0: 有效值, 0: 无效值 ]
+  // DefaultValue: 0
+  // Description: 获取相关的路线ID
+  int64 RelatedPathID = 1;
+
+  // Range: range [ >=0: 有效值, <0: 无效值 ]
+  // DefaultValue: 0
+  // Description: 导航段在相关路线内的索引位置
+  int64 SegmentIndex = 2;
+
+  // 枚举: MainAction
+  // AUTO_UNKNOWN_ERROR = eger.MIN_VALUE 非法操作错误
+  // MainActionNULL = 0x0 无基本导航动作
+  // MainActionTurnLeft = 0x1 左转
+  // MainActionTurnRight = 0x2 右转
+  // MainActionSlightLeft = 0x3 向左前方行驶
+  // MainActionSlightRight = 0x4 向右前方行驶
+  // MainActionTurnHardLeft = 0x5 向左后方行驶
+  // MainActionTurnHardRight = 0x6 向右后方行驶
+  // MainActionUTurn = 0x7 左转调头
+  // MainActionContinue = 0x8 直行
+  // MainActionMergeLeft = 0x9 靠左
+  // MainActionMergeRight = 0x0A 靠右
+  // MainActionEntryRing = 0x0B 进入环岛
+  // MainActionLeaveRing = 0x0C 离开环岛
+  // MainActionSlow = 0x0D 减速行驶
+  // MainActionPlugContinue = 0x0E 插入直行（泛亚特有）
+  // MainActionEnterBuilding = 0x41 进入建筑物
+  // MainActionLeaveBuilding = 0x42 离开建筑物
+  // MainActionByElevator = 0x43 电梯换层
+  // MainActionByStair = 0x44 楼梯换层
+  // MainActionByEscalator = 0x45 扶梯换层
+  // MainActionCount = 0x46 导航主动作最大个数
+  // DefaultValue: -1
+  // Description: 导航主动作
+  int32 MainAction = 3;
+
+  // 枚举: AssistantAction
+  // AUTO_UNKNOWN_ERROR = Integer.MIN_VALUE 非法操作错误
+  // AssiActionNULL = 0x00 无辅助导航动作
+  // AssiActionEntryMain = 0x01 进入主路
+  // AssiActionEntrySideRoad = 0x02 进入辅路
+  // AssiActionEntryFreeway = 0x03 进入高速
+  // AssiActionEntrySlip = 0x04 进入匝道
+  // AssiActionEntryTunnel = 0x05 进入隧道
+  // AssiActionEntryCenterBranch = 0x06 进入中间岔道
+  // AssiActionEntryRightBranch = 0x07 进入右岔路
+  // AssiActionEntryLeftBranch = 0x08 进入左岔路
+  // AssiActionEntryRightRoad = 0x09 进入右转专用道
+  // AssiActionEntryLeftRoad = 0x0A 进入左转专用道
+  // AssiActionEntryMergeCenter = 0x0B 进入中间道路
+  // AssiActionEntryMergeRight = 0x0C 进入右侧道路
+  // AssiActionEntryMergeLeft = 0x0D 进入左侧道路
+  // AssiActionEntryMergeRightSild = 0x0E 靠右行驶进入辅路
+  // AssiActionEntryMergeLeftSild = 0x0F 靠左行驶进入辅路
+  // AssiActionEntryMergeRightMAIN = 0x10 靠右行驶进入主路
+  // AssiActionEntryMergeLeftMAIN = 0x11 靠左行驶进入主路
+  // AssiActionEntryMergeRightRight = 0x12 靠右行驶进入右转专用道
+  // AssiActionEntryFerry = 0x13 到达航道
+  // AssiActionLeftferry = 0x14 驶离轮渡
+  // AssiActionAlongRoad = 0x17 沿当前道路行驶
+  // AssiActionAlongSild = 0x18 沿辅路行驶
+  // AssiActionAlongMain = 0x19 沿主路行驶
+  // AssiActionArriveExit = 0x20 到达出口
+  // AssiActionArriveServiceArea = 0x21 到达服务区
+  // AssiActionArriveTollGate = 0x22 到达收费站
+  // AssiActionArriveWay = 0x23 到达途经地
+  // AssiActionArriveDestination = 0x24 到达目的地的
+  // AssiActionArriveChargingStation = 0x25 到达充电站,新能源汽车专用
+  // AssiActionEntryRingLeft = 0x30 绕环岛左转
+  // AssiActionEntryRingRight = 0x31 绕环岛右转
+  // AssiActionEntryRingContinue = 0x32 绕环岛直行
+  // AssiActionEntryRingUTurn = 0x33 绕环岛调头
+  // AssiActionSmallRingNotCount = 0x34 小环岛不数出口
+  // AssiActionRightBranch1 = 0x40 到达复杂路口，走右边第一出口
+  // AssiActionRightBranch2 = 0x41 到达复杂路口，走右边第二出口
+  // AssiActionRightBranch3 = 0x42 到达复杂路口，走右边第三出口
+  // AssiActionRightBranch4 = 0x43 到达复杂路口，走右边第四出口
+  // AssiActionRightBranch5 = 0x44 到达复杂路口，走右边第五出口
+  // AssiActionLeftBranch1 = 0x45 到达复杂路口，走左边第一出口
+  // AssiActionLeftBranch2 = 0x46 到达复杂路口，走左边第二出口
+  // AssiActionLeftBranch3 = 0x47 到达复杂路口，走左边第三出口
+  // AssiActionLeftBranch4 = 0x48 到达复杂路口，走左边第四出口
+  // AssiActionLeftBranch5 = 0x49 到达复杂路口，走左边第五出口
+  // AssiActionEnterUline = 0x50 进入调头专用路
+  // AssiActionPassCrossWalk = 0x5A 通过人行横道
+  // AssiActionPassOverPass = 0x5B 通过过街天桥
+  // AssiActionPassUnderground = 0x5C 通过地下通道
+  // AssiActionPassSquare = 0x5D 通过广场
+  // AssiActionPassPark = 0x5E 通过公园
+  // AssiActionPassStaircase = 0x5F 通过扶梯
+  // AssiActionPassLift = 0x60 通过直梯
+  // AssiActionPassCableway = 0x61 通过索道
+  // AssiActionPassSkyChannel = 0x62 通过空中通道
+  // AssiActionPassChannel = 0x63 通过建筑物穿越通道
+  // AssiActionPassWalkRoad = 0x64 通过行人道路
+  // AssiActionPassBoatLine = 0x65 通过游船路线
+  // AssiActionPassSightseeingLine = 0x66 通过观光车路线
+  // AssiActionPassSkidway = 0x67 通过滑道
+  // AssiActionPassLadder = 0x69 通过阶梯
+  // AssiActionPassSlope = 0x6A 通过斜坡
+  // AssiActionPassBridge = 0x6B 通过桥
+  // AssiActionPassFerry = 0x6C 通过轮渡
+  // AssiActionPassSubway = 0x6D 通过地铁通道
+  // AssiActionSoonEnterBuilding = 0x70 即将进入建筑(当前未下发)
+  // AssiActionSoonLeaveBuilding = 0x71 即将离开建筑(当前未下发)
+  // AssiActionEnterRoundabout = 0x72 进入环岛(骑步特有)
+  // AssiActionLeaveRoundabout = 0x73 离开环岛(骑步特有)
+  // AssiActionEnterPath = 0x74 进入小路
+  // AssiActionEnterInner = 0x75 进入内部路
+  // AssiActionEnterLeftBranchTwo = 0x76 进入左侧第二岔路
+  // AssiActionEnterLeftBranchThree = 0x77 进入左侧第三岔路
+  // AssiActionEnterRightBranchTwo = 0x78 进入右侧第二岔路
+  // AssiActionEnterRightBranchThree = 0x79 进入右侧第三岔路
+  // AssiActionEnterGasStation = 0x7A 进入加油站道路
+  // AssiActionEnterHousingEstate = 0x7B 进入小区道路
+  // AssiActionEnterParkRoad = 0x7C 进入园区道路
+  // AssiActionEnterOverhead = 0x7D 上高架
+  // AssiActionEnterCenterBranchOverhead = 0x7E 走中间岔路上高架
+  // AssiActionEnterRightBranchOverhead = 0x7F 走最右侧岔路上高架
+  // AssiActionEnterLeftBranchOverhead = 0x80 走最左侧岔路上高架
+  // AssiActionAlongStraight = 0x81 沿当前道路直行
+  // AssiActionDownOverhead = 0x82 下高架
+  // AssiActionEnterLeftOverhead = 0x83 走左侧道路上高架
+  // AssiActionEnterRightOverhead = 0x84 走右侧道路上高架
+  // AssiActionUptoBridge = 0x85 上桥
+  // AssiActionEnterParking = 0x86 进停车场
+  // AssiActionEnterOverpass = 0x87 进入立交桥
+  // AssiActionEnterBridge = 0x88 进入桥梁
+  // AssiActionEnterUnderpass = 0x89 进入地下通道
+  // AssiActionMax = 0x1000 辅动作最大值
+  // DefaultValue: -1
+  // Description: 导航辅助动作
+  int32 AssistantAction = 4;
+
+}
+
+}
+message D2DRouteEndSwitchInf {
+  // 枚举: D2DRouteEndSwitch
+  // 0: 默认值
+  // 1: 完成
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: D2D路线记忆结束开关
+  uint32 D2DRouteEndSwitch = 1;
+
+
+}
+message CommutingRouteSelectionReqInf {
+  // Description: 用户选择通勤路线
+  repeated CommutingRouteSelectionReqType CommutingRouteSelectionReqSeN = 1;
+
+
+message CommutingRouteSelectionReqType {
+  // Description: 导航ID
+  string NaviID = 1;
+
+  // Description: 路线RouteUuid
+  uint64 RouteUuid = 2;
+
+  // 枚举: SourceApp
+  // 0: 默认值
+  // 1: 未定义
+  // 2: 灵动岛
+  // 3: 路线面板
+  // 4: 导航入口
+  // 5: 预留1
+  // 6: 预留2
+  // DefaultValue: 0
+  // Description: 控制命令来源
+  uint32 SourceApp = 3;
+
+  // 枚举: CommutingRouteChecked
+  // 0: 默认
+  // 1: 未定义
+  // 2: 选中（人工选中）
+  // 3: 未选中（导航结束时、人工取消选中）
+  // 4: 未选中（还原失败）
+  // DefaultValue: 0
+  // Description: 通勤路线选中状态
+  uint32 CommutingRouteChecked = 4;
+
+  // 枚举: CommutingRouteType
+  // 0: 未知
+  // 1: 选择D2D路线
+  // 2: 选择通勤路线
+  // 3: 预留
+  // 4: 预留
+  // DefaultValue: 0
+  // Description: D2D路线切换为通勤路线
+  uint32 CommutingRouteType = 5;
+
+  // 枚举: Anchored
+  // 0: 默认；
+  // 1: 未定义；
+  // 2: 已锚定；
+  // 3: 未锚定；
+  // DefaultValue: 0
+  // Description: 通勤路线锚定
+  uint32 Anchored = 6;
+
+}
+
+}
+message HmiDrvrSodReqLaneChgInf {
+  // 枚举: HmiDrvrSodReqLaneChg
+  // 0:无效值；
+  // 1:向左变道；
+  // 2:向右变道；
+  // 3:预留1；
+  // 4:预留2
+  // DefaultValue: 0
+  // Description: 语音变道指令
+  uint32 HmiDrvrSodReqLaneChg = 1;
+
+
+}
+message HasNavigationInf {
+  // 枚举: HasNavigation
+  // 0: 默认值；
+  // 1: 存在导航路线；
+  // 2: 不存在导航路线；
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: someip建联DHU存在导航路线询问ADCU是否需要
+  uint32 HasNavigation = 1;
+
+
+}

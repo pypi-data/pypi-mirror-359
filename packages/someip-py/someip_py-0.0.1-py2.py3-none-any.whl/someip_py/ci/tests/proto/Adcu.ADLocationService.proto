@@ -1,0 +1,385 @@
+syntax = "proto3";
+
+package Adcu.ADLocationService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 4;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 30HZ
+ MsgIdRelativeLocalization = 1;
+
+ // Frequency: 20HZ
+ MsgIdAbsoluteLocalization = 2;
+
+ // Frequency: 10HZ
+ MsgIdGNSSMsg = 3;
+
+ // Frequency: 100HZ
+ MsgIdIMUMsg = 4;
+
+ // Frequency: 50HZ
+ MsgIdINSMsg = 5;
+
+}
+
+message RelativeLocalization {
+  // DefaultValue: 0
+  // Description: odom坐标系自车坐标x
+  // Unit: mm
+  int32 Positionx = 1;
+
+  // DefaultValue: 0
+  // Description: odom坐标系自车坐标y
+  // Unit: mm
+  int32 Positiony = 2;
+
+  // Range: [-π,π]
+  // DefaultValue: 0
+  // Description: 自车车身航向角
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 Yaw = 3;
+
+  // Range: [-π/2,π/2]
+  // DefaultValue: 0
+  // Description: 自车车身俯仰角
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 Pitch = 4;
+
+  // Range: [-π/2,π/2]
+  // DefaultValue: 0
+  // Description: 显示俯仰角
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 DisplayPitch = 5;
+
+  // DefaultValue: 0
+  // Description: 变道后的位置odom坐标系自车坐标x
+  // Unit: mm
+  int32 TargetPositionx = 6;
+
+  // DefaultValue: 0
+  // Description: 变道后的位置odom坐标系自车坐标y
+  // Unit: mm
+  int32 TargetPositiony = 7;
+
+  // Range: [-π,π]
+  // DefaultValue: 0
+  // Description: 变道落位框中心点角度
+  // Unit: 0.001弧度
+  int32 TargetPoistionAngle = 8;
+
+  // Range: [-20,100]
+  // DefaultValue: 0
+  // Description: 泊车进度取值范围
+  int32 ParkProgress = 9;
+
+
+}
+message AbsoluteLocalization {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度
+  // Unit: 度
+  // Resolution: 满足座舱需求小数点后要求7位
+  double Longitude = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度
+  // Unit: 度
+  // Resolution: 满足座舱需求小数点后要求7位
+  double Latitude = 2;
+
+  // DefaultValue: 0
+  // Description: 椭球高
+  // Unit: m
+  // Resolution: 满足座舱需求小数点后要求2位
+  double Altitude = 3;
+
+  // Range: [-π,π]
+  // DefaultValue: 0
+  // Description: 自车航向角(yaw),正东为0，顺时针为负，逆时针为正
+  // Unit: 弧度
+  // Resolution: 满足座舱需求小数点后要求2位
+  double Yawenu = 4;
+
+  // Range: [-π/2,π/2]
+  // DefaultValue: 0
+  // Description: 自车航向角pitch,水平为0；上坡为正，下坡为负
+  // Unit: 弧度
+  // Resolution: 满足座舱需求小数点后要求2位
+  double Pitchenu = 5;
+
+  // Range: [-π/2,π/2]
+  // DefaultValue: 0
+  // Description: 自车航向角roll,水平为0；左高右低为正，左低右高为负
+  // Unit: 弧度
+  // Resolution: 满足座舱需求小数点后要求2位
+  double Rollenu = 6;
+
+  // DefaultValue: 0
+  // Description: 自车速度
+  // Unit: km/h
+  float  Velocity = 7;
+
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系东向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityEast = 8;
+
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系北向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityNorth = 9;
+
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系高向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityUp = 10;
+
+  // DefaultValue: 0
+  // Description: 时间戳
+  uint64 GnssTimeStamp = 11;
+
+  // 枚举: LocalizationState
+  // 0: 未初始化
+  // 1: good，无矢量定位融合
+  // 2: warning
+  // 3: error
+  // 4: good，有矢量定位融合
+  // 5: reserve1
+  // 6: reserve2
+  // DefaultValue: 0
+  // Description: 定位状态
+  uint32 LocalizationState = 12;
+
+
+}
+message GNSSMsg {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度
+  // Unit: 度
+  double GnssLongitude = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度
+  // Unit: 度
+  double GnssLatitude = 2;
+
+  // Range: 0~655.35
+  // DefaultValue: 0
+  // Description: 经度标准差 0~655.35
+  // Unit: 度
+  float GnsssTdLon = 3;
+
+  // Range: 0~655.35
+  // DefaultValue: 0
+  // Description: 维度标准差 0~655.35
+  // Unit: 度
+  float GnsssTdLat = 4;
+
+  // DefaultValue: 0
+  // Description: 时间戳 如： 1695044869.465329
+  double GnssTime = 5;
+
+  // Range: 0~360
+  // DefaultValue: 0
+  // Description: 航向
+  double GnssTrackTrueAngle = 6;
+
+  // Range: [-1000,1097.151]
+  // DefaultValue: 0
+  // Description: 高度
+  double GnssAltitude = 7;
+
+  // Range: [-100,99.9931595]
+  // DefaultValue: 0
+  // Description: 速度
+  float  GnssSpeedHorizontal = 8;
+
+
+}
+message IMUMsg {
+  // DefaultValue: 0
+  // Description: X轴加速度
+  // Unit: m/s2
+  float IMUAccX = 1;
+
+  // DefaultValue: 0
+  // Description: Y轴加速度
+  // Unit: m/s2
+  float IMUAccY = 2;
+
+  // DefaultValue: 0
+  // Description: Z轴加速度
+  // Unit: m/s2
+  float IMUAccZ = 3;
+
+  // DefaultValue: 0
+  // Description: X轴角速度
+  // Unit: rad/s
+  float IMUAngX = 4;
+
+  // DefaultValue: 0
+  // Description: Y轴角速度
+  // Unit: rad/s
+  float IMUAngY = 5;
+
+  // DefaultValue: 0
+  // Description: Z轴角速度
+  // Unit: rad/s
+  float IMUAngZ = 6;
+
+  // 枚举: IMUSts
+  // 0x0-error
+  // 0x1-保留
+  // 0x2-OK
+  // DefaultValue: 2
+  // Description: IMU状态：算法内部状态
+  uint32 IMUSts = 7;
+
+  // DefaultValue: 0
+  // Description: IMU 传感器时间（原始数据为linux时间戳，浮点数据）
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double IMUTimeStamp = 8;
+
+
+}
+message INSMsg {
+  // DefaultValue: /
+  // Description: 全局定位信息结构体（包含经纬度&椭球高）
+  // Unit: /
+  LLAtitude GlobalPositionInfo = 1;
+
+  // DefaultValue: /
+  // Description: 车身姿态角结构体（包含Yaw&Pitch&Roll角）
+  // Unit: /
+  YPRenu VehicleAttitudeAngles = 2;
+
+  // DefaultValue: /
+  // Description: 三维速度分量结构体（包含东&北&高的速度）
+  // Unit: /
+  ENUInsVelocity ThreeDVelocitys = 3;
+
+  // DefaultValue: 0
+  // Description: 时间戳（原始数据为linux时间戳，浮点数据）
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double GnssTimeStamp = 4;
+
+  // 枚举: LocalizationState
+  // 0: 无信号
+  // 17/16: 单点解
+  // 32: 浮点解
+  // 48/50: 固定解 (注：可对应rtkintpos)
+  // DefaultValue: 0
+  // 枚举: LocalizationState
+  // 定位状态
+  // （注：极氪内部状态）
+  uint32 LocalizationState = 5;
+
+  // 枚举: InsSts
+  // 0: 初始化完成(正常从gnss固定解初始化，或从配置管理初始化)
+  // 1: imu异常
+  // 2: 轮速异常
+  // 3: gnss异常 (gnss超时，或值异常，如经纬度值恒定，超出阈值)
+  // 4: 未初始化
+  // 5: 算法异常
+  // DefaultValue: 0
+  // 枚举: InsSts
+  // 组合状态
+  // （注：极氪内部状态）
+  uint32 InsSts = 6;
+
+
+message LLAtitude {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度
+  // Unit: 度deg
+  // Resolution: 满足座舱需求小数点后要求7位
+  double Longitude = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度
+  // Unit: 度deg
+  // Resolution: 满足座舱需求小数点后要求7位
+  double Latitude = 2;
+
+  // Range: <10000
+  // DefaultValue: 0
+  // Description: 椭球高
+  // Unit: m
+  // Resolution: 满足座舱需求小数点后要求2位
+  double Altitude = 3;
+
+}
+
+message YPRenu {
+  // Range: [-π,π]
+  // DefaultValue: 0
+  // Description: 自车航向角(yaw),正东为0，顺时针为负，逆时针为正
+  // Unit: 弧度rad
+  // Resolution: 满足座舱需求小数点后要求2位
+  float Yawenu = 1;
+
+  // Range: [-π/2,π/2]
+  // DefaultValue: 0
+  // Description: 自车pitch角,水平为0；上坡为正，下坡为负
+  // Unit: 弧度rad
+  // Resolution: 满足座舱需求小数点后要求2位
+  float Pitchenu = 2;
+
+  // Range: [-π,π]
+  // DefaultValue: 0
+  // Description: 自车roll角,水平为0；左高右低为正，左低右高为负
+  // Unit: 弧度rad
+  // Resolution: 满足座舱需求小数点后要求2位
+  float Rollenu = 3;
+
+}
+
+message ENUInsVelocity {
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系东向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityEast = 1;
+
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系北向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityNorth = 2;
+
+  // Range: [-125,125]
+  // DefaultValue: 0
+  // Description: 沿着坐标系高向速度
+  // Unit: m/s
+  // Resolution: 满足座舱需求小数点后2位
+  float  InsVelocityUp = 3;
+
+}
+
+}

@@ -1,0 +1,1510 @@
+syntax = "proto3";
+
+package Adcu.ADAVPStsService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 7;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 30Hz
+ // Comment: 地图中自车位姿信息
+ MsgIdAvpEgoPositionInMap = 1;
+
+ // Frequency: 30Hz
+ // Comment: 当前相对定位坐标系到map 坐标系的转换关系（用于转换 mop 线等）
+ MsgIdAvpTfRelToMap = 2;
+
+ // Frequency: 20Hz
+ // Comment: ParkingAPA交互信息
+ MsgIdParkingAPA = 3;
+
+ // Frequency: 10Hz
+ // Comment: 接入避免拥堵信息
+ MsgIdActionableArea = 4;
+
+ // Frequency: event
+ // Comment: 用于显示AVP地图相关信息
+ MsgIdAVPMap = 5;
+
+ // Frequency: event
+ // Comment: 用于显示导航线路相关信息（自车坐标系，SR还原界面）
+ MsgIdNavigationLine = 6;
+
+ // Frequency: event
+ // Comment: Parking交互信息
+ MsgIdParkingInteractive = 7;
+
+ // Frequency: event
+ // Comment: 用于泊车交互状态信息
+ MsgIdApaParkingStatus = 8;
+
+ // Frequency: event
+ // Comment: 用于PDC报警信息交互
+ MsgIdPDCWarningInfo = 9;
+
+ // Frequency: event
+ // Comment: 用于泊车窗口交互状态信息
+ MsgIdAVPPopup = 10;
+
+ // Frequency: event
+ // Comment: 用于显示AVP地图相关信息（自车坐标系，用于SR还原渲染界面）
+ MsgIdAVP3DMap = 11;
+
+ // Frequency: event
+ // Comment: 用于AVP请求收藏的目的地信息
+ MsgIdAVPCollectedDestinationCmd = 12;
+
+ // Frequency: event
+ // Comment: 用于传递生成地状态令信息
+ MsgIdAVPMapGenerateStatus = 13;
+
+ // Frequency: event
+ // Comment: 用于上报本地存储的地图信息
+ MsgIdAVPMapListInfo = 14;
+
+ // Frequency: event
+ // Comment: 用于请求查询附近的POI
+ MsgIdAutoNaviSearch = 15;
+
+}
+
+message AvpEgoPositionInMap {
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionX = 1;
+
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionY = 2;
+
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionZ = 3;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationX = 4;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationY = 5;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationZ = 6;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationW = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层
+  int32 CurrentFloorLevel = 8;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 9;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 10;
+
+
+}
+message AvpTfRelToMap {
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionX = 1;
+
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionY = 2;
+
+  // DefaultValue: 0
+  // Description: 地图坐标系
+  // Unit: m
+  float PositionZ = 3;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationX = 4;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationY = 5;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationZ = 6;
+
+  // DefaultValue: 0
+  // Description: 四元组
+  float OrientationW = 7;
+
+
+}
+message ParkingAPA {
+  // 枚举: ApaZekSlot
+  // 0: 默认值（此停车场无极氪充电站）
+  // 1: 进入有极氪充电站的停车场
+  // 2: 预留
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 停车场内极氪充电站范围标志位
+  uint32 ApaZekSlot = 1;
+
+  // DefaultValue: 0
+  // Description: 用户选择的极氪充电桩编号
+  repeated int32 ApaZekSlotNum = 2;
+
+  // 枚举: ApaZekSlotLockSts
+  // 0: 默认无效
+  // 1: 地锁降下过程中
+  // 2: 地锁落下
+  // 3: 地锁打开
+  // 4: 地锁故障
+  // 5: 预留
+  // 6: 预留
+  // 7: 预留
+  // 8: 预留
+  // DefaultValue: 0
+  // Description: 用户选择的极氪充电桩地锁状态
+  uint32 ApaZekSlotLockSts = 3;
+
+
+}
+message ActionableArea {
+  // DefaultValue: 0
+  // Description: id
+  uint64 ID = 1;
+
+  // 枚举: Type
+  // 0: unknown
+  // 1: FreeSpace
+  // 2: 预留
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // Description: 类型
+  uint32 Type = 2;
+
+  // Description: 车道边线组成的区域
+  repeated Pos2D FreeSpace = 3;
+
+
+message Pos2D {
+  // Range: [-180,180]
+  // Description: 经度（gjc-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // Description: 纬度（gjc-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+}
+message AVPMap {
+  // Description: 边线
+  repeated MapBoundary MapBoundaries = 1;
+
+  // Description: 车道停止线
+  repeated MapStopline MapStoplines = 2;
+
+  // Description: 人行道
+  repeated MapCrossWalk MapCrosswalks = 3;
+
+  // Description: 路面标识
+  repeated MapRoadMark MapRoadmarks = 4;
+
+  // Description: 变道目标车道
+  MapLaneInfo MapTargetLane = 5;
+
+  // Description: 道路面
+  repeated MapLaneInfo MapRoadSurface = 6;
+
+  // Description: 车位
+  repeated MapSlotType MapSlots = 7;
+
+
+message MapBoundary {
+  // DefaultValue: 0
+  // Description: 边线id
+  uint64 BoundaryID = 1;
+
+  // 枚举: LineType
+  // 2: 车道标识线
+  // 3: 护栏
+  // 4: 围栏
+  // 5: 路缘石
+  // 6: 墙
+  // 7: 自然边界（红色边线）
+  // 8: 预留
+  // 9: 预留
+  // DefaultValue: 0
+  // Description: 边线类型
+  uint32 LineType = 2;
+
+  // 枚举: LineMarking
+  // 1: 单实线
+  // 2: 单虚线
+  // 3: 短虚线
+  // 4: 双实线
+  // 5: 双虚线
+  // 6: 左实右虚
+  // 7: 左虚右实
+  // 8: 导流线
+  // 9: 预留
+  // 10: 预留
+  // DefaultValue: 0
+  // Description: 边线形状
+  uint32 LineMarking = 3;
+
+  // 枚举: IDM
+  // 0: 不是鱼骨线
+  // 1: 是鱼骨线
+  // 2: 预留
+  // DefaultValue: 0
+  // Description: 是否是鱼骨线
+  uint32 IDM = 4;
+
+  // 枚举: BoundaryConfidence
+  // 1: 非常可靠
+  // <0.5: 不太可靠
+  // DefaultValue: 1
+  // Description: 置信度
+  float BoundaryConfidence = 5;
+
+  // Description: 绘制道路边线的点数组
+  repeated CoordinateSys GeometryPoints = 6;
+
+  // 枚举: BoundaryColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: reserve1（预留）
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 边线颜色
+  uint32 BoundaryColor = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 8;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 9;
+
+}
+
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: m
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: m
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: m
+  int32 CoordinateZ = 3;
+
+}
+
+message MapStopline {
+  // DefaultValue: 0
+  // Description: 停止线id
+  uint64 StoplineID = 1;
+
+  // Description: 绘制停止线的点数组
+  repeated CoordinateSys GeometryPoints = 2;
+
+}
+
+message MapCrossWalk {
+  // DefaultValue: 0
+  // Description: 人行道id
+  uint64 CrossWalkID = 1;
+
+  // Description: 绘制人行道的点数组
+  repeated CoordinateSys GeometryPoints = 2;
+
+  // 枚举: CrossWalkDirection
+  // [-3141,3141]
+  // 0代表与自车朝向相同，左正右负
+  // DefaultValue: 0
+  // Description: 人行道标线角度
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 CrossWalkDirection = 3;
+
+}
+
+message MapRoadMark {
+  // DefaultValue: 0
+  // Description: 路面标识id
+  uint64 RoadmarkID = 1;
+
+  // 枚举: RoadmarkType
+  // 1: 直行
+  // 3: 直行或左转
+  // 4: 直行或右转
+  // 5: 直行或掉头
+  // 6: 左转
+  // 7: 左转或掉头
+  // 8: 左弯或向左合流
+  // 9: 右转
+  // 10: 右弯或向右合流
+  // 11: 左右转弯
+  // 12: 掉头
+  // 13: 禁止左弯标记
+  // 14: 禁止右弯标记
+  // 15: 禁止掉头标记
+  // 16: 直行或左转或右转
+  // 17: 直行或掉头或左转
+  // 18: 右转或掉头
+  // 22: 车距确认线
+  // 23: 停车让行线
+  // 24: 减速让行线
+  // 25: 停止线
+  // 26: 禁停区
+  // 99: 其他
+  // 100: 预留
+  // 101: 预留
+  // DefaultValue: 0
+  // Description: 路面标识类型
+  uint32 RoadmarkType = 2;
+
+  // Description: 投影后的几何包围框
+  repeated CoordinateSys BoundaryBox = 3;
+
+  // Description: 绘制路面标识的点数组
+  repeated CoordinateSys GeometryPoints = 4;
+
+  // 枚举: RoadMarkDirection
+  // [-3141,3141]
+  // 0代表与自车朝向相同，左正右负
+  // DefaultValue: 0
+  // Description: 地面标识角度
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 RoadMarkDirection = 5;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 6;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 7;
+
+}
+
+message MapLaneInfo {
+  // 枚举: LaneColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: reserve1（预留）
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 车道颜色
+  uint32 LaneColor = 1;
+
+  // 枚举: LaneAnimationType
+  // 0: 默认
+  // 1: 向后水波纹特效
+  // 2: 向前水波纹特效
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 车道动效
+  uint32 LaneAnimationType = 2;
+
+  // 枚举: AreaType
+  // 0: 无效值
+  // 1: 车道
+  // 2: 路面
+  // 3: 非行驶区域（路沿区域、花坛等）
+  // 4: 预留
+  // Description: 区域类型
+  uint32 AreaType = 3;
+
+  // 枚举: AreaConfidence
+  // 1: 非常可靠
+  // <0.5: 不太可靠
+  // DefaultValue: 1
+  // Description: 置信度
+  float AreaConfidence = 4;
+
+  // Description: 左边车道线行点
+  repeated CoordinateSys LeftBoundary = 5;
+
+  // Description: 右边车道线行点
+  repeated CoordinateSys RightBoundary = 6;
+
+  // Description: 车道边线组成的四边形区域(预留)
+  repeated CoordinateSys AreaPoints = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 8;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 9;
+
+}
+
+message MapSlotType {
+  // DefaultValue: 0
+  // Description: 车位id（1为推荐车位）
+  uint32 SlotID = 1;
+
+  // 枚举: SlotStatus
+  // 0: 占据(不可用)
+  // 1: 非占据（可用）
+  // 2: 未知
+  // 3: 行人占据
+  // 4: 两轮车占据
+  // 5: 锥桶占据
+  // 6: 地锁占据
+  // 7: 禁停牌占据
+  // 8: 其他障碍物占据
+  // 9: 预留
+  // DefaultValue: 0
+  // Description: 车位状态
+  uint32 SlotStatus = 2;
+
+  // 枚举: SlotType
+  // 0: 垂直
+  // 1: 水平
+  // 2: 斜列
+  // 3: 机械车位
+  // DefaultValue: 0
+  // Description: 车位类型
+  uint32 SlotType = 3;
+
+  // Description: 车位轮廓描述
+  repeated CoordinateSys SlotPoints = 4;
+
+  // Description: 车位轮挡信息
+  repeated CoordinateSys BlockPoints = 5;
+
+  // 枚举: SlotSelectButton
+  // 0: 默认（不处理）
+  // 1: 高亮
+  // 2: 灰
+  // Description: 自选车位按钮高亮
+  uint32 SlotSelectButton = 6;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 8;
+
+  // 枚举: ApaChargeSlot
+  // 0: 默认值(非极氪充电车位)
+  // 1: 极氪充电车位
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 极氪充电桩的感知车位类型
+  // Unit: /
+  uint32 ApaChargeSlot = 9;
+
+  // Range: asic
+  // DefaultValue: 0
+  // Description: 极氪充电桩的感知车位编号
+  // Unit: /
+  repeated int32 ApaChargeSlotNum = 10;
+
+  // 枚举: ApaReqReleaseLockCard
+  // 0: 默认无效
+  // 1: 请求降地锁弹窗
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 请求降地锁弹窗
+  // Unit: /
+  uint32 ApaReqReleaseLockCard = 11;
+
+  // 枚举: SlotSizeType
+  // 0: 默认无效
+  // 1: 窄车位
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 车辆宽度属性
+  // Unit: /
+  uint32 SlotSizeType = 12;
+
+}
+
+}
+message NavigationLine {
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: m
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: m
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: m
+  int32 CoordinateZ = 3;
+
+}
+
+  // DefaultValue: 0
+  // Description: 导航线路Id
+  uint32 NavigationLineId = 1;
+
+  // Description: 绘制导航线路的点数组
+  repeated CoordinateSys GeometryPoints = 2;
+
+  // DefaultValue: 0
+  // Description: 目的地车位Id
+  uint32 DestinationSlotId = 3;
+
+
+}
+message ParkingInteractive {
+  // 枚举: PrkgInteractive
+  // 0: 无效
+  // 1: 关闭地锁
+  // 2: 打开地锁
+  // 3: 充电插枪
+  // 4: 充电拔枪
+  // 5: 查询目的地车位
+  // 6: 查询逆地理信息
+  // 20: 刷新导航
+  // 30: 结束当前SD导航
+  // 31: 预留
+  // DefaultValue: 0
+  // Description: 交互信息
+  uint32 PrkgInteractive = 1;
+
+  // DefaultValue: 0
+  // Description: 交互对象ID
+  uint32 PrkgInterID = 2;
+
+  // DefaultValue: 0
+  // Description: 场站ID
+  uint32 PrkgStationID = 3;
+
+
+}
+message ApaParkingStatus {
+  // 枚举: ViewSwitchReq
+  // 0: 不请求视图切换
+  // 1: 请求切换轮毂视图
+  // 2: 预留
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 请求切换视图
+  uint32 ViewSwitchReq = 1;
+
+  // 枚举: ApaParkingOutStatus
+  // 0: 默认无效
+  // 1: 打开泊出推荐卡片
+  // 2: 关闭泊出推荐卡片
+  // 3: 打开泊车界面
+  // 4: 关闭泊车界面
+  // 5: 打开降地锁弹窗卡片
+  // 6: 关闭降地锁弹窗卡片
+  // 7: SR界面打开泊车界面
+  // 8: SR界面关闭泊车界面
+  // DefaultValue: 0
+  // Description: 泊出推荐卡片/泊车界面状态
+  uint32 ApaParkingOutStatus = 2;
+
+
+}
+message PDCWarningInfo {
+  // DefaultValue: 0
+  // Description: 前系统最近障碍物距离
+  float ObsMiniDistanceFrntMin = 1;
+
+  // DefaultValue: 0
+  // Description: 后系统最近障碍物距离
+  float ObsMiniDistanceReMin = 2;
+
+  // 枚举: ObsMiniFrntStopDisp
+  // 0: ReqSts2_Default
+  // 1: ReqSts2_NoReq
+  // 2: ReqSts2_Req
+  // 3: ReqSts2_Reserved
+  // DefaultValue: 0
+  // Description: 前系统文言提醒stop显示请求
+  uint32 ObsMiniFrntStopDisp = 3;
+
+  // 枚举: ObsMiniReStopDisp
+  // 0: ReqSts2_Default
+  // 1: ReqSts2_NoReq
+  // 2: ReqSts2_Req
+  // 3: ReqSts2_Reserved
+  // DefaultValue: 0
+  // Description: 后系统文言提醒stop显示请求
+  uint32 ObsMiniReStopDisp = 4;
+
+  // 枚举: ObsMiniFrntMinDst
+  // 0: Position_No
+  // 1: Position_InsideLeft
+  // 2: Position_InsideRight
+  // 3: Position_OutLeft
+  // 4: Position_OutRight
+  // 5: Position_SideLeft
+  // 6: Position_SideRight
+  // 7: Position_Reserved
+  // DefaultValue: 0
+  // Description: 前系统最近障碍物所在扇区
+  uint32 ObsMiniFrntMinDst = 5;
+
+  // 枚举: ObsMiniReMinDst
+  // 0: Position_No
+  // 1: Position_InsideLeft
+  // 2: Position_InsideRight
+  // 3: Position_OutLeft
+  // 4: Position_OutRight
+  // 5: Position_SideLeft
+  // 6: Position_SideRight
+  // 7: Position_Reserved
+  // DefaultValue: 0
+  // Description: 后系统最近障碍物所在扇区
+  uint32 ObsMiniReMinDst = 6;
+
+  // 枚举: AudWarnOfSnsrParkAssiFrnt
+  // 0: Buzzer OFF
+  // 1: Front Buzzer ON
+  // 2: Front Buzzer ON at 4Hz
+  // 3: Front Buzzer ON at 2Hz
+  // 4: Front Left ON
+  // 5: Front Left ON at 4Hz
+  // 6: Front Left ON at 2Hz
+  // 7: Front Right ON
+  // 8: Front Right ON at 4Hz
+  // 9: Front Right ON at 2Hz
+  // DefaultValue: 0
+  // Description: 前系统报警音请求
+  uint32 AudWarnOfSnsrParkAssiFrnt = 7;
+
+  // 枚举: AudWarnOfSnsrParkAssiRe
+  // 0: Buzzer OFF
+  // 1: Rear Buzzer ON
+  // 2: Rear Buzzer ON at 4Hz
+  // 3: Rear Buzzer ON at 2Hz
+  // 4: Rear Left ON
+  // 5: Rear Left ON at 4Hz
+  // 6: Rear Left ON at 2Hz
+  // 7: Rear Right ON
+  // 8: Rear Right ON at 4Hz
+  // 9:Rear Right ON at 2Hz
+  // DefaultValue: 0
+  // Description: 后系统报警音请求
+  uint32 AudWarnOfSnsrParkAssiRe = 8;
+
+  // DefaultValue: 0
+  // Description: 障碍物点总个数
+  uint32 ObstacleNum = 9;
+
+  // Description: 障碍物信息
+  repeated ObstacleObject ObstacleObjects = 10;
+
+  // DefaultValue: 0
+  // Description: 预留字段
+  repeated float Reserved = 11;
+
+  // 枚举: FusionPDCAvailableFlag
+  // 0: 默认无效
+  // 1: 有效
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 融合PDC有效标志位
+  uint32 FusionPDCAvailableFlag = 12;
+
+  // DefaultValue: 0
+  // Description: 融合PDC有效计数器
+  uint32 FusionPDCAvailableIndex = 13;
+
+  // 枚举: RearDoorOpenInhibit
+  // 0: 默认无效
+  // 1: 有效
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 后尾门开启空间不足提示
+  uint32 RearDoorOpenInhibit = 14;
+
+
+message ObstacleObject {
+  // Description: 坐标x
+  float PointX = 1;
+
+  // Description: 坐标y
+  float PointY = 2;
+
+  // DefaultValue: 1.5
+  // Description: 障碍物到车身距离
+  // Unit: m
+  float ObstacleDistance = 3;
+
+  // DefaultValue: max
+  // Description: 障碍物分段编号
+  uint32 ObstacleGroupIndex = 4;
+
+  // 枚举: ObstacleFlag
+  // 0: 默认无效
+  // 1: 有障碍物
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 扇区内是否有障碍物
+  uint32 ObstacleFlag = 5;
+
+}
+
+}
+message AVPPopup {
+  // 枚举: AVPPopupType
+  // 0: Off
+  // 1: MapLearning
+  // 2: MapUpdating
+  // 3: RemoteCharge
+  // 4: PreParkin
+  // 5: CollectDestination
+  // 6: SaveDestination
+  // 7: SaveMap
+  // 8: FullStorage
+  // 9:  AvailableMap
+  // 10:  UseAVPNow
+  // 11:  ForeGroundFinish
+  // 12: StartAD
+  // 13: StartADSetGray
+  // 14: RouteBlockedRePlan
+  // 15: Reserve1
+  // DefaultValue: 0
+  // Description: AVP 窗口状态
+  // Unit: /
+  uint32 AVPPopupType = 1;
+
+
+}
+message AVP3DMap {
+message MapBoundary {
+  // DefaultValue: 0
+  // Description: 边线id
+  uint64 BoundaryID = 1;
+
+  // 枚举: LineType
+  // 2: 车道标识线
+  // 3: 护栏
+  // 4: 围栏
+  // 5: 路缘石
+  // 6: 墙
+  // 7: 自然边界（红色边线）
+  // 8: 预留
+  // 9: 预留
+  // DefaultValue: 0
+  // Description: 边线类型
+  uint32 LineType = 2;
+
+  // 枚举: LineMarking
+  // 1: 单实线
+  // 2: 单虚线
+  // 3: 短虚线
+  // 4: 双实线
+  // 5: 双虚线
+  // 6: 左实右虚
+  // 7: 左虚右实
+  // 8: 导流线
+  // 9: 预留
+  // 10: 预留
+  // DefaultValue: 0
+  // Description: 边线形状
+  uint32 LineMarking = 3;
+
+  // 枚举: IDM
+  // 0: 不是鱼骨线
+  // 1: 是鱼骨线
+  // 2: 预留
+  // DefaultValue: 0
+  // Description: 是否是鱼骨线
+  uint32 IDM = 4;
+
+  // 枚举: BoundaryConfidence
+  // 1: 非常可靠
+  // <0.5: 不太可靠
+  // DefaultValue: 1
+  // Description: 置信度
+  float BoundaryConfidence = 5;
+
+  // Description: 绘制道路边线的点数组
+  repeated CoordinateSys GeometryPoints = 6;
+
+  // 枚举: BoundaryColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: reserve1（预留）
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 边线颜色
+  uint32 BoundaryColor = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 8;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 9;
+
+}
+
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: m
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: m
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: m
+  int32 CoordinateZ = 3;
+
+}
+
+message MapStopline {
+  // DefaultValue: 0
+  // Description: 停止线id
+  uint64 StoplineID = 1;
+
+  // Description: 绘制停止线的点数组
+  repeated CoordinateSys GeometryPoints = 2;
+
+}
+
+message MapCrossWalk {
+  // DefaultValue: 0
+  // Description: 人行道id
+  uint64 CrossWalkID = 1;
+
+  // Description: 绘制人行道的点数组
+  repeated CoordinateSys GeometryPoints = 2;
+
+  // 枚举: CrossWalkDirection
+  // [-3141,3141]
+  // 0代表与自车朝向相同，左正右负
+  // DefaultValue: 0
+  // Description: 人行道标线角度
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 CrossWalkDirection = 3;
+
+}
+
+message MapRoadMark {
+  // DefaultValue: 0
+  // Description: 路面标识id
+  uint64 RoadmarkID = 1;
+
+  // 枚举: RoadmarkType
+  // 1: 直行
+  // 3: 直行或左转
+  // 4: 直行或右转
+  // 5: 直行或掉头
+  // 6: 左转
+  // 7: 左转或掉头
+  // 8: 左弯或向左合流
+  // 9: 右转
+  // 10: 右弯或向右合流
+  // 11: 左右转弯
+  // 12: 掉头
+  // 13: 禁止左弯标记
+  // 14: 禁止右弯标记
+  // 15: 禁止掉头标记
+  // 16: 直行或左转或右转
+  // 17: 直行或掉头或左转
+  // 18: 右转或掉头
+  // 22: 车距确认线
+  // 23: 停车让行线
+  // 24: 减速让行线
+  // 25: 停止线
+  // 26: 禁停区
+  // 99: 其他
+  // 100: 预留
+  // 101: 预留
+  // DefaultValue: 0
+  // Description: 路面标识类型
+  uint32 RoadmarkType = 2;
+
+  // Description: 投影后的几何包围框
+  repeated CoordinateSys BoundaryBox = 3;
+
+  // Description: 绘制路面标识的点数组
+  repeated CoordinateSys GeometryPoints = 4;
+
+  // 枚举: RoadMarkDirection
+  // [-3141,3141]
+  // 0代表与自车朝向相同，左正右负
+  // DefaultValue: 0
+  // Description: 地面标识角度
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 RoadMarkDirection = 5;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 6;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 7;
+
+}
+
+message MapLaneInfo {
+  // 枚举: LaneColor
+  // 0: 默认颜色
+  // 1: 蓝色
+  // 2: 红色
+  // 3: 红色加粗
+  // 4: 灰色
+  // 5: 非高亮黄色 （路沿不会发只有车道线会发）
+  // 6: 高亮黄色
+  // 7: reserve1（预留）
+  // 8: reserve2（预留）
+  // DefaultValue: 0
+  // Description: 车道颜色
+  uint32 LaneColor = 1;
+
+  // 枚举: LaneAnimationType
+  // 0: 默认
+  // 1: 向后水波纹特效
+  // 2: 向前水波纹特效
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 车道动效
+  uint32 LaneAnimationType = 2;
+
+  // 枚举: AreaType
+  // 0: 无效值
+  // 1: 车道
+  // 2: 路面
+  // 3: 非行驶区域（路沿区域、花坛等）
+  // 4: 预留
+  // Description: 区域类型
+  uint32 AreaType = 3;
+
+  // 枚举: AreaConfidence
+  // 1: 非常可靠
+  // <0.5: 不太可靠
+  // DefaultValue: 1
+  // Description: 置信度
+  float AreaConfidence = 4;
+
+  // Description: 左边车道线行点
+  repeated CoordinateSys LeftBoundary = 5;
+
+  // Description: 右边车道线行点
+  repeated CoordinateSys RightBoundary = 6;
+
+  // Description: 车道边线组成的四边形区域(预留)
+  repeated CoordinateSys AreaPoints = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 8;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 9;
+
+}
+
+message MapSlotType {
+  // DefaultValue: 0
+  // Description: 车位id（1为推荐车位）
+  uint32 SlotID = 1;
+
+  // 枚举: SlotStatus
+  // 0: 占据(不可用)
+  // 1: 非占据（可用）
+  // 2: 未知
+  // 3: 行人占据
+  // 4: 两轮车占据
+  // 5: 锥桶占据
+  // 6: 地锁占据
+  // 7: 禁停牌占据
+  // 8: 其他障碍物占据
+  // 9: 预留
+  // DefaultValue: 0
+  // Description: 车位状态
+  uint32 SlotStatus = 2;
+
+  // 枚举: SlotType
+  // 0: 垂直
+  // 1: 水平
+  // 2: 斜列
+  // 3: 机械车位
+  // DefaultValue: 0
+  // Description: 车位类型
+  uint32 SlotType = 3;
+
+  // Description: 车位轮廓描述
+  repeated CoordinateSys SlotPoints = 4;
+
+  // Description: 车位轮挡信息
+  repeated CoordinateSys BlockPoints = 5;
+
+  // 枚举: SlotSelectButton
+  // 0: 默认（不处理）
+  // 1: 高亮
+  // 2: 灰
+  // Description: 自选车位按钮高亮
+  uint32 SlotSelectButton = 6;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层起始状态
+  int32 FloorStart = 7;
+
+  // DefaultValue: 0
+  // Description: 当前所在楼层终止状态
+  int32 FloorEnd = 8;
+
+  // 枚举: ApaChargeSlot
+  // 0: 默认值(非极氪充电车位)
+  // 1: 极氪充电车位
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 极氪充电桩的感知车位类型
+  // Unit: /
+  uint32 ApaChargeSlot = 9;
+
+  // Range: asic
+  // DefaultValue: 0
+  // Description: 极氪充电桩的感知车位编号
+  // Unit: /
+  repeated int32 ApaChargeSlotNum = 10;
+
+  // 枚举: ApaReqReleaseLockCard
+  // 0: 默认无效
+  // 1: 请求降地锁弹窗
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 请求降地锁弹窗
+  // Unit: /
+  uint32 ApaReqReleaseLockCard = 11;
+
+  // 枚举: SlotSizeType
+  // 0: 默认无效
+  // 1: 窄车位
+  // 2: 预留
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 车辆宽度属性
+  // Unit: /
+  uint32 SlotSizeType = 12;
+
+}
+
+  // DefaultValue: 0
+  // Description: 收藏的地图唯一Id
+  uint32 MapId = 1;
+
+  // DefaultValue: 0
+  // Description: 地图中楼层数
+  uint32 MapFloorNum = 2;
+
+  // Description: SubMap
+  repeated SubMap SubMaps = 3;
+
+
+message SubMap {
+  // DefaultValue: 0
+  // Description: 收藏的每层地图id
+  uint32 SubMapId = 1;
+
+  // DefaultValue: 0
+  // Description: 地图中所在楼层
+  int32 Floor = 2;
+
+  // Description: 边线
+  repeated MapBoundary MapBoundaries = 3;
+
+  // Description: 车道停止线
+  repeated MapStopline MapStoplines = 4;
+
+  // Description: 人行道
+  repeated MapCrossWalk MapCrosswalks = 5;
+
+  // Description: 路面标识
+  repeated MapRoadMark MapRoadmarks = 6;
+
+  // Description: 变道目标车道
+  MapLaneInfo MapTargetLane = 7;
+
+  // Description: 道路面
+  repeated MapLaneInfo MapRoadSurface = 8;
+
+  // Description: 车位
+  repeated MapSlotType MapSlots = 9;
+
+}
+
+}
+message AVPCollectedDestinationCmd {
+  // 枚举: CollectedDestinationType
+  // 0: 无效
+  // 1: 地图中车位
+  // 2: 地图中位置点
+  // 3: 地图中的线路
+  // 4: 自车位置
+  // DefaultValue: 0
+  // Description: 目的地目标类型
+  uint32 CollectedDestinationType = 1;
+
+  // DefaultValue: 0
+  // Description: 目的地车位Id
+  uint32 CollectedDestinationSlotId = 2;
+
+
+}
+message AVPMapGenerateStatus {
+  // DefaultValue: 0
+  // Description: AVP地图Id
+  uint32 MapId = 1;
+
+  // 枚举: MapGenerateStatus
+  // 0: 无效
+  // 1: 生成地图中
+  // 2: 生成地图完成
+  // 3: 生成地图失败
+  // 4: 地图存储空间满（同时生成失败）
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: AVP地图生成状态
+  uint32 MapGenerateStatus = 2;
+
+  // Range: [0,100]
+  // DefaultValue: 0
+  // Description: AVP地图生成进度比例
+  // Unit: %
+  uint32 MapGeneratePercentage = 3;
+
+  // DefaultValue: 0
+  // Description: AVP学习行程距离
+  // Unit: m
+  float MappingMileage = 4;
+
+  // DefaultValue: 0
+  // Description: 地图中楼层数
+  uint32 MapFloorNum = 5;
+
+  // DefaultValue: 0
+  // Description: 地图中车位数
+  uint32 MapSlotNum = 6;
+
+
+}
+message AVPMapListInfo {
+message CoordinateSys {
+  // Description: 3D坐标系x轴坐标
+  // Unit: m
+  int32 CoordinateX = 1;
+
+  // Description: 3D坐标系y轴坐标
+  // Unit: m
+  int32 CoordinateY = 2;
+
+  // Description: 3D坐标系z轴坐标
+  // Unit: m
+  int32 CoordinateZ = 3;
+
+}
+
+  // DefaultValue: 0
+  // Description: AVP已有地图数目
+  uint32 MapNum = 1;
+
+  // Description: AVP已有地图列表
+  repeated AVPCollectedMap MapList = 2;
+
+  // DefaultValue: 0
+  // Description: 所在地图Id
+  uint32 LocateMapId = 3;
+
+  // Description: 目的地Id列表
+  repeated AVPCollectedDestination DestinationList = 4;
+
+  // 枚举: MaplistType
+  // 0：全量
+  // 1：匹配完的图
+  // 2：变更目的地（针对家和公司或其他SD收藏夹）
+  // 3：增量更新（目的地编辑后刷新）
+  // 4：精确自动匹配的停车场（唯一）
+  // DefaultValue: 0
+  // Description: 地图列表类型
+  // Unit: /
+  uint32 MaplistType = 5;
+
+  // Description: 合并显示入口扎标的地图组
+  repeated MergeMapGroup MergeMapGroupList = 6;
+
+
+message MergeMapGroup {
+  // Description: 地图组涉及的点
+  repeated GroupRelatedPoint GroupRelatedPointList = 1;
+
+}
+
+message GroupRelatedPoint {
+  // DefaultValue: 0
+  // Description: 涉及点的MapId
+  uint32 MapId = 1;
+
+  // DefaultValue: 0
+  // Description: 涉及点的DestinationId
+  uint32 DestinationId = 2;
+
+}
+
+message AVPCollectedMap {
+  // DefaultValue: 0
+  // Description: 收藏的地图唯一Id
+  uint32 MapId = 1;
+
+  // Description: 停车场地图信息
+  string MapName = 2;
+
+  // DefaultValue: 0
+  // Description: 地图中收藏目的地数目
+  uint32 DestinationNum = 3;
+
+  // Description: 目的地列表
+  repeated AVPCollectedDestination DestinationList = 4;
+
+  // DefaultValue: 0
+  // Description: 收藏的地图时间戳
+  uint64 MapLearningTime = 5;
+
+  // 枚举: MapType
+  // 0：默认值
+  // 1：个人地图
+  // 2：公共运营地图
+  // 3：融合后地图（运营+个人）
+  // 4：共享个人地图（预留）
+  // DefaultValue: 0
+  // Description: 地图类型
+  // Unit: /
+  uint32 MapType = 6;
+
+  // 枚举: MapCollectPin
+  // 0：未收藏
+  // 1：收藏
+  // DefaultValue: 0
+  // Description: 地图是否收藏
+  // Unit: /
+  uint32 MapCollectPin = 7;
+
+  // 枚举: MapBuiltStatus
+  // 1：生成中
+  // 2：可使用
+  // 3：路线不可用
+  // DefaultValue: 0
+  // Description: 地图生成状态
+  uint32 MapBuiltStatus = 8;
+
+}
+
+message AVPCollectedDestination {
+  // 枚举: CollectedDestinationType
+  // 0: 无效
+  // 1: 地图中车位
+  // 2: 地图中位置点
+  // 3: 地图中的线路
+  // 4: 自车位置
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 目的地目标类型
+  uint32 CollectedDestinationType = 1;
+
+  // DefaultValue: 0
+  // Description: 目的地车位Id
+  uint32 CollectedDestinationSlotId = 2;
+
+  // DefaultValue: (0,0,0)
+  // Description: 目的地位置点
+  CoordinateSys CollectedDestinationPoint = 3;
+
+  // DefaultValue: 0
+  // Description: 目的地所在楼层
+  int32 CollectedDestinationFloorLevel = 4;
+
+  // DefaultValue: 0
+  // Description: 目的地路线Id（复用为点ID）
+  uint32 CollectedDestinationLineId = 5;
+
+  // 枚举: CollectedDestinationPriority
+  // 0: invalid
+  // 1: Top Priority（默认唯一+收藏）
+  // 2: Second Priority（收藏-高优 (预留)）
+  // 3: Third Priority（收藏-低优）
+  // 4: Fourth Priority（非收藏-公共优先）
+  // 5: Fifth Priority(非收藏-公共普通)
+  // 6: 预留1
+  // 7: 预留2
+  // 8: 预留3
+  // DefaultValue: 0
+  // Description: 目的地默认推荐优先级
+  // Unit: /
+  uint32 CollectedDestinationPriority = 6;
+
+  // Description: 目的地所在停车场地图Id
+  uint32 CollectedParkMapId = 7;
+
+  // Description: 目的地名称
+  string CollectedDestinationName = 8;
+
+  // Description: 目的地标签
+  string CollectedDestinationLabel = 9;
+
+  // 枚举: DestinationType
+  // 0: 默认值
+  // 1: 个人
+  // 2: 公共运营
+  // 3: 融合后目的地（运营+个人）
+  // 4: 共享个人目的地（预留）
+  // DefaultValue: 0
+  // Description: 目的地类型
+  // Unit: /
+  uint32 DestinationType = 10;
+
+  // 枚举: DestinationEditType
+  // 0: 默认值
+  // 1: 可编辑
+  // 2: 不可编辑
+  // DefaultValue: 0
+  // Description: 目的地编辑类型
+  // Unit: /
+  uint32 DestinationEditType = 11;
+
+}
+
+}
+message AutoNaviSearch {
+message Pos2D {
+  // Range: [-180,180]
+  // Description: 经度（gjc-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // Description: 纬度（gjc-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+  // DefaultValue: 0
+  // Description: 任务Id
+  // Unit: /
+  uint64 TaskId = 1;
+
+  // DefaultValue: 0
+  // Description: 搜索模型
+  // Unit: /
+  uint32 SearchModel = 2;
+
+  // DefaultValue: 0
+  // Description: 搜索模式
+  // Unit: /
+  uint32 SearchMode = 3;
+
+  // DefaultValue: /
+  // Description: 逆地理搜索的经纬度
+  // Unit: /
+  Pos2D SearchNearestPoiLoc = 4;
+
+  // DefaultValue: /
+  // Description: 子到达点搜索的PoiId
+  // Unit: /
+  string SearchNaviInfoPoiId = 5;
+
+  // DefaultValue: /
+  // Description: 子到达点搜索的关系类型
+  // Unit: /
+  string SearchNaviInfoRelType = 6;
+
+  // DefaultValue: /
+  // Description: 关键字搜索的查询类型
+  // Unit: /
+  string SearchKeywordQueryType = 7;
+
+  // DefaultValue: /
+  // Description: 关键字搜索的经纬度
+  // Unit: /
+  Pos2D SearchKeywordPoiLoc = 8;
+
+  // DefaultValue: /
+  // Description: 关键字搜索的关键字
+  // Unit: /
+  string SearchKeywordKeywords = 9;
+
+  // DefaultValue: /
+  // Description: 关键字搜索的搜索范围
+  // Unit: /
+  string SearchKeywordGeoObj = 10;
+
+  // DefaultValue: /
+  // Description: 关键字搜索的搜索半径
+  // Unit: /
+  string SearchKeywordRange = 11;
+
+
+}

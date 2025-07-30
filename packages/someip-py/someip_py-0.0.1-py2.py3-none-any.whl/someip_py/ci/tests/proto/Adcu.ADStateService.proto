@@ -1,0 +1,1406 @@
+syntax = "proto3";
+
+package Adcu.ADStateService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 7;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 50HZ
+ // Comment: 用于显示功能状态信息
+ MsgIdFeatureState = 1;
+
+ // Frequency: 50HZ
+ // Comment: 闯红灯报警动效(废弃不用)
+ MsgIdTrafficWarning = 2;
+
+ // Frequency: 50HZ
+ // Comment: 描绘点方向坐标（废弃）
+ MsgIdVehiclePointCcl = 3;
+
+ // Frequency: 10HZ
+ // Comment: 接入智驾传感器标定状态
+ MsgIdCalibSensorGroupState = 4;
+
+ // Frequency: 10HZ
+ // Comment: 用于接入ADPU集成配置状态
+ MsgIdIntegAdpuConfigInf = 5;
+
+ // Frequency: 15HZ
+ // Comment: 标定状态数据
+ MsgIdOnlineCalibInf = 6;
+
+ // Frequency: 10HZ
+ // Comment: 用于IMU发送标定数据
+ MsgIdCalibStateAckInf = 7;
+
+ // Frequency: 10HZ
+ // Comment: 用于显示行车功能状态信息（图标、软开关）
+ MsgIdDrivingFeatureState = 8;
+
+ // Frequency: 10HZ
+ // Comment: 用于显示ADAS功能状态信息（图标、软开关）
+ MsgIdADASFeatureState = 9;
+
+}
+
+message FeatureState {
+  // 枚举: NzpState
+  // 0: Initial
+  // 1: Off
+  // 2: Standby
+  // 3: Active
+  // 4: OverrideLon
+  // 5: OverrideLat
+  // 6: StandWait
+  // 7: reserve1
+  // 8: reserve2
+  // DefaultValue: 0
+  // Description: NZP功能状态
+  uint32 NzpState = 1;
+
+  // 枚举: ApaState
+  // 0: Initial
+  // 1: Off
+  // 2: Standby
+  // 3: Searching
+  // 4: Pre_Park
+  // 5: Parking
+  // 6: Park_Complete
+  // 7: Suspend
+  // 8:  reserve1
+  // 9: reserve2
+  // DefaultValue: 0
+  // Description: APA功能状态
+  uint32 ApaState = 2;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 规划的目标速度去精度，向上取整
+  // Unit: km/h
+  uint32 MaxCruiseSpeed = 3;
+
+  // Description: 车位列表，可泊入车位id列
+  repeated IDList AvailableSlotID = 4;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 当前车道限速，去精度，向上取整。
+  // Unit: km/h
+  uint32 LaneSpeedLimit = 5;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 显示跟车时距的触发信号（预留）
+  uint32 TimeGapApplyEnable = 6;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 泊车中断倒计时，
+  // Unit: s
+  uint32 SuspendTime = 7;
+
+  // 枚举: ParkContinueButton
+  // 1: GreyButton
+  // 2: NotGrey
+  // DefaultValue: 1
+  // Description: 继续泊车按钮是否置灰
+  uint32 ParkContinueButton = 8;
+
+  // 枚举: StartParkButtonState
+  // 0:置灰（车位不可泊）
+  // 1: 不置灰（车位可泊）
+  // 2:不显示
+  // 3:reserve1
+  // DefaultValue: 2
+  // Description: 开始泊车按钮状态 预留
+  uint32 StartParkButtonState = 9;
+
+  // 枚举: LCCState
+  // 0: Initial
+  // 1: Off
+  // 2: Standby
+  // 3: Active
+  // 4: OverrideLon
+  // 5: OverrideLat
+  // 6: StandWait
+  // 7: reserve2
+  // DefaultValue: 0
+  // Description: lcc状态
+  uint32 LCCState = 10;
+
+  // 枚举: ACCState
+  // 0: Initial
+  // 1: Off
+  // 2: Standby
+  // 3: Active
+  // 4: OverrideLon
+  // 5: OverrideLat
+  // 6: StandWait
+  // 7: reserve1
+  // 8: reserve2
+  // DefaultValue: 0
+  // Description: ACC状态
+  uint32 ACCState = 11;
+
+  // 枚举: RapaState
+  // 0: STATE_INITIAL
+  // 1: STATE_OFF
+  // 2: STATE_STANDBY
+  // 3: SEARCHING
+  // 4: PRE_PARK（APA）/ PRE_REMOTE）
+  // 5: PARKING
+  // 6: PARK_COMPLETE
+  // 7: SUSPEND
+  // 8: REMOTE_PARK_ACTIVE
+  // 9: REMOTE_PARKOUT_STANDBY
+  // DefaultValue: 0
+  // Description: rapa状态
+  uint32 RapaState = 12;
+
+  // 枚举: LaneChangeStatus
+  // 0: Lane_Keep
+  // 1: Left_Prepare
+  // 2: Right_Prepare
+  // 3: Left_Change
+  // 4: Right_Change
+  // 5: Left_Fallback
+  // 6: Right_Fallback
+  // 7: Fatal
+  // 8: reserve1
+  // Description: 换道状态
+  uint32 LaneChangeStatus = 13;
+
+  // 枚举: ParkingWaitFlag
+  // 1: Close
+  // 2: Open
+  // DefaultValue: 1
+  // Description: 计时等待信号
+  uint32 ParkingWaitFlag = 14;
+
+  // 枚举: SearchingGearStatus
+  // 0: 默认不处理
+  // 1: Gear D
+  // 2: Gear R
+  // DefaultValue: 0
+  // Description: D/R档搜索车位状态
+  uint32 SearchingGearStatus = 15;
+
+  // 枚举: SelectSlotBttonState
+  // 0: 默认(不处理)
+  // 1: 高亮
+  // 2: 置灰
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 自选车位按钮高亮
+  uint32 SelectSlotBttonState = 16;
+
+  // Description: FCTA风险扇区
+  repeated FctaRisk FctaRiskSector = 17;
+
+  // Description: BSD风险扇区
+  repeated BsdRisk BsdRiskSector = 18;
+
+  // Description: RCTA箭头
+  repeated RCATRisk RCATArrow = 19;
+
+  // Description: DOW报警
+  repeated DowRisk DowDanger = 20;
+
+  // 枚举: RcwAlarmLevel
+  // 0: 默认值
+  // 1: 一级黄色
+  // 2: 二级红色
+  // DefaultValue: 0
+  // Description: RCW-告警级别
+  uint32 RcwAlarmLevel = 21;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: TSI限速图标 预留
+  // Unit: km/h
+  uint32 TSISpeedLimitIcon = 22;
+
+  // 枚举: TSIIconFlicker
+  // 0: 不提醒
+  // 1: 提醒
+  // 2: Reserve1
+  // DefaultValue: 0
+  // Description: TSI超速提醒图标闪烁
+  uint32 TSIIconFlicker = 23;
+
+  // 枚举: TSIElectronicEyeIcon
+  // 0: 不显示
+  // 1: 显示
+  // DefaultValue: 0
+  // Description: TSI电子眼图标
+  uint32 TSIElectronicEyeIcon = 24;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: TSI禁止超车图标 预留
+  uint32 TSINoOvertating = 25;
+
+  // 枚举: TLAFirstVehGNLight
+  // 0: 无提醒 （自车处于非头车位置）
+  // 1: 有提醒（自车处于头车位置）
+  // DefaultValue: 0
+  // Description: TLA头车红灯变绿灯提醒
+  uint32 TLAFirstVehGNLight = 26;
+
+  // Range: [-1,2147483647]
+  // DefaultValue: -1
+  // Description: TLA红绿灯倒计时,-1代表不显示
+  // Unit: 秒
+  int32 TLATrafficLightCountdown = 27;
+
+  // 枚举: TLATrafficLightLevel
+  // 0: 红绿灯类型：默认值
+  // 1: 圆形
+  // 2: 箭头
+  // DefaultValue: 0
+  // Description: TLA红绿灯直行类型
+  uint32 TLATrafficLightLevel = 28;
+
+  // 枚举: TLALeftSignalLamp
+  // 0: 默认值(不处理)
+  // 1: 红灯
+  // 2: 黄灯
+  // 3: 绿灯
+  // 4: 黄灯（闪烁）
+  // 5: 黑灯（灯不亮）
+  // DefaultValue: 0
+  // Description: TLA红绿灯左转颜色
+  uint32 TLALeftSignalLamp = 29;
+
+  // 枚举: TLAStrightSignalLamp
+  // 0: 默认值(不处理)
+  // 1: 红灯
+  // 2: 黄灯
+  // 3: 绿灯
+  // 4: 黄灯（闪烁）
+  // 5: 黑灯（灯不亮）
+  // DefaultValue: 0
+  // Description: TLA红绿灯直行颜色
+  uint32 TLAStrightSignalLamp = 30;
+
+  // 枚举: TLARightSignalLamp
+  // 0: 默认值(不处理)
+  // 1: 红灯
+  // 2: 黄灯
+  // 3: 绿灯
+  // 4: 黄灯（闪烁）
+  // 5: 黑灯（灯不亮）
+  // DefaultValue: 0
+  // Description: TLA红绿灯右转颜色
+  uint32 TLARightSignalLamp = 31;
+
+  // 枚举: TLATurnSignalLamp
+  // 0: 默认值(不处理)
+  // 1: 红灯
+  // 2: 黄灯
+  // 3: 绿灯
+  // 4: 黄灯（闪烁）
+  // 5: 黑灯（灯不亮）
+  // DefaultValue: 0
+  // Description: TLA红绿灯掉头颜色
+  uint32 TLATurnSignalLamp = 32;
+
+  // 枚举: TLATurnLeftSignalLamp
+  // 0: 默认值(不处理)
+  // 1: 红灯
+  // 2: 黄灯
+  // 3: 绿灯
+  // 4: 黄灯（闪烁）
+  // 5: 黑灯（灯不亮）
+  // DefaultValue: 0
+  // Description: TLA红绿灯左转掉头颜色
+  uint32 TLATurnLeftSignalLamp = 33;
+
+  // 枚举: TLAStarttogo
+  // 0: 不提醒
+  // 1: 提醒
+  // 2: 预留
+  // DefaultValue: 0
+  // Description: 汽车起步提醒
+  uint32 TLAStarttogo = 34;
+
+  // 枚举: TSRWarningType
+  // 0: 默认不显示
+  // 1: 禁止驶入，
+  // 2: 禁止超车，
+  // 3: 解除禁止超车，
+  // 4: 停车让行，
+  // 5: 学校路段（注意儿童），
+  // 6: 道路施工，
+  // 7: 左急弯，
+  // 8: 右急弯，
+  // 9: 连续急弯
+  // 10: 预留
+  // 11: 预留
+  // 12: 预留
+  // 13: 预留
+  // 14: 预留
+  // 15: 预留
+  // DefaultValue: 0
+  // Description: TSR提醒类型
+  uint32 TSRWarningType = 35;
+
+  // 枚举: PEBFaultAlarm
+  // 0: 无
+  // 1: 有
+  // DefaultValue: 0
+  // Description: PEB故障提示
+  uint32 PEBFaultAlarm = 36;
+
+  // 枚举: PEBRain
+  // 0: 无
+  // 1: 有
+  // DefaultValue: 0
+  // Description: PEB雨量过大提示
+  uint32 PEBRain = 37;
+
+  // 枚举: PEBActive
+  // 0: 无
+  // 1: 有
+  // DefaultValue: 0
+  // Description: PEB功能激活提示
+  uint32 PEBActive = 38;
+
+  // 枚举: LkaHandsOffWarning
+  // 0: 默认值(不处理)
+  // 1: 1级告警
+  // 2: 2级告警
+  // DefaultValue: 0
+  // Description: lka脱手告警
+  uint32 LkaHandsOffWarning = 39;
+
+  // 枚举: FunctionPending
+  // 0: No Pending
+  // 1: NZP Pending
+  // 2: LCC Pending
+  // 3: reserve
+  // DefaultValue: 0
+  // Description: 功能Pending信号
+  uint32 FunctionPending = 40;
+
+  // Range: [-3.4E+38 ~ 3.4E+38 ]
+  // DefaultValue: 0
+  // Description: 纵向加速度
+  // Unit: m/s^2
+  // Resolution: 0.01
+  float AxialAcceleration = 41;
+
+  // 枚举: OnlineCalibState
+  // 0: 未标定
+  // 1: 标定中
+  // 2: 预留
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // Description: 在线标定状态
+  uint32 OnlineCalibState = 42;
+
+  // Range: [0-100]
+  // DefaultValue: 0
+  // Description: 在线标定进度
+  uint32 OnlineCalibProgress = 43;
+
+  // Description: 各传感器标定结果状态
+  repeated SensorStatus ADSensorStatus = 44;
+
+  // Range: [-1，9999]
+  // DefaultValue: -1
+  // Description: 电子像头距离
+  // Unit: m
+  int32 TSIElectronicEyeLenth = 45;
+
+  // 枚举: ApaAvailableSlotParkingMode
+  // 0: 车尾泊入
+  // 1: 车头泊入
+  // 2: 车尾或车头泊入
+  // 3: 不可泊入
+  // 4: reserve2
+  // DefaultValue: 0
+  // Description: 推荐车位泊入方式
+  uint32 ApaAvailableSlotParkingMode = 46;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 推荐车位ID
+  uint32 RecommendSlotlD = 47;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 期望设定车速
+  // Unit: km/h
+  uint32 NextMaxCruiseSpeed = 48;
+
+  // 枚举: StartReParkButtonState
+  // 0: 默认值(不显示)
+  // 1: 置灰（车位不可泊）
+  // 2: 不置灰高亮(车位可泊)
+  // 3: reserve1
+  // 4: reserve2
+  // 5: reserve3
+  // DefaultValue: 0
+  // 枚举: StartReParkButtonState
+  // 开始遥控泊
+  // 车按钮状态
+  uint32 StartReParkButtonState = 49;
+
+  // 枚举: ReturnReParkButtonState
+  // 0:默认值(不显示)
+  // 1: 置灰（车位不可泊）
+  // 2:不置灰高亮(车位可泊)
+  // 3:reserve1
+  // 4:reserve2
+  // 5:reserve3
+  // DefaultValue: 0
+  // 枚举: ReturnReParkButtonState
+  // 返回APA泊
+  // 车按钮状态
+  uint32 ReturnReParkButtonState = 50;
+
+  AVPStatus AVPStatusInfo = 51;
+
+  // 枚举: ApaParkingStatus
+  // 0：默认无效
+  // 1：泊入状态
+  // 2：泊出状态
+  // 3：预留
+  // 4：预留
+  // 5：预留
+  // DefaultValue: 0
+  // Description: 泊入/泊出状态
+  uint32 ApaParkingStatus = 52;
+
+  // Range: repeated
+  // Description: 可用的车位泊出方向列表
+  repeated ApaSlelectedDireTypeList ApaAvailableDirection = 53;
+
+  // 枚举: ApaRecommendDirection
+  // 0：无效（默认）
+  // 1：车头泊出向左
+  // 2：车头泊出向前
+  // 3：车头泊出向右
+  // 4：车尾泊出向左
+  // 5：车尾泊出向后
+  // 6：车尾泊出向右
+  // 7：水平向左泊出
+  // 8：水平向右泊出
+  // 9：预留
+  // 10：预留
+  // DefaultValue: 0
+  // Description: 推荐的车位泊出方向
+  uint32 ApaRecommendDirection = 54;
+
+  // 枚举: StartParkoutButtonState
+  // 0：默认值（不显示）
+  // 1：置灰显示（不可泊）
+  // 2：高亮显示（可泊）
+  // 3：预留
+  // DefaultValue: 0
+  // Description: 开始泊出按钮是否置灰
+  uint32 StartParkoutButtonState = 55;
+
+  // Description: B区输出文言的列表
+  repeated Uint8Array ApaArticleDisplay = 56;
+
+  // Description: 闯红灯报警动效提醒
+  repeated TrafficRedWarning TrafficRedWarningInfo = 57;
+
+  // Description: 轮毂防剐蹭功能显示元素
+  AWWRiskType AWWRisk = 58;
+
+  // 枚举: AutPrkgVoiceSwtResp
+  // 0: Off 泊车语音按键关闭
+  // 1: On 泊车语音按键打开
+  // DefaultValue: 0
+  // Description: 设置项“语音”开关按键信号（此项为预留）
+  uint32 AutPrkgVoiceSwtResp = 59;
+
+  // 枚举: AutPrkgVoiceTypResp
+  // 0: NoReq 无请求
+  // 1: Simple 简洁模式
+  // 2: Middle 一般模式
+  // 3: Complex 复杂模式
+  // DefaultValue: 0
+  // Description: 设置项“语音播报模式”按键信号（此项为预留）
+  uint32 AutPrkgVoiceTypResp = 60;
+
+  // 枚举: PrkgActivePush
+  // 0: PrkgActivePush_NoReq
+  // 1: PrkgActivePush_Prompt
+  // 2: PrkgActivePush_Button
+  // 3:  PrkgActivePush_PromptAndButton
+  // DefaultValue: 0
+  // Description: The AVM interface displays prompts and highlights button signals（此项为预留）
+  uint32 PrkgActivePush = 61;
+
+  // 枚举: PrkgBtnStsDispAVM
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: AVM button status signalAVM按键状态信号（此项为预留）
+  uint32 PrkgBtnStsDispAVM = 62;
+
+  // 枚举: PrkgBtnStsDispAPA
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: APA button status signalAPA按键状态信号（此项为预留）
+  uint32 PrkgBtnStsDispAPA = 63;
+
+  // 枚举: PrkgBtnStsDispLSDA
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: LSDA button status signalLSDA按键状态信号（此项为预留）
+  uint32 PrkgBtnStsDispLSDA = 64;
+
+  // 枚举: ExitCustBtnSts
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: Exit the custom parking button status（此项为预留）
+  uint32 ExitCustBtnSts = 65;
+
+  // 枚举: PrkgBtnStsDispFloat
+  // 0x0:Idle 按键不显示（默认值）
+  // 0x1:Actvn 按键常显
+  // 0x2:Deactvn 按键置灰
+  // 0x3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: The status signal of floating ball on the interface of vehicle and machine（此项为预留）
+  uint32 PrkgBtnStsDispFloat = 66;
+
+  // 枚举: PrkgBtnStsDispLeft
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键可选
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: Left berth button status signal（此项为预留）
+  uint32 PrkgBtnStsDispLeft = 67;
+
+  // 枚举: PrkgBtnStsDispMiddle
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键可选
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: Middle berth button status signal（此项为预留）
+  uint32 PrkgBtnStsDispMiddle = 68;
+
+  // 枚举: PrkgBtnStsDispRight
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键可选
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: Right berth button status signal（此项为预留）
+  uint32 PrkgBtnStsDispRight = 69;
+
+  // 枚举: PrkgBtnStsDispset
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键可选
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: 设置按键状态信号（此项为预留）
+  uint32 PrkgBtnStsDispset = 70;
+
+  // 枚举: PrkgDockDisReq
+  // 0: Normal Dock 栏正常显示
+  // 1: Gray Dock 栏全部置灰
+  // 2~3:Reserve 预留
+  // DefaultValue: 0
+  // Description: Dock栏显示与置灰状态信号（此项为预留）
+  uint32 PrkgDockDisReq = 71;
+
+  // 枚举: PdcMuteBtnSts
+  // 0: OnOff1_Off
+  // 1: OnOff1_On
+  // DefaultValue: 0
+  // Description: PDC Mute button status to HMI.（此项为预留）
+  uint32 PdcMuteBtnSts = 72;
+
+  // 枚举: PdcMuteButtonStsDispset
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: PDC静音按键状态信号（此项为预留）
+  uint32 PdcMuteButtonStsDispset = 73;
+
+  // 枚举: PrkgImgDispReq
+  // 0：PrkgImgDispReq_NotDisplay
+  // 2： PrkgImgDispReq_DisplayAPA
+  // 3： PrkgImgDispReq_DisplayRPA
+  // 4：PrkgImgDispReq_DisplayRPAPlus
+  // 5：PrkgImgDispReq_DisplayHPP
+  // 6：PrkgImgDispReq_DisplayAVP
+  // 7： PrkgImgDispReq_DisplayAVM
+  // 8： PrkgImgDispReq_DisplayTBA
+  // 9: PrkgImgDispReq_DisplayLSDA
+  // 10:Reserved
+  // 11:Reserved
+  // DefaultValue: 0
+  // Description: Vehicle parking system request CSD display/not display the parking video stream.（此项为预留）
+  uint32 PrkgImgDispReq = 74;
+
+  // 枚举: ViewLayoutReq
+  // 0: ViewLayoutReq_Default
+  // 1: ViewLayoutReq_Twoviews
+  // Description: View switching request（此项为预留）
+  uint32 ViewLayoutReq = 75;
+
+  // Description: 选中车位后与泊车过程中的左路径规划打点信息（此项为预留）
+  repeated TtrackPlanning PrkgTtrackPlanningLArr = 76;
+
+  // Description: 选中车位后与泊车过程中的右路径规划打点信息（此项为预留）
+  repeated TtrackPlanning PrkgTtrackPlanningRArr = 77;
+
+  // 枚举: Prkgperspectivemode
+  // 0：Not display
+  // 1：45° of midpoint behind正后方75°视角+可旋转缩放
+  // 2：global view 全局视图
+  // 3：90°overlok 90°俯视视角+不可旋转缩放
+  // 4：45° of midpoint behind 正后方45°视角+不可旋转缩放
+  // 5：75° of midpoint behind 正后方75°视角+可旋转缩放
+  // 6：75° of midpoint behind 正后方75°视角+不可旋转缩放
+  // 7：45° of midpoint behind右后方75°视角+可旋转缩放
+  // 8：upward 上坡道视角+不可旋转缩放
+  // 9：downward 下坡道视角+不可旋转缩放
+  // 10：45° of right behind，global view 右后方45°全局视图+不可旋转缩放
+  // 11：90°overlok 90°俯视视角+可旋转缩放
+  // DefaultValue: 0
+  // Description: （此项为预留）
+  uint32 Prkgperspectivemode = 78;
+
+  // 枚举: PrkgBtnStsDispGroupCancel
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: send signal to HMI to display status（此项为预留）
+  uint32 PrkgBtnStsDispGroupCancel = 79;
+
+  // 枚举: PrkgBtnStsDispGroupPrkgIn
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: send signal to HMI to display status（此项为预留）
+  uint32 PrkgBtnStsDispGroupPrkgIn = 80;
+
+  // 枚举: PrkgBtnStsDispGroupPrkgOut
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: send signal to HMI to display status（此项为预留）
+  uint32 PrkgBtnStsDispGroupPrkgOut = 81;
+
+  // 枚举: PrkgBtnStsDispGroupSelfChooseSpace
+  // 0:Idle 按键不显示（默认值）
+  // 1:Actvn 按键常显
+  // 2:Deactvn 按键置灰
+  // 3:recommand 按键高亮
+  // DefaultValue: 0
+  // Description: send signal to HMI to display status（此项为预留）
+  uint32 PrkgBtnStsDispGroupSelfChooseSpace = 82;
+
+  // 枚举: LSDASysSts
+  // 0:Initial
+  // 1:Off
+  // 2:Standby
+  // 3:Reserved预留
+  // 4:Pre Parking process active 车辆静止到横纵向握手成功前的状态（请选择探索方向界面）
+  // 5:Parking process active 系统接管车辆横纵向移动
+  // 6:Parking process completed 完成
+  // 7:Suspend
+  // 8:预留
+  // 9:预留
+  // DefaultValue: 0
+  // Description: LSDA&TBA状态机信号
+  uint32 LSDASysSts = 83;
+
+  // 枚举: LSDAArrowStsFrnt
+  // 0: Idle不显示
+  // 1: Actvn高亮显示（用户选中）
+  // 2: NormalDisplay常规显示
+  // 3:Deactvn置灰显示（用户不可选）
+  // 4:Reserved预留
+  // 枚举: LSDAArrowStsFrnt
+  // The forward arrow shows the status signal
+  // 前进方向箭头显示状态信号
+  uint32 LSDAArrowStsFrnt = 84;
+
+  // 枚举: LSDAArrowStsRe
+  // 0: Idle不显示
+  // 1: Actvn高亮显示（用户选中）
+  // 2: NormalDisplay常规显示
+  // 3:Deactvn置灰显示（用户不可选）
+  // 4:Reserved预留
+  // 枚举: LSDAArrowStsRe
+  // The backward arrow shows the status signal
+  // 后退方向箭头显示状态信号
+  uint32 LSDAArrowStsRe = 85;
+
+  // 枚举: LSDAAutoPopupDisp
+  // 0: 不显示
+  // 1: 文言“窄道探索功能可以用啦，是否需要进入”
+  // 2: 预留
+  // 3: 预留
+  // 枚举: LSDAAutoPopupDisp
+  // The LSDA function actively pushes signals
+  // LSDA功能主动推送信号（此项为预留）
+  uint32 LSDAAutoPopupDisp = 86;
+
+  // 枚举: LSDAContEplgBtnDisp
+  // 0:  Idle不显示
+  // 1: Actvn高亮显示
+  // 2: Deactvn置灰显示
+  // 3: Reserved预留
+  // Description: LSDA continue exploring the button display（此项为预留）
+  uint32 LSDAContEplgBtnDisp = 87;
+
+  // 枚举: LSDADrvrDst
+  // 低速探索已行驶距离信号(单位:m)
+  // 0~255m (8bits)（此项为预留）
+  int32 LSDADrvrDst = 88;
+
+  // 枚举: LSDANotifPushResp
+  // 0: Off 低速探索主动推送按键关闭
+  // 1: On 低速探索主动推送按键打开
+  // 枚举: LSDANotifPushResp
+  // Set the button signal of "low-speed exploration push"
+  // 设置项“低速探索主动推送”按键信号（此项为预留）
+  uint32 LSDANotifPushResp = 89;
+
+  // 枚举: ADDimLight
+  // 0：ADDimLight_NoRequest
+  // 1 ：ADDimLight_Level2
+  // 2 ：ADDimLight_Level2plus
+  // 3：ADDimLight_Level3
+  // 4：ADDimLight_MildAlert
+  // 5：ADDimLight_SeriousAlert
+  // 6 ：ADDimLight_SafetyStop
+  // DefaultValue: 0
+  // Description: DIM氛围灯点亮请求
+  uint32 ADDimLight = 90;
+
+  // 枚举: RCTFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 0
+  // Description: RCTA故障
+  uint32 RCTFailure = 91;
+
+  // 枚举: LKAFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 1
+  // Description: LKA 故障
+  uint32 LKAFailure = 92;
+
+  // 枚举: CMSRFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 2
+  // Description: CMSR 故障
+  uint32 CMSRFailure = 93;
+
+  // 枚举: BSDFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 3
+  // Description: BSD 故障
+  uint32 BSDFailure = 94;
+
+  // 枚举: DOWFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 4
+  // Description: DOW 故障
+  uint32 DOWFailure = 95;
+
+  // 枚举: PEBFailure
+  // 0 No Failure
+  // 1 Failure
+  // DefaultValue: 5
+  // Description: PEB 故障
+  uint32 PEBFailure = 96;
+
+  // 枚举: SIDAlarm
+  // 0: 无
+  // 1: 左侧
+  // 2: 右侧
+  // DefaultValue: 0
+  // Description: 侧向碰撞防御告警
+  uint32 SIDAlarm = 97;
+
+  // 枚举: LSDAStartEplgBtnDisp
+  // 0:  Idle不显示
+  // 1: Actvn高亮显示
+  // 2: Deactvn置灰显示
+  // 3: Reserved预留
+  // DefaultValue: 0
+  // Description: 开始探索按钮显示状态信号
+  uint32 LSDAStartEplgBtnDisp = 98;
+
+  // 枚举: StrAniReq
+  // 0：StrAniReq_NoDisplay不显示
+  // 1：StrAniReq_Forward向前
+  // 2：StrAniReq_Backwards向后
+  // 3：StrAniReq_Reserved预留
+  // DefaultValue: 0
+  // Description: Flow animation display in the process of car control
+  uint32 StrAniReq = 99;
+
+  // 枚举: LSDADisplayReq
+  // 0：默认不显示
+  // 1：请求显示LSDA界面
+  // 2:Reserved预留
+  // DefaultValue: 0
+  // Description: LSDA功能显示请求
+  uint32 LSDADisplayReq = 100;
+
+
+message IDList {
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 车位列表，可泊入车位id号
+  uint32 ID32bit = 1;
+
+}
+
+message FctaRisk {
+  // 枚举: RiskSectorColor
+  // 0: 默认(不显示)
+  // 1: 一级
+  // 2: 二级
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: 风险扇区等级
+  uint32 RiskSectorColor = 1;
+
+  // 枚举: RiskSectorOrientation
+  // 0: 默认值(不显示)
+  // 1: 左前方
+  // 2: 右前方
+  // 3: 左后方
+  // 4: 右后方
+  // 5: 正后方
+  // 6: 预留
+  // DefaultValue: 0
+  // Description: 风险扇区显示方位
+  uint32 RiskSectorOrientation = 2;
+
+}
+
+message BsdRisk {
+  // 枚举: RiskSectorColor
+  // 0: 默认(不处理)
+  // 1: 一级
+  // 2: 二级
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: BSD报警等级
+  uint32 RiskSectorColor = 1;
+
+  // 枚举: RiskSectorOrientation
+  // 0: 默认值(不处理)
+  // 1: 左前方
+  // 2: 右前方
+  // 3: 左后方
+  // 4: 右后方
+  // 5: 正后方
+  // 6: 预留
+  // DefaultValue: 0
+  // Description: BSD报警方位
+  uint32 RiskSectorOrientation = 2;
+
+}
+
+message RCATRisk {
+  // 枚举: RCATArrowLevel
+  // 0: 默认(不处理)
+  // 1: 一级
+  // 2: 二级
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: RCTA-箭头提醒等级
+  uint32 RCATArrowLevel = 1;
+
+  // 枚举: RctaArrowOrientation
+  // 0: RCTA箭头方向：默认
+  // 1: 左后侧
+  // 2: 右后侧
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: RCTA-箭头方向
+  uint32 RctaArrowOrientation = 2;
+
+}
+
+message DowRisk {
+  // 枚举: DowDangerSource
+  // 0: 默认
+  // 1: 左侧
+  // 2: 右侧
+  // 3: 预留
+  // DefaultValue: 0
+  // Description: DOW-危险方向
+  uint32 DowDangerSource = 1;
+
+  // 枚举: DOWDangerLevelType
+  // 0: 默认值(不处理)
+  // 1: 一级
+  // 2: 二级TTC1
+  // 3: 二级TTC2
+  // 4: 二级TTC3
+  // 5: Reserve1
+  // 6: Reserve2
+  // 7: Reserve3
+  // DefaultValue: 0
+  // Description: DOW-危险级别
+  uint32 DOWDangerLevelType = 2;
+
+}
+
+message SensorStatus {
+  // Description: 传感器编号
+  uint32 SensorID = 1;
+
+  // 枚举: PerSensorState
+  // 0: 默认
+  // 1: 成功
+  // 2: 失败
+  // 3: 超时
+  // 4: 预留
+  // 5: 预留
+  // DefaultValue: 0
+  // Description: 传感器状态
+  uint32 PerSensorState = 2;
+
+  // 枚举: SensorReason
+  // 0: 无失败原因时默认传此值
+  // 1: 车速未达到要求，转弯车速低于45km/h
+  // 2: 转弯次数未达到要求，适量转弯
+  // 3: 场景空旷，请在静态物体丰富城区道路
+  // 4: 预留
+  // 5: 预留
+  // 7: 预留
+  // 8: 预留
+  // 9: 路面潮湿、积否
+  // 10: 场景拥堵，前方长时间有车
+  // 11: 预留
+  // 12: 预留
+  // 13: 预留
+  // 14: 预留
+  // 15: 预留
+  // DefaultValue: 0
+  // Description: 失败原因
+  uint32 SensorReason = 3;
+
+}
+
+message AVPStatus {
+  // 枚举: AVPStage
+  // 0: 默认值
+  // 1 :关闭
+  // 2:预留1
+  // 3：地图设置目的地
+  // 4： 导航
+  // 5 ：预激活
+  // 6 ：预留
+  // 7 ：巡航
+  // 8： 泊入
+  // 9 ：泊出
+  // 10 ：AVP完成
+  // 11： 建图
+  // 12： 建图完成
+  // DefaultValue: 0
+  uint32 AVPStage = 1;
+
+  // 枚举: AVPFirstTurn
+  // 0： 默认值
+  // 2 ：左转
+  // 3 ：右转
+  // 4 ：向左前方行驶
+  // 65 ：靠左
+  // 5： 向右前方行驶
+  // 66 ：靠右
+  // 6 ：向左后方行驶
+  // 7： 向右后方行驶
+  // 8 ：左转调头
+  // 9 ：直行
+  // 10 ：到达途经地
+  // 11： 预留
+  // 12：预留
+  // 15 ：到达目的地
+  // 19 ：右转调头
+  // 20 ：顺行
+  // 21：预留
+  // 22：预留
+  // 165： 上坡
+  // 166： 下坡
+  // DefaultValue: 0
+  uint32 AVPFirstTurn = 2;
+
+  // Range: [-32768,32767]
+  // DefaultValue: 0
+  // Description: 下一动作的距离
+  // Unit: m
+  int32 AVPFirstTurnDistance = 3;
+
+  // Range: [-1,100]
+  // DefaultValue: -1
+  // Description: 巡航行程百分比，-1代表无
+  int32 AVPCrusingProgress = 4;
+
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 巡航剩余距离
+  // Unit: m
+  uint32 AVPCrusingReDistance = 5;
+
+  // 枚举: FinishLearningButton
+  // 0：默认值（不显示）
+  // 1：置灰
+  // 2：不置灰
+  // 3：不显示按钮
+  // 4：reserve
+  // DefaultValue: 0
+  // Description: 完成学习按钮是否置灰
+  uint32 FinishLearningButton = 6;
+
+  // 枚举: AVPIcon
+  // 0：无效
+  // 1：置灰
+  // 2：高亮
+  // 3：不显示
+  // 4：AVP界面代客泊车可用
+  // 5：AVP界面代客泊车工作中
+  // 6：Reserve
+  // DefaultValue: 0
+  // Description: AVP图标状态
+  uint32 AVPIcon = 7;
+
+  // 枚举: AVPButton
+  // 0：无效
+  // 1：置灰
+  // 2：高亮
+  // 3：不显示
+  // 4：学习置灰
+  // 5：学习高亮
+  // 6：预留1
+  // 7：预留2
+  // DefaultValue: 0
+  // Description: AVP开关状态
+  // Unit: /
+  uint32 AVPButton = 8;
+
+}
+
+message ApaSlelectedDireTypeList {
+  // 枚举: ApaSlelectedDirectionType
+  // 0：无效（默认）
+  // 1：车头泊出向左
+  // 2：车头泊出向前
+  // 3：车头泊出向右
+  // 4：车尾泊出向左
+  // 5：车尾泊出向后
+  // 6：车尾泊出向右
+  // 7：水平向左泊出
+  // 8：水平向右泊出
+  // 9：预留
+  // 10：预留
+  // DefaultValue: 0
+  // Description: 可用的车位泊出方向
+  uint32 ApaSlelectedDirectionType = 1;
+
+}
+
+message Uint8Array {
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: UID值
+  uint32 BaseUint8 = 1;
+
+}
+
+message TrafficRedWarning {
+  // Range: [0,4294967295]
+  // DefaultValue: 0
+  // Description: 闯红灯报警动效提醒描绘点ID
+  uint32 TrafficRedWarningID = 1;
+
+  // Description: 闯红灯报警动效提醒描绘点数组
+  repeated VehiclePoint TrafficRedWarningPoint = 2;
+
+}
+
+message VehiclePoint {
+  // Range: [-2147483648到2147483647]
+  // DefaultValue: 0
+  // Description: 闯红灯报警动效提醒描绘点X方向坐标
+  int32 PositionX = 1;
+
+  // Range: [-2147483648到2147483647]
+  // DefaultValue: 0
+  // Description: 闯红灯报警动效提醒描绘点Y方向坐标
+  int32 PositionY = 2;
+
+}
+
+message AWWRiskType {
+  // 枚举: AWWStatusFL
+  // 0：默认值（未激活）
+  // 1：一级报警
+  // 2：二级报警
+  // 3：预留
+  // DefaultValue: 0
+  // Description: 左前轮毂防剐蹭功能状态
+  uint32 AWWStatusFL = 1;
+
+  // 枚举: AWWStatusFR
+  // 0：默认值（未激活）
+  // 1：一级报警
+  // 2：二级报警
+  // 3：预留
+  // DefaultValue: 0
+  // Description: 右前轮毂防剐蹭功能状态
+  uint32 AWWStatusFR = 2;
+
+  // 枚举: AWWStatusRL
+  // 0：默认值（未激活）
+  // 1：一级报警
+  // 2：二级报警
+  // 3：预留
+  // DefaultValue: 0
+  // Description: 左后轮毂防剐蹭功能状态
+  uint32 AWWStatusRL = 3;
+
+  // 枚举: AWWStatusRR
+  // 0：默认值（未激活）
+  // 1：一级报警
+  // 2：二级报警
+  // 3：预留
+  // DefaultValue: 0
+  // Description: 右后轮毂防剐蹭功能状态
+  uint32 AWWStatusRR = 4;
+
+}
+
+message TtrackPlanning {
+  // 枚举: STS
+  // STS(0x01多步开始标志，0x02多步结束标志)。
+  // STS(0x03单步规划轨迹开始标志，0x04单步规划轨迹结束标志)。
+  uint32 STS = 1;
+
+  // Unit: dm
+  int32 TtrackPlanningX = 2;
+
+  // Unit: dm
+  int32 TtrackPlanningY = 3;
+
+}
+
+}
+message TrafficWarning {
+}
+message VehiclePointCcl {
+}
+message CalibSensorGroupState {
+  // 枚举: AllSensorCalibState
+  // 0：默认
+  // 1：未标定
+  // 2：标定中
+  // 3：预留
+  // 4：预留
+  // 5：预留
+  // DefaultValue: 0
+  // Description: 全局校准状态
+  uint32 AllSensorCalibState = 1;
+
+  // 枚举: SensorCalibGroup
+  // 0：默认
+  // 1：11V3L在线
+  // 2：IMU静态
+  // 3：IMU动态
+  // 4:预留（11V3L售后校准）
+  // 5:预留
+  // 6:预留
+  // DefaultValue: 0
+  // Description: 校准传感器
+  uint32 SensorCalibGroup = 2;
+
+  // Range: 取值范围:[0,100]
+  // DefaultValue: 0
+  // Description: 在线标定进度
+  uint32 OnlineCalibProgress = 3;
+
+
+}
+message IntegAdpuConfigInf {
+  // 枚举: IntegAdpuConfig
+  // 0：未知默认
+  // 1：导远ADPU
+  // 2：自研ADPU
+  // DefaultValue: 0
+  // Description: 集成ADPU配置信息
+  uint32 IntegAdpuConfig = 1;
+
+
+}
+message OnlineCalibInf {
+  // 枚举: CalibStateType
+  // 0: 未标定
+  // 1: 标定中
+  // 2: 预留
+  // 3: 预留
+  // 4: 预留
+  // 5: 预留
+  // Description: 在线标定状态
+  uint32 CalibStateType = 1;
+
+  // Range: [0-100]
+  // DefaultValue: 0
+  // Description: 在线标定进度
+  uint32 Calibprogress = 2;
+
+
+}
+message CalibStateAckInf {
+  // 枚举: IMUCalibGuide
+  // 0：默认
+  // 1：请对车辆进行原地掉头180°
+  // 2：请适当转弯
+  // 3：请在开阔道路行驶
+  // 4：预留
+  // 5：预留
+  // DefaultValue: 0
+  // Description: 校准场景引导信息
+  uint32 IMUCalibGuide = 1;
+
+  // 枚举: IMUCalibResult
+  // 0：默认
+  // 1：成功
+  // 2：失败
+  // 3：超时
+  // 4：中断
+  // DefaultValue: 0
+  // Description: 校准结果
+  uint32 IMUCalibResult = 2;
+
+  // 枚举: IMUCalibFailReason
+  // 0：无异常
+  // 1：IMU延时
+  // 2：IMU数据异常
+  // 3：IMU数据调头前后时间间隔超限；
+  // 4：IMU非静态；
+  // 5：车辆调头异常
+  // 6：roll角超差；
+  // 7：pitch角超差；
+  // 8：roll&pitch角超差；
+  // 9~15：保留字段
+  // 16-31
+  // 16：无异常
+  // 17：IMU数据异常
+  // 18：RTK数据异常
+  // 19：轮速数据异常
+  // 20：yaw角超差；
+  // 21：pitch角超差；
+  // 22：yaw&pitch角超差;
+  // 23~:保留字段
+  // DefaultValue: 0
+  // Description: 标定失败原因
+  uint32 IMUCalibFailReason = 3;
+
+  // Range: [-3141,3141]
+  // DefaultValue: 0
+  // Description: 标定成功角度roll
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 IMUCalibResultRoll = 4;
+
+  // Range: [-3141,3141]
+  // DefaultValue: 0
+  // Description: 标定成功角度pitch
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 IMUCalibResultPitch = 5;
+
+  // Range: [-3141,3141]
+  // DefaultValue: 0
+  // Description: 标定成功角度yaw
+  // Unit: 弧度
+  // Resolution: 0.001
+  int32 IMUCalibResultYaw = 6;
+
+
+}
+message DrivingFeatureState {
+  // Description: 行车功能状态信息
+  repeated DrivingButtonState DrivingState = 1;
+
+  // Description: 行车功能动效状态信息
+  repeated DrivingDynamicState DrivingDynamicInformation = 2;
+
+
+message DrivingButtonState {
+  // Description: Key值
+  uint32 key = 1;
+
+  // Description: Value值
+  uint32 Value = 2;
+
+}
+
+message DrivingDynamicState {
+  // Description: Key值
+  uint32 key = 1;
+
+  // Description: Value值
+  uint32 Value = 2;
+
+}
+
+}
+message ADASFeatureState {
+  // Description: ADAS功能状态信息
+  repeated ADASFunctionState ADASState = 1;
+
+
+message ADASFunctionState {
+  // Description: Key值
+  uint32 key = 1;
+
+  // Description: Value值
+  uint32 Value = 2;
+
+}
+
+}

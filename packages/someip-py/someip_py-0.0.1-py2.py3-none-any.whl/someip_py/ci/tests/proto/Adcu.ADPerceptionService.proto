@@ -1,0 +1,631 @@
+syntax = "proto3";
+
+package Adcu.ADPerceptionService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 7;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 20HZ
+ // Comment: 感知目标
+ MsgIdFusionObjectInfo = 1;
+
+ // Frequency: 20HZ
+ // Comment: 泊车车位信息
+ MsgIdApaSlotInfo = 2;
+
+ // Frequency: 15HZ
+ // Comment: 红绿灯检测数据
+ MsgIdTrafficLightsInf = 3;
+
+ // Frequency: 10Hz
+ // Comment: HUD调光依赖的Front Wide Camera（FWC）亮度数据
+ MsgIdFWCBrightnesslnfo = 4;
+
+ // Frequency: 1HZ
+ // Comment: VLM场景识别信息
+ MsgIdVLMSceneInfo = 5;
+
+}
+
+message FusionObjectInfo {
+  // Description: 检出物列表
+  repeated Object Objects = 1;
+
+
+message Object {
+  // Description: 目标唯一id
+  uint64 TargetID = 1;
+
+  // 枚举: DangerLevel
+  // 0:无危险，默认色
+  // 1:危险1级，深灰
+  // 2:跟车目标，蓝色
+  // 3:危险2级，红色
+  // 4:风险目标，渐变
+  // 5:预留
+  // DefaultValue: 0: 默认值
+  // Description: 危险目标等级
+  uint32 DangerLevel = 2;
+
+  // Range: [-3141,3141]
+  // DefaultValue: 0: 默认值
+  // Description: 检出物朝向
+  // Unit: 单位：0.001弧度
+  int32 Heading = 3;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物中心坐标x
+  // Unit: 单位：mm
+  int32 CenterPositionX = 4;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物中心坐标y
+  // Unit: 单位：mm
+  int32 CenterPositionY = 5;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物速度
+  // Unit: 单位：m/s
+  float Velocity = 6;
+
+  // 枚举: ObjectType
+  // 1:PEDESTRIAN
+  // 2:CAR
+  // 3:BICYCLE
+  // 4:TRICYCLE
+  // 5:BUS
+  // 6:TRUCK
+  // 11:TRAFFIC_CONE
+  // 14:DEBRIS
+  // 16:SUV
+  // 17:minicar
+  // 19:水马
+  // 20:方柱
+  // 21:减速带
+  // 23：防撞桶
+  // 24:隔离杆
+  // 25:非骑行两轮车
+  // 3.2版本新增23、24
+  // 3.3新增25
+  // 26：墙
+  // 27: MPV-默认
+  // 28：:MINI_TRUCK-默认
+  // 29：CHILD （儿童）
+  // 30：Police (警察)
+  // 31：Police (警车)-非骑行
+  // 32：Police (警车)-骑行
+  // 33：Car-Police (警车)
+  // 34：MPV-Police (警车)
+  // 35：emergency_car(急救车)
+  // 36：shuttle(公交车)
+  // 37：Truck_with_car(拖挂车)
+  // 38：tanker(油罐车)
+  // 39：Fire_fighting(消防)
+  // 40:WARNING_TRIANGLE 反光三角牌
+  // 41:ANTI_COLLISION_COLUMNS 防撞柱/反光柱
+  // 42：关闭的闸机
+  // 43：打开的闸机
+  // 44：婴儿车
+  // 45：宠物
+  // 46：禁停牌
+  // 47：地锁
+  // 49: 收费站头顶车道信息指示牌-ETC车道
+  // 50：收费站头顶车道信息指示牌-人工车道
+  // 51：收费站头顶车道信息指示牌-ETC/人工车道
+  // 52：不能区分类型的通用障碍物
+  // 53:Cat猫
+  // 54:Dog狗
+  // 55：EIK麋鹿
+  // 56：皮卡车
+  // 57：Reserve1
+  // 58：Reserve2
+  // DefaultValue: 0: 默认值
+  // Description: 检出物类型
+  uint32 ObjectType = 7;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物长度，参照size单位
+  // Unit: 单位：mm
+  uint32 SizeX = 8;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物宽度，参照size单位
+  // Unit: 单位：mm
+  uint32 SizeY = 9;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物高度，参照size单位
+  // Unit: 单位：mm
+  uint32 SizeZ = 10;
+
+  // 枚举: TurningLight
+  // 0:无效
+  // 1:左转灯亮
+  // 2:右转向灯亮
+  // DefaultValue: 0: 默认值
+  // Description: 目标转向灯状态
+  uint32 TurningLight = 11;
+
+  // 枚举: MessageLocation
+  // 0 : 默认值
+  // 1: 自车位置左
+  // 2: 自车位置右
+  // 3: 自车位置前
+  // 4: 自车位置后
+  // 5: reserved
+  // 6: reserved
+  // 7: reserved
+  // 8: reserved
+  // DefaultValue: 0: 默认值
+  // Description: 告警位置信息
+  uint32 MessageLocation = 12;
+
+  // DefaultValue: 0: 默认值
+  // Description: 检出物中心坐标Z
+  // Unit: 单位：mm
+  int32 CenterPositionZ = 13;
+
+  // 枚举: LiftTurningLight
+  // 0 = unknown(遮挡/不可见)，等同于off
+  // 1 = On 亮灯
+  // 2 = Off
+  // DefaultValue: 0: 默认值
+  // Description: 目标左转向灯状态
+  uint32 LiftTurningLight = 14;
+
+  // 枚举: RightTurningLight
+  // 0 = unknown(遮挡/不可见)，等同于off
+  // 1 = On 亮灯
+  // 2 = Off
+  // DefaultValue: 0: 默认值
+  // Description: 目标右转向灯状态
+  uint32 RightTurningLight = 15;
+
+  // 枚举: BrakeCarLight
+  // 0 = unknown(遮挡/不可见)，等同于off
+  // 1 = On 亮灯
+  // 2 = Off
+  // DefaultValue: 0: 默认值
+  // Description: 目标刹车灯状态
+  uint32 BrakeCarLight = 16;
+
+  // DefaultValue: 0: 默认值
+  // 枚举: ObjectAccelerationX
+  // 检出物X向加速度
+  // (自车坐标系对地加速度)
+  // Unit: m/s2
+  // Resolution: 小数点后6~7位，如单位为m/s2, 座舱可接受
+  float ObjectAccelerationX = 17;
+
+  // DefaultValue: 0: 默认值
+  // 枚举: ObjectAccelerationY
+  // 检出物Y向加速度
+  // (自车坐标系对地加速度)
+  // Unit: m/s2
+  // Resolution: 小数点后6~7位，如单位为m/s2, 座舱可接受
+  float ObjectAccelerationY = 18;
+
+  // DefaultValue: 0: 默认值
+  // 枚举: ObjectAccelerationZ
+  // 检出物Z向加速度
+  // (自车坐标系对地加速度)
+  // Unit: m/s2
+  // Resolution: 小数点后6~7位，如单位为m/s2, 座舱可接受
+  float ObjectAccelerationZ = 19;
+
+  // DefaultValue: 0
+  // 枚举: ObjectTimeStamp
+  // 检出物时间戳
+  // （注：原始数据为LINUX时间戳，浮点数据）
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double ObjectTimeStamp = 20;
+
+  // 枚举: LeftDoorState
+  // 0 = unknown(遮挡/不可见)，等同于off
+  // 1 =   On 车门开
+  // 2 = Off
+  // DefaultValue: 0
+  // Description: 目标车左侧车门开启状态
+  uint32 LeftDoorState = 21;
+
+  // 枚举: RightDoorState
+  // 0 = unknown(遮挡/不可见)，等同于off
+  // 1 =   On 车门开
+  // 2 = Off
+  // DefaultValue: 0
+  // Description: 目标车右侧车门开启状态
+  uint32 RightDoorState = 22;
+
+  // DefaultValue: 0
+  // Description: 通用障碍物在地面的投影点坐标数组
+  repeated VehiclePoint Points = 23;
+
+}
+
+message VehiclePoint {
+  // DefaultValue: 0: 默认值
+  // Description: X轴坐标
+  // Unit: 单位：mm
+  int32 PositionX = 1;
+
+  // DefaultValue: 0: 默认值
+  // Description: Y轴坐标
+  // Unit: 单位：mm
+  int32 PositionY = 2;
+
+  // Range: [-2147483648到2147483647]
+  // DefaultValue: 0：默认值
+  // Description: Z方向坐标
+  // Unit: mm
+  int32 PositionZ = 3;
+
+}
+
+}
+message ApaSlotInfo {
+  // Description: 车位渲染
+  repeated APASlot APASlots = 1;
+
+
+message APASlot {
+  // Description: 车位ID（1为推荐车位）
+  uint32 SlotID = 1;
+
+  // 枚举: SlotStatus
+  // 0：占据(不可用)
+  // 1：非占据（可用）
+  // 2：未知
+  // 3：行人占据
+  // 4：两轮车占据
+  // 5：锥桶占据
+  // 6：地锁占据
+  // 7：禁停牌占据
+  // 8：其他障碍物占据
+  // 9：预留
+  // DefaultValue: 0: 默认值
+  // Description: 车位状态
+  uint32 SlotStatus = 2;
+
+  // 枚举: SlotType
+  // 0:垂直
+  // 1:水平
+  // 2:斜列
+  // 3:预留（机械车位）
+  // DefaultValue: 0: 默认值
+  // Description: 车位类型
+  uint32 SlotType = 3;
+
+  // DefaultValue: 0: 默认值
+  // 枚举: SlotPoints
+  // 车位轮廓描述
+  // 角点顺序：
+  // 左上、右上、右下、左下
+  repeated VehiclePoint SlotPoints = 4;
+
+  // DefaultValue: 0: 默认值
+  // Description: 车位轮挡信息
+  repeated VehiclePoint BlockPoints = 5;
+
+  // 枚举: SlotSelectButton
+  // 0:默认（不处理）
+  // 1:高亮
+  // 2:灰
+  // DefaultValue: 0: 默认值
+  // Description: 自选车位按钮高亮
+  uint32 SlotSelectButton = 6;
+
+  // 枚举: ApaChargeSlot
+  // 0：默认值(非极氪充电车位)
+  // 1：极氪充电车位
+  // 2：预留
+  // 3：预留
+  // DefaultValue: 0: 默认值
+  // Description: 极氪充电桩的感知车位类型
+  uint32 ApaChargeSlot = 7;
+
+  // DefaultValue: 0: 默认值
+  // Description: 极氪充电桩的感知车位编号
+  uint32 ApaChargeSlotNum = 8;
+
+  // 枚举: ApaReqReleaseLockCard
+  // 0：默认无效
+  // 1：请求降地锁弹窗
+  // 2：预留
+  // 3：预留
+  // DefaultValue: 0: 默认值
+  // Description: 请求降地锁弹窗
+  uint32 ApaReqReleaseLockCard = 9;
+
+  // 枚举: SlotSizeType
+  // 0：默认无效
+  // 1：窄车位
+  // 2：预留
+  // 3：预留
+  // DefaultValue: 0: 默认值
+  // Description: 车位宽度属性
+  uint32 SlotSizeType = 10;
+
+  // 枚举: SlotCollectedStatus
+  // 0：UncollectedSlot
+  // 1：CollectedSlot
+  // DefaultValue: 0：默认值
+  // Description: 车位收藏状态
+  uint32 SlotCollectedStatus = 11;
+
+}
+
+message VehiclePoint {
+  // DefaultValue: 0: 默认值
+  // Description: X轴坐标
+  // Unit: 单位：mm
+  int32 PositionX = 1;
+
+  // DefaultValue: 0: 默认值
+  // Description: Y轴坐标
+  // Unit: 单位：mm
+  int32 PositionY = 2;
+
+  // Range: [-2147483648到2147483647]
+  // DefaultValue: 0：默认值
+  // Description: Z方向坐标
+  // Unit: mm
+  int32 PositionZ = 3;
+
+}
+
+}
+message TrafficLightsInf {
+  // Description: 交通灯列表
+  repeated TrafficLight TrafficLights = 1;
+
+
+message TrafficLight {
+  // Description: 标识交通灯唯一id
+  uint64 TrafficLightID = 1;
+
+  // 枚举: Bbox
+  // 交通灯坐标
+  // 左上右下2个角点坐标
+  repeated CoordinateSys Bbox = 2;
+
+  // 枚举: Redlight
+  // 0:未知
+  // 1:绿色
+  // 2:黄色
+  // 3:红色
+  // 4:黑色
+  // DefaultValue: 0: 默认值
+  // Description: 红绿灯颜色
+  uint32 Redlight = 3;
+
+  // 枚举: Shape
+  // 0:未知
+  // 1:圆形
+  // 2:左箭头
+  // 3:直行箭头
+  // 4:右箭头
+  // 5:左转和直行箭头
+  // 6:右转和直行箭头
+  // 7:左转和调头
+  // 8:调头
+  // 9:预留
+  // 10:预留
+  // 11:预留
+  // DefaultValue: 0: 默认值
+  // Description: 灯的形状
+  uint32 Shape = 4;
+
+  // DefaultValue: 0: 默认值
+  // Description: 倒计时
+  // Unit: 单位：秒
+  uint32 CountDown = 5;
+
+  // 枚举: Blink
+  // false:不闪烁
+  // true：闪烁
+  // Description: 交通灯是否在闪烁
+  bool Blink = 6;
+
+  // 枚举: UseTLAInfo
+  // false 座舱不需要显示融合方案
+  // true 座舱需要显示融合方案
+  // Description: 座舱侧是否进行显示
+  bool UseTLAInfo = 7;
+
+  // Range: [-3141,3141]
+  // Description: 标定成功角度roll
+  // Unit: 单位：0.001弧度
+  int32 Roll = 8;
+
+  // Range: [-3141,3141]
+  // Description: 标定成功角度pitch
+  // Unit: 单位：0.001弧度
+  int32 Pitch = 9;
+
+  // Range: [-3141,3141]
+  // Description: 标定成功角度yaw
+  // Unit: 单位：0.001弧度
+  int32 Yaw = 10;
+
+}
+
+message CoordinateSys {
+  // DefaultValue: 0: 默认值
+  // Description: 3D从车体坐标系x轴坐标
+  // Unit: 单位：mm
+  int32 CoordinateX = 1;
+
+  // DefaultValue: 0: 默认值
+  // Description: 3D从车体坐标系y轴坐标
+  // Unit: 单位：mm
+  int32 CoordinateY = 2;
+
+  // DefaultValue: 0: 默认值
+  // Description: 3D从车体坐标系z轴坐标
+  // Unit: 单位：mm
+  int32 CoordinateZ = 3;
+
+}
+
+}
+message FWCBrightnesslnfo {
+  // Range: [-1, 255]
+  // DefaultValue: -1
+  // Description: HUD调光用的 DVR画面Area1的平均亮度 Y1
+  // Unit: 单位 bit
+  // Resolution: 有效数字15~16位
+  double AverageBrightness1 = 1;
+
+  // Range: [-1, 255]
+  // DefaultValue: -1
+  // Description: HUD调光用的 DVR画面Area2的平均亮度 Y2
+  // Unit: 单位 bit
+  // Resolution: 有效数字15~16位
+  double AverageBrightness2 = 2;
+
+  // Range: [-1, 5x10^7]
+  // DefaultValue: -1
+  // Description: HUD调光用的 DVR画面Area1的实际亮度 L1
+  // Unit: 单位 lux
+  // Resolution: 有效数字15~16位
+  double ActualBrightness1 = 3;
+
+  // Range: [-1, 5x10^7]
+  // DefaultValue: -1
+  // Description: HUD调光用的 DVR画面Area2的实际亮度 L2
+  // Unit: 单位 lux
+  // Resolution: 有效数字15~16位
+  double ActualBrightness2 = 4;
+
+
+}
+message VLMSceneInfo {
+message VehiclePoint {
+  // DefaultValue: 0: 默认值
+  // Description: X轴坐标
+  // Unit: 单位：mm
+  int32 PositionX = 1;
+
+  // DefaultValue: 0: 默认值
+  // Description: Y轴坐标
+  // Unit: 单位：mm
+  int32 PositionY = 2;
+
+  // Range: [-2147483648到2147483647]
+  // DefaultValue: 0：默认值
+  // Description: Z方向坐标
+  // Unit: mm
+  int32 PositionZ = 3;
+
+}
+
+  // Description: VLM场景
+  repeated Scene Scenes = 1;
+
+
+message Scene {
+  // Description: VLM图片数据
+  string VLMPicture = 1;
+
+  // Description: 场景描述汇总
+  string VLMPictureDescription = 2;
+
+  // 枚举: VLMScenePictureDisplay
+  // 0：默认值
+  // 1：不显示
+  // 2：显示
+  // DefaultValue: 0
+  // Description: VLM场景是否显示
+  int32 VLMScenePictureDisplay = 3;
+
+  // Description: 场景【≤20】
+  repeated VLMScene VLMScenes = 4;
+
+}
+
+message VLMScene {
+  // 枚举: SubsceneType
+  // 0：默认值；
+  // 01：收费站场景；
+  // 10：潮汐车道；
+  // 11：可变车道；
+  // 12：公交车道；
+  // 13：公交岛；
+  // 14：BRT车道；
+  // 30：直行待转区；
+  // 31:   左转待转区；
+  // 32：右转待转区；
+  // 50：丁字路口；
+  // 51：盲区路口；
+  // 60：高速场景；
+  // 61：城区场景；
+  // 62：桥上；
+  // 63：桥下；
+  // 64：主辅路；
+  // 65：乡村路；
+  // 66：拥堵路段；
+  // 67：人车混行路段；
+  // 80：临时施工区域；
+  // 81：施工改道；
+  // 82：事故现场；
+  // DefaultValue: 0
+  // 枚举: SubsceneType
+  // VLM子场景类型
+  // 01-09：收费站场景；
+  // 10-29：特殊车道类型场景；
+  // 30-49：交通标识场景；
+  // 40-49：路口场景；
+  // 60-69：路段类型识别；
+  // 80-79:  施工或事故场景
+  int32 SubsceneType = 1;
+
+  // Description: VLM子场景描述
+  string SubsceneDesciption = 2;
+
+  // 枚举: VLMSubscenePictureDisplay
+  // 0：默认值
+  // 1：不显示
+  // 2：显示
+  // DefaultValue: 0
+  // Description: VLM子场景卡片是否显示
+  int32 VLMSubscenePictureDisplay = 3;
+
+  // Description: VLM子场景框[≤20]
+  repeated VLMSceneBox SceneBox = 4;
+
+}
+
+message VLMSceneBox {
+  // DefaultValue: 0
+  // Description: VLM场景卡片Box角点坐标
+  repeated VehiclePoint SceneBoxConerPoint = 1;
+
+  // DefaultValue: 0
+  // Description: VLM场景卡片Box宽度
+  // Unit: mm
+  uint64 SceneBoxWide = 2;
+
+  // DefaultValue: 0
+  // Description: VLM场景卡片Box高度
+  // Unit: mm
+  uint64 SceneBoxHeight = 3;
+
+  // 枚举: SceneBoxType
+  // 0：默认值
+  // 1：规则图形
+  // 2：不规则图形
+  // DefaultValue: 0
+  // Description: VLM场景形状类型，其中规则图形也可以使用多角点表达
+  int32 SceneBoxType = 4;
+
+}
+
+}

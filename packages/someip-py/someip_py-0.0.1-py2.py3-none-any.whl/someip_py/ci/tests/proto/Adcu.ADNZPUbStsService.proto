@@ -1,0 +1,682 @@
+syntax = "proto3";
+
+package Adcu.ADNZPUbStsService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 6;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: event
+ // Comment: 通勤路线信息同步（舍弃）
+ MsgIdCommutingRoutesInfo = 1;
+
+ // Frequency: event
+ // Comment: 路线记忆状态
+ MsgIdMemoryRouteStatus = 2;
+
+ // Frequency: event
+ // Comment: ADCU反馈导航路线（舍弃）
+ MsgIdMrNaviRoute = 3;
+
+ // Frequency: event
+ // Comment: 导航中智驾里程
+ MsgIdAdasMileage = 4;
+
+ // Frequency: event
+ // Comment: 通勤路线信息同步（接口重构）
+ MsgIdCommutingRoutesInfo1 = 5;
+
+ // Frequency: event
+ // Comment: ADCU反馈导航路线（接口重构）
+ MsgIdMrNaviRoute1 = 6;
+
+ // Frequency: event
+ // Comment: 通勤路线记忆开关置灰及文言提醒
+ MsgIdMemoryRouteControlInf = 7;
+
+ // Frequency: event
+ // Comment: 路线选中状态反馈
+ MsgIdCommutingRouteSelectionRspInf = 8;
+
+ // Frequency: event
+ // Comment: 单次行程NZP激活后的行车控制数据显示
+ MsgIdNzpMileAndControlMessage = 9;
+
+ // Frequency: event
+ // Comment: DHU是否解析数据成功
+ MsgIdDHUAppDataReceived = 10;
+
+}
+
+message CommutingRoutesInfo {
+  // Description: 用户GID信息
+  string UserGid = 1;
+
+  // Description: 路网link，数量[0~∞]
+  repeated uint64 RouteLinks = 2;
+
+  // Description: 旅程信息
+  repeated TripInfo Trips = 3;
+
+  // Description: 路线描述信息
+  repeated RouteDescriptionInfo RouteDescriptions = 4;
+
+  // 枚举: QlyinspectionStatus
+  // 0: 未知
+  // 1: 质检中
+  // 2: 可使用
+  // 3: 路线不可用，请删除后重新学习
+  // 4: 删除标识
+  // 5~99: 预留
+  // 100: 不更新routelinks，状态未知
+  // 101: 不更新routelinks，质检中
+  // 102: 不更新routelinks，可使用
+  // 103: 不更新routelinks，路线不使用，请删除后重新学习
+  // 104: 不更新routelinks，删除标识
+  // DefaultValue: 255
+  // Description: 路线质检状态
+  uint32 QlyinspectionStatus = 5;
+
+
+message RouteDescriptionInfo {
+  // Description: 用户命名路径名称
+  string RouteNickName = 1;
+
+  // Description: 导航路径起点
+  Pos2D StartPoint = 2;
+
+  // Description: 导航起点所在城市
+  uint32 StartAdcode = 3;
+
+  // Description: 导航路径终点
+  Pos2D DestPoint = 4;
+
+  // Description: 导航终点所在城市
+  uint32 DestAdcode = 5;
+
+  // Description: 记忆路径起始点
+  Pos2D MrStartPoint = 6;
+
+  // Description: 记忆路径结束点
+  Pos2D MrEndPoint = 7;
+
+  // Description: navi起点名称
+  string StartName = 8;
+
+  // Description: navi目的地名称
+  string DestName = 9;
+
+  // Description: 途径点0~5个
+  repeated Pos2D ViaPionts = 10;
+
+}
+
+message TripInfo {
+  // Description: 路线拓扑信息ID
+  uint64 RouteUuid = 1;
+
+  // Description: 导航路线唯一ID
+  uint64 RouteLength = 2;
+
+  // Description: 路线长度
+  // Unit: km
+  uint64 TravelTime = 3;
+
+  // Description: 旅程时间
+  // Unit: minute
+  uint64 CreationTime = 4;
+
+  // 枚举: RecommedFlag
+  // 0: 主动推荐
+  // 1: 常规使用
+  // DefaultValue: 255
+  // Description: 路线标志
+  uint32 RecommedFlag = 5;
+
+  // Description: 导航会话ID
+  string NaviId = 6;
+
+}
+
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+}
+message MemoryRouteStatus {
+  // 枚举: Status
+  // 0: 开始记忆&记忆中
+  // 1: 路线保存成功
+  // 2: Ins信号不可信（成功态）
+  // 3: 路线保存失败
+  // 4: 路线记忆失败
+  // 5: 路线正在使用中
+  // 6~255: 未定义（预留）
+  // DefaultValue: 255
+  // Description: 反映记忆失败
+  uint32 Status = 1;
+
+  // 枚举: Cause
+  // 0: 记忆成功
+  // 1: 开始记忆
+  // 2: 路线保存成功
+  // 3: 磁盘满（记忆满20条）
+  // 4: 路线长度过长
+  // 5: 路线距离过短
+  // 6: GPS信号弱
+  // 7: 无效route_uuid
+  // 8: 目的地更换，记忆路线失败；
+  // 9: 距离目的地过远，路线不会保存；
+  // 10: 超出可用范围，导航&记忆不可使用
+  // 11: 导航态：超出可用范围，记忆路线失败（新增信号值）
+  // 12: 算路态：超出可用范围，记忆路线失败（新增信号值）
+  // 13: 已存在当前路线，请直接使用
+  // 14: 当前路线可记忆
+  // 15: 请删除不常用通勤路线\n存储空间已满
+  // 16: 非车主用户记忆满10条提醒
+  // 17~255: 未定义（预留）
+  // DefaultValue: 255
+  // Description: 反映失败原因
+  uint32 Cause = 2;
+
+  // 枚举: Advice
+  // 0: 记忆成功
+  // 1: 建议重新学习（记忆路线保存失败，建议重新学习）
+  // 2: 记忆路线至少>2km（记忆路线过短）
+  // 3: 继续延路线行驶至开阔地带（路线记忆失败，地图质量存在问题）
+  // 4: 仅支持100km以内路线记忆（超出记忆最大距离）
+  // 5~255: 未定义（预留）
+  // DefaultValue: 255
+  // Description: 反映给用户的建议
+  uint32 Advice = 3;
+
+  // Description: 路线uuid
+  uint64 RouteUuid = 4;
+
+  // Description: 记忆路线长度
+  // Unit: m
+  uint32 RecordingLength = 5;
+
+  // Description: 记忆起点位置
+  // Unit: m
+  uint32 RecordingStartPosition = 6;
+
+  // Description: 导航会话id
+  string NaviId = 7;
+
+
+}
+message MrNaviRoute {
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+  // DefaultValue: 0
+  // Description: 记忆路线ID
+  uint64 MrId = 1;
+
+  // Description: link匹配的重合段信息
+  repeated ConcidenceLink Concidence = 2;
+
+  // 枚举: IsRoute
+  // 0: 在路径上
+  // 1: 不在路径上
+  // DefaultValue: 255
+  // Description: 是否在路径上
+  uint32 IsRoute = 3;
+
+  // 枚举: Type
+  // 0: 智能推荐；
+  // 1: 路径规划；
+  // DefaultValue: 255
+  // Description: 类型
+  uint32 Type = 4;
+
+  // 枚举: IsConcidence
+  // 0: 不重合
+  // 1: 重合
+  // DefaultValue: 255
+  // Description: 是否重合
+  uint32 IsConcidence = 5;
+
+
+message ConcidenceLink {
+  // DefaultValue: 0
+  // Description: 重合段所在link的ID
+  uint64 LinkId = 1;
+
+  // Description: 重合段起点
+  Pos2D StartPoint = 2;
+
+  // Description: 重合段终点
+  Pos2D EndPont = 3;
+
+  // DefaultValue: 0
+  // Description: 长度
+  // Unit: m
+  uint64 Length = 4;
+
+  // 枚举: IsConcidence
+  // 0: 不重合
+  // 1: 重合
+  // DefaultValue: 0
+  // Description: 是否重合
+  uint32 IsConcidence = 5;
+
+}
+
+}
+message AdasMileage {
+  // DefaultValue: 0
+  // Description: 导航中的记忆里程
+  // Unit: m
+  uint32 AdasMileage = 1;
+
+
+}
+message CommutingRoutesInfo1 {
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+  // Description: 用户GID信息
+  string UserGid = 1;
+
+  repeated RouteType RoutesInfoSeN = 2;
+
+
+message RouteType {
+  // Description: 路网link信息
+  repeated uint64 RouteLinks = 1;
+
+  // Description: 导航路线唯一ID
+  uint64 RouteUuid = 2;
+
+  // Description: 路线长度（公里）
+  uint64 RouteLength = 3;
+
+  // Description: 旅程时间（分）
+  uint64 TravelTime = 4;
+
+  // Description: 通勤路线创建时间（Unix时间戳）
+  uint64 CreationTime = 5;
+
+  // Description: 推荐 / 常用路线标志位，0，主动推荐；1，常规使用；
+  uint32 RecommedFlag = 6;
+
+  // Description: 导航会话id
+  string NaviId = 7;
+
+  // 枚举: QualityInspectionSts
+  // 0: 未知
+  // 1: 质检中
+  // 2: 可使用
+  // 3: 路线不可用，请删除后重新学习
+  // 预留
+  // 4: 删除标识
+  // 100: 不更新routelinks，状态未知；
+  // 101: 不更新routelinks，质检中；
+  // 102: 不更新routelinks，可使用；
+  // 103: 不更新routelinks，路线不使用，请删除后重新学习；
+  // 104: 不更新routelinks，删除标识；
+  // Description: 质量检测状态
+  uint32 QualityInspectionSts = 8;
+
+  // Description: 用户命名路径名称
+  string RouteNickName = 9;
+
+  // Description: 导航路径起点
+  Pos2D StartPoint = 10;
+
+  // Description: 导航起点所在城市
+  uint32 StartAdcode = 11;
+
+  // Description: 导航路径终点
+  Pos2D DestPoint = 12;
+
+  // Description: 导航终点所在城市
+  uint32 DestAdcode = 13;
+
+  // 枚举: ParkingFlag
+  // 0: undefined
+  // 1: start
+  // 2: end
+  // 3: both
+  // 4: none
+  // Description: 车位信息
+  uint32 ParkingFlag = 14;
+
+  // Description: 记忆路径起始点
+  Pos2D MrStartPoint = 15;
+
+  // Description: 记忆路径结束点
+  Pos2D MrEndPoint = 16;
+
+  // Description: navi起点名称
+  string StartName = 17;
+
+  // Description: navi目的地名称
+  string DestName = 18;
+
+  // Description: 途径点0~5个
+  repeated Pos2D ViaPionts = 19;
+
+  // 枚举: Reason
+  // 0: 不明；
+  // 1: navi推荐路线；
+  // 2: navi备选路线（多路线时的非推荐路）
+  // 3: 偏航路线；
+  // 4: 备选路线
+  // Description: 路线分类
+  uint32 Reason = 20;
+
+  // DefaultValue: 0
+  // 枚举: NavigationDisplayDistpiontPOIID
+  // 航终点显示坐标POI ID（有就发 没有就不发）
+  // ID示例“B02000IN0C
+  string NavigationDisplayDistpiontPOIID = 21;
+
+  // 枚举: NavigationDistreqType
+  // 0: 不明
+  // 1: 家
+  // 2: 公司
+  // 3: 其他
+  // DefaultValue: 0
+  // Description: 终点类型属性
+  uint32 NavigationDistreqType = 22;
+
+  // DefaultValue: 0
+  // 枚举: NavigationDistpiontPOIID
+  // 驾驶员请求导航终点引导坐标的POI ID（有就发 没有就不发）
+  // ID示例“B02000IN0C
+  string NavigationDistpiontPOIID = 23;
+
+}
+
+}
+message MrNaviRoute1 {
+message Pos2D {
+  // Range: [-180,180]
+  // DefaultValue: 0
+  // Description: 经度（GJC-02）
+  // Unit: 度
+  double LongitudePos2D = 1;
+
+  // Range: [-90,90]
+  // DefaultValue: 0
+  // Description: 纬度（GJC-02）
+  // Unit: 度
+  double LatitudePos2D = 2;
+
+}
+
+message ConcidenceLink {
+  // DefaultValue: 0
+  // Description: 重合段所在link的ID
+  uint64 LinkId = 1;
+
+  // Description: 重合段起点
+  Pos2D StartPoint = 2;
+
+  // Description: 重合段终点
+  Pos2D EndPont = 3;
+
+  // DefaultValue: 0
+  // Description: 长度
+  // Unit: m
+  uint64 Length = 4;
+
+  // 枚举: IsConcidence
+  // 0: 不重合
+  // 1: 重合
+  // DefaultValue: 0
+  // Description: 是否重合
+  uint32 IsConcidence = 5;
+
+}
+
+  // Description: ADCU反馈导航路线
+  repeated ConcidenceStateType MrNaviRouteSeN = 1;
+
+
+message ConcidenceStateType {
+  // Description: 导航ID
+  string NaviID = 1;
+
+  // DefaultValue: 0
+  // Description: 路线RouteUuid
+  uint64 RouteUuid = 2;
+
+  // 枚举: parkingflag
+  // 0: undefined
+  // 1: start
+  // 2: end
+  // 3: both
+  // 4: none
+  // Description: 车位信息
+  uint32 parkingflag = 3;
+
+  // Description: link匹配的重合段信息
+  repeated ConcidenceLink Concidence = 4;
+
+  // 枚举: IsRoute
+  // 0: 在路径上
+  // 1: 不在路径上
+  // DefaultValue: 255
+  // Description: 是否在路径上
+  uint32 IsRoute = 5;
+
+  // 枚举: Type
+  // 0: 智能推荐
+  // 1: 路径规划
+  // DefaultValue: 255
+  // Description: 类型
+  uint32 Type = 6;
+
+  // 枚举: IsConcidence
+  // 0: 不重合
+  // 1: 重合
+  // DefaultValue: 255
+  // Description: 是否重合
+  uint32 IsConcidence = 7;
+
+}
+
+}
+message MemoryRouteControlInf {
+  // Description: 记忆开关置灰及文言
+  repeated MemorySwitchEnableType MemorySwitchEnable = 1;
+
+
+message MemorySwitchEnableType {
+  // Description: RouteUUID
+  uint64 RouteIDSeN = 1;
+
+  // 枚举: MemorySwitchSeN
+  // 0: 无效值（默认）
+  // 1: 激活开关
+  // 2: 置灰开关
+  // Description: 记忆开关置灰
+  uint32 MemorySwitchSeN = 2;
+
+  // 枚举: Case
+  // 0: 记忆成功
+  // 1: 开始记忆
+  // 2: 路线保存成功
+  // 3: 磁盘满（记忆满20条）
+  // 4: 路线长度过长
+  // 5: 路线距离过短
+  // 6: GPS信号弱
+  // 7: 无效route_uuid
+  // 8: 目的地更换，记忆路线失败；
+  // 9: 距离目的地过远，路线不会保存；
+  // 10: 超出可用范围，导航&记忆不可使用
+  // 11: 导航态：超出可用范围，记忆路线失败（新增信号值）
+  // 12: 算路态：超出可用范围，记忆路线失败（新增信号值）
+  // 13: 已存在当前路线，请直接使用
+  // 14: 当前路线可记忆
+  // 15: 请删除不常用通勤路线\n存储空间已满
+  // 16: 非车主用户记忆满10条提醒
+  // 17~255: 未定义（预留）
+  // Description: 文言提醒
+  uint32 Case = 3;
+
+}
+
+}
+message CommutingRouteSelectionRspInf {
+  // Description: 用户选择通勤路线反馈
+  repeated CommutingRouteSelectionRspType CommutingRouteSelectionRspSeN = 1;
+
+
+message CommutingRouteSelectionRspType {
+  // Description: 导航ID
+  string NaviID = 1;
+
+  // Description: 路线RouteUuid
+  uint64 RouteUuid = 2;
+
+  // 枚举: SourceApp
+  // 0: 默认值
+  // 1: 未定义
+  // 2: 灵动岛
+  // 3: 路线面板
+  // 4: 导航入口
+  // 5: 预留1
+  // 6: 预留2
+  // Description: 控制命令来源
+  uint32 SourceApp = 3;
+
+  // 枚举: CommutingRouteChecked
+  // 0: 默认
+  // 1: 未定义
+  // 2: 选中（人工选中）
+  // 3: 未选中（导航结束时、人工取消选中）
+  // 4: 未选中（还原失败）
+  // Description: 通勤路线选中状态
+  uint32 CommutingRouteChecked = 4;
+
+  // 枚举: CommutingRouteType
+  // 0: 未知
+  // 1: 选择D2D路线
+  // 2: 选择通勤路线
+  // 3: 预留
+  // 4: 预留
+  // Description: D2D路线切换为通勤路线
+  uint32 CommutingRouteType = 5;
+
+  // 枚举: Anchored
+  // 0: 默认；
+  // 1: 未定义；
+  // 2: 已锚定；
+  // 3: 未锚定；
+  // Description: 通勤路线锚定
+  uint32 Anchored = 6;
+
+}
+
+}
+message NzpMileAndControlMessage {
+  // Description: 单次行程NZP激活后的行车控制数据显示
+  repeated NzpMileAndControlMessageInformation NzpMileAndControlMessageInfor = 1;
+
+
+message NzpMileAndControlMessageInformation {
+  // DefaultValue: 0
+  // Description: 行车控制里程
+  // Unit: km
+  // Resolution: 0.1
+  float NzpMile = 1;
+
+  // DefaultValue: 0
+  // Description: 行车控制过路口次数
+  // Resolution: 1
+  uint32 NzpControlPassInt = 2;
+
+  // DefaultValue: 0
+  // Description: 行车控制变道次数
+  // Resolution: 1
+  uint32 NzpLaneChangeControl = 3;
+
+  // DefaultValue: 0
+  // Description: 行车处理加塞次数
+  // Resolution: 1
+  uint32 NzpCurtInControl = 4;
+
+  // DefaultValue: 0
+  // Description: 行车处理避让次数
+  // Resolution: 1
+  uint32 NzpControlRouteDiversionForObstacleAvoidance = 5;
+
+  // DefaultValue: 0
+  // Description: 行车处理汇入汇出次数
+  // Resolution: 1
+  uint32 NzpControlMergingAndDiverging = 6;
+
+  // DefaultValue: 0
+  // Description: 行车控制时长
+  // Unit: min
+  // Resolution: 1
+  uint32 NzpControlDuration = 7;
+
+  // DefaultValue: 0
+  // Description: 行车控制请求接管次数
+  // Resolution: 1
+  uint32 NzpControlTakeOver = 8;
+
+}
+
+}
+message DHUAppDataReceived {
+  // 枚举: DHUAppDataReceivedinfo
+  // 0 默认值
+  // 1收到解析成功
+  // 2收到解析失败
+  // DefaultValue: 0
+  // 枚举: DHUAppDataReceivedinfo
+  // DHU APP是否收到智能驾驶的
+  // 统计数据并且解析成功
+  // Resolution: 1
+  uint32 DHUAppDataReceivedinfo = 1;
+
+
+}

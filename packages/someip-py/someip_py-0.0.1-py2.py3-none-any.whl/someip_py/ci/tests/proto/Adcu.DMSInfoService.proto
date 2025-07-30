@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package Adcu.DMSInfoService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 4;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 10HZ
+ // Comment: DMS检测的驾驶员疲劳分心等状态信息
+ MsgIdDMSInfo = 1;
+
+ // Frequency: 10HZ
+ // Comment: DMS检测的驾驶员双眼状态及DMS报警等信息
+ MsgIdDMSInfoPlus = 2;
+
+}
+
+message DMSInfo {
+message ResultConfidence {
+  // DefaultValue: 0
+  // Description: Driver status detection result from DMS
+  int32 Result = 1;
+
+  // DefaultValue: 0
+  // Description: the confidence of the detection result
+  float Confidence = 2;
+
+}
+
+message DriverStatus {
+  // DefaultValue: /
+  // Description: /
+  ResultConfidence ResultConfidenceValue = 1;
+
+  // DefaultValue: 0
+  // Description: /
+  uint32 Key = 2;
+
+}
+
+  // Range: 8
+  // DefaultValue: /
+  // Description: /
+  repeated DriverStatus DriverStatusValue = 1;
+
+
+}
+message DMSInfoPlus {
+message ResultConfidence {
+  // DefaultValue: 0
+  // Description: Driver status detection result from DMS
+  int32 Result = 1;
+
+  // DefaultValue: 0
+  // Description: the confidence of the detection result
+  float Confidence = 2;
+
+}
+
+message DriverStatus {
+  // DefaultValue: /
+  // Description: /
+  ResultConfidence ResultConfidenceValue = 1;
+
+  // DefaultValue: 0
+  // Description: /
+  uint32 Key = 2;
+
+}
+
+  // Range: 9
+  // DefaultValue: /
+  // Description: /
+  repeated DriverStatus DriverStatusValue = 1;
+
+
+}

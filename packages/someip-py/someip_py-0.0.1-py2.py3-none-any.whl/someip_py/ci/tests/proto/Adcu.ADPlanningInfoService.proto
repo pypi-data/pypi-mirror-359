@@ -1,0 +1,151 @@
+syntax = "proto3";
+
+package Adcu.ADPlanningInfoService;
+
+enum Version {
+ DEFAULT_VERSION = 0;
+ MAJOR_VERSION = 1;  // 当对原有数据进行删除或修改时更新
+ MINOR_VERSION = 7;  // 当新增接口或数据时更新
+}
+
+
+enum MessageId {
+ MsgIdDefault = 0;
+
+ // Frequency: 20
+ // Comment: 引导线信息和泊车时距离信息
+ MsgIdPlanningTrajectory = 1;
+
+ // Frequency: 20
+ // Comment: 旋转泊车显示信息
+ MsgIdRotationParkingInfo = 2;
+
+}
+
+message PlanningTrajectory {
+  // 枚举: PathPoints
+  // 局部规划路径
+  // 行车&泊车行驶引导线
+  repeated PathPointLine PathPoints = 1;
+
+  // Description: 泊入轨迹总距离(单段)
+  // Unit: mm
+  uint32 ParkInTrajDistance = 2;
+
+  // Description: 泊车轨迹剩余距离(单段)
+  // Unit: mm
+  uint32 ParkInTrajReDistance = 3;
+
+  // Description: 刹车点
+  repeated PathPointLine Stoppoint = 4;
+
+  // 枚举: DeccelerationDisplay
+  // 0：无动效
+  // 1：向后水 波纹
+  // 2：reserved
+  // 3：reserved
+  // 4：reserved
+  // 5：reserved
+  // Description: 减速水波纹动效
+  uint32 DeccelerationDisplay = 5;
+
+  // DefaultValue: 0
+  // Description: 规划轨迹数据生成时间（原始数据为linux时间戳，浮点数据）
+  // Unit: 秒s
+  // Resolution: 有效精度到微秒，小数点后6位，可满足座舱微秒需求
+  double PTTimeStamp = 6;
+
+  // 枚举: PrePathPointMultiLines
+  // 预测的局部规划路径[多条路径]
+  // 行车&泊车行驶引导线
+  repeated OnePath PrePathPointMultiLines = 7;
+
+
+message PathPointLine {
+  // Description: Vehicle坐标系（mm）
+  // Unit: mm
+  int32 PositionX = 1;
+
+  // Description: Vehicle坐标系（mm）
+  // Unit: mm
+  int32 PositionY = 2;
+
+  // Description: [-3141,3141]
+  // Unit: 0.001弧度
+  int32 ParkingLinePointTheta = 3;
+
+}
+
+message OnePath {
+  // Description: 一条路
+  repeated PrePathPoint PathPoints = 1;
+
+  // 枚举: PrePathPointsDisplay
+  // 0：无效（默认值）
+  // 1：显示
+  // 2：不显示
+  // Description: 预测轨迹线是否显示
+  int32 PrePathPointsDisplay = 2;
+
+  // Range: 当前这条预测线的是否被选中
+  // Description: 预测的局部规划路径被选中状态
+  uint32 PrePathPointsSelectSts = 3;
+
+  // Range: 0~100
+  // Description: 预测的局部规划路径被选中概率
+  int32 PrePathPointsProbability = 4;
+
+}
+
+message PrePathPoint {
+  // Description: Vehicle坐标系（mm）
+  // Unit: mm
+  int32 PositionX = 1;
+
+  // Description: Vehicle坐标系（mm）
+  // Unit: mm
+  int32 PositionY = 2;
+
+}
+
+}
+message RotationParkingInfo {
+  // 枚举: PrkgRotMod
+  // 0: 默认值
+  // 1: 旋转泊车
+  // DefaultValue: 0
+  // Description: 泊车旋转模式
+  uint32 PrkgRotMod = 1;
+
+  // 枚举: PrkgRotAxle
+  // 0: 默认值
+  // 1: 绕质心旋转
+  // 2: 绕前左轮旋转
+  // 3: 绕前右轮旋转
+  // 4: 绕后左轮旋转
+  // 5: 绕后右轮旋转
+  // DefaultValue: 0
+  // Description: 泊车旋转中心轴
+  uint32 PrkgRotAxle = 2;
+
+  // Range: [0,360]
+  // DefaultValue: 0
+  // Description: 泊车旋转目标角度
+  // Unit: 度
+  float PrkgRotTarAg = 3;
+
+  // Range: [0,360]
+  // DefaultValue: 0
+  // Description: 泊车旋转剩余角度
+  // Unit: 度
+  float PrkgRotReAg = 4;
+
+  // 枚举: PrkgRotTarDir
+  // 0: 默认值
+  // 1: 逆时针旋转
+  // 2: 顺时针旋转
+  // Description: 泊车旋转目标方向
+  uint32 PrkgRotTarDir = 5;
+
+
+}
