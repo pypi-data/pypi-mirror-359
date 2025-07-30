@@ -1,0 +1,8 @@
+hacs_api/__init__.py,sha256=ljjYedQVKM_PFixym6VdTsfdGd6mRtN92d40pqC0JHo,309
+hacs_api/auth.py,sha256=FsEXdoGSrnDlUvgTdZecl23o7dA_kzpH8xUsKaSisAY,4407
+hacs_api/main.py,sha256=2bUw8pNpKzerxFQm1hsOouOSeb4Zmy1LR7iUt3dfED0,149
+hacs_api/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hacs_api-0.1.0.dist-info/METADATA,sha256=iGbI1h3tqXQhzDDtDxE4vsZIduNgbvkDAu3FG8kUhxA,6097
+hacs_api-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hacs_api-0.1.0.dist-info/entry_points.txt,sha256=5kcGwP-BDy0dWOZjzfVpCSb9viOxDIuYgJhKkIXFTrc,47
+hacs_api-0.1.0.dist-info/RECORD,,
