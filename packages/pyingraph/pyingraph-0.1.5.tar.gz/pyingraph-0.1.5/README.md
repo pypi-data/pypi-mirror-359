@@ -1,0 +1,208 @@
+# 🐷 PyG: PyInGraph 
+
+
+```txt
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++---------+     +---------+      +---------+
+|   🐍 A  | --> |   🐍 B  | --> |   🐍 C  |
++---------+     +---------+      +---------+
+     |                                |
+     v                                v
++---------+                      +---------+
+|   🐍 D  | <------------------  |   🐍 E  |
++---------+                      +---------+
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+```
+
+
+A Python framework for creating computational graphs where each node represents an algorithm block. Perfect for integrating multiple algorithms into a visual, executable workflow.
+
+## Quick Start
+
+### Installation
+
+From PyPI (recommended):
+```bash
+pip install pyingraph
+```
+
+From source:
+```bash
+cd PyInGraph
+pip install -e .
+```
+
+### Try the Examples
+
+Run the included demo to see PyInGraph in action:
+
+```bash
+cd examples
+python demo_simple_add.py
+```
+
+This demo loads a simple graph that adds two numbers using custom algorithm blocks.
+
+## Key Features
+
+- **Easy Workflow Integration**: Algorithms, with inputs/outputs/internal-states, can be easily integrated via a graph structure. This graph-based approach, besides being code-efficient, enables a broad category of usages, such as system simulation, AI workflows, and network analysis (e.g., connectivity, condensation, etc.).
+- **Local & Remote Modules**: Load algorithms from files or HTTP repositories
+- **Built-in Visualization**: See your computational graph with NetworkX
+- **Parameter Management**: Configure algorithm parameters via JSON
+
+## How It Works
+
+### 1. Create Algorithm Blocks
+
+Each algorithm is a Python class that inherits from `BlockBase`:
+
+#### Block 1 of 2: `mod_source_constant.py`
+
+```python
+from pyingraph import BlockBase
+
+class ConstantSource(BlockBase):
+    """
+    A constant source block that outputs a user-specified constant value.
+    """
+    def __init__(self):
+        super().__init__()
+        self.attrNamesArr = ["value"]  # Parameter name for the constant value
+        self.value = 0.0  # Default value
+    
+    def read_inputs(self, inputs: list) -> None:
+        pass
+    
+    def compute_outputs(self, time: float = None) -> list:
+        return [self.value]
+    
+    def reset(self) -> None:
+        pass
+```
+
+#### Block 2 of 2: `mod_sink_print.py`
+
+```python
+from pyingraph import BlockBase
+
+class SinkPrint(BlockBase):
+    """
+    A print sink block that prints all inputs it receives.
+    This is useful for debugging and monitoring data flow in the graph.
+    """
+    def __init__(self):
+        super().__init__()
+        self.attrNamesArr = []  # No parameters needed
+    
+    def read_inputs(self, inputs: list) -> None:
+        self.inputs_received = inputs
+    
+    def compute_outputs(self, time: float = None) -> list:
+        print(f"SinkPrint received: {self.inputs_received}")
+        return []  # Sink blocks typically don't produce outputs
+    
+    def reset(self) -> None:
+        self.inputs_received = None
+```
+
+
+### 2. Define Your Graph
+
+Create a JSON file `graph_example.json` describing your computational graph:
+
+
+```json
+{
+    "nodes": [
+        {
+            "id": "node1",
+            "name": "Constant Source 1",
+            "folder_url": "",
+            "folder_path": "./",
+            "class_file": "mod_source_constant.py",
+            "class_name": "ConstantSource",
+            "parameters": {
+                "value": 1.0
+            }
+        },
+        {
+            "id": "node2",
+            "name": "Sink print",
+            "folder_url": "",
+            "folder_path": "./",
+            "class_file": "mod_sink_print.py",
+            "class_name": "SinkPrint",
+            "parameters": {}
+        }
+    ],
+    "edges": [
+        {
+            "source_node_id": "node1",
+            "target_node_id": "node2",
+            "source_port_idx": 0,
+            "target_port_idx": 0,
+            "properties": {}
+        }
+    ]
+}
+```
+
+### 3. Load and Run
+
+```python
+from pyingraph import GraphLoader
+
+loader = GraphLoader("graph_example.json", flag_remote=False)
+loader.load()
+nx_graph = loader.get_nx_graph()
+loader.visualize_graph(block=True)  # See your graph
+loader.simple_traverse_graph()  # Execute the graph
+```
+
+> [!IMPORTANT]
+> Make sure all module files are in the current or child directories of the above loader script. The project-folder-based path should be specified in the `folder_path` field of the graph JSON file.
+
+
+## Examples Included
+
+The `examples/` folder contains ready-to-run demos:
+
+- **`demo_simple_add.py`**: Simple demo of a basic graph that adds two numbers, using local modules and graph
+- **`demo_control_system.py`**: Control system simulation example, using remote modules and graph
+- **`graph_simple_demo.json`**: Graph definition for the simple demo `demo_simple_add.py`
+- **`local_modules/`**: Sample algorithm blocks:
+  - `mod_source_constant.py`: Constant value source
+  - `mod_summer.py`: Addition operation
+  - `mod_sink_print.py`: Output print as display
+
+## Remote Module Support
+
+Load algorithm blocks from HTTP repositories by setting `flag_remote=True`:
+
+```python
+loader = GraphLoader("http://example.com/graph.json", flag_remote=True)
+```
+
+By default, `flag_remote=False`
+
+## Getting Started
+
+1. **Install**: `pip install -e .`
+2. **Run demo**: `cd examples && python demo_simple_add.py`
+3. **Study examples**: Check out the `local_modules/` for sample blocks
+4. **Create your own**: Inherit from `BlockBase` and define your algorithm
+5. **Build graphs**: Write JSON descriptions connecting your blocks
+
+## Dependencies
+
+- Python >= 3.7
+- numpy, matplotlib, networkx
+- httpimport, requests (for remote modules)
+
+## Support
+
+Questions? Contact: bobobone@qq.com
+
+## License
+
+MIT License - see LICENSE file for details.
