@@ -1,0 +1,6 @@
+README.md
+setup.py
+byted_pydcmi.egg-info/PKG-INFO
+byted_pydcmi.egg-info/SOURCES.txt
+byted_pydcmi.egg-info/dependency_links.txt
+byted_pydcmi.egg-info/top_level.txt
