@@ -1,0 +1,10 @@
+pyzswagcl/LICENSE.txt,sha256=JeNdz5tf1QH7CIw_i5yqTWtlyhczLpjj3yhOyCRTEHE,1528
+pyzswagcl/__init__.py,sha256=PjufVr_MTFQZpsXoSMXOSvAacVpnsO4nscSiqqOTmac,24
+pyzswagcl/libhttpcl.a,sha256=Wn2Qxi9_dTGNrsDQYbvTCvnk1eV1JHH6zP3D4yr-f7c,2378904
+pyzswagcl/libspeedyj.a,sha256=v25zExItGaLd9Yo6rIhrlXY75a3fckcQJRyCgq85w54,32592
+pyzswagcl/libzswagcl.so,sha256=Bw5bMTh1wwBz91Y1uWol-yUo7PPigd8Yc60Wyx6R6-o,16835936
+pyzswagcl/pyzswagcl.cpython-311-x86_64-linux-gnu.so,sha256=3W8q0CvyKmUm0H0a0xnOP1PgPyt8Qlo9TxLetew-jSo,1030792
+pyzswagcl-1.8.0.dist-info/METADATA,sha256=Z3zBjhWTWEne-hNnl95tUYYN9tq0CbberCNKZSPJjOI,326
+pyzswagcl-1.8.0.dist-info/WHEEL,sha256=6oVDzR3b5EMqojPhxKaF1gMfdgju1hqo31zpMLY6LFY,113
+pyzswagcl-1.8.0.dist-info/top_level.txt,sha256=68xZPCqJP4enWPpsst2_9GD8GiGgr8ImRsP5uHJO1jo,10
+pyzswagcl-1.8.0.dist-info/RECORD,,
