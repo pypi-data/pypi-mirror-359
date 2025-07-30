@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+mkdocs_zip_folders.egg-info/PKG-INFO
+mkdocs_zip_folders.egg-info/SOURCES.txt
+mkdocs_zip_folders.egg-info/dependency_links.txt
+mkdocs_zip_folders.egg-info/entry_points.txt
+mkdocs_zip_folders.egg-info/requires.txt
+mkdocs_zip_folders.egg-info/top_level.txt
+zip_folders/__init__.py
+zip_folders/plugin.py
