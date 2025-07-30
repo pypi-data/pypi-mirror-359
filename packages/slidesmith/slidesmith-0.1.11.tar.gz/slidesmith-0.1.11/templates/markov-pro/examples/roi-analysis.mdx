@@ -1,0 +1,83 @@
+import { 
+  SlideBase, 
+  Header, 
+  Footer, 
+  Columns,
+  PieChart,
+  Calculation
+} from '../components';
+
+<SlideBase>
+  <Header 
+    logo="MARKOV AI"
+    date="June 2025"
+    confidentiality="Confidential"
+  />
+  
+  <div className="flex-grow w-full px-32 py-8">
+    {/* Title Section */}
+    <div className="mb-8">
+      <h1 className="text-4xl font-bold text-blue-800">Financial Impact</h1>
+      <h2 className="text-2xl font-semibold text-blue-600 mt-3">
+        €19M+ Expected Annual Value
+      </h2>
+      <div className="h-1 w-32 bg-blue-700 mt-4"></div>
+    </div>
+    
+    {/* Content in two columns */}
+    <Columns ratio="1/2" gap="12">
+      {/* Left Column: Calculation */}
+      <div>
+        <Calculation
+          title="ROI Breakdown"
+          steps={[
+            { label: "Efficiency Gains (40% automation)", value: 15600000 },
+            { label: "Error Reduction (20% fewer mistakes)", value: 2000000 },
+            { label: "Competitive Advantage", value: 1400000 }
+          ]}
+          result={{
+            label: "Total Annual Impact",
+            value: 19000000,
+            note: "Conservative estimate based on 500-person workforce"
+          }}
+          size="lg"
+        />
+      </div>
+      
+      {/* Right Column: Pie Chart */}
+      <div className="bg-white p-6 rounded-lg shadow-lg">
+        <h4 className="text-xl font-semibold text-gray-800 mb-4">
+          Value Distribution
+        </h4>
+        <PieChart
+          labels={['Efficiency Gains', 'Error Reduction', 'Competitive Advantage']}
+          data={[15.6, 2, 1.4]}
+          colors={['#1D4ED8', '#3B82F6', '#93C5FD']}
+          height={300}
+          showLegend={true}
+          legendPosition="bottom"
+        />
+        
+        <div className="flex justify-between mt-6">
+          <div className="text-center">
+            <div className="text-lg font-semibold text-blue-700">€15.6M</div>
+            <div className="text-sm text-gray-600">Efficiency</div>
+          </div>
+          <div className="text-center">
+            <div className="text-lg font-semibold text-blue-700">€2.0M</div>
+            <div className="text-sm text-gray-600">Error Reduction</div>
+          </div>
+          <div className="text-center">
+            <div className="text-lg font-semibold text-blue-700">€1.4M+</div>
+            <div className="text-sm text-gray-600">Competitive Adv.</div>
+          </div>
+        </div>
+      </div>
+    </Columns>
+  </div>
+  
+  <Footer 
+    pageNumber={7}
+    tagline="Transform. Automate. Scale."
+  />
+</SlideBase>
