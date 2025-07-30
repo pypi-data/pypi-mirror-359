@@ -1,0 +1,17 @@
+pikafish_terminal/__init__.py,sha256=BL2pGIzo5HQFxuUA7o3Gs--LWvpaZC6mVkQBoOtG5M0,631
+pikafish_terminal/_version.py,sha256=EY1c6JeG6uVHQoQcoxYAagjmJgQQxJk7iQ23gAoevU4,511
+pikafish_terminal/board.py,sha256=4CAD1m-t7yVVwDzrTEhYW3XbYAoFAvLg4oYdKtrEDaM,6179
+pikafish_terminal/cli.py,sha256=0PbXKSVudiaYJ5ryh3CZ14newACq3_wCYxvQycllx0U,10592
+pikafish_terminal/config.py,sha256=n-GET_E2hh__-Yrw6dZPQ9htOYjThgHYbYqLukeTxOA,8865
+pikafish_terminal/difficulty.py,sha256=NROShLajbvtd8Ke7G-I-SbHZ57jMVPwIOR_bYPPhjsY,4572
+pikafish_terminal/downloader.py,sha256=y3ygE8QFLHrZJ43Iuq8mbNvSnaZiX28mM6QRIcy8u6Q,17398
+pikafish_terminal/engine.py,sha256=c24K8nvKUp-oWZZYC7PF4UZIJaPlDMHmME0ts6Yt1js,17593
+pikafish_terminal/game.py,sha256=aXc8zRjNimfFmgM_UoUCPlFiDU501Cx-FySxqFrqZAg,12380
+pikafish_terminal/logging_config.py,sha256=zYjd3nooNmlcbJ1ugPAJ1W0k3spT1hUg7lOXIoAsAbY,2016
+pikafish_terminal/ui.py,sha256=-3I2awdk2x8XzjU2BtTtr0dn1H9y53JU0W8mumoTXms,601
+pikafish_terminal-0.0.4.dist-info/licenses/LICENSE,sha256=H3F6lR9JX4WyaLHr1_ptcAIhV_pGlVZE79THwQsncYA,1087
+pikafish_terminal-0.0.4.dist-info/METADATA,sha256=9Y3ttgT6W470VnPGn_EyZoLiLjcxM8OR7b723hZ9bt4,3350
+pikafish_terminal-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pikafish_terminal-0.0.4.dist-info/entry_points.txt,sha256=pE8dVP1EB7Aytb7elLpx0U3i2ipmNF8sBUPQDhCcg0c,93
+pikafish_terminal-0.0.4.dist-info/top_level.txt,sha256=FAgacz7uP5S8M5QUhGOYnQm-nQRTCUKs9Q_DrQmKEUs,18
+pikafish_terminal-0.0.4.dist-info/RECORD,,
