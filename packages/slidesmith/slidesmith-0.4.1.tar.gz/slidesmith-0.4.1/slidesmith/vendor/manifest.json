@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "assets": {
+    "font-awesome.min.css": "slidesmith/vendor/css/font-awesome.min.css",
+    "inter.css": "slidesmith/vendor/css/inter.css",
+    "fira-code.css": "slidesmith/vendor/css/fira-code.css",
+    "tailwind.min.js": "slidesmith/vendor/js/tailwind.min.js",
+    "chart.min.js": "slidesmith/vendor/js/chart.min.js"
+  }
+}
