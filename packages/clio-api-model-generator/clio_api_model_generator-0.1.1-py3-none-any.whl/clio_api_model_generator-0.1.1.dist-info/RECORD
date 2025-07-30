@@ -1,0 +1,16 @@
+clio_api_model_generator/__init__.py,sha256=WHaR8-PEwmAox_6kkDmwsCaS-6_5jlcjHGmmcZxONgc,62
+clio_api_model_generator/clio_api_model_generator.py,sha256=88D_J4Acg2SssyHDGImGhffvRbreHEuEn6cF2lqZWPo,8183
+clio_api_model_generator/generators/components.py,sha256=O4w-T5WgqwFanbM9t_mw21Il8gX0hytCYxu4Ncsx_mU,4879
+clio_api_model_generator/generators/endpoints.py,sha256=r-4ctLxsv3C9Dg1maALFVD-JBvLVtNfsr-LTS4vPwpA,2578
+clio_api_model_generator/generators/fields.py,sha256=y38jlBsEqwa7BNVOp_cyC5hpwW0EQhRg9gzKZAx6PSo,11401
+clio_api_model_generator/generators/query.py,sha256=SSxQBfY9B0L_Jj6P74yf3kFFrNDF-Z38vynk0-Jp-EU,3309
+clio_api_model_generator/generators/request_body.py,sha256=R-W2gS-LgzfqJlPhZVbfTaCmFZeHd-n2RRzR6SDt6RI,3997
+clio_api_model_generator/static/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clio_api_model_generator/static/models_registry.py,sha256=8LE2g1LbOMiFgixQUDGsGkg8CZqQS92VD3Dsux9UMBA,1310
+clio_api_model_generator/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clio_api_model_generator/utils/sort_schema.py,sha256=Wd2SoNIAED-s3hgbKNvI6nIwdYsUZ3E0jxkxKAOaAns,1911
+clio_api_model_generator-0.1.1.dist-info/licenses/LICENSE,sha256=mYlu1IXM6eq81ES4FKK_MMtDt9q5wvxHDxfeWAXVlxY,10770
+clio_api_model_generator-0.1.1.dist-info/METADATA,sha256=PT0HpjYvoX5Pzi_Wi6lqdlPfWPAfRY3rXQU7JWt7eRw,14219
+clio_api_model_generator-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+clio_api_model_generator-0.1.1.dist-info/top_level.txt,sha256=qqyWF_aDJbxvjtc7mB0-wWBUzqZONXCIbchT0-4-GYQ,25
+clio_api_model_generator-0.1.1.dist-info/RECORD,,
