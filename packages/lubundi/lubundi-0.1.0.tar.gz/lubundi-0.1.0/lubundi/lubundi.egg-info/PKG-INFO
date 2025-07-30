@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: lubundi
+Version: 0.1.0
+Summary: Lubundi: A 2D game engine based on Ursina for building 2D games
+Author-email: Lubundi Engine <zohanuhaque@gmail.com>
+Project-URL: Homepage, https://lubundi.github.io
+Project-URL: Repository, https://github.com/lubundi/lubundi
+Project-URL: Documentation, https://your-docs-url
+Keywords: game engine,ursina,2d,python,game development
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: ursina
