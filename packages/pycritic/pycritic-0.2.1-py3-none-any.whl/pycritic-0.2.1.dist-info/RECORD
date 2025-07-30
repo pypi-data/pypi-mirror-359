@@ -1,0 +1,14 @@
+pycritic/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pycritic/base/__init__.py,sha256=LBXwfbTDzWFkIgpvdNBOSQQAz26zK7VAXpr83X-U6Y8,192
+pycritic/base/checker.py,sha256=W9t3CPW3n7UDM2Uvw9xaHwaogSwWa2IfWEEDLrhekWs,2102
+pycritic/base/criterion.py,sha256=A26Jaj8oeamABesEqW9REJUUk2tnPkHv652I-hQcxg4,3315
+pycritic/json/__init__.py,sha256=ZdNuVWj3iQQKhHSjJ2RoKk3TX4U6JbiF-X7EBcsjUX4,217
+pycritic/json/checker_builder.py,sha256=pu-mQDWroF_STL8ySuzIm2lxm0M9HyftHHEAfPivhuM,3243
+pycritic/json/criterion_builder.py,sha256=C_Vm0SeeZP-Tw9_RtTpphAgQqw-nfvTl0VKUFUc2iD0,2380
+pycritic/json/suite_builder.py,sha256=W1322e7asXSF_qxuF4xn6WWinTyjJ3Dsd5OVnhjGAgA,2836
+pycritic/remote/__init__.py,sha256=m0ve1Swe5lCztOovYg29snfV50ZeeEKrn0DdvdTwCP8,49
+pycritic/remote/remote_criterion.py,sha256=WGsXvp2Gah3EKS-da7xt3rkNYZEP5TyONdGODC_oVDU,1030
+pycritic-0.2.1.dist-info/METADATA,sha256=PE-ks5AZn5UHEsY1DFox_6Ipf5xqYktBWPeMSm-rlq8,533
+pycritic-0.2.1.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+pycritic-0.2.1.dist-info/top_level.txt,sha256=8fAkMNzoDNp0dnJ_pUQ-Q0NO7v4zeZOgr1MLRFxro88,9
+pycritic-0.2.1.dist-info/RECORD,,
