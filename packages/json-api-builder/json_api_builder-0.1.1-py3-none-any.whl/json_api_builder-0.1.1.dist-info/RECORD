@@ -1,0 +1,10 @@
+json_api_builder/__init__.py,sha256=tlpt6mVXtYFjcKJ4sv4VLFhs68-OdxJGBevANwAENe8,428
+json_api_builder/api_builder.py,sha256=RUtXPP21fN3nXeIz4cfM1MVERqrkwiRPuiwg4QqHopU,2507
+json_api_builder/json_export.py,sha256=YGkLROtLqtDA-m-McatVybB6GQ_e4MRljO3AOH1BBMM,2354
+json_api_builder/json_import.py,sha256=v-UeuABRx_w0UwuWRIxQXpK0_4prJuQH-mevUqH3II0,2052
+json_api_builder/models.py,sha256=ibl8cOk_-NzoGZWJQIGUY00uuiksxJloP2kkjC-Bn-M,663
+json_api_builder/router.py,sha256=wEO6K__7UrEMOJZLJEBBpTHk6yQwXWQbMpfzqGckCps,3182
+json_api_builder-0.1.1.dist-info/METADATA,sha256=u5OXncqrcX6E2bddH8gncvF1GxCEvnSGYUkGF5cI5Cg,4322
+json_api_builder-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+json_api_builder-0.1.1.dist-info/licenses/LICENSE,sha256=BPI3UNZEHlu5dHhCI4Ygwjd1OXnIzK8q8vwCVdTIMMU,1073
+json_api_builder-0.1.1.dist-info/RECORD,,
