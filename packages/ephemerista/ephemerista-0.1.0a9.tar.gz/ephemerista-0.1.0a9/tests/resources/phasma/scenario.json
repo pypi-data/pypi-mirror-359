@@ -1,0 +1,274 @@
+{
+  "scenario_id": "87879806-f3c0-46a2-b5d8-6fe93d16dba9",
+  "name": "PHASMA Link Budget",
+  "start_time": {
+    "scale": "TAI",
+    "timestamp": {
+      "time_type": "seconds",
+      "seconds": 766217977,
+      "subsecond": 0.018623948097229004
+    }
+  },
+  "end_time": {
+    "scale": "TAI",
+    "timestamp": {
+      "time_type": "seconds",
+      "seconds": 766304377,
+      "subsecond": 0.018623948097229004
+    }
+  },
+  "time_step": 60.0,
+  "assets": [
+    {
+      "asset_id": "d8182f32-f7f9-4646-b0f6-328b5b8f08bd",
+      "name": "Station 0",
+      "model": {
+        "asset_type": "groundstation",
+        "body": { "body_type": "planet", "name": "Earth" },
+        "longitude": { "degrees": 23.731 },
+        "latitude": { "degrees": 38.017 },
+        "altitude": 0.0,
+        "minimum_elevation": { "degrees": 10.0 }
+      },
+      "comms": [
+        {
+          "system_id": "bba466e7-81dd-4086-8b29-178b5ed400c8",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 30.0,
+            "beamwidth_deg": 5.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 889.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 4.0,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "a5cafb6b-61f6-41e8-b244-0cc85b127cfe",
+      "name": "Station 1",
+      "model": {
+        "asset_type": "groundstation",
+        "body": { "body_type": "planet", "name": "Earth" },
+        "longitude": { "degrees": 22.141 },
+        "latitude": { "degrees": 36.971 },
+        "altitude": 0.0,
+        "minimum_elevation": { "degrees": 10.0 }
+      },
+      "comms": [
+        {
+          "system_id": "bba466e7-81dd-4086-8b29-178b5ed400c8",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 30.0,
+            "beamwidth_deg": 5.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 889.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 4.0,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "1c523121-e981-4abe-b322-b1bf17927093",
+      "name": "Station 2",
+      "model": {
+        "asset_type": "groundstation",
+        "body": { "body_type": "planet", "name": "Earth" },
+        "longitude": { "degrees": 24.011 },
+        "latitude": { "degrees": 35.501 },
+        "altitude": 0.0,
+        "minimum_elevation": { "degrees": 10.0 }
+      },
+      "comms": [
+        {
+          "system_id": "bba466e7-81dd-4086-8b29-178b5ed400c8",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 30.0,
+            "beamwidth_deg": 5.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 889.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 4.0,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "3594cb5e-de4c-4741-9084-f00d6eda1097",
+      "name": "Station 3",
+      "model": {
+        "asset_type": "groundstation",
+        "body": { "body_type": "planet", "name": "Earth" },
+        "longitude": { "degrees": -82.101 },
+        "latitude": { "degrees": 39.326 },
+        "altitude": 0.0,
+        "minimum_elevation": { "degrees": 10.0 }
+      },
+      "comms": [
+        {
+          "system_id": "bba466e7-81dd-4086-8b29-178b5ed400c8",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 30.0,
+            "beamwidth_deg": 5.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 889.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 4.0,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "5df4fd48-463d-4118-8c3c-692849ad4ab9",
+      "name": "Station 4",
+      "model": {
+        "asset_type": "groundstation",
+        "body": { "body_type": "planet", "name": "Earth" },
+        "longitude": { "degrees": 6.211 },
+        "latitude": { "degrees": 50.75 },
+        "altitude": 0.0,
+        "minimum_elevation": { "degrees": 10.0 }
+      },
+      "comms": [
+        {
+          "system_id": "bba466e7-81dd-4086-8b29-178b5ed400c8",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 30.0,
+            "beamwidth_deg": 5.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 889.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 4.0,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "6f55a3b2-6065-4b33-9473-52c515ca9f49",
+      "name": "PHASMA",
+      "model": {
+        "asset_type": "spacecraft",
+        "propagator": {
+          "propagator_type": "sgp4",
+          "tle": "\n1 99878U 14900A   24103.76319466  .00000000  00000-0 -11394-2 0    01\n2 99878  97.5138 156.7457 0016734 205.2381 161.2435 15.13998005    06\n"
+        }
+      },
+      "comms": [
+        {
+          "system_id": "af91c22b-7cf2-4304-8ba0-4699b3def31b",
+          "channels": [
+            "5674a4d5-dc42-427a-922c-962df9c3add3",
+            "7e46195e-ff4b-445a-98a2-a046cc8e1c59"
+          ],
+          "antenna": {
+            "design_frequency": 2308000000.0,
+            "boresight_vector": [0.0, 0.0, 1.0],
+            "antenna_type": "simple",
+            "gain_db": 6.5,
+            "beamwidth_deg": 60.0
+          },
+          "receiver": {
+            "frequency": 2308000000.0,
+            "receiver_type": "simple",
+            "system_noise_temperature": 429.0
+          },
+          "transmitter": {
+            "frequency": 2308000000.0,
+            "power": 1.348,
+            "line_loss": 1.0
+          }
+        }
+      ]
+    }
+  ],
+  "channels": [
+    {
+      "channel_id": "5674a4d5-dc42-427a-922c-962df9c3add3",
+      "link_type": "uplink",
+      "name": "Default Channel",
+      "data_rate": 430502.0,
+      "required_eb_n0": 2.3,
+      "margin": 3.0,
+      "modulation": "BPSK",
+      "roll_off": 1.5,
+      "forward_error_correction": 0.5
+    },
+    {
+      "channel_id": "7e46195e-ff4b-445a-98a2-a046cc8e1c59",
+      "link_type": "downlink",
+      "name": "Default Channel",
+      "data_rate": 861004.0,
+      "required_eb_n0": 4.2,
+      "margin": 3.0,
+      "modulation": "BPSK",
+      "roll_off": 1.5,
+      "forward_error_correction": 0.5
+    }
+  ]
+}
