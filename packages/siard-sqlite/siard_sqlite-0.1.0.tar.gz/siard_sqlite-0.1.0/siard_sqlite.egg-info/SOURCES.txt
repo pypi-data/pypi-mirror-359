@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+siard_sqlite/__init__.py
+siard_sqlite/converter.py
+siard_sqlite.egg-info/PKG-INFO
+siard_sqlite.egg-info/SOURCES.txt
+siard_sqlite.egg-info/dependency_links.txt
+siard_sqlite.egg-info/entry_points.txt
+siard_sqlite.egg-info/requires.txt
+siard_sqlite.egg-info/top_level.txt
