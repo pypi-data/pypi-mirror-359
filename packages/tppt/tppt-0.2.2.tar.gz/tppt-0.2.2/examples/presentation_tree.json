@@ -1,0 +1,5083 @@
+{
+  "slides_count": 1,
+  "slide_masters_count": 1,
+  "slide_layouts_count": 11,
+  "slide_width": 720.0,
+  "slide_height": 540.0,
+  "slides": [
+    {
+      "slide_id": 256,
+      "slide_layout_name": "Blank",
+      "shapes": [
+        {
+          "name": "TextBox 1",
+          "shape_id": 2,
+          "shape_type": "TEXT_BOX (17)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 100.0,
+          "height": 100.0,
+          "rotation": 0.0,
+          "left": 100.0,
+          "top": 100.0,
+          "text_frame": {
+            "text": "Hello, world!",
+            "paragraphs": [
+              {
+                "text": "Hello, world!",
+                "level": 0,
+                "runs": [
+                  {
+                    "text": "Hello, world!",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "placeholders": [],
+      "notes_slide": {
+        "shapes": [
+          {
+            "name": "Slide Image Placeholder 1",
+            "shape_id": 2,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 360.0,
+            "height": 270.0,
+            "rotation": 0.0,
+            "left": 90.0,
+            "top": 54.0,
+            "placeholder_type": 101,
+            "placeholder_idx": 2,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          },
+          {
+            "name": "Notes Placeholder 2",
+            "shape_id": 3,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 432.0,
+            "height": 324.0,
+            "rotation": 0.0,
+            "left": 54.0,
+            "top": 342.0,
+            "placeholder_type": 2,
+            "placeholder_idx": 3,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          },
+          {
+            "name": "Slide Number Placeholder 3",
+            "shape_id": 4,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 234.0,
+            "height": 36.0,
+            "rotation": 0.0,
+            "left": 305.87503937007875,
+            "top": 683.8750393700788,
+            "placeholder_type": 13,
+            "placeholder_idx": 5,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          }
+        ],
+        "placeholders": [
+          {
+            "name": "Slide Image Placeholder 1",
+            "shape_id": 2,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 360.0,
+            "height": 270.0,
+            "rotation": 0.0,
+            "left": 90.0,
+            "top": 54.0,
+            "placeholder_type": 101,
+            "placeholder_idx": 2,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          },
+          {
+            "name": "Notes Placeholder 2",
+            "shape_id": 3,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 432.0,
+            "height": 324.0,
+            "rotation": 0.0,
+            "left": 54.0,
+            "top": 342.0,
+            "placeholder_type": 2,
+            "placeholder_idx": 3,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          },
+          {
+            "name": "Slide Number Placeholder 3",
+            "shape_id": 4,
+            "shape_type": "PLACEHOLDER (14)",
+            "has_text_frame": true,
+            "has_table": false,
+            "has_chart": false,
+            "width": 234.0,
+            "height": 36.0,
+            "rotation": 0.0,
+            "left": 305.87503937007875,
+            "top": 683.8750393700788,
+            "placeholder_type": 13,
+            "placeholder_idx": 5,
+            "text_frame": {
+              "text": "",
+              "paragraphs": [
+                {
+                  "text": "",
+                  "level": 0,
+                  "runs": []
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "slide_masters": [
+    {
+      "shapes": [
+        {
+          "name": "Title Placeholder 1",
+          "shape_id": 2,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 648.0,
+          "height": 90.0,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 21.62503937007874,
+          "placeholder_type": 1,
+          "placeholder_idx": 0,
+          "text_frame": {
+            "text": "Click to edit Master title style",
+            "paragraphs": [
+              {
+                "text": "Click to edit Master title style",
+                "level": 0,
+                "runs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Text Placeholder 2",
+          "shape_id": 3,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 648.0,
+          "height": 356.37503937007875,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 126.0,
+          "placeholder_type": 2,
+          "placeholder_idx": 1,
+          "text_frame": {
+            "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+            "paragraphs": [
+              {
+                "text": "Click to edit Master text styles",
+                "level": 0,
+                "runs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Second level",
+                "level": 1,
+                "runs": [
+                  {
+                    "text": "Second level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Third level",
+                "level": 2,
+                "runs": [
+                  {
+                    "text": "Third level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Fourth level",
+                "level": 3,
+                "runs": [
+                  {
+                    "text": "Fourth level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Fifth level",
+                "level": 4,
+                "runs": [
+                  {
+                    "text": "Fifth level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Date Placeholder 3",
+          "shape_id": 4,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 168.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 500.5,
+          "placeholder_type": 16,
+          "placeholder_idx": 2,
+          "text_frame": {
+            "text": "1/27/13",
+            "paragraphs": [
+              {
+                "text": "1/27/13",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Footer Placeholder 4",
+          "shape_id": 5,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 228.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 246.0,
+          "top": 500.5,
+          "placeholder_type": 15,
+          "placeholder_idx": 3,
+          "text_frame": {
+            "text": "",
+            "paragraphs": [
+              {
+                "text": "",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Slide Number Placeholder 5",
+          "shape_id": 6,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 168.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 516.0,
+          "top": 500.5,
+          "placeholder_type": 13,
+          "placeholder_idx": 4,
+          "text_frame": {
+            "text": "‹#›",
+            "paragraphs": [
+              {
+                "text": "‹#›",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        }
+      ],
+      "placeholders": [
+        {
+          "name": "Title Placeholder 1",
+          "shape_id": 2,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 648.0,
+          "height": 90.0,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 21.62503937007874,
+          "placeholder_type": 1,
+          "placeholder_idx": 0,
+          "text_frame": {
+            "text": "Click to edit Master title style",
+            "paragraphs": [
+              {
+                "text": "Click to edit Master title style",
+                "level": 0,
+                "runs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Text Placeholder 2",
+          "shape_id": 3,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 648.0,
+          "height": 356.37503937007875,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 126.0,
+          "placeholder_type": 2,
+          "placeholder_idx": 1,
+          "text_frame": {
+            "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+            "paragraphs": [
+              {
+                "text": "Click to edit Master text styles",
+                "level": 0,
+                "runs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Second level",
+                "level": 1,
+                "runs": [
+                  {
+                    "text": "Second level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Third level",
+                "level": 2,
+                "runs": [
+                  {
+                    "text": "Third level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Fourth level",
+                "level": 3,
+                "runs": [
+                  {
+                    "text": "Fourth level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "Fifth level",
+                "level": 4,
+                "runs": [
+                  {
+                    "text": "Fifth level",
+                    "font": {
+                      "color": {}
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Date Placeholder 3",
+          "shape_id": 4,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 168.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 36.0,
+          "top": 500.5,
+          "placeholder_type": 16,
+          "placeholder_idx": 2,
+          "text_frame": {
+            "text": "1/27/13",
+            "paragraphs": [
+              {
+                "text": "1/27/13",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Footer Placeholder 4",
+          "shape_id": 5,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 228.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 246.0,
+          "top": 500.5,
+          "placeholder_type": 15,
+          "placeholder_idx": 3,
+          "text_frame": {
+            "text": "",
+            "paragraphs": [
+              {
+                "text": "",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Slide Number Placeholder 5",
+          "shape_id": 6,
+          "shape_type": "PLACEHOLDER (14)",
+          "has_text_frame": true,
+          "has_table": false,
+          "has_chart": false,
+          "width": 168.0,
+          "height": 28.75,
+          "rotation": 0.0,
+          "left": 516.0,
+          "top": 500.5,
+          "placeholder_type": 13,
+          "placeholder_idx": 4,
+          "text_frame": {
+            "text": "‹#›",
+            "paragraphs": [
+              {
+                "text": "‹#›",
+                "level": 0,
+                "runs": []
+              }
+            ]
+          }
+        }
+      ],
+      "slide_layouts": [
+        {
+          "name": "Title Slide",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 115.75,
+              "rotation": 0.0,
+              "left": 54.0,
+              "top": 167.75,
+              "placeholder_type": 3,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Subtitle 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 504.0,
+              "height": 138.0,
+              "rotation": 0.0,
+              "left": 108.0,
+              "top": 306.0,
+              "placeholder_type": 4,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master subtitle style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master subtitle style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master subtitle style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 115.75,
+              "rotation": 0.0,
+              "left": 54.0,
+              "top": 167.75,
+              "placeholder_type": 3,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Subtitle 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 504.0,
+              "height": 138.0,
+              "rotation": 0.0,
+              "left": 108.0,
+              "top": 306.0,
+              "placeholder_type": 4,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master subtitle style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master subtitle style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master subtitle style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Title and Content",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Section Header",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 107.25,
+              "rotation": 0.0,
+              "left": 56.87503937007874,
+              "top": 347.0,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 118.12496062992126,
+              "rotation": 0.0,
+              "left": 56.87503937007874,
+              "top": 228.87503937007875,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 107.25,
+              "rotation": 0.0,
+              "left": 56.87503937007874,
+              "top": 347.0,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 612.0,
+              "height": 118.12496062992126,
+              "rotation": 0.0,
+              "left": 56.87503937007874,
+              "top": 228.87503937007875,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Two Content",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 366.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 366.0,
+              "top": 126.0,
+              "placeholder_type": 7,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Comparison",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.12503937007875,
+              "height": 50.37496062992126,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 120.87503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.12503937007875,
+              "height": 311.12503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 171.25,
+              "placeholder_type": 7,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.25,
+              "height": 50.37496062992126,
+              "rotation": 0.0,
+              "left": 365.75,
+              "top": 120.87503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 3,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.25,
+              "height": 311.12503937007875,
+              "rotation": 0.0,
+              "left": 365.75,
+              "top": 171.25,
+              "placeholder_type": 7,
+              "placeholder_idx": 4,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 7",
+              "shape_id": 8,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 8",
+              "shape_id": 9,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.12503937007875,
+              "height": 50.37496062992126,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 120.87503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.12503937007875,
+              "height": 311.12503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 171.25,
+              "placeholder_type": 7,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.25,
+              "height": 50.37496062992126,
+              "rotation": 0.0,
+              "left": 365.75,
+              "top": 120.87503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 3,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 318.25,
+              "height": 311.12503937007875,
+              "rotation": 0.0,
+              "left": 365.75,
+              "top": 171.25,
+              "placeholder_type": 7,
+              "placeholder_idx": 4,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 7",
+              "shape_id": 8,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 8",
+              "shape_id": 9,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Title Only",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Blank",
+          "shapes": [
+            {
+              "name": "Date Placeholder 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Date Placeholder 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Content with Caption",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 236.87503937007875,
+              "height": 91.5,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.5,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 402.5,
+              "height": 460.87503937007875,
+              "rotation": 0.0,
+              "left": 281.5,
+              "top": 21.5,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 236.87503937007875,
+              "height": 369.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 113.0,
+              "placeholder_type": 2,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 236.87503937007875,
+              "height": 91.5,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.5,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Content Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 402.5,
+              "height": 460.87503937007875,
+              "rotation": 0.0,
+              "left": 281.5,
+              "top": 21.5,
+              "placeholder_type": 7,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 236.87503937007875,
+              "height": 369.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 113.0,
+              "placeholder_type": 2,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Picture with Caption",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 44.62503937007874,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 378.0,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Picture Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 324.0,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 48.25,
+              "placeholder_type": 18,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 63.37496062992126,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 422.62503937007875,
+              "placeholder_type": 2,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 44.62503937007874,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 378.0,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Picture Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 324.0,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 48.25,
+              "placeholder_type": 18,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Text Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 432.0,
+              "height": 63.37496062992126,
+              "rotation": 0.0,
+              "left": 141.12503937007875,
+              "top": 422.62503937007875,
+              "placeholder_type": 2,
+              "placeholder_idx": 2,
+              "text_frame": {
+                "text": "Click to edit Master text styles",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 6",
+              "shape_id": 7,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Title and Vertical Text",
+          "shapes": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Vertical Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 90.0,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Vertical Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 648.0,
+              "height": 356.37503937007875,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 126.0,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vertical Title and Text",
+          "shapes": [
+            {
+              "name": "Vertical Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 162.0,
+              "height": 460.75,
+              "rotation": 0.0,
+              "left": 522.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Vertical Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 474.0,
+              "height": 460.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ],
+          "placeholders": [
+            {
+              "name": "Vertical Title 1",
+              "shape_id": 2,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 162.0,
+              "height": 460.75,
+              "rotation": 0.0,
+              "left": 522.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 1,
+              "placeholder_idx": 0,
+              "text_frame": {
+                "text": "Click to edit Master title style",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master title style",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master title style",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Vertical Text Placeholder 2",
+              "shape_id": 3,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 474.0,
+              "height": 460.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 21.62503937007874,
+              "placeholder_type": 2,
+              "placeholder_idx": 1,
+              "text_frame": {
+                "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+                "paragraphs": [
+                  {
+                    "text": "Click to edit Master text styles",
+                    "level": 0,
+                    "runs": [
+                      {
+                        "text": "Click to edit Master text styles",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Second level",
+                    "level": 1,
+                    "runs": [
+                      {
+                        "text": "Second level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Third level",
+                    "level": 2,
+                    "runs": [
+                      {
+                        "text": "Third level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fourth level",
+                    "level": 3,
+                    "runs": [
+                      {
+                        "text": "Fourth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Fifth level",
+                    "level": 4,
+                    "runs": [
+                      {
+                        "text": "Fifth level",
+                        "font": {
+                          "color": {}
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Date Placeholder 3",
+              "shape_id": 4,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 36.0,
+              "top": 500.5,
+              "placeholder_type": 16,
+              "placeholder_idx": 10,
+              "text_frame": {
+                "text": "1/27/13",
+                "paragraphs": [
+                  {
+                    "text": "1/27/13",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Footer Placeholder 4",
+              "shape_id": 5,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 228.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 246.0,
+              "top": 500.5,
+              "placeholder_type": 15,
+              "placeholder_idx": 11,
+              "text_frame": {
+                "text": "",
+                "paragraphs": [
+                  {
+                    "text": "",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Slide Number Placeholder 5",
+              "shape_id": 6,
+              "shape_type": "PLACEHOLDER (14)",
+              "has_text_frame": true,
+              "has_table": false,
+              "has_chart": false,
+              "width": 168.0,
+              "height": 28.75,
+              "rotation": 0.0,
+              "left": 516.0,
+              "top": 500.5,
+              "placeholder_type": 13,
+              "placeholder_idx": 12,
+              "text_frame": {
+                "text": "‹#›",
+                "paragraphs": [
+                  {
+                    "text": "‹#›",
+                    "level": 0,
+                    "runs": []
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes_master": {
+    "shapes": [
+      {
+        "name": "Header Placeholder 1",
+        "shape_id": 2,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 0.0,
+        "top": 0.0,
+        "placeholder_type": 14,
+        "placeholder_idx": 0,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Date Placeholder 2",
+        "shape_id": 3,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 305.87503937007875,
+        "top": 0.0,
+        "placeholder_type": 16,
+        "placeholder_idx": 1,
+        "text_frame": {
+          "text": "10/17/16",
+          "paragraphs": [
+            {
+              "text": "10/17/16",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Slide Image Placeholder 3",
+        "shape_id": 4,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 360.0,
+        "height": 270.0,
+        "rotation": 0.0,
+        "left": 90.0,
+        "top": 54.0,
+        "placeholder_type": 101,
+        "placeholder_idx": 2,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Notes Placeholder 4",
+        "shape_id": 5,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 432.0,
+        "height": 324.0,
+        "rotation": 0.0,
+        "left": 54.0,
+        "top": 342.0,
+        "placeholder_type": 2,
+        "placeholder_idx": 3,
+        "text_frame": {
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "paragraphs": [
+            {
+              "text": "Click to edit Master text styles",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Click to edit Master text styles",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Second level",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Second level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Third level",
+              "level": 2,
+              "runs": [
+                {
+                  "text": "Third level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Fourth level",
+              "level": 3,
+              "runs": [
+                {
+                  "text": "Fourth level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Fifth level",
+              "level": 4,
+              "runs": [
+                {
+                  "text": "Fifth level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Footer Placeholder 5",
+        "shape_id": 6,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 0.0,
+        "top": 683.8750393700788,
+        "placeholder_type": 15,
+        "placeholder_idx": 4,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Slide Number Placeholder 6",
+        "shape_id": 7,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 305.87503937007875,
+        "top": 683.8750393700788,
+        "placeholder_type": 13,
+        "placeholder_idx": 5,
+        "text_frame": {
+          "text": "‹#›",
+          "paragraphs": [
+            {
+              "text": "‹#›",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      }
+    ],
+    "placeholders": [
+      {
+        "name": "Header Placeholder 1",
+        "shape_id": 2,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 0.0,
+        "top": 0.0,
+        "placeholder_type": 14,
+        "placeholder_idx": 0,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Date Placeholder 2",
+        "shape_id": 3,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 305.87503937007875,
+        "top": 0.0,
+        "placeholder_type": 16,
+        "placeholder_idx": 1,
+        "text_frame": {
+          "text": "10/17/16",
+          "paragraphs": [
+            {
+              "text": "10/17/16",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Slide Image Placeholder 3",
+        "shape_id": 4,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 360.0,
+        "height": 270.0,
+        "rotation": 0.0,
+        "left": 90.0,
+        "top": 54.0,
+        "placeholder_type": 101,
+        "placeholder_idx": 2,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Notes Placeholder 4",
+        "shape_id": 5,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 432.0,
+        "height": 324.0,
+        "rotation": 0.0,
+        "left": 54.0,
+        "top": 342.0,
+        "placeholder_type": 2,
+        "placeholder_idx": 3,
+        "text_frame": {
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "paragraphs": [
+            {
+              "text": "Click to edit Master text styles",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Click to edit Master text styles",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Second level",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Second level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Third level",
+              "level": 2,
+              "runs": [
+                {
+                  "text": "Third level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Fourth level",
+              "level": 3,
+              "runs": [
+                {
+                  "text": "Fourth level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            },
+            {
+              "text": "Fifth level",
+              "level": 4,
+              "runs": [
+                {
+                  "text": "Fifth level",
+                  "font": {
+                    "color": {}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Footer Placeholder 5",
+        "shape_id": 6,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 0.0,
+        "top": 683.8750393700788,
+        "placeholder_type": 15,
+        "placeholder_idx": 4,
+        "text_frame": {
+          "text": "",
+          "paragraphs": [
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "Slide Number Placeholder 6",
+        "shape_id": 7,
+        "shape_type": "PLACEHOLDER (14)",
+        "has_text_frame": true,
+        "has_table": false,
+        "has_chart": false,
+        "width": 234.0,
+        "height": 36.0,
+        "rotation": 0.0,
+        "left": 305.87503937007875,
+        "top": 683.8750393700788,
+        "placeholder_type": 13,
+        "placeholder_idx": 5,
+        "text_frame": {
+          "text": "‹#›",
+          "paragraphs": [
+            {
+              "text": "‹#›",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

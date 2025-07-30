@@ -1,0 +1,75 @@
+site_name: TPPT Documentation
+site_description: Typed Python PowerPoint Tool Documentation
+site_author: yassun7010
+site_url: https://yassun7010.github.io/tppt/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.next
+    - navigation.previous
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+
+repo_name: yassun7010/tppt
+repo_url: https://github.com/yassun7010/tppt
+
+plugins:
+  - mkdocstrings:
+      default_handler: python
+
+markdown_extensions:
+  - pymdownx.details:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite:
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.superfences:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+
+nav:
+  - Home:
+      - About: index.md
+      - Installation: home/installation.md
+      - Concept: home/concept.md
+  - Usage:
+      - Presentation: usage/index.md
+      - Slide: usage/slide.md
+      - Text: usage/text.md
+      - Picture: usage/picture.md
+      - Table: usage/table.md
+      - Chart: usage/chart.md
+      - SlideMaster: usage/slide-master.md
+      - SlideLayout: usage/slide-layout.md
+  - API Reference: api/tppt.md
+  - Examples: examples.md
+  - Contributing: contributing.md

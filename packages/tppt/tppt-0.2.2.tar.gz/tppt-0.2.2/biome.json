@@ -1,0 +1,14 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.2.2/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "files": {
+    "include": ["**/*.ts", "**/*.tsx", "**/*.md", "**/*.mdx", "**/*.json"],
+    "ignore": ["**/*.js", "**/.vinxi/**", "**/.mypy_cache/**"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2
+  }
+}

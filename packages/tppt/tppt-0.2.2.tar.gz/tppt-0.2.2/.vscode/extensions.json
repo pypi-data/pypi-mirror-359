@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "tombi-toml.tombi",
+    "anysphere.pyright",
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "ms-pyright.pyright",
+    "biomejs.biome",
+    "naumovs.color-highlight",
+    "redhat.vscode-yaml"
+  ]
+}
