@@ -1,0 +1,11 @@
+polars_talis/__init__.py,sha256=QzvnMxikOZbSq9DQc7Nz6RLE2gVvrw2eUVjwl9pMNHU,393
+polars_talis/core/analyzer.py,sha256=xnZiDIBj1_MKC9s-VD6amjSjjO2XfmMqZ2_agFhKrZg,5020
+polars_talis/core/base.py,sha256=LBrzNfbXP_orzC1Ji95-pxqMVDH0kMnwX4kNPaVcDVQ,1258
+polars_talis/indicators/momentum.py,sha256=Yk89_EyDmqOTm0acvGJsSaLVMV2PwZA7ypGehzOeUzg,3741
+polars_talis/indicators/trend.py,sha256=IQWjAQ0ONrykDucHbJph0rdQ72-xOwqaecv3n481eyk,2138
+polars_talis/indicators/volatility.py,sha256=QkOySJrK7V7Bu9KeVamGe54HkMUdtBjuWC8XGGwZzQM,1814
+polars_talis-0.1.0.dist-info/licenses/LICENSE,sha256=zImK_1vvl77ZjSDggA3ITw5XUdWt5_3tMc800Zan7SE,1064
+polars_talis-0.1.0.dist-info/METADATA,sha256=NiNB2nIW5Vg16y-3KjWl0papjLsJrshgfmJvAQEE3Z8,7383
+polars_talis-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+polars_talis-0.1.0.dist-info/top_level.txt,sha256=NaB81Un5M49wGQ83D4fZXkcQbPDPYtgspYVHIRGA6po,13
+polars_talis-0.1.0.dist-info/RECORD,,
