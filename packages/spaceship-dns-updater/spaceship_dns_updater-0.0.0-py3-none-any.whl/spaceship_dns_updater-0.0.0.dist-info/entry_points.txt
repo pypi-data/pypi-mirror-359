@@ -1,0 +1,3 @@
+[console_scripts]
+spaceship-dns-updater=spaceship_dns_updater.updater:main
+
