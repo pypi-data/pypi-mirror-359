@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+taskman_cli/__init__.py
+taskman_cli/helper_functions.py
+taskman_cli/main.py
+taskman_cli.egg-info/PKG-INFO
+taskman_cli.egg-info/SOURCES.txt
+taskman_cli.egg-info/dependency_links.txt
+taskman_cli.egg-info/entry_points.txt
+taskman_cli.egg-info/requires.txt
+taskman_cli.egg-info/top_level.txt

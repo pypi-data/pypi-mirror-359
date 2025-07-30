@@ -1,0 +1,2 @@
+[console_scripts]
+taskman = taskman_cli.main:main
