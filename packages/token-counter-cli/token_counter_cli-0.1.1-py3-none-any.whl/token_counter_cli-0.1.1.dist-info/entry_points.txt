@@ -1,0 +1,2 @@
+[console_scripts]
+token-counter = token_counter.cli:app
