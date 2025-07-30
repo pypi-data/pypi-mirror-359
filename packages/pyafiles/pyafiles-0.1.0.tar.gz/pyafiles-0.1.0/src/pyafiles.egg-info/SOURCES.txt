@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.cfg
+src/pyafiles/__init__.py
+src/pyafiles/file.py
+src/pyafiles.egg-info/PKG-INFO
+src/pyafiles.egg-info/SOURCES.txt
+src/pyafiles.egg-info/dependency_links.txt
+src/pyafiles.egg-info/top_level.txt
