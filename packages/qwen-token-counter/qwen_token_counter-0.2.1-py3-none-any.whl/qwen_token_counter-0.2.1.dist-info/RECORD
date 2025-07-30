@@ -1,0 +1,10 @@
+qwen_token_counter/__init__.py,sha256=rT0QAR3yeVJfe-bBe4bRT7DMpGN5fdVAq9gCROsWaFs,1662
+qwen_token_counter/tokenizer_files/merges.txt,sha256=uOBK-clQ45MFQBDc70mcPwBegD6bLaGgm5aibDMmbrE,1823241
+qwen_token_counter/tokenizer_files/tokenizer.json,sha256=rrEzB6cazY_oGGHZStVKtonfdzMYgJ7tPL55S0SS2uQ,11422654
+qwen_token_counter/tokenizer_files/tokenizer_config.json,sha256=FqxYU9d8XKVh_D9-fLm6ymmz08AJ007bdncGmVMrcS4,9915
+qwen_token_counter/tokenizer_files/vocab.json,sha256=yhDX6fs-0YV13R4neiV5wW0QjjLydDloSvoOELFECRA,2776833
+qwen_token_counter-0.2.1.dist-info/licenses/LICENSE,sha256=hrevUivaXdCFH6iBRTvT--nUNFEXiPnu1wQ1qk6AVdw,1086
+qwen_token_counter-0.2.1.dist-info/METADATA,sha256=vyv58kJVRC4Fr21NNv4nOaKLysR_AU6EpWK_54xbSgU,1751
+qwen_token_counter-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qwen_token_counter-0.2.1.dist-info/top_level.txt,sha256=C1d3S92nk2MuLNqvnb4SSBIko4nCkCT62tiav_U0KJA,19
+qwen_token_counter-0.2.1.dist-info/RECORD,,
