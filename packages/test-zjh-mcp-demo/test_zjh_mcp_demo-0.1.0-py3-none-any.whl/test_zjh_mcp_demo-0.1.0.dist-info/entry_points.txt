@@ -1,0 +1,2 @@
+[console_scripts]
+test-zjh-mcp-demo = test_zjh_mcp_demo:main
