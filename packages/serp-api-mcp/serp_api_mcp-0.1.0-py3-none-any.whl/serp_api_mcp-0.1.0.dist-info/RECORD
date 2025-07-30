@@ -1,0 +1,13 @@
+serp_api_mcp/__init__.py,sha256=q5LiMPzyKyThT35aANUCgiQlNYIniYYzOPjCDTKfJdA,124
+serp_api_mcp/config.py,sha256=yfOnIfWMIkKu3vdD8lf_nGo8WvcVBRqxBivlYXYze10,857
+serp_api_mcp/server.py,sha256=3kX7VOaUcxD471NmaLvB5dvQjNLJ38PfZzK0WuOjN1s,5520
+serp_api_mcp/models/__init__.py,sha256=NAwc--iPKHDi0ebGbhq-SSi1KbAt3tnZoPl7iQTg0Kc,45
+serp_api_mcp/models/schemas.py,sha256=-2Jt3OwlOrj_zIgrbThlOWmiFwAHR6WUrLh4cWdZAos,2281
+serp_api_mcp/services/__init__.py,sha256=xzaV80XaI7jzW5g6GOfeUlmQGFZpMIR8-X6JHsug4Wc,47
+serp_api_mcp/services/search_service.py,sha256=OJCOZlEXgCDzGsqX_xvsxffwJ6rP5_nRHrP7a2vbh7E,4998
+serp_api_mcp/utils/__init__.py,sha256=jrfS3HqA_XcqhCM19V2ZMXyGQWee1acZdABricIFvJY,44
+serp_api_mcp/utils/logging.py,sha256=Q1um8boGowlcU1d8z0XSDgDV2On-ZBsqHnH3CNomY-I,674
+serp_api_mcp-0.1.0.dist-info/METADATA,sha256=rfxrdmaR_9RdGrYWCzsp1K3YDMvdkgQN2F0BbBFOKBI,1170
+serp_api_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+serp_api_mcp-0.1.0.dist-info/entry_points.txt,sha256=ajojSzlQTz1LiwzaC_YpttCG59yTEr7lqmAmWmcdtSg,58
+serp_api_mcp-0.1.0.dist-info/RECORD,,
