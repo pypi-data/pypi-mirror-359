@@ -1,0 +1,7 @@
+fenics-ufl==2022.2.0
+numpy
+setuptools<81
+
+[dune]
+dune-fem
+pygmsh
