@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codez-cli"
+version = "0.1.0"
+description = "CodeZ CLI – Your Offline Code Companion"
+readme = "README.md"
+authors = [
+    { name="Sadat Sayem", email="scode43@gmail.com" },
+]
+dependencies = [
+    "rich",
+    "prompt_toolkit",
+    "platformdirs",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+codez = "core.repl:run"
