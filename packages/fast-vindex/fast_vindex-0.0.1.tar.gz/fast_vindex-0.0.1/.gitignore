@@ -1,0 +1,12 @@
+**/.ipynb_checkpoints/
+**/__pycache__/
+**/.pytest_cache
+_dev
+docs/_build
+docs/_dump
+TO_DO.md
+tests
+src/fast_vindex/logging.py
+src/fast_vindex/array/original.py
+src/fast_vindex/api_original.py
+dist

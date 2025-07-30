@@ -1,0 +1,9 @@
+name: fast-vindex-test
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pytest
+  - pip
+  - pip:
+      - -r requirements-test.txt

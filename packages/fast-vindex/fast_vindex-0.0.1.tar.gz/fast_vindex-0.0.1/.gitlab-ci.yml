@@ -1,0 +1,22 @@
+include:
+  - component: $CI_SERVER_FQDN/dev-ops/templates/automatisation/ci-cd/pipeline-documentation-sphinx@~latest
+
+variables:
+  DOCUMENTATION_CONDA_REQUIREMENTS: "./docs/environment-docs.yml"
+  DOCUMENTATION_SOURCEDIR: "docs"
+  DOCUMENTATION_BUILDDIR: "docs/_build/html/"
+
+# pages:
+#   stage: documentation
+#   extends:
+#     - .documentation:sphinx:gitlab-pages
+#   script:
+#     - cp -r ./scripts/1_write/*.ipynb ./docs/write/
+#     - cp -r ./scripts/2_load/*.ipynb ./docs/load/
+#     - cp -r ./scripts/3_read/*.ipynb ./docs/read/
+#     - cp -r ./scripts/4_subset/*.ipynb ./docs/subset/
+#     - cp -r ./scripts/5_delete/*.ipynb ./docs/delete/
+#     - jupyter-book build $DOCUMENTATION_SOURCEDIR
+#   rules:
+#     - !reference [.documentation:publish:rules, rules]
+#     - when: never
