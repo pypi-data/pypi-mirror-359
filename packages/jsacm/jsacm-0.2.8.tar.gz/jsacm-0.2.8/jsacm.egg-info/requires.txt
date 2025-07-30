@@ -1,0 +1,6 @@
+aspose.words
+datetime
+deep_translator
+names
+pytubefix
+tqdm
