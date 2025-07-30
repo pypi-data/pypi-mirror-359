@@ -1,0 +1,12 @@
+shinepy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shinepy/beam.py,sha256=gQDEVxtHnOklq00RjAB6P2rBtuJisv1zzw613xgksLY,1193
+shinepy/helper.py,sha256=qM9JqqhcSt_EtYkNN9UIsoIDPB2YMwQuAKOIjZjDx9A,1225
+shinepy/mesh.py,sha256=qpH-CTP1ENPX_fCUDsgM2Za0eag7gtz0ySU341lHNxQ,1618
+shinepy/radiation.py,sha256=hs8tlqzxvKzK_NgOe1oeo3b7aH8gzE9cQeckZM3sorU,13197
+shinepy/undulator.py,sha256=fYqZDe0UZrfkM-EQa-NgAZi_NcVtVGALd6MZY4NZ-8c,1827
+shinepy/wavefront.py,sha256=LIt9eTGTrYRc41kSP-0NEN8XOZmZRUFDOCcvLSzEBK4,429
+shinepy-0.0.0.dist-info/licenses/LICENSE,sha256=P54-mhrxxwnkGRVgyps8s4HwtMLaJkbV0A9ZkIBoLSg,1092
+shinepy-0.0.0.dist-info/METADATA,sha256=6q7EKovppP4ztJNQ7KyNR29mHq2YVQM1p95OT_NHLcQ,6395
+shinepy-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shinepy-0.0.0.dist-info/top_level.txt,sha256=cdpZIwAYAKnhKbD0A07fTw1RBtQCXAu7aa47b-Iu0Ug,8
+shinepy-0.0.0.dist-info/RECORD,,
