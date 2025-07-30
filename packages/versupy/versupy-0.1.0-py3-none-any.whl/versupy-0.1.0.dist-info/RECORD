@@ -1,0 +1,13 @@
+versupy/__init__.py,sha256=2k_ZeqU7FvqZMFqGm-EYRiV98uxUxmiy5wXygvIobPU,13
+versupy/competitor.py,sha256=9leUaRCc6IM61x-P6V_VRxKff66Tbmyy67n_LPGa2Io,464
+versupy/double_elim.py,sha256=HQ-HcODFz6EOmJ0zuYX_DlBgw0zejHHioENHLI--rPQ,7449
+versupy/match.py,sha256=ray6RGLTXPqqWA2IWug6yxJvuyTw2XyleIVKjUH2Nb4,1433
+versupy/round_robin.py,sha256=MZlowazlJttb-7vdg8Xaz5GhQDBsQKnpSw9Oc5P9gtY,2436
+versupy/single_elim.py,sha256=IT21JMIrsynNOk7P7v1UsNXR2EAdzk6ioYQ_9lb_lf8,3372
+versupy/swiss.py,sha256=p72Oj2F54JFxflyRn6ZXvMzouN0OZrm8_0RQs5u5rQ8,5657
+versupy/tournament.py,sha256=qLhSy5MTuO7ELnZN3JHD9kmo_S_zaLRB7Jw6-qFPngM,3585
+versupy-0.1.0.dist-info/licenses/LICENSE,sha256=lgWZDMBExFtpsBvJ-t8H7CbOPvbK1x8GySe5YOn4leY,1090
+versupy-0.1.0.dist-info/METADATA,sha256=7nWy79CfTbszXhSANQ_sMCp_l6S9FxdmwVEVD9v0AIM,3858
+versupy-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+versupy-0.1.0.dist-info/top_level.txt,sha256=yDCScI6XS5Zl6yIopzwrgFk2iliUUgoDKMQpLc69y0M,8
+versupy-0.1.0.dist-info/RECORD,,
