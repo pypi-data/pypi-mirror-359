@@ -1,0 +1,14 @@
+libkarel/__init__.py,sha256=4bW5hbuIQB3LWDrdnTmRTO_SFkOjXLTqebZAJWrHH0I,408
+libkarel/kareltest.py,sha256=am7Y_6fEPQMjrjdH1SNiA2A_PWLtJyhAcnu88QNdS9U,3232
+libkarel/libkarel.py,sha256=fFnlp9R1dH_t_tJJdv-ApNPVukASQg5VaPNY4p01zXw,15240
+libkarel-1.1.1.dist-info/licenses/LICENSE,sha256=p6MByoaG358Sbfk2obfzKOYvFu7E4K_nKTulb-Ph91c,1757
+requirements/test.txt,sha256=9znt8HAXWLK_Ta1l1XQcVme-7kfa62R9a_AF8BmlGGQ,68
+tests/data.in,sha256=en77bBvqTrd0IVRviZ1HQxIZvSZWJJ9Jfv6_cD03XKo,548
+tests/data.out,sha256=w_CXOST1Bh86ND1p35Ugn6UHzy3ndSjUoaXArqf4yO4,220
+tests/kareltest_test.py,sha256=R3TnHeUCpLua7dnfJgYr61hhyAMR0Dvkn4mY57uiYgs,1020
+tests/libkarel_jskarel_test.py,sha256=0wXHZopys5QaHHa1RzJilg-SaurUYbDt1lyt0oq9KZU,5311
+tests/libkarel_rekarel_test.py,sha256=fhOgA30FNKTi53Lytiq7iBPXPh1RaHIzWnx2RaVSzAw,6476
+libkarel-1.1.1.dist-info/METADATA,sha256=4-gYVIHwc_MxeVchydfVz2j3u5HvW2a3XoA20MD1Lt0,2943
+libkarel-1.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+libkarel-1.1.1.dist-info/top_level.txt,sha256=Lw4zXPjrw49mt0ZloS6kRcSCajgz6qAmtHZKB4Qxkrg,28
+libkarel-1.1.1.dist-info/RECORD,,
