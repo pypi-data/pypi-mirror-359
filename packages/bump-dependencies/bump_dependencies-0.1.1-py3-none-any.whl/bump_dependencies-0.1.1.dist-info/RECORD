@@ -1,0 +1,8 @@
+bump_dependencies.py,sha256=OfH7oBJ4YTXNNdUBT2aBHfphTAjd-iJwd6tzxVSM4Ik,7927
+test_bump_dependencies.py,sha256=FoPiddwLGhl_LIH5-YQKToAcPW-o4QETewT2IazBJx4,6430
+bump_dependencies-0.1.1.dist-info/licenses/LICENSE,sha256=R8lIKNfq7BT5MOjfrcUXW3sIO6neLoMY4L0tsxJ84Mk,1071
+bump_dependencies-0.1.1.dist-info/METADATA,sha256=Ikvg9iijn_zB2yLohDwrNFukYSdkshnAKQWs85kgER8,5506
+bump_dependencies-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bump_dependencies-0.1.1.dist-info/entry_points.txt,sha256=Ki2cJNPy0rux0nBQnSt8wFPhChi6LHdf_AYP5iIrRMk,61
+bump_dependencies-0.1.1.dist-info/top_level.txt,sha256=bwAfMYXQiuD5n_0i89BdkPwk5b_1g5OmX6otH3A8pIo,41
+bump_dependencies-0.1.1.dist-info/RECORD,,
