@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+RUNAWT.sh
+abif_list.yml
+awt.py
+conduits.py
+env_vars.sh
+pyproject.toml
+test_awt_routes.py
+awt.egg-info/PKG-INFO
+awt.egg-info/SOURCES.txt
+awt.egg-info/dependency_links.txt
+awt.egg-info/entry_points.txt
+awt.egg-info/requires.txt
+awt.egg-info/top_level.txt
