@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: crackify
+Version: 0.1.1
+Summary: Terminal-based Spotify artist autostreamer (headless, requires librespot)
+Home-page: https://github.com/yourgithub/crackify
+Author: YOUR NAME
+Author-email: DriizzyyB <driizzyyboosts@gmail.com>
+Project-URL: Homepage, https://github.com/driizzyy
+Project-URL: Repository, https://github.com/driizzyy/crackify
+Project-URL: Issues, https://github.com/driizzyy/crackify/issues
+Keywords: spotify,streaming,librespot,music,headless
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: spotipy>=2.23.0
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# crackify
+
+**Terminal-based Spotify artist autostreamer (headless, requires librespot).**
+
+Stream any Spotify artist’s entire catalog in an infinite loop, directly from your terminal, with no need for the Spotify client. Built for automation, bots, or hands-free music streaming.
+
+---
+
+## 🚨 Legal Notice
+
+> **This project is UNOFFICIAL and not affiliated with Spotify.**
+>
+> By using `crackify`, you accept that it utilizes reverse-engineered streaming with [`librespot`](https://github.com/librespot-org/librespot), which may violate Spotify's Terms of Service. Use at your own risk, for educational or demonstration purposes only.
+
+---
+
+## Features
+
+- Headless/terminal-based audio streaming—no Spotify app needed
+- Autostreams all public tracks for any artist (loops forever)
+- Minimal Python API: `import crackify; crackify.autostream(...)`
+- Requires only Python and the [librespot](https://github.com/librespot-org/librespot) binary
+
+---
+
+## Installation
+
+**1. Install crackify from PyPI:**
+```sh
+pip install crackify
