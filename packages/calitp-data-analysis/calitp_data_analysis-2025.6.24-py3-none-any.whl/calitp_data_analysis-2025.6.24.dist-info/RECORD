@@ -1,0 +1,12 @@
+calitp_data_analysis/__init__.py,sha256=DE6QwW3JUIZA6lxIyhFp5-fv05P7TVSb6dfRvpVdoNI,340
+calitp_data_analysis/calitp_color_palette.py,sha256=MGLXF5RIdTx0aDEaQMUg76IlGJgOHTeXGcxo8NMPFHc,1053
+calitp_data_analysis/gcs_geopandas.py,sha256=wgAO29WyztInukFgiaVxSFfolREXdrsFStTDNkY_urw,1150
+calitp_data_analysis/geography_utils.py,sha256=YxUeMBhG41MwOXNgvNzxMRmPBdLW-SaG_W4-AYhi_Qg,6412
+calitp_data_analysis/magics.py,sha256=daOXT1HHivXWjqLEsNH5yYIv2ZtEdnQuuDHy9zk1dbM,1427
+calitp_data_analysis/sql.py,sha256=Z7b-1Q4FO3TmjOKZkWtzZY0h-9Hm3fmi52RsUwg2ytw,3995
+calitp_data_analysis/styleguide.py,sha256=mq87RtYJQHiGuOUkeb1PcDN3TLclmUNcdpdv6kRE0N0,6944
+calitp_data_analysis/tables.py,sha256=6fd_LFNoBlSwtCEObSV0gbJqw4Rbl8OCaqNddFnj2-I,3292
+calitp_data_analysis/utils.py,sha256=CPmUNBOfHHgV5XRUJTQkyWM_3FLXMPQJuK-AOkYOPi8,8990
+calitp_data_analysis-2025.6.24.dist-info/METADATA,sha256=Iym92_laopJpP20NvyqueenaFAKswQDqnqLe6W1NnFk,956
+calitp_data_analysis-2025.6.24.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+calitp_data_analysis-2025.6.24.dist-info/RECORD,,
