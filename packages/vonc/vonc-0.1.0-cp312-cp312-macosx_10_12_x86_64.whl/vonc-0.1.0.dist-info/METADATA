@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: vonc
+Version: 0.1.0
+Classifier: Programming Language :: Python
+License-File: LICENSE.txt
+Summary: Experimental Python web framework accelerated with Rust
+Author: djb
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# Vonc
+
+**Vonc** is an experimental Python web framework accelerated with Rust and powered by PyO3.
+
+This project demonstrates how to:
+
+- Build core HTTP functionality in Rust
+- Compile to a Python wheel using `maturin`
+- Use the resulting module inside Python for fast, safe execution
+
+> Built as a playground to explore the intersection of Python web dev and Rust performance.
+
