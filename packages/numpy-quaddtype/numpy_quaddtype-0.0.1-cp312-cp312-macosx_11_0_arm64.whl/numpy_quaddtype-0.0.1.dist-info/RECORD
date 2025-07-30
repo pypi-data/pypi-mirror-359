@@ -1,0 +1,6 @@
+numpy_quaddtype/__init__.py,sha256=joPVM981Omx64TPH3qKUvi6FvHtO2_gESY_Peb37jmE,1023
+numpy_quaddtype/_quaddtype_main.cpython-312-darwin.so,sha256=gYlPvIr-9ehddaMTgJykN9huXvty_w1cutl_sx6VQnw,220528
+numpy_quaddtype/.dylibs/libsleefquad.3.8.0.dylib,sha256=hpG63_kOXALjr4iqwb6Dw7Gsq6B7KfhDMiiBKDfzBGs,789856
+numpy_quaddtype-0.0.1.dist-info/RECORD,,
+numpy_quaddtype-0.0.1.dist-info/WHEEL,sha256=BlgdoGd2KNVEkPyD8Qw7I04Bd9Sa0Eb3ERRi6yJxIis,93
+numpy_quaddtype-0.0.1.dist-info/METADATA,sha256=NDKWunrpSUlJpBpdFdsY2zutEOlUefYz-dV-PB9r1D4,1892
