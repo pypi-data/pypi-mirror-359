@@ -1,0 +1,24 @@
+[project]
+name = "pyArchimate"
+version = "0.9.66"
+authors = [
+  { name="Xavier Mayeur", email="xavier@mayeur.be" }
+]
+description = "A library to create & manage Archimate files"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ['lxml', 'oyaml', 'pillow']
+
+[project.urls]
+"Homepage" = "https://github.com/pyArchimate/pyArchimate"
+"Bug Tracker" = "https://github.com/pyArchimate/pyArchimate/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

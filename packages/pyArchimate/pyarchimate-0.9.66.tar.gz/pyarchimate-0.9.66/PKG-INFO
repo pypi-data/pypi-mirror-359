@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: pyArchimate
+Version: 0.9.66
+Summary: A library to create & manage Archimate files
+Author-email: Xavier Mayeur <xavier@mayeur.be>
+Project-URL: Homepage, https://github.com/pyArchimate/pyArchimate
+Project-URL: Bug Tracker, https://github.com/pyArchimate/pyArchimate/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: lxml
+Requires-Dist: oyaml
+Requires-Dist: pillow
+Dynamic: license-file
+
+# pyArchimate package
+
+Package: [PyPI.org](https://pypi.org/project/pyArchimate/0.9.64/)
+
+Documentation: [readthedocs.org](https://pyarchimate.readthedocs.io)
+
+pyArchimate is a Python library to manage [Open Group Archimate ](https://www.opengroup.org/xsd/archimate/) files.
+
+It enables to:
+
+* Read or write a file in Archimate xml format
+* create new models
+* Create, update and delete Archimate artefacts
+* Create, update and delete diagrams
+
+The following artefacts are implemented as per the metamodel here below:
+
+* Model: a set of architecture concepts that relate together and their visual representation in views
+* View:  a specific visualization of element and their conns in a diagram
+* Element: architectural concepts of Archimate language
+* Relationship: the architectural concept expressing the relation between two Elements
+* Node: the visual representation of an Element in a View
+* Connection: the visual representation of a Relationship in a View
+
+![](docs/metaModel.png)
