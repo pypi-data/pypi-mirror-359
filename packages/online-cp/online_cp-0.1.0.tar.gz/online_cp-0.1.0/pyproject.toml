@@ -1,0 +1,30 @@
+[project]
+name = "online-cp"
+version = "0.1.0"
+authors = [
+	{ name="Johan Hallberg Szabadvary", email="johan.hallberg.szabadvary@ju.se" },
+]
+description = "An implementation of online conformal prediction"
+readme = "README.md"
+dependencies = [
+	'numpy',
+	'scipy',
+	'joblib >= 1.4.2',
+	'matplotlib',
+]
+classifiers = [
+	"Development Status :: 2 - Pre-Alpha",
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage"    = "https://github.com/egonmedhatten/online-cp"
+"Bug Tracker" = "https://github.com/egonmedhatten/online-cp/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

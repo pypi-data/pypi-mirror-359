@@ -1,0 +1,15 @@
+LICENCE
+README.md
+pyproject.toml
+src/online_cp/CPS.py
+src/online_cp/__init__.py
+src/online_cp/classifiers.py
+src/online_cp/evaluation.py
+src/online_cp/kernels.py
+src/online_cp/martingale.py
+src/online_cp/regressors.py
+src/online_cp.egg-info/PKG-INFO
+src/online_cp.egg-info/SOURCES.txt
+src/online_cp.egg-info/dependency_links.txt
+src/online_cp.egg-info/requires.txt
+src/online_cp.egg-info/top_level.txt
