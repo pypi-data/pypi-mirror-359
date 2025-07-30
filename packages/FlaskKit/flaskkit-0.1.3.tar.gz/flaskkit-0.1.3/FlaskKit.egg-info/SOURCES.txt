@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+FlaskKit.egg-info/PKG-INFO
+FlaskKit.egg-info/SOURCES.txt
+FlaskKit.egg-info/dependency_links.txt
+FlaskKit.egg-info/entry_points.txt
+FlaskKit.egg-info/requires.txt
+FlaskKit.egg-info/top_level.txt
+crear_flask_app/__init__.py
+crear_flask_app/__main__.py
+crear_flask_app/generador.py

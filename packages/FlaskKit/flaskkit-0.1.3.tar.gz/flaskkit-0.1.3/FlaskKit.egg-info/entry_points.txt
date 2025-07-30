@@ -1,0 +1,2 @@
+[console_scripts]
+fk = crear_flask_app.__main__:main
