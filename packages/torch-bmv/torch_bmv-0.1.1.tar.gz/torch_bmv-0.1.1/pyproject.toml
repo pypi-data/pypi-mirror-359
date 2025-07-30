@@ -1,0 +1,26 @@
+[build-system]
+# editable install using setuptool available since v64.0.0
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torch_bmv"
+version = "0.1.1"
+description = "Batched matrix-vector multiplication in PyTorch which intelligently rearranges tensor shapes for efficient computation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Ho Yin Chau" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = ["torch >= 2.0.0"]
+
+[project.urls]
+repository = "https://github.com/hchau630/torch-bmv"
