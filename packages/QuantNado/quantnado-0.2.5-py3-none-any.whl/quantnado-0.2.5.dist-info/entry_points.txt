@@ -1,0 +1,3 @@
+[console_scripts]
+quantnado-call-peaks = QuantNado.cli:call_peaks_main
+quantnado-make-dataset = QuantNado.cli:make_dataset_main
