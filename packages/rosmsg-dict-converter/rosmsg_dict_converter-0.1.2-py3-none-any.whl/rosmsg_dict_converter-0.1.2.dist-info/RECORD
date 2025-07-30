@@ -1,0 +1,10 @@
+rosmsg_dict_converter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rosmsg_dict_converter/converter.py,sha256=cjjzOGmFN8Olsp395eWMgsICg9ar9kWcfCNAYeXzqkY,17180
+rosmsg_dict_converter/demo.py,sha256=CeUrjra7isU9oW8UR1rsPGy6i11dh0uQLyXfRkuS7NM,1587
+rosmsg_dict_converter-0.1.2.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_rosmsg_dict_converter.py,sha256=F4G49utyZXnIboSOnfllMbWkqcIAA1g70R-e5LdjVyQ,2952
+rosmsg_dict_converter-0.1.2.dist-info/METADATA,sha256=d7zgBC3BStAPm2nWXoXTV9w_ohIwsrY-073PZ4tKGMk,2720
+rosmsg_dict_converter-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+rosmsg_dict_converter-0.1.2.dist-info/top_level.txt,sha256=ka38t9V8KZ_wWhKdmY1eaxZpbCrKysUXmH6pzYgAQ0o,28
+rosmsg_dict_converter-0.1.2.dist-info/RECORD,,
