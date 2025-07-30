@@ -1,0 +1,7 @@
+pyserial>=3.5
+opencv-python>=4.7.0
+mediapipe>=0.10.0
+pyttsx3>=2.90
+vosk>=0.3.45
+pyaudio>=0.2.13
+SpeechRecognition>=3.10.0

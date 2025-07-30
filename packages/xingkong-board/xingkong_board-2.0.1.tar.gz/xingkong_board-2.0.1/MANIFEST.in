@@ -1,0 +1,6 @@
+include README.md
+include PROTOCOL_DOC.md
+exclude test*.py
+exclude direct_vosk_test.py
+exclude quickstart.py
+recursive-include models * 
