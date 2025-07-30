@@ -1,0 +1,2 @@
+[console_scripts]
+dep-hallucinator = dep_hallucinator.main:cli
