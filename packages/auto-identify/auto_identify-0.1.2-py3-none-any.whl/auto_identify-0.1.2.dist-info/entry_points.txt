@@ -1,0 +1,2 @@
+[console_scripts]
+auto-identify = auto_identify.__main__:main
