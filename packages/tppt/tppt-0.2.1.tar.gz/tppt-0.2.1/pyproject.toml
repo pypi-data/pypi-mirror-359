@@ -1,0 +1,91 @@
+[project]
+name = "tppt"
+version = "0.2.1"
+description = "Typed Python PowerPoint Tool"
+readme = "README.md"
+requires-python = ">=3.11.0"
+authors = [{ name = "yassun7010", email = "yassun7010@outlook.com" }]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Office/Business :: Office Suites",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = [
+  "Pillow>=10.0.1",
+  "python-pptx>=1.0.2",
+  "typing-extensions>=4.13.2",
+]
+
+[project.urls]
+Documentation = "https://yassun7010.github.io/tppt/"
+Homepage = "https://github.com/yassun7010/tppt"
+
+[project.optional-dependencies]
+pandas = ["pandas>=2.0.0"]
+polars = ["polars>=0.20.0"]
+pydantic = ["pydantic>=2.0.0"]
+tool = [
+  "rich>=14.0.0",
+  "rich-argparse>=1.7.0",
+]
+
+[dependency-groups]
+dataframes = [
+  "pandas",
+  "polars",
+  "pydantic",
+]
+dev = [
+  "mypy>=1.15.0",
+  "pyright>=1.1.399",
+  "pytest>=8.3.5",
+  "ruff>=0.11.6",
+  "taskipy>=1.14.1",
+  "tombi>=0.3.27",
+  { include-group = "docs" },
+  { include-group = "rich" },
+]
+docs = [
+  "mkdocs-material>=9.6.12",
+  "mkdocs>=1.6.1",
+  "mkdocstrings-python>=1.16.10",
+  "mkdocstrings>=0.29.1",
+  "pymdown-extensions>=10.15",
+]
+rich = ["rich", "rich-argparse"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.mypy]
+exclude = ["**/site-packages", ".venv/**"]
+
+[tool.pyright]
+include = ["src/tppt", "examples", "tests", "docs/codes"]
+exclude = ["**/site-packages", ".venv/**"]
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+
+[tool.taskipy.tasks]
+ci = "task format && task lint && task typecheck && task test"
+docs = "mkdocs serve"
+docs-build = "mkdocs build"
+docs-deploy = "mkdocs gh-deploy"
+format = "ruff format"
+format-check = "ruff format --check"
+lint = "ruff check"
+lint-check = "ruff check --fix"
+test = "pytest"
+typecheck = "task typecheck-pyright"
+typecheck-pyright = "pyright"
