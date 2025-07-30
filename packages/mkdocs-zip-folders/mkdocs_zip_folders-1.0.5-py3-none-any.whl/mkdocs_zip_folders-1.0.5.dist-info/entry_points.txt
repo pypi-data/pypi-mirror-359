@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+zip_folders = zip_folders.plugin:ZipFoldersPlugin
