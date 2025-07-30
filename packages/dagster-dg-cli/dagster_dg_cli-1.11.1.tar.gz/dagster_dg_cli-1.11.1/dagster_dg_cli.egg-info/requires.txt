@@ -1,0 +1,7 @@
+dagster-dg-core==1.11.1
+
+[local]
+dagster==1.11.1
+
+[mcp]
+mcp
