@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+pygifconvert_hoev/__init__.py
+pygifconvert_hoev/converter.py
+pygifconvert_hoev.egg-info/PKG-INFO
+pygifconvert_hoev.egg-info/SOURCES.txt
+pygifconvert_hoev.egg-info/dependency_links.txt
+pygifconvert_hoev.egg-info/not-zip-safe
+pygifconvert_hoev.egg-info/requires.txt
+pygifconvert_hoev.egg-info/top_level.txt
