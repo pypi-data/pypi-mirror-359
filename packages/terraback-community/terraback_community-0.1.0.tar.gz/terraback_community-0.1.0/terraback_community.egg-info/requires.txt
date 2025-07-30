@@ -1,0 +1,12 @@
+boto3
+click
+pyyaml
+rich
+google-api-python-client
+google-cloud-storage
+azure-identity
+azure-mgmt-resource
+azure-mgmt-compute
+paramiko
+cryptography
+requests
