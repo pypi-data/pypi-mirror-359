@@ -1,0 +1,2 @@
+[console_scripts]
+humano = humano.cli:main
