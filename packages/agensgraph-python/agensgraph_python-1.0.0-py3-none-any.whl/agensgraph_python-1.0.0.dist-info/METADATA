@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: agensgraph-python
+Version: 1.0.0
+Summary: Psycopg2 type extension module for AgensGraph
+Home-page: https://github.com/skaiworldwide-oss/agensgraph-drivers
+Author: Umar Hayat
+Author-email: skaisw@skaiworldwide.com
+Maintainer: Umar Hayat
+Maintainer-email: skaisw@skaiworldwide.com
+License: Apache License Version 2.0
+License-File: LICENSE
+Requires-Dist: psycopg2>=2.5.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary
