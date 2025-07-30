@@ -1,0 +1,4 @@
+thinqconnect
+python-dotenv
+mcp
+aiohttp
