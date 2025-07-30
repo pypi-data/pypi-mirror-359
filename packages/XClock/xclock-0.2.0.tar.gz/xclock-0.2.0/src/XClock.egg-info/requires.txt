@@ -1,0 +1,4 @@
+labjack-ljm<2.0.0,>=1.23.0
+labjackpython>=2.1.0
+nidaqmx<2.0.0,>=1.0.2
+numpy<3.0.0,>=2.2.0
