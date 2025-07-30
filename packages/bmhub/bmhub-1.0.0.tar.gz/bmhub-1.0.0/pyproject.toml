@@ -1,0 +1,28 @@
+[project]
+name = "bmhub"
+version = "1.0.0"
+description = "增强从 Hugging Face Hub 与 ModelScope Hub 下载新模型与列出、更新、删除已下载模型的体验"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "YanSH", email = "yansh97@foxmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "huggingface-hub>=0.33.2",
+    "modelscope>=1.27.1",
+    "pydantic>=2.11.7",
+    "rich>=14.0.0",
+    "typer>=0.16.0",
+]
+
+[project.scripts]
+bmhub = "bmhub:app"
+
+[project.urls]
+Homepage = "https://github.com/yansh97/bmhub"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["huggingface-hub[cli]>=0.33.2"]
