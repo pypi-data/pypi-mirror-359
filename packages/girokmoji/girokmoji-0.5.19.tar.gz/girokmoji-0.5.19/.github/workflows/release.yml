@@ -1,0 +1,64 @@
+name: Semantic Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Version part to bump"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+
+permissions:
+  attestations: write
+  contents: write
+  packages: write
+  deployments: write
+  actions: write
+  checks: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Configure git user
+        run: |
+          git config user.name "girokmoji"
+          git config user.email "release@girokmoji"
+
+      - name: Generate release notes
+        run: |
+          uvx --from "./" girokmoji release Girokmoji \
+            --bump ${{ inputs.bump }} > release.md
+
+      - name: Push version bump
+        id: version-bump
+        run: |
+          git push origin HEAD:${{ github.ref }}
+          git push origin --tags
+          echo "new=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: release.md
+          tag_name: ${{ steps.version-bump.outputs.new }}
+          name: "📦️ ${{ steps.version-bump.outputs.new }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
