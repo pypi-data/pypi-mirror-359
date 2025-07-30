@@ -1,0 +1,12 @@
+mcp_kinetica/__init__.py,sha256=ce53wxNp7Tp_Ghbi3Ei-DV3E5ZwPN9KV9c2B4Nwwgy4,54
+mcp_kinetica/kinetica_sql_system_prompt.md,sha256=rCG9UeR5_UxINBQM6AzULRUYQjFuVttKVabF5HtLZZc,56873
+mcp_kinetica/server.py,sha256=cL9Y9_slGtPyVOv-vZCvxm_EVaoJI-5_vcGnsNDjWvo,9525
+mcp_kinetica-7.2.3.0b6.dist-info/licenses/LICENSE,sha256=dRy0kzdxOQ3PNVKFUqxuC9Eiyavt30YWIOLB9wHNxFU,1065
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_server.py,sha256=Djj9QdLD2TDY_CPEsH1gVIhj3DkDRkieegkJXUXHdus,4870
+mcp_kinetica-7.2.3.0b6.dist-info/METADATA,sha256=mzTUrCpekNW0uWdXOAb7WhynogFHLLcjwZKaziKhr3g,6160
+mcp_kinetica-7.2.3.0b6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_kinetica-7.2.3.0b6.dist-info/entry_points.txt,sha256=mWp5n1ODZAyp0qxIlVd7EDHpq1ohblbtYg_gNvArJSM,58
+mcp_kinetica-7.2.3.0b6.dist-info/top_level.txt,sha256=Zbfa3nYEHOVMJYNYiUz6VLaOSo8d4BRaR_NmRKkVT_w,19
+mcp_kinetica-7.2.3.0b6.dist-info/RECORD,,
