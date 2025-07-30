@@ -1,0 +1,16 @@
+flutter_widget_mcp_server/__init__.py,sha256=FycbRLf0uOTG7hrwxYxivOqyyBFTp2abAFat4NTiuSs,242
+flutter_widget_mcp_server/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flutter_widget_mcp_server/core/main.py,sha256=-g60KWcQ_KkheCM9WQdKC3f0KANHHbCEc4KhDhvic2E,8644
+flutter_widget_mcp_server/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flutter_widget_mcp_server/data/components.json,sha256=QLvSHLDQrCLBe-xBpKxufaM2wS7FeEz7mZEQdVe2iVM,88405
+flutter_widget_mcp_server/data/models.py,sha256=Wf5u3qO_2zsH3H_rmY-1c5WxFTtGbWWj1EYJVMoepxw,4611
+flutter_widget_mcp_server/parsers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flutter_widget_mcp_server/parsers/component_parser.py,sha256=xdYG702IK4MQwkYLQ7uxTFaRnyOoqg6pomAFpMiZkh8,6403
+flutter_widget_mcp_server/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flutter_widget_mcp_server/utils/gen_components_json.py,sha256=kjUl-zTdEvjYpGjRm_wG4ZWVM5MKNgOwWAun5-jIr-w,1405
+flutter_widget_mcp_server/utils/loader.py,sha256=cXdzsSiyUvtEao0d5buYbmw7X3-0ZYsHYXBWlYO8C80,3610
+flutter_widget_mcp_server-0.1.0.dist-info/METADATA,sha256=1Wd-eB5uf_3_onoSetjJhbaaZjilNO4hja0Nb73ArO0,1391
+flutter_widget_mcp_server-0.1.0.dist-info/WHEEL,sha256=52BFRY2Up02UkjOa29eZOS2VxUrpPORXg1pkohGGUS8,91
+flutter_widget_mcp_server-0.1.0.dist-info/entry_points.txt,sha256=omE4spjkwsOMzmrEJLF_pObwpt358XrLKQDpaHQ4KOQ,86
+flutter_widget_mcp_server-0.1.0.dist-info/top_level.txt,sha256=GQ7fHYVXldtJ4JXYC8jX4EZIsvhTgzPIHj1Z69xnXac,26
+flutter_widget_mcp_server-0.1.0.dist-info/RECORD,,

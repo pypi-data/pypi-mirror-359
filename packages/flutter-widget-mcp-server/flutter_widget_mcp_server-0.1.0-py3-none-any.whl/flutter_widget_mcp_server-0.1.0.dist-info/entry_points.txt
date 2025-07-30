@@ -1,0 +1,2 @@
+[console_scripts]
+flutter-widget-mcp-server = flutter_widget_mcp_server.core.main:run
