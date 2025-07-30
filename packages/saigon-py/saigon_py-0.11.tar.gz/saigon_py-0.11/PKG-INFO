@@ -1,0 +1,66 @@
+Metadata-Version: 2.4
+Name: saigon-py
+Version: 0.11
+Summary: Common components to build cloud backends
+Project-URL: Source Code, https://github.com/abastidian/saigon
+Author: abastidian@gmail.com
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.13
+Requires-Dist: aws-lambda-typing~=2.20.0
+Requires-Dist: boto3~=1.35.97
+Requires-Dist: fastapi~=0.115.6
+Requires-Dist: mypy-boto3-cognito-identity~=1.35.93
+Requires-Dist: mypy-boto3-cognito-idp~=1.35.93
+Requires-Dist: mypy-boto3-iotsitewise~=1.35.93
+Requires-Dist: mypy-boto3-s3~=1.35.93
+Requires-Dist: mypy-boto3-secretsmanager~=1.35.93
+Requires-Dist: mypy-boto3-sqs~=1.35.93
+Requires-Dist: mypy-boto3-timestream-query~=1.35.93
+Requires-Dist: mypy-boto3-timestream-write~=1.35.93
+Requires-Dist: pydantic~=2.10.5
+Requires-Dist: pyjwt~=2.10.1
+Requires-Dist: python-json-logger~=3.2.1
+Requires-Dist: sqlalchemy~=2.0.37
+Provides-Extra: build
+Requires-Dist: hatch==1.13.0; extra == 'build'
+Requires-Dist: hatchling==1.24.2; extra == 'build'
+Requires-Dist: packaging==23.2; extra == 'build'
+Requires-Dist: twine==6.1.0; extra == 'build'
+Provides-Extra: test
+Requires-Dist: flake8~=7.1.1; extra == 'test'
+Requires-Dist: httpx~=0.28.1; extra == 'test'
+Requires-Dist: prompt-toolkit~=3.0.51; extra == 'test'
+Requires-Dist: pytest-asyncio~=0.26.0; extra == 'test'
+Requires-Dist: pytest~=8.3.5; extra == 'test'
+Requires-Dist: python-dotenv~=1.0.1; extra == 'test'
+Requires-Dist: shellody~=0.14; extra == 'test'
+Description-Content-Type: text/markdown
+
+# Saigon
+
+This repository contains common functionality to build cloud backends that is often necessary (
+and repeated) in all projects.
+
+Development for this repository follows the same process as the backend services. Please take a look
+at the [development guide](./docs/dev_guide.md).
+
+# Setup and build `saigon`
+
+Code in this repo is a single Python package located in `src`. For both developing and creating
+the installable package you will need first to create a virtual environment. You can do so under the 
+parent directory:
+
+```bash
+$ python -m venv .venv
+$ source .venv/bin/activate
+```
+
+Then proceed to install the development dependencies along with the package's:
+
+```bash
+(.venv) $ pip install ".[build]"
+(.venv) $ hatch build
+```
+
+Note that the second command will also create the installable `saigon` package under `dist`.
+You can re-run the second command as needed in order to regenerate the package bundle.
