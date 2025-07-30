@@ -1,0 +1,16 @@
+# PyPI Configuration Template
+# Copy this file to ~/.pypirc and update with your credentials
+
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = pypi-AgEIcHlwaS5vcmcCJGQ2MjgwMDQ5LWE1ZTItNDMzNS04MjU4LWU0ZmM3MDU0M2M3YwACKlszLCJiZjcxZWNiNC1kYjdiLTRhZmQtYTZmYy01M2NkNjU3NjBjYzIiXQAABiDtRjrSjAFrsoov9QjQIEtdo6cNLoT6uLCF1geMxKvcFw
+
+
+[testpypi]
+username = __token__
+password = # Your TestPyPI API token here (starts with pypi-)
