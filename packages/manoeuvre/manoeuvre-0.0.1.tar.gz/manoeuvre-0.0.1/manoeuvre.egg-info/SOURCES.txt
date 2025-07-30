@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+manoeuvre/__init__.py
+manoeuvre.egg-info/PKG-INFO
+manoeuvre.egg-info/SOURCES.txt
+manoeuvre.egg-info/dependency_links.txt
+manoeuvre.egg-info/top_level.txt
