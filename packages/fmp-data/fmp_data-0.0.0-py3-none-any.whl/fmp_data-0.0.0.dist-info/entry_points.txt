@@ -1,0 +1,10 @@
+[console_scripts]
+fmp = fmp_data.scripts.dev:main
+fmp-mcp = fmp_data.mcp.server:main
+fmp-mcp-dev = fmp_data.scripts.dev_server:main
+format = scripts:format_code
+lint = scripts:lint
+mkdocstrings-python = mkdocstrings.cli:main
+security = scripts:security_check
+test = scripts:test
+typecheck = scripts:typecheck
