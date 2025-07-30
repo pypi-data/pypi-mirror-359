@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: pyproforma
+Version: 0.0.1
+Summary: Placeholder package for future financial modeling toolkit
+Author-email: Robert Hannay <rhannay@gmail.com>
+License: MIT
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# pyproforma
+
+This package name is reserved for a future financial modeling toolkit for Python.  
+Stay tuned!

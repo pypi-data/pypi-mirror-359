@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+pyproforma/__init__.py
+pyproforma.egg-info/PKG-INFO
+pyproforma.egg-info/SOURCES.txt
+pyproforma.egg-info/dependency_links.txt
+pyproforma.egg-info/top_level.txt
