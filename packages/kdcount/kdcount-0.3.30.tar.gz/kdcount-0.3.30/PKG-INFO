@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: kdcount
+Version: 0.3.30
+Summary: A slower KDTree cross correlator
+Home-page: http://github.com/rainwoodman/kdcount
+Author: Yu Feng
+Author-email: rainwoodman@gmail.com
+License: GPL3
+Requires: numpy
+Requires: cython
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires
+Dynamic: summary
