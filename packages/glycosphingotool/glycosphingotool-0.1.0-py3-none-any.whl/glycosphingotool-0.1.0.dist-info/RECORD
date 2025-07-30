@@ -1,0 +1,11 @@
+glycosphingotool/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+glycosphingotool/cli.py,sha256=eINCVLbLctjqDAseIETBFwdXvB0IfSSkOYVBLmxcbIQ,2651
+glycosphingotool/dataio.py,sha256=_EsqIlHMBmQepc0Fm2Cc4eCT61Uq5iqLEQ7L-hJCUhA,1780
+glycosphingotool/nomenclature.py,sha256=k0XBaZqyn9LSwF8BknJ5OfI0p7wtn32DUlQJuV9y8bA,7118
+glycosphingotool/reactions.py,sha256=Fp_NnhUzikwuVnnVdBGi0fTVHxHWhKD_-JGFXrDUMsU,9017
+glycosphingotool/utils.py,sha256=GXzZIMyb7o25fTWh-haFENGoEoJT5iwfHVQ09ELIsPA,4237
+glycosphingotool-0.1.0.dist-info/METADATA,sha256=-3DArWGOrgITXGRed5s47RDhdV4yPys70mRH-cIbYXo,1471
+glycosphingotool-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+glycosphingotool-0.1.0.dist-info/entry_points.txt,sha256=4WGg1OaggTiMxHrx46gtCkAboqHiKgn0KeLDflYSnVA,62
+glycosphingotool-0.1.0.dist-info/top_level.txt,sha256=1NhYYHQMxt4wBKLI3KqDhEw1y_8P_rjSgTqIlnUaM_o,17
+glycosphingotool-0.1.0.dist-info/RECORD,,
