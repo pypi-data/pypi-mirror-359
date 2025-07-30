@@ -1,0 +1,9 @@
+project_aggregator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+project_aggregator/logging_config.py,sha256=gPWEd8Jncqgn483LnGuFm9QTJKDaMTEIS7J4OJzxLI8,773
+project_aggregator/logic.py,sha256=iWXj_ohEtbGxYXXIEObZmZXzvUPQsiy0iSTVOQ0feJw,13655
+project_aggregator/main.py,sha256=wBncMACV8Q1TqlEhCurRgg20h7eBF4z5QYMfJdYs1N4,10256
+project_aggregator-0.3.1.dist-info/entry_points.txt,sha256=sour12I_VBV4g1-QQPSXbonRG_iECTRnOdsFqArNTgs,52
+project_aggregator-0.3.1.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+project_aggregator-0.3.1.dist-info/METADATA,sha256=rl194sfKqR-NScuvc11xboAeJzdlOKeRRX1tCyvs2xE,3415
+project_aggregator-0.3.1.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+project_aggregator-0.3.1.dist-info/RECORD,,
