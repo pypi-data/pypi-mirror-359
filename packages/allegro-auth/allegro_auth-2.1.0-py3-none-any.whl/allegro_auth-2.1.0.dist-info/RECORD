@@ -1,0 +1,9 @@
+allegro_auth/__init__.py,sha256=Og9rLvbuFmMXofIDXQ6Rea6YSaQX1y4SmALbNdvfL0c,60
+allegro_auth/client.py,sha256=bxxKRPrYLT1frAwgBPYc07INTO8lW17Fct9HfuwTHhE,2461
+allegro_auth/config.py,sha256=aXxmTUPDwmtjnSeupFIaSsmEQtzpELFvG-RtPl_H1rQ,348
+allegro_auth/schema.py,sha256=prw5KcKP76ckPAZ4JaKHqJ2aPjnKUEeJoh6j1jQI3nU,234
+allegro_auth/token_manager.py,sha256=294IXo-6rBugaDBM8S0GREYYoApZfO_-B6O2YgpuTJY,749
+allegro_auth-2.1.0.dist-info/METADATA,sha256=XETKN2iVB7orFNcdPhld4oy0Buqep0gPFY3TNvKiJbw,2423
+allegro_auth-2.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+allegro_auth-2.1.0.dist-info/licenses/LICENCE,sha256=xHMLJq-Y_-FzHzJ2aJEwYdyuGIbm7_SR0ljIwqq_6JQ,1093
+allegro_auth-2.1.0.dist-info/RECORD,,
