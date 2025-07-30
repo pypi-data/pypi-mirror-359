@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: PyCritic
+Version: 0.1.0
+Summary: A package for estimating a set of parameters
+Home-page: https://github.com/Alexcoratt/pycritic
+Author: Alexander Smirnov
+Author-email: aleqsonder@icloud.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# PyCritic
+
+`PyCritic` is the package desined for creating programs aimed on estimating a
+parameter set.
