@@ -1,0 +1,2 @@
+memory
+svg2unicode

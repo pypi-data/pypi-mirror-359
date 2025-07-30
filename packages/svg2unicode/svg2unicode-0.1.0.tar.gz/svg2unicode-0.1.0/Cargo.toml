@@ -1,0 +1,141 @@
+[package]
+name = "sview"
+version = "1.0.0"
+authors = ["sView Team <team@sview.veridock.com>"]
+description = "🧠 SView - SVG Viewer & PWA Launcher with sView Integration"
+license = "Apache-2.0"
+repository = "https://github.com/veridock/sview"
+keywords = ["svg", "pwa", "viewer", "sview", "file-manager"]
+categories = ["command-line-utilities", "multimedia", "web-programming"]
+edition = "2021"
+rust-version = "1.70"
+default-run = "sview"
+
+
+[dependencies]
+# Error handling
+anyhow = "1.0"
+
+# CLI & Argument parsing
+clap = { version = "4.0", features = ["derive"] }
+
+# File system operations
+walkdir = "2.3"
+dirs = "5.0"
+opener = "0.6"
+
+# Parallel processing
+rayon = "1.7"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Encoding
+base64 = "0.21"
+percent-encoding = "2.3"
+
+# Date/time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# HTTP client for fetching remote SVGs
+reqwest = { version = "0.11", features = ["json"] }
+
+# Terminal size detection
+terminal_size = "0.3"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Image processing
+image = { version = "0.24.0", default-features = false, features = ["png", "jpeg", "gif", "bmp", "tiff", "tga", "webp", "hdr", "dxt", "dds", "farbfeld", "pnm", "ico"] }
+
+# SVG parsing and manipulation
+roxmltree = "0.18"
+
+# SVG processing and rendering
+svg = "0.13"
+resvg = "0.28"
+usvg = "0.28"
+imageproc = "0.23"
+rusttype = "0.9"
+tiny-skia = { version = "0.8", features = ["png"] }
+
+# Terminal output
+unicode-width = "0.1"
+ansi_term = "0.12"
+
+# Testing
+tempfile = "3.3"
+
+# Human-readable file sizes
+humansize = "2.1"
+
+# Color processing
+palette = "0.7"
+
+# Encryption for sView security
+aes-gcm = { version = "0.10", optional = true }
+argon2 = { version = "0.5", optional = true }
+
+# Configuration management
+config = "0.13"
+
+# Logging
+env_logger = "0.10"
+log = "0.4"
+
+# Terminal UI for advanced CLI
+crossterm = "0.27"
+ratatui = "0.24"
+
+# File watching
+notify = { version = "6.0", optional = true }
+
+# Process management
+sysinfo = "0.29"
+
+[dev-dependencies]
+tempfile = "3.8"
+assert_cmd = "2.0"
+predicates = "3.0"
+
+[features]
+default = ["encryption", "watch"]
+gui = ["tauri"]
+encryption = ["aes-gcm", "argon2"]
+watch = ["notify"]
+experimental = []
+
+# GUI-specific dependencies
+tauri = []
+
+[[bin]]
+name = "sview"
+path = "src/main.rs"
+required-features = []
+
+[[bin]]
+name = "sview-gui"
+path = "src/gui.rs"
+required-features = ["gui"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+# Build configuration for different platforms
+[target.'cfg(target_os = "linux")']
+[target.'cfg(target_os = "windows")']
+[target.'cfg(target_os = "macos")']
+
+# Package metadata
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
