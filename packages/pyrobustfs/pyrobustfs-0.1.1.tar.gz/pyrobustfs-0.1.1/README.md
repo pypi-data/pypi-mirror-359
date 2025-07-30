@@ -1,0 +1,157 @@
+# pyrobustfs
+
+A robust feature selection library for Python, leveraging ensemble Minimum Redundancy Maximum Relevance (mRMR) with an optional refinement step. Designed for seamless integration into scikit-learn pipelines.
+
+## Features
+
+*   **Ensemble mRMR:** Improves robustness and stability of feature selection by running mRMR on bootstrapped/subsampled data and aggregating results.
+*   **Scikit-learn Compatibility:** Implements `BaseEstimator` and `TransformerMixin` for easy integration into scikit-learn pipelines, `GridSearchCV`, and `RandomizedSearchCV`.
+*   **Flexible Refinement:** Allows for an optional second stage of model-specific feature selection using any scikit-learn compatible estimator (e.g., RFE, SelectFromModel).
+*   **Classification and Regression Support:** Handles both classification (using mutual information for classification) and regression (using mutual information for regression) tasks.
+
+## Installation
+
+Currently, `pyrobustfs` is not yet available on PyPI. You can install it directly from the source code:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/pyrobustfs.git
+    cd pyrobustfs
+    ```
+
+2.  **Install in editable mode (for development) or standard mode:**
+
+    ```bash
+    # For development (changes to code are immediately reflected)
+    pip install -e .
+
+    # For standard installation
+    # pip install .
+    ```
+
+## Usage
+
+### Basic Feature Selection
+
+```python
+import pandas as pd
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from pyrobustfs.selectors import RobustMRMRSelector
+
+# Generate synthetic classification data
+X, y = make_classification(n_samples=1000, n_features=50, n_informative=10, n_redundant=5, random_state=42)
+X = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Initialize and fit the selector
+# Select 5 features using 10 ensemble runs for a classification task
+selector = RobustMRMRSelector(n_features_to_select=5, n_ensembles=10, classification=True, random_state=42)
+selector.fit(X_train, y_train)
+
+# Get the names of the selected features
+selected_features = selector.get_feature_names_out()
+print(f"Selected features: {selected_features}")
+
+# Transform the data to keep only the selected features
+X_train_selected = selector.transform(X_train)
+X_test_selected = selector.transform(X_test)
+
+print(f"Original X_train shape: {X_train.shape}")
+print(f"Transformed X_train shape: {X_train_selected.shape}")
+```
+
+### Using with a Refiner Estimator
+
+You can provide an optional `refiner_estimator` for a second stage of feature selection. This is useful for model-specific refinement.
+
+```python
+import pandas as pd
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.feature_selection import RFE # Recursive Feature Elimination
+from pyrobustfs.selectors import RobustMRMRSelector
+
+# Generate synthetic classification data
+X, y = make_classification(n_samples=1000, n_features=50, n_informative=10, n_redundant=5, random_state=42)
+X = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Define a refiner estimator (e.g., RFE with Logistic Regression)
+# The refiner will operate on the features pre-selected by the ensemble mRMR.
+refiner = RFE(estimator=LogisticRegression(solver='liblinear', random_state=42), n_features_to_select=3)
+
+# Initialize RobustMRMRSelector with the refiner
+selector_with_refiner = RobustMRMRSelector(
+    n_features_to_select=5, # This is the target for ensemble mRMR, refiner might override
+    n_ensembles=10,
+    refiner_estimator=refiner,
+    classification=True,
+    random_state=42
+)
+
+selector_with_refiner.fit(X_train, y_train)
+selected_features_refiner = selector_with_refiner.get_feature_names_out()
+print(f"Selected features (with refiner): {selected_features_refiner}")
+print(f"Number of features selected by refiner: {len(selected_features_refiner)}")
+
+# Transform data
+X_train_refined = selector_with_refiner.transform(X_train)
+print(f"Transformed X_train shape (with refiner): {X_train_refined.shape}")
+```
+
+### Integrating into a Scikit-learn Pipeline
+
+`RobustMRMRSelector` can be seamlessly integrated into a scikit-learn `Pipeline`.
+
+```python
+import pandas as pd
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from pyrobustfs.selectors import RobustMRMRSelector
+
+# Generate synthetic data
+X, y = make_classification(n_samples=1000, n_features=50, n_informative=10, n_redundant=5, random_state=42)
+X = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Create a pipeline with feature selection and a classifier
+pipeline = Pipeline([
+    ('feature_selection', RobustMRMRSelector(n_features_to_select=5, n_ensembles=10, classification=True, random_state=42)),
+    ('classifier', LogisticRegression(solver='liblinear', random_state=42))
+])
+
+# Fit the pipeline
+pipeline.fit(X_train, y_train)
+
+# Evaluate the pipeline
+accuracy = pipeline.score(X_test, y_test)
+print(f"Pipeline accuracy: {accuracy:.4f}")
+
+# Access selected features from the pipeline step
+selected_features_pipeline = pipeline.named_steps['feature_selection'].get_feature_names_out()
+print(f"Selected features from pipeline: {selected_features_pipeline}")
+```
+
+## Development
+
+To contribute or run tests, clone the repository and install in editable mode:
+
+```bash
+git clone https://github.com/yourusername/pyrobustfs.git
+cd pyrobustfs
+pip install -e .
+pip install pytest
+pytest
+```
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.

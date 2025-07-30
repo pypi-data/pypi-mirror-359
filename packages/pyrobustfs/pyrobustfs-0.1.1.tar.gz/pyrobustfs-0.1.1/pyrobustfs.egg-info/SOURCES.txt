@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+pyrobustfs/__init__.py
+pyrobustfs/selectors.py
+pyrobustfs.egg-info/PKG-INFO
+pyrobustfs.egg-info/SOURCES.txt
+pyrobustfs.egg-info/dependency_links.txt
+pyrobustfs.egg-info/requires.txt
+pyrobustfs.egg-info/top_level.txt
+tests/test_selectors.py
