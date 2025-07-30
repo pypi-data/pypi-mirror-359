@@ -1,0 +1,10 @@
+crested
+loguru
+numpy
+pandas
+pyranges
+torch
+modisco-lite
+
+[dev]
+pytest
