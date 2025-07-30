@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: OBPlanner
+Version: 0.0.2
+Summary: A path planning tool for Open Beam Path (OBP) files.
+Author-email: Anton Wiberg <wiberg.anton@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/wiberganton/OBPlanner
+Project-URL: Repository, https://github.com/wiberganton/OBPlanner
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: obplib
+Requires-Dist: py3mf_slicer
+Requires-Dist: numpy
+Requires-Dist: pyvista
+Requires-Dist: shapely
+Requires-Dist: rasterio
+Requires-Dist: scipy
+Requires-Dist: opencv-python
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: pytest
+Requires-Dist: scikit-image
+Dynamic: license-file
+
+# OBPlanner 
