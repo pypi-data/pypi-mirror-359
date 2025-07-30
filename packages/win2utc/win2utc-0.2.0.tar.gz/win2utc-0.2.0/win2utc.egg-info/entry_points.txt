@@ -1,0 +1,2 @@
+[console_scripts]
+win2utc = win2utc.cli:main
