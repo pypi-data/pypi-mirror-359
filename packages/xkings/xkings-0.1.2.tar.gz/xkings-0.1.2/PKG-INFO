@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: xkings
+Version: 0.1.2
+Summary: Ein einfacher Ersatz für print() namens hs
+Author-email: Florian <deine-email@example.com>
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# xkings
+
+Deine coole Python-Library, die das Drucken noch einfacher macht!
+
+## Installation
+
+```bash
+pip install .
