@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blownotes"
+version = "0.1.2"
+description = "Extraia notas dominantes de um áudio (.wav, .mp3, etc) com precisão RMS ou por regiões ativas."
+readme = "README.md"
+authors = [
+  { name = "I. Zanoth", email = "ivanzanoth@gmail.com" }
+]
+license = {text = "MIT"}
+dependencies = [
+  "librosa",
+  "numpy"
+]
+
+[project.urls]
+Homepage = "https://zanoth.vercel.app"
+
+[project.scripts]
+blownotes = "blownotes.__main__:main"
