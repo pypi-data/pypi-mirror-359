@@ -1,0 +1,8 @@
+README.md
+setup.py
+mygeniuspackage/__init__.py
+mygeniuspackage/show_data.py
+mygeniuspackage.egg-info/PKG-INFO
+mygeniuspackage.egg-info/SOURCES.txt
+mygeniuspackage.egg-info/dependency_links.txt
+mygeniuspackage.egg-info/top_level.txt
