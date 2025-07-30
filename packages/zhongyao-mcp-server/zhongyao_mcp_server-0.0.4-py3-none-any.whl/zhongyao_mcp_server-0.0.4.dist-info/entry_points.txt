@@ -1,0 +1,3 @@
+[console_scripts]
+zhongyao-mcp-server = zhongyao_mcp_server.zhongyao_mcp_server:main
+zhongyao-mcp-server-sse = zhongyao_mcp_server.zhongyao_mcp_server_sse:main
