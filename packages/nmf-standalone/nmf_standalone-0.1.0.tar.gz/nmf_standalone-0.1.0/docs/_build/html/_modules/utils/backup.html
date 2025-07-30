@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils.backup &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">utils.backup</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for utils.backup</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># --- Helper Functions for Adapted Co-occurrence ---</span>
+
+
+<div class="viewcode-block" id="p_word_pair">
+<a class="viewcode-back" href="../../utils.backup.html#utils.backup.p_word_pair">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">p_word_pair</span><span class="p">(</span><span class="n">word1</span><span class="p">,</span><span class="n">word2</span><span class="p">,</span><span class="n">documents</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word pair in a document</span>
+<span class="sd">    P(w1,w2) = D(w1,w2) / N</span>
+<span class="sd">    D(w1,w2) = number of documents containing both word1 and word2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">D_w1_w2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span> <span class="k">if</span> <span class="n">word1</span> <span class="ow">in</span> <span class="n">doc</span> <span class="ow">and</span> <span class="n">word2</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">D_w1_w2</span> <span class="o">/</span> <span class="n">N</span></div>
+
+
+
+<div class="viewcode-block" id="p_word">
+<a class="viewcode-back" href="../../utils.backup.html#utils.backup.p_word">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">p_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">documents</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word in a document</span>
+<span class="sd">    P(w) = D(w) / N</span>
+<span class="sd">    D(w) = number of documents containing word w</span>
+<span class="sd">    N = total number of documents</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">D_w</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">D_w</span> <span class="o">/</span> <span class="n">N</span></div>
+
+
+<div class="viewcode-block" id="pmi">
+<a class="viewcode-back" href="../../utils.backup.html#utils.backup.pmi">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pmi</span><span class="p">(</span><span class="n">word1</span><span class="p">,</span><span class="n">word2</span><span class="p">,</span><span class="n">documents</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word pair in a document</span>
+<span class="sd">    P(w1,w2) = D(w1,w2) / N</span>
+<span class="sd">    D(w1,w2) = number of documents containing both word1 and word2</span>
+<span class="sd">    PMI(w1,w2) = log(P(w1,w2) / (P(w1) * P(w2)))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">p_word</span><span class="p">(</span><span class="n">word1</span><span class="p">,</span><span class="n">documents</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">p_word</span><span class="p">(</span><span class="n">word2</span><span class="p">,</span><span class="n">documents</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">p1</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">p2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;zero_division_error&quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">p_word_pair</span><span class="p">(</span><span class="n">word1</span><span class="p">,</span><span class="n">word2</span><span class="p">,</span><span class="n">documents</span><span class="p">)</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="c_uci">
+<a class="viewcode-back" href="../../utils.backup.html#utils.backup.c_uci">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">c_uci</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span><span class="n">topics_json</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the UCI coherence score for a topic</span>
+<span class="sd">    UCI(w1,w2) = 2 / (N * (N-1)) * sum_i sum_j PMI(w_i,w_j)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">total_topic_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">topics_json</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">total_topic_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: No topics found in the data.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">topic_coherences</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">total_coherence_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">valid_topics_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">topics_json</span><span class="p">)):</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="n">topics_json</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;topic_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+        <span class="n">word_combinations</span> <span class="o">=</span> <span class="n">combinations</span><span class="p">(</span><span class="n">topic</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">current_topic_pmi_sum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">word1</span><span class="p">,</span> <span class="n">word2</span> <span class="ow">in</span> <span class="n">word_combinations</span><span class="p">:</span>
+            <span class="n">pmi_val</span> <span class="o">=</span> <span class="n">pmi</span><span class="p">(</span><span class="n">word1</span><span class="p">,</span> <span class="n">word2</span><span class="p">,</span> <span class="n">documents</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pmi_val</span> <span class="o">==</span> <span class="s2">&quot;zero_division_error&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">current_topic_pmi_sum</span> <span class="o">+=</span> <span class="n">pmi_val</span>
+        <span class="n">topic_coherences</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;topic_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_coherence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_topic_pmi_sum</span> <span class="o">/</span> <span class="n">N</span>
+        <span class="n">total_coherence_sum</span> <span class="o">+=</span> <span class="n">topic_coherences</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;topic_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_coherence&quot;</span><span class="p">]</span>
+        <span class="n">valid_topics_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">average_coherence</span> <span class="o">=</span> <span class="n">total_coherence_sum</span> <span class="o">/</span> <span class="n">valid_topics_count</span> <span class="k">if</span> <span class="n">valid_topics_count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">:</span> <span class="n">topic_coherences</span><span class="p">,</span> <span class="s2">&quot;average_coherence&quot;</span><span class="p">:</span> <span class="n">average_coherence</span><span class="p">}</span></div>
+
+
+
+
+
+<span class="c1"># --- Example Usage ---</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Example JSON data as a string</span>
+    <span class="c1"># Simulating a scenario where words co-occur across topics</span>
+    <span class="n">example_topics_json</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;topic_0&quot;: {</span>
+<span class="s2">        &quot;apple&quot;: 0.5,</span>
+<span class="s2">        &quot;banana&quot;: 0.4,</span>
+<span class="s2">        &quot;fruit&quot;: 0.6,</span>
+<span class="s2">        &quot;healthy&quot;: 0.3</span>
+<span class="s2">      },</span>
+<span class="s2">      &quot;topic_1&quot;: {</span>
+<span class="s2">        &quot;banana&quot;: 0.7,</span>
+<span class="s2">        &quot;fruit&quot;: 0.5,</span>
+<span class="s2">        &quot;healthy&quot;: 0.8,</span>
+<span class="s2">        &quot;smoothie&quot;: 0.6</span>
+<span class="s2">      },</span>
+<span class="s2">      &quot;topic_2&quot;: {</span>
+<span class="s2">        &quot;car&quot;: 0.9,</span>
+<span class="s2">        &quot;road&quot;: 0.8,</span>
+<span class="s2">        &quot;travel&quot;: 0.7</span>
+<span class="s2">      },</span>
+<span class="s2">      &quot;topic_3&quot;: {</span>
+<span class="s2">        &quot;apple&quot;: 0.6,</span>
+<span class="s2">        &quot;fruit&quot;: 0.7,</span>
+<span class="s2">        &quot;pie&quot;: 0.5</span>
+<span class="s2">      }</span>
+<span class="s2">    }</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Calculating C_uci ---&quot;</span><span class="p">)</span>
+    <span class="n">total_topics</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">))</span>
+    <span class="n">imp_results</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topic </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">)[</span><span class="n">topic</span><span class="p">])</span><span class="si">}</span><span class="s2"> words.&quot;</span><span class="p">)</span>
+        <span class="n">imp_results</span><span class="p">[</span><span class="n">topic</span><span class="p">]</span> <span class="o">=</span> <span class="n">c_uci</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">)[</span><span class="n">topic</span><span class="p">],</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">imp_results</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">imp_results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_uci Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">imp_results</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_uci Coherence:&quot;</span><span class="p">,</span> <span class="n">imp_results</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Calculating C_npmi ---&quot;</span><span class="p">)</span>
+    <span class="n">c_npmi_results</span> <span class="o">=</span> <span class="n">calculate_c_npmi</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">c_npmi_results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_npmi Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c_npmi_results</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_npmi Coherence:&quot;</span><span class="p">,</span> <span class="n">c_npmi_results</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Calculating C_umass ---&quot;</span><span class="p">)</span>
+    <span class="n">c_umass_results</span> <span class="o">=</span> <span class="n">calculate_c_umass</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">c_umass_results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_umass Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c_umass_results</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_umass Coherence:&quot;</span><span class="p">,</span> <span class="n">c_umass_results</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Calculating C_v ---&quot;</span><span class="p">)</span>
+    <span class="n">c_v_results</span> <span class="o">=</span> <span class="n">calculate_c_v</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example_topics_json</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">c_v_results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_v Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c_v_results</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_v Coherence:&quot;</span><span class="p">,</span> <span class="n">c_v_results</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Example with a single topic (some scores might be 0 or behave differently)</span>
+    <span class="n">single_topic_json</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;topic_0&quot;: {</span>
+<span class="s2">        &quot;computer&quot;: 0.8,</span>
+<span class="s2">        &quot;science&quot;: 0.7,</span>
+<span class="s2">        &quot;code&quot;: 0.9</span>
+<span class="s2">      }</span>
+<span class="s2">    }</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Single Topic Example (C_npmi) ---&quot;</span><span class="p">)</span>
+    <span class="c1"># For a single topic, D(w) and D(w1,w2) will be 1 if present, N=1.</span>
+    <span class="c1"># P(w) = 1, P(w1,w2) = 1.</span>
+    <span class="c1"># PMI = log(1/(1*1)) = 0. NPMI = 0 / -log(1) -&gt; undefined or handled as 0 or 1.</span>
+    <span class="c1"># The _calculate_corpus_statistics will reflect this.</span>
+    <span class="c1"># D(w1)=1, D(w2)=1, D(w1,w2)=1. N=1.</span>
+    <span class="c1"># prob_w1 = 1, prob_w2 = 1, prob_w1_w2 = 1.</span>
+    <span class="c1"># NPMI will be tricky, as -log(prob_w1_w2) would be -log(1) = 0.</span>
+    <span class="c1"># This is an edge case of the adapted statistics.</span>
+    <span class="c1"># Gensim handles NPMI when P(u,v)=1 and P(u)=1, P(v)=1 to be 1.0 (for C_V).</span>
+    <span class="c1"># My NPMI calculation for this case (prob_w1_w2 == 1.0) gives npmi = 1.0.</span>
+    <span class="n">c_npmi_single</span> <span class="o">=</span> <span class="n">calculate_c_npmi</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">single_topic_json</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">c_npmi_single</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_npmi Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c_npmi_single</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_npmi Coherence:&quot;</span><span class="p">,</span> <span class="n">c_npmi_single</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Example with words that don&#39;t co-occur</span>
+    <span class="n">no_cooccurrence_json</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;topic_0&quot;: {&quot;cat&quot;: 1.0, &quot;dog&quot;: 1.0},</span>
+<span class="s2">      &quot;topic_1&quot;: {&quot;fish&quot;: 1.0, &quot;bird&quot;: 1.0}</span>
+<span class="s2">    }</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="c1"># Here, (&quot;cat&quot;, &quot;dog&quot;) co-occur in topic_0. D(&quot;cat&quot;,&quot;dog&quot;)=1.</span>
+    <span class="c1"># D(&quot;cat&quot;)=1, D(&quot;dog&quot;)=1, D(&quot;fish&quot;)=1, D(&quot;bird&quot;)=1. N=2.</span>
+    <span class="c1"># P(&quot;cat&quot;,&quot;dog&quot;) = 1/2. P(&quot;cat&quot;)=1/2, P(&quot;dog&quot;)=1/2.</span>
+    <span class="c1"># PMI(&quot;cat&quot;,&quot;dog&quot;) = log( (1/2) / (1/2 * 1/2) ) = log(2).</span>
+    <span class="c1"># NPMI(&quot;cat&quot;,&quot;dog&quot;) = log(2) / -log(1/2) = log(2) / log(2) = 1.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- No Global Co-occurrence Example (C_npmi) ---&quot;</span><span class="p">)</span>
+    <span class="n">c_npmi_no_co</span> <span class="o">=</span> <span class="n">calculate_c_npmi</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">no_cooccurrence_json</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">c_npmi_no_co</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic C_npmi Coherences:&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c_npmi_no_co</span><span class="p">[</span><span class="s2">&quot;topic_coherences&quot;</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average C_npmi Coherence:&quot;</span><span class="p">,</span> <span class="n">c_npmi_no_co</span><span class="p">[</span><span class="s2">&quot;average_coherence&quot;</span><span class="p">])</span>
+
+<div class="viewcode-block" id="calculate_coherence_scores">
+<a class="viewcode-back" href="../../utils.backup.html#utils.backup.calculate_coherence_scores">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_coherence_scores</span><span class="p">(</span><span class="n">topic_word_scores</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate all coherence scores (UCI, NPMI, UMass, C_v) and optionally save them.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        topic_word_scores (dict): Dictionary of topics and their word scores</span>
+<span class="sd">        output_dir (str, optional): Directory to save the scores. If None, scores won&#39;t be saved</span>
+<span class="sd">        table_name (str, optional): Name of the table/analysis for file naming</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary containing all coherence scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculating coherence scores...&quot;</span><span class="p">)</span>
+    <span class="n">coherence_scores</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;c_uci&quot;</span><span class="p">:</span> <span class="n">calculate_c_uci</span><span class="p">(</span><span class="n">topic_word_scores</span><span class="p">),</span>
+        <span class="s2">&quot;c_npmi&quot;</span><span class="p">:</span> <span class="n">calculate_c_npmi</span><span class="p">(</span><span class="n">topic_word_scores</span><span class="p">),</span>
+        <span class="s2">&quot;c_umass&quot;</span><span class="p">:</span> <span class="n">calculate_c_umass</span><span class="p">(</span><span class="n">topic_word_scores</span><span class="p">),</span>
+        <span class="s2">&quot;c_v&quot;</span><span class="p">:</span> <span class="n">calculate_c_v</span><span class="p">(</span><span class="n">topic_word_scores</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Print coherence scores</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Coherence Scores:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">metric</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">coherence_scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">scores</span><span class="p">:</span>  <span class="c1"># Check if scores were calculated successfully</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;average_coherence&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Save coherence scores if output directory and table name are provided</span>
+    <span class="k">if</span> <span class="n">output_dir</span> <span class="ow">and</span> <span class="n">table_name</span><span class="p">:</span>
+        <span class="n">coherence_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2">_coherence_scores.json&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">coherence_file</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">coherence_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">coherence_scores</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coherence scores saved to:&quot;</span><span class="p">,</span> <span class="n">coherence_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">coherence_scores</span></div>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">import json</span>
+<span class="sd">import math</span>
+<span class="sd">import os</span>
+<span class="sd">from itertools import combinations</span>
+<span class="sd">from collections import defaultdict</span>
+<span class="sd">import numpy as np</span>
+
+<span class="sd"># --- Helper Functions for Adapted Co-occurrence ---</span>
+
+
+
+<span class="sd">def p_word_pair(word1,word2,documents):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word pair in a document</span>
+<span class="sd">    P(w1,w2) = D(w1,w2) / N</span>
+<span class="sd">    D(w1,w2) = number of documents containing both word1 and word2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    D_w1_w2 = sum(1 for doc in documents if word1 in doc and word2 in doc)</span>
+<span class="sd">    N = len(documents)</span>
+<span class="sd">    return D_w1_w2 / N</span>
+
+
+<span class="sd">def p_word(word,documents):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word in a document</span>
+<span class="sd">    P(w) = D(w) / N</span>
+<span class="sd">    D(w) = number of documents containing word w</span>
+<span class="sd">    N = total number of documents</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    D_w = sum(1 for doc in documents if word in doc)</span>
+<span class="sd">    N = len(documents)</span>
+<span class="sd">    return D_w / N</span>
+
+<span class="sd">def pmi(word1,word2,documents,epsilon=1e-9):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    Calculates the probability of a word pair in a document</span>
+<span class="sd">    P(w1,w2) = D(w1,w2) / N</span>
+<span class="sd">    D(w1,w2) = number of documents containing both word1 and word2</span>
+<span class="sd">    PMI(w1,w2) = log(P(w1,w2) / (P(w1) * P(w2)))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="sd">    p1 = p_word(word1,documents)</span>
+<span class="sd">    p2 = p_word(word2,documents)</span>
+<span class="sd">    if p1 == 0 or p2 == 0:</span>
+<span class="sd">        return &quot;zero_division_error&quot;</span>
+<span class="sd">    return math.log((p_word_pair(word1,word2,documents) + epsilon) / (p1 * p2))</span>
+
+
+<span class="sd">def c_uci(topics_json, documents=None, epsilon=1e-9):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    Calculates the UCI coherence score for topics</span>
+<span class="sd">    UCI(w1,w2) = 2 / (N * (N-1)) * sum_i sum_j PMI(w_i,w_j)</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        topics_json (dict): Dictionary containing topics and their word scores</span>
+<span class="sd">        documents (list, optional): List of documents for co-occurrence calculation. </span>
+<span class="sd">                                  If None, will use topics themselves as documents.</span>
+<span class="sd">        epsilon (float): Small value to prevent log(0)</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary containing topic coherences and average coherence</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    # If no documents provided, create pseudo-documents from topics</span>
+<span class="sd">    if documents is None:</span>
+<span class="sd">        documents = []</span>
+<span class="sd">        for topic_id, word_scores in topics_json.items():</span>
+<span class="sd">            # Create a document containing all words from this topic</span>
+<span class="sd">            doc = list(word_scores.keys())</span>
+<span class="sd">            documents.append(doc)</span>
+<span class="sd">    </span>
+<span class="sd">    total_topic_count = len(topics_json)</span>
+<span class="sd">    if total_topic_count == 0:</span>
+<span class="sd">        print(&quot;Error: No topics found in the data.&quot;)</span>
+<span class="sd">        return None</span>
+
+<span class="sd">    topic_coherences = {}</span>
+<span class="sd">    total_coherence_sum = 0</span>
+<span class="sd">    valid_topics_count = 0</span>
+<span class="sd">    </span>
+<span class="sd">    for topic_id, word_scores in topics_json.items():</span>
+<span class="sd">        # Sort words by their scores in descending order and take top words</span>
+<span class="sd">        sorted_words = sorted(word_scores.items(), key=lambda x: float(x[1]), reverse=True)</span>
+<span class="sd">        top_words = [word for word, _ in sorted_words]</span>
+<span class="sd">        </span>
+<span class="sd">        N = len(top_words)</span>
+<span class="sd">        if N &lt; 2:  # Need at least 2 words to calculate coherence</span>
+<span class="sd">            continue</span>
+<span class="sd">            </span>
+<span class="sd">        word_combinations = combinations(top_words, 2)</span>
+<span class="sd">        pmi_values = []</span>
+<span class="sd">        </span>
+<span class="sd">        for word1, word2 in word_combinations:</span>
+<span class="sd">            pmi_val = pmi(word1, word2, documents, epsilon)</span>
+<span class="sd">            if pmi_val != &quot;zero_division_error&quot;:</span>
+<span class="sd">                pmi_values.append(pmi_val)</span>
+<span class="sd">        </span>
+<span class="sd">        if pmi_values:  # Only calculate if we have valid PMI values</span>
+<span class="sd">            # Calculate UCI coherence for this topic</span>
+<span class="sd">            topic_coherence = 2 * sum(pmi_values) / (N * (N - 1))</span>
+<span class="sd">            topic_coherences[f&quot;{topic_id}_coherence&quot;] = topic_coherence</span>
+<span class="sd">            total_coherence_sum += topic_coherence</span>
+<span class="sd">            valid_topics_count += 1</span>
+
+<span class="sd">    average_coherence = total_coherence_sum / valid_topics_count if valid_topics_count &gt; 0 else 0.0</span>
+<span class="sd">    return {</span>
+<span class="sd">        &quot;topic_coherences&quot;: topic_coherences, </span>
+<span class="sd">        &quot;average_coherence&quot;: average_coherence</span>
+<span class="sd">    }</span>
+
+
+
+
+<span class="sd"># --- Example Usage ---</span>
+<span class="sd">if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">    # Load the example wordcloud scores</span>
+<span class="sd">    with open(&#39;../Output/FINDINGS_pnmf/FINDINGS_pnmf_wordcloud_scores.json&#39;, &#39;r&#39;) as f:</span>
+<span class="sd">        wordcloud_scores = json.load(f)</span>
+<span class="sd">    </span>
+<span class="sd">    # Calculate coherence scores</span>
+<span class="sd">    coherence_results = c_uci(wordcloud_scores)</span>
+<span class="sd">    print(&quot;\n--- UCI Coherence Scores ---&quot;)</span>
+<span class="sd">    print(f&quot;Average Coherence: {coherence_results[&#39;average_coherence&#39;]:.4f}&quot;)</span>
+<span class="sd">    print(&quot;\nPer-topic Coherence Scores:&quot;)</span>
+<span class="sd">    for topic, score in coherence_results[&#39;topic_coherences&#39;].items():</span>
+<span class="sd">        print(f&quot;{topic}: {score:.4f}&quot;)</span>
+
+<span class="sd">def calculate_coherence_scores(topic_word_scores, output_dir=None, table_name=None):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    Calculate coherence scores (UCI) and optionally save them.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        topic_word_scores (dict): Dictionary of topics and their word scores</span>
+<span class="sd">        output_dir (str, optional): Directory to save the scores. If None, scores won&#39;t be saved</span>
+<span class="sd">        table_name (str, optional): Name of the table/analysis for file naming</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary containing coherence scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    print(&quot;Calculating coherence scores...&quot;)</span>
+<span class="sd">    </span>
+<span class="sd">    # Calculate UCI coherence</span>
+<span class="sd">    coherence_scores = c_uci(topic_word_scores)</span>
+<span class="sd">    </span>
+<span class="sd">    # Print coherence scores</span>
+<span class="sd">    print(&quot;\nCoherence Scores:&quot;)</span>
+<span class="sd">    print(f&quot;UCI Average Coherence: {coherence_scores[&#39;average_coherence&#39;]:.4f}&quot;)</span>
+<span class="sd">    print(&quot;\nPer-topic Coherence Scores:&quot;)</span>
+<span class="sd">    for topic, score in coherence_scores[&#39;topic_coherences&#39;].items():</span>
+<span class="sd">        print(f&quot;{topic}: {score:.4f}&quot;)</span>
+
+<span class="sd">    # Save coherence scores if output directory and table name are provided</span>
+<span class="sd">    if output_dir and table_name:</span>
+<span class="sd">        coherence_file = os.path.join(output_dir, f&quot;{table_name}_coherence_scores.json&quot;)</span>
+<span class="sd">        os.makedirs(os.path.dirname(coherence_file), exist_ok=True)</span>
+<span class="sd">        with open(coherence_file, &quot;w&quot;) as f:</span>
+<span class="sd">            json.dump(coherence_scores, f, indent=4)</span>
+<span class="sd">        print(f&quot;\nCoherence scores saved to: {coherence_file}&quot;)</span>
+
+<span class="sd">    return coherence_scores</span>
+
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

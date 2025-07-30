@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>functions.english.topics &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">functions.english.topics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for functions.english.topics</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.save_topics_db</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_topics_to_db</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.image_to_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">image_to_base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wordcloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">WordCloud</span>
+
+<div class="viewcode-block" id="get_topic_names_out">
+<a class="viewcode-back" href="../../../functions.english.topics.html#functions.english.topics.get_topic_names_out">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_topic_names_out</span><span class="p">(</span><span class="n">data_frame_name</span><span class="p">,</span> <span class="n">num_of_topics</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">sozluk</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">word_per_topic</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">topics_db_eng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">H</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">gen_cloud</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract topics and their top words from NMF H matrix, optionally generate word clouds and save to database.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        data_frame_name (str): Name of the dataset</span>
+<span class="sd">        num_of_topics (int): Number of topics to extract</span>
+<span class="sd">        sozluk (List[str]): List of words in vocabulary</span>
+<span class="sd">        word_per_topic (int): Number of top words to extract per topic</span>
+<span class="sd">        topics_db_eng: SQLAlchemy engine for database connection (optional)</span>
+<span class="sd">        H: Topic-word matrix from NMF (numpy array or sparse matrix)</span>
+<span class="sd">        gen_cloud (bool): Whether to generate word clouds</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary mapping topic names to lists of top words with scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create a dictionary to store topics and their words</span>
+    <span class="n">topics_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># No need to convert sozluk since it&#39;s already a list</span>
+    <span class="n">vocab_list</span> <span class="o">=</span> <span class="n">sozluk</span>
+
+    <span class="c1"># For each topic</span>
+    <span class="k">for</span> <span class="n">topic_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_of_topics</span><span class="p">):</span>
+        <span class="n">topic_name</span> <span class="o">=</span> <span class="s1">&#39;Konu &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">{:02d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">topic_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Get the word weights for this topic</span>
+        <span class="n">topic_weights</span> <span class="o">=</span> <span class="n">H</span><span class="p">[</span><span class="n">topic_idx</span><span class="p">]</span>
+
+        <span class="c1"># Get indices of top words sorted by weight</span>
+        <span class="n">top_word_indices</span> <span class="o">=</span> <span class="n">topic_weights</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">word_per_topic</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="c1"># Create word:score pairs</span>
+        <span class="n">topic_words</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">top_word_indices</span><span class="p">:</span>
+            <span class="n">word</span> <span class="o">=</span> <span class="n">vocab_list</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="c1"># Remove &quot;##&quot; prefix if it exists</span>
+            <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;##&quot;</span><span class="p">):</span>
+                <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">topic_weights</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+            <span class="n">topic_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">topics_data</span><span class="p">[</span><span class="n">topic_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">topic_words</span>
+
+    <span class="k">if</span> <span class="n">gen_cloud</span><span class="p">:</span>
+        <span class="c1"># Create table-specific subdirectory under Output folder</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="c1"># Go up two levels to get to the project root, then into Output</span>
+        <span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+        <span class="n">table_output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">data_frame_name</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">table_output_dir</span><span class="o">+</span><span class="s2">&quot;/wordclouds&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># generate wordcloud for each topic</span>
+        <span class="n">wordclouds</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">topic_name</span><span class="p">,</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">topics_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Remove scores for wordcloud generation</span>
+            <span class="n">words_only</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+            <span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words_only</span><span class="p">))</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">wordcloud</span><span class="o">.</span><span class="n">to_image</span><span class="p">()</span>
+
+            <span class="n">wordclouds</span><span class="p">[</span><span class="n">topic_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">wordcloud</span>
+            <span class="c1"># Save wordcloud image to table-specific subdirectory</span>
+            <span class="n">wordcloud</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table_output_dir</span><span class="si">}</span><span class="s2">/wordclouds/</span><span class="si">{</span><span class="n">topic_name</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+            <span class="c1"># Convert wordcloud to base64 string</span>
+            <span class="c1">#wordcloud_base64 = image_to_base64(wordcloud)</span>
+
+    <span class="c1"># Save to database if engine is provided</span>
+    <span class="k">if</span> <span class="n">topics_db_eng</span><span class="p">:</span>
+        <span class="n">save_topics_to_db</span><span class="p">(</span><span class="n">topics_data</span><span class="p">,</span> <span class="n">data_frame_name</span><span class="p">,</span> <span class="n">topics_db_eng</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: No database engine provided, skipping database save&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">topics_data</span></div>
+
+
+
+<span class="sd">&#39;&#39;&#39;def get_topic_names_out(data_frame_name,model, num_of_topics: int, sozluk: List[str], word_per_topic: int, topics_db_eng=None) -&gt; dict:</span>
+<span class="sd">    # Create a dictionary to store topics and their words</span>
+<span class="sd">    topics_data = {}</span>
+
+<span class="sd">    # For each topic</span>
+<span class="sd">    for i in range(num_of_topics):</span>
+<span class="sd">        topic_name = &#39;Konu &#39; + &#39;{:02d}&#39;.format(i + 1)</span>
+<span class="sd">        # Get the top words and their values</span>
+<span class="sd">        words_ids = model.components_[i].argsort()[:-word_per_topic - 1:-1]</span>
+<span class="sd">        words = [sozluk[key] for key in words_ids]</span>
+<span class="sd">        values = [model.components_[i][key] for key in words_ids]</span>
+
+<span class="sd">        # Store the word-value pairs for this topic</span>
+<span class="sd">        topics_data[topic_name] = [f&quot;{word}:{value:.8f}&quot; for word, value in zip(words, values)]</span>
+
+<span class="sd">    # Create a DataFrame where each column is a topic and each row contains one word:value pair</span>
+<span class="sd">    max_words = max(len(words) for words in topics_data.values())</span>
+<span class="sd">    df_data = {topic: words + [None] * (max_words - len(words))</span>
+<span class="sd">              for topic, words in topics_data.items()}</span>
+
+<span class="sd">    df = pd.DataFrame(df_data)</span>
+
+<span class="sd">    # Save to database if engine is provided</span>
+<span class="sd">    if topics_db_eng:</span>
+<span class="sd">        table_name = f&quot;{data_frame_name}_topics&quot;</span>
+<span class="sd">        df.to_sql(table_name, topics_db_eng, if_exists=&#39;replace&#39;, index=False)</span>
+<span class="sd">    else:</span>
+<span class="sd">        print(&quot;Warning: No database engine provided, skipping database save&quot;)</span>
+
+<span class="sd">    return topics_data</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

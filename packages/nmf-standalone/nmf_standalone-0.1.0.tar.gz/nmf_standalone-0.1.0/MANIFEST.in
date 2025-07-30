@@ -1,0 +1,14 @@
+include README.md
+include LICENSE
+include CLAUDE.md
+include requirements.txt
+recursive-include functions *.py
+recursive-include utils *.py
+recursive-include docs *
+exclude-global __pycache__
+exclude-global *.py[co]
+exclude-global .DS_Store
+prune Output
+prune instance
+prune veri_setleri
+prune webapp

@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Pipeline Module &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Main Pipeline Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/standalone_nmf.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="main-pipeline-module">
+<h1>Main Pipeline Module<a class="headerlink" href="#main-pipeline-module" title="Link to this heading"></a></h1>
+<dl class="py function" id="module-standalone_nmf">
+<dt class="sig sig-object py" id="standalone_nmf.process_turkish_file">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_turkish_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_turkish_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#standalone_nmf.process_turkish_file" title="Link to this definition"></a></dt>
+<dd><p>Process Turkish text data through the complete preprocessing pipeline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – Input dataframe containing Turkish text</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text to analyze</p></li>
+<li><p><strong>tokenizer</strong> (<em>optional</em>) – Pre-trained tokenizer object</p></li>
+<li><p><strong>tokenizer_type</strong> (<em>str</em>) – Either “bpe” or “wordpiece”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(tdm, sozluk, sayisal_veri, tokenizer)</dt><dd><ul class="simple">
+<li><p>tdm: TF-IDF document-term matrix</p></li>
+<li><p>sozluk: Vocabulary list</p></li>
+<li><p>sayisal_veri: Numerical representation of documents</p></li>
+<li><p>tokenizer: Trained tokenizer object</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="standalone_nmf.process_english_file">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_english_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lemmatize</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_english_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#standalone_nmf.process_english_file" title="Link to this definition"></a></dt>
+<dd><p>Process English text data with lemmatization and dictionary-based approaches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – Input dataframe containing English text</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text to analyze</p></li>
+<li><p><strong>lemmatize</strong> (<em>bool</em>) – Whether to apply lemmatization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(tdm, sozluk, sayisal_veri)</dt><dd><ul class="simple">
+<li><p>tdm: TF-IDF document-term matrix (same as sayisal_veri)</p></li>
+<li><p>sozluk: Dictionary/vocabulary of terms</p></li>
+<li><p>sayisal_veri: TF-IDF weighted document-term matrix</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="standalone_nmf.process_file">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#standalone_nmf.process_file" title="Link to this definition"></a></dt>
+<dd><p>Complete topic modeling pipeline from file input to results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to input CSV/Excel file</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Unique identifier for this analysis run</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text data</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Configuration dictionary containing:
+- LANGUAGE (str): “TR” for Turkish, “EN” for English
+- DESIRED_TOPIC_COUNT (int): Number of topics to extract
+- N_TOPICS (int): Number of top words per topic to display
+- tokenizer_type (str): “bpe” or “wordpiece” for Turkish
+- nmf_type (str): “nmf” or “opnmf” algorithm choice
+- LEMMATIZE (bool): Enable lemmatization (mainly for English)
+- gen_topic_distribution (bool): Generate topic distribution plots
+- gen_cloud (bool): Generate word clouds
+- save_excel (bool): Export results to Excel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Results containing:</dt><dd><ul class="simple">
+<li><p>state: “SUCCESS” or “FAILURE”</p></li>
+<li><p>message: Status message</p></li>
+<li><p>data_name: Analysis identifier</p></li>
+<li><p>topic_word_scores: Topic-word associations</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="standalone_nmf.run_standalone_nmf">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">run_standalone_nmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#run_standalone_nmf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#standalone_nmf.run_standalone_nmf" title="Link to this definition"></a></dt>
+<dd><p>Simplified entry point for NMF topic modeling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to input file</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Analysis identifier</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Text column name</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Configuration dictionary containing:
+- LEMMATIZE (bool): Enable lemmatization
+- N_TOPICS (int): Words per topic
+- DESIRED_TOPIC_COUNT (int): Number of topics to extract
+- tokenizer_type (str): “bpe” or “wordpiece” for Turkish
+- nmf_type (str): “nmf” or “opnmf” algorithm choice
+- LANGUAGE (str): “TR” for Turkish, “EN” for English
+- separator (str): CSV separator character
+- gen_topic_distribution (bool): Generate distribution plots</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Process results with timing information</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="core-functions">
+<h2>Core Functions<a class="headerlink" href="#core-functions" title="Link to this heading"></a></h2>
+<p>The main module provides the primary entry points for the NMF topic modeling pipeline:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">run_standalone_nmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#run_standalone_nmf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Simplified entry point for NMF topic modeling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to input file</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Analysis identifier</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Text column name</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Configuration dictionary containing:
+- LEMMATIZE (bool): Enable lemmatization
+- N_TOPICS (int): Words per topic
+- DESIRED_TOPIC_COUNT (int): Number of topics to extract
+- tokenizer_type (str): “bpe” or “wordpiece” for Turkish
+- nmf_type (str): “nmf” or “opnmf” algorithm choice
+- LANGUAGE (str): “TR” for Turkish, “EN” for English
+- separator (str): CSV separator character
+- gen_topic_distribution (bool): Generate distribution plots</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Process results with timing information</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Complete topic modeling pipeline from file input to results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to input CSV/Excel file</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – Unique identifier for this analysis run</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text data</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Configuration dictionary containing:
+- LANGUAGE (str): “TR” for Turkish, “EN” for English
+- DESIRED_TOPIC_COUNT (int): Number of topics to extract
+- N_TOPICS (int): Number of top words per topic to display
+- tokenizer_type (str): “bpe” or “wordpiece” for Turkish
+- nmf_type (str): “nmf” or “opnmf” algorithm choice
+- LEMMATIZE (bool): Enable lemmatization (mainly for English)
+- gen_topic_distribution (bool): Generate topic distribution plots
+- gen_cloud (bool): Generate word clouds
+- save_excel (bool): Export results to Excel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Results containing:</dt><dd><ul class="simple">
+<li><p>state: “SUCCESS” or “FAILURE”</p></li>
+<li><p>message: Status message</p></li>
+<li><p>data_name: Analysis identifier</p></li>
+<li><p>topic_word_scores: Topic-word associations</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="language-specific-processing">
+<h2>Language-Specific Processing<a class="headerlink" href="#language-specific-processing" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_turkish_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_turkish_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Process Turkish text data through the complete preprocessing pipeline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – Input dataframe containing Turkish text</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text to analyze</p></li>
+<li><p><strong>tokenizer</strong> (<em>optional</em>) – Pre-trained tokenizer object</p></li>
+<li><p><strong>tokenizer_type</strong> (<em>str</em>) – Either “bpe” or “wordpiece”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(tdm, sozluk, sayisal_veri, tokenizer)</dt><dd><ul class="simple">
+<li><p>tdm: TF-IDF document-term matrix</p></li>
+<li><p>sozluk: Vocabulary list</p></li>
+<li><p>sayisal_veri: Numerical representation of documents</p></li>
+<li><p>tokenizer: Trained tokenizer object</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">standalone_nmf.</span></span><span class="sig-name descname"><span class="pre">process_english_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lemmatize</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/standalone_nmf.html#process_english_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Process English text data with lemmatization and dictionary-based approaches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – Input dataframe containing English text</p></li>
+<li><p><strong>desired_columns</strong> (<em>str</em>) – Column name containing text to analyze</p></li>
+<li><p><strong>lemmatize</strong> (<em>bool</em>) – Whether to apply lemmatization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(tdm, sozluk, sayisal_veri)</dt><dd><ul class="simple">
+<li><p>tdm: TF-IDF document-term matrix (same as sayisal_veri)</p></li>
+<li><p>sozluk: Dictionary/vocabulary of terms</p></li>
+<li><p>sayisal_veri: TF-IDF weighted document-term matrix</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

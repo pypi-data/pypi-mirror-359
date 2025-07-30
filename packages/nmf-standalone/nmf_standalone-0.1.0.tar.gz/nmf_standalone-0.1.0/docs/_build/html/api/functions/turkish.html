@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turkish Text Processing &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Turkish Text Processing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/functions/turkish.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="turkish-text-processing">
+<h1>Turkish Text Processing<a class="headerlink" href="#turkish-text-processing" title="Link to this heading"></a></h1>
+<p>This module provides specialized functions for processing Turkish text, including text cleaning, tokenization, and TF-IDF generation.</p>
+<section id="module-functions.turkish.temizle">
+<span id="text-cleaning"></span><h2>Text Cleaning<a class="headerlink" href="#module-functions.turkish.temizle" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="functions.turkish.temizle.TurkishStr">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">functions.turkish.temizle.</span></span><span class="sig-name descname"><span class="pre">TurkishStr</span></span><a class="reference internal" href="../../_modules/functions/turkish/temizle.html#TurkishStr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.temizle.TurkishStr" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="functions.turkish.temizle.TurkishStr.lang">
+<span class="sig-name descname"><span class="pre">lang</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tr'</span></em><a class="headerlink" href="#functions.turkish.temizle.TurkishStr.lang" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="functions.turkish.temizle.TurkishStr.lower">
+<span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/temizle.html#TurkishStr.lower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.temizle.TurkishStr.lower" title="Link to this definition"></a></dt>
+<dd><p>Convert Turkish string to lowercase with proper Turkish character handling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lowercase version of the string with Turkish-specific conversions</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../../functions.turkish.temizle.html#functions.turkish.temizle.TurkishStr" title="functions.turkish.temizle.TurkishStr">TurkishStr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="functions.turkish.temizle.TurkishStr.upper">
+<span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/temizle.html#TurkishStr.upper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.temizle.TurkishStr.upper" title="Link to this definition"></a></dt>
+<dd><p>Convert Turkish string to uppercase with proper Turkish character handling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Uppercase version of the string with Turkish-specific conversions</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../../functions.turkish.temizle.html#functions.turkish.temizle.TurkishStr" title="functions.turkish.temizle.TurkishStr">TurkishStr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.temizle.process_text">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.temizle.</span></span><span class="sig-name descname"><span class="pre">process_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/temizle.html#process_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.temizle.process_text" title="Link to this definition"></a></dt>
+<dd><p>Temizleme işlemi, metindeki özel karakterleri ve sayıları kaldırmayı içerir.
+Also removes stopwords.
+Also removes double letters.
+Also removes extra spaces.
+Takes a string and returns a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – Temizlenecek metin.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Temizlenmiş metin.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.temizle.metin_temizle">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.temizle.</span></span><span class="sig-name descname"><span class="pre">metin_temizle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_column</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/temizle.html#metin_temizle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.temizle.metin_temizle" title="Link to this definition"></a></dt>
+<dd><p>Bu fonksiyon, verilen DataFrame’deki belirtilen sütundaki metinleri temizler.
+Temizleme işlemi, metindeki özel karakterleri ve sayıları kaldırmayı içerir.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – İşlenecek DataFrame.</p></li>
+<li><p><strong>desired_column</strong> (<em>str</em>) – Temizlenecek metin sütununun adı.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Temizlenmiş metinleri içeren DataFrame.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-functions.turkish.token_yarat">
+<span id="tokenization"></span><h2>Tokenization<a class="headerlink" href="#module-functions.turkish.token_yarat" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.token_yarat.init_tokenizer">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.token_yarat.</span></span><span class="sig-name descname"><span class="pre">init_tokenizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wordpiece'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/token_yarat.html#init_tokenizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.token_yarat.init_tokenizer" title="Link to this definition"></a></dt>
+<dd><p>Initialize a new WordPiece tokenizer with default settings.
+This should be called once at the start of the program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An initialized but untrained tokenizer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tokenizer</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tokenizer_type</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.token_yarat.train_tokenizer">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.token_yarat.</span></span><span class="sig-name descname"><span class="pre">train_tokenizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wordpiece'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/token_yarat.html#train_tokenizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.token_yarat.train_tokenizer" title="Link to this definition"></a></dt>
+<dd><p>Train an initialized tokenizer on the specified text data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokenizer</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tokenizer</span></code></span>) – An initialized Tokenizer object</p></li>
+<li><p><strong>arr</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></span>) – list of text data</p></li>
+<li><p><strong>tokenizer_type</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The trained tokenizer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tokenizer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.token_yarat.gen_token">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.token_yarat.</span></span><span class="sig-name descname"><span class="pre">gen_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wordpiece'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/token_yarat.html#gen_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.token_yarat.gen_token" title="Link to this definition"></a></dt>
+<dd><p>Generate a WordPiece tokenizer from the text in the specified DataFrame column.
+For backward compatibility - prefer using init_tokenizer() and train_tokenizer() separately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> – list of text data</p></li>
+<li><p><strong>tokenizer_type</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>trained Tokenizer object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="numerical-conversion">
+<h2>Numerical Conversion<a class="headerlink" href="#numerical-conversion" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-functions.turkish.sayisallastir">
+<dt class="sig sig-object py" id="functions.turkish.sayisallastir.veri_sayisallastir">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.sayisallastir.</span></span><span class="sig-name descname"><span class="pre">veri_sayisallastir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/sayisallastir.html#veri_sayisallastir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.sayisallastir.veri_sayisallastir" title="Link to this definition"></a></dt>
+<dd><p>Convert text data from DataFrame to numerical format using the tokenizer.
+Takes a list of text data and a trained tokenizer.
+:type arr: 
+:param arr: list of text data
+:type tokenizer: 
+:param tokenizer: trained Tokenizer object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of numerical representations of documents</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="tf-idf-generation">
+<h2>TF-IDF Generation<a class="headerlink" href="#tf-idf-generation" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-functions.turkish.tfidf_uret">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.tf_b">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">tf_b</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#tf_b"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.tf_b" title="Link to this definition"></a></dt>
+<dd><p>Apply binary term frequency transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>csr_matrix</em>) – Input sparse matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary TF matrix where all non-zero values become 1</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.tf_d">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">tf_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#tf_d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.tf_d" title="Link to this definition"></a></dt>
+<dd><p>Apply double logarithmic term frequency transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>csr_matrix</em>) – Input sparse matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Double log TF matrix with transformation 1 + log2(1 + log2(tf))</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.tf_l">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">tf_l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#tf_l"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.tf_l" title="Link to this definition"></a></dt>
+<dd><p>Apply logarithmic term frequency transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>csr_matrix</em>) – Input sparse matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Log TF matrix with transformation 1 + log2(tf)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.tf_L">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">tf_L</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#tf_L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.tf_L" title="Link to this definition"></a></dt>
+<dd><p>Apply average-based logarithmic term frequency transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>csr_matrix</em>) – Input sparse matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized log TF matrix using row averages</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.idf_t">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">idf_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dokuman_sayisi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#idf_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.idf_t" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the IDF score for a given array.
+Takes an array and the number of documents and returns an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>ndarray</em>)</p></li>
+<li><p><strong>dokuman_sayisi</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.idf_p">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">idf_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dokuman_sayisi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#idf_p"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.idf_p" title="Link to this definition"></a></dt>
+<dd><p>Calculate probabilistic inverse document frequency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>np.ndarray</em>) – Document frequency array</p></li>
+<li><p><strong>dokuman_sayisi</strong> (<em>int</em>) – Total number of documents</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probabilistic IDF scores</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.tfidf_uret.tf_idf_generator">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.tfidf_uret.</span></span><span class="sig-name descname"><span class="pre">tf_idf_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">veri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/tfidf_uret.html#tf_idf_generator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.tfidf_uret.tf_idf_generator" title="Link to this definition"></a></dt>
+<dd><p>This function generates a TF-IDF matrix for a given list of text data.
+1) Convert the text data to a sparse matrix.
+2) Calculate the TF-IDF score for the sparse matrix.
+3) Return the TF-IDF matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>veri</strong> (<em>list</em>) – A list of text data.</p></li>
+<li><p><strong>tokenizer</strong> (<em>Tokenizer</em>) – A trained tokenizer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A sparse TF-IDF matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-functions.turkish.konuAnalizi">
+<span id="topic-analysis"></span><h2>Topic Analysis<a class="headerlink" href="#module-functions.turkish.konuAnalizi" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.turkish.konuAnalizi.konu_analizi">
+<span class="sig-prename descclassname"><span class="pre">functions.turkish.konuAnalizi.</span></span><span class="sig-name descname"><span class="pre">konu_analizi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">konu_sayisi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sozluk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topics_db_eng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_frame_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_per_topic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_documents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/turkish/konuAnalizi.html#konu_analizi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.turkish.konuAnalizi.konu_analizi" title="Link to this definition"></a></dt>
+<dd><p>Performs topic analysis using Non-negative Matrix Factorization (NMF) results for both Turkish and English texts.</p>
+<p>This function extracts meaningful topics from NMF decomposition matrices by identifying the most
+significant words for each topic and optionally analyzing the most relevant documents. It supports
+both Turkish (using tokenizer) and English (using vocabulary list) processing pipelines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>H</strong> (<em>numpy.ndarray</em>) – Topic-word matrix from NMF decomposition with shape (n_topics, n_features).
+Each row represents a topic, each column represents a word/feature.</p></li>
+<li><p><strong>W</strong> (<em>numpy.ndarray</em>) – Document-topic matrix from NMF decomposition with shape (n_documents, n_topics).
+Each row represents a document, each column represents a topic.</p></li>
+<li><p><strong>konu_sayisi</strong> (<em>int</em>) – Number of topics to analyze. Should match the number of topics in H and W matrices.</p></li>
+<li><p><strong>tokenizer</strong> (<em>object</em><em>, </em><em>optional</em>) – Turkish tokenizer object with id_to_token() method for converting
+token IDs to words. Required for Turkish text processing.</p></li>
+<li><p><strong>sozluk</strong> (<em>list</em><em>, </em><em>optional</em>) – English vocabulary list where indices correspond to feature indices in H matrix.
+Required for English text processing.</p></li>
+<li><p><strong>documents</strong> (<em>pandas.DataFrame</em><em> or </em><em>list</em><em>, </em><em>optional</em>) – Collection of document texts used in the analysis.
+Can be pandas DataFrame or list of strings.</p></li>
+<li><p><strong>topics_db_eng</strong> (<em>sqlalchemy.engine</em><em>, </em><em>optional</em>) – Database engine for saving topic results to database.</p></li>
+<li><p><strong>data_frame_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the dataset/table, used for file naming and database operations.</p></li>
+<li><p><strong>word_per_topic</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of top words to extract per topic. Default is 20.</p></li>
+<li><p><strong>include_documents</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to perform document analysis and save document scores.
+Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary where keys are topic names in format “Konu XX” and values are lists of</dt><dd><p>word-score strings in format “word:score”. Scores are formatted to 8 decimal places.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If neither tokenizer (for Turkish) nor sozluk (for English) is provided.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effects:</dt><dd><ul class="simple">
+<li><p>Creates directory structure: {project_root}/Output/{data_frame_name}/ (if include_documents=True)</p></li>
+<li><p>Saves JSON file: top_docs_{data_frame_name}.json with document analysis results</p></li>
+<li><p>Saves topics to database if topics_db_eng is provided</p></li>
+<li><p>Prints warning message if no database engine is provided</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p># Turkish text analysis
+result = konu_analizi(</p>
+<blockquote>
+<div><p>H=topic_word_matrix,
+W=doc_topic_matrix,
+konu_sayisi=5,
+tokenizer=turkish_tokenizer,
+documents=turkish_docs,
+data_frame_name=”turkish_news”</p>
+</div></blockquote>
+<p>)</p>
+<p># English text analysis
+result = konu_analizi(</p>
+<blockquote>
+<div><p>H=topic_word_matrix,
+W=doc_topic_matrix,
+konu_sayisi=3,
+sozluk=english_vocab,
+documents=english_docs,
+topics_db_eng=db_engine,
+data_frame_name=”english_articles”</p>
+</div></blockquote>
+<p>)</p>
+<p># Result format:
+# {
+#     “Konu 00”: [“machine:0.12345678”, “learning:0.09876543”, …],
+#     “Konu 01”: [“data:0.11111111”, “science:0.08888888”, …],
+#     …
+# }</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Subword tokens starting with “##” are automatically filtered out</p></li>
+<li><p>Words are ranked by their topic scores in descending order</p></li>
+<li><p>Document analysis extracts top 20 documents per topic when enabled</p></li>
+<li><p>Function works with both pandas DataFrames and regular lists for documents</p></li>
+<li><p>Database saving is optional and warnings are shown if engine is not provided</p></li>
+<li><p>File paths are resolved relative to the function’s location in the project structure</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
