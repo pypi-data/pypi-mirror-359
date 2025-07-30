@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/renovosolutions.aws_cdk_fargate_log_collector.egg-info/PKG-INFO
+src/renovosolutions.aws_cdk_fargate_log_collector.egg-info/SOURCES.txt
+src/renovosolutions.aws_cdk_fargate_log_collector.egg-info/dependency_links.txt
+src/renovosolutions.aws_cdk_fargate_log_collector.egg-info/requires.txt
+src/renovosolutions.aws_cdk_fargate_log_collector.egg-info/top_level.txt
+src/renovosolutions_fargate_log_collector/__init__.py
+src/renovosolutions_fargate_log_collector/py.typed
+src/renovosolutions_fargate_log_collector/_jsii/__init__.py
+src/renovosolutions_fargate_log_collector/_jsii/cdk-library-fargate-log-collector@0.0.1.jsii.tgz
