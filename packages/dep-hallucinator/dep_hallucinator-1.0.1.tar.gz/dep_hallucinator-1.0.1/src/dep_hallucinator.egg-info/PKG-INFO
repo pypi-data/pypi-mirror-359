@@ -1,0 +1,200 @@
+Metadata-Version: 2.4
+Name: dep-hallucinator
+Version: 1.0.1
+Summary: Advanced security scanner for detecting AI-generated dependency confusion vulnerabilities with signature verification support
+Author-email: Serhan <serhan.buyukbay@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/serhanwbahar/dep-hallucinator
+Project-URL: Documentation, https://github.com/serhanwbahar/dep-hallucinator#readme
+Project-URL: Repository, https://github.com/serhanwbahar/dep-hallucinator
+Project-URL: Bug Reports, https://github.com/serhanwbahar/dep-hallucinator/issues
+Project-URL: Changelog, https://github.com/serhanwbahar/dep-hallucinator/releases
+Keywords: security,dependency,vulnerability,scanner,ai,hallucination
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: System :: Systems Administration
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.0.0
+Requires-Dist: httpx[http2]>=0.24.0
+Requires-Dist: structlog>=23.0.0
+Requires-Dist: toml>=0.10.0
+Requires-Dist: rich
+Provides-Extra: rich
+Requires-Dist: rich>=13.0.0; extra == "rich"
+Provides-Extra: full
+Requires-Dist: rich>=13.0.0; extra == "full"
+Requires-Dist: numpy>=1.20.0; (platform_machine != "arm64" or python_version >= "3.9") and extra == "full"
+Requires-Dist: scikit-learn>=1.0.0; (platform_machine != "arm64" or python_version >= "3.9") and extra == "full"
+Provides-Extra: production
+Requires-Dist: uvloop>=0.17.0; sys_platform != "win32" and extra == "production"
+Requires-Dist: orjson>=3.8.0; extra == "production"
+Requires-Dist: lz4>=4.0.0; extra == "production"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-httpx>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: bandit>=1.7.0; extra == "dev"
+Requires-Dist: safety>=3.0.0; extra == "dev"
+Requires-Dist: build>=0.10.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Requires-Dist: rich>=13.0.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=7.0.0; extra == "test"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "test"
+Requires-Dist: pytest-httpx>=0.21.0; extra == "test"
+Requires-Dist: pytest-cov>=4.0.0; extra == "test"
+Requires-Dist: coverage>=7.0.0; extra == "test"
+Requires-Dist: pytest-benchmark>=4.0.0; extra == "test"
+Requires-Dist: memory-profiler>=0.60.0; extra == "test"
+Requires-Dist: ruff>=0.1.0; extra == "test"
+Provides-Extra: resolvers
+Requires-Dist: pipdeptree>=2.0.0; extra == "resolvers"
+Requires-Dist: pip-tools>=6.0.0; extra == "resolvers"
+Provides-Extra: security
+Requires-Dist: bandit>=1.7.0; extra == "security"
+Requires-Dist: safety>=3.0.0; extra == "security"
+Provides-Extra: all
+Requires-Dist: rich>=13.0.0; extra == "all"
+Requires-Dist: numpy>=1.20.0; (platform_machine != "arm64" or python_version >= "3.9") and extra == "all"
+Requires-Dist: scikit-learn>=1.0.0; (platform_machine != "arm64" or python_version >= "3.9") and extra == "all"
+Requires-Dist: uvloop>=0.17.0; sys_platform != "win32" and extra == "all"
+Requires-Dist: orjson>=3.8.0; extra == "all"
+Requires-Dist: lz4>=4.0.0; extra == "all"
+Dynamic: license-file
+
+# Dep-Hallucinator
+
+Security scanner that detects AI-generated dependency confusion vulnerabilities in software projects.
+
+## Problem
+
+AI code assistants sometimes suggest packages that don't exist. Attackers can register these hallucinated package names with malicious code. When developers install the suggested dependency, they execute the attacker's payload.
+
+## Solution
+
+Dep-Hallucinator detects these non-existent packages and suspicious packages that may be malicious registrations.
+
+## Features
+
+* **Registry scanning**: Checks PyPI, npm, Maven Central, Crates.io, and Go Modules
+* **ML detection**: Identifies AI-generated naming patterns
+* **Heuristic analysis**: Analyzes package age, downloads, and metadata
+* **Risk classification**: HIGH/MEDIUM/LOW risk levels with explanations
+* **Multi-language support**: Python, JavaScript, Java, Rust, Go
+* **SBOM generation**: Creates Software Bill of Materials
+* **CI/CD integration**: Exit codes and JSON output
+
+## Supported Ecosystems
+
+| Language | Registry | File Types |
+|----------|----------|------------|
+| Python | PyPI | `requirements.txt`, `poetry.lock`, `Pipfile.lock` |
+| JavaScript | npm | `package.json`, `yarn.lock` |
+| Java | Maven Central | `pom.xml`, `build.gradle` |
+| Rust | Crates.io | `Cargo.toml`, `Cargo.lock` |
+| Go | Go Modules | `go.mod`, `go.sum` |
+
+## Installation
+
+```bash
+pip install dep-hallucinator
+```
+
+## Usage
+
+```bash
+# Basic scan
+dep-hallucinator scan requirements.txt
+
+# With options
+dep-hallucinator scan requirements.txt --rate-limit 5.0 --max-concurrent 10
+
+# JSON output
+dep-hallucinator scan requirements.txt --output-format json
+
+# Generate SBOM
+dep-hallucinator scan requirements.txt --generate-sbom
+
+# Batch scan
+dep-hallucinator batch requirements.txt package.json pom.xml
+```
+
+## Example Output
+
+```
+🔍 Scanning 8 dependencies...
+
+📊 Scan Summary           
+🚨 CRITICAL │   2   │ VULNERABLE
+🔶 HIGH     │   1   │ SUSPICIOUS  
+✅ LOW      │   5   │     OK     
+
+🚨 CRITICAL VULNERABILITIES
+
+📦 ai-powered-data-processor (==1.0.0)
+   Suspicion Score: 100% (CRITICAL) | ML: 95%
+   Reasons:
+   • Package does not exist in the registry
+   • Vulnerable to dependency confusion attacks
+   • ML models indicate high probability of AI generation
+   Recommendations:
+   → Do not install this package
+   → Check if this was generated by an AI assistant
+```
+
+## Configuration
+
+Create `.dep-hallucinator.json`:
+
+```json
+{
+  "scan": {
+    "rate_limit": 10.0,
+    "max_concurrent": 20,
+    "timeout_seconds": 30
+  },
+  "security": {
+    "max_file_size_mb": 10
+  }
+}
+```
+
+## Development
+
+```bash
+git clone https://github.com/serhanwbahar/dep-hallucinator.git
+cd dep-hallucinator
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev,test]"
+make test
+```
+
+## Exit Codes
+
+- `0`: No critical vulnerabilities
+- `1`: Critical vulnerabilities found
+- `2`: High risk packages found (with `--fail-on-high`)
+- `3`: Scan errors
+
+## License
+
+MIT License. See LICENSE file.
