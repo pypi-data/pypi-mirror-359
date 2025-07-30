@@ -1,0 +1,19 @@
+[build-system]
+requires = [
+  # NumPy dependencies copied from SciPy:
+  # https://github.com/scipy/scipy/blob/55cae814e23208354bf16b84be47b5070b4c1c89/pyproject.toml#L25-L31
+  # numpy requirement for wheel builds for distribution on PyPI - building
+  # against 2.x yields wheels that are also compatible with numpy 1.x at
+  # runtime.
+  # Note that building against numpy 1.x works fine too - users and
+  # redistributors can do this by installing the numpy version they like and
+  # disabling build isolation.
+  "numpy>=2.0.0",
+  "scipy >= 1.6",
+  "setuptools",
+  "wheel",
+  "cython",
+]
+
+[tool.black]
+line-length = 80

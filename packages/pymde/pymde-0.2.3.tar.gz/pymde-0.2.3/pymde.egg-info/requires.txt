@@ -1,0 +1,8 @@
+matplotlib
+numpy>=2.0
+pynndescent>=0.5
+numba>=0.59.0
+scipy
+torch>=1.7.1
+torchvision>=0.8.2
+requests
