@@ -1,0 +1,13 @@
+jupyterlab_classiq/__init__.py,sha256=oMa959avkHT05PkanjQPqBcrFq16f9ZW03HwbCKumnc,639
+jupyterlab_classiq/_version.py,sha256=83NKtXpwrNTZbbW3Q-n6S7dKuAcfUJkjV8sKHho3yZg,172
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/package.json,sha256=vmWBFske5GLnW-lBBF9Hl_o-cgi9rd8jpn_27bias-0,972
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/374.9097338cffda51fb7efa.js,sha256=Ef898ZfW3gd5JMQnqkBBFCovPlkwTJ54PrBs6Zmt2Ls,2078116
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/374.9097338cffda51fb7efa.js.LICENSE.txt,sha256=_xixiP3u2B-R4lA8DcCYqCQo70d4CEDNtwFNmLZa2YI,3281
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/codicon.raw.css,sha256=sc9jRywmfR_T-qWWV0G-iWplO8o_SMi_chNI_oZ0niM,131860
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/remoteEntry.aafe89f2ee89a2dc405e.js,sha256=qv6J8u6JotxAXpSozX1uLAPlMX8p82NIB8J6xUYn7-I,6696
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/style.js,sha256=-CQt0ZTPaCTvrRiLcznxflAbfvIKlOVzjOos-muaXQ8,118
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/static/third-party-licenses.json,sha256=4gIBjxct3MZvzO-cvwwqLd4ta-Au8Zuzuc3faSMTRH0,1264
+jupyterlab_classiq-0.85.0.data/data/share/jupyter/labextensions/jupyterlab-classiq/install.json,sha256=DyJvDWiQpAuzVH6T53h1G7dR5kJzH5vRDNLsF2sjPOU,197
+jupyterlab_classiq-0.85.0.dist-info/METADATA,sha256=qV0hn4YZuMU1G_OeEY6Ann08_yp4AeGWXrBND9ese7w,1719
+jupyterlab_classiq-0.85.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jupyterlab_classiq-0.85.0.dist-info/RECORD,,
