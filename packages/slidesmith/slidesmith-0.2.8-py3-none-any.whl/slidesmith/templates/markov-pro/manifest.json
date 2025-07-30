@@ -1,0 +1,58 @@
+{
+  "name": "markov-pro",
+  "display_name": "Markov Professional",
+  "description": "Professional presentation template with clean design and data visualization components",
+  "version": "1.0.0",
+  "author": "Markov AI",
+  "preview_image": "preview.png",
+  "components": [
+    "SlideBase",
+    "Header",
+    "Footer",
+    "Columns",
+    "BarChart",
+    "PieChart",
+    "Timeline",
+    "MetricSection",
+    "ImpactBox",
+    "Calculation",
+    "CheckList",
+    "BulletList",
+    "CardGrid",
+    "CTABox"
+  ],
+  "design_system": {
+    "fonts": {
+      "primary": "Montserrat",
+      "weights": [300, 400, 500, 600, 700, 800]
+    },
+    "colors": {
+      "primary": "#1D4ED8",
+      "secondary": "#3B82F6",
+      "accent": "#60A5FA",
+      "neutral": {
+        "50": "#F9FAFB",
+        "100": "#F3F4F6",
+        "200": "#E5E7EB",
+        "300": "#D1D5DB",
+        "400": "#9CA3AF",
+        "500": "#6B7280",
+        "600": "#4B5563",
+        "700": "#374151",
+        "800": "#1F2937",
+        "900": "#111827"
+      }
+    },
+    "spacing": {
+      "slide": {
+        "paddingX": "8rem",
+        "paddingTop": "4rem",
+        "paddingBottom": "2rem"
+      }
+    },
+    "dimensions": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}
