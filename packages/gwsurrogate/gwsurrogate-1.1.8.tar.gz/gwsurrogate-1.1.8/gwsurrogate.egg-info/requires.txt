@@ -1,0 +1,8 @@
+numpy>=1.7
+requests
+scipy
+h5py
+pytest
+scikit-learn
+gwtools
+matplotlib
