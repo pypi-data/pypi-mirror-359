@@ -1,0 +1,2 @@
+[console_scripts]
+intentai = intentai.cli:main
