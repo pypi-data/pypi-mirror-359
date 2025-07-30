@@ -1,0 +1,2 @@
+[console_scripts]
+rerun-loader-urdf = rerun_loader_urdf:main
