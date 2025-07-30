@@ -1,0 +1,184 @@
+Metadata-Version: 2.4
+Name: vfxwindow
+Version: 1.10.1
+Summary: Qt window class for designing tools to be compatible between multiple VFX programs.
+Home-page: https://github.com/huntfx/vfxwindow
+Download-URL: https://github.com/huntfx/vfxwindow/archive/1.10.1.tar.gz
+Author: Peter Hunt
+Author-email: peter@huntfx.uk
+License: MIT
+Project-URL: Documentation, https://github.com/huntfx/vfxwindow/wiki
+Project-URL: Source, https://github.com/huntfx/vfxwindow
+Project-URL: Issues, https://github.com/huntfx/vfxwindow/issues
+Keywords: qt,pyside,pyside2,pyqt,pyqt4,pyqt5,gui,window,maya,mayapy,nuke,nukescripts,houdini,unreal,engine,ue4,blender,3dsmax,3ds,blackmagic,fusion,substance,designer,vfx,visualfx,fx,cgi,3d,natron
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Multimedia :: Graphics :: 3D Modeling
+Classifier: Topic :: Multimedia :: Graphics :: 3D Rendering
+Classifier: Topic :: Software Development :: User Interfaces
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Qt.py
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# VFXWindow
+Qt Window class for designing tools to be compatible between multiple VFX programs.
+
+The main purpose of the class is to integrate into the program UI, but it also contains helpful features such as safely dealing with callbacks and automatically saving the window position.
+
+The intended usage is to make your window class inherit `VFXWindow` - which is an instance of `QMainWindow`. By calling `cls.show()`, it will launch the correct window type based on what program is loaded, and what settings were previously saved.
+
+This is perfectly stable, but there is still plenty that needs improvement. Any help with extending existing application support or adding new applications is very much appreciated.
+
+### Installation
+    pip install vfxwindow
+
+### Basic Example:
+```python
+from Qt import QtWidgets
+from vfxwindow import VFXWindow
+
+class MyWindow(VFXWindow):
+    """Test window to show off some features."""
+
+    WindowID = 'vfx.window.test'
+    WindowName = 'My Window'
+    WindowDockable = True
+
+    def __init__(self, parent=None, **kwargs):
+        super(MyWindow, self).__init__(parent, **kwargs)
+        # Setup widgets/build UI here as you normally would
+        self.setCentralWidget(QtWidgets.QWidget())
+
+        # Setup callbacks
+        self.callbacks.add('file.load', self.afterSceneChange)  # All apps have callback support for 'file.load'
+        if self.application == 'Maya':  # Maya supports before/after callbacks
+            self.callbacks.add('file.new.before', self.beforeSceneChange)
+            self.callbacks.add('file.new', self.afterSceneChange)  # Also mapped to 'file.new.after'
+            self.callbacks.add('file.load.before', self.beforeSceneChange)
+        elif self.application == 'Nuke':
+            self.callbacks.add('node.create', self.sceneChanged, nodeClass='Root')  # Pass in a parameter
+            self.callbacks.add('file.close', self.beforeSceneChange)
+        elif self.application == 'Substance':  # Matches "Substance Painter" and "Substance Designer"
+            self.callbacks.add('file.new', self.afterSceneChange)
+            self.callbacks.add('file.close', self.beforeSceneChange)
+
+        # Wait until the program is ready before triggering the new scene method
+        self.deferred(self.afterSceneChange)
+
+    def afterSceneChange(self, *args):
+        """Create the scene specific callbacks.
+        These are being created in a callback "group".
+        Subgroups are also supported.
+
+        Even though the callback is the same, the signatures can differ.
+        See '/vfxwindow/<app>/callbacks.py' for the relevant signatures.
+        """
+        if self.application == 'Maya':
+            self.callbacks['scene'].add('node.create', self.mayaNodeAdded, nodeType='dependNode')
+        if self.application == 'Nuke':
+            self.callbacks['scene'].add('node.create', self.nukeNodeAdded)
+
+    def beforeSceneChange(self, *args):
+        """Delete the scene specific callbacks."""
+        self.callbacks['scene'].delete()
+
+    def mayaNodeAdded(self, node, clientData):
+        """Print out the node that was added in Maya."""
+        import maya.api.OpenMaya as om2
+        print('Node was added: {}'.format(om2.MFnDependencyNode(node).name()))
+
+    def nukeNodeAdded(self):
+        """Print out the node that was added in Nuke."""
+        import nuke
+        node = nuke.thisNode()
+        print('Node was added: {}'.format(node.name() or 'Root'))
+
+    def checkForChanges(self):
+        """Update the UI if it is has been in a "paused" state.
+
+        This is needed for Nuke and Substance Designer/Painter, because
+        there's no way to detect if the window is closed or just hidden.
+        For safety all callbacks will get paused, and upon unpausing,
+        this method will be run to allow the window to correctly update.
+        """
+        self.beforeSceneChange()
+        self.afterSceneChange()
+
+
+if __name__ == '__main__':
+    MyWindow.show()
+```
+
+### Support / Compatibility
+✔️ Working  /  ❔ Untested  /  ❌ Not Working
+|                    | Standard Window | Docked Window | Callbacks | Tested Versions | [Linux](# "Tested in Linux Mint.")  | Windows | MacOs |
+| ------------------ | -------- | -------- | -------- | -------- | -------- | --------- | ------- |
+| Maya               | ✔️ | [✔️](# "Uses `workspaceControl` or falls back to `dockControl` for pre Maya 2017, saves/restores location of window.") | ✔️ | [2011-2016](# "Docked windows use `dockControl`, tested lightly on 2016."), [2017+](# "Docked windows use `workspaceControl`.") | ✔️ | ✔️ | ❔ |
+| Maya (Standalone)  | ✔️ | | ✔️ | | ❔ | ✔️ | ❔ |
+| Nuke               | ✔️ | [✔️](# "Uses `registerWidgetAsPanel` to dock window in a panel, saves/restores location of panel only when docked (not floating).") | [✔️](# "Callbacks are only active while a docked window has focus. It is recommended to define a `checkForChanges()` method which will be run each time the callbacks get reactivated.") | 9-14 | ❔ | ✔️ | ❔ |
+| Nuke (Terminal)    | ✔️ | | ✔️ | | ❔ | ✔️ | ❔ |
+| Houdini            | ✔️ | ❌ | ✔️ | 16-19 | ✔️ | ✔️ | ❔ |
+| Unreal Engine      | ✔️ | ❌ | ❌ | 4.19-4.23, 5.0-5.3 | [❌](# "Tested on UE5.") | ✔️ | ❔ |
+| Blender            | ✔️ | ❌ | ✔️ | 2.8-4.2 | ❔ | ✔️ | ❔ |
+| Blender (Background) | ✔️ | | ❔ | 3.1-4.2 | ❔ | ✔️ | ❔ |
+| Katana             | ✔️ | ❌ | ❌ | 7 | ❔ | [✔️](# "Unable to catch close events when the user presses the X, meaning the position can't be saved and callbacks can't be implemented") | ❔ |
+| 3ds Max            | ✔️ | ❌ | ❌ | 2018-2020 | ❔ | ✔️ | ❔ |
+| Substance Painter  | ✔️ | [✔️](# "Uses `substance_painter.ui.add_dock_widget`, does not save/restore location of window.") | ✔️ | 8.3 | ✔️ | ✔️ | ❔ |
+| Substance Designer | ✔️ | [✔️](# "Uses `sd.getContext().getSDApplication().getQtForPythonUIMgr().newDockWidget`, does not save/restore location of window.") | ✔️ | 2019.3, 7.1, 12.3 | ✔️ | ✔️ | ❔ |
+| Blackmagic Fusion  | ✔️ | ❌ | ❌ | 9 | ❔ | [✔️](# "Unable to read Fusion version, and causes recursion error if calling `show`/`hide`/`setVisible`.") | ❔ |
+| CryEngine Sandbox  | ✔️ | [❌](# "There's a `SandboxBridge.register_window` function, but I was not able to figure it out.") | ❌ | 5.7 | ❔ | [✔️](# "Causes recursion error if calling `show`/`hide`/`setVisible`.") | ❔ |
+| Standalone Python  | ✔️ | | | 2.7 (Qt4), 3.7-3.9 (Qt5) | ❔ | ✔️ | ❔ |
+| Natron             | ✔️ | [❌](# "Potentially possible, but not yet implemented.") | ❌ | 2.5 | ❔ | ✔️ | ❔ |
+| Gaffer             |️ ️✔️ | ❌ | ❌ | 1.5.6.0 | ❔ | ✔️ | ❔ |
+| RenderDoc          | [✔️](# "Only runs in the interactive shell, not the script editor.") | ❌ | ❌ | 1.33 | ❔ | [✔️](# "Causes recursion error if calling `show`/`hide`, and crashes when calling `setVisible`.") | ❔ |
+
+<sub>* Hover over underlined fields to see any extra details/issues.</sub>
+
+### Features
+ - Automatically save/restore window position
+ - Automatically dock window to application (if supported)
+ - Move window to screen if out of bounds (Windows only)
+ - Register application specific callbacks to be cleaned up on window close
+ - Keep track of signals to remove groups if required
+ - Set palette to that of another program
+ - Auto close if opening a duplicate window
+ - Close down all windows at once
+
+### Running with Non-Python Applications
+Certain Windows applications have dispatch based COM interface, which will allow a link between Python and the application. See [photoshop-scripting-python](https://github.com/lohriialo/photoshop-scripting-python) for an example on how to connect to an application.
+
+Currently there is no way of launching `VFXWindow` from inside these applications.
+
+### Requirements
+ - [Qt.py](https://github.com/mottosso/Qt.py)
+
+### Resources Used
+ - [Simple_MayaDockingClass.py](https://gist.github.com/liorbenhorin/69da10ec6f22c6d7b92deefdb4a4f475) - Used for Maya docking code
+ - [pyvfx-boilerplate](https://github.com/fredrikaverpil/pyvfx-boilerplate) - Used to help with palettes, Nuke, and pre-2017 Maya
