@@ -1,0 +1,14 @@
+passagemath_primesieve_primecount.libs/libprimesieve-0735da86.so.12.9.0,sha256=kTuA9jh4e3OWV26NAgqyYMHqZCAJ8THDgSpHsnrGWoM,3493449
+passagemath_primesieve_primecount.libs/libgomp-947d5fa1.so.1.0.0,sha256=3DIx-P1MrcRthlnDuN2BGuMxdHSehoB_FvYerW7lm_0,343345
+passagemath_primesieve_primecount.libs/libprimecount-ec08f5ff.so.7.19,sha256=POaK4pUk0xpwt1tig6iuP-24heTStcQ5lXrkg8auxX0,4995185
+passagemath_primesieve_primecount-0.1.1.1.dist-info/WHEEL,sha256=i7vxtqfgRxFyLYArziRyEI8rJr76D_-0mffvAh-Fj0g,114
+passagemath_primesieve_primecount-0.1.1.1.dist-info/METADATA,sha256=gd9ZpeaOzDHW3FF1hs63kYQdOPpq4j2CnV9DBntDz8c,22837
+passagemath_primesieve_primecount-0.1.1.1.dist-info/top_level.txt,sha256=6y8t2DMtviUX8fE4_Ms7Q1RSChqx_Ml1bQtWzUiKUaQ,13
+passagemath_primesieve_primecount-0.1.1.1.dist-info/RECORD,,
+passagemath_primesieve_primecount-0.1.1.1.dist-info/licenses/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+passagemath_primesieve_primecount-0.1.1.1.dist-info/licenses/AUTHORS,sha256=gUVKk99IDA-78ESS89mJBKZXylJPdMKgOIDTGSCoIP0,122
+primecountpy/primecount.pyx,sha256=4is17eqfWt677GCUvXHehMDNAKGRUWRuqwh3TAqVpKg,2759
+primecountpy/defs.pxd,sha256=ZTfuJhV6ImtXCGdEPlUTujbXh4Tr0kI2vdfDUNKRSik,522
+primecountpy/primecount.cpp,sha256=vBXjPjwoZ1Kv7Svc854t-wAUr2WKCdkFlQZeJQWuWoc,382480
+primecountpy/__init__.py,sha256=09IByjZgmgwaj8_jKl4bQTvLpBHKsmXoFehkGRxcVug,26
+primecountpy/primecount.cpython-312-aarch64-linux-gnu.so,sha256=rN7NWUT6RFjwQh4tCmiZXEhaTCfuJlzApV4ObrqpOZY,659025
