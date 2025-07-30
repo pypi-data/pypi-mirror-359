@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: positionport
+Version: 0.1.0
+Summary: Official client library for PositionPort API
+Author-email: James <devgsbmaster@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/PositionPort
+Project-URL: Repository, https://github.com/PositionPort/positionport_pypl
+Project-URL: Issues, https://github.com/PositionPort/positionport_pypl/issues
+Keywords: positionport,trading,api,client,portfolio,risk
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+
+# PositionPort
+
+A lightweight Python library for position risk and portfolio management.
+
+## Features
+
+- Print welcome message
+- (Planned) Position sizing and risk calculation
+
+## Installation
+
+```bash
+pip install positionport
+```
