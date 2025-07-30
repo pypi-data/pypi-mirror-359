@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/renovosolutions.aws_cdk_renovo_microapi.egg-info/PKG-INFO
+src/renovosolutions.aws_cdk_renovo_microapi.egg-info/SOURCES.txt
+src/renovosolutions.aws_cdk_renovo_microapi.egg-info/dependency_links.txt
+src/renovosolutions.aws_cdk_renovo_microapi.egg-info/requires.txt
+src/renovosolutions.aws_cdk_renovo_microapi.egg-info/top_level.txt
+src/renovosolutions_microapi/__init__.py
+src/renovosolutions_microapi/py.typed
+src/renovosolutions_microapi/_jsii/__init__.py
+src/renovosolutions_microapi/_jsii/cdk-library-renovo-microapi@0.0.236.jsii.tgz
