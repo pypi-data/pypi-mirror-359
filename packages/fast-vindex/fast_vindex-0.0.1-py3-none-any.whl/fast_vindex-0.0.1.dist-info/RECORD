@@ -1,0 +1,9 @@
+fast_vindex/__init__.py,sha256=xZr_GtdfhFe3J2TTFnqehh1FqxQ84EAaQH0SznjlTIk,42
+fast_vindex/api.py,sha256=8iY5BxqpMQLkttNNlEtW_PQtM4tVKh3Cse3lkmyAvwc,267
+fast_vindex/utils.py,sha256=dNLxChNnyuR8-LfLqxWeAW5YnGF8SVslHi02W-Xo2OU,7252
+fast_vindex/array/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fast_vindex/array/core.py,sha256=HKht4R32nVUzxmBskDcevmpy6TkkYY1whI05tXQDtsQ,8525
+fast_vindex-0.0.1.dist-info/METADATA,sha256=GRAIAho75LgxGJeSTuuMrciRK4F0wSsy0_OzTUEx5K8,10547
+fast_vindex-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fast_vindex-0.0.1.dist-info/licenses/LICENSE,sha256=fTqV5eBpeAZO0_jit8j4Ref9ikBSlHJ8xwj5TLg7gFk,7817
+fast_vindex-0.0.1.dist-info/RECORD,,

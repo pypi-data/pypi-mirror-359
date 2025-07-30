@@ -1,0 +1,1 @@
+from fast_vindex.api import patched_vindex
