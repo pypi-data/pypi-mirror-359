@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+sqlite_to_erd.py
+sqlite_to_erd.egg-info/PKG-INFO
+sqlite_to_erd.egg-info/SOURCES.txt
+sqlite_to_erd.egg-info/dependency_links.txt
+sqlite_to_erd.egg-info/entry_points.txt
+sqlite_to_erd.egg-info/requires.txt
+sqlite_to_erd.egg-info/top_level.txt
