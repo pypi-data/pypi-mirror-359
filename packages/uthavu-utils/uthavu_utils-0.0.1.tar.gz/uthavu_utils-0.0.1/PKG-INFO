@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: uthavu_utils
+Version: 0.0.1
+Summary: Reusable utilities for Uthavu Python projects
+Author: Jawahar Subramanian
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary
