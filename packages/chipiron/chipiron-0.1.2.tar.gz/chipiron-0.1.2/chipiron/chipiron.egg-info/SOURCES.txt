@@ -1,0 +1,7 @@
+LICENSE
+README.md
+pyproject.toml
+chipiron/chipiron.egg-info/PKG-INFO
+chipiron/chipiron.egg-info/SOURCES.txt
+chipiron/chipiron.egg-info/dependency_links.txt
+chipiron/chipiron.egg-info/top_level.txt
