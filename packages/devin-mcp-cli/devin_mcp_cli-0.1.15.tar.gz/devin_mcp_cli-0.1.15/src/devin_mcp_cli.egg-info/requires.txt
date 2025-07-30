@@ -1,0 +1,8 @@
+typer>=0.15.2
+rich>=13.9.4
+python-dotenv>=1.1.0
+asyncio>=3.4.3
+mcp>=1.6.0
+httpx-auth>=0.22.0
+
+[wasm]
