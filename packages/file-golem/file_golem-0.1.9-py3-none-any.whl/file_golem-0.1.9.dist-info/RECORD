@@ -1,0 +1,10 @@
+file_golem/__init__.py,sha256=kyH9CekRB3UWJa9FEHlCm8lZxFaYfJ3gbCePuuq993s,164
+file_golem/_file_io_helper.py,sha256=zvfxTJffvDXHA_SYU4BdvKwKUIxGkeu1bU1VycQWCWA,12122
+file_golem/class_handler.py,sha256=Qx50RZEuupRE-gLUjCKaQftQ70K-h1kOcNvGn2LT3dM,2524
+file_golem/config_datatype.py,sha256=lH2ZVi5RmWl6Jy41BzLcUVQLC5mB7dfTbVYygvvyYYk,640
+file_golem/file_datatypes.py,sha256=7nOqZ3_-J3GkgVTQJAbbAkT3WfcqMhFOE6O2o8QSmJI,2845
+file_golem/file_io_object.py,sha256=aSp5SA_uu3F8goZdLq5tCIjHUSiZPQbLybNmK5JrKL0,31914
+file_golem-0.1.9.dist-info/METADATA,sha256=Mw_oMd90DfUAysilrHUF2s075FUXmolcueJcKtxFAjA,1116
+file_golem-0.1.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+file_golem-0.1.9.dist-info/top_level.txt,sha256=-0hgg_z3GzZxsHSjeaqsT09Lsa0v7hJV-vIykJ53oWA,11
+file_golem-0.1.9.dist-info/RECORD,,
