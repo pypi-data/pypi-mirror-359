@@ -1,0 +1,11 @@
+LICENSE
+LICENSE.txt
+README.md
+pyproject.toml
+src/steamprofile/__init__.py
+src/steamprofile/core.py
+src/steamprofile.egg-info/PKG-INFO
+src/steamprofile.egg-info/SOURCES.txt
+src/steamprofile.egg-info/dependency_links.txt
+src/steamprofile.egg-info/requires.txt
+src/steamprofile.egg-info/top_level.txt
