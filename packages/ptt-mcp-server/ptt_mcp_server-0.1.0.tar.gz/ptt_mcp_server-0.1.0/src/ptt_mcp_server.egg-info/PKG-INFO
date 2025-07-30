@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: ptt-mcp-server
+Version: 0.1.0
+Summary: A MCP server for PTT.
+Home-page: https://github.com/PyPtt/ptt_mcp_server
+Author: CodingMan
+Author-email: pttcodingman@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pyptt
+Requires-Dist: fastmcp
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PTT MCP Server
+
+This project is a PTT agent based on `fastmcp` and `PyPtt`, which can operate PTT through the MCP protocol.
+
+## Features
+
+- Login and logout
+- Get, post, reply, delete, and comment on posts
+- Send, get, and delete mail
+- Give money (P幣)
+- Get user, post, and board information
+- and more...
+
+## Installation
+
+1.  Clone the project:
+    ```bash
+    git clone https://github.com/your-username/mcp_server.git
+    ```
+2.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Create a `.env` file and set the following environment variables:
+    ```
+    PTT_ID=your_ptt_id
+    PTT_PW=your_ptt_password
+    ```
+
+## Usage
+
+Run the MCP server:
+
+```bash
+python src/mcp_server.py
+```
+
+Then you can connect to the server with your MCP client.
+
+## API
+
+For detailed API documentation, please refer to the `basic_api.py` file.

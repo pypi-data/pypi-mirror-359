@@ -1,0 +1,7 @@
+README.md
+setup.py
+src/ptt_mcp_server.egg-info/PKG-INFO
+src/ptt_mcp_server.egg-info/SOURCES.txt
+src/ptt_mcp_server.egg-info/dependency_links.txt
+src/ptt_mcp_server.egg-info/requires.txt
+src/ptt_mcp_server.egg-info/top_level.txt
