@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xkings"
+version = "0.1.1"
+description = "Ein einfacher Ersatz für print() namens hs"
+authors = [
+  { name = "Florian", email = "deine-email@example.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+
+
