@@ -1,0 +1,2 @@
+[console_scripts]
+meson-python-sources-fixer = meson_python_sources_fixer:main
