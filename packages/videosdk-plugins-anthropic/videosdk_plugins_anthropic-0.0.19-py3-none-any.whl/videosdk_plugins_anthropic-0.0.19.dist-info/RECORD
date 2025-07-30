@@ -1,0 +1,6 @@
+videosdk/plugins/anthropic/__init__.py,sha256=YCi_tO2TL-gUZ9jBzNuyBlgfzeJpPYxCh-9isbBgLIA,57
+videosdk/plugins/anthropic/llm.py,sha256=uQH6RmlBq_rYcRSbyChMNPF5o0GisAQtG0LbIbqqeys,9482
+videosdk/plugins/anthropic/version.py,sha256=9OK8yo7gxBYvFxF5sp_Pg19ucyUGzDpUXRaYqvJmYCQ,22
+videosdk_plugins_anthropic-0.0.19.dist-info/METADATA,sha256=BcJ6dnBtJlJFuyGKAu11-Ecd2Jq1t7ir8mFCfhCz8JY,807
+videosdk_plugins_anthropic-0.0.19.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+videosdk_plugins_anthropic-0.0.19.dist-info/RECORD,,
