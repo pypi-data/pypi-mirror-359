@@ -1,0 +1,2 @@
+[console_scripts]
+monitoring-client = cli:main

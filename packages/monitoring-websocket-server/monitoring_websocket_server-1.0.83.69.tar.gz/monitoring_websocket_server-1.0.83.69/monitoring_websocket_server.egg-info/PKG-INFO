@@ -1,0 +1,105 @@
+Metadata-Version: 2.4
+Name: monitoring-websocket-server
+Version: 1.0.83.69
+Summary: Serveur WebSocket pour monitoring système en temps réel
+Author-email: NMicInvest <accueil@nmicinvest.com>
+License-Expression: GPL-3.0-or-later
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: System :: Monitoring
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: websockets
+Requires-Dist: psutil
+Requires-Dist: pyyaml
+Requires-Dist: colorama
+Requires-Dist: websockets
+Requires-Dist: GPUtil
+Requires-Dist: nvidia-ml-py3
+Requires-Dist: pynvml
+
+# Monitoring WebSocket Server
+
+A real-time system monitoring application that collects system metrics (CPU, memory, disk, GPU) and broadcasts them via WebSocket to connected clients.
+
+## Features
+
+- Real-time system monitoring (CPU, memory, disk, GPU)
+- WebSocket server for broadcasting metrics
+- Configurable alert thresholds
+- Multiple data export formats
+- Standalone WebSocket server mode
+- GPU monitoring with automatic detection
+
+## Installation
+
+```bash
+pip install monitoring-websocket-server
+```
+
+## Quick Start
+
+### Run as Standalone WebSocket Server
+
+```bash
+python -m run_server
+```
+
+The server will start on `ws://localhost:8765` by default.
+
+### Use in Your Application
+
+```python
+from monitoring_websocket_server import StandaloneWebSocketServer
+
+# Create and start the server
+server = StandaloneWebSocketServer(host='0.0.0.0', port=8765)
+await server.start()
+```
+
+## Configuration
+
+The system can be configured via JSON/YAML files or programmatically:
+
+```python
+from monitoring_websocket_server.config import ConfigurationManager
+
+config = ConfigurationManager()
+config.set_alert_thresholds({
+    'memory': {'warning': 80, 'critical': 90},
+    'cpu': {'warning': 80, 'critical': 95},
+    'disk': {'warning': 85, 'critical': 95}
+})
+```
+
+## Architecture
+
+- **Core**: Data models and enums
+- **Monitors**: System metric collectors (CPU, memory, disk, GPU)
+- **Services**: Core monitoring and WebSocket services
+- **Exporters**: Data export mechanisms
+- **Alerts**: Configurable alert system with thresholds
+
+## Development
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run tests
+python test_client.py
+python test_gpu.py
+```
+
+## License
+
+GPL-3.0-or-later
+
+## Author
+
+NMicInvest - accueil@nmicinvest.com
