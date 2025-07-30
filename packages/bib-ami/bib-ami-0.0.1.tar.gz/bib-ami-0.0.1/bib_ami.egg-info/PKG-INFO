@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: bib-ami
+Version: 0.0.1
+Summary: A tool to merge and clean BibTeX files.
+Home-page: https://github.com/hrolfrc/bib-ami
+Author: Rolf Carlson
+Author-email: hrolfrc@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# bib-ami
+
+A Python tool to merge and clean BibTeX files. Currently, it consolidates all `.bib` files from a directory into a single output file. Future versions will include deduplication, DOI validation, and metadata refreshing.
+
+## Installation
+```bash
+pip install bib-ami
