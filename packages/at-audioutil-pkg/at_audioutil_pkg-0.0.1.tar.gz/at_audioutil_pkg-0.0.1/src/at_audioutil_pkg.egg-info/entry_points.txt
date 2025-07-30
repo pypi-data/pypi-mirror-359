@@ -1,0 +1,2 @@
+[console_scripts]
+audioutil = ricochet_tech.audio.audio_util:main
