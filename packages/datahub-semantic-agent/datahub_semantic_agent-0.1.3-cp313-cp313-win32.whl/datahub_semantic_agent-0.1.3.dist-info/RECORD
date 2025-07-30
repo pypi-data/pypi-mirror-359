@@ -1,0 +1,14 @@
+datahub_semantic_agent.cp311-win32.pyd,sha256=t2ZWM3hIEZ-JKywHt5ZK5GcsZXBi8ybXPUBWVkh2G6k,557056
+datahub_semantic_agent.cp311-win_amd64.pyd,sha256=OUg0ald8ugY41QnPmFajoxYb5VoltDnSxnq7076ThNM,663040
+datahub_semantic_agent.cp312-win32.pyd,sha256=9b6yUBC-DHH5y4seTkQyTfZhrX0l-MiAYOiG2uPEjWc,594432
+datahub_semantic_agent.cp312-win_amd64.pyd,sha256=vp_s94KMho28lx0D4RYkU3d72A_iHUhWdv82g23-0Js,667648
+datahub_semantic_agent.cp313-win32.pyd,sha256=gv2fki8GAUxg6Ph3-Womp3CoGwdt5iBcpIYqRyQevkI,605696
+datahub_semantic_agent.pyi,sha256=gVGVgN3I81grE3n23IPP5Ln3vpEvzDmWs7Egxrw-aV4,1293
+datahub_semantic_agent/list_queries.gql,sha256=ZCRr4tPKytgA-auX7LQ5J0V8l8vF-Wiz-9dwPusdPcI,440
+datahub_semantic_agent/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+datahub_semantic_agent.build/.gitignore,sha256=aEiIwOuxfzdCmLZe4oB1JsBmCUxwG8x-u-HBCV9JT8E,1
+datahub_semantic_agent-0.1.3.dist-info/METADATA,sha256=VD2mPBBe2-iN-4mUqVaEv9IpvPBTMtmPVrMncNhAKcE,2714
+datahub_semantic_agent-0.1.3.dist-info/WHEEL,sha256=ZcfyGegwf784iDlqWpCaTj1zUPcmaO9L6G5T9Tfp_78,93
+datahub_semantic_agent-0.1.3.dist-info/entry_points.txt,sha256=fim2ULJA6iu181W2FOT1vpD_3giepiDSsPJIUGdeP4w,80
+datahub_semantic_agent-0.1.3.dist-info/top_level.txt,sha256=DnKRmLNn7f61fbGlH981hq91_lxbk_A0MiQp0zt4fCU,23
+datahub_semantic_agent-0.1.3.dist-info/RECORD,,
