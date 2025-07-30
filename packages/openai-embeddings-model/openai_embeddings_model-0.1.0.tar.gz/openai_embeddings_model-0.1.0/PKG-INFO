@@ -1,0 +1,21 @@
+Metadata-Version: 2.3
+Name: openai-embeddings-model
+Version: 0.1.0
+Summary: OpenAIEmbeddingsModel
+License: MIT
+Author: Allen Chou
+Author-email: f1470891079@gmail.com
+Requires-Python: >=3.11,<4
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: diskcache (>=5,<6.0.0)
+Requires-Dist: numpy (>=1)
+Requires-Dist: openai (>=1,<2)
+Description-Content-Type: text/markdown
+
+# openai-embeddings-model
+OpenAIEmbeddingsModel
+
