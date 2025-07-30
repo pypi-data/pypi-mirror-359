@@ -1,0 +1,2 @@
+[console_scripts]
+eolas-mech-mcp = src.server:main
