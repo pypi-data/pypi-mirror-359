@@ -1,0 +1,12 @@
+celery<5.5,>=5.1.0
+Flask-CeleryExt>=0.3.4
+invenio-base<3.0.0,>=2.3.0
+msgpack>=0.6.2
+redis>=2.10.0
+
+[docs]
+
+[tests]
+pytest-black-ng>=0.4.0
+pytest-invenio<4.0.0,>=3.0.0
+Sphinx<6.0.0,>=5.0.0
