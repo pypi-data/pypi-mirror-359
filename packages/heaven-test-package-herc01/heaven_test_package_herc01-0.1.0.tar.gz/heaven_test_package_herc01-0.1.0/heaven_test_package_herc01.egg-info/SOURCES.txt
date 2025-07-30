@@ -1,0 +1,6 @@
+README.md
+setup.py
+heaven_test_package_herc01.egg-info/PKG-INFO
+heaven_test_package_herc01.egg-info/SOURCES.txt
+heaven_test_package_herc01.egg-info/dependency_links.txt
+heaven_test_package_herc01.egg-info/top_level.txt
