@@ -1,0 +1,12 @@
+jsonmore/__init__.py,sha256=NP9NkBC9kUBsBoxgT47sf2z5fzL43ZxOwDgspSGY_Fo,898
+jsonmore/__main__.py,sha256=ylWORH787HjmSjVjBYwLWaJ05yiHCPEXRGaDNHGfXyE,512
+jsonmore/cli.py,sha256=4ISX6KZp1MbJi-W-9vGLIDwrQqsZt3d5QUgNqDGp9vg,4616
+jsonmore/colors.py,sha256=0V2yeM8Tw1QbFUoks6YU7fWQfHtYK_7yd4d5bia3im4,1505
+jsonmore/core.py,sha256=szcSSe5XAxwfsB1ulgsxLIyvOU8vEyDq7jdsmC9Rwlo,19746
+jsonmore/py.typed,sha256=RvGp-EOMzpQIiWOa1SSzCi6XYbAzLkkk7sTyIEfA8bA,96
+jsonmore/utils.py,sha256=nlnDgER-K4-36Np2jubVW-Tw2khvUqVXucDVe6LBnZI,2382
+jsonmore-1.0.1.dist-info/METADATA,sha256=bsQYKGUzKzn5zWMG8YmW-yxjGZJGV-NoGvFrAeKzN9Q,11415
+jsonmore-1.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jsonmore-1.0.1.dist-info/entry_points.txt,sha256=-I_5LQj8PTcmYW9Ga_m5aszYVsXyLTu4Fzqp9iatF5I,47
+jsonmore-1.0.1.dist-info/licenses/LICENSE,sha256=JkgqVuf1i0ryqtNqE7B9dnbgk1TJNtrr8cjqKfcJU6g,1066
+jsonmore-1.0.1.dist-info/RECORD,,
