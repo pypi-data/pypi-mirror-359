@@ -1,0 +1,6 @@
+try:
+    EXPLICIT_QUEUES.update({{CELERY_CMS_EXPLICIT_QUEUES}})
+except NameError:
+    EXPLICIT_QUEUES = {{CELERY_CMS_EXPLICIT_QUEUES}}
+# Prevents losing tasks when workers are shutdown
+CELERY_ACKS_LATE = True

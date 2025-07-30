@@ -1,0 +1,26 @@
+{% for service, variants in iter_celery_workers_config().items() %}
+{% for variant, config in variants.items() if config.get('enable_keda') %}
+{% set deployment = service + "-" + "worker" + "-" + variant.replace("_", "-")%}
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {% if variant != 'default' %}{{ deployment }}{% else %}{{service}}-worker{% endif %}-scaledobject
+spec:
+  minReplicaCount: {{ config.get("min_replicas", 0) }}
+  maxReplicaCount: {{ config.get("max_replicas", 30) }}
+  scaleTargetRef:
+    kind: Deployment
+    name: {% if variant != 'default' %}{{ deployment }}{% else %}{{service}}-worker{% endif %}
+  triggers:
+  - metadata:
+      {% if REDIS_HOST == 'redis' -%}
+      address: redis.{{K8S_NAMESPACE}}:{{REDIS_PORT}}
+      {% else -%}
+      address: {{REDIS_HOST}}:{{REDIS_PORT}}
+      {% endif -%}
+      listLength: "{{ config.get("list_length", 40)}}"
+      listName: edx.{{service}}.core.{{variant}}
+    type: redis
+{% endfor %}
+{% endfor %}

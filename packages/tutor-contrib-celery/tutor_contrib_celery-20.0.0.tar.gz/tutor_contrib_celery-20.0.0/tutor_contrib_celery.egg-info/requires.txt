@@ -1,0 +1,9 @@
+tutor~=20.0
+
+[dev]
+build
+black
+isort
+mypy
+pylint
+python-semantic-release

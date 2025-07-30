@@ -1,0 +1,6 @@
+{% if CELERY_FLOWER and CELERY_FLOWER_EXPOSE_SERVICE %}
+# flower
+{{ CELERY_FLOWER_HOST }}{$default_site_port} {
+    import proxy "flower:5555"
+}
+{% endif %}

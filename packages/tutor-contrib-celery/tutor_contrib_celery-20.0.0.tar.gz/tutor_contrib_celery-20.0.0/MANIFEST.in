@@ -1,0 +1,2 @@
+recursive-include tutorcelery/patches *
+recursive-include tutorcelery/templates *

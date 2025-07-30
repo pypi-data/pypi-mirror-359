@@ -1,0 +1,1 @@
+- plugins/celery/k8s/keda.yml
