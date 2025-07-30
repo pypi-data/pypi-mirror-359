@@ -1,0 +1,3 @@
+[console_scripts]
+allma=allma.main:main
+
