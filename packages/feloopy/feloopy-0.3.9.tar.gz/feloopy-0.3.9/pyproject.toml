@@ -1,0 +1,183 @@
+[tool.poetry]
+name = "feloopy"
+version = "0.3.9"
+description = "FelooPy: Efficient and feature-rich integrated decision environment"
+authors = [ "Keivan Tafakkori <k.tafakkori@gmail.com>",]
+license = "MIT"
+
+[tool.poetry.dependencies]
+gputil = ""
+infix = ""
+matplotlib = ""
+nbformat = ""
+numba = ""
+numpy = ""
+openpyxl = ""
+pandas = ""
+plotly = ""
+polars = ""
+psutil = ""
+py-cpuinfo = ""
+python = ">=3.10"
+scikit-learn = ""
+tabulate = ""
+win-unicode-console = ""
+xlsxwriter = ""
+tqdm = ""
+colorama = ""
+rich = ""
+
+[tool.poetry.scripts]
+feloopy = "feloopy.cli:main"
+flp = "feloopy.cli:main"
+fly = "feloopy.cli:main"
+
+[tool.poetry.group.pico.dependencies]
+
+[tool.poetry.group.nano.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+
+[tool.poetry.group.micro.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+
+[tool.poetry.group.mini.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+cvxpy = "1.6.4"
+ortools = "9.12.4544"
+
+[tool.poetry.group.full.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+cvxpy = "1.6.4"
+ortools = "9.12.4544"
+pydecision = "4.7.5"
+pymoo = "0.6.1.3"
+rsome = "1.3.1"
+
+[tool.poetry.group.stock.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+cvxpy = "1.6.4"
+ortools = "9.12.4544"
+pydecision = "4.7.5"
+pymoo = "0.6.1.3"
+rsome = "1.3.1"
+linopy = "0.5.2"
+mip = "1.15.0"
+niapy = "2.5.2"
+picos = "2.6.0"
+pulp = "3.1.1"
+pygad = "3.4.0"
+pyomo = "6.9.1"
+highsbox = "1.10.0"
+pyoptinterface = "0.4.1"
+
+[tool.poetry.group.plus_gurobi.dependencies]
+gurobipy = "12.0.1"
+
+[tool.poetry.group.plus_cplex.dependencies]
+cplex = "22.1.2.0"
+docplex = "2.29.241"
+
+[tool.poetry.group.plus_xpress.dependencies]
+xpress = "9.5.4"
+
+[tool.poetry.group.plus_copt.dependencies]
+coptpy = "7.2.6"
+
+[tool.poetry.group.plus_insideoptdemo.dependencies]
+insideopt-demo = "0.3.3"
+
+[tool.poetry.group.plus_insideopt.dependencies]
+insideopt = "0.1.21"
+
+[tool.poetry.group.plus_gams.dependencies]
+gampspy = "1.8.0"
+
+[tool.poetry.group.plus_jump.dependencies]
+juliacall = "0.9.24"
+
+[tool.poetry.group.beta.dependencies]
+casadi = "3.7.0"
+scipy = "1.15.2"
+
+[tool.poetry.group.canvas.dependencies]
+IPython = ""
+gif = ""
+folium = ""
+plotly = ""
+
+[tool.poetry.group.extras.dependencies]
+numba = ""
+scikit-learn = ""
+
+[tool.poetry.group.hyper.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+cvxpy = "1.6.4"
+ortools = "9.12.4544"
+pydecision = "4.7.5"
+pymoo = "0.6.1.3"
+rsome = "1.3.1"
+linopy = "0.5.2"
+mip = "1.15.0"
+niapy = "2.5.2"
+picos = "2.6.0"
+pulp = "3.1.1"
+pygad = "3.4.0"
+pyomo = "6.9.1"
+highsbox = "1.10.0"
+pyoptinterface = "0.4.1"
+gurobipy = "12.0.1"
+coptpy = "7.2.6"
+cplex = "22.1.2.0"
+docplex = "2.29.241"
+xpress = "9.5.4"
+gampspy = "1.8.0"
+
+[tool.poetry.group.only_cylp.dependencies]
+cylp = "0.92.2"
+
+[tool.poetry.group.only_linux.dependencies]
+pymultiobjective = "1.5.4"
+
+[tool.poetry.group.mega.dependencies]
+pymprog = "1.1.2"
+highspy = "1.10.0"
+gekko = "1.3.0"
+mealpy = "3.0.1"
+cvxpy = "1.6.4"
+ortools = "9.12.4544"
+pydecision = "4.7.5"
+pymoo = "0.6.1.3"
+rsome = "1.3.1"
+linopy = "0.5.2"
+mip = "1.15.0"
+niapy = "2.5.2"
+picos = "2.6.0"
+pulp = "3.1.1"
+pygad = "3.4.0"
+pyomo = "6.9.1"
+highsbox = "1.10.0"
+pyoptinterface = "0.4.1"
+gurobipy = "12.0.1"
+coptpy = "7.2.6"
+cplex = "22.1.2.0"
+docplex = "2.29.241"
+xpress = "9.5.4"
+gampspy = "1.8.0"
+cylp = "0.92.2"
+pymultiobjective = "1.5.4"
