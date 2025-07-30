@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: mars-datetime
+Version: 1.0.2
+Summary: Convert between Earth times and Mars times.
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: click>=8.1.7
+Requires-Dist: numpy>=2.0.2
+Requires-Dist: scipy>=1.13.1
+Provides-Extra: dev
+Requires-Dist: pydata-sphinx-theme>=0.16.1; extra == "dev"
+Requires-Dist: pylint>=3.3.7; extra == "dev"
+Requires-Dist: pytest>=8.4.1; extra == "dev"
+Requires-Dist: sphinx>=7.4.7; extra == "dev"
+Dynamic: license-file
+
+.. image:: https://github.com/marek-slipski/mars_time/workflows/CI/badge.svg?branch=main
+     :target: https://github.com/marek-slipski/mars_time/actions?workflow=CI
+     :alt: CI Status
+
+mars_time is a package for converting between Earth and Mars times. It aims to be a "datetime" equivalent for Mars and
+provides conversions between:
+
+* Mars years
+* datetimes
+* sols
+* solar longitude
+
+If you're interested, check out the `documentation <https://marek-slipski.github.io/mars_time/>`_
+
+Feedback is welcome. Feel free to raise an issue if you find a bug or simply want to request a feature.
