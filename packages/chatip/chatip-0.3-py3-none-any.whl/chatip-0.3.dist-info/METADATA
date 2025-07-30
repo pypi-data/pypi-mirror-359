@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: chatip
+Version: 0.3
+Summary: 一个简单的 IP 处理工具（示例）
+Home-page: 
+Author: Wu_Ziqi
+Author-email: bcm_copilot@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9, <3.14
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: Pillow>=5.1.0
+Requires-Dist: numpy==1.26.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# chatip
+
+
+
+`chatip` 是一个为开发者提供基本通讯窗口的库错库会显示在tkinter窗口上
+
+### 安装
+
+```
+pip install chatip
+```
+
+
+### License
