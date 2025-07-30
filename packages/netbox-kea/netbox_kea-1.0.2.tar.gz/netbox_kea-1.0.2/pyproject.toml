@@ -1,0 +1,74 @@
+[project]
+name = "netbox-kea"
+version = "1.0.2"
+description = ""
+readme = "README.md"
+# NetBox 4.10 requires Python 3.10
+requires-python = ">=3.10"
+authors = [
+  {name = "Devon Mar", email = "devon-mar@users.noreply.github.com"},
+]
+dependencies = [
+  "requests>=2.0.0,<3.0.0",
+  "netaddr>=0.8,<2.0.0",
+]
+
+[dependency-groups]
+dev = [
+  "types-requests>=2.0.0,<3.0.0",
+  "mypy>=1.14.0,<1.15.0",
+  "pytest>=8.0.0,<9.0.0",
+  "pytest-playwright>=0.6.0,<0.7.0",
+  "pynetbox>=7.3.0,<7.4.0",
+  "django-stubs[compatible-mypy]>=5.0.0,<6.0.0",
+  # Doesn't work with ruff-action
+  # "ruff>=0.8.0,<0.9.0",
+  "ruff>=0.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "netbox_kea",
+]
+
+[tool.ruff]
+exclude = [
+  "netbox_kea/migrations",
+]
+
+[tool.ruff.lint]
+select = [
+  "C4",
+  "E",
+  "EXE",
+  "F",
+  "I",
+  "ISC",
+  "PERF",
+  "PIE",
+  "PYI",
+  "UP",
+  "W",
+]
+ignore = [
+  "E501",
+  # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  "W191",
+  "E111",
+  "E114",
+  "E117",
+  "D206",
+  "D300",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "COM812",
+  "COM819",
+  "ISC001",
+  "ISC002",
+]
