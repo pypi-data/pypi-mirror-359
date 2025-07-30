@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: AdvsSdkPy
+Version: 0.8.0
+Keywords: Advascope,AdvsSdkPy
+Description-Content-Type: text/markdown
+
+# AdvaBoard SDK Python
+
+**Prerequisities**
+ - Python3.10 - fresh virtual environment is highly recommended
+ - pip packages
+    - delvewheel
+    - build
+ - [Windows]: PowerShell, optimally with x64 developer tools
+
+How to install:
+```shell
+conan install -pr:h=<profile> -pr:b=<profile> --build=missing .
+conan build .
+pip install build/wheelhouse/advsSdk*.whl --force-reinstall
+```
+- `profile` -- Conan profile to build with. Recommended are *clang19_release_linux* (Linux) / *msvc17_release_windows* (Windows).
