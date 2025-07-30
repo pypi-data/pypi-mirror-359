@@ -1,0 +1,17 @@
+wagtail_admin_modals/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wagtail_admin_modals/apps.py,sha256=-ZQGjK34JlU1UGHjcLU6MT3Qof4jHm0rBZ58-5Rvsis,245
+wagtail_admin_modals/panels.py,sha256=NBisl5HlFT8DGr_6j5YmK94rcyyBv6-_Jigf1vdQ6KY,1744
+wagtail_admin_modals/registry.py,sha256=7L24lfNpiWniUyWcXZBEyIkr_orqg5xbcwZAZcK7RFk,1784
+wagtail_admin_modals/views.py,sha256=U4i8NkPUXGKPuTtGK_SmgbgRGqb5ASvoz11kABAl75c,4441
+wagtail_admin_modals/static/wagtail_admin_modals/css/modal-defaults.css,sha256=h7YESAudDiKSOKuJDhZpfVEYeedRak6sxjEEWBzLPK8,276
+wagtail_admin_modals/static/wagtail_admin_modals/css/modal-tabs.css,sha256=0bGu3PNEEqwNY5LM7CASP9ZllUFPGPlLvRfvdeusANM,590
+wagtail_admin_modals/static/wagtail_admin_modals/js/modal-tabs.js,sha256=6k9MlDgavblxHlfbLV6ifMNxqSafpgonG72W_JIvm0I,568
+wagtail_admin_modals/static/wagtail_admin_modals/js/modal-workflow-wrapper.js,sha256=p6KeGnSJAnHJFA6F_Q6C6gPBgj3Jsc2LlLVo21ujXDY,739
+wagtail_admin_modals/templates/wagtail_admin_modals/base_modal.html,sha256=5d-XmDZEagSZUQrghQCBj3aFSQ0CBsJX6nXDsLJdYD8,713
+wagtail_admin_modals/templates/wagtail_admin_modals/base_modal_tabbed.html,sha256=dvbbIJhjo99NelNjjfyyagIotAjzyqRgumIHBEftJUo,1080
+wagtail_admin_modals/templates/wagtail_admin_modals/panels/button_panel.html,sha256=_8t7uut4s_0r8lYtnXv1UaiLXJ-BeFPQzGa-aA3_-gY,255
+wagtail_admin_modals-0.1.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+wagtail_admin_modals-0.1.0.dist-info/METADATA,sha256=FJymjw9oVkOnqzkn56yjl-LPnPT_M4DuBnmGu1MzVRg,632
+wagtail_admin_modals-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wagtail_admin_modals-0.1.0.dist-info/top_level.txt,sha256=6W-D7BFg6fxZma9XqWvBMYPJjqNy0wiye_5EwXUqDCo,21
+wagtail_admin_modals-0.1.0.dist-info/RECORD,,
