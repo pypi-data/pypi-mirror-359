@@ -1,0 +1,11 @@
+rafael_nn/__init__.py,sha256=HjtL15REAQqrOlr4djEKXH8l6WezjGjcgiauNukxZqU,493
+rafael_nn/acfn.py,sha256=6Z6YDwG2HbGFG3TOcGQwpxsIffpNmBca4K_QF-mBLpM,635
+rafael_nn/common.py,sha256=WtnEXY0tOUCoiw6JhxBJQWOLgUyu6WrwBDstUOtoIRU,185
+rafael_nn/layer.py,sha256=Y77yPay9wnU-HbGnlgIkx-dHquYXY84tN7zerWNmJXk,3592
+rafael_nn/lossfn.py,sha256=Idx8Dw88hxQTcudFkJKPRyyU3hH0yg9BWXDOOoqHQFU,787
+rafael_nn/nn.py,sha256=ZHS4IuVEmEqqOxezqTv0Hm_rGfau64FScXajojKNXjo,3033
+rafael_nn/optimizer.py,sha256=1pOdEONlrX-p9FeSqAltSZB7uVMJEPiqNvcklIrEcK4,1794
+rafael_nn-1.0.0.dist-info/METADATA,sha256=scx8_QvtAOsL9Fa9gfKzh_DecyC7I3sXgxTiBVVS5AE,250
+rafael_nn-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+rafael_nn-1.0.0.dist-info/top_level.txt,sha256=YB8sfVv4W4VTJl9Zlo2mpx0oL36v8herAo4yaYF1eLY,10
+rafael_nn-1.0.0.dist-info/RECORD,,
