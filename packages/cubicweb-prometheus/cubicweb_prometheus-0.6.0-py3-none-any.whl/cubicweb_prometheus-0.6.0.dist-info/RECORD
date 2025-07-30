@@ -1,0 +1,11 @@
+cubicweb_prometheus/__init__.py,sha256=CPFMKGTFhMTHbgDK_PJUoTIMNH1Np3pRt8-lI18JFHk,131
+cubicweb_prometheus/__pkginfo__.py,sha256=8TJqEgsnDNmW6Z4taJyZopCMsDFxlqK-EBua-DF0Osk,711
+cubicweb_prometheus/views.py,sha256=oCBq8TkmSjloHKSW-DFFobDGOi_db4Kx7ea3oSA2lcA,7169
+cubicweb_prometheus/i18n/en.po,sha256=EGZckSBeIJYkvhpjL4dCLHF8-iJCJ6nD0oHu7LmyIW4,248
+cubicweb_prometheus/i18n/es.po,sha256=EGZckSBeIJYkvhpjL4dCLHF8-iJCJ6nD0oHu7LmyIW4,248
+cubicweb_prometheus/i18n/fr.po,sha256=EGZckSBeIJYkvhpjL4dCLHF8-iJCJ6nD0oHu7LmyIW4,248
+cubicweb_prometheus-0.6.0.dist-info/METADATA,sha256=DxSvA8920NIBx4GMm2jqRDxle0NhxM4j5N5UhGmwNqY,1368
+cubicweb_prometheus-0.6.0.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+cubicweb_prometheus-0.6.0.dist-info/entry_points.txt,sha256=LdWpTmc08guIij7T-LCqPSDc3A-5SxrQPqTskhVMk_U,50
+cubicweb_prometheus-0.6.0.dist-info/top_level.txt,sha256=WVQ5m8Rv8whUZEtmM9qqGxEj4_SeWewdf2hjuhZ5r54,20
+cubicweb_prometheus-0.6.0.dist-info/RECORD,,
