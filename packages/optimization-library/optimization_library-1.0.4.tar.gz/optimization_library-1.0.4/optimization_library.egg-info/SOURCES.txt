@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+optimization_library/Integer_programming.py
+optimization_library/__init__.py
+optimization_library/linear_programming.py
+optimization_library/non_linear_programming.py
+optimization_library.egg-info/PKG-INFO
+optimization_library.egg-info/SOURCES.txt
+optimization_library.egg-info/dependency_links.txt
+optimization_library.egg-info/requires.txt
+optimization_library.egg-info/top_level.txt
