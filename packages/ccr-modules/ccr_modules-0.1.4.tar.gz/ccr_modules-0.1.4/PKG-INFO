@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: ccr-modules
+Version: 0.1.4
+Summary: Package for managing and processing data related to the CCR (Climate Control System) modules.
+Author-email: WSpamer <spamer24310@gmail.com>
+Requires-Python: >=3.9
+Requires-Dist: loguru>=0.7.2
+Requires-Dist: pandas>=2.3.0
