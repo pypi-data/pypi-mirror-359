@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+team_former/__init__.py
+team_former/make_teams.py
+team_former.egg-info/PKG-INFO
+team_former.egg-info/SOURCES.txt
+team_former.egg-info/dependency_links.txt
+team_former.egg-info/entry_points.txt
+team_former.egg-info/requires.txt
+team_former.egg-info/top_level.txt
+tests/test_teams.py
