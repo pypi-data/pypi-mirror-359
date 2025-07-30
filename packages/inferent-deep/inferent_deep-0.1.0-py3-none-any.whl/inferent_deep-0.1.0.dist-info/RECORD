@@ -1,0 +1,14 @@
+__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+inferent_deep-0.1.0.dist-info/licenses/LICENSE,sha256=dgCtF2YDy_Rdq4y8Iz906JHeTx9AFrwFay3BbPaFls8,1065
+inferentdeep/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+inferentdeep/training/__init__.py,sha256=O1OHZmoKew4wJeaOxjwakH2HeYf5re3Ta0PDKs60x5U,103
+inferentdeep/training/datamanager.py,sha256=7D9iyngJPpa32jpMbpugOiPSu8ri2Sd4F_ACulRcYUM,3436
+inferentdeep/training/predictor.py,sha256=8aAJcnKSecV83XK3XRsxrM_4tC8bhMabiR0FJvb_yAg,1214
+inferentdeep/training/preprocessor.py,sha256=v8lH4n_eEB_tPdNPnTvyNG7jRcXnARPjSXvFJZs-q48,3558
+inferentdeep/training/pytorch.py,sha256=HirX4-equodC6KtljnXaOPiMLCZ60cWl3BjBlapP0rQ,8173
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_training.py,sha256=1rfuX5AyEebWoHzGNULiP2kT5ogYNeIByjTNlinpofY,646
+inferent_deep-0.1.0.dist-info/METADATA,sha256=ev_OCKCNJm4xsCX0jhNe5Mq3CbDN_3IkmyBSYR23YDE,697
+inferent_deep-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+inferent_deep-0.1.0.dist-info/top_level.txt,sha256=2Op4ja9u_vzJq0VKJrs2Algg0cNFCuzdRIFnpj7QbJQ,28
+inferent_deep-0.1.0.dist-info/RECORD,,
