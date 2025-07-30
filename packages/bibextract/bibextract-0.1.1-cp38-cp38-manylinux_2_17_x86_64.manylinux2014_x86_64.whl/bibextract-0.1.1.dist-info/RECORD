@@ -1,0 +1,17 @@
+bibextract-0.1.1.dist-info/METADATA,sha256=Yi-Q0pWj4tWFBsgIR5Kgpi4GH657fbDW0Xo6dY8FwAs,5478
+bibextract-0.1.1.dist-info/WHEEL,sha256=PKhiID7sxd2nqabU0ZOVlUz1k3VxDO2XAVQLjiw4sUc,127
+bibextract-0.1.1.dist-info/licenses/LICENSE,sha256=Jw_Wqf5swgrgy2K0Pgat5DOoHDct-nz_AsIQ-yWI1HI,1070
+bibextract.libs/libcom_err-2abe824b.so.2,sha256=2cr9HWC0zMwfcEKxV3lOyqcFQx_liPR102u064ZehwY,17497
+bibextract.libs/libcrypto-d3570994.so.10,sha256=G77JrAQdkpcVpLaOEqux61ZWS2piDK4OdiA6I1WDNT8,2644337
+bibextract.libs/libgssapi_krb5-497db0c6.so.2,sha256=ina9JSypgqHXDYSmpsZFELpq8Z9AUsvX1aCYl2DCtsU,345201
+bibextract.libs/libk5crypto-b1f99d5c.so.3,sha256=fC9gIDmgJt5bvJK7ClxcP1c6iUcn-mJRZQLUGUDeQd0,219945
+bibextract.libs/libkeyutils-dfe70bd6.so.1,sha256=kcWHLTpNmSeC4yKSDsp7dbJPZIaKV8zAlglJTCeBd_I,17913
+bibextract.libs/libkrb5-fcafa220.so.3,sha256=wtJJ28ZZBLwx5DZxT1H7yG0VuRpKZISzEafdVjoBJi0,1018945
+bibextract.libs/libkrb5support-d0bcff84.so.0,sha256=7xkvBuPvyune4tbvMAthFjTdVb8-CHlSIqrN7DPmJ0E,76873
+bibextract.libs/libpcre-9513aab5.so.1,sha256=Sdoz-1U1JVL_xdZbMh14vyvUcv0FK2cGsH7rkU167aA,406809
+bibextract.libs/libselinux-0922c95c.so.1,sha256=8QaH0x86IWdPgewpKsNMwDD7k5CNsiTBdhyA_pdYq-A,178329
+bibextract.libs/libssl-cd1d6220.so.10,sha256=NZj94nAhs815nJz5adHy2gDc5oIRbIh6Vrd0wfDZtXU,519537
+bibextract/__init__.py,sha256=1P0UgIZxjncBcMXnZ9xmr3kDCagb0n6Rde25vixM-3E,300
+bibextract/bibextract.cpython-38-x86_64-linux-gnu.so,sha256=ItKljHVwfqQJyWBvunNKw7ZeVRegQtuADk1Pl3xQvzs,5042353
+bibextract/bibextract.pyi,sha256=VAyTZuxwNn6fJd_zcggQqfP-r8xvMQuFjRkto5DNy5w,848
+bibextract-0.1.1.dist-info/RECORD,,
