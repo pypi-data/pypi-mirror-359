@@ -1,0 +1,2 @@
+[edwh.tasks]
+locust = edwh_locust_plugin.locust_plugin

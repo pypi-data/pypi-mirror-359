@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: edwh-locust-plugin
+Version: 0.1.2
+Summary: locust project with a plugin to be discovered from the edwh package
+Project-URL: Documentation, https://github.com/educationwarehouse/edwh-locust-plugin#readme
+Project-URL: Issues, https://github.com/educationwarehouse/edwh-locust-plugin/issues
+Project-URL: Source, https://github.com/educationwarehouse/edwh-locust-plugin
+Author-email: Remco Boerma <remco.b@educationwarehouse.nl>, Robin van der Noord <robin.vdn@educationwarehouse.nl>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Requires-Dist: invoke
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: hatch; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# edwh-locust-plugin
+
+[![PyPI - Version](https://img.shields.io/pypi/v/edwh-locust-plugin.svg)](https://pypi.org/project/edwh-locust-plugin)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/edwh-locust-plugin.svg)](https://pypi.org/project/edwh-locust-plugin)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install edwh-locust-plugin
+```
+
+But probably you want to install the whole edwh package:
+
+```console
+pipx install edwh[locust]
+# or
+pipx install edwh[plugins,omgeving]
+```
+
+## License
+
+`edwh-locust-plugin` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
