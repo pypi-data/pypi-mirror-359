@@ -1,0 +1,24 @@
+Metadata-Version: 2.2
+Name: SBTools
+Version: 0.0.37
+Summary: Tool Box
+Home-page: 
+Author: Marj
+Author-email: 598175639@qq.com
+License: MIT Licence
+Keywords: pip,SBTools,sbtools
+Platform: any
+Requires-Dist: requests
+Requires-Dist: pymysql
+Requires-Dist: websockets
+Requires-Dist: python-socks
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
+
+Tool Box
