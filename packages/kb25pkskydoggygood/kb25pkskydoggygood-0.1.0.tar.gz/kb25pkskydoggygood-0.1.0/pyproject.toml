@@ -1,0 +1,26 @@
+[project]
+name = "kb25pkskydoggygood"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "skydoggygood",email = "skydoggygood@daum.net"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+name = "kb25pkskydoggygood"
+version = "0.1.0"
+description = ""
+authors = ["skydoggygood <skydoggygood@daum.net>"]
+packages = [{include = "kb25pkskydoggygood", from = "."}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+
