@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: tunnelproxy
+Version: 0.2.1
+Summary: A small whitelisting HTTP CONNECT proxy
+Home-page: https://github.com/De117/tunnelproxy
+Author: Antun Maldini
+Author-email: antun.maldini@gmail.com
+License: MIT
+Project-URL: Source, https://github.com/De117/tunnelproxy
+Project-URL: Tracker, https://github.com/De117/tunnelproxy/issues
+Project-URL: Changelog, https://github.com/De117/tunnelproxy/blob/master/docs/CHANGELOG.md
+Keywords: whitelist proxy HTTP
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Trio
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: Proxy Servers
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Security
+Classifier: Topic :: System :: Networking
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: trio <0.31,>=0.24
+Requires-Dist: h11 ~=0.14.0
+
+# TunnelProxy: A small whitelisting HTTP CONNECT proxy
+This is a small HTTP CONNECT proxy, with a target host whitelist.
+
+Implemented in Python on top of [trio][1] and [h11][2], it is written for ease
+of comprehension and auditing. (This makes it easy to adopt in situations where
+you'd want such a proxy.)
+
+A secondary goal is to be flexible. It can be used in two ways:
+
+  1. As a stand-alone proxy.
+     Just run the module:
+     ```sh
+     python -m tunnelproxy --address localhost --port 8080 --config example-config.json
+     ```
+
+  2. As a library.
+     The proxy (`TunnelProxy`) always runs in Trio's event loop, but a
+     wrapper (`SynchronousTunnelProxy`) lets you run it from normal code.
+
+     Make it your own!
+
+For example of (2), see `tunnelproxy/__main__.py`.
+
+
+# Performance
+The proxy is single-threaded.
+
+On an AMD Ryzen 9 7900, it handles 1000 connections per second at <5ms maximal
+latency, as measured on a 10s burst. (See [benchmarking][5] for details.)
+
+It's not much, but enough for many use cases.
+
+# Changelog
+See [docs/CHANGELOG.md](docs/CHANGELOG.md).
+
+# License
+This project is [MIT licensed][3]. `TrioHTTPConnection` from `adapter.py` is
+based on [h11's example server][4], by Nathaniel J. Smith. The rest is written
+by Antun Maldini.
+
+
+[1]: https://github.com/python-trio/trio#readme
+[2]: https://github.com/python-hyper/h11#readme
+[3]: https://mit-license.org/
+[4]: https://github.com/python-hyper/h11/blob/v0.14.0/examples/trio-server.py
+[5]: ./benchmark/README.md

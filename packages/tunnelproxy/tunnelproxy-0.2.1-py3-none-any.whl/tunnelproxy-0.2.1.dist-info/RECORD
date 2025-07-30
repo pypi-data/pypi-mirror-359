@@ -1,0 +1,11 @@
+tunnelproxy/__init__.py,sha256=uQjzBOsGQYyjmC-czJnAQkCLAGzgV88fSAksaWWj6gk,282
+tunnelproxy/__main__.py,sha256=Y5XmY7V0pAseyxQbUxsz4rTQKQVT3c94a3AKqNNCmjE,2779
+tunnelproxy/_adapter.py,sha256=zNIVkd4gAMoK0mHLwZNAvBZ4h5inM1srmV2qqPySgaU,5185
+tunnelproxy/_config.py,sha256=My3cmEz71_lxEjNMx0PdNvh1K8nhGQy-V2FkaeUUTx8,2762
+tunnelproxy/_proxy.py,sha256=Vkr9T1DJrqV486BeNDkXovJkyJHWKQe7_aWutKtHxMk,9513
+tunnelproxy/_version.py,sha256=9Hig1oyaBg9NP79pXP98DhBD49QsbEnMgaLk-BVRedU,75
+tunnelproxy-0.2.1.dist-info/LICENSE,sha256=Mo-XIVTZvOJQXtZZJuSN6WIgEzlylx3D9gLdz88BYkw,1101
+tunnelproxy-0.2.1.dist-info/METADATA,sha256=FVtmiEc3gDyE33Jc-ukqo2t5uVwnmsOGJcRC9lky8Zw,3007
+tunnelproxy-0.2.1.dist-info/WHEEL,sha256=pL8R0wFFS65tNSRnaOVrsw9EOkOqxLrlUPenUYnJKNo,91
+tunnelproxy-0.2.1.dist-info/top_level.txt,sha256=P0JJcmQNtl40FU8Itc80x3bgVU7742mMb7TErRvJF8A,12
+tunnelproxy-0.2.1.dist-info/RECORD,,
