@@ -1,0 +1,3 @@
+[console_scripts]
+sogon = main:main
+sogon-api = api_server:main
