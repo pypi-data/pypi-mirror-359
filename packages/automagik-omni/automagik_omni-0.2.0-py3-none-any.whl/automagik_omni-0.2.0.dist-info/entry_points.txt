@@ -1,0 +1,5 @@
+[console_scripts]
+automagik-omni = src.cli.main_cli:app
+omnihub = src.cli.main_cli:app
+omnihub-instance = src.cli.instance_cli:app
+omnihub-legacy = src.cli.main:run
