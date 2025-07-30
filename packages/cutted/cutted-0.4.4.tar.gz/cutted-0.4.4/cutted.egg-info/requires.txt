@@ -1,0 +1,16 @@
+customtkinter
+matplotlib
+numpy
+pydub
+pygame
+google-genai
+python-dotenv
+
+[:python_version >= "3.13"]
+audioop-lts
+
+[test]
+pytest
+
+[whisper]
+whisper-timestamped
