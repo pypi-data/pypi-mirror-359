@@ -1,0 +1,2 @@
+[console_scripts]
+daas-mcp-server = daas_mcp_server:main
