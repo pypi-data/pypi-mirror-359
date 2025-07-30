@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sheetpicturefinder"
+version = "1.0.0"
+description = "SheetPictureFinder is a pure Python utility for extracting images from Excel .xlsx files — specifically from worksheets and cell addresses. It parses the internal XML structure of Excel files and maps embedded images to their anchor locations."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  { name = "Samprit Sarkar", email = "samprits5@gmail.com" }
+]
+requires-python = "==3.9.*"
+dependencies = [
+  "Pillow==11.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/samprits5/"
