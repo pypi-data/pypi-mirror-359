@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+qwen_token_counter/__init__.py
+qwen_token_counter.egg-info/PKG-INFO
+qwen_token_counter.egg-info/SOURCES.txt
+qwen_token_counter.egg-info/dependency_links.txt
+qwen_token_counter.egg-info/requires.txt
+qwen_token_counter.egg-info/top_level.txt
