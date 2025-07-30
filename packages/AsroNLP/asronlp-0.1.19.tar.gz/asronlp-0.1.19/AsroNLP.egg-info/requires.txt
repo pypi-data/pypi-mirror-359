@@ -1,0 +1,9 @@
+pandas
+nltk
+openpyxl
+rich
+regex
+swifter
+Sastrawi
+matplotlib
+wordcloud

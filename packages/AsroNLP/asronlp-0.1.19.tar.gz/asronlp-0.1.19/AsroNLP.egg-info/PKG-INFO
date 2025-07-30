@@ -1,0 +1,67 @@
+Metadata-Version: 2.2
+Name: AsroNLP
+Version: 0.1.19
+Summary: Paket NLP untuk pengolahan teks Bahasa Indonesia
+Home-page: https://github.com/asroharun6/asronlp
+Author: Asro
+Author-email: 982024204@student.uksw.edu
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: Indonesian
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: nltk
+Requires-Dist: openpyxl
+Requires-Dist: rich
+Requires-Dist: regex
+Requires-Dist: swifter
+Requires-Dist: Sastrawi
+Requires-Dist: matplotlib
+Requires-Dist: wordcloud
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AsroNLP
+
+**AsroNLP** adalah paket Natural Language Processing (NLP) khusus untuk pengolahan teks Bahasa Indonesia. Paket ini menyediakan fitur preprocessing lengkap seperti pembersihan teks, tokenisasi, normalisasi, stemming, serta analisis sentimen berbasis kamus leksikon positif dan negatif.
+
+---
+
+## Fitur Utama
+
+- Pembersihan teks dari emoji, angka, simbol, URL, mention, dan duplikat data
+- Tokenisasi teks Bahasa Indonesia menggunakan NLTK
+- Penghapusan stopwords Bahasa Indonesia
+- Normalisasi kata menggunakan kamus kata baku
+- Stemming dengan algoritma Sastrawi
+- Analisis sentimen dengan kamus leksikon positif dan negatif
+- Deteksi sumber komentar (Media atau Individual)
+- Visualisasi hasil analisis: distribusi sentimen, wordcloud, dan frekuensi kata
+- Mendukung data dari YouTube (`comment`) dan Twitter (`full_text`)
+
+---
+
+## Instalasi
+
+Instalasi paket AsroNLP beserta dependensinya dapat dilakukan dengan:
+
+```bash
+pip install asronlp
+pip install asronlp==0.1.19
+
+Contoh
+from asro_nlp import AsroNLP
+
+nlp = AsroNLP()
+nlp.preprocess_and_analyze('data/input_data.xlsx', 'data/output_result.xlsx')
