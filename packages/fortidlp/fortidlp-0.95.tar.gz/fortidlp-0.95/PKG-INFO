@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: fortidlp
+Version: 0.95
+Summary: This FortiDLP module is an open-source Python library that simplifies interaction with the FortiDLP Cloud API.
+Author: Rafael Foster
+Author-email: Rafael Foster <rafaelgfoster@gmail.com>
+Project-URL: Homepage, https://github.com/rafaelfoster/fortiedr
+Project-URL: Issues, https://github.com/rafaelfoster/fortiedr/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
