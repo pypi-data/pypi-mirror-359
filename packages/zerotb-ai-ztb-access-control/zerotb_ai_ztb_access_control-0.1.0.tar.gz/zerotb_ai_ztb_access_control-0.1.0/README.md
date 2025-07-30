@@ -1,0 +1,209 @@
+# ZTB Access Control
+
+A lightweight authentication and authorization client library for ZTB microservices using **Cerbos for RBAC/ABAC** and **AWS Cognito for JWT tokens**. This library provides permission checking capabilities that can be easily imported by microservices.
+
+## 🚀 Features
+
+- **Lightweight**: No database connections required - only Cerbos SDK integration
+- **Cognito Integration**: Seamless JWT token parsing from AWS Cognito
+- **Progressive Authentication**: Support for scope-based access (list_tenants → list_orgs → unrestricted)
+- **FastAPI Dependencies**: Easy-to-use dependency injection for permission checking
+- **Cerbos RBAC/ABAC**: Advanced permission checking with Cerbos policies
+- **Multi-tenant Support**: Built-in tenant and organization isolation
+- **Kong Gateway Ready**: Compatible with Kong gateway token validation
+
+## 📦 Installation
+
+```bash
+pip install ztb-access-control
+```
+
+Or for development:
+
+```bash
+git clone <repository-url>
+cd ztb-access-control
+pip install -e .
+```
+
+## 📋 Requirements
+
+Install from requirements.txt:
+```bash
+pip install -r requirements.txt
+```
+
+
+## 🛠️ Dependencies
+
+- **Cerbos**: For permission checking (RBAC/ABAC)
+- **FastAPI**: For dependency injection
+- **AWS Cognito**: For JWT token management (external)
+
+## ⚙️ Configuration
+
+Set environment variables:
+
+```env
+CERBOS_HOST=localhost:3593
+CERBOS_TLS=false
+AWS_REGION=
+COGNITO_USER_POOL_ID=
+```
+
+## 🔧 Quick Start
+
+### 1. InitializeAccess Control in Your Microservice
+
+```python
+from fastapi import FastAPI, Depends
+from ztb_auth_client import (
+    AuthConfig, 
+    init_auth_client,
+    get_current_user, 
+    require_permission,
+    require_scope,
+    AuthContext
+)
+
+app = FastAPI()
+
+# Initialize auth client (no database needed!)
+config = AuthConfig(cerbos_host="localhost:3593")
+init_auth_client(config)
+
+# Progressive authentication endpoints
+@app.get("/api/v1/tenants")
+def list_tenants(
+    user: AuthContext = Depends(get_current_user),
+    _: bool = Depends(require_scope("list_tenants"))
+):
+    return {"tenants": [...]}
+
+@app.get("/api/v1/organizations") 
+def list_organizations(
+    user: AuthContext = Depends(get_current_user),
+    _: bool = Depends(require_scope("list_orgs"))
+):
+    return {"organizations": [...]}
+
+# Full access with Cerbos permission checking
+@app.get("/api/v1/frameworks")
+async def list_frameworks(
+    user: AuthContext = Depends(get_current_user),
+    _: bool = Depends(require_permission("framework", "list"))
+):
+    return {"frameworks": [...]}
+```
+
+### 2. Cognito Token Structure
+
+Your Cognito JWT tokens should include these custom attributes:
+
+```json
+{
+  "sub": "user_id_123",
+  "email": "user@example.com",
+  "tenant_id": "tenant_123",
+  "org_id": "org_456", 
+  "request_scope": "unrestricted",
+  "roles": ["admin", "manager"],
+  "exp": 1234567890,
+  "iat": 1234567890
+}
+```
+
+### 3. Three Levels of Access
+
+#### Level 1: List Tenants
+- **Scope**: `list_tenants`
+- **Purpose**: After login, user can only list available tenants
+- **Token**: Contains user info but no tenant_id/org_id
+
+#### Level 2: List Organizations  
+- **Scope**: `list_orgs`
+- **Purpose**: After selecting tenant, user can list organizations
+- **Token**: Contains user info + tenant_id
+
+#### Level 3: Unrestricted Access
+- **Scope**: `unrestricted` 
+- **Purpose**: After selecting organization, full access with Cerbos permissions
+- **Token**: Contains user info + tenant_id + org_id + roles
+
+## 🔐 Permission Checking
+
+The library uses **Cerbos** for sophisticated permission checking:
+
+```python
+# Simple permission check
+@app.post("/api/v1/frameworks")
+async def create_framework(
+    user: AuthContext = Depends(get_current_user),
+    _: bool = Depends(require_permission("framework", "create"))
+):
+    # Cerbos checks if user has framework:create permission
+    # considering tenant_id, org_id, user roles, and any conditions
+    return {"message": "Framework created"}
+
+# Resource-specific permission
+@app.get("/api/v1/frameworks/{framework_id}")
+async def get_framework(
+    framework_id: str,
+    user: AuthContext = Depends(get_current_user),
+    _: bool = Depends(require_permission("framework", "read"))
+):
+    # Cerbos can check access to specific framework instance
+    return {"framework": {...}}
+```
+
+## 🔧 Cerbos Policy Example
+
+```yaml
+# cerbos/policies/resource_policy.yaml
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: "default"
+  resource: "framework"
+  rules:
+    - actions: ["*"]
+      effect: EFFECT_ALLOW
+      roles: ["admin"]
+      condition:
+        match:
+          expr: 'P.attr.tenant_id == R.attr.tenant_id && P.attr.org_id == R.attr.org_id'
+    
+    - actions: ["read", "list"]
+      effect: EFFECT_ALLOW
+      roles: ["viewer"]
+      condition:
+        match:
+          expr: 'P.attr.tenant_id == R.attr.tenant_id && P.attr.org_id == R.attr.org_id'
+```
+
+## 🚀 Deployment
+
+### 1. Install Dependencies
+```bash
+pip install ztb-access-control
+```
+
+### 2. Start Cerbos
+```bash
+docker run -p 3593:3593 -v $(pwd)/cerbos:/policies ghcr.io/cerbos/cerbos:latest server --config=/policies/config.yaml
+```
+
+### 3. Configure Cognito
+- Set up user pool with custom attributes
+- Configure JWT token with required claims
+- Set up proper scopes for progressive authentication
+
+### 4. Deploy Microservice
+```python
+# Your microservice code
+from ztb_auth_client import AuthConfig, init_auth_client
+
+config = AuthConfig(cerbos_host="cerbos-service:3593")
+init_auth_client(config)
+```
+
+
