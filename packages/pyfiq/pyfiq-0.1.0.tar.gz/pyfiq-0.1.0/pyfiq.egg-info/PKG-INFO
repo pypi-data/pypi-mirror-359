@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: pyfiq
+Version: 0.1.0
+Summary: No drama. Just ordered execution.
+Author-email: Robert Wikman <rbw@vault13.org>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: redis>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file
+
+# pyfiq
