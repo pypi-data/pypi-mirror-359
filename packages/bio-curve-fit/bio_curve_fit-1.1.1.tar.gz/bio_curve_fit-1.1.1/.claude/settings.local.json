@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest:*)",
+      "WebFetch(domain:stats.stackexchange.com)",
+      "Bash(uv run:*)",
+      "Bash(rg:*)"
+    ],
+    "deny": []
+  }
+}

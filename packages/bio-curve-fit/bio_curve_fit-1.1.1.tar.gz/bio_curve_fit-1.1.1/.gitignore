@@ -1,0 +1,7 @@
+.python-version
+.vscode
+__pycache__
+.coverage
+.venv
+.mypy_cache
+dist
