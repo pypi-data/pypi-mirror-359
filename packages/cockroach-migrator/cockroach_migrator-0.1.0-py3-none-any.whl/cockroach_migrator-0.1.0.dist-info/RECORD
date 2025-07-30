@@ -1,0 +1,15 @@
+cockroach_migrator/__init__.py,sha256=KOGJSiIVu3uSZvJBKaflKzZnf5uTTcIe9omTH-PN56g,298
+cockroach_migrator/cli.py,sha256=kxr83bbShwvk3T-MFFitoJZbX42fDhwET7y0OMoxL68,4194
+cockroach_migrator/migrate.py,sha256=UDAMWDEjtqQxgaW_kN6LCrQX32gokTk7llecYgwQnQ4,35959
+cockroach_migrator/migrate_cockroach.py,sha256=8xXnRtiDLpoR28DJAMugdU9yTQxUe_lPRoJIYm2Umy8,14630
+cockroach_migrator/migrate_conversion.py,sha256=tLquQZIIeZQA5dFOK1il_2PUChaQkFh3OziZOxiT6Y0,21665
+cockroach_migrator/migrate_postgresql.py,sha256=Q7CfNdQWx6RQ95RcX2nwQOGghYu3fw0bEnxgLs7xgTQ,34336
+cockroach_migrator/migrate_validate.py,sha256=ADc3AOUlcTue2JlDxjxqejuk6TP-595GFbj9jF6yZfY,23634
+cockroach_migrator/config/migration_config.json,sha256=Y6I_0vS2pz7czNUSr2Yaa_4d9_D2lJg3p3_s2wDeKPA,848
+cockroach_migrator/templates/migration_config.json,sha256=Y6I_0vS2pz7czNUSr2Yaa_4d9_D2lJg3p3_s2wDeKPA,848
+cockroach_migrator-0.1.0.dist-info/licenses/LICENSE,sha256=lXsq2k8Lekx8qht9j5GFlc9jHXffM2bOSroBshworSQ,1058
+cockroach_migrator-0.1.0.dist-info/METADATA,sha256=AibWWmv3izg20etFA1gNr2MM5Z_msoJpc2mwg3R_K5A,30430
+cockroach_migrator-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cockroach_migrator-0.1.0.dist-info/entry_points.txt,sha256=mw-VN-70CzAthc1sveQSnhCRHZsyoYmxMRa1rrdrUrA,109
+cockroach_migrator-0.1.0.dist-info/top_level.txt,sha256=sPUbl6c3s9sUx4WYXGHy_6mB9TB1mGq_rJxw0qrdYuI,19
+cockroach_migrator-0.1.0.dist-info/RECORD,,
