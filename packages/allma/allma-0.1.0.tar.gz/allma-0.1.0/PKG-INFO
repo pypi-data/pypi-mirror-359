@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: allma
+Version: 0.1.0
+Summary: none
+Author: Robert
+Author-email: 99199842+Robert-Nogueira@users.noreply.github.com
+Requires-Python: >=3.13, <4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: cz-conventional-gitmoji (==0.7.0)
+Requires-Dist: pytest-asyncio (==1.0.0)
+Requires-Dist: ruff (==0.12.2)
+Description-Content-Type: text/markdown
+
+
