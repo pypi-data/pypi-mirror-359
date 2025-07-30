@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: pymultigit
+Version: 0.0.95
+Summary: Pymultigit helps you deal with multiple git repositories
+Project-URL: Homepage, https://github.com/veltzer/pymultigit
+Project-URL: Bug Tracker, https://github.com/veltzer/pymultigit/issues
+Project-URL: Documentation, https://veltzer.github.io/pymultigit
+Project-URL: Download, https://pypi.org/project/pymultigit/
+Project-URL: Repository, https://github.com/veltzer/pymultigit
+Author-email: Mark Veltzer <mark.veltzer@gmail.com>
+Maintainer-email: Mark Veltzer <mark.veltzer@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: git,multiple,python,repositories
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Requires-Python: >=3.12
+Requires-Dist: gitpython
+Requires-Dist: pyfakeuse
+Requires-Dist: pylogconf
+Requires-Dist: pytconf
+Requires-Dist: venv-run
+Description-Content-Type: text/markdown
+
+# *pymultigit* project by Mark Veltzer
+
+description: Pymultigit helps you deal with multiple git repositories
+
+project website: https://veltzer.github.io/pymultigit
+
+author: Mark Veltzer
+
+version: 0.0.95
+
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+
+## github
+
+![License](https://img.shields.io/github/license/veltzer/pymultigit)
+
+## build
+
+![build](https://github.com/veltzer/pymultigit/workflows/build/badge.svg)
+
+## pypi
+
+![PyPI - Status](https://img.shields.io/pypi/status/pymultigit)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pymultigit)
+![PyPI - License](https://img.shields.io/pypi/l/pymultigit)
+![PyPI - Package Name](https://img.shields.io/pypi/v/pymultigit)
+![PyPI - Format](https://img.shields.io/pypi/format/pymultigit)
+
+## pypi download
+
+![PyPI - Downloads](https://img.shields.io/pypi/dd/pymultigit)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/pymultigit)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/pymultigit)
+
+
+
+## contact me
+[mailto](mailto:mark.veltzer@gmail.com)
+![gitter](https://img.shields.io/gitter/room/veltzer/mark.veltzer)
+![discord](https://img.shields.io/discord/719336281624281119)
+![discord](https://img.shields.io/discord/719336282194444302)
+
+Mark Veltzer, Copyright © 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
