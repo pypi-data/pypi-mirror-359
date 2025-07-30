@@ -1,0 +1,4 @@
+rhino_gh_mcp/bin/
+rhino_gh_mcp/obj/
+rhino_gh_mcp_uv/rhino_gh_mcp_uv/__pycache__/
+.DS_Store
