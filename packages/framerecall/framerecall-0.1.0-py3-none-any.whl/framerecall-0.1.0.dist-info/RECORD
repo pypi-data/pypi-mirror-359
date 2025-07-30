@@ -1,0 +1,14 @@
+framerecall/__init__.py,sha256=64j3ev0abxRjTAWLNho092ZEHsB3oLTxFd2gWhBluTI,461
+framerecall/chat.py,sha256=FTN3If1SV7z3XxaAC5uRKFe19rgSsbpMexfioTemjdw,11548
+framerecall/config.py,sha256=Bq9j_euXnRqVYq0i3AyFJpevrr4iYnRe2B88XL3lR74,3313
+framerecall/encoder.py,sha256=zBOho8BcpGPPNaRHTFrb1fEEATI9yY4e2N7WmFc0cFU,7640
+framerecall/index.py,sha256=mWNhrIFGw3qdbWnIw8gzWxT6d0VTMnjYLa7bjJEJBfw,13522
+framerecall/interactive.py,sha256=9JRenOVo3fqIuwEhgDLqRWUlBRNWx7rrYyTz5eJIDgo,5953
+framerecall/llm_client.py,sha256=uTkC45NXSMbQmgR3RtgQSA_Y1G14aCDcdbWTf7d4oy4,13375
+framerecall/retriever.py,sha256=uahIQhZpuJwukh9FnCgNb0Q3C8KgMOFp7Ky6iMiz9F4,6146
+framerecall/utils.py,sha256=gSx9qLtzu5uDgvF2NIbOaXHUIVlXuzkh3sjUZUAGCa0,4855
+framerecall-0.1.0.dist-info/licenses/LICENSE,sha256=BCQmyblb0yxgtVYVGorqdwJcHK9SliKH_LtcyOoSnw8,1092
+framerecall-0.1.0.dist-info/METADATA,sha256=PICBbVDUaA_JTPcmgEGCoXhZ_Gj-R3VrcFKwFvePjAs,11652
+framerecall-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+framerecall-0.1.0.dist-info/top_level.txt,sha256=Jrc5RVtJrcrk28gfNF-9bPdSCNMuGbztkeTds1splCk,12
+framerecall-0.1.0.dist-info/RECORD,,
