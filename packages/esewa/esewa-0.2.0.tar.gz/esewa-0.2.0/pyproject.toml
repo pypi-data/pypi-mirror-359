@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esewa"
+version = "0.2.0"
+description = " A Python client for eSewa integration"
+authors = [
+    { name = "Sahil Dahal", email = "the.sahil.verse@gmail.com" }
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.25.1"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/sahilverse/esewa-python"
