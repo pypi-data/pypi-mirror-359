@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "select": {
+            "auto_lock_time": {
+                "state": {
+                    "5": "5 soicind"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "schlage_refresh_failed": {
+            "message": "Theip ar shonra\u00ed Schlage a athnuachan"
+        }
+    }
+}

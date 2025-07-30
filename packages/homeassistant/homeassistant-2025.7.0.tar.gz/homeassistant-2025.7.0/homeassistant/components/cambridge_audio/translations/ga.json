@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "wrong_device": "N\u00ed hionann an gl\u00e9as Cambridge Audio seo agus an ID gl\u00e9is at\u00e1 ann cheana f\u00e9in. Cinntigh gur iontr\u00e1ladh an seoladh IP ceart."
+        },
+        "step": {
+            "reconfigure": {
+                "description": "Athchumraigh do Sruthlaitheoir Fuaime Cambridge."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "control_bus_mode": {
+                "name": "M\u00f3d Bus Rialaithe",
+                "state": {
+                    "amplifier": "Aimplitheoir",
+                    "receiver": "Glacad\u00f3ir"
+                }
+            }
+        }
+    }
+}
