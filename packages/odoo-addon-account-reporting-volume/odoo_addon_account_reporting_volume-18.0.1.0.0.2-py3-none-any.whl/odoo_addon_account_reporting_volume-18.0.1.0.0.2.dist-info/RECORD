@@ -1,0 +1,17 @@
+odoo/addons/account_reporting_volume/README.rst,sha256=sR35_On0OmtCMljyhRhUtyrlVZSiCRFAkt3Di5jorIs,3445
+odoo/addons/account_reporting_volume/__init__.py,sha256=X9EJGOE2GtZbS0G82PtSXmWSZ_R8jEM0rlJTDliQjp4,21
+odoo/addons/account_reporting_volume/__manifest__.py,sha256=k40m5QMbOcvpnVKjAChihPvpkW9rsVlUXC1zfqoIqFY,494
+odoo/addons/account_reporting_volume/i18n/account_reporting_volume.pot,sha256=WZRY31PWDgnV-zq5EYzeebeRbVJLmbebLCcA_TB4O1E,690
+odoo/addons/account_reporting_volume/i18n/es.po,sha256=GKOG3k7t0vym9J4vsuCMBuJDvm5aqRC-G916vYthgJk,888
+odoo/addons/account_reporting_volume/i18n/it.po,sha256=1AoKyPY3_hM6en7C5vRgvzIOPOsxBc7LSnLH_UUQkO8,872
+odoo/addons/account_reporting_volume/models/__init__.py,sha256=dFbIqZ1ekuLuDOWSvYWhyKDxP7lkaMOERogFor46RWU,37
+odoo/addons/account_reporting_volume/models/account_invoice_report.py,sha256=47qP_RRJKlUfaqIKJx5hJ_AVmOJ8cXW0yi7ElWW5HC4,809
+odoo/addons/account_reporting_volume/readme/CONTRIBUTORS.md,sha256=iKe69m_EnZwdA8SL-pCYAjGrE8rvG7g_NVe5F37IMFM,79
+odoo/addons/account_reporting_volume/readme/DESCRIPTION.md,sha256=wtNawstrh3-dlEm660DNdgEY3XXAB-F7eIdGSGgFV1g,69
+odoo/addons/account_reporting_volume/readme/USAGE.md,sha256=sqLYoLQIaI-KW6jBPGZKtgBoeGsmh3Zr9am8L0xdh0g,151
+odoo/addons/account_reporting_volume/static/description/icon.png,sha256=6xBPJauaFOF0KDHfHgQopSc28kKvxMaeoQFQWZtfZDo,9455
+odoo/addons/account_reporting_volume/static/description/index.html,sha256=X-wPN0IIbpUXir-nnh4NIZ-xIqEtFn3WeSQytHc0FFk,13001
+odoo_addon_account_reporting_volume-18.0.1.0.0.2.dist-info/METADATA,sha256=8swpPmD0JJEmrrr8g0jbx0j8yWVd0tj5G4WEPJruECk,4042
+odoo_addon_account_reporting_volume-18.0.1.0.0.2.dist-info/WHEEL,sha256=9fEMia4zL7ZuZbnCOrcYogUhmn4XFIVaJ8G4YGI31xc,81
+odoo_addon_account_reporting_volume-18.0.1.0.0.2.dist-info/top_level.txt,sha256=QE6RBQ0QX5f4eFuUcGgU5Kbq1A_qJcDs-e_vpr6pmfU,4
+odoo_addon_account_reporting_volume-18.0.1.0.0.2.dist-info/RECORD,,
