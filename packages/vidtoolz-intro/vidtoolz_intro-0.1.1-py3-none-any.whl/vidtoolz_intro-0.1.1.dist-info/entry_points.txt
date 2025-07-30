@@ -1,0 +1,2 @@
+[vidtoolz_plugins]
+intro = vidtoolz_intro:intro_plugin
