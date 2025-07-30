@@ -1,0 +1,68 @@
+# ------------------------
+# Project metadata
+# ------------------------
+[tool.poetry]
+name = "jupdeck"
+version = "0.1.0"
+description = "Create Audience-Ready Presentations from Jupyter Notebooks"
+authors = ["Jen Dobson <jendobson@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "jupdeck" }]
+
+# ------------------------
+# Main runtime dependencies
+# ------------------------
+[tool.poetry.dependencies]
+python = "^3.12"
+ipykernel = "*"
+jupyter_core = "^5.5.0"
+matplotlib = "*"
+nbconvert = "^7.10.0"
+nbformat = "^5.9.0"
+numpy = "*"
+pandas = "*"
+python-pptx = "^1.0.2"
+scikit-learn = "*"
+seaborn = "*"
+scipy = "^1.15.3"
+mistune = "^3.1.3"
+
+
+
+# ------------------------
+# CLI entry point
+# ------------------------
+[tool.poetry.scripts]
+jupdeck = "jupdeck.cli:main"
+
+# ------------------------
+# Development dependencies
+# ------------------------
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+pytest = ">=7.0.0"
+ruff = ">=0.3.0"
+
+# ------------------------
+# Linting configuration
+# ------------------------
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+
+# ------------------------
+# Pytest configuration
+# ------------------------
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+# ------------------------
+# Build backend
+# ------------------------
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
