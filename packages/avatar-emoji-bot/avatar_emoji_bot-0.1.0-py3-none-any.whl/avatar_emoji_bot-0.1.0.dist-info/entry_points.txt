@@ -1,0 +1,2 @@
+[console_scripts]
+avatar-emoji-bot = avatar_emoji_bot:__main__
