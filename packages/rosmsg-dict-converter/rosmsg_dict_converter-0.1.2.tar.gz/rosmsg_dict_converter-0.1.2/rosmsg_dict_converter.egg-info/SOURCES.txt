@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+rosmsg_dict_converter/__init__.py
+rosmsg_dict_converter/converter.py
+rosmsg_dict_converter/demo.py
+rosmsg_dict_converter.egg-info/PKG-INFO
+rosmsg_dict_converter.egg-info/SOURCES.txt
+rosmsg_dict_converter.egg-info/dependency_links.txt
+rosmsg_dict_converter.egg-info/requires.txt
+rosmsg_dict_converter.egg-info/top_level.txt
+tests/__init__.py
+tests/test_rosmsg_dict_converter.py
