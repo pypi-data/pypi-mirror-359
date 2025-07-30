@@ -1,0 +1,12 @@
+shrecc/__init__.py,sha256=ZTvwvP0yThS3l9407cjiXgl5uLpvg8DSu02YMjVD8B8,453
+shrecc/database.py,sha256=8t-LqKKG2ZbLoJ_JnwnVCHsQLa4XtAUbrQW1TsyohI0,21051
+shrecc/download.py,sha256=fl_Offarhg6OzGOIDJs2nQSvzhSBASxD_QCOFUhGSJ8,10775
+shrecc/treatment.py,sha256=WyCjwmL80lnJY3AtaBnpyjdtSWxMjFwdofMKHUAwDUg,13835
+shrecc/data/el_map_all_norm.csv,sha256=8h72k4WhIo8oBy_fcJGDyasGhAWcGVwQP63z2SST14s,2978874
+shrecc/data/generation_units_by_country.csv,sha256=mI0xD5mLHMrCQJP6ZDy3Az2bNWsC6qISpKL3lvazhIQ,2809
+shrecc/data/techs_agg.json,sha256=OfsMUso-fRWos0SqOi-X5hRy6je66hfY2TI8sB49NKE,1887
+shrecc-0.0.2.dist-info/licenses/LICENSE,sha256=we86J0-mcomfRKjewzCkwA7b9osVJtpdqVB7coQdofs,1101
+shrecc-0.0.2.dist-info/METADATA,sha256=yqUyXPJO--8i7CrICtshBkOi-Tjvc-S0yBJnpZf3N_w,4962
+shrecc-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shrecc-0.0.2.dist-info/top_level.txt,sha256=PXGJaadrD14LKJSOsmgfRhP2GuVdsH4_eVNWMx1DBNI,7
+shrecc-0.0.2.dist-info/RECORD,,
