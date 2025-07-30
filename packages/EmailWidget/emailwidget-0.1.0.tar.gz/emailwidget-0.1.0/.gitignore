@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.idea
+测试
+dependences
+*.html
+.python-version
+site
+.coverage
+.pre-commit-config.yaml
+htmlcov
