@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+ByteBunny/Byte.py
+ByteBunny/__init__.py
+ByteBunny.egg-info/PKG-INFO
+ByteBunny.egg-info/SOURCES.txt
+ByteBunny.egg-info/dependency_links.txt
+ByteBunny.egg-info/top_level.txt

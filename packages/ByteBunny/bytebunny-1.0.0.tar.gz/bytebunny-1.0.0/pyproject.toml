@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "ByteBunny"
+version = "1.0.0"
+description = "A modular package for registering custom scripts in Discord selfbots."
+readme = "README.md"
+authors = [
+    { name="DriizzyyB", email="driizzyyboosts@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+keywords = ["discord", "selfbot", "modular", "scripts", "plugin"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+[project.urls]
+Homepage = "https://github.com/driizzyy"
+Repository = "https://github.com/driizzyy/ByteBunny-Module"
+Documentation = "https://github.com/driizzyy/ByteBunny-Module#readme"
+Issues = "https://github.com/driizzyy/ByteBunny-Module/issues"
