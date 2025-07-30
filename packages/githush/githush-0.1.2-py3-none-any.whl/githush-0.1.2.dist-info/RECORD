@@ -1,0 +1,10 @@
+githush/__init__.py,sha256=u2wUF23qTGNWz9-LTBDzORG3TDtSRY5CXOvSKPkbde8,119
+githush/__main__.py,sha256=UDK7YqOS5hqMEfwzJzKfLzeCO0-sbH_CeuJ0cIZ3RII,68
+githush/cli.py,sha256=BppzOEtrAJvUF9yV-w8xAiLZvI9eIM4lEK3kMhR6U3I,1582
+githush/config.py,sha256=RZLAYwGGOPa-yRzYzwIvppT8pZgQP7tD4VAkczJ0xP0,884
+githush/scan.py,sha256=TNzf-7DHfx6Di1s8WUdeNNJKEy8OK0f_sWbNHwtYXvg,4880
+githush-0.1.2.dist-info/METADATA,sha256=BKbavJgrASUX-l7q2vUmXllXxjrtBv0tSP0Qfj2g-qw,1625
+githush-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+githush-0.1.2.dist-info/entry_points.txt,sha256=HQ8ojUPVEp2IBhlmzkCvD4AESbM32GYBKnKv23suViA,45
+githush-0.1.2.dist-info/licenses/LICENSE,sha256=gRieGarqbvZ2xm9Y4t9y9S6f-qTasw3n9xGsiQXcMMQ,1073
+githush-0.1.2.dist-info/RECORD,,

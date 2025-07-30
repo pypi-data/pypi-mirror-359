@@ -1,0 +1,2 @@
+[console_scripts]
+githush = githush.cli:main
