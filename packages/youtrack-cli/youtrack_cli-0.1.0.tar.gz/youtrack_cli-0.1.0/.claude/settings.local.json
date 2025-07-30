@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(gh:*)",
+      "Bash(uv:*)",
+      "Bash(mkdir:*)",
+      "Bash(PYTHONPATH=. uv run python -m youtrack_cli.main --help)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}
