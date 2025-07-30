@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+agentsdk_gemini_adapter/__init__.py
+agentsdk_gemini_adapter/config.py
+agentsdk_gemini_adapter.egg-info/PKG-INFO
+agentsdk_gemini_adapter.egg-info/SOURCES.txt
+agentsdk_gemini_adapter.egg-info/dependency_links.txt
+agentsdk_gemini_adapter.egg-info/top_level.txt

@@ -1,0 +1,78 @@
+# AgentSDK Gemini Adapter
+
+A Python adapter for using Google Gemini with OpenAI Agents SDK. This package provides a seamless integration between Google's Gemini models and the OpenAI Agents SDK.
+
+## Installation
+
+```bash
+pip install agentsdk-gemini-adapter
+```
+
+## Quick Start
+
+1. Set up your Gemini API key in a `.env` file:
+```bash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+2. Import and use the config:
+```python
+from agentsdk_gemini_adapter import config
+
+# Now you can use the config with OpenAI Agents SDK
+# The config includes a pre-configured Gemini model
+```
+
+## Features
+
+- Pre-configured Gemini 2.0 Flash model
+- Seamless integration with OpenAI Agents SDK
+
+## Requirements
+
+- Python 3.7+
+- Gemini API Key
+- OpenAI Agents SDK
+
+## Dependencies
+
+This package requires `openai-agents` to be installed separately:
+
+```bash
+pip install openai-agents
+```
+
+Note: `python-dotenv` will be installed automatically as a dependency of `openai-agents`.
+
+## Usage Example
+
+```python
+from agents import Agent, Runner
+from agentsdk_gemini_adapter import config
+
+# Create an agent using OpenAI Agents SDK
+agent = Agent(
+    name="Assistant",
+    instructions="You are a helpful assistant.",
+)
+
+# Pass the Gemini configuration in run_config to any Runner method
+result = Runner.run_sync(agent, "Write a haiku about recursion in programming.", run_config=config)
+print(result.final_output)
+```
+
+## Configuration
+
+The package automatically:
+- Loads your `GEMINI_API_KEY` from environment variables
+- Configures the Gemini client with the correct base URL
+- Sets up the Gemini 2.0 Flash model
+- Creates a ready-to-use `RunConfig` object
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Contribution
+
+Contributions are welcome! Please feel free to submit a Pull Request.
