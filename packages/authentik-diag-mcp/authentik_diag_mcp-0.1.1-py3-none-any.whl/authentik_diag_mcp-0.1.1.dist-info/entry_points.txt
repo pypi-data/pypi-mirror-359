@@ -1,0 +1,2 @@
+[console_scripts]
+authentik-diag-mcp = authentik_diag_mcp.server:run
