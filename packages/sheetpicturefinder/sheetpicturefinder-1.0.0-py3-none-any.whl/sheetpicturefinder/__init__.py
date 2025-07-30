@@ -1,0 +1,1 @@
+from .xlsx_picture_finder import XLSXPictureFinder
