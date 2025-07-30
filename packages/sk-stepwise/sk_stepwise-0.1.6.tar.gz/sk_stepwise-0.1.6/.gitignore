@@ -1,0 +1,24 @@
+# Byte-compiled files
+*.pyc
+__pycache__/
+
+# Virtual environment directory
+venv/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+uv.lock
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+.pyre/
+.aider*
+
+catboost_info/
+
+context/
+
