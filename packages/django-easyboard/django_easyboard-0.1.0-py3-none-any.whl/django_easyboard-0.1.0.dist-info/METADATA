@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: django-easyboard
+Version: 0.1.0
+Summary: Современная, легко кастомизируемая альтернатива стандартной Django Admin
+Home-page: https://github.com/MzMProger/django-easyboard
+Author: MzMPrO
+Author-email: mirahmadzoxidov@gmail.com
+License: MIT
+Keywords: django admin dashboard bootstrap tailwind mptt import-export constance drf
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=3.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# django-easyboard
+
+Современная, легко кастомизируемая альтернатива стандартной Django Admin с красивым UI, расширенной интеграцией и гибкой настройкой.
+
+## Публикация на PyPI
+
+1. Установите twine и build:
+   ```bash
+   pip install build twine
+   ```
+2. Соберите пакет:
+   ```bash
+   python -m build
+   ```
+3. Загрузите на PyPI:
+   ```bash
+   twine upload dist/*
+   ```
+
+## Установка из PyPI
+
+```bash
+pip install django-easyboard
+```
+
+Добавьте в `INSTALLED_APPS`:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'easyboard',
+]
+```
+
+## Особенности
+- Dashboard с графиками и сводками
+- Кастомизация через settings.py
+- Интеграция с популярными Django-библиотеками
+- Light/Dark тема
+- Адаптивный дизайн
+
+Документация в разработке. 

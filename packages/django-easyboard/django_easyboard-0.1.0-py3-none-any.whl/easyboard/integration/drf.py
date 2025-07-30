@@ -1,0 +1,1 @@
+# Заглушка для интеграции с DRF (drf-spectacular/drf-yasg) 
