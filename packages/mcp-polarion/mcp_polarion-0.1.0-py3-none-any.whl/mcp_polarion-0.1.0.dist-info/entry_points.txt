@@ -1,0 +1,3 @@
+[console_scripts]
+mcp-polarion = mcp_server:main
+mcp-polarion-http = mcp_server.http_server:main
