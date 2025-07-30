@@ -1,0 +1,11 @@
+maxs/__init__.py,sha256=XoIBmUGpmhUA-NWO7W5eKQILLUPJAXfw5opBHCgUQfY,381
+maxs/__main__.py,sha256=KD4kbCvBJpHs1xC5WuRNPcyxdRaPTaU6dKqjL7BFT9M,322
+maxs/main.py,sha256=8UAPA-aAcSD808v-f-HHIvxdsxVgY0KDfHNz9ILsEZk,3331
+maxs/tools/bash.py,sha256=viKipIGEbuMzwftIGG-VcMk3m_iIBXttv6OChI7Lez0,2364
+maxs/tools/file_ops.py,sha256=PsPvpEU9zJ37LIIx0uF6ZP_nEmW32gfzfLEzg_t2vCo,4955
+maxs-0.1.0.dist-info/licenses/LICENSE,sha256=XeCFFhs2207WFC3VT7NYypXXVALTVlv3RZbU5FPYLtM,1068
+maxs-0.1.0.dist-info/METADATA,sha256=lUXwpdk3MmzQTq9tYX18tmUMyyyf1HVy1qLhpSA2ko0,2679
+maxs-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+maxs-0.1.0.dist-info/entry_points.txt,sha256=ogpAdeNfegg2dXEindBl3XyoODh4ggOss1UCf4qbwgU,59
+maxs-0.1.0.dist-info/top_level.txt,sha256=9bFCWzT3eXwDtXHiEqdfshHZETp5QA7L8KoAMHxVSnA,5
+maxs-0.1.0.dist-info/RECORD,,
