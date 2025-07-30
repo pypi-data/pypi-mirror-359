@@ -1,0 +1,10 @@
+graphql_mcp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+graphql_mcp/server.py,sha256=KUcixqGgt58dB4ZhhYeB1Rv65Q6C0CfSLSmte_jXtUo,10656
+graphql_mcp-1.0.4.dist-info/licenses/LICENSE,sha256=woN7Wxn9gHH7gTWTsOnIIYt-0If201f5jHAjk1tmooE,1069
+tests/__init__.py,sha256=Zp30jX5jAyJTDBTXA2to7mGnUKRTSY8vlLna7m8-tvQ,285
+tests/test_graphql_mcp.py,sha256=htWfObTbOWuXvXSsEHMuQYuj53wHoIZ2ROInMjEpywo,14749
+tests/test_mcp_redirect_middleware.py,sha256=gbA8rxcHYy3qBsUMPqHSY2J-jM1pt0Vg0SQZtVx4dIY,1720
+graphql_mcp-1.0.4.dist-info/METADATA,sha256=V7jbWRAjA04Ap5WePFxSBG9G2Hi6Y0OzvqOU3REJOAg,7663
+graphql_mcp-1.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+graphql_mcp-1.0.4.dist-info/top_level.txt,sha256=6yfvGBCU26pcPErnuN4d6K0QMZgFY3cUUftyoponwtc,18
+graphql_mcp-1.0.4.dist-info/RECORD,,
