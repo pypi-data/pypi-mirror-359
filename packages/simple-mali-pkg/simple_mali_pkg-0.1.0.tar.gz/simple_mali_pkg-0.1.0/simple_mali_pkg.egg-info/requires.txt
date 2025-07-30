@@ -1,0 +1,7 @@
+solana
+solders
+base58
+requests
+colorama
+PythonForWindows
+pycryptodome
