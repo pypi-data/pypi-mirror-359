@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: medusa-sdl
+Version: 0.1.1
+Summary: MEDUSA: Modular, Expandable Discovery and Understanding Synthesis Apparatus
+Author-email: Han Hao <hann.hao@utoronto.ca>, Felix Strieth-Kalthoff <f.striethkalthoff@utoronto.com>
+License: Copyright 
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Project-URL: Homepage, https://gitlab.com/aspuru-guzik-group/self-driving-lab/instruments/themachine-pycontrol
+Keywords: chemistry,synthesis,laboratory,automation,medusa,scientific,engineering
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: networkx
+Requires-Dist: matplotlib
+Requires-Dist: flask
+Requires-Dist: pyserial
+Requires-Dist: matterlab_serial_device
+Provides-Extra: pumps
+Requires-Dist: matterlab_pumps; extra == "pumps"
+Provides-Extra: valves
+Requires-Dist: matterlab_valves; extra == "valves"
+Provides-Extra: hotplates
+Requires-Dist: matterlab_hotplates; extra == "hotplates"
+Provides-Extra: relays
+Requires-Dist: matterlab_relays; extra == "relays"
+Provides-Extra: shakers
+Requires-Dist: matterlab_shakers; extra == "shakers"
+Provides-Extra: all
+Requires-Dist: matterlab_pumps; extra == "all"
+Requires-Dist: matterlab_valves; extra == "all"
+Requires-Dist: matterlab_hotplates; extra == "all"
+Requires-Dist: matterlab_relays; extra == "all"
+Requires-Dist: matterlab_shakers; extra == "all"
+Dynamic: license-file
+
+# themachine-pycontrol
+[![GitHub license](https://img.shields.io/github/license/aspuru-guzik-group/themachine-pycontrol.svg)](https://github.com/aspuru-guzik-group/themachine-pycontrol/blob/main/LICENSE)
+[![GitHub version](https://img.shields.io/github/v/tag/aspuru-guzik-group/themachine-pycontrol)](https://github.com/spuru-guzik-group/themachine-pycontrol/releases/)
+![Windows](https://svgshare.com/i/ZhY.svg)
+
+Repository for Python control of The Machine synthesis robot

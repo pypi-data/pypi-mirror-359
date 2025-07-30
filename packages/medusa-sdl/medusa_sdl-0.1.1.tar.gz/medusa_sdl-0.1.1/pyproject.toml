@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medusa-sdl"
+version = "0.1.1" # Consider updating the version number
+description = "MEDUSA: Modular, Expandable Discovery and Understanding Synthesis Apparatus"
+readme = "README.md"
+authors = [
+  { name="Han Hao", email="hann.hao@utoronto.ca" },
+  { name="Felix Strieth-Kalthoff", email="f.striethkalthoff@utoronto.com" },
+  # Add any other authors
+]
+license = { file="LICENSE" }
+keywords = ["chemistry", "synthesis", "laboratory", "automation", "medusa", "scientific", "engineering"]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+urls = { Homepage = "https://gitlab.com/aspuru-guzik-group/self-driving-lab/instruments/themachine-pycontrol" }
+
+dependencies = [
+  "networkx",
+  "matplotlib",
+  "flask",
+  "pyserial",
+  "matterlab_serial_device",
+#  "matterlab_pumps",
+#  "matterlab_valves",
+#  "matterlab_hotplates",
+#  "matterlab_relays",
+]
+
+[project.optional-dependencies]
+# dev = ["pytest", "flake8"]
+pumps     = ["matterlab_pumps"]
+valves    = ["matterlab_valves"]
+hotplates = ["matterlab_hotplates"]
+relays    = ["matterlab_relays"]
+shakers   = ["matterlab_shakers"]
+all       = ["matterlab_pumps", "matterlab_valves", "matterlab_hotplates", "matterlab_relays", "matterlab_shakers"]
+
+[project.entry-points."medusa.devices"]
+Vessel = "medusa.core.vessel:Vessel"
+
+[tool.setuptools]
+packages = ["medusa", "medusa.core", "medusa.frontend", "medusa.utils", "examples", "medusa.defaults"]
+package-dir = {"" = "src", "examples" = "."}
+include-package-data = true
+
+
+[tool.setuptools.package-data]
+#"medusa.frontend" = ["*.html", "*.js", "*.css"]
+"medusa.frontend" = ["static/**/*"] 
+
+"medusa.defaults" = ["*.json"]
+
+"examples" = ["*.py", "*.json"]
