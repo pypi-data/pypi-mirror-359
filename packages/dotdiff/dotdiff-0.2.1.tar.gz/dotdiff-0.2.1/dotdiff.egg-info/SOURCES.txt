@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+dotdiff/__init__.py
+dotdiff/all_diffs.py
+dotdiff/diff_generator.py
+dotdiff.egg-info/PKG-INFO
+dotdiff.egg-info/SOURCES.txt
+dotdiff.egg-info/dependency_links.txt
+dotdiff.egg-info/entry_points.txt
+dotdiff.egg-info/requires.txt
+dotdiff.egg-info/top_level.txt
