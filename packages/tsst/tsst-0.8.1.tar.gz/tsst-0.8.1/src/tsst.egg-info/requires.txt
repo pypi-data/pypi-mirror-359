@@ -1,0 +1,17 @@
+blinker>=1.9.0
+click>=8.1.7
+comtypes>=1.4.8
+pandas>=2.2.3
+polars-talib>=0.1.4
+polars>=1.15.0
+pyarrow>=20.0.0
+pydantic>=2.9.2
+pytest>=8.3.4
+python-dotenv>=1.0.1
+redis>=5.2.0
+rich>=13.9.4
+setuptools>=75.6.0
+shioaji>=1.2.5
+tabulate>=0.9.0
+tsst-sino-backtest-v2==0.2.0
+tornado>=6.1
