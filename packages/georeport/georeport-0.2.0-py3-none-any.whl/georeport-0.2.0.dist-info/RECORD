@@ -1,0 +1,7 @@
+georeport/__init__.py,sha256=U9xjFzXRdDbeoKhq8WTmMVtDLPoiA0B4GL1ac8U8SAo,109
+georeport/cityendpoint.py,sha256=yWNK0jOGI7GP__euDHcsDQCi33qmD-YBuH1he7Xovdo,914
+georeport/georeport.py,sha256=Rd8Gq6gAvX_o3aYhtPDJfT_edQBkekuLDPfVxVvnBSY,3567
+georeport-0.2.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+georeport-0.2.0.dist-info/METADATA,sha256=wEjALWwNezVnMkpI_o8v15RENkkjpsmb9D2nYFxHPoI,1382
+georeport-0.2.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+georeport-0.2.0.dist-info/RECORD,,
