@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+microkan/KANLayer.py
+microkan/LBFGS.py
+microkan/MLP.py
+microkan/MultKAN.py
+microkan/__init__.py
+microkan/spline.py
+microkan/utils.py
+microkan.egg-info/PKG-INFO
+microkan.egg-info/SOURCES.txt
+microkan.egg-info/dependency_links.txt
+microkan.egg-info/top_level.txt
