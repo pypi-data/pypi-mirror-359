@@ -1,0 +1,11 @@
+lexicase/__init__.py,sha256=QwMPs2fw6fLKjB_JViuNrhKHTvdQmpT9xOzlnmnvKVY,549
+lexicase/backend.py,sha256=rI8aBjwoBzfTe5MV65pelU-Rz7aP-bkedmWJ5oKn8N8,1483
+lexicase/base.py,sha256=zSGg522mFvT18n1n0Q_ns2KfeV8QMfQ5BQyxp6th9tM,2593
+lexicase/downsample.py,sha256=T71akKULI8OYd-mq_6w090_Y9ImONpaa1LXWw6lR-H8,3372
+lexicase/epsilon.py,sha256=4f9SDWz1qCI94FbhPegGS1riJuaM2ZEFhYIrpaURXN0,3823
+lexicase/utils.py,sha256=cwLpEyL7XF4XGghd-HibO6OgNGaeQ6isPprVwK94EXk,4509
+lexicase-0.1.1.dist-info/licenses/LICENSE,sha256=jnxr5XTZgd1sFg6aH06fVCNuFv_3phQ9nUT2h2L6eEE,1075
+lexicase-0.1.1.dist-info/METADATA,sha256=-EPAVrRYTWNSIa8buLWaiuvTxa9Q3INQMU7BJFxllLQ,7167
+lexicase-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lexicase-0.1.1.dist-info/top_level.txt,sha256=w-oMvUuVpb2jZS3VWJNGzwrAsaLeQCZsPxGTJmoiIok,9
+lexicase-0.1.1.dist-info/RECORD,,
