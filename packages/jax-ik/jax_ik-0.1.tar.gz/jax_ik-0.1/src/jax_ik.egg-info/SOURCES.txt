@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/jax_ik/IK_Hand_Specification.py
+src/jax_ik/IK_Helper.py
+src/jax_ik/IK_SMPLX_Statics.py
+src/jax_ik/IK_jax.py
+src/jax_ik/IK_objectives_jax.py
+src/jax_ik/__init__.py
+src/jax_ik.egg-info/PKG-INFO
+src/jax_ik.egg-info/SOURCES.txt
+src/jax_ik.egg-info/dependency_links.txt
+src/jax_ik.egg-info/requires.txt
+src/jax_ik.egg-info/top_level.txt
