@@ -1,0 +1,11 @@
+winytils/__init__.py,sha256=YUIaqLWklELAVG1jzc9L7ulqK3MPcRPIPBnrlpDQ6a4,202
+winytils/privileges.py,sha256=j10eZNlI89ukVtgm9WRGARJKYb_8l9ypCmkNa9cBpNM,1059
+winytils/utils.py,sha256=bYZ2v3R4Ymd5BdeT4b1-W3gs4gnBFdvqFdETPtLz28A,4751
+winytils/windows.py,sha256=iqfOVRhGVMidiARLZPZ2ge9TQ9pEFdqFjB54WTgnE2g,14798
+winytils/workstation.py,sha256=XPdpT2AcQ_ttrJuX7_m7wVpRqVs9vVNC2AJlJ4xb1J0,2114
+winytils/workstation_events.py,sha256=RNMWqO0R5kaS6qN9k__xlUBNpCks7uKODttyczr5zUg,6274
+winytils-0.0.3.dist-info/licenses/LICENCE.txt,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+winytils-0.0.3.dist-info/METADATA,sha256=UBcgcyxVJ3v2qZQbA9YHGtUIUwxe9zekk4V73ypAQjo,694
+winytils-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+winytils-0.0.3.dist-info/top_level.txt,sha256=rxhKAQzDz_WEyNdBTK4FoG4pNb0YW9UPKJIxeINTCb8,9
+winytils-0.0.3.dist-info/RECORD,,
