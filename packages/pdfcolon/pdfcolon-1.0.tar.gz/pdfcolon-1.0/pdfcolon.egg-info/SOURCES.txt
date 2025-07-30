@@ -1,0 +1,4 @@
+pdfcolon.egg-info/PKG-INFO
+pdfcolon.egg-info/SOURCES.txt
+pdfcolon.egg-info/dependency_links.txt
+pdfcolon.egg-info/top_level.txt
