@@ -1,0 +1,3 @@
+[console_scripts]
+bib2table=bib2table:run
+
