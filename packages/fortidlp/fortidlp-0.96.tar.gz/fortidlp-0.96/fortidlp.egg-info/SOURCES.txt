@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+pyproject.toml
+requirements.txt
+setup.py
+fortidlp/__init__.py
+fortidlp/auth.py
+fortidlp/connector.py
+fortidlp/fortidlp.py
+fortidlp.egg-info/PKG-INFO
+fortidlp.egg-info/SOURCES.txt
+fortidlp.egg-info/dependency_links.txt
+fortidlp.egg-info/top_level.txt
