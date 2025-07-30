@@ -1,0 +1,17 @@
+{% extends 'allianceauth/base-bs5.html' %}
+
+{% load i18n %}
+
+{% block page_title %}{% translate "Skyhook Intel" %}{% endblock %}
+
+{% block header_nav_collapse_left %}
+    {% include 'skyhookintel/partials/menu.html' %}
+{% endblock %}
+
+{% block content %}
+    {% block details %}{% endblock %}
+{% endblock %}
+
+{% block extra_javascript %}
+    {% include "skyhookintel/partials/global_js.html" %}
+{% endblock %}

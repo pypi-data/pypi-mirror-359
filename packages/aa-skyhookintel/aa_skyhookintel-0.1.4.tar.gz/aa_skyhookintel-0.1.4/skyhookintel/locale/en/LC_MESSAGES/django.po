@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-26 22:24+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: skyhookintel/auth_hooks.py:17
+#: skyhookintel/templates/skyhookintel/base.html:5
+msgid "Skyhook Intel"
+msgstr ""
+
+#: skyhookintel/models.py:32
+msgid "Friendly"
+msgstr ""
+
+#: skyhookintel/models.py:33
+msgid "Hostile"
+msgstr ""
+
+#: skyhookintel/models.py:34
+msgid "Neutral"
+msgstr ""
+
+#: skyhookintel/models.py:43
+msgid "Standings toward this group"
+msgstr ""
+
+#: skyhookintel/models.py:56
+msgid "Lava planet"
+msgstr ""
+
+#: skyhookintel/models.py:57
+msgid "Ice planet"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:6
+#, python-format
+msgid "Add a timer for the skyhook on planet %(planet)s"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:13
+msgid "Parse the timer from skyhook info:"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:20
+msgid "Vulnerable string from skyhook window"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:34
+#: skyhookintel/templates/skyhookintel/add_timer.html:84
+msgid "Submit"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:40
+msgid "Add information manually:"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:47
+msgid "Days before vulnerable"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:59
+msgid "Hours before vulnerable"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/add_timer.html:71
+msgid "Minutes before vulnerable"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:9
+#: skyhookintel/templates/skyhookintel/upcoming.html:9
+msgid "Skyhook"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:10
+#: skyhookintel/templates/skyhookintel/upcoming.html:10
+msgid "Type"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:11
+#: skyhookintel/templates/skyhookintel/no_timers.html:50
+#: skyhookintel/templates/skyhookintel/upcoming.html:11
+#: skyhookintel/templates/skyhookintel/upcoming.html:51
+msgid "System"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:12
+#: skyhookintel/templates/skyhookintel/no_timers.html:45
+#: skyhookintel/templates/skyhookintel/upcoming.html:12
+#: skyhookintel/templates/skyhookintel/upcoming.html:46
+msgid "Constellation"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:12
+#: skyhookintel/templates/skyhookintel/no_timers.html:40
+#: skyhookintel/templates/skyhookintel/upcoming.html:12
+#: skyhookintel/templates/skyhookintel/upcoming.html:41
+msgid "Region"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:13
+#: skyhookintel/templates/skyhookintel/upcoming.html:13
+msgid "Owner"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:14
+msgid "Add timer"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:35
+#: skyhookintel/templates/skyhookintel/upcoming.html:36
+msgid "Planet type"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/no_timers.html:55
+#: skyhookintel/templates/skyhookintel/upcoming.html:56
+msgid "Standings"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/partials/menu.html:4
+msgid "Upcoming timers"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/partials/menu.html:7
+msgid "Skyhooks without timers"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/upcoming.html:14
+msgid "Next timer (EVE)"
+msgstr ""
+
+#: skyhookintel/templates/skyhookintel/upcoming.html:15
+msgid "Next timer (Local)"
+msgstr ""
+
+#: skyhookintel/views.py:64
+msgid "Something went wrong"
+msgstr ""

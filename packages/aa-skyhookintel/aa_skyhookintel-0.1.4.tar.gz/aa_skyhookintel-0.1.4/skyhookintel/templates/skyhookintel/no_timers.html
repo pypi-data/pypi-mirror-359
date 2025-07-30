@@ -1,0 +1,108 @@
+{% extends "skyhookintel/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-striped table-upcoming" id="table_skyhook">
+            <thead>
+            <th class="w-auto">{% translate "Skyhook" %}</th>
+            <th class="w-auto">{% translate "Type" %}</th>
+            <th class="w-auto">{% translate "System" %}</th>
+            <th class="w-auto">{% translate "Constellation" %} <br> {% translate "Region" %}</th>
+            <th class="w-auto">{% translate "Owner" %}</th>
+            <th class="w-auto">{% translate "Add timer" %}</th>
+            </thead>
+        </table>
+    </div>
+
+{% endblock %}
+
+{% block extra_javascript %}
+    {% include "bundles/datatables-js-bs5.html" %}
+    {% include "bundles/filterdropdown-js.html" %}
+    {% include 'bundles/moment-js.html' with locale=True %}
+
+
+    <script type="text/javascript">
+        "use strict";
+
+        $(function(){
+
+            let dropDownColumns = [
+                {
+                    idx: 1,
+                    title: "{% translate "Planet type" %}",
+                    maxWidth: "10em",
+                },
+                {
+                    idx: 6,
+                    title: "{% translate "Region" %}",
+                    maxWidth: "10em",
+                },
+                {
+                    idx: 7,
+                    title: "{% translate "Constellation" %}",
+                    maxWidth: "10em",
+                },
+                {
+                    idx: 8,
+                    title: "{% translate "System" %}",
+                    maxWidth: "10em",
+                },
+                {
+                    idx: 9,
+                    title: "{% translate "Standings" %}",
+                    maxWidth: "10em",
+                }
+            ]
+
+            const def = {
+                ajax: {
+                    url: '{% url "skyhookintel:no_timers_data" %}',
+                    dataSrc: 'data',
+                    cache: true,
+                },
+                columns: [
+                    { data: 'planet_name' },
+                    { data: 'planet_type' },
+                    { data: 'solar_system_link' },
+                    { data: 'location_html' },
+                    { data: 'owner' },
+                    { data: 'add_timer' },
+                    /* Hidden columns */
+                    { data: 'region_name' },
+                    { data: 'constellation_name' },
+                    { data: 'solar_system_name' },
+                    { data: 'standings' },
+                ],
+                searching: true,
+                processing: true,
+                serverSide: true,
+                lengthMenu: DEFAULT_LENGTH_MENU,
+                pageLength: DEFAULT_PAGE_LENGTH,
+                order: [ [0, "asc" ] ],
+                columnDefs: [
+                    { "visible" : false, "targets": [ 6, 7, 8, 9 ] },
+                    { "orderable": false, "targets": [ 2, 3 ] },
+                ],
+                filterDropDown: {
+                    columns: dropDownColumns,
+                    bootstrap: true,
+                    bootstrap_version: 5,
+                }
+            };
+            let def_upcoming = jQuery.extend(true, {}, def);
+            def_upcoming.filterDropDown.ajax = '{% url "skyhookintel:no_timers_fdd_data" %}'
+            let table_all = $('#table_skyhook').DataTable(def_upcoming);
+            table_all.on( 'init', function() {
+                table_all.columns.adjust().draw();
+                $("loader_all").hide();
+                $("wrapper_all").show();
+            });
+        })
+    </script>
+
+    {{ block.super }}
+
+{% endblock %}
