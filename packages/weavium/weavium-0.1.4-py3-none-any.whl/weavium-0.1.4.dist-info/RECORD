@@ -1,0 +1,12 @@
+tests/__init__.py,sha256=kUvyAGHsL9fAjVOFKy5oEQf7l9TIBur5_WUqHsk1W54,42
+tests/test_client.py,sha256=n9v6FXPSNRY1GlhGD3oXppHB4MQ_q6ekVD9Qc9b5QVA,13038
+tests/test_instrumentation.py,sha256=v6LpZLnI0hDz6qPiVHCJODx5VHb5nZOhadKKZD0puLs,17080
+tests/test_integration.py,sha256=Uc0olArXuO6p6FXI17-ycbdDSMR8UWPx4Bx_eFE11e0,8429
+weavium/__init__.py,sha256=pp-HJTjWVTJldk4kFuJNY2aZRlSfAIa2Rn9RRtZ8E14,607
+weavium/client.py,sha256=V6ZmL18sccDLcEuov6xAD7g2l95QurpThQsWI9zbVro,10285
+weavium/instrumentation.py,sha256=Ak4QNv4zVZSj3Cx_mAhf-C8ysXW2AJK95mBb9hgqboo,10165
+weavium-0.1.4.dist-info/licenses/LICENSE,sha256=aQY_cZueAebedA1wrMZ2moO0q7RvX0AX2l1484YwerM,1069
+weavium-0.1.4.dist-info/METADATA,sha256=ILgSRELQqsIBBq2Oua6R_nrwrH1XZJUmEQ8OzNPEbWM,2002
+weavium-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+weavium-0.1.4.dist-info/top_level.txt,sha256=TkjNvntdcUvawTrfCEJL-k_l26218qTtpqaHhLbB7WE,14
+weavium-0.1.4.dist-info/RECORD,,
