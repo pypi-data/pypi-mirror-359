@@ -1,0 +1,10 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+portal_ctf_python_sdk-1.0.0.dist-info/licenses/LICENSE,sha256=YZjQnFjzXGFa0D3iCQkNDwGBNuTGJREkRmItGX1B3YM,122
+portalctfapi/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+portalctfapi/portalctf.py,sha256=ernht-3E7cJbdhlPZM7y00NFtusiJ7XpewrsW21xGaI,468
+portalctfapi/apis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+portalctfapi/apis/wscopia.py,sha256=ACB0m2IMSVFz1gSG0zWTlX1JGafu_seIpbHC7VT27po,1817
+portal_ctf_python_sdk-1.0.0.dist-info/METADATA,sha256=4afpEJjtwboKEJGBxm1D30ndT3vLk8fEt5-SHrpbJSI,783
+portal_ctf_python_sdk-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+portal_ctf_python_sdk-1.0.0.dist-info/top_level.txt,sha256=QPfqyeL3g2H47DpnuTnryPFzDydivaCsFTWwCkdTQ8w,22
+portal_ctf_python_sdk-1.0.0.dist-info/RECORD,,
