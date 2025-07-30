@@ -1,0 +1,3 @@
+[console_scripts]
+simpledb-cli = simpledb.cli:run_cli
+simpledb-web = simpledb.web:run_web
