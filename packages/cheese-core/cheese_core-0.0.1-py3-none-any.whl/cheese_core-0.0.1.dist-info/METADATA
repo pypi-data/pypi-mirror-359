@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: cheese_core
+Version: 0.0.1
+Summary: A Cheese
+Home-page: https://github.com/topcoco
+Author: coco
+Author-email: 3560000009@qq.com
+License: Apache-2.0
+Keywords: cheese,auto
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: summary
+
+[setup.py](setup.py)[setup.cfg](setup.cfg)
