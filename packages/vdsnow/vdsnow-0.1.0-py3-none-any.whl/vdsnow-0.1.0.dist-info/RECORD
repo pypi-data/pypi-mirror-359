@@ -1,0 +1,12 @@
+vdsnow/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+vdsnow/__main__.py,sha256=b2-Y7NTloAUk-CCd02acR6VWrEV9TexayD2C6IKASZw,65
+vdsnow/cli.py,sha256=aYRLlS_oHfIHpx6WJYIPtqZaoXVhrM_IcljXMDQV-bQ,5525
+vdsnow/connections.py,sha256=ElSBOGVNfWyOhNiY1erU4ZNA060D2hvj0F7V_Fei8Bw,6648
+vdsnow/project_folder.py,sha256=41BtVppZ1Qx8ej--7Q3jjTyD0XhskQ4HT_KWWIqNHFc,11481
+vdsnow/snowflake_actions.py,sha256=8LySRNIuBeDKIrxFsYUFS1UKJ9PvNjVIet_NzgxCdQI,4041
+vdsnow/validation.py,sha256=IaBG9YeA1IRNRAMbJwgvpYz--mpkf1bEUqjQX-ktESI,3501
+vdsnow/vd_utils.py,sha256=t7GUwnZ9SZoSEnOsQ-3LGufWy-7WVL9IRISAVu1n1GE,887
+vdsnow-0.1.0.dist-info/METADATA,sha256=cs3oJG87huXW6X_hkAXAoL95VRKNhh5naxVGpLeFbjQ,6164
+vdsnow-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+vdsnow-0.1.0.dist-info/entry_points.txt,sha256=yasOyfgUigtTnRDFxJ2qY9C8emHBd6dVMtkKHLz9K1A,42
+vdsnow-0.1.0.dist-info/RECORD,,

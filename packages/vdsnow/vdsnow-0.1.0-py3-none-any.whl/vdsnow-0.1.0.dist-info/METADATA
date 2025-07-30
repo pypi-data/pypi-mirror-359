@@ -1,0 +1,135 @@
+Metadata-Version: 2.4
+Name: vdsnow
+Version: 0.1.0
+Summary: A CLI for Snowflake project scaffolding, execution, and validation.
+Author-email: Vitor Duarte <vitordduarte95@gmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: click==8.1.8
+Requires-Dist: pyfiglet==1.0.3
+Requires-Dist: pytest>=8.4.1
+Requires-Dist: rich==14.0.0
+Requires-Dist: snowflake-cli==3.9.1
+Requires-Dist: tomli-w==1.2.0
+Requires-Dist: tomli==2.2.1
+Description-Content-Type: text/markdown
+
+# vdsnow ❄️
+
+[![PyPI version](https://badge.fury.io/py/vdsnow.svg)](https://badge.fury.io/py/vdsnow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A powerful CLI for scaffolding, managing, and deploying Snowflake projects with a focus on developer experience and structured, database-as-code workflows.
+
+`vdsnow` is a smart wrapper around the official Snowflake CLI (`snowcli`) designed to streamline the entire development lifecycle. It enforces a consistent project structure, automates script generation, and provides context-aware execution to prevent common errors and reduce boilerplate.
+
+## Key Features
+
+-   **Interactive Project Scaffolding**: Run `vdsnow setup init` to generate a complete, standardized folder structure for your databases, schemas, and object types.
+-   **Automatic Script Generation**: The `vdsnow setup refresh-scripts` command scans your project and automatically creates or updates manifest files (`setup.sql`), ensuring your deployment scripts are always in sync with your source code.
+-   **Context-Aware Execution**: Never write `USE SCHEMA ...` again! The `vdsnow sql execute` command automatically determines the correct database and schema context from the file path you provide.
+-   **Sandbox Development Mode**: Use the `--local` flag or set the `VDSNOW_ENV=local` environment variable to seamlessly redirect all deployments to your personal development schema, keeping your main branches clean and your local testing safe.
+-   **Connection Management**: Easily initialize your `config.toml` and `.env` files for both local development (with a private key path) and CI/CD (`headless` connection with a raw private key).
+-   **Built-in Validation**: Run `vdsnow check folder-structure` to find broken links in your setup files or identify SQL files that haven't been included in any deployment script.
+
+## Installation
+
+Ensure you have Python 3.8+ and the [Snowflake CLI](https://docs.snowflake.com/en/user-guide/snowcli-install-config) installed.
+
+```bash
+pip install vdsnow
+```
+
+## Getting Started: A 5-Minute Tutorial
+
+### 1. Initialize Your Project
+
+This will create the `snowflake_structure/` and `setup/` directories.
+
+```bash
+vdsnow setup init
+
+# Follow the prompts:
+# Enter the database name: raw
+# Enter a schema name: main
+# Do you want to add another schema? [y/N]: n
+```
+
+### 2. Configure Your Connection
+
+This creates `config.toml` and a `.env` file for your secrets.
+
+```bash
+vdsnow connection init
+
+# Follow the prompts to enter your account, user, etc.
+# These values will be saved to your .env file.
+```
+
+**Action Required**: You must now generate a private/public key pair for JWT authentication, assign the public key to your Snowflake user, and place the private key in a secure location (e.g., `~/.ssh/`). Update the `PRIVATE_KEY_PATH` in your `.env` file if needed.
+
+### 3. Test Your Connection
+
+This command wraps `snow connection test` to confirm your credentials and keys are working.
+
+```bash
+vdsnow connection test
+# Expected output: Connection local tested successfully.
+```
+
+### 4. Deploy to Your Sandbox
+
+Let's deploy the initial project structure to your personal development schema. First, set your environment for local development.
+
+```bash
+# Tell vdsnow to always use your local sandbox context
+export VDSNOW_ENV=local
+
+# Now execute the main setup file
+vdsnow sql execute -f setup/raw/setup.sql
+# The tool will print a warning that --local mode is active
+# and run the script against the DB/Schema from your .env file.
+```
+
+You now have a fully configured, deployable Snowflake project!
+
+## Command Reference
+
+### `vdsnow setup`
+
+Commands for managing the project's folder structure.
+
+-   **`init`**: Interactively scaffolds a new project.
+-   **`add-database`**: Adds a new database directory to the structure.
+-   **`add-schema`**: Adds a new schema directory to a specified database.
+-   **`refresh-scripts`**: Scans the entire `snowflake_structure/` and intelligently updates all `setup/` manifest files.
+-   **`recreate`**: Deletes the existing structure and re-initializes it. (Use with caution!)
+
+### `vdsnow connection`
+
+Commands for managing connection configurations.
+
+-   **`init`**: Creates or updates `config.toml` and `.env` with your connection details.
+-   **`test`**: Tests the default connection defined in `config.toml`.
+
+### `vdsnow sql`
+
+Commands for executing SQL against Snowflake.
+
+-   **`execute`**: Executes SQL with automatic context.
+    -   `-f, --file FILE_PATH`: Executes a SQL file. Context is derived from the path (e.g., `setup/db/schema/...`).
+    -   `-q, --query QUERY_STRING`: Executes a raw SQL string. Context is taken from your default connection.
+    -   `--local`: A powerful flag that forces the command to use the database and schema from your `.env` file, overriding the context from the file path. This is ideal for testing in a personal sandbox.
+
+### `vdsnow check`
+
+Commands for validating the project.
+
+-   **`folder-structure`**: Checks for broken `!source` links in your setup files (errors) and for unreferenced `.sql` files in your structure (warnings).
+-   **`version`**: Checks the installed version of the Snowflake CLI.
+
+## CI/CD and Headless Connections
+
+The `connection init` command automatically adds a `[connections.headless]` section to your `config.toml`. This connection is configured to use `private_key_raw`, allowing you to pass the raw content of your private key as a CI/CD secret (e.g., a GitHub Actions secret) rather than relying on a file path.
