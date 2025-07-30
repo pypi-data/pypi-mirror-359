@@ -1,0 +1,9 @@
+saxoncee.cpython-311-aarch64-linux-gnu.so,sha256=pRxp-pPJltnAbqyDT7FtS9CVboOJDHVBO3Dv-ccn9bI,7816009
+cpp/include/CythonExceptionHandler.h,sha256=B6ipCUyooT-aOEzxd3f3b8XdX5mRVj6YlyDGxAngApU,3380
+saxonc/saxonc.cpp,sha256=J4qgT-9LzvajEltUZsBj7PqsAzIMKZiVBm4fv4-jhqk,4122769
+saxoncee.libs/libsaxonc-core-ee-31c8bf7b.so.12.8.0,sha256=dfueWPntW_FLnp2xQYOgZBZDqXz1IBru0S7UaZV8fEM,119837425
+saxoncee.libs/libsaxonc-ee-f97e31a7.so.12.8.0,sha256=K6j2tRE5b4nAJqT4IWwE_W6NPMZXNjUlejy4XWjN0tM,484209
+saxoncee-12.8.0.dist-info/METADATA,sha256=pwT5hEcfx10IsjpdB4I1kPsF85fKFmcwyJHOxqvF5nw,5857
+saxoncee-12.8.0.dist-info/WHEEL,sha256=euz3v9M6DdRog4ROoyDH_JaZj7VTISUe7LDXQmTtYJc,114
+saxoncee-12.8.0.dist-info/top_level.txt,sha256=JAxQ3PjQ2tKI2IrsOIXbfH5pmN6mUHUJ9yx2FETrr0Y,20
+saxoncee-12.8.0.dist-info/RECORD,,
