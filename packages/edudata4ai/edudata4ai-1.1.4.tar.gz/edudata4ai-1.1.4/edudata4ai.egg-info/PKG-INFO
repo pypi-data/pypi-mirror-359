@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: edudata4ai
+Version: 1.1.4
+Summary: Datasets and Synthetic datasets generator for education
+Home-page: https://github.com/tmfrlska/edudata
+Author: Seulki.Kim
+Author-email: tmfrlska85@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.17.3
+Requires-Dist: pandas>=0.25.3
+Requires-Dist: scipy>=1.3.1
+Requires-Dist: scikit-learn>=0.22
+Requires-Dist: table_evaluator>=1.4.2
+Requires-Dist: seaborn>=0.11.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# edudata
+Datasets generator for AI and Data Science Education
