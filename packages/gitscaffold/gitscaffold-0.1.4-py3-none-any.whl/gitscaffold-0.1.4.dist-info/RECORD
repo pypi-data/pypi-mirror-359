@@ -1,0 +1,15 @@
+gitscaffold-0.1.4.dist-info/licenses/LICENSE,sha256=TCaAFKlPjv_yKFa405R_UIafhcbWU89Qu0wzovJ3Rxg,1069
+scaffold/__init__.py,sha256=OR0PeY0Y2m7QjV17RXaTOlljPxSefn5vfrGGe0qoHys,61
+scaffold/__main__.py,sha256=YvenPgI7WgkezLHgQHUfqv4EXVG2QQ5JtfBazAts1ac,58
+scaffold/ai.py,sha256=kUg3f3NIdy7WKetWwH_v8JBFbaoSPR6Wn8mvBiKBbGc,5559
+scaffold/cli.py,sha256=QIiJa0Q0INh3JwQl6HdhmsVkuMGm8tuxY1R6IQ7l8Go,27300
+scaffold/github.py,sha256=WAPFwIy2pinHis_y93QnmGb-ZKL8BYYGeIgE1Ai9Xww,5950
+scaffold/main.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scaffold/parser.py,sha256=jvijoBypIn4wzaUrXoUR6v0JeZU8vRsXQH1LR8Z7HCE,2727
+scaffold/validator.py,sha256=VUE6rtOHZ1pJOGZE2mp2kHZhk5eWVMYQ6SAr7rmHmQE,1490
+scaffold/templates/__init__.py,sha256=xvVPeyQuQLNZ4XbvhyivD15jxCb6QLTn97XB2mXhhwQ,52
+gitscaffold-0.1.4.dist-info/METADATA,sha256=NoMZKoG2sNpkmClwg-0toEc4wU0Cw7mzHoclqNReAVo,8482
+gitscaffold-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gitscaffold-0.1.4.dist-info/entry_points.txt,sha256=NuRVZATSnsN-Uu9wExu-pZt8e2sQh81CRA7PbAbOQ44,49
+gitscaffold-0.1.4.dist-info/top_level.txt,sha256=aLfYcjRWwVHB73DR9jvLh71eUnfVb37BudybADkmaSM,9
+gitscaffold-0.1.4.dist-info/RECORD,,
