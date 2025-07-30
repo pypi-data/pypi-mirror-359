@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: gmcomp
+Version: 0.0.2
+Summary: For comparing gene models across different annotations of the same genome.
+Home-page: https://github.com/DeadlineWasYesterday/gmcomp
+Author: Md Nafis Ul Alam
+Author-email: deadlinewasyesterday@gmail.com
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# gmcomp
+For comparing gene models across different annotations of the same genome.

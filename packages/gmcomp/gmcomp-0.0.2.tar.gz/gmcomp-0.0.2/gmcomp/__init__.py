@@ -1,0 +1,1 @@
+from .gmcomp import main

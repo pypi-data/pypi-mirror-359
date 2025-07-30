@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+gmcomp/__init__.py
+gmcomp/gmcomp.py
+gmcomp.egg-info/PKG-INFO
+gmcomp.egg-info/SOURCES.txt
+gmcomp.egg-info/dependency_links.txt
+gmcomp.egg-info/entry_points.txt
+gmcomp.egg-info/requires.txt
+gmcomp.egg-info/top_level.txt
