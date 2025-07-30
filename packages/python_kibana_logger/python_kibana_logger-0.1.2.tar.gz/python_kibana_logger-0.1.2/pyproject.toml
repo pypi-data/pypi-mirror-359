@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python_kibana_logger"
+version = "0.1.2"
+description = "Easy to import logger for aurora kibana python applications."
+authors = ["tyler <tytheguy95@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_logger"}]
+repository = "https://github.com/mcallistertyler/python-kibana-logger"
+homepage = "https://github.com/mcallistertyler/python-kibana-logger"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-json-logger = "^3.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

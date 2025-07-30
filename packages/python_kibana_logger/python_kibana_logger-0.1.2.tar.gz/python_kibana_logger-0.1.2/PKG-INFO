@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: python_kibana_logger
+Version: 0.1.2
+Summary: Easy to import logger for aurora kibana python applications.
+License: MIT
+Author: tyler
+Author-email: tytheguy95@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: python-json-logger (>=3.3.0,<4.0.0)
+Project-URL: Homepage, https://github.com/mcallistertyler/python-kibana-logger
+Project-URL: Repository, https://github.com/mcallistertyler/python-kibana-logger
+Description-Content-Type: text/markdown
+
+# Python kibana logger
+
+Simple python logger that can be used in kibana applications for work.
+No fuss just import and use.
+
