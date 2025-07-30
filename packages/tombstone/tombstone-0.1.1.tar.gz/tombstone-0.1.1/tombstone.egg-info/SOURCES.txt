@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_tombstone.py
+tombstone/__init__.py
+tombstone/tombstone.py
+tombstone.egg-info/PKG-INFO
+tombstone.egg-info/SOURCES.txt
+tombstone.egg-info/dependency_links.txt
+tombstone.egg-info/top_level.txt
