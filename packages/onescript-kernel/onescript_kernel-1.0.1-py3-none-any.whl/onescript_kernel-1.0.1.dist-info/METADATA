@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: onescript-kernel
+Version: 1.0.1
+Summary: OneScript kernel for Jupyter
+Home-page: 
+Author: Nikolay Krasnov
+Author-email: nikolay@krasnov.cf
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: summary
+
+A kernel that allows running OneScript code in Jupyter notebooks
