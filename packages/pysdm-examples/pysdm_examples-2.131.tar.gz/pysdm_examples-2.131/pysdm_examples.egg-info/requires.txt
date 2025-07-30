@@ -1,0 +1,15 @@
+PySDM
+PyMPDATA
+open-atmos-jupyter-utils
+pystrict
+matplotlib
+Pillow
+joblib
+ipywidgets
+seaborn
+numdifftools
+vtk
+
+[tests]
+pytest
+nbconvert
