@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: ischemist
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Anton Morgunov <anton@ischemist.com>
+License: MIT
+Project-URL: Homepage, https://github.com/anmorgunov/ischemist
+Project-URL: Issues, https://github.com/anmorgunov/ischemist/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pre-commit>=4.1.0; extra == "dev"
+Requires-Dist: ruff>=0.9.6; extra == "dev"
+Requires-Dist: pytest>=8.3.4; extra == "dev"
+Requires-Dist: mypy>=1.15.0; extra == "dev"
+Provides-Extra: plotly
+Requires-Dist: plotly>=6.1.2; extra == "plotly"
+Dynamic: license-file
+
+simplifying my life

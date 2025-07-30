@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/ischemist/__init__.py
+src/ischemist.egg-info/PKG-INFO
+src/ischemist.egg-info/SOURCES.txt
+src/ischemist.egg-info/dependency_links.txt
+src/ischemist.egg-info/requires.txt
+src/ischemist.egg-info/top_level.txt
+src/ischemist/style/__init__.py
+src/ischemist/style/colors.py
+src/ischemist/style/plotly.py
