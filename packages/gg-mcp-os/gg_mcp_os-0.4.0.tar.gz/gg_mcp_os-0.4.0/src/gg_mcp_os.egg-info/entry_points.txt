@@ -1,0 +1,3 @@
+[console_scripts]
+gg-mcp-os = mcp_server_opensearch:main
+mcp-server-opensearch = mcp_server_opensearch.__main__:main
