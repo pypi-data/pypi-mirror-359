@@ -1,0 +1,58 @@
+[project]
+name = "zhongyao-mcp-server"
+version = "0.0.4"
+description = "主要实现的是火山引擎的提供的中药文生图，文生视频，使用免费edgett实现文生音频，整合打包合成打包视频MCP-Server"
+authors = [
+    {name = "zhouqingyu666",email = "zhouqingyu666@aisino.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.9.4",
+    "requests>=2.31.0",
+    "openai>=1.86.0",
+    "cos-python-sdk-v5==1.9.33",
+    "moviepy==1.0.3",
+    "httpx",
+    "configparser",
+    "sse-starlette",
+    "uvicorn"
+]
+
+[project.scripts]
+zhongyao-mcp-server = "zhongyao_mcp_server.zhongyao_mcp_server:main"
+zhongyao-mcp-server-sse = "zhongyao_mcp_server.zhongyao_mcp_server_sse:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+# This section controls what goes into the source distribution (sdist).
+# We include only the necessary files for building and documentation.
+include = [
+    "src/zhongyao_mcp_server",
+    "config.ini",
+    "README.md",
+    "font/wqy-zenhei.ttc",
+    "ImageMagick/magick"
+]
+# We exclude development files, environment files, and binaries.
+exclude = [
+    ".venv",
+    ".*",
+    "__pycache__",
+    "dist",
+    "*.pyc",
+    "zz.txt",
+    "uv.lock",
+    "config.docker.ini"
+]
+
+[tool.hatch.build.targets.wheel]
+# This section controls the binary wheel distribution.
+# It will only include the Python package itself.
+# Config files and fonts are not bundled into the wheel,
+# as the user is expected to provide and configure them in the
+# runtime environment, as explained in README.md.
+packages = ["src/zhongyao_mcp_server"]
