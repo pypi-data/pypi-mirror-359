@@ -1,0 +1,8 @@
+worklog/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+worklog/cli.py,sha256=MfjxssExevgh9_es9yC4Kc-EaVSI0piT9r3TbPvP0ug,2731
+worklog/hledger_completer.py,sha256=TtqfPMaSh-sg7uXN9i4FdZGWLhH2Dwji1eS3bdrnAcg,1307
+worklog/timeclock.py,sha256=HxXYi90Lqaz0nP32E7EdBbNt-a_okBzdXIcyw6R8X_s,1798
+worklog_cli-1.0.0.dist-info/METADATA,sha256=LIeXFqPeDmPJqk9p84sYv91WVvIVB0fy1FbpZS_r_A4,3231
+worklog_cli-1.0.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+worklog_cli-1.0.0.dist-info/entry_points.txt,sha256=rEigQUzqMH_145yMHWC2uP2pVK-CbDOiKr_skDGZ3po,40
+worklog_cli-1.0.0.dist-info/RECORD,,
