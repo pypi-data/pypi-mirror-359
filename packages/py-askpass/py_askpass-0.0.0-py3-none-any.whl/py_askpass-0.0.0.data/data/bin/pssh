@@ -1,0 +1,5 @@
+#!/bin/bash
+export SSH_ORIG_ARGS="$1"
+export SSH_ASKPASS="paskpass"
+export SSH_ASKPASS_REQUIRE=$(paskpass "$1")
+ssh "$@"
