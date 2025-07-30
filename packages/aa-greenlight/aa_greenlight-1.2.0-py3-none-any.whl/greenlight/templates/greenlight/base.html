@@ -1,0 +1,33 @@
+{% extends 'allianceauth/base-bs5.html' %}
+
+{% load i18n %}
+{% load static %}
+{% load navactive %}
+
+{% block page_title %}
+    {% translate "Greenlight Plugin" %}
+{% endblock %}
+
+{% block header_nav_brand %}
+    {% translate "Greenlight Plugin" %}
+{% endblock header_nav_brand %}
+
+{% block header_nav_collapse_left %}
+    {{ block.super }}
+    {% if perms.greenlight.can_manage_fleets %}
+        <li class="nav-item">
+            <a
+                class="nav-link {% navactive request 'greenlight:fc_panel' %}"
+                href="{% url 'greenlight:fc_panel' %}"
+            >
+                {% translate "Fleet Control Panel" %}
+            </a>
+        </li>
+    {% endif %}
+{% endblock header_nav_collapse_left %}
+
+{% block content %}
+    <div class="allianceauth-greenlight-plugin">
+        {% block details %}{% endblock %}
+    </div>
+{% endblock %}
