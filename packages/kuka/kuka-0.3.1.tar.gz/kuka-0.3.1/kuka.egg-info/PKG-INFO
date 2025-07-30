@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: kuka
+Version: 0.3.1
+Summary: Library for EDA, data modeling, and ML modeling analysis/interpretation
+Home-page: https://github.com/tenoriolms/kuka_lib
+Author: tenoriolms
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: graphviz
+Requires-Dist: optuna
+Requires-Dist: pathlib
+Dynamic: author
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
