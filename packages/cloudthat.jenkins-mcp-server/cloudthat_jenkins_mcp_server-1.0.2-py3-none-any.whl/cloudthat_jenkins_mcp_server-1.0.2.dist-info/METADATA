@@ -1,0 +1,763 @@
+Metadata-Version: 2.4
+Name: cloudthat.jenkins-mcp-server
+Version: 1.0.2
+Summary: A Model Context Protocol (MCP) server for Jenkins CI/CD integration
+Project-URL: Homepage, https://github.com/jenkins-mcp/jenkins-mcp-server
+Project-URL: Documentation, https://github.com/jenkins-mcp/jenkins-mcp-server#readme
+Project-URL: Source, https://github.com/jenkins-mcp/jenkins-mcp-server
+Project-URL: Bug Tracker, https://github.com/jenkins-mcp/jenkins-mcp-server/issues
+Author-email: Jenkins MCP Team <jenkins-mcp@example.com>
+License: Proprietary
+License-File: LICENSE
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Requires-Dist: cachetools>=5.3.0
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: jenkinsapi>=0.3.14
+Requires-Dist: loguru>=0.7.0
+Requires-Dist: mcp[cli]>=1.6.0
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: python-jenkins>=1.8.0
+Requires-Dist: tenacity>=8.2.0
+Description-Content-Type: text/markdown
+
+# Jenkins MCP Server
+
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/License-Proprietary-red.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Code Style](https://img.shields.io/badge/code%20style-ruff-000000.svg)
+![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)
+![Jenkins](https://img.shields.io/badge/Jenkins-2.400+-blue.svg)
+![CloudThat](https://img.shields.io/badge/CloudThat-OSS-orange.svg)
+![PyPI](https://img.shields.io/pypi/v/cloudthat.jenkins-mcp-server.svg)
+
+A comprehensive **Model Context Protocol (MCP) server** for Jenkins CI/CD integration, enabling AI assistants to interact with Jenkins instances through standardized tools and resources. Built for production environments with enterprise-grade reliability, security, and performance.
+
+**Developed by:** [CloudThat](https://cloudthat.com) - AWS Premier Tier Services Partner  
+**Author:** Saurabh Kumar Jain (skj@cloudthat.com) - CSA - Projects Head, DevOps and Kubernetes  
+**Repository:** https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git  
+**PyPI Package:** https://pypi.org/project/cloudthat.jenkins-mcp-server/
+
+## 🎯 Overview
+
+The Jenkins MCP Server bridges the gap between AI assistants and Jenkins automation servers, providing a standardized interface for:
+
+- **AI-Driven DevOps**: Enable AI assistants to manage Jenkins pipelines, jobs, and builds
+- **Automated CI/CD Operations**: Trigger builds, monitor status, and manage deployments through natural language
+- **Infrastructure as Code**: Create and manage Jenkins resources programmatically
+- **Intelligent Monitoring**: Get insights into build performance, system health, and resource utilization
+
+This project represents CloudThat's innovation in the DevOps and cloud-native ecosystem, leveraging our expertise as an AWS Premier Tier Services Partner with competencies in Migration, DevOps, Data & Analytics, and GenAI.
+
+## 🚀 Quick Start
+
+```bash
+# Install from PyPI
+pip install cloudthat.jenkins-mcp-server
+
+# Run the server
+jenkins-mcp-server --jenkins-url http://your-jenkins.com:8080 \
+                   --jenkins-username your-username \
+                   --jenkins-token your-api-token
+```
+
+## ✨ Features
+
+### **📋 Fully Supported Core Features**
+1. ✅ Creating pipeline jobs with basic configurations
+2. ✅ Creating freestyle jobs  
+3. ✅ Creating folder jobs
+4. ✅ Triggering builds without parameters
+5. ✅ Triggering builds with parameters
+6. ✅ Retrieving build status and information
+7. ✅ Retrieving build logs with real-time streaming
+8. ✅ Viewing build queue and monitoring
+9. ✅ Getting comprehensive server information
+10. ✅ Creating pipelines with parameters
+11. ✅ Creating pipelines in folders
+12. ✅ Job listing and management
+13. ✅ Build analytics and performance metrics
+
+### **📊 Comprehensive System Information**
+- ✅ Detailed version information (core version, LTS status)
+- ✅ Complete plugin inventory with versions and update status
+- ✅ System health indicators (disk space, memory usage, CPU load)
+- ✅ JVM statistics and configuration details
+- ✅ Node details (online status, executors, labels, load statistics)
+- ✅ Security configuration and audit information
+- ✅ Global configuration settings and environment
+- ✅ Master/agent architecture information
+- ✅ System environment variables and tool configurations
+- ✅ Installed tools and their configurations
+
+### **🔧 Advanced Pipeline Management**
+- ✅ Pipeline update functionality to modify existing pipelines
+- ✅ Jenkinsfile validation before deployment
+- ✅ Clone/copy functionality for pipelines with modifications
+- ✅ Server-side validation integration
+- ✅ Multi-branch pipeline support
+- ✅ Pipeline as Code (Jenkinsfile) management
+
+### **🚀 Build Operations & Analytics**
+- ✅ Build abort functionality with graceful termination
+- ✅ Real-time log streaming capabilities
+- ✅ Build status monitoring with progress and stage information
+- ✅ Build performance analytics (success rates, durations, failures)
+- ✅ Bottleneck identification and optimization suggestions
+- ✅ Historical build data analysis and trending
+
+### **🏥 System Health & Security**
+- ✅ Health checks for pipelines (syntax issues, deprecated features)
+- ✅ Credential audit functionality and security scanning
+- ✅ Agent recommendation based on workload analysis
+- ✅ Plugin ecosystem analysis and vulnerability detection
+- ✅ Resource usage monitoring and optimization recommendations
+- ✅ CSRF protection and secure API token handling
+
+### **⚡ Performance & Reliability**
+- ✅ **Intelligent Multi-tier Caching** - Optimized performance with different TTL values
+- ✅ **HTTP Connection Pooling** - Efficient resource management
+- ✅ **Automatic Retry Logic** - Exponential backoff with circuit breaker pattern
+- ✅ **Comprehensive Error Handling** - Graceful failure recovery
+- ✅ **Type Safety** - Full Pydantic model validation throughout
+- ✅ **Production Logging** - Structured logging with sensitive data masking
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   AI Assistant  │◄──►│ Jenkins MCP      │◄──►│ Jenkins Master  │
+│   (Claude, etc) │    │ Server           │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                              │                          │
+                              │                          ▼
+                              ▼                 ┌─────────────────┐
+                    ┌──────────────────┐       │ Jenkins Agents  │
+                    │ FastMCP Protocol │       │ (Build Nodes)   │
+                    │ - Tools          │       └─────────────────┘
+                    │ - Resources      │                │
+                    │ - Prompts        │                ▼
+                    └──────────────────┘       ┌─────────────────┐
+                                               │ Build Artifacts │
+                                               │ & Deployments   │
+                                               └─────────────────┘
+```
+
+## 📋 Prerequisites
+
+### **System Requirements**
+- **Python**: 3.10 or higher
+- **Operating System**: Linux, macOS, or Windows
+- **Memory**: Minimum 512MB RAM (1GB+ recommended)
+- **Network**: HTTP/HTTPS access to Jenkins server
+
+### **Jenkins Requirements**
+- **Jenkins Version**: 2.400+ (LTS recommended)
+- **Required Plugins**:
+  - Pipeline Plugin (workflow-aggregator)
+  - Build Timeout Plugin (build-timeout)
+  - Timestamper Plugin (timestamper)
+  - Workspace Cleanup Plugin (ws-cleanup)
+
+### **Authentication Requirements**
+- Jenkins user account with appropriate permissions
+- API token (recommended) or username/password
+- Required Jenkins permissions:
+  - Overall/Read
+  - Job/Build, Job/Cancel, Job/Read
+  - Job/Create, Job/Configure (for job creation)
+  - View/Read (for accessing views)
+
+### **Network Requirements**
+- HTTP/HTTPS access to Jenkins server
+- Port access (default: 8080 for Jenkins)
+- SSL/TLS certificates (if using HTTPS)
+
+## 🚀 Installation
+
+### **Method 1: Using pip (Recommended)**
+
+The easiest way to install the Jenkins MCP Server is from PyPI:
+
+```bash
+# Install from PyPI
+pip install cloudthat.jenkins-mcp-server
+
+# Run the server
+jenkins-mcp-server --jenkins-url http://your-jenkins.com:8080 \
+                   --jenkins-username your-username \
+                   --jenkins-token your-api-token
+```
+
+### **Method 2: Using uvx**
+
+You can also use `uvx` to run without installing:
+
+```bash
+# Install and run directly from PyPI
+uvx cloudthat.jenkins-mcp-server --jenkins-url http://your-jenkins.com:8080 \
+                                 --jenkins-username your-username \
+                                 --jenkins-token your-api-token
+
+# Install from CloudThat GitLab repository
+uvx --from git+https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git jenkins-mcp-server
+
+# Install from local directory
+uvx --from /path/to/jenkins_mcp jenkins-mcp-server
+```
+
+### **Method 3: From CloudThat GitLab**
+
+```bash
+# Clone the repository
+git clone https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git
+cd jenkins_mcp
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install in development mode
+pip install -e .
+
+# Or install with all dependencies
+pip install -e ".[dev,test]"
+```
+
+### **Method 4: Using Docker (Production Ready)**
+
+```bash
+# Build the Docker image
+docker build -t cloudthat/jenkins-mcp-server .
+
+# Run with Docker
+docker run --rm \
+  cloudthat/jenkins-mcp-server \
+  --jenkins-url http://your-jenkins.com:8080 \
+  --jenkins-username your-username \
+  --jenkins-token your-api-token
+
+# Run as daemon
+docker run -d \
+  --name jenkins-mcp-server \
+  --restart unless-stopped \
+  -e JENKINS_URL=http://your-jenkins.com:8080 \
+  -e JENKINS_USERNAME=your-username \
+  -e JENKINS_TOKEN=your-api-token \
+  cloudthat/jenkins-mcp-server \
+  --jenkins-url $JENKINS_URL \
+  --jenkins-username $JENKINS_USERNAME \
+  --jenkins-token $JENKINS_TOKEN
+```
+
+
+## ⚙️ Configuration
+
+### **Environment Variables**
+
+```bash
+# Required Configuration
+JENKINS_URL=http://your-jenkins-server:8080
+JENKINS_USERNAME=your-username
+JENKINS_TOKEN=your-api-token
+
+# Optional Configuration
+JENKINS_TIMEOUT=30                    # Request timeout in seconds
+```
+
+### **Getting Jenkins API Token**
+
+1. Log into your Jenkins instance
+2. Go to **Manage Jenkins** → **Manage Users**
+3. Click on your username → **Configure**
+4. Under **API Token**, click **Add new Token**
+5. Generate and copy the token (store securely)
+
+## 📖 Usage
+
+### **Command Line Interface**
+
+```bash
+# Using pip (recommended)
+pip install cloudthat.jenkins-mcp-server
+jenkins-mcp-server --jenkins-url http://localhost:8080 \
+                   --jenkins-username your-username \
+                   --jenkins-token your-token
+
+# Using uvx
+uvx cloudthat.jenkins-mcp-server --jenkins-url http://localhost:8080 \
+                                 --jenkins-username your-username \
+                                 --jenkins-token your-token \
+                                 --log-level DEBUG \
+                                 --timeout 60
+
+# Show help
+jenkins-mcp-server --help
+
+# From source (development)
+python -m jenkins_mcp_server --jenkins-url http://localhost:8080 \
+                             --jenkins-username your-username \
+                             --jenkins-token your-token
+```
+
+### **With AI Assistants**
+
+#### **Amazon Q Developer CLI**
+
+Add to your MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "jenkins": {
+      "command": "uvx",
+      "args": [
+        "cloudthat.jenkins-mcp-server",
+        "--jenkins-url", "http://your-jenkins.com",
+        "--jenkins-username", "your-username", 
+        "--jenkins-token", "your-token"
+      ]
+    }
+  }
+}
+```
+
+#### **Claude Desktop**
+
+Add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "jenkins": {
+      "command": "uvx",
+      "args": ["cloudthat.jenkins-mcp-server"],
+      "env": {
+        "JENKINS_URL": "http://your-jenkins.com",
+        "JENKINS_USERNAME": "your-username",
+        "JENKINS_TOKEN": "your-token"
+      }
+    }
+  }
+}
+```
+
+#### **Alternative: From Source (Development)**
+
+```json
+{
+  "mcpServers": {
+    "jenkins": {
+      "command": "python",
+      "args": ["-m", "jenkins_mcp_server"],
+      "env": {
+        "JENKINS_URL": "http://your-jenkins.com",
+        "JENKINS_USERNAME": "your-username",
+        "JENKINS_TOKEN": "your-token"
+      }
+    }
+  }
+}
+```
+
+### **Available MCP Tools**
+
+| Tool | Description | Example Usage |
+|------|-------------|---------------|
+| `list_jenkins_jobs` | List jobs with filtering | List all jobs in "production" folder |
+| `get_job_details` | Get detailed job information | Get details for "my-pipeline" job |
+| `create_jenkins_job` | Create new jobs | Create a freestyle job with build steps |
+| `trigger_jenkins_build` | Trigger builds with parameters | Trigger build with BRANCH=main |
+| `get_build_status` | Get build status and info | Get status of build #42 |
+| `get_build_logs` | Retrieve console logs | Get logs for latest build |
+| `create_jenkins_pipeline` | Create pipeline jobs | Create pipeline with Jenkinsfile |
+| `generate_pipeline_template` | Generate pipeline templates | Generate declarative pipeline template |
+| `validate_pipeline_script` | Validate pipeline syntax | Validate Jenkinsfile before deployment |
+| `manage_jenkins_builds` | Advanced build operations | Abort builds, stream logs, get analytics |
+| `analyze_jenkins_system` | System health analysis | Comprehensive system health and security analysis |
+| `update_jenkins_pipeline` | Update pipeline configurations | Update pipeline script and parameters |
+| `get_jenkins_server_info` | Server status and information | Get Jenkins version and plugins |
+| `get_jenkins_queue` | Build queue status | Check queued builds |
+
+### **Example Interactions**
+
+```bash
+# List all jobs
+"Show me all Jenkins jobs"
+
+# Create a new pipeline
+"Create a pipeline called 'my-app-pipeline' that builds on push to main branch"
+
+# Trigger a build with parameters
+"Trigger a build for 'my-pipeline' with ENVIRONMENT=staging and DEPLOY=true"
+
+# Get build status
+"What's the status of the latest build for 'my-app'?"
+
+# Check system health
+"Show me Jenkins server information and current queue status"
+
+# Generate a pipeline template
+"Generate a declarative pipeline template for a Java application with build, test, and deploy stages"
+
+# Validate pipeline script
+"Can you validate this Jenkinsfile for syntax errors?"
+
+# Manage builds
+"Abort the currently running build of 'my-pipeline' and show me its logs"
+
+# Analyze system
+"Run a comprehensive system analysis and show me any security concerns"
+
+# Stream build logs
+"Stream the logs from the current build of 'my-pipeline' in real-time"
+
+# Update pipeline with parameters
+"Add a new parameter REGION to the 'my-pipeline' pipeline with default value 'us-west-2'"
+```
+
+## 📁 Project Structure
+
+```
+jenkins_mcp_server/
+├── 📄 README.md                     # This file
+├── 📄 CHANGELOG.md                  # Version history
+├── 📄 CONTRIBUTING.md               # Contribution guidelines
+├── 📄 TESTING.md                    # Testing documentation
+├── 📄 LICENSE                       # Proprietary license
+├── ⚙️ pyproject.toml                # Project configuration
+├── ⚙️ pytest.ini                   # Test configuration
+├── 🐳 Dockerfile                    # Docker image definition
+├── 📦 jenkins_mcp_server/           # Main package
+│   ├── 🐍 __init__.py              # Package initialization
+│   ├── 🐍 __main__.py              # CLI entry point
+│   ├── 🐍 server.py                # FastMCP server implementation
+│   ├── 🐍 models.py                # Pydantic data models
+│   ├── 🐍 exceptions.py            # Custom exception classes
+│   ├── 📁 handlers/                # Request handlers
+│   │   ├── 🐍 base_handler.py      # Base handler with common functionality
+│   │   ├── 🐍 system_handler.py    # System information operations
+│   │   ├── 🐍 job_handler.py       # Job management operations
+│   │   ├── 🐍 build_handler.py     # Build management operations
+│   │   └── 🐍 pipeline_handler.py  # Pipeline operations
+│   └── 📁 utils/                   # Utility modules
+│       ├── 🐍 cache.py             # Intelligent caching system
+│       ├── 🐍 connection_pool.py   # HTTP connection pooling
+│       ├── 🐍 retry.py             # Retry logic with backoff
+│       ├── 🐍 validation.py        # Input validation
+│       ├── 🐍 logging_helper.py    # Structured logging
+│       ├── 🐍 error_reporting.py   # Error handling utilities
+│       ├── 🐍 pipeline_utils.py    # Pipeline-specific utilities
+│       └── 🐍 path_utils.py        # Path manipulation utilities
+├── 📚 examples/                    # Usage examples and documentation
+│   ├── 📄 README.md                # Examples guide and overview
+│   ├── 📁 prompts/                 # Natural language prompt examples
+│   │   ├── 📄 01_supported_operations.md    # Basic supported operations
+│   │   ├── 📄 02_advanced_operations.md     # Advanced Jenkins features
+│   │   ├── 📄 03_intelligent_operations.md  # AI-powered operations
+│   │   └── 📄 04_complex_scenarios.md       # Enterprise-scale scenarios
+│   └── 📁 integrations/            # AI assistant integration examples
+│       └── 📄 01_ai_assistant_integration.md # Integration patterns
+└── 🧪 tests/                       # Test suite
+    ├── 🧪 conftest.py              # Pytest configuration
+    ├── 📁 unit/                    # Unit tests
+    │   ├── 🧪 test_handlers.py     # Handler tests
+    │   ├── 🧪 test_models.py       # Model validation tests
+    │   └── 🧪 test_utils.py        # Utility tests
+    └── 📁 integration/             # Integration tests
+        ├── 🧪 test_server.py       # Server integration tests
+        └── 🧪 test_jenkins.py      # Jenkins integration tests
+```
+
+## 🧪 Testing
+
+### **Running Tests**
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=jenkins_mcp_server --cov-report=html
+
+# Run specific test categories
+pytest tests/unit/          # Unit tests only
+pytest tests/integration/   # Integration tests only
+
+# Run with verbose output
+pytest -v
+
+# Run tests in parallel
+pytest -n auto
+```
+
+### **Test Strategy**
+
+- **Unit Tests**: Test individual components in isolation
+- **Integration Tests**: Test end-to-end functionality with real Jenkins
+- **Mock Testing**: Use mocks for external dependencies
+- **Coverage Target**: 90%+ code coverage
+- **Performance Tests**: Validate response times and resource usage
+
+### **Test Configuration**
+
+Set test environment variables:
+
+```bash
+export JENKINS_TEST_URL=http://test-jenkins:8080
+export JENKINS_TEST_USERNAME=test-user
+export JENKINS_TEST_TOKEN=test-token
+```
+
+## 🐳 Docker Support
+
+### **Building Docker Image**
+
+```bash
+# Build the image
+docker build -t cloudthat/jenkins-mcp-server .
+
+# Build with specific tag
+docker build -t cloudthat/jenkins-mcp-server:v1.0.0 .
+```
+
+### **Running with Docker**
+
+```bash
+# Run with environment variables
+docker run -d \
+  --name jenkins-mcp \
+  -e JENKINS_URL=http://your-jenkins.com:8080 \
+  -e JENKINS_USERNAME=your-username \
+  -e JENKINS_TOKEN=your-api-token \
+  cloudthat/jenkins-mcp-server \
+  --jenkins-url $JENKINS_URL \
+  --jenkins-username $JENKINS_USERNAME \
+  --jenkins-token $JENKINS_TOKEN
+
+# View logs
+docker logs jenkins-mcp
+
+# Stop container
+docker stop jenkins-mcp
+```
+
+
+## 🔧 Troubleshooting
+
+### **Common Issues**
+
+#### **Connection Issues**
+```bash
+# Error: Connection refused
+# Solution: Check Jenkins URL and network connectivity
+curl -I http://your-jenkins-server:8080
+
+# Error: SSL certificate verification failed
+# Solution: Disable SSL verification or add certificate
+export JENKINS_VERIFY_SSL=false
+```
+
+#### **Authentication Issues**
+```bash
+# Error: 401 Unauthorized
+# Solution: Verify username and API token
+# Check token permissions in Jenkins user configuration
+
+# Error: 403 Forbidden
+# Solution: Ensure user has required Jenkins permissions
+# Required: Overall/Read, Job/Build, Job/Read
+```
+
+#### **Performance Issues**
+```bash
+# Error: Slow response times
+# Solution: Adjust cache settings and connection pool
+export JENKINS_CACHE_TTL=600
+export JENKINS_CONNECTION_POOL_SIZE=20
+```
+
+### **Log Locations**
+
+- **Application Logs**: `./logs/jenkins-mcp-server.log`
+- **Error Logs**: `./logs/errors.log`
+- **Access Logs**: `./logs/access.log`
+
+### **Debug Mode**
+
+```bash
+# Enable debug logging
+python -m jenkins_mcp_server --log-level DEBUG
+
+# Enable verbose output
+python -m jenkins_mcp_server --verbose
+
+# Enable performance profiling
+python -m jenkins_mcp_server --profile
+```
+
+## 🔒 Security Considerations
+
+### **Authentication & Authorization**
+
+- **API Tokens**: Use Jenkins API tokens instead of passwords
+- **Least Privilege**: Grant minimum required permissions
+- **Token Rotation**: Regularly rotate API tokens
+- **Secure Storage**: Store credentials in environment variables or secure vaults
+
+### **Required Jenkins Permissions**
+
+```
+Overall:
+  - Read
+
+Job:
+  - Build (for triggering builds)
+  - Cancel (for aborting builds)  
+  - Configure (for creating/updating jobs)
+  - Create (for creating new jobs)
+  - Read (for viewing job details)
+
+View:
+  - Read (for accessing views)
+
+Agent:
+  - Build (if using specific agents)
+```
+
+### **Network Security**
+
+- **HTTPS**: Use HTTPS for Jenkins connections in production
+- **Firewall**: Restrict network access to Jenkins server
+- **VPN**: Use VPN for remote access to Jenkins
+- **Certificate Validation**: Enable SSL certificate verification
+
+### **Data Protection**
+
+- **Credential Masking**: Sensitive data is automatically masked in logs
+- **No Plain Text Storage**: Credentials are not stored in plain text
+- **Audit Logging**: All operations are logged for audit purposes
+- **Data Encryption**: Use encrypted connections (HTTPS/TLS)
+
+### **Compliance**
+
+- **RBAC**: Role-based access control through Jenkins permissions
+- **Audit Trail**: Complete audit trail of all operations
+- **Security Scanning**: Regular security scans of dependencies
+- **Vulnerability Management**: Automated vulnerability detection and reporting
+
+## 🤝 Contributing
+
+We welcome contributions to this CloudThat project! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### **Development Setup**
+
+```bash
+# Fork and clone the repository
+git clone https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git
+cd jenkins_mcp
+
+# Create development environment
+python -m venv venv
+source venv/bin/activate
+
+# Install development dependencies
+pip install -e ".[dev,test]"
+
+# Install pre-commit hooks
+pre-commit install
+
+# Run tests
+pytest
+```
+
+### **Pull Request Process**
+
+1. **Fork** the repository on GitLab
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Make** your changes with tests
+4. **Ensure** all tests pass (`pytest`)
+5. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+6. **Push** to the branch (`git push origin feature/amazing-feature`)
+7. **Open** a Merge Request on GitLab
+
+### **Code Standards**
+
+- **Code Style**: Follow PEP 8 (enforced by `ruff`)
+- **Type Hints**: Use type hints throughout
+- **Documentation**: Update docstrings and documentation
+- **Tests**: Add tests for new functionality
+- **Commit Messages**: Use conventional commit format
+
+## 📄 License
+
+This project is proprietary software owned by **CloudThat Technologies Pvt. Ltd.**
+
+```
+Copyright (c) 2024 CloudThat Technologies Pvt. Ltd.
+All rights reserved.
+
+This software is proprietary and confidential. Unauthorized copying, 
+distribution, or use of this software, via any medium, is strictly 
+prohibited without the express written permission of CloudThat Technologies Pvt. Ltd.
+
+For licensing inquiries, please contact: info@cloudthat.com
+```
+
+## 🏢 About CloudThat
+
+**CloudThat** is a seasoned cloud consulting company headquartered in Bengaluru, established in 2012. CloudThat offers end-to-end cloud consulting services spanning cloud strategy, migration, modernization, DevOps, security, data analytics, AI/ML, and managed services.
+
+As an **AWS Premier Tier Services Partner**, CloudThat has been recognized by AWS for its deep technical acumen and delivery excellence. We possess multiple AWS competencies—including Migration, DevOps, Data & Analytics, and GenAI—which enable us to craft transformative, scalable, and cost-effective cloud-native solutions tailored to diverse industries.
+
+### **Our Services**
+- **Cloud Strategy & Migration**: Comprehensive cloud adoption readiness assessments and secure, zero-downtime migration strategies
+- **DevOps & DevSecOps**: Automated CI/CD pipelines, infrastructure as code, and integrated compliance
+- **Data & AI/ML**: Scalable data lakes, real-time analytics platforms, and GenAI-powered solutions
+- **Security & Governance**: AWS Well‑Architected Reviews, continuous compliance automation, and robust policy enforcement
+- **Managed Services**: Optimize uptime, cost, and performance with ongoing excellence
+- **Contract Engineering**: Boost internal teams with AWS-certified experts
+
+### **Why CloudThat**
+CloudThat stands out as a trusted AWS Premier Tier Partner that delivers comprehensive, high-quality cloud consulting—from strategy through implementation to managed operations. Our strong technical foundation, validated by AWS recognition, equips enterprises to modernize with confidence and achieve measurable business outcomes.
+
+**Website**: [https://cloudthat.com](https://cloudthat.com)  
+**Contact**: info@cloudthat.com
+
+## 🙏 Acknowledgements
+
+### **Core Dependencies**
+- **[FastMCP](https://github.com/pydantic/fastmcp)** - Modern MCP server framework
+- **[python-jenkins](https://github.com/python-jenkins/python-jenkins)** - Jenkins API client
+- **[Pydantic](https://github.com/pydantic/pydantic)** - Data validation and settings management
+- **[httpx](https://github.com/encode/httpx)** - Modern HTTP client
+- **[click](https://github.com/pallets/click)** - Command line interface creation
+
+### **Development Tools**
+- **[pytest](https://github.com/pytest-dev/pytest)** - Testing framework
+- **[ruff](https://github.com/astral-sh/ruff)** - Fast Python linter and formatter
+- **[mypy](https://github.com/python/mypy)** - Static type checker
+- **[pre-commit](https://github.com/pre-commit/pre-commit)** - Git hooks framework
+
+### **Special Thanks**
+- **Jenkins Community** - For the amazing CI/CD platform
+- **MCP Protocol Team** - For the standardized AI integration protocol
+- **Python Community** - For the excellent ecosystem of tools and libraries
+- **AWS** - For the comprehensive cloud platform and partnership
+
+---
+
+**Developed with ❤️ by CloudThat - AWS Premier Tier Services Partner**
+
+**Author**: Saurabh Kumar Jain (skj@cloudthat.com) - CSA - Projects Head, DevOps and Kubernetes  
+**Repository**: https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git  
+**Support**: For support and inquiries, please contact info@cloudthat.com
