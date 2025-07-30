@@ -1,0 +1,12 @@
+[console_scripts]
+animate1D=hans.cli:animate1D.main
+animate2D=hans.cli:animate2D.main
+generate_roughness=hans.cli:generate_roughness.main
+plot1D_evolution=hans.cli:plot1D_evolution.main
+plot1D_height=hans.cli:plot1D_height.main
+plot1D_last=hans.cli:plot1D_last.main
+plot2D_height=hans.cli:plot2D_height.main
+plot2D_last=hans.cli:plot2D_last.main
+plot_scalar=hans.cli:plot_scalar.main
+read_config=hans.cli:read_config.main
+
