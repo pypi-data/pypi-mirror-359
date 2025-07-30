@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: decitobin
+Version: 1.1a1
+Summary: A widget to convert decimal to binary, ASCII to binary
+Home-page: https://github.com/Thailam12/decimal-to-binary
+Author: Your Name
+Author-email: Thailam12 <thailam160317@outlook.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Thailam12/decitobinary
+Project-URL: Issues, https://github.com/Thailam12/decitobinary/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+Press key Q to exit. If you press a number, that will make a binary number. Example: Press 9, will be 1001
+Release Notes: Now, we have 1.1 a1 Insider Preview
+- Now you can use the letter to convert it to binary.
