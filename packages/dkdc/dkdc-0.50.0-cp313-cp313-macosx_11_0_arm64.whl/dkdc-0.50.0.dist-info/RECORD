@@ -1,0 +1,9 @@
+dkdc-0.50.0.dist-info/METADATA,sha256=TfX0DZMuC0fO3eKNHvJ8yOS_sxyVSU6T0RijEjNWu8E,5947
+dkdc-0.50.0.dist-info/WHEEL,sha256=37FJhZUlgGVixj8xIcdwwNn6LlKiL8q_XK50OipKHnE,104
+dkdc-0.50.0.dist-info/entry_points.txt,sha256=3Nqc3ysYknGDrP-qHDuBkTxiHg9Prazxx3adZR1JnlI,42
+dkdc-0.50.0.dist-info/licenses/LICENSE,sha256=QI2daAXxtyKi6mYF_IeD8y0EI-RHbuZkAHcoAhls4v4,1061
+dkdc/__init__.py,sha256=QKTByeXIPmTaK_EjuSH27w4QcYJ_j53PMBEfPtsF_4c,358
+dkdc/_dkdc.cpython-313-darwin.so,sha256=2LWp09GlWH2hqgjcJgFbzb_woKcahOz0lTm6D5xHU3U,35148832
+dkdc/cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dkdc/cli/main.py,sha256=if_dNrswuIGv6Znds9TBC79okIAVm9KRTJMP-hEZGcY,848
+dkdc-0.50.0.dist-info/RECORD,,
