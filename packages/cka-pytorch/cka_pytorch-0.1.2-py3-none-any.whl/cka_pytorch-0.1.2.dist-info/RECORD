@@ -1,0 +1,12 @@
+cka_pytorch/__init__.py,sha256=uX-O0C46QLnyRUW2MFlBfIelOQsM_vWVy-qbfSL8STk,71
+cka_pytorch/cka.py,sha256=vyZSTDGGGQ3MGHbo-8oezM7OuEh7iiPH8vQVl3zgI-o,12315
+cka_pytorch/hook_manager.py,sha256=oYQmGzL9FGYfGCjIZKkum1Nl5C0TwWkqAEWS3nK4XSc,6334
+cka_pytorch/hsic.py,sha256=Z_jHf30iF2A0qeHJ5STPYB9I8pREuiDRYOWWPprF9SI,1444
+cka_pytorch/metrics.py,sha256=pAkXFH2nLKZf-SnaqeLEWrg0n6SXbb92TSBb9hDbg9w,1299
+cka_pytorch/plot.py,sha256=jI-mcPPMwh_npBu_rhhakHUZL7bnRWRCxx7gquqjLTk,3775
+cka_pytorch/utils.py,sha256=-_5fdkbr8ABiUCurAAFvKf9fCPBVKHXZJMuxEX4wqyM,536
+cka_pytorch-0.1.2.dist-info/licenses/LICENSE,sha256=_EmLoYz1JYJntLz5mVgAMBiQtY9oLu7ZPhpsvOpiEuI,11346
+cka_pytorch-0.1.2.dist-info/METADATA,sha256=ob2sG67Rh31rvldzB7GWpq25jRTy4JaYB28gxCBfW-E,2627
+cka_pytorch-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cka_pytorch-0.1.2.dist-info/top_level.txt,sha256=Kvp75loeXtI_RK9xyXeqnNEnLsROfHCSRRKWXrssHNE,12
+cka_pytorch-0.1.2.dist-info/RECORD,,
