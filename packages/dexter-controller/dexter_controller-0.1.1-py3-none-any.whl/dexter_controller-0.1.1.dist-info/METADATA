@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: dexter-controller
+Version: 0.1.1
+Summary: Dexter Controller for the HARP Load Cells
+Author-email: "Hardware and Software Platform, Champalimaud Foundation" <software@research.fchampalimaud.org>
+Requires-Python: >=3.11
+Requires-Dist: harp-loadcells>=0.1.0a1
+Description-Content-Type: text/markdown
+
+# dexter-controller (Python)
+This is a Python package for controlling the Dexter device. It provides an interface to interact with it using a mapping between the device and the connected LoadCells for each finger.
+
+# Installation
+You can install the package using uv:
+```bash
+uv add harp.loadcells
+```
+
+# Usage example
+
+```python
+import time
+from dexter_controller import Finger, DexterHandController
+
+# The mapping dictionary should contain the serial port paths as keys and a list of Finger enums as values.
+mapping = {
+    "/dev/ttyUSB0": [Finger.THUMB, Finger.INDEX],   # "COMx" on Windows
+    "/dev/ttyUSB1": [Finger.MIDDLE, Finger.RING],   # "COMy" on Windows
+    "/dev/ttyUSB2": [Finger.PINKY],                 # "COMz on Windows
+}
+
+# When using the controller, you can access the raw data for each finger.
+# Devices are connected on creation of the controller.
+controller = DexterHandController(mapping)
+
+try:
+    print("Press Ctrl+C to exit.")
+    while True:
+        line = (
+            f"Thumb: {controller.thumb.raw_data if controller.thumb else None} | "
+            f"Index: {controller.index.raw_data if controller.index else None} | "
+            f"Middle: {controller.middle.raw_data if controller.middle else None} | "
+            f"Ring: {controller.ring.raw_data if controller.ring else None} | "
+            f"Pinky: {controller.pinky.raw_data if controller.pinky else None}    "
+        )
+        print(line, end="\r", flush=True)
+        # sleep for a short duration to avoid flooding the output (20 milliseconds)
+        time.sleep(0.02)
+except KeyboardInterrupt:
+    print("Exiting...")
+finally:
+    controller.close()
+```

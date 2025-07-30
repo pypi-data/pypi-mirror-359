@@ -1,0 +1,7 @@
+dexter_controller/__init__.py,sha256=Bhn2cO7oTKBTCR4DA_dLEiOUws_qPp3jDBFRMOYBHGo,237
+dexter_controller/dexter_hand_controller.py,sha256=DdFbunkEuZ6TKdpyuc38dcqSbzToiyx1EkFg2m24v5U,2488
+dexter_controller/finger.py,sha256=SiS4IVW_7oW4YZ9tpL6IqDiDlt0sFBc-XTBPSNdBg2M,322
+dexter_controller/loadcell_device.py,sha256=HrBg8s9IaKdo_FLaWBAYvhSLI5-baYDEYdUn-EXBiiY,1777
+dexter_controller-0.1.1.dist-info/METADATA,sha256=Nm28GsfsbVG0YQms3GTeCvo0rPdsJso2SD-XWg7FxE4,1975
+dexter_controller-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dexter_controller-0.1.1.dist-info/RECORD,,
