@@ -1,0 +1,21 @@
+[build-system]
+requires=["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-seniverse-weather-zy"
+version = "1.0.0"
+description = "Weather Forecast MCP Server Powered by Seniverse"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.6.0",
+    "requests>=2.32.4",
+]
+
+[project.scripts]
+mcp-seniverse-weather-zy = "mcp_seniverse_weather_zy:main"
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
