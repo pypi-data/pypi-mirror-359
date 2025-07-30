@@ -1,0 +1,14 @@
+indstocks/__init__.py,sha256=aOcFDdw6fvqmAwX6GoDwgfsBmhustIPO9wAocSRm42s,21
+indstocks/quote.py,sha256=irUwAr7pvG-ClA49JzZZHe-h2ihMZy5VrHiQrf6jYtE,4887
+indstocks/scrapers/__init__.py,sha256=PNtWE6beS-zEuJ9q1Q4apJwmn1uV34JKAzDsPLq7F9o,77
+indstocks/scrapers/investing.py,sha256=YoTh4hSmYvDz0gy6gjXkwy2_cM8d2RXLnVYZbpHKoqg,2432
+indstocks/scrapers/links.json,sha256=UTl7L0X7RPqX_y5T9See-TWRYX3eXrb_-7XN-GnZ75E,108069
+indstocks/scrapers/moneycontrol.py,sha256=Li-pxoLSs3Nn6HLaiAgehaPkJZjwZL5rbxBN9q-ffGU,6334
+indstocks/scrapers/screener.py,sha256=4FTiXRWaKAk9ovx4DD4LIy8FB7bUCr91W8FSDxplPgA,8206
+indstocks/scrapers/data/__init__.py,sha256=GqKc0I0cZGGfJglJUm6cQhktvkgLZXLrXGG3Q4RqnAk,21
+indstocks/scrapers/data/links.py,sha256=ckh_f7BAAPMcZTDnXNpY5AcTA0zaH-E6g46AYr2I68s,114583
+indstocks-1.1.1.dist-info/LICENSE,sha256=SbL0WmU3otOs7WbQeNbIGKAjpju-zrSQk-zl9IHnrZI,1069
+indstocks-1.1.1.dist-info/METADATA,sha256=tkaw_cy7TDVXns6eBNVr6PRj7NSfJUDCN_nXQsyfBoU,10253
+indstocks-1.1.1.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+indstocks-1.1.1.dist-info/top_level.txt,sha256=9bbwM2DdcoCW1-hlyj4GtX4odzh228DONibbi9calk0,10
+indstocks-1.1.1.dist-info/RECORD,,
