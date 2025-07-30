@@ -1,0 +1,14 @@
+mcp_server_things3/__init__.py,sha256=5zcbuERGzYQcWjGn1C2cR5u7V8KJ5N-5xabMY3hIJEA,94
+mcp_server_things3/applescript_handler.py,sha256=3pe80i-6RYCalrEbnYmRZZn8Rk-OpN5snUYPXDx4v60,11115
+mcp_server_things3/config.py,sha256=gP3nVIfLDSWRrrND0z1xYfH0oGNsCHMlryJOjNFtqoI,1308
+mcp_server_things3/fast_server.py,sha256=38k0yZpb2BHJN6BxjK0BCf-6FjAgS-tn_j-EmcHG_dw,22380
+mcp_server_things3/applescript/get_anytime_tasks.applescript,sha256=KlBxanJToPRXiw_LlF-wE_ytBmZhMmd0no10RCU-RPU,2595
+mcp_server_things3/applescript/get_inbox_tasks.applescript,sha256=X67Vu5hbpMuWMDjmS-6gqLfujhdHFm5rXR09Ft6Rlrs,2296
+mcp_server_things3/applescript/get_projects.applescript,sha256=O_Ul_CUSJ1cuFzPGVn2sQHtgArP3AKB8fToS-cg7LcE,1750
+mcp_server_things3/applescript/get_todays_tasks.applescript,sha256=iqQNtoY0QLWhZd7ebB9NTrKXckTzQEnCCqzQ20-Psk0,2517
+mcp_server_things3/applescript/get_upcoming_tasks.applescript,sha256=RG1qW3WvlxzizNj_aURUHaXspIiQnN4_7Lp3WPC0skU,2834
+mcp_server_things3/applescript/search_todos.applescript,sha256=lzdRyHXPPMsBsIUnOVD69knoJufsXKxwA4lUkq-vzNM,2974
+things3_mcp-0.1.0.dist-info/METADATA,sha256=52dv58fbKex_3yjXVSYpeYFOkO6HKK9EZ4B4EKEd79w,9823
+things3_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+things3_mcp-0.1.0.dist-info/entry_points.txt,sha256=ZFmOZE0FVhoJOXZosWBxR_5VA380sPd1LbI61_OUB9E,68
+things3_mcp-0.1.0.dist-info/RECORD,,
