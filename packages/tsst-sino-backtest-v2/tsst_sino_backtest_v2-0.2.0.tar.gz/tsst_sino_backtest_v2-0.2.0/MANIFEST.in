@@ -1,0 +1,24 @@
+# Exclude sources
+global-exclude *.py
+global-exclude *.pyx
+global-exclude *.c
+
+# Include init files
+include src/tsst_sino_backtest/__init__.py
+include src/tsst_sino_backtest/modules/__init__.py
+include src/tsst_sino_backtest/modules/**/__init__.py
+
+# Include Common files
+include src/tsst_sino_backtest/constant.py
+include src/tsst_sino_backtest/utils.py
+
+# Include pyd
+recursive-include src/tsst_sino_backtest *.pyd
+
+# Include Support files
+include src/tsst_sino_backtest/static/*
+include src/tsst_sino_backtest/static/templates/*
+
+# Include docs
+include README.md
+include LICENSE

@@ -1,0 +1,64 @@
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel",
+    "cython"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsst-sino-backtest-v2"
+version = "0.2.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+license-files = [
+    "LICENSE",
+]
+authors = [
+    { name = "Aiaristosit", email = "aiaristosit@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows :: Windows 10"
+]
+dependencies = [
+    "build>=1.2.2.post1",
+    "cython>=3.1.1",
+    "ipython>=8.18.1",
+    "jinja2>=3.1.6",
+    "nanoid>=2.0.0",
+    "polars>=1.29.0",
+    "pyarrow>=20.0.0",
+    "python-dotenv>=1.1.0",
+    "quantstats-lumi>=0.1.12",
+    "requests>=2.32.3",
+    "rich>=14.0.0",
+    "setuptools>=80.9.0",
+    "shioaji[speed]>=1.2.5",
+    "pyproject_hooks; sys_platform == 'darwin' or sys_platform == 'linux'",
+    "tomli; sys_platform == 'darwin' or sys_platform == 'linux'",
+    "packaging; sys_platform == 'darwin' or sys_platform == 'linux'",
+    "cryptography>=45.0.4",
+]
+
+[project.urls]
+Homepage = "https://tsst.docs.aiaristos.com/"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.exclude-package-data]
+"tsst_sino_backtest.modules.ticker" = ["*.py", "*.pyx", "*.c"]
+"tsst_sino_backtest.modules.matcher" = ["*.py", "*.pyx", "*.c"]
+
+[tool.setuptools.package-data]
+"tsst_sino_backtest" = ["*.pyd", "*.so", "*.dylib"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

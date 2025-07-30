@@ -1,0 +1,19 @@
+build>=1.2.2.post1
+cython>=3.1.1
+ipython>=8.18.1
+jinja2>=3.1.6
+nanoid>=2.0.0
+polars>=1.29.0
+pyarrow>=20.0.0
+python-dotenv>=1.1.0
+quantstats-lumi>=0.1.12
+requests>=2.32.3
+rich>=14.0.0
+setuptools>=80.9.0
+shioaji[speed]>=1.2.5
+cryptography>=45.0.4
+
+[:sys_platform == "darwin" or sys_platform == "linux"]
+pyproject_hooks
+tomli
+packaging
