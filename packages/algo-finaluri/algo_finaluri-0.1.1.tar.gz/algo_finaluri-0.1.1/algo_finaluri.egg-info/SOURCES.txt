@@ -1,0 +1,101 @@
+MANIFEST.in
+pyproject.toml
+setup.cfg
+setup.py
+algo_finaluri/__init__.py
+algo_finaluri.egg-info/PKG-INFO
+algo_finaluri.egg-info/SOURCES.txt
+algo_finaluri.egg-info/dependency_links.txt
+algo_finaluri.egg-info/top_level.txt
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/58318-_1_.txt
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/__init__.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/editDistanceBU.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/editDistanceNaive.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/editDistanceTD.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/knapsackBU.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/knapsackRec.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/knapsackTD.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/optimalParenthesizationBU.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/optimalParenthesizationRec.py
+algo_finaluri/ 15. დინამიკური პროგრამირება. (Parenthesization). (Edit Distance). (Knapsack problem)/optimalParenthesizationTD.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./58416.txt
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./__init__.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestCommonSubsequenceBU.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestCommonSubsequenceRec.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestCommonSubsequenceTD.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestPalindromicSubstringBU.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestPalindromicSubstringRec.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./longestPalindromicSubstringTD.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./uniquePaths.py
+algo_finaluri/ 16. ამოცანები რომლებიც იხსნება დინამიკური პროგრამირების საშუალებით./uniquePathsII.py
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/57522.txt
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/__init__.py
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/cheapestFlightswithinKStops.py
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/courseSchedule.py
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/courseScheduleII.py
+algo_finaluri/ ამოცანები რომლებიც იხსნება ციკლის პოვნის ალგორითმით, ტოპოლოგიური დალაგებით, დეიქსტრას და ბელმან ფორდის ალგორითმებით/networkDelayTime.py
+algo_finaluri/ ბელმან ფორდის ალგორითმი/57277.txt
+algo_finaluri/ ბელმან ფორდის ალგორითმი/__init__.py
+algo_finaluri/ ბელმან ფორდის ალგორითმი/bellmanFord.py
+algo_finaluri/ მონაცემთა სტრუქტურა სტეკი (Stack) ამოცანები რომლებიც იხსნება სტეკის საშუალებით/implementingqueusingstack.py
+algo_finaluri/ მონაცემთა სტრუქტურა სტეკი (Stack) ამოცანები რომლებიც იხსნება სტეკის საშუალებით/implementingstachusingquque.py
+algo_finaluri/ მონაცემთა სტრუქტურა სტეკი (Stack) ამოცანები რომლებიც იხსნება სტეკის საშუალებით/minstack.py
+algo_finaluri/ მონაცემთა სტრუქტურა სტეკი (Stack) ამოცანები რომლებიც იხსნება სტეკის საშუალებით/slide.txt
+algo_finaluri/ მონაცემთა სტრუქტურა სტეკი (Stack) ამოცანები რომლებიც იხსნება სტეკის საშუალებით/validparenthesis.py
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/56780.txt
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/__init__.py
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/bfsrottenorange.py
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/dfsrottenoranges.py
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/dijkstra.py
+algo_finaluri/ წონიანი გრაფები (Weighted Graphs) უმოკლესი გზების პოვნა ერთი წვეროდან/numberofislands.py
+algo_finaluri/14 dynamic programming/14.-დინამიკური-პროგრამირება.txt
+algo_finaluri/14 dynamic programming/__init__.py
+algo_finaluri/14 dynamic programming/housRobberMemoization.py
+algo_finaluri/14 dynamic programming/houseRobberBottomUp.py
+algo_finaluri/14 dynamic programming/houseRobberNaive.py
+algo_finaluri/14 dynamic programming/houseRobberSpaceOpt.py
+algo_finaluri/14 dynamic programming/textJustification.py
+algo_finaluri/14 dynamic programming/wordBreakBottomUp.py
+algo_finaluri/14 dynamic programming/wordBreakMemo.py
+algo_finaluri/14 dynamic programming/wordBreakNaive.py
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/__init__.py
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/containsduplicate.py
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/lru.py
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/majorityelement.py
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/slide.txt
+algo_finaluri/ამოცანები რომლებიც იხსნება ჰეშ ცხრილების (Hash Table) საშუალებით/twosum.py
+algo_finaluri/გრაფი, გრაფის წარმოდგენა პროგრამაში; სიგანეში ძებნის ალგორითმი (Breadth-First Search, BFS)/__init__.py
+algo_finaluri/გრაფი, გრაფის წარმოდგენა პროგრამაში; სიგანეში ძებნის ალგორითმი (Breadth-First Search, BFS)/adjList.py
+algo_finaluri/გრაფი, გრაფის წარმოდგენა პროგრამაში; სიგანეში ძებნის ალგორითმი (Breadth-First Search, BFS)/adjMatrix.py
+algo_finaluri/გრაფი, გრაფის წარმოდგენა პროგრამაში; სიგანეში ძებნის ალგორითმი (Breadth-First Search, BFS)/bfs.py
+algo_finaluri/გრაფი, გრაფის წარმოდგენა პროგრამაში; სიგანეში ძებნის ალგორითმი (Breadth-First Search, BFS)/slide.txt
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/57793.txt
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/__init__.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/climbinStairsTopDown.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/climbingStairsBottomUp.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/climbingStairsRec.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/climbingStairsSpaceOptimised.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/fibSpaceOpt.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/fibonacciExpected.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/fibonacciExpectedII.py
+algo_finaluri/დინამიკური პროგრამირება ფიბონაჩის რიცხვების პოვნა უმოკლესი გზების პოვნა/fibonacciNaive.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/__init__.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/detectCycle.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/dfsConnected.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/dfsDisconnected.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/kahn.py
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/slide.txt
+algo_finaluri/სიღრმეში ძებნის ალგორითმი (Depth-First Search, DFS), ციკლის პოვნა გრაფში (Cycle Detection) ტოპოლოგიური დალაგება (Topological Sort)/topologicalSorting.py
+algo_finaluri/უმოკლესი გზების პოვნა მიმართულ აციკლურ გრაფში/__init__.py
+algo_finaluri/უმოკლესი გზების პოვნა მიმართულ აციკლურ გრაფში/presentation.txt
+algo_finaluri/უმოკლესი გზების პოვნა მიმართულ აციკლურ გრაფში/shortestpathindag.py
+algo_finaluri/ჰეშირება - ცხრილის გაორმაგება (Table Doubling) კარპ-რაბინის (Karp-Rabin) ალგორითმი/__init__.py
+algo_finaluri/ჰეშირება - ცხრილის გაორმაგება (Table Doubling) კარპ-რაბინის (Karp-Rabin) ალგორითმი/rabincarp.py
+algo_finaluri/ჰეშირება - ცხრილის გაორმაგება (Table Doubling) კარპ-რაბინის (Karp-Rabin) ალგორითმი/rehashing.py
+algo_finaluri/ჰეშირება - ცხრილის გაორმაგება (Table Doubling) კარპ-რაბინის (Karp-Rabin) ალგორითმი/slide.txt
+algo_finaluri/ჰეშირება სიებით/__init__.py
+algo_finaluri/ჰეშირება სიებით/hashing with chaining.py
+algo_finaluri/ჰეშირება სიებით/slide.txt
+algo_finaluri/ჰეშირება ღია მისამართებით/__init__.py
+algo_finaluri/ჰეშირება ღია მისამართებით/openadressing.py
+algo_finaluri/ჰეშირება ღია მისამართებით/slide.txt
