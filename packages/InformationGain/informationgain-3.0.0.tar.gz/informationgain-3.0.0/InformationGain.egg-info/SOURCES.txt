@@ -1,0 +1,7 @@
+setup.py
+InformationGain.egg-info/PKG-INFO
+InformationGain.egg-info/SOURCES.txt
+InformationGain.egg-info/dependency_links.txt
+InformationGain.egg-info/top_level.txt
+informationGain/__init__.py
+informationGain/main.py
