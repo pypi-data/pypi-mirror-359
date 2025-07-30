@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tests/test_converter.py
+win2utc/__init__.py
+win2utc/converter.py
+win2utc.egg-info/PKG-INFO
+win2utc.egg-info/SOURCES.txt
+win2utc.egg-info/dependency_links.txt
+win2utc.egg-info/requires.txt
+win2utc.egg-info/top_level.txt
+win2utc/data/timezones.json
+win2utc/data/windowsZones.xml
