@@ -1,0 +1,9 @@
+proust/__init__.py,sha256=-ymMZU8jrtQtGnDJJYJN4h7xNlN76AuYU7Hzp0x5Dak,389
+proust/cli.py,sha256=O-E7QZQxS3-eFklGC4XzcxtRBc59kg7yS9UR2wC1BQg,4687
+proust/core.py,sha256=U5jCAodSVAZ5ASJAV-p9Rim4Op2-TkNfx83Vw-8yGGc,3385
+proust/installer.py,sha256=yy6d4gkiWmc6-yG_j_0IZAyewAEXN7u3H1bLG14lYJw,7139
+proust_framework-1.0.0.dist-info/METADATA,sha256=Uj6P0TCtPFTphfCQ3lmUX1GFYgzNPfdsnI1CEy7IcY8,10696
+proust_framework-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+proust_framework-1.0.0.dist-info/entry_points.txt,sha256=Uv1W3tOMAn03WuIwYjH7X8ENU4fce5UiOsUT8mjKMmA,43
+proust_framework-1.0.0.dist-info/licenses/LICENSE,sha256=5Ci8swII2eKheeMPGGe35mjEoUmnHdM4rFmSW5XYd6o,1130
+proust_framework-1.0.0.dist-info/RECORD,,
