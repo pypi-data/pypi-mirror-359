@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+cs2api/__init__.py
+cs2api/api.py
+cs2api.egg-info/PKG-INFO
+cs2api.egg-info/SOURCES.txt
+cs2api.egg-info/dependency_links.txt
+cs2api.egg-info/requires.txt
+cs2api.egg-info/top_level.txt
