@@ -1,0 +1,2 @@
+[console_scripts]
+langvision-finetune = langvision.cli.finetune:main
