@@ -1,0 +1,3 @@
+[console_scripts]
+wsmx=wsmx.cli:app
+
