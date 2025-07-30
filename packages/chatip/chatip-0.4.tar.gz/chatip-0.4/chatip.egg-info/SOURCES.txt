@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+chatip/__init__.py
+chatip/converter.py
+chatip.egg-info/PKG-INFO
+chatip.egg-info/SOURCES.txt
+chatip.egg-info/dependency_links.txt
+chatip.egg-info/entry_points.txt
+chatip.egg-info/requires.txt
+chatip.egg-info/top_level.txt
