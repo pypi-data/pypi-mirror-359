@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "allinpy"
+version = "0.1.1"
+description = "Modular utilities for scientific computing and plotting."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE"}
+
+authors = [
+  { name = "Rasmus Bruckner", email = "rasmusb@zedat.fu-berlin.de" }
+]
+
+dependencies = [
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "tqdm"
+]
+
+[project.urls]
+"Source" = "https://github.com/rasmusbruckner/allinpy"
+"Documentation" = "https://rasmusbruckner.github.io/allinpy/"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["allinpy*"]
