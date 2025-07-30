@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: remoterl
+Version: 1.1.1
+Summary: RemoteRL: high-performance command-line & Python client with pre-compiled native wheels for remote reinforcement-learning workloads.
+Home-page: https://remoterl.com
+Author: JunHo Park
+Author-email: support@ccnets.org
+License: REMOTE RL COMMERCIAL LICENSE
+Project-URL: Source, https://github.com/ccnets-team/remoterl
+Project-URL: Bug Tracker, https://github.com/ccnets-team/remoterl/issues
+Keywords: remote rl reinforcement-learning online-learning gymnasium ray rllib stable-baselines3
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: gymnasium
+Requires-Dist: msgpack
+Requires-Dist: websockets
+Requires-Dist: lz4
+Requires-Dist: typer
+Provides-Extra: rllib
+Requires-Dist: ray[rllib]==2.42.0; extra == "rllib"
+Requires-Dist: pillow; extra == "rllib"
+Provides-Extra: stable-baselines3
+Requires-Dist: stable-baselines3; extra == "stable-baselines3"
+Requires-Dist: tensorboard; extra == "stable-baselines3"
+Provides-Extra: all
+Requires-Dist: ray[rllib]==2.42.0; extra == "all"
+Requires-Dist: stable-baselines3; extra == "all"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
