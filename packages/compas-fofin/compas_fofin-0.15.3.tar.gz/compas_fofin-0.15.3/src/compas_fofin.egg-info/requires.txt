@@ -1,0 +1,16 @@
+compas>=2.9
+compas_dr>=0.3
+compas_fd>=0.5.2
+compas_rui>=0.5.0
+compas_session>=0.4.5
+
+[dev]
+attrs>=17.4
+black>=22.12.0
+bump-my-version
+compas_invocations2
+invoke>=0.14
+ruff
+sphinx_compas2_theme
+twine
+wheel
