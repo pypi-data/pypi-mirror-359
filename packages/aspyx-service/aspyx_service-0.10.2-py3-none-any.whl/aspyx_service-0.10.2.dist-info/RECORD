@@ -1,0 +1,12 @@
+aspyx_service/__init__.py,sha256=6t24VPrSCG83EAvYlqCKdEcEbyCY3vrSb5GoAx01Ymg,1662
+aspyx_service/channels.py,sha256=9EjnY6DV_toqeQNswYZgmAtirXM_TTLGErs6hb1U9yw,8934
+aspyx_service/healthcheck.py,sha256=8ZPSkAx6ypoYaxDMkJT_MtL2pEN2LcUAishAWPCy-3I,5624
+aspyx_service/registries.py,sha256=JSsD32F8VffZMHyEDuapEWtvmem5SK9kR6bgsFRLFZQ,8002
+aspyx_service/restchannel.py,sha256=OVGyKNtORJEFnWsFB5MPkNldVFfJTGuUa4X658_x9Kg,9169
+aspyx_service/serialization.py,sha256=lEr106yiZ0UzVxGTGdiorZSSSNI7vP4C7RyrBJku-U0,4133
+aspyx_service/server.py,sha256=PHKx3O90jnxm8dA4z331_51znhU-HlRB2Fa1AikmFXA,7052
+aspyx_service/service.py,sha256=-hhxRpEtMn-JP57bHNF521zbGMHUy5YaXkbXyiu7dW4,25927
+aspyx_service-0.10.2.dist-info/METADATA,sha256=KEdh30D63sXs26FVOtCph_LF521bBJa7A6Qpc8d-9iQ,16966
+aspyx_service-0.10.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+aspyx_service-0.10.2.dist-info/licenses/LICENSE,sha256=n4jfx_MNj7cBtPhhI7MCoB_K35cj1icP9yJ4Rh4vlvY,1070
+aspyx_service-0.10.2.dist-info/RECORD,,
