@@ -1,0 +1,2 @@
+[console_scripts]
+goblin = goblin.cli:main
