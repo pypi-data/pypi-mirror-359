@@ -1,0 +1,124 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "slidesmith"
+version = "0.1.13"
+description = "An on-device MCP server that converts Markdown to pixel-perfect slide decks"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Slidesmith Team", email = "slidesmith@example.com"},
+]
+keywords = ["mcp", "slides", "presentation", "markdown", "react", "tailwind"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Text Processing :: Markup",
+]
+dependencies = [
+    "fastmcp>=2.9.2,<3.0.0",
+    "playwright>=1.44.0,<2.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "click>=8.0.0,<9.0.0",
+    "rich>=14.0.0,<15.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    "jsonpatch>=1.33,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+    "pytest-cov>=5.0.0,<6.0.0",
+    "pytest-asyncio>=0.23.0,<1.0.0",
+    "ruff>=0.5.0,<1.0.0",
+    "mypy>=1.10.0,<2.0.0",
+    "openai>=1.0.0,<2.0.0",  # For CODE_STATE generation
+]
+
+[project.scripts]
+slidesmith = "slidesmith.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/markov/slidesmith"
+Documentation = "https://slidesmith.readthedocs.io"
+Repository = "https://github.com/markov/slidesmith.git"
+Issues = "https://github.com/markov/slidesmith/issues"
+
+[tool.hatch.version]
+path = "slidesmith/__init__.py"
+
+[tool.hatch.build]
+include = [
+    "slidesmith/**/*.py",
+    "slidesmith/**/*.json",
+    "slidesmith/**/*.md",
+    "slidesmith/**/*.mdx",
+    "slidesmith/**/*.js",
+    "slidesmith/**/*.jsx",
+    "slidesmith/**/*.css",
+    "slidesmith/package.json",
+    "templates/**/*",
+    "scripts/*.js",
+    "scripts/generate-code-state.py",
+    "scripts/claude-tmux-restart.sh",
+    "styles/*.css",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["slidesmith"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["slidesmith"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
