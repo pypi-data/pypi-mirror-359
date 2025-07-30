@@ -1,0 +1,3 @@
+hacktools>=0.38.0
+click>=8.1.0
+pillow>=11.1.0
