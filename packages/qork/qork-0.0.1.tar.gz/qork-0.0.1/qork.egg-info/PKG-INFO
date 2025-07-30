@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: qork
+Version: 0.0.1
+Summary: A simple CLI for interacting with OpenAI models.
+Author-email: Zubin Aysola <zubinpersonalemail@email.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: litellm
+Requires-Dist: rich
+
+# qork
+
+A simple CLI for interacting with OpenAI models.
+
+## Installation
+
+```bash
+pip install qork
+```
+
+## Usage
+
+```bash
+qork "Your prompt here"
+```
