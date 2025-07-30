@@ -1,0 +1,12 @@
+automa/bot/__init__.py,sha256=5sU7ffOsLHqZxFnobeQSz1oUTpm2RvKXHSSVgR8n2cc,1636
+automa/bot/_base_client.py,sha256=0jnHinLtZDLfLMf9Y3wrdZB6OrQ2P6s0SrTNyXUA9c8,6398
+automa/bot/_client.py,sha256=8fSfvKFPaiFW3A5QE-f2TEcsoYb13rEVgK9jJQME2NM,1911
+automa/bot/_resource.py,sha256=5RO7BfKxeE1EDRiwwg2txHfwdydopZNcvqKQGReebU4,581
+automa/bot/_types.py,sha256=ouOrDNRslislaAkZ-PiF5Jq4EnLeJ2VoTQN8YHYDnbY,3269
+automa/bot/webhook.py,sha256=nOoUePxDhJjXDXF7JWfqLlqoEl6uUhrMAmk0l1vQ91I,1542
+automa/bot/resources/__init__.py,sha256=vxd2-tXXRQPGp_mxu1EO2YPuaXgrQxAoLfgiFEhu4Z8,303
+automa/bot/resources/code.py,sha256=StbGjFdyjGkT_zJqrcgIpcqy5_QdEA9WGI9oZ4MCAMw,6850
+automa_bot-0.2.3.dist-info/METADATA,sha256=lXVv8ELha4dKRJNGC_V1yWDyBCyGVMa-U-wvhcc2WKI,642
+automa_bot-0.2.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+automa_bot-0.2.3.dist-info/top_level.txt,sha256=DnuoR1PvW4WuWE555TSsAn3poa5nET8nZ-kWEQp7ZyQ,7
+automa_bot-0.2.3.dist-info/RECORD,,
