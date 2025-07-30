@@ -1,0 +1,13 @@
+google_sheet_mcp/__init__.py,sha256=ITnh3Nhwr2Vhsf1QFkasI59rLwiJXAiwBWUcCDsbJgc,126
+google_sheet_mcp/__main__.py,sha256=Pu8lHEVTcQtAh4VXBui38nuFmeWjh_eHR0OV2WIX_bw,196
+google_sheet_mcp/mcp_instance.py,sha256=h1cDqSr8yC_fjSkf3p9pkI2OV6ggoRWz4I6Cpsz5nBs,64
+google_sheet_mcp/py.typed,sha256=nCyHum7oimWqCk4EY3AI_HwjOgPUxI16Gpgl2AnrbMo,26
+google_sheet_mcp/server.py,sha256=D-_Jpr_bU9nc0VOzYXC0eTgM6-VekRsyZCb_hf1q5lc,789
+google_sheet_mcp/tool_schema.py,sha256=loBYHFetbeRNNCXwXH2xFO-25IRVsslefkIeNd643-A,1505
+google_sheet_mcp/tools.py,sha256=qGWWoTNZzCHmr5WRsPuY3Ry2IakVHkgfOkVIRtSqtBQ,8345
+google_sheet_mcp-0.1.0.dist-info/licenses/LICENSE,sha256=FyuBsNr3YLXHPRQfWIpCAC4brUeSdYelr01V-Fkog8U,1066
+google_sheet_mcp-0.1.0.dist-info/METADATA,sha256=GEEDkW24C7fIunMKpPld4N-EE139pdX_F1-T9bH2HeI,6052
+google_sheet_mcp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+google_sheet_mcp-0.1.0.dist-info/entry_points.txt,sha256=kpej2K4FtyhV2wBBhnN7PiwQQP4oueit91FVdBepw20,68
+google_sheet_mcp-0.1.0.dist-info/top_level.txt,sha256=UivH0Dy3lMbZv0C3eQJs7hx0CVTv1jqrKWcqRYIZtsM,17
+google_sheet_mcp-0.1.0.dist-info/RECORD,,

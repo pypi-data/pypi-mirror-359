@@ -1,0 +1,2 @@
+[console_scripts]
+google-sheet-mcp = google_sheet_mcp.__main__:main
