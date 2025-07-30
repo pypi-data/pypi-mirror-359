@@ -1,0 +1,11 @@
+obplib
+py3mf_slicer
+numpy
+pyvista
+shapely
+rasterio
+scipy
+opencv-python
+tqdm
+matplotlib
+pytest
