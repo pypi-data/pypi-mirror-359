@@ -1,0 +1,2 @@
+[console_scripts]
+augr = augr.cli:main

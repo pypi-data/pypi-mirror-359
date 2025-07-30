@@ -1,0 +1,12 @@
+augr/__init__.py,sha256=pDLn0JQ_g9ASgKYxy_Ew6QU2EqhnMllGng8xCbsl_Uk,1057
+augr/ai_client.py,sha256=tstLby7rAEJqh70MYAQLWWrI5taS6Vb2Vyt5j-QnxVY,4640
+augr/augmentation_service.py,sha256=WfSlFb3Mh5pzy4RIcjSDmZWITQInwAq2q4yLBZjCoCM,13134
+augr/braintrust_client.py,sha256=uUJSianWpFAsMaANRIau8gG8YCipWVXIRe3kPJbZnvI,5951
+augr/cli.py,sha256=O84aMRUG3obo7wlK04lwbQ-cl29tkVOKP4kM0nkY_ZM,19079
+augr/dataset_helper.py,sha256=eGV6o_ODax3x2WC8-O7VdXDnp3lfk5RFvYv44lvUuXc,9717
+augr/models.py,sha256=7uX1DgMWOlEt8YikKSC4lMvkzHfbdWP1fTqxrYw_ysY,2817
+augr/specify_model.py,sha256=YP9048lhOFX0i72jPg7lNZg2iZg1He2oEfBNf6pNE6c,4349
+augr-0.1.0.dist-info/METADATA,sha256=QPwUQQ8cEr2OymJebBTFlBSRzDlgyLH6o5omwvRSttc,4076
+augr-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+augr-0.1.0.dist-info/entry_points.txt,sha256=hq5VgUMyyum5iv9F1hH2Vj772bbYb7ni-UQsDBo1ArU,39
+augr-0.1.0.dist-info/RECORD,,
