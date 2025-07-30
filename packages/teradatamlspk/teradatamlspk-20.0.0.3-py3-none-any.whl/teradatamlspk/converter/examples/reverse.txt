@@ -1,0 +1,23 @@
+PySpark code
+
+>>> df.show()
++---+---------------+
+|eno|         ephone|
++---+---------------+
+|  1|[1, 2, 3, 4, 5]|
++---+---------------+
+>>> df.select(df.eno, df.ephone, f.reverse(df.ephone).alias('reverse_ephone')).collect()
+[Row(eno=1, ephone=[1, 2, 3, 4, 5], reverse_ephone=[5, 4, 3, 2, 1])]
+
+teradatamlspk code
+
+#Define a user-defined type nums_ary as an array of 5 CHAR(10) elements, with a default value of NULL.
+>>> session.sql("CREATE TYPE nums_ary AS CHAR(10) ARRAY[5] DEFAULT NULL;")
+
+# Create a table with two columns: eno (integer) and ephone (array of type num_ary), and insert the data.
+>>> session.sql("CREATE TABLE my_tab (eno INTEGER, ephone nums_ary);")
+>>> session.sql("insert into my_tab values (1, new nums_ary(1, 2, 3, 4, 5));")
+
+# Select original and reversed array values using array_get function.
+>>> session.sql("""select eno, ephone, new num_ary( array_get(ephone, 5), array_get(ephone, 4), array_get(ephone, 3), array_get(ephone, 2), array_get(ephone, 1)) reverse_ephone from my_tab;""").collect()
+[Row(eno=1, ephone="('   1      ','   2      ','   3      ','   4      ','   5      ')", reverse_ephone="('   5      ','   4      ','   3      ','   2      ','   1      ')")]
