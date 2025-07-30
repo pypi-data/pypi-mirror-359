@@ -1,0 +1,203 @@
+Metadata-Version: 2.4
+Name: cakesrt2audio
+Version: 0.1.2
+Summary: Generate audio from SRT files using Microsoft Edge's text-to-speech service
+Author-email: test <test@example.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/test/cakesrt2audio
+Project-URL: Bug Tracker, https://github.com/test/cakesrt2audio/issues
+Project-URL: Repository, https://github.com/test/cakesrt2audio
+Keywords: tts,srt,subtitle,audio,speech-synthesis,edge-tts
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: edge-tts
+Requires-Dist: pydub
+Requires-Dist: srt
+Requires-Dist: rich
+Dynamic: license-file
+
+# cakesrt2audio
+
+🎵 Generate synchronized audio from SRT subtitle files using Microsoft Edge's text-to-speech service.
+
+This tool converts SRT subtitle files into audio files with perfect timing synchronization. It can also overlay the generated audio onto existing video files.
+
+## ✨ Features
+
+- 🎯 **Perfect Timing**: Synchronizes audio with SRT timestamps
+- 🎭 **Multiple Voices**: Supports 100+ voices in various languages
+- ⚡ **Concurrent Processing**: Fast generation with configurable concurrency
+- 🎬 **Video Support**: Can overlay audio onto existing videos
+- 📊 **Rich Progress Display**: Beautiful progress bars and voice listings
+- 🔧 **Flexible Output**: Supports both audio (MP3) and video (MP4) output
+
+## 🚀 Installation
+
+```bash
+pip install cakesrt2audio
+```
+
+## 📖 Usage
+
+### 🎵 Generate Audio from SRT
+
+**Basic usage** (generates `output.mp3`):
+```bash
+cakesrt2audio your_subtitles.srt
+```
+
+**Custom voice and output file**:
+```bash
+cakesrt2audio your_subtitles.srt --voice zh-CN-XiaoxiaoNeural --output my_audio.mp3
+```
+
+### 🎬 Generate Video with Audio Overlay
+
+**Add audio to existing video**:
+```bash
+cakesrt2audio your_subtitles.srt --video your_video.mp4 --output final_video.mp4
+```
+
+### ⚡ Advanced Options
+
+```bash
+cakesrt2audio your_subtitles.srt \
+  --voice en-US-AvaMultilingualNeural \
+  --output output.mp3 \
+  --concurrency 20
+```
+
+### 📋 Command Line Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `srt_file` | Path to the SRT subtitle file | Required |
+| `--voice` | Voice ID for speech synthesis | `en-US-AvaMultilingualNeural` |
+| `--output` | Output file path | `output.mp3` or `output.mp4` |
+| `--video` | Source video file (optional) | None |
+| `--concurrency` | Number of concurrent TTS requests | 10 |
+
+### 🎭 Available Voices
+
+To see all available Chinese and English voices with descriptions:
+```bash
+cakesrt2audio --help
+```
+
+**Popular voice options**:
+- `en-US-AvaMultilingualNeural` - English (US), Female
+- `en-US-BrianMultilingualNeural` - English (US), Male  
+- `zh-CN-XiaoxiaoNeural` - Chinese (Mainland), Female
+- `zh-CN-YunyangNeural` - Chinese (Mainland), Male
+- `en-GB-SoniaNeural` - English (UK), Female
+
+## 🐍 Python API Usage
+
+### Basic Audio Generation
+
+```python
+import asyncio
+from cakesrt2audio import create_audio_from_srt
+
+# Generate audio file
+asyncio.run(create_audio_from_srt(
+    srt_file="subtitles.srt",
+    voice="en-US-AvaMultilingualNeural", 
+    output_file="output.mp3"
+))
+```
+
+### Generate Video with Audio
+
+```python
+import asyncio
+from cakesrt2audio import create_audio_from_srt
+
+# Generate video with audio overlay
+asyncio.run(create_audio_from_srt(
+    srt_file="subtitles.srt",
+    voice="zh-CN-XiaoxiaoNeural",
+    output_file="final_video.mp4",
+    video_path="source_video.mp4",
+    concurrency=15
+))
+```
+
+## 📄 SRT File Format
+
+Your SRT file should follow the standard format:
+
+```srt
+1
+00:00:01,000 --> 00:00:03,500
+Welcome to our presentation
+
+2
+00:00:04,000 --> 00:00:07,200
+This is the second subtitle
+
+3
+00:00:08,000 --> 00:00:10,500
+And this is the third one
+```
+
+## 🔧 Requirements
+
+- Python 3.8+
+- FFmpeg (for video processing)
+- Internet connection (for Microsoft Edge TTS)
+
+### Installing FFmpeg
+
+**macOS**:
+```bash
+brew install ffmpeg
+```
+
+**Ubuntu/Debian**:
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+**Windows**:
+Download from [FFmpeg official website](https://ffmpeg.org/download.html)
+
+## 🎯 Use Cases
+
+- 📚 **Educational Content**: Convert lecture notes to audio
+- 🎬 **Video Production**: Add voiceovers to silent videos  
+- 🌐 **Accessibility**: Create audio versions of text content
+- 🎧 **Podcast Creation**: Generate spoken content from scripts
+- 🎮 **Game Development**: Create character dialogue audio
+
+## ⚠️ Notes
+
+- Requires active internet connection for TTS generation
+- Large SRT files may take time to process
+- Adjust `--concurrency` based on your internet speed
+- Output timing matches SRT timestamps precisely
+
+## 🐛 Troubleshooting
+
+**Common issues**:
+
+1. **FFmpeg not found**: Install FFmpeg and ensure it's in your PATH
+2. **TTS fails**: Check internet connection and try reducing concurrency
+3. **Audio sync issues**: Verify your SRT file format is correct
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
