@@ -1,0 +1,16 @@
+
+[dev]
+pandas
+bumpver
+twine
+wheel
+build
+adlfs
+s3fs
+gcsfs
+pydantic
+structlog
+
+[docs]
+sphinx
+furo
