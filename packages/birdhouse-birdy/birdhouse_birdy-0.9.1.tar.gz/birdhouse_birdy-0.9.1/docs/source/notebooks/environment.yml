@@ -1,0 +1,12 @@
+# conda env update -f environment.yml
+name: birdy
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - ipython
+  - jupyterlab
+  - ipywidgets
+  - nodejs
+  - pip:
+    - pymetalink
