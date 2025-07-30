@@ -1,0 +1,154 @@
+[project]
+name = "rustico"
+version = "0.1.2"
+description = "A Rust-inspired, ergonomic Result type for Python with first-class async support, pattern matching, and a clean API."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "Simon Waiblinger", email = "16225108+simwai@users.noreply.github.com" }
+]
+keywords = [
+  "result",
+  "rust",
+  "error-handling",
+  "async",
+  "pattern-matching",
+  "monad",
+  "decorator",
+  "type-safety",
+  "python",
+  "functional-programming"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/simwai/rustico"
+Documentation = "https://github.com/simwai/rustico#readme"
+Source = "https://github.com/simwai/rustico"
+Tracker = "https://github.com/simwai/rustico/issues"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.1",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.24.0",
+    "pre-commit>=3.5.0",
+    "twine>=6.1.0",
+]
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "*.json",
+]
+line-length = 120
+indent-width = 2
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "UP",     # pyupgrade
+    "RUF",    # Ruff-specific rules
+    "E501",   # line too long, handled by formatter
+]
+ignore = [
+    "B008",   # do not perform function calls in argument defaults
+    "C901",   # too complex (your workflow methods might be complex)
+    "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
+    "W293",   # blank line contains whitespace
+]
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"src/**/__init__.py" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+force-single-line = false
+combine-as-imports = true
+
+[tool.pdm.scripts]
+start="python -m src.rustico"
+format = "ruff format src/"
+test="pytest"
+clean-dist = "npx rimraf dist"
+upload-testpypi = "twine upload -r testpypi dist/* --skip-existing --config ./.pypirc"
+upload-pypi = "twine upload -r pypi dist/* --skip-existing --config ./.pypirc"
+test-publish = { composite = ["pdm clean-dist", "pdm build", "pdm upload-testpypi"] }
+normal-publish = { composite = ["pdm clean-dist", "pdm build", "pdm upload-pypi"] }
+
+[tool.pdm]
+package-dir = "src"
+
+[tool.pyright]
+include = ["src/**"]
+exclude = [
+  "**/__pycache__/**",
+  ".ruff_cache/**"
+]
+pythonPlatform = "All"
+pythonVersion = "3.8"
+
+typeCheckingMode = "off"
+# analyzeUnannotatedFunctions = false
+
+reportArgumentType = false  # 155
+reportAssignmentType = false  # 12
+reportAttributeAccessIssue = false  # 255
+reportCallIssue = false  # 23
+reportGeneralTypeIssues = false  # 48
+reportIncompatibleMethodOverride = false  # 15
+reportIncompatibleVariableOverride = false  # 5
+reportIndexIssue = false  # 22
+reportMissingImports = false  # 5
+reportOperatorIssue = false  # 7
+reportOptionalMemberAccess = false  # 35
+reportOptionalOperand = false  # 7
+reportPossiblyUnboundVariable = false  # 36
+reportPrivateImportUsage = false  # 5
+reportRedeclaration = false  # 1
+reportReturnType = false  # 28
+reportTypedDictNotRequiredAccess = false  # 27
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
