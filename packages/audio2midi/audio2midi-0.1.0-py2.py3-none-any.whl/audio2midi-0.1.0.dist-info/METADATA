@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: audio2midi
+Version: 0.1.0
+Summary: Audio To Midi
+Author-email: dummyjenil <dummyjenil@gmail.com>
+Provides-Extra: all
+Requires-Dist: essentia; extra == 'all'
+Requires-Dist: hmmlearn; extra == 'all'
+Requires-Dist: keras; extra == 'all'
+Requires-Dist: librosa; extra == 'all'
+Requires-Dist: mir-eval; extra == 'all'
+Requires-Dist: nnaudio; extra == 'all'
+Requires-Dist: numpy==1.26.4; extra == 'all'
+Requires-Dist: pretty-midi; extra == 'all'
+Requires-Dist: pretty-midi-fix; extra == 'all'
+Requires-Dist: resampy; extra == 'all'
+Requires-Dist: scipy; extra == 'all'
+Requires-Dist: tensorflow; extra == 'all'
+Requires-Dist: torch; extra == 'all'
+Requires-Dist: torchaudio; extra == 'all'
+Requires-Dist: transformers; extra == 'all'
+Requires-Dist: vamp; extra == 'all'
+Provides-Extra: basic-pitch-pitch-detector
+Requires-Dist: librosa; extra == 'basic-pitch-pitch-detector'
+Requires-Dist: nnaudio; extra == 'basic-pitch-pitch-detector'
+Requires-Dist: numpy; extra == 'basic-pitch-pitch-detector'
+Requires-Dist: pretty-midi-fix; extra == 'basic-pitch-pitch-detector'
+Requires-Dist: scipy; extra == 'basic-pitch-pitch-detector'
+Requires-Dist: torch; extra == 'basic-pitch-pitch-detector'
+Provides-Extra: crepe-pitch-detector
+Requires-Dist: hmmlearn; extra == 'crepe-pitch-detector'
+Requires-Dist: keras; extra == 'crepe-pitch-detector'
+Requires-Dist: librosa; extra == 'crepe-pitch-detector'
+Requires-Dist: numpy; extra == 'crepe-pitch-detector'
+Requires-Dist: pretty-midi-fix; extra == 'crepe-pitch-detector'
+Requires-Dist: tensorflow; extra == 'crepe-pitch-detector'
+Provides-Extra: librosa-pitch-detector
+Requires-Dist: librosa; extra == 'librosa-pitch-detector'
+Requires-Dist: numpy; extra == 'librosa-pitch-detector'
+Requires-Dist: pretty-midi-fix; extra == 'librosa-pitch-detector'
+Provides-Extra: melodia-pitch-detector
+Requires-Dist: librosa; extra == 'melodia-pitch-detector'
+Requires-Dist: numpy; extra == 'melodia-pitch-detector'
+Requires-Dist: pretty-midi-fix; extra == 'melodia-pitch-detector'
+Requires-Dist: scipy; extra == 'melodia-pitch-detector'
+Requires-Dist: vamp; extra == 'melodia-pitch-detector'
+Provides-Extra: pop2piano
+Requires-Dist: essentia; extra == 'pop2piano'
+Requires-Dist: librosa; extra == 'pop2piano'
+Requires-Dist: numpy==1.26.4; extra == 'pop2piano'
+Requires-Dist: pretty-midi; extra == 'pop2piano'
+Requires-Dist: pretty-midi-fix; extra == 'pop2piano'
+Requires-Dist: resampy; extra == 'pop2piano'
+Requires-Dist: scipy; extra == 'pop2piano'
+Requires-Dist: torch; extra == 'pop2piano'
+Requires-Dist: transformers; extra == 'pop2piano'
+Provides-Extra: violin-pitch-detector
+Requires-Dist: librosa; extra == 'violin-pitch-detector'
+Requires-Dist: mir-eval; extra == 'violin-pitch-detector'
+Requires-Dist: numpy; extra == 'violin-pitch-detector'
+Requires-Dist: pretty-midi-fix; extra == 'violin-pitch-detector'
+Requires-Dist: scipy; extra == 'violin-pitch-detector'
+Requires-Dist: torch; extra == 'violin-pitch-detector'
+Requires-Dist: torchaudio; extra == 'violin-pitch-detector'
+Description-Content-Type: text/markdown
+
+``` python
+from audio2midi.librosa_pitch_detector import Normal_Pitch_Det , Guitar_Pitch_Det
+
+audio_path = "audio.mp3"
+Normal_Pitch_Det().predict(audio_path)
+Guitar_Pitch_Det().predict(audio_path)
+```
+---
+``` python
+from os import environ
+from huggingface_hub import hf_hub_download
+from shutil import unpack_archive
+from pathlib import Path
+from audio2midi.melodia_pitch_detector import Melodia
+from platform import system as platform_system , architecture as platform_architecture
+
+unpack_archive(hf_hub_download("shethjenil/Audio2Midi_Models",f"melodia_vamp_plugin_{'win' if (system := platform_system()) == 'Windows' else 'mac' if system == 'Darwin' else 'linux64' if (arch := platform_architecture()[0]) == '64bit' else 'linux32' if arch == '32bit' else None}.zip"),"vamp_melodia",format="zip")
+environ['VAMP_PATH'] = str(Path("vamp_melodia").absolute())
+Melodia().predict(audio_path)
+```
+---
+```python
+from audio2midi.basic_pitch_pitch_detector import BasicPitch
+from audio2midi.crepe_pitch_detector import Crepe
+from audio2midi.violin_pitch_detector import Violin_Pitch_Det
+from audio2midi.pop2piano import Pop2Piano
+from torch import device as Device
+from torch.cuda import is_available as cuda_is_available
+device = Device("cuda" if cuda_is_available() else "cpu")
+Crepe().predict(audio_path)
+Pop2Piano(device=device).predict(audio_path)
+Violin_Pitch_Det(device=device).predict(audio_path)
+BasicPitch(device=device).predict(audio_path)
+```
