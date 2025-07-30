@@ -1,0 +1,116 @@
+site_name: Kajih's Utils
+site_description: Totally typed, plausibly practical, and remarkably random utilities—for me, and maybe for you too.
+site_url: https://Kajiih.github.io/kajihs-utils/
+site_author: Julian Paquerot
+repo_url: https://github.com/Kajiih/kajihs-utils
+copyright: Copyright &copy; 2024 Julian Paquerot
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - API Reference: reference.md
+
+theme:
+  name: material
+  features:
+  - announce.dismiss
+  - content.action.edit
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - content.tabs.link
+  - content.tooltips
+  - header.autohide
+  - navigation.indexes
+  - navigation.instant
+  - navigation.instant.progress
+  - navigation.sections  # TODO: Test
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.top
+  - navigation.footer
+  - toc.follow
+  - search.highlight
+  - search.suggest
+  palette: # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette
+    - scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Kajiih
+      name: Kajiih on GitHub
+    - icon: simple/bluesky
+      link: https://bsky.app/profile/kajih.bsky.social
+      name: Bluesky
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/kajih/
+      name: LinkedIn
+
+
+plugins:
+  - search
+  - mkdocstrings: # https://mkdocstrings.github.io/
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: alphabetical # source
+            summary: false
+            inherited_members: true # TODO: test
+            docstring_section_style: list  # table spacy
+            merge_init_into_class: true
+            docstring_options:
+              ignore_init_summary: true
+            show_if_no_docstring: true
+            separate_signature: false
+            show_overloads: true
+            signature_crossrefs: true
+            unwrap_annotated: false # TODO: test
+            extensions: # https://mkdocstrings.github.io/griffe/extensions/
+              - griffe_fieldz # TODO: Test this over `griffe_pydantic``
+              - griffe_warnings_deprecated
+              - griffe_generics
+              # - griffe_inherited_method_crossrefs # TODO: test over the following 2 extensions
+              # - griffe-inherited-docstrings
+              # - docstring_inheritance.griffe
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.details
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+strict: true
+watch:
+  - src
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn

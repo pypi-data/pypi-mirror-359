@@ -1,0 +1,85 @@
+name: 📦 Publish
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]*"
+
+jobs:
+  build-and-publish:
+    name: 🚀 Build & Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+
+    environment:
+      name: pypi
+      url: https://pypi.org/project/kajihs-utils/
+
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: 📦 Install Hatch
+        run: pip install hatch
+
+      - name: 🛠️ Build package
+        run: hatch build
+
+      - name: 🚀 Publish to PyPI (trusted publishing)
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+
+      - name: 📝 Create GitHub Release
+        uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Adapted from: https://github.com/squidfunk/mkdocs-material/discussions/7038
+  deploy-docs:
+    name: 📘 Deploy MkDocs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # Retrieved from deploy-pages action
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          sparse-checkout: |
+            docs
+            includes
+            tools
+            src/kjproject/__about__.py
+
+      - name: 🐍 Install uv
+        uses: astral-sh/setup-uv@445689ea25e0de0a23313031f5fe577c74ae45a1 # v6.3.0
+        with:
+          python-version: 3.12
+          activate-environment: true
+          enable-cache: true
+
+      - name: 📥 Install dependencies
+        run: uv sync --group docs
+
+      - run: mkdocs build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "site/"
+      - uses: actions/deploy-pages@v4
+        id: deployment
