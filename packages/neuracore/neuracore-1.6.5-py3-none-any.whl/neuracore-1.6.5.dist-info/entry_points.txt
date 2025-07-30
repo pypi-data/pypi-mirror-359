@@ -1,0 +1,3 @@
+[console_scripts]
+nc-login = neuracore.core.cli.generate_api_key:main
+nc-select-org = neuracore.core.cli.select_current_org:main
