@@ -1,0 +1,22 @@
+External libraries hardening (#1713)
+
+# Description
+
+In some cases, the downloaded zip file was stale. The context manager
+should clean up on exit, but sometimes fails when process is aborted
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- Stale deployment packs zips removed
+
+## templates
+
+No changes.
