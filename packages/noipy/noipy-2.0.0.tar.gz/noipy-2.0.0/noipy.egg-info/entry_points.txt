@@ -1,0 +1,2 @@
+[console_scripts]
+noipy = noipy.main:main
