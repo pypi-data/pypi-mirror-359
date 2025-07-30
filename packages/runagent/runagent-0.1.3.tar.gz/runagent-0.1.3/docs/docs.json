@@ -1,0 +1,189 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "RunAgent",
+  "colors": {
+    "primary": "#006AD4",
+    "light": "#007FFF",
+    "dark": "#006AD4"
+  },
+  "favicon": "/favicon.ico",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "get-started/installation",
+              "get-started/first-agent",
+              "get-started/core-concepts"
+            ]
+          },
+          {
+            "group": "CLI Reference",
+            "pages": [
+              "cli/overview",
+              {
+                "group": "Commands",
+                "icon": "list",
+                "pages": [
+                  "cli/commands/init",
+                  "cli/commands/serve",
+                  "cli/commands/deploy",
+                  "cli/commands/run",
+                  "cli/commands/upload",
+                  "cli/commands/start",
+                  "cli/commands/setup",
+                  "cli/commands/teardown",
+                  "cli/commands/template"
+                ]
+              },
+              "cli/examples"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/project-structure",
+              "configuration/config-file",
+              "configuration/environment"
+            ]
+          },
+          {
+            "group": "Frameworks",
+            "pages": [
+              "frameworks/overview",
+              "frameworks/langgraph",
+              "frameworks/crewai",
+              "frameworks/agno",
+              "frameworks/letta",
+              "frameworks/custom"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/local-development",
+              "deployment/cloud-deployment"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/examples",
+              "resources/troubleshooting",
+              "resources/faq"
+            ]
+          }
+
+        ]
+      },
+      {
+        "tab": "SDK",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "sdk/overview"
+            ]
+          },
+          {
+            "group": "Python SDK",
+            "pages": [
+              "sdk/python/getting-started",
+              "sdk/python/sync-client",
+              "sdk/python/async-client",
+              "sdk/python/streaming",
+              "sdk/python/api-reference"
+            ]
+          },
+          {
+            "group": "Coming Soon",
+            "pages": [
+              "sdk/coming-soon"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [               
+        {
+          "group": "Getting Started",
+          "pages": [
+            "api-reference/introduction",       
+            "api-reference/authentication",
+            "api-reference/errors"
+          ]
+        },    
+        {
+          "group": "Agent Endpoints",
+          "pages": [
+            "api-reference/endpoints/invoke",
+            "api-reference/endpoints/stream",
+            "api-reference/endpoints/health"
+          ]
+        },
+          {
+            "group": "Advanced",
+            "pages": [
+              "api-reference/webhooks",
+              "api-reference/rate-limits"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Github",
+          "href": "https://github.com/runagent-dev/runagent",
+          "icon": "github"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://run-agent.ai/community",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://run-agent.ai/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/logo_dark.svg",
+    "dark": "/logo/logo_dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Github",
+        "href": "https://github.com/runagent-dev/runagent"
+      },
+      {
+        "label": "Dashboard",
+        "href": "https://run-agent.ai/dashboard"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get API Key",
+      "href": "https://run-agent.ai/profile"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/run_agent",
+      "github": "https://github.com/runagent-dev/runagent",
+      "linkedin": "https://linkedin.com/company/runagent"
+    }
+  }
+}
