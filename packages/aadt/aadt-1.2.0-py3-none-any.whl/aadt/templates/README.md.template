@@ -1,0 +1,134 @@
+# {display_name}
+
+An Anki add-on created with [Anki Add-on Developer Tools (AADT)](https://github.com/libukai/aadt).
+
+## Description
+
+TODO: Add description of your add-on here.
+
+## Installation
+
+### From AnkiWeb
+
+TODO: Add AnkiWeb installation instructions when published.
+
+### Manual Installation
+
+1. Download the latest release from GitHub
+2. In Anki, go to Tools → Add-ons → Install from file
+3. Select the downloaded .ankiaddon file
+
+## Development
+
+This project uses [AADT](https://github.com/libukai/aadt) for modern Anki add-on development with Qt6 support.
+
+### Quick Start
+
+```bash
+# Create a new add-on project (using uvx - recommended)
+mkdir {repo_name} && cd {repo_name}
+uvx aadt init
+
+# Dependencies are automatically installed during init
+# Includes: Anki/AQT, MyPy, Ruff, Pytest, and AADT
+# Plus all required template architecture
+
+# Start developing!
+uv run aadt test
+```
+
+### Development Workflow
+
+```bash
+# Initial setup (one-time)
+uvx aadt init                    # Initialize project with all dependencies
+
+# Daily development (use local aadt)
+uv run aadt ui                   # Compile UI files
+```
+
+### Dependencies
+
+This project uses a single `dev` group containing all development dependencies:
+
+```bash
+# Install/update all development dependencies
+uv sync --group dev
+
+# Includes:
+# - aqt>=25.2.7                 # Anki Qt interface (includes anki, pyqt6, and all UI dependencies)
+# - aadt>=1.1.0                 # Build tools (includes additional PyQt6 for UI compilation)
+# - mypy>=1.16.1                # Static type checking
+# - ruff>=0.12.1                # Fast linting and formatting
+# - pytest>=8.0.0               # Testing framework
+```
+
+**Note:** `aqt` automatically includes `anki` and `pyqt6` dependencies. AADT provides additional PyQt6 for UI compilation tools.
+
+### Building
+
+```bash
+# Build (defaults to local testing)
+uv run aadt build
+
+# Or explicitly specify build target
+uv run aadt build -d local       # Local testing
+uv run aadt build -d ankiweb     # AnkiWeb submission
+```
+
+### Testing
+
+```bash
+# Test with Anki (automatically links and launches)
+uv run aadt test
+
+# Or manually manage linking
+uv run aadt link              # Create development link
+uv run aadt link --unlink     # Remove development link
+
+# Run unit tests (if available)
+uv run pytest
+```
+
+**Development Testing:**
+- `aadt test` automatically links your add-on and launches Anki
+- `aadt link` creates a symbolic link from your source to Anki's addon directory
+- Supports macOS, Windows (junction), and Linux
+- `aadt link --unlink` removes the development link when finished
+- Your changes are immediately available in Anki without manual copying
+
+### Code Quality
+
+```bash
+# Check code style and types
+uv run ruff check .              # Linting
+uv run ruff format .             # Auto-formatting
+uv run mypy src/                 # Type checking
+```
+
+### Project Structure
+
+- `src/{module_name}/` - Main Python package (src-layout)
+  - `__init__.py` - Add-on entry point and main functionality
+- `ui/designer/` - Qt Designer .ui files
+- `ui/resources/` - UI resources (icons, styles, etc.)
+- `addon.json` - Add-on configuration
+- `pyproject.toml` - Project configuration and dependencies
+- `.python-version` - Python version specification
+
+## Features
+
+- **Modern Python 3.10+** with type hints
+- **Qt6 only** - no legacy Qt5 support
+- **src-layout** - best practice project structure
+- **uv-based** - fast dependency management
+- **Comprehensive tooling** - MyPy, Ruff, Pytest included
+- **Direct resource paths** - no QRC compilation needed
+
+## License
+
+TODO: Add license information.
+
+## Author
+
+{author}

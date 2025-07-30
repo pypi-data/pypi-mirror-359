@@ -1,0 +1,31 @@
+"""
+{display_name} - Anki Add-on
+
+{author}
+"""
+
+from aqt import mw
+from aqt.utils import showInfo
+
+
+def setup_addon() -> None:
+    """Set up the add-on functionality."""
+    # Add menu item
+    action = mw.form.menuTools.addAction("{display_name}")
+    action.triggered.connect(show_about)
+
+
+def show_about() -> None:
+    """Show information about the add-on."""
+    showInfo(
+        f"<h3>{display_name}</h3>"
+        f"<p>Author: {author}</p>"
+        f"<p>This is a template add-on created with aadt.</p>"
+        f"<p>Edit the code in src/{module_name}/ "
+        f"to customize functionality.</p>",
+        title="{display_name}"
+    )
+
+
+# Entry point for Anki
+setup_addon()
