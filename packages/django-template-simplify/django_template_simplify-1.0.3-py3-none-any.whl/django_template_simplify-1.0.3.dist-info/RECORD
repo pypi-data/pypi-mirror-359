@@ -1,0 +1,6 @@
+template_simplify/__init__.py,sha256=DJjFH4cRYV5dcut6LAJu50unFtKvXKV46I_Na4rkcEA,80
+template_simplify/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+template_simplify/templatetags/template_simplify.py,sha256=Ar5bj1QJRpnlfCbtG5R1afesInTXre1b3MbEVnVwpYk,5095
+django_template_simplify-1.0.3.dist-info/METADATA,sha256=1kOMBJc8MslULGfO4o73rOpLwNaWJnLM5Q5tNuALl8I,2791
+django_template_simplify-1.0.3.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+django_template_simplify-1.0.3.dist-info/RECORD,,

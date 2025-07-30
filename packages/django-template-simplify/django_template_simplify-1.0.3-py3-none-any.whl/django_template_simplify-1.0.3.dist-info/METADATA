@@ -1,0 +1,92 @@
+Metadata-Version: 2.3
+Name: django-template-simplify
+Version: 1.0.3
+Summary: A set of tools to help simplify your Django templates.
+License: MIT
+Author: Michael Yin
+Author-email: michaelyin@accordbox.com
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: django (>=3.0)
+Project-URL: Changelog, https://github.com/rails-inspire-django/django-template-simplify/releases
+Project-URL: Homepage, https://github.com/rails-inspire-django/django-template-simplify
+Description-Content-Type: text/markdown
+
+# README
+
+A set of tools to help simplify your Django templates
+
+```shell
+$ pip install django-template-simplify
+```
+
+Then add the app into `INSTALLED_APPS` in settings.py
+
+```python
+INSTALLED_APPS = [
+    ...,
+    'template_simplify',
+]
+```
+
+## dom_id
+
+`dom_id` is a helper method that returns a unique DOM ID based on the object's class name and primary key.
+
+```html
+{% load template_simplify %}
+
+{% dom_id instance %}               ->  task_1
+{% dom_id instance 'detail' %}      ->  detail_task_1
+{% dom_id Task %}                   ->  new_task
+```
+
+1. `dom_id` first argument can be string, instance or Model class
+2. `dom_id` second argument is optional string that will be used as `prefix`.
+
+You can also use it in your Django view code.
+
+```python
+from template_simplify import dom_id
+
+target = dom_id(instance, "detail_container")
+```
+
+We can say goodbye to `id="task-{{ task.pk }}"` and use `id="{% dom_id task %}"` instead.
+
+The benefit is, **it simplified the DOM ID generation in Python and Django template, and avoid typo error in many cases.**
+
+## class_names
+
+Inspired by JS [classnames](https://www.npmjs.com/package/classnames) and Rails `class_names`
+
+`class_names` can help **conditionally render css classes**
+
+```html
+{% load template_simplify %}
+
+<div class="{% class_names test1=True 'test2' ring-slate-900/5=True already-sign-in=request.user.is_authenticated %}"></div>
+
+'<div class="test1 test2 ring-slate-900/5 dark:bg-slate-800 %}"></div>'
+```
+
+It can work well with TailwindCSS's some special char such as `/` and `:`
+
+Below is an example of `if else`
+
+```html
+<div class="{% class_names active=request.user.is_authenticated inactive=!request.user.is_authenticated %}"></div>
+```
+
+1. Please note `!` can be used just like Javascript.
+2. So if user is not authenticated in this case, we would get `<div class="inactive"></div>`
+
+This can help make css logic more organized.
+
