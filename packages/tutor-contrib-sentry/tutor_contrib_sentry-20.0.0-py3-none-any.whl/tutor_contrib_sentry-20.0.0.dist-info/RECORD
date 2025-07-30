@@ -1,0 +1,16 @@
+tutor_contrib_sentry-20.0.0.dist-info/licenses/LICENSE.txt,sha256=3r8IgT7s_qqg0e9WHbZtv8UJ_owUrb74_lBu7fe0HBs,34523
+tutorsentry/__about__.py,sha256=j9sldXy7UiuUZ50PUVi2OKnvifHAlqtoXA_3ics9D5E,23
+tutorsentry/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorsentry/plugin.py,sha256=SVutPAfRtiu-ZfmPqxN13_nWiYi4WwsZnPnSbi56kPI,7663
+tutorsentry/patches/.gitignore,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorsentry/patches/openedx-common-settings,sha256=wiIRO-9j7GUVPmC5QimWjuLIJryB1Bu_TvvxBz1qIwQ,1789
+tutorsentry/patches/openedx-dockerfile-post-python-requirements,sha256=4kdqud3wm9l4yq4gJTz4q3mdxJ48EVmh_f41CgbLi58,104
+tutorsentry/patches/uwsgi-config,sha256=TyQwJNpLdVlBnjZEM5awsy5h6OzgUgIjeD8Eyxq6aXg,80
+tutorsentry/templates/sentry/apps/.gitignore,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorsentry/templates/sentry/build/.gitignore,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorsentry/templates/sentry/tasks/lms/.gitignore,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutor_contrib_sentry-20.0.0.dist-info/METADATA,sha256=eyLTG8rSVZ8xgo02QBIQHaTfIBxfLyR6G8jRFaYAck0,2777
+tutor_contrib_sentry-20.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tutor_contrib_sentry-20.0.0.dist-info/entry_points.txt,sha256=BJjGw0ADW9A_OhEiL6CQi2iO0hIlVMPC-w7NEhjezSI,46
+tutor_contrib_sentry-20.0.0.dist-info/top_level.txt,sha256=efsJBuWsSRNJtydxH2pH4_oUokeempPONvNGV3AFNQA,17
+tutor_contrib_sentry-20.0.0.dist-info/RECORD,,
