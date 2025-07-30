@@ -1,0 +1,6 @@
+toml
+PyYAML
+python-dotenv
+pymupdf
+Pillow
+openai
