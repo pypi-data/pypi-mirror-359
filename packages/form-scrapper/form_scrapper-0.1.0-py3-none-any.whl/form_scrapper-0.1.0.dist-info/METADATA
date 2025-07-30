@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: form-scrapper
+Version: 0.1.0
+Summary: A package to scrape Google Forms and extract questions.
+Home-page: UNKNOWN
+Author: Yannick Rafael
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: regex
+
+UNKNOWN
+
+

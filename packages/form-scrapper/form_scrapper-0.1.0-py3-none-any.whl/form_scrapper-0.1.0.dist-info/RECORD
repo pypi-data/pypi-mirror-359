@@ -1,0 +1,10 @@
+form_scrapper/__init__.py,sha256=PIXT0ZfPRQQ75kYWHSSsZOUzPoEZqQb0yA6-KjbZ1MM,39
+form_scrapper/config.py,sha256=Hxi9UapdyXEZmHh7YFPAIwytT-l8-o6p1roC0Nhp7iE,305
+form_scrapper/form_scrapper.py,sha256=M1kqxiL7rpzXqT7Ij7kXJhQd_VgkrR9EhmP1nr8VJJ4,520
+form_scrapper/question.py,sha256=8oNly8Ty6jQ7B4lux487OgKFg97yA56pOsAtiCWUOfI,1490
+form_scrapper/utils.py,sha256=sWJXe8LF7I2sVJpEnZA0PIq_wAvpTKFYwPpgGaN7lKA,985
+form_scrapper-0.1.0.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+form_scrapper-0.1.0.dist-info/METADATA,sha256=gb5fivYDGkSA5-xxETjDC--midnsExdAdQCjw4oerkg,329
+form_scrapper-0.1.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+form_scrapper-0.1.0.dist-info/top_level.txt,sha256=CBV-ZqGVjabnZwL4nPrUoJ2GKats6Ucwy_Pt1QJyWnM,14
+form_scrapper-0.1.0.dist-info/RECORD,,
