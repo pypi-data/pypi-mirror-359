@@ -1,0 +1,152 @@
+Metadata-Version: 2.4
+Name: vessel_analysis_3d
+Version: 0.1.1
+Summary: A Python package for analyzing 3D vascular structures from segmentations
+Author-email: Jianxu Chen <jianxuchen.ai@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2022, Jianxu Chen
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+        
+Project-URL: Homepage, https://github.com/MMV-Lab/vessel_analysis_3d
+Keywords: vessel analysis,morphology,topology
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bioio==1.6.1
+Requires-Dist: bioio-ome-tiff==1.1.0
+Requires-Dist: bioio-ome-zarr==1.2.0
+Requires-Dist: bioio-tifffile==1.1.0
+Requires-Dist: bioio-lif==1.1.0
+Requires-Dist: scipy>=1.9.1
+Requires-Dist: scikit-image>=0.19.3
+Requires-Dist: networkx>=2.8.6
+Requires-Dist: matplotlib>=3.6.0
+Requires-Dist: geomdl>=5.3.1
+Requires-Dist: botocore==1.38.38
+Requires-Dist: lxml_html_clean
+Provides-Extra: setup
+Requires-Dist: pytest-runner>=5.2; extra == "setup"
+Provides-Extra: test
+Requires-Dist: black>=19.10b0; extra == "test"
+Requires-Dist: codecov>=2.1.4; extra == "test"
+Requires-Dist: flake8>=3.8.3; extra == "test"
+Requires-Dist: flake8-debugger>=3.2.1; extra == "test"
+Requires-Dist: pytest>=5.4.3; extra == "test"
+Requires-Dist: pytest-cov>=2.9.0; extra == "test"
+Requires-Dist: pytest-raises>=0.11; extra == "test"
+Provides-Extra: dev
+Requires-Dist: pytest-runner>=5.2; extra == "dev"
+Requires-Dist: black>=19.10b0; extra == "dev"
+Requires-Dist: codecov>=2.1.4; extra == "dev"
+Requires-Dist: flake8>=3.8.3; extra == "dev"
+Requires-Dist: flake8-debugger>=3.2.1; extra == "dev"
+Requires-Dist: pytest>=5.4.3; extra == "dev"
+Requires-Dist: pytest-cov>=2.9.0; extra == "dev"
+Requires-Dist: pytest-raises>=0.11; extra == "dev"
+Requires-Dist: bump2version>=1.0.1; extra == "dev"
+Requires-Dist: coverage>=5.1; extra == "dev"
+Requires-Dist: ipython>=7.15.0; extra == "dev"
+Requires-Dist: m2r2>=0.2.7; extra == "dev"
+Requires-Dist: Sphinx>=3.4.3; extra == "dev"
+Requires-Dist: sphinx_rtd_theme>=0.5.1; extra == "dev"
+Requires-Dist: tox>=3.15.2; extra == "dev"
+Requires-Dist: twine>=3.1.1; extra == "dev"
+Requires-Dist: wheel>=0.34.2; extra == "dev"
+Provides-Extra: all
+Requires-Dist: vessel_analysis_3d[dev]; extra == "all"
+Requires-Dist: vessel_analysis_3d[test]; extra == "all"
+Requires-Dist: vessel_analysis_3d[setup]; extra == "all"
+Dynamic: license-file
+
+# 3D Vascular Structure Analysis
+
+[![Build Status](https://github.com/MMV-Lab/vessel_analysis_3d/workflows/Build%20Main/badge.svg)](https://github.com/MMV-Lab/vessel_analysis_3d/actions)
+[![Documentation](https://github.com/MMV-Lab/vessel_analysis_3d/workflows/Documentation/badge.svg)](https://MMV-Lab.github.io/vessel_analysis_3d/)
+[![Code Coverage](https://codecov.io/gh/MMV-Lab/vessel_analysis_3d/branch/main/graph/badge.svg)](https://codecov.io/gh/MMV-Lab/vessel_analysis_3d)
+
+A Python package for analyzing 3D vascular structures from segmentations
+
+---
+
+
+## Quick Start
+
+In general, the analysis pipeline aims to convert segmented 3d vascular structures into statistics, with the following 3 steps:
+
+1. Binary (segmentation) to preliminary skeleton
+
+2. Preliminary skeleton to network representation (including network pruning)
+
+3. Extract statistics
+
+You can run analysis like `run_vessel_analysis --config ./example_configs/example.yaml`.
+
+Or, you can do this analysis in other functions by calling the processing pipeline
+
+```python
+from vessel_analysis_3d.processing_pipeline import Pipeline3D
+from skimage.morphology import skeletonize
+import numpy as np
+
+# Suppose SEG is the segmentation
+
+# get preliminary skeleton
+SKL = skeletonize(SEG > 0, method="lee")
+SKL = SKL.astype(np.uint8)
+SKL[SKL > 0] = 1
+
+# Support PARAMS contains all parameters
+skl_final, brPts, endPts, reports = Pipeline3D.process_one_file(SEG, SKL, PARAMS)
+
+# skl_final is your final skeleton
+# brPts and endPts are two lists for the positions of branch points and end points
+# reports contain three pandas DataFrames ready for plotting
+```
+
+## Installation
+
+
+Before starting, we recommend to [create a new conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [a virtual environment](https://docs.python.org/3/library/venv.html) with Python 3.10+.
+
+```bash
+conda create -y -n 3danalysis -c conda-forge python=3.11
+conda activate 3danalysis
+```
+
+**Stable Release:** `pip install vessel_analysis_3d`<br> (not released yet)
+**Development Head:** `pip install git+https://github.com/MMV-Lab/vessel_analysis_3d.git`
+
+## Documentation
+
+For full package documentation please visit [MMV-Lab.github.io/vessel_analysis_3d](https://MMV-Lab.github.io/vessel_analysis_3d).
+
+## Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
+
+**MIT license**
+

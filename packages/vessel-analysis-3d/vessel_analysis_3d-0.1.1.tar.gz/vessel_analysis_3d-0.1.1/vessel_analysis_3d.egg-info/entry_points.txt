@@ -1,0 +1,2 @@
+[console_scripts]
+run_vessel_analysis = vessel_analysis_3d.bin.run_analysis:main
