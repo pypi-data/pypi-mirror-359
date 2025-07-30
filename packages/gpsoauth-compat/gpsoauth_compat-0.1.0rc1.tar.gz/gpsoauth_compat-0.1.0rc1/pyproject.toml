@@ -1,0 +1,19 @@
+[project]
+name = "gpsoauth-compat"
+version = "0.1.0-pre1"
+description = "gpsoauth compatibility layer for google-api-python-client"
+authors = [
+    {name = "Youssef Samy",email = "office.youssefkassem@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9,<4"
+dependencies = [
+    "gpsoauth (>=1.1.1)",
+    "google-auth",
+    "poetry-core (>=2.0.0,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
