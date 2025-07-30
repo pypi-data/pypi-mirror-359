@@ -1,0 +1,49 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst ist bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "url": "URL"
+                }
+            }
+        }
+    },
+    "config_subentries": {
+        "conversation": {
+            "abort": {
+                "reconfigure_successful": "Die Neukonfiguration war erfolgreich"
+            },
+            "entry_type": "Konversationsagent",
+            "initiate_flow": {
+                "reconfigure": "Konversationsagent neu konfigurieren",
+                "user": "Konversationsagent hinzuf\u00fcgen"
+            },
+            "step": {
+                "set_options": {
+                    "data": {
+                        "keep_alive": "Aktiv halten",
+                        "llm_hass_api": "Home Assistant steuern",
+                        "max_history": "Max. Nachrichten im Verlauf",
+                        "name": "Name",
+                        "num_ctx": "Gr\u00f6\u00dfe des Kontextfensters",
+                        "prompt": "Anweisungen",
+                        "think": "Vor Antwort nachdenken"
+                    },
+                    "data_description": {
+                        "keep_alive": "Dauer in Sekunden, die Ollama das Modell im Speicher halten soll. -1 = unbegrenzt, 0 = nie.",
+                        "num_ctx": "Maximalzahl von Texttoken, die das Modell verarbeiten kann. Verringere den Wert, um den Ollama-RAM zu reduzieren, oder erh\u00f6he ihn bei einer gro\u00dfen Anzahl verf\u00fcgbarer Entit\u00e4ten.",
+                        "prompt": "Gib an, wie das LLM antworten soll. Dies kann ein Template sein.",
+                        "think": "Wenn diese Option aktiviert ist, \u00fcberlegt das LLM, bevor es antwortet. Dies kann die Antwortqualit\u00e4t verbessern, aber auch die Latenz erh\u00f6hen."
+                    }
+                }
+            }
+        }
+    }
+}
