@@ -1,0 +1,183 @@
+# Codex CLI: Seu Assistente de IA e Automação no Terminal
+
+[![PyPI](https://img.shields.io/pypi/v/codex-cli-montezuma)](https://pypi.org/project/codex-cli-montezuma/)
+
+**Codex CLI** é uma poderosa ferramenta de linha de comando projetada para desenvolvedores, engenheiros de dados e entusiastas de automação. Integre a inteligência artificial do Google Gemini diretamente no seu fluxo de trabalho, automatize tarefas repetitivas e consulte uma variedade de fontes de informação sem sair do terminal.
+
+Com uma arquitetura extensível e foco na produtividade, o Codex CLI armazena seu histórico de interações, permite a busca por conversas passadas e oferece um conjunto de ferramentas integradas para interagir com seu sistema de arquivos e APIs externas.
+
+---
+
+## 🌐 Documentação Completa (Multilíngue)
+
+Para uma experiência completa, incluindo guias de instalação, configuração de API e tutoriais detalhados, por favor, selecione seu idioma:
+
+- 🇧🇷 [**Documentação em Português**](docs/pt/README.md)
+- 🇺🇸 [**Documentation in English**](docs/en/README.md)
+
+---
+
+## Instalação Rápida
+
+```bash
+pip install codex-cli-montezuma
+```
+
+## Como Usar o Codex CLI (Passo a Passo)
+
+### 1. Configuração das Chaves de API
+
+Para que o Codex possa usar a IA do Google Gemini e outras ferramentas de busca, você precisa fornecer suas chaves de API.
+
+**Por que isso é necessário?**
+*   **`GOOGLE_API_KEY`**: Autentica suas requisições à API do Gemini, permitindo que o Codex envie suas perguntas e receba respostas da IA.
+*   **`GOOGLE_SEARCH_CX`**: É o ID do seu Mecanismo de Busca Personalizada do Google, necessário para a ferramenta `consultar_google`.
+
+**Como configurar:**
+
+Você tem duas opções:
+
+*   **(Recomendado) Script de Configuração:** Se você clonou o repositório, pode usar nosso script interativo:
+    ```bash
+    ./scripts/setup-api-keys.sh
+    ```
+    Ele irá guiá-lo e criar um arquivo `.env` automaticamente.
+
+*   **Manualmente (Arquivo `.env`):** Crie um arquivo chamado `.env` na pasta onde você executará o comando `codex` e adicione as seguintes linhas, substituindo pelos seus valores:
+    ```
+    GOOGLE_API_KEY="SUA_CHAVE_DE_API_DO_GEMINI"
+    GOOGLE_SEARCH_CX="SEU_ID_DE_MECANISMO_DE_BUSCA_PERSONALIZADA"
+    ```
+
+> Para um guia detalhado sobre **como obter** essas chaves, consulte nosso [guia de configuração de API Keys](configuracao-api-keys.md).
+
+### 2. Executando o Codex CLI
+
+Com tudo instalado e configurado, você pode interagir com o Codex de várias maneiras:
+
+**a) Modo Interativo (Chat)**
+
+Este é o modo principal, onde você conversa com a IA. Para iniciar, simplesmente execute:
+```bash
+codex
+```
+A partir daí, você pode fazer perguntas, pedir para executar tarefas ou usar as ferramentas disponíveis. Para sair, digite `sair` ou `exit`.
+
+**Exemplo de Interação:**
+```
+Você: Crie um arquivo chamado 'app.py' com um "Hello, World" em Python.
+
+Codex: Claro, usando a ferramenta 'escrever_arquivo'.
+
+(O arquivo app.py é criado no seu diretório)
+```
+
+**b) Comandos Diretos (Argumentos)**
+
+Você pode executar comandos específicos diretamente da linha de comando, sem entrar no modo de chat.
+
+*   **Buscar no Histórico:**
+    ```bash
+    codex --buscar "termo de busca"
+    ```
+
+*   **Gerar Relatório de Uso:**
+    ```bash
+    codex --relatorio-uso
+    ```
+
+*   **Exportar Histórico para JSONL:**
+    ```bash
+    codex --exportar-jsonl
+    ```
+
+*   **Gerar Documentação das Ferramentas:**
+    ```bash
+    codex --doc-ferramentas
+    ```
+
+*   **Ver Perfil de Uso:**
+    ```bash
+    codex --perfil
+    ```
+---
+## Funcionalidades Principais
+
+- **Inteligência Artificial Integrada:** Converse com o modelo de linguagem **Google Gemini** para gerar código, obter explicações, traduzir textos e muito mais.
+- **Histórico de Conversas:** Todas as suas interações são salvas localmente em um banco de dados SQLite, permitindo que você revise e busque por informações importantes a qualquer momento.
+- **Sistema de Ferramentas Extensível:**
+  - `escrever_arquivo`: Crie ou modifique arquivos no seu projeto.
+  - `listar_arquivos`: Navegue pela estrutura de diretórios.
+  - `ler_arquivo`: Leia o conteúdo de arquivos de texto.
+  - `consultar_wikipedia`: Obtenha resumos rápidos da Wikipedia.
+  - `consultar_stackoverflow`: Encontre soluções para problemas de programação.
+  - `consultar_google`: Realize buscas na web.
+  - E muito mais!
+- **Suporte Multilíngue:** A interface e a documentação estão disponíveis em Português e Inglês.
+- **Automação de Tarefas:** Use o Codex para automatizar scripts, gerar relatórios e interagir com seu ambiente de desenvolvimento.
+
+---
+
+## Logging Estruturado e Depuração
+
+O Codex CLI utiliza logging estruturado e configurável em todos os módulos, facilitando depuração, auditoria e integração com ferramentas externas.
+
+- O logging é centralizado em `src/log_config.py`.
+- Por padrão, logs são enviados para o console, mas você pode configurar para arquivo ou outros destinos.
+- Níveis suportados: DEBUG, INFO, WARNING, ERROR, CRITICAL.
+- Todos os módulos usam `logger = logging.getLogger("codex.nome_do_modulo")` para rastreabilidade.
+
+---
+
+## Arquitetura e Boas Práticas
+- Código modularizado em `src/` (core, integrações, sugestões, banco, etc).
+- Todas as funções principais usam type hints e docstrings.
+- Logging estruturado em todos os fluxos.
+- Testes automatizados com pytest e mocks para integrações externas.
+- Automação de build, testes e limpeza via Makefile e scripts.
+- Extensibilidade planejada via sistema de plugins (em desenvolvimento).
+
+---
+
+## Para Desenvolvedores
+- Siga o padrão de logging e type hints em todo novo código.
+- Consulte `src/log_config.py` para configurar logs.
+- Veja exemplos de testes e patches em `tests/` e `docs/guia_didatico/como_escrever_testes.md`.
+- Documentação de cada ferramenta é gerada automaticamente em `docs/guia_didatico/auto_documentacao_ferramentas.md`.
+- Para criar novas integrações, siga o padrão de `src/integrations/` e registre no dicionário `FERRAMENTAS`.
+
+---
+
+
+## Sumário das Mudanças Recentes (2025)
+
+- **Modularização total:** Código reorganizado em `src/` com separação clara de integrações, core, sugestões e banco.
+- **Type hints e docstrings:** Todo o código principal agora segue tipagem estática e documentação de funções.
+- **Logging estruturado:** Todos os módulos usam logging centralizado e configurável via `src/log_config.py`.
+- **Testes automatizados:** Cobertura total com pytest, incluindo mocks para integrações externas.
+- **Automação:** Makefile e scripts para build, testes, limpeza e geração de documentação.
+- **Extensibilidade:** Estrutura pronta para plugins e novas integrações.
+- **Documentação didática:** Todos os guias, exemplos e auto-documentação atualizados.
+- **Personalização dinâmica:** Respostas do agente adaptam tom, exemplos e dicas conforme perfil do usuário.
+- **CLI aprimorado:** Sugestões inteligentes, exportação de histórico, relatórios e perfil do usuário.
+
+Consulte o diário de bordo (`docs/diario_de_bordo.md`) para histórico detalhado e decisões de arquitetura.
+
+---
+
+## Privacidade e Histórico
+
+- O histórico de conversas do Codex CLI é salvo **localmente** no arquivo `memoria_codex.db` na pasta onde o comando é executado.
+- **Apenas quem tem acesso ao arquivo .db pode ver o histórico.**
+- O histórico **não é enviado para a internet** nem compartilhado entre usuários diferentes, a menos que o arquivo seja copiado manualmente.
+- Para resetar seu histórico, basta apagar o arquivo `memoria_codex.db`.
+- Em ambientes multiusuário, recomenda-se rodar o CLI em pastas separadas para cada usuário.
+
+> Para planos de segurança avançada (criptografia, proteção por senha, etc), consulte o roadmap ou entre em contato com o mantenedor.
+
+---
+
+Projeto didático, aberto a sugestões e contribuições!
+
+## Licença
+MIT License. Consulte o arquivo `LICENSE` para mais detalhes.
