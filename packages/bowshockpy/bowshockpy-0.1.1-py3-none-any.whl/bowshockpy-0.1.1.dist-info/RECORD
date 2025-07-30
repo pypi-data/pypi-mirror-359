@@ -1,0 +1,17 @@
+bowshockpy/__init__.py,sha256=1pHv0s-sSEirLCwbiRfFf9uecRJc5uPehFhDA2Vw5mU,552
+bowshockpy/_header_default.py,sha256=PJJKktZFZZ8fpaGToDkNFQghjfzbS5m4SYLCIjjdUbE,4663
+bowshockpy/bsmodels.py,sha256=2rQkRgdCOjmTJdS7N71jP7pISBvSJhTN6_iy5kcyPpQ,61455
+bowshockpy/comass.py,sha256=m1hmdcKp3lmfpcLsOU81ESwhl_2mfEMhMjB-ioTFfZY,9301
+bowshockpy/genbow.py,sha256=aR0qioIyr-qOea2ymUT1ZHRV3mv_4W8wTVUb_pdn-K4,6840
+bowshockpy/moments.py,sha256=Fu1TZ5sXxsckhcbqYNH2xDazS_2O1rwVtKkXQwXnY5Q,1845
+bowshockpy/utils.py,sha256=iHAadk9ixgRoh3HR7FxVrYkX-YWeV7SuYsC755iv24o,14239
+bowshockpy/version.py,sha256=8oAxKUG747GUokmxjkrWejyJa5yPNEsoJDlXxoedxTw,21
+bowshockpy/inputfiles/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bowshockpy/inputfiles/example1.py,sha256=dLfelOKz2opLMhcO3J3uXXMZz7L9koTJ1ZYu8_EaP2w,7161
+bowshockpy/inputfiles/example2.py,sha256=q9pKvWGn1RLwlkjVD3dHB3c3Ch8_qJwNSaAUXYMvJm8,7939
+bowshockpy-0.1.1.dist-info/licenses/LICENSE,sha256=bL_d-EduzKDW7qxzPORwlBoqFNoEtABi_BRIWmWU22A,1098
+bowshockpy-0.1.1.dist-info/METADATA,sha256=sIjUWwVGKlEd3F9Pv15nfIRBn8JpXSoU7Xf0nY8h84M,3820
+bowshockpy-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bowshockpy-0.1.1.dist-info/entry_points.txt,sha256=KAiEUmWtFhtdah3pl-tapdpBkvjNUGafComoOrTRw_w,54
+bowshockpy-0.1.1.dist-info/top_level.txt,sha256=Jm433lssQ8bCybrRfw2LZzd3ZtfcsXL6Ei4-gMagVCM,11
+bowshockpy-0.1.1.dist-info/RECORD,,
