@@ -1,0 +1,223 @@
+[project]
+name = "f-lib"
+authors = [
+  {email = "kyle@finley.sh", name = "Kyle Finley"},
+]
+description = "Python library created by Kyle Finley, for Kyle Finley."
+dynamic = ["classifiers", "dependencies"]
+license = {text = "Apache-2.0"}
+maintainers = [
+  {email = "kyle@finley.sh", name = "Kyle Finley"},
+]
+requires-python = ">=3.11, <4"
+version = "0.4.3"
+
+[project.urls]
+changelog = "https://github.com/finleyfamily/f-lib/releases"
+documentation = "https://f-lib.readthedocs.io"
+homepage = "https://f-lib.readthedocs.io"
+issues = "https://github.com/finleyfamily/f-lib/issues"
+source = "https://github.com/finleyfamily/f-lib"
+
+[tool.poetry]
+classifiers = [
+  # https://pypi.org/classifiers/
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Topic :: Utilities",
+  "Typing :: Typed",
+]
+packages = [
+  {include = "f_lib"},
+]
+requires-poetry = "^2.0"
+
+[tool.poetry.dependencies]
+platformdirs = {version = "^4.1.0"}
+pydantic = {version = "^2.7.4"}
+pydantic-settings = {version = "^2.3.4"}
+rich = {version = "^14.0.0"}
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+
+[tool.poetry.group.docs.dependencies]
+doc8 = "^2.0.0"
+furo = "^2024.8.6"
+sphinx = "^8.2.3"
+sphinx-autobuild = "^2024.10.3"
+sphinx-copybutton = "^0.5.2"
+sphinx-design = "^0.6.1"
+sphinxcontrib-apidoc = "^0.6.0"
+sphinxcontrib-jquery = "^4.1"
+
+[tool.poetry.group.lint.dependencies]
+black = "^25.1.0"
+ruff = "^0.11.13"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+pytest-mock = "^3.14.1"
+pytest-subprocess = "^1.5.3"
+pytest-sugar = "^1.0.0"
+pytest-xdist = "^3.8.0"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = {extras = ["plugin"], version = ">=1.6.0,<2.0.0"}
+
+[tool.black]
+force-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.venv
+  | _build
+  | build
+  | dist
+  | node_modules
+)/
+'''
+include = '\.pyi?$'
+line-length = 100
+target-version = ["py311", "py312"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "@overload",
+  "cov: ignore",  # standard exclude comment
+  "if TYPE_CHECKING:",  # excluded blocks
+  "if __name__ == .__main__.:",
+  "raise AssertionError",  # defensive exceptions
+  "raise NotImplementedError",
+]
+fail_under = 100
+precision = 2
+show_missing = true
+
+[tool.coverage.run]
+branch = false  # not correctly reported - https://github.com/nedbat/coveragepy/issues/605
+omit = [
+  "*/type_defs.py",
+]
+
+[tool.doc8]
+ignore = [
+  "D001",  # Line too long
+]
+
+[tool.poetry-dynamic-versioning]  # poetry self add "poetry-dynamic-versioning[plugin]"
+bump = true
+enable = false
+fix-shallow-repository = true
+metadata = false
+strict = true
+style = "pep440"
+
+[tool.pyright]
+exclude = [
+  "**/.eggs",
+  "**/.git",
+  "**/.venv",
+  "**/__pycache__",
+  "**/docs",
+  "**/node_modules",
+  "**/typings",
+]
+pythonPlatform = "All"
+pythonVersion = "3.11"
+reportDuplicateImport = "none"
+reportImportCycles = "none"
+reportIncompatibleMethodOverride = "warning"
+reportMissingTypeStubs = "none"
+reportPrivateUsage = "none"
+reportUnknownMemberType = "none"
+reportUnnecessaryIsInstance = "warning"
+reportUnnecessaryTypeIgnoreComment = "warning"
+reportUnusedImport = "none"
+reportUnusedVariable = "none"
+strictParameterNoneValue = false
+typeCheckingMode = "strict"
+useLibraryCodeForTypes = true
+venv = ".venv"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--cov-config=pyproject.toml",
+]
+filterwarnings = [
+  "ignore::pytest_mock.PytestMockWarning",
+]
+markers = [
+  "wip: isolate tests currently being worked on.",
+]
+python_classes = ["Test*"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+testpaths = ["tests"]
+
+[tool.ruff]  # https://docs.astral.sh/ruff/settings/#top-level
+force-exclude = true
+line-length = 120
+show-fixes = true
+target-version = "py311"
+
+[tool.ruff.lint]  # https://docs.astral.sh/ruff/settings/#lint
+ignore = [
+  "COM812",  # Trailing comma missing
+  "D203",  # 1 blank line required before class docstring
+  "D213",  # Multi-line docstring summary should start at the second line
+  "D215",  # Section underline is over-indented
+  "D403",  # First word of the first line should be capitalized
+  "D406",  # Section name should end with a newline
+  "D407",  # Missing dashed underline after section
+  "D408",  # Section underline should be in the line following the section's name
+  "D409",  # Section underline should match the length of its name
+  "ERA001",  # Found commented-out code  # NOTE (kyle): incorrectly detects cspell
+  "FIX002",  # Line contains TODO
+  "TD003",  # Missing issue link on the line following this TODO
+  "TID252",  # Relative imports from parent modules are banned
+]
+select = ["ALL"]
+
+[tool.ruff.lint.extend-per-file-ignores]  # https://docs.astral.sh/ruff/settings/#lintextend-per-file-ignores
+"*.py" = [
+  "PYI024",  # Use `typing.NamedTuple` instead of `collections.namedtuple` - should only apply to pyi
+]
+"tests/*" = [
+  "FBT001",  # Boolean positional arg in function definition - this is fine here
+  "FBT003",  # Boolean positional value in function call - this is fine here
+  "S101",  # Use of `assert` detected - this is fine here
+  "S108",  # Probable insecure usage of temporary file or directory
+  "S301",  # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data
+  "S604",  # Function call with `shell=True` parameter identified - this is fine here
+  "SLF001",  # Private member accessed - fine in tests
+]
+
+[tool.ruff.lint.flake8-type-checking]  # https://docs.astral.sh/ruff/settings/#lint_flake8-type-checking_runtime-evaluated-base-classes
+runtime-evaluated-base-classes = [
+  "pydantic.BaseModel",
+  "pydantic.BeforeValidator",
+]
+
+[tool.ruff.lint.pydocstyle]  # https://docs.astral.sh/ruff/settings/#lintpydocstyle
+convention = "google"
+
+[tool.ruff.lint.pylint]  # https://docs.astral.sh/ruff/settings/#lintpylint
+allow-magic-value-types = ["bytes", "int", "str"]
+max-args = 15
+max-returns = 10
+
+[tool.tomlsort]
+all = true
+in_place = true
+sort_first = ["project", "tool", "tool.poetry"]
+spaces_before_inline_comment = 2
+trailing_comma_inline_array = true
+overrides.project.first = ["name", "version"]
+
+[build-system]
+build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core", "poetry-dynamic-versioning>=1.7.1,<2.0.0"]
