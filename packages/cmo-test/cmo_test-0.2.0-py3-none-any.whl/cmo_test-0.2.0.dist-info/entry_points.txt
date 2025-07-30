@@ -1,0 +1,2 @@
+[console_scripts]
+cmo_test = cmo_test.main:hello
