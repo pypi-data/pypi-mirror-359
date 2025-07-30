@@ -1,0 +1,134 @@
+# schore
+
+**schore** is a lightweight Python library providing core classes for scheduling problems.
+
+- **Parameter management**: Transform tabular or textual input into structured parameters for scheduling problems.
+- **Schedule management**: Abstract base classes for defining and managing schedule data.
+
+## ✨ Modules
+
+### Data Management
+
+```python
+from schore.data import DfManager, Table2DManager
+```
+
+- `DfManager`: Base class for managing a DataFrame.
+- `Table2DManager`: Manages a 2D table represented as a DataFrame.
+
+### Parameter Management
+
+```python
+from schore.parameters import JobStageProcessingTimeManager, JobMachineProcessingTimeManager
+```
+
+- `JobStageProcessingTimeManager`: Manages a 2D DataFrame with stages as columns and jobs as rows.
+- `JobMachineProcessingTimeManager`: Manages a 2D DataFrame with machines as columns and jobs as rows.
+
+### Schedule Management
+
+```python
+from schore.schedule.abstract import Activity, Resource, ResourceGroup, ParallelResourceGroup
+```
+
+- `Activity`: Represents a scheduled operation (in shop environments) or a job (in single/parallel machine environments).
+- `Resource`: Represents a single resource (e.g., machine or worker).
+- `ResourceGroup`: Manages a group of resources collectively.
+- `ParallelResourceGroup`: Manages a group of resources that can operate in parallel.
+
+These abstract base classes help you define, extend, and manage schedule-related data structures for various scheduling problems.
+
+### Utility
+
+```python
+from schore.util import TextDataParser
+```
+
+- `TextDataParser`: Parses text data from a stream.
+
+### Examples
+
+```python
+from schore.parameters_examples.parallel_shop.identical_flow import HybridFlowshopParameters
+```
+
+- `HybridFlowshopParameters`: Parameter class for a hybrid flowshop with identical parallel machines at each stage.
+
+## 🛠️ Repository Structure
+
+```plaintext
+├── src/
+│   └── schore/
+│       ├── data/
+│       │   ├── df_manager.py
+│       │   └── table_2d_manager.py
+│       ├── parameters/
+│       │   └── processing_time/
+│       │       ├── job_mc_p.py
+│       │       └── job_stage_p.py
+│       ├── parameters_examples/
+│       │   ├── parallel/
+│       │   ├── parallel_shop/
+│       │   │   └── identical_flow/
+│       │   │       └── hybrid_flowshop.py
+│       │   ├── shop/
+│       │   └── single/
+│       ├── schedule/
+│       │   └── abstract/
+│       │       ├── activity.py
+│       │       ├── resource.py
+│       │       ├── resource_group.py
+│       │       └── parallel_resource_group.py
+│       ├── schedule_examples/
+│       │   ├── machine.py
+│       │   ├── parallel/
+│       │   ├── parallel_shop/
+│       │   │   └── identical_flow/
+│       │   │       ├── hybrid_flowshop_operation.py
+│       │   │       ├── hybrid_flowshop_machine.py
+│       │   │       ├── hybrid_flowshop_stage.py
+│       │   │       └── hybrid_flowshop_schedule.py
+│       │   ├── shop/
+│       │   └── single/
+│       ├── util/
+│       │   └── text_data_parser.py
+│       ├── type_aliases.py
+│       └── type_defs.py
+├── tests/
+│   ├── data/
+│   │   ├── test_df_manager.py
+│   │   └── test_table_2d_manager.py
+│   ├── examples/
+│   │   └── parallel_shop/
+│   │       └── test_hybrid_flowshop.py
+│   ├── manager/
+│   │   └── test_job_stage_processing_time_manager.py
+│   └── util/
+│       └── test_text_data_parser.py
+```
+
+## 🧪 Testing
+
+To run the tests, use the following command:
+
+```sh
+pytest tests/
+```
+
+## Installation
+
+pip:
+
+```sh
+pip install schore
+```
+
+If you use [uv](https://github.com/astral-sh/uv) as your Python package manager:
+
+```sh
+uv add schore
+```
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
