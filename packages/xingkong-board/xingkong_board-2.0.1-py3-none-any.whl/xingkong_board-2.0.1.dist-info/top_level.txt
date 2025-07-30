@@ -1,0 +1,7 @@
+kid_duplex_controller
+kid_protocol
+kid_serial
+kid_speech
+kid_vision
+quickstart
+xingkong_board
