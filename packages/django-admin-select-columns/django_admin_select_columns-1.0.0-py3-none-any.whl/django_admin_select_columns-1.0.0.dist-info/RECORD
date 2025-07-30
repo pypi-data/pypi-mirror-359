@@ -1,0 +1,12 @@
+django_admin_select_columns/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_select_columns/apps.py,sha256=h1UsRWJ1MsXfl4IMoyfGgRjd3y8xyUbWzFFNKPfRDDI,183
+django_admin_select_columns/mixins.py,sha256=RLNrytpAf1-_LwjmcI4EnybXqn_q7wYau-AvoWoJQ1o,4082
+django_admin_select_columns/models.py,sha256=rEeG7vxsAuWvZ0EMwy5b_NkxkayGhfW9mEJoy2L4HeU,539
+django_admin_select_columns/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_select_columns/migrations/0001_initial.py,sha256=rWttIaXexkuwjRmYMacs3ACEvnkPwBrw1Cq0lQYLGiA,1003
+django_admin_select_columns/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_select_columns-1.0.0.dist-info/licenses/LICENSE,sha256=VWmXaxCrUacEAPMmqHnRmIRvQQMITtHZ4MLYMJ2kClY,1061
+django_admin_select_columns-1.0.0.dist-info/METADATA,sha256=oIdyTE_cgudOaMDr63DppzmkStFYJrxWtb2igukLAN4,2981
+django_admin_select_columns-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_admin_select_columns-1.0.0.dist-info/top_level.txt,sha256=2nZhdim4aXmQcqv8HsKsG0mxLdUEDbUmfgWHB4xrpP8,28
+django_admin_select_columns-1.0.0.dist-info/RECORD,,
