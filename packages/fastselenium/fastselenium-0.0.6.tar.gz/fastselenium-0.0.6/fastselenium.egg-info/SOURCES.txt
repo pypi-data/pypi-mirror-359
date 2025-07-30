@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+fastselenium/__init__.py
+fastselenium.egg-info/PKG-INFO
+fastselenium.egg-info/SOURCES.txt
+fastselenium.egg-info/dependency_links.txt
+fastselenium.egg-info/requires.txt
+fastselenium.egg-info/top_level.txt

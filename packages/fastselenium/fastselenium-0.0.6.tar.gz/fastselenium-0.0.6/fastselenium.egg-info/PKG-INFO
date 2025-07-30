@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: fastselenium
+Version: 0.0.6
+Summary: make it easy to use selenium
+Home-page: https://gitee.com/ZeroSeeker/fastselenium
+Author: ZeroSeeker
+Author-email: zeroseeker@foxmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyperclip==1.8.1
+Requires-Dist: selenium>=4.0.0
+Requires-Dist: showlog>=0.0.6
+Requires-Dist: requests>=2.31.0
+
+# fastselenium
+
+#### 介绍
+封装了一些selenium的用法，使其更加简单
+
+#### 软件架构
+软件架构说明
+
+
+#### 安装教程
+
+1.  pip安装
+```shell script
+pip install fastselenium
+```
+2.  pip安装（使用阿里镜像加速）
+```shell script
+pip install fastselenium -i https://mirrors.aliyun.com/pypi/simple
+```
+
+#### 使用说明
+
+1.  demo
+```python
+import fastselenium
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get('www.gitee.com')
+test_res = fastselenium.save_cookie(
+            driver=driver
+        )
+```
