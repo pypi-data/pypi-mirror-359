@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "itensors"
+version = "0.1.02"
+description = "Python port of the ITensors framework"
+authors = ["Miguel Costa <miguelptcosta1995@gmail.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[project.urls]
+# homepage = "TBC"
+# documentation = "TBC"
+source = "https://github.com/migueltorrescosta/itensors"
+download = "https://pypi.org/project/itensors/"
+tracker = "https://github.com/migueltorrescosta/itensors/issues"
