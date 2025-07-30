@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: natn
+Version: 0.0.3
+Project-URL: Documentation, https://github.com/avvisodisicurezza/natn#readme
+Project-URL: Issues, https://github.com/avvisodisicurezza/natn/issues
+Project-URL: Source, https://github.com/avvisodisicurezza/natn
+Author-email: avvisodisicurezza <avvisodisicurezza@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: ipython>=8.12.3
+Requires-Dist: nest-asyncio>=1.6.0
+Requires-Dist: pyperclip>=1.9.0
+Description-Content-Type: text/markdown
+
+# natn
+
+[![PyPI - Version](https://img.shields.io/pypi/v/natn.svg)](https://pypi.org/project/natn)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/natn.svg)](https://pypi.org/project/natn)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install natn
+```
+
+## License
+
+`natn` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
