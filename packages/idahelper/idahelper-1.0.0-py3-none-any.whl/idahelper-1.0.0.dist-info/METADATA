@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: idahelper
+Version: 1.0.0
+Summary: standard library for IDA Pro plugins
+Project-URL: Homepage, https://github.com/yoavst/idahelper
+Project-URL: Issues, https://github.com/yoavst/idahelper/issues
+Author-email: Yoav Sternberg <yoav.sternberg@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Provides-Extra: pac
+Requires-Dist: ida-netnode>=3.0; extra == 'pac'
