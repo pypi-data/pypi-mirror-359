@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: doloris
+Version: 0.0.1
+Summary: Detection Of Learning Obstacles via Risk-aware Interaction Signals
+Author: 许睿林, 傅小桐
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Dynamic: license-file
+
+# Doloris
+
+中山大学 2025 年《模式识别》大作业。
+
+组员：许睿林、傅小桐。
+
+**Doloris**：**D**etection **O**f **L**earning **O**bstacles via **R**isk-aware **I**nteraction **S**ignals.
