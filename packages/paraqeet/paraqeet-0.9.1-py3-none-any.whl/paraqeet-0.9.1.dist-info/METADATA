@@ -1,0 +1,72 @@
+Metadata-Version: 2.4
+Name: paraqeet
+Version: 0.9.1
+Summary: Toolset for control, calibration and characterization of physical systems
+Author: PGI-12
+Project-URL: Homepage, https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet
+Project-URL: Bug Reports, https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/issues
+Project-URL: Source, https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=2.3.0
+Requires-Dist: scipy>=1.15.3
+Requires-Dist: jax>=0.6.1
+Requires-Dist: jaxlib>=0.6.1
+Requires-Dist: bayesian-optimization>=2.0.4
+Requires-Dist: cma>=4.2.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.2.0; extra == "dev"
+Requires-Dist: pre-commit>=4.2.0; extra == "dev"
+Requires-Dist: ruff>=0.11.13; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=7.2.0; extra == "test"
+Provides-Extra: testnb
+Requires-Dist: pytest>=7.2.0; extra == "testnb"
+Requires-Dist: matplotlib>=3.10.0; extra == "testnb"
+Provides-Extra: gpu
+Requires-Dist: jax[cuda12]>=0.4.20; extra == "gpu"
+Dynamic: license-file
+
+<div align="center">
+  <center><img src="https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/raw/main/big_logo.png" alt="paraqeet_logo" width="90%"/></center>
+</div>
+
+# ParaQeet -  A quantum optimal control toolkit with simple parameter management
+
+[![pipeline status](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/badges/main/pipeline.svg)](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/commits/main)
+[![coverage report](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/badges/main/coverage.svg)](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/commits/main)
+[![Latest Release](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/badges/release.svg)](https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/releases)
+
+*Note: This is a preview version, a 1.0 release is forthcoming.*
+
+Choose a pulse parametrisation, simulate a quantum system, and optimise. 
+
+Combining Quantum Optimal Control methods with automatic differentiation with JAX.
+Aimed at resource efficient computation.
+
+We use a top-down approach to make the codebase modular. 
+Each module interacts only with the module above it in hierarchy. 
+
+<div align="center">
+  <center><img src="https://jugit.fz-juelich.de/pgi-12-external/qfc/paraqeet/-/raw/main/doc/layers.png" alt="Layers" width="60%"/></center>
+</div>
+
+Currently implementated optimization methods
+- GRAPE: Gradient Ascent Pulse Enginnering
+- GOAT: Gradient Optimization of Analytic conTrols
+
+## Installation from PyPi
+Install with `pip install paraqeet`.
+
+## Installation from source
+Follow the [contributing](CONTRIBUTING.md) document.
