@@ -1,0 +1,261 @@
+Metadata-Version: 2.4
+Name: warpcode
+Version: 1.1.5
+Summary: Warp through development cycles with automated BDD and Claude Coder
+Author-email: Claude Code <noreply@anthropic.com>
+License: MIT
+Project-URL: Homepage, https://github.com/warpcodedev/warpcode
+Project-URL: Bug Reports, https://github.com/warpcodedev/warpcode/issues
+Project-URL: Source, https://github.com/warpcodedev/warpcode
+Project-URL: Documentation, https://github.com/warpcodedev/warpcode#readme
+Keywords: bdd,testing,automation,claude,ai,development,orchestration
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: behave>=1.2.6
+Requires-Dist: questionary>=1.10.0
+Requires-Dist: radon>=4.1.0
+Requires-Dist: anthropic>=0.25.0
+Requires-Dist: rich>=13.0
+Requires-Dist: click>=8.0
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: pexpect>=4.8.0
+Requires-Dist: pillow>=9.0.0
+Requires-Dist: selenium>=4.0.0
+Requires-Dist: webdriver-manager>=3.8.0
+
+# WarpCode
+
+🚀 **Warp through development cycles with automated BDD and Claude Coder** 🚀
+
+A Python CLI tool that orchestrates Claude Code to automatically implement BDD scenarios with zero human intervention, real-time monitoring, and robust fake implementation detection.
+
+## ✨ Key Features
+
+- **🔄 Fully Automated BDD Development** - Zero human intervention once started
+- **📞 Conversation Continuity** - Claude maintains context across iterations with `-c` flag support
+- **📊 Real-time OpenTelemetry Monitoring** - Live Claude activity tracking with OTEL events
+- **🔍 Reality Validation** - Comprehensive fake implementation detection and prevention
+- **🤖 Claude Integration** - Automated Claude Code execution with enhanced debugging
+- **🧪 BDD Test Management** - Behave integration with intelligent pass/fail parsing
+- **📈 Code Quality Assurance** - Radon integration for complexity monitoring
+- **🎨 Beautiful CLI** - Rich console output with real-time progress indicators
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install warpcode
+```
+
+### Basic Usage
+
+```bash
+# Run WarpCode with interactive setup
+warpcode
+
+# Or use the shorter alias
+warp
+
+# Enable debug mode for comprehensive Claude activity visibility
+WARPCODE_DEBUG=1 warpcode
+
+# Enable verbose output to see all Claude interactions
+WARPCODE_VERBOSE=1 warpcode
+```
+
+## 📊 Real-time Monitoring
+
+WarpCode provides multiple levels of monitoring:
+
+### 1. Live Activity Dashboard
+Real-time display showing:
+- Current BDD test status
+- Claude conversation state
+- Active tool executions
+- Reality validation results
+
+### 2. OpenTelemetry Integration
+Captures and displays:
+- `claude_code.user_prompt` - When prompts are sent
+- `claude_code.tool_result` - Tool execution results  
+- `claude_code.api_request` - API calls with token counts
+- `claude_code.tool_decision` - Permission decisions
+
+### 3. Debug Modes
+```bash
+# Show full Claude command execution details
+export WARPCODE_DEBUG=1
+
+# Display all Claude output in real-time
+export WARPCODE_VERBOSE=1
+
+# Both modes together for maximum visibility
+export WARPCODE_DEBUG=1 WARPCODE_VERBOSE=1
+```
+
+## 🔍 Reality Validation
+
+WarpCode prevents fake implementations through:
+
+- **Pattern Detection** - Scans for HTML mocks, hardcoded responses, simulation code
+- **Behavioral Testing** - Verifies tests actually depend on implementation files
+- **Subprocess Validation** - Ensures proper error handling in system calls
+- **Mock File Detection** - Identifies files with excessive hardcoded content
+- **Conversation Reset** - Clears Claude state when fake patterns are detected
+
+## 🎯 Architecture Overview
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Environment   │    │   Orchestrator   │    │  Claude Code    │
+│    Manager      │◄──►│     Loop         │◄──►│   Interface     │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+         │                        │                       │
+         ▼                        ▼                       ▼
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   BDD Runner    │    │   Scoreboard     │    │   Reality       │
+│   (Behave)      │    │    Manager       │    │   Validator     │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+         │                        │                       │
+         └────────────────────────┼───────────────────────┘
+                                 ▼
+                    ┌──────────────────┐
+                    │ Activity Dashboard│
+                    │ (Real-time UI)   │
+                    └──────────────────┘
+```
+
+## 📁 Project Structure
+
+```
+your-project/
+├── features/                    # BDD feature files
+│   ├── environment.py          # Behave configuration
+│   ├── steps/                  # Step definitions
+│   └── *.feature              # Gherkin scenarios
+├── scoreboards/                # Real-time status JSON files
+│   ├── master_status.json     # Overall orchestration state
+│   ├── bdd_status.json        # Test execution results
+│   ├── claude_status.json     # Claude activity tracking
+│   └── validation_*.json      # Reality validation reports
+├── venv/                      # Virtual environment
+├── behave.ini                 # Behave configuration
+└── .warpcode_conversation_id  # Claude conversation state
+```
+
+## 🔄 How It Works
+
+1. **Smart Environment Setup** - Detects existing setup, only installs missing components
+2. **Conversation Continuity** - Loads existing Claude conversation or starts new one
+3. **BDD Execution** - Runs behave tests with real-time progress monitoring
+4. **Claude Orchestration** - Sends focused prompts with anti-fake enforcement
+5. **Reality Validation** - Scans for fake patterns, validates behavioral dependencies
+6. **Iterative Improvement** - Feeds validation failures back to enhance next iteration
+
+## 📋 Requirements
+
+- **Python 3.10+**
+- **Claude Code CLI** (authenticated and available in PATH)
+- **Git** (for project management)
+
+## 🛠️ Development
+
+```bash
+# Install in development mode
+git clone https://github.com/warpcodedev/warpcode
+cd warpcode
+pip install -e .
+
+# Run with debug output
+WARPCODE_DEBUG=1 warpcode
+```
+
+## 📝 Release Notes
+
+### v1.1.0 (Latest) - Advanced Fake Detection & Red-Green BDD
+- ✅ **LLM-Powered Fake Detection**: Claude analyzes step files to catch sophisticated fakes
+- ✅ **Dual-Phase Validation**: Combines regex patterns + LLM analysis for comprehensive detection
+- ✅ **Red-Green BDD Enforcement**: Proper TDD workflow requiring tests to fail first
+- ✅ **Two-Phase Claude Workflow**: Phase 1: Analyze fakes, Phase 2: Implement real code
+- ✅ **Cross-Validation System**: Validates WarpCode parsing against actual behave execution
+- ✅ **Enhanced Behavioral Testing**: File dependency tests, scenario isolation, truth verification
+- ✅ **Comprehensive Fake Reports**: Auto-generates `fakesteps.md` documentation
+
+### v1.0.9 - Comprehensive Monitoring & Conversation Continuity
+- ✅ **Conversation Continuity**: Claude maintains context with `-c` flag support
+- ✅ **Real-time OTEL Monitoring**: Live OpenTelemetry event parsing and display  
+- ✅ **Enhanced Reality Validation**: Behavioral testing and fake pattern learning
+- ✅ **Smart Environment Setup**: Prevents unnecessary re-initialization
+- ✅ **Comprehensive Debug Output**: Full Claude activity visibility with timestamps
+- ✅ **Validation Feedback Loop**: Failed validations inform subsequent prompts
+
+### v1.0.8 - Reality Validation Foundation
+- ✅ **Reality Validator**: Comprehensive fake implementation detection
+- ✅ **Enhanced Claude Prompts**: Strict anti-mock enforcement with time limits
+- ✅ **Improved Monitoring**: Initial OpenTelemetry integration
+
+### v1.0.7 - Enhanced Dashboard & Monitoring
+- ✅ **Activity Dashboard**: Real-time UI progress tracking
+- ✅ **Scoreboard Management**: JSON-based status persistence
+- ✅ **Claude Interface**: Automated execution with log monitoring
+
+### v1.0.6 - Core BDD Integration
+- ✅ **BDD Runner**: Behave integration with result parsing
+- ✅ **Environment Manager**: Virtual environment and dependency handling
+- ✅ **Basic Orchestration**: Multi-iteration Claude execution loop
+
+### Earlier Versions (v1.0.0 - v1.0.5)
+- Initial project setup and basic functionality
+
+## 🎛️ Configuration Options
+
+### Environment Variables
+```bash
+WARPCODE_DEBUG=1        # Enable comprehensive debug output
+WARPCODE_VERBOSE=1      # Show all Claude interactions
+ANTHROPIC_API_KEY=...   # Claude API authentication
+```
+
+### Debug Features
+- **Full Command Logging**: See exact Claude Code CLI invocations
+- **Real-time Output**: Live Claude response streaming with timestamps
+- **Conversation Tracking**: Monitor conversation ID persistence
+- **OTEL Event Parsing**: Detailed OpenTelemetry event breakdown
+- **Validation Reports**: Comprehensive fake implementation analysis
+
+## 🔗 Links
+
+- **PyPI**: https://pypi.org/project/warpcode/
+- **GitHub**: https://github.com/warpcodedev/warpcode
+- **Issues**: https://github.com/warpcodedev/warpcode/issues
+- **Documentation**: https://github.com/warpcodedev/warpcode#readme
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality  
+4. Submit a pull request
+
+---
+
+**Built with ❤️ for automated BDD development**
+
+*Zero human intervention. Real implementations only. Maximum development velocity.*
