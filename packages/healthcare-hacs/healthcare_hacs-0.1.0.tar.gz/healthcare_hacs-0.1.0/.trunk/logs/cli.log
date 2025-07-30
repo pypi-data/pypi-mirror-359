@@ -1,0 +1,19 @@
+[06-27 18:23:04] [login.cc:52] GetUserRequest failed with status 16: No session provided 
+[06-29 19:05:31] [login.cc:52] GetUserRequest failed with status 14: errors resolving api.trunk.io:8443: [field:hostname lookup error:address lookup failed for api.trunk.io:8443: Could not contact DNS servers] 
+[06-29 19:05:31] [login.cc:52] GetUserRequest failed with status 14: errors resolving api.trunk.io:8443: [field:hostname lookup error:address lookup failed for api.trunk.io:8443: Could not contact DNS servers] 
+[06-29 19:06:52] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-29 19:06:52] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-29 19:06:58] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-29 19:06:58] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-29 19:08:29] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-29 20:22:02] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 02:04:25] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 02:04:25] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 06:18:47] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 06:18:47] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 08:41:50] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 08:41:50] [upgrade.cc:225] Error during upgrade --notify: cli: 1 linter: 0 plugin: 0 runtime: 0
+[06-30 22:44:32] [login.cc:52] GetUserRequest failed with status 16: No session provided 
+[07-01 23:27:02] [login.cc:52] GetUserRequest failed with status 16: No session provided 
+[07-02 21:48:30] [login.cc:52] GetUserRequest failed with status 16: No session provided 
+[07-03 21:16:44] [login.cc:52] GetUserRequest failed with status 16: No session provided 
