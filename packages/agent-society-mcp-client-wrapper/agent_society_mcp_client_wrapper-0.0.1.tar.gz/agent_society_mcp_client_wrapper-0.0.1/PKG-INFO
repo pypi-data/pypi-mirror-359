@@ -1,0 +1,81 @@
+Metadata-Version: 2.4
+Name: agent-society-mcp-client-wrapper
+Version: 0.0.1
+Summary: A Python Library that wrapps around the low-level mcp client lib by Anthropic
+Author: Agent Society
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mcp
+Dynamic: license-file
+
+# MCP Wrapper for AgentSociety
+
+A library that wraps low-level [MCP](https://github.com/agentsociety/mcp) client functionality, exposing it for easy usage as tools within a [LangChain](https://github.com/langchain-ai/langchain) workflow. This enables seamless integration of remote MCP tools for language model workflows and agent applications.
+
+## Structure
+
+### Library Code: `mcpwrap/`
+
+- **`client.py`** — Basic utility to invoke a LangChain model with a set of tools.
+- **`server_stub.py`** — Async abstraction (`ServerSession`) for connecting to and interfacing with an MCP server, exposing MCP tools for LangChain.
+- **`multi_mcp_model.py`** — Orchestrates multiple MCP server sessions and integrates their toolsets for use by one `BaseChatModel`. Handles async invocation and batching of tool requests.
+- **`llm_integration.py`** — Converts MCP tool schemas (JSON Schema) into dynamic, structured LangChain tools using Pydantic models.
+- *(You may need to install [mcp](https://pypi.org/project/mcp/) and LangChain dependencies.)*
+
+### Example App: `sample/`
+
+- Provides a minimal, integration-tested example of how to use this library in practice. (See directory for details.)
+
+## Usage Overview
+
+### 1. Connect MCP servers as tool providers
+
+```python
+from mcpwrap.server_stub import ServerSession
+
+session = ServerSession(name="example", url="http://localhost:8080")
+await session.initialize()  # Async context
+```
+
+### 2. Compose Multi-server Tools for LangChain
+
+```python
+from langchain_core.language_models.chat_models import BaseChatModel
+from mcpwrap.multi_mcp_model import MultiMcpModel
+
+base_model = ... # Any supported BaseChatModel
+mcp_model = MultiMcpModel(
+    base_model=base_model,
+    mcp_servers=[session]  # Add as many as you like
+)
+await mcp_model.initialize()
+```
+
+### 3. Use in a Chat Workflow
+
+```python
+results = await mcp_model.ainvoke(messages)  # messages: List[BaseMessage]
+```
+
+## Features
+
+- **Wraps multiple MCP servers:** Maps their tools to a common namespace for use as LangChain tools.
+- **Schema Conversion:** Converts arbitrary MCP tool JSON schemas into Pydantic models for argument validation.
+- **Async, batched operations:** Tools are called concurrently when invoked by an LLM agent.
+- **Error and retry handling:** Optionally retries failed server/tool executions.
+
+## Requirements
+
+- `pip install -r requirements.txt`
+
+## Notes
+
+- Ensure MCP servers are reachable at their configured URLs.
+- Schema support currently assumes JSON Schema Draft 7 compatibility for tool arguments.
+
+## Contributing
+
+PRs, issues, and questions are welcome!
