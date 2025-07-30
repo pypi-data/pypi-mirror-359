@@ -1,0 +1,71 @@
+{
+    "entity": {
+        "sensor": {
+            "attachment_total_size_limit": {
+                "name": "\u6dfb\u4ed8\u30d5\u30a1\u30a4\u30eb\u306e\u30b9\u30c8\u30ec\u30fc\u30b8\u5236\u9650"
+            },
+            "attachment_total_size_remaining": {
+                "name": "\u6dfb\u4ed8\u30d5\u30a1\u30a4\u30eb\u306e\u6b8b\u308a\u5bb9\u91cf"
+            },
+            "calls": {
+                "name": "\u96fb\u8a71\u3092\u304b\u3051\u305f",
+                "unit_of_measurement": "\u901a\u8a71"
+            },
+            "calls_limit": {
+                "name": "\u901a\u8a71\u4f7f\u7528\u5236\u9650",
+                "unit_of_measurement": "\u901a\u8a71"
+            },
+            "calls_remaining": {
+                "name": "\u6b8b\u308a\u306e\u901a\u8a71\u56de\u6570"
+            },
+            "emails": {
+                "name": "\u9001\u4fe1\u3055\u308c\u305f\u30e1\u30fc\u30eb",
+                "unit_of_measurement": "\u96fb\u5b50\u30e1\u30fc\u30eb"
+            },
+            "emails_limit": {
+                "name": "\u30e1\u30fc\u30eb\u306e\u4f7f\u7528\u5236\u9650",
+                "unit_of_measurement": "\u96fb\u5b50\u30e1\u30fc\u30eb"
+            },
+            "emails_remaining": {
+                "name": "\u6b8b\u308a\u306e\u30e1\u30fc\u30eb",
+                "unit_of_measurement": "\u96fb\u5b50\u30e1\u30fc\u30eb"
+            },
+            "messages": {
+                "name": "\u516c\u958b\u3055\u308c\u305f\u30e1\u30c3\u30bb\u30fc\u30b8",
+                "unit_of_measurement": "\u30e1\u30c3\u30bb\u30fc\u30b8"
+            },
+            "messages_expiry_duration": {
+                "name": "\u30e1\u30c3\u30bb\u30fc\u30b8\u306e\u6709\u52b9\u671f\u9650"
+            },
+            "messages_limit": {
+                "name": "\u30e1\u30c3\u30bb\u30fc\u30b8\u306e\u4f7f\u7528\u5236\u9650",
+                "unit_of_measurement": "\u30e1\u30c3\u30bb\u30fc\u30b8"
+            },
+            "messages_remaining": {
+                "name": "\u6b8b\u308a\u306e\u30e1\u30c3\u30bb\u30fc\u30b8",
+                "unit_of_measurement": "\u30e1\u30c3\u30bb\u30fc\u30b8"
+            },
+            "reservations": {
+                "name": "\u4e88\u7d04\u6e08\u307f\u30c8\u30d4\u30c3\u30af",
+                "unit_of_measurement": "\u30c8\u30d4\u30c3\u30af"
+            },
+            "reservations_limit": {
+                "name": "\u4e88\u7d04\u30c8\u30d4\u30c3\u30af\u306e\u5236\u9650",
+                "unit_of_measurement": "\u30c8\u30d4\u30c3\u30af"
+            },
+            "reservations_remaining": {
+                "name": "\u6b8b\u308a\u306e\u4e88\u7d04\u6e08\u307f\u30c8\u30d4\u30c3\u30af",
+                "unit_of_measurement": "\u30c8\u30d4\u30c3\u30af"
+            },
+            "tier": {
+                "name": "\u30b5\u30d6\u30b9\u30af\u30c6\u30a3\u30a2",
+                "state": {
+                    "business": "\u30d3\u30b8\u30cd\u30b9",
+                    "free": "\u7121\u6599",
+                    "pro": "\u30d7\u30ed",
+                    "supporter": "\u30b5\u30dd\u30fc\u30bf\u30fc"
+                }
+            }
+        }
+    }
+}
