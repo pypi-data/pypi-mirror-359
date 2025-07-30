@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: icsmcp
+Version: 0.1.0
+Author-email: narumi <toucans-cutouts0f@icloud.com>
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: ics>=0.7.2
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: mcp[cli]>=1.6.0
+Description-Content-Type: text/markdown
+
+# ICS MCP Server
+
+An MCP (Model Context Protocol) server that provides tools for creating ICS calendar events. Built with FastMCP and the `ics` library to generate RFC5545-compliant calendar files.
+
+## Features
+
+- **create_ics_event**: Generate ICS calendar events with comprehensive options
+  - Required: event name and start time (ISO format)
+  - Optional: end time or duration in minutes
+  - Optional: description, location, URL
+  - Optional: all-day event support
+  - Optional: alarm notifications (minutes before event)
+
+## Installation & Usage
+
+### Install from GitHub
+
+```json
+{
+  "mcpServers": {
+    "icsmcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/narumiruna/ics-mcp",
+        "icsmcp"
+      ]
+    }
+  }
+}
+```
+
+### Install from PyPI
+
+```json
+{
+  "mcpServers": {
+    "icsmcp": {
+      "command": "uvx",
+      "args": ["icsmcp@latest"]
+    }
+  }
+}
+```
+
+### Run Locally
+
+```json
+{
+  "mcpServers": {
+    "icsmcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/path/to/ics-mcp",
+        "icsmcp"
+      ]
+    }
+  }
+}
+```
+
+## Development
+
+### Requirements
+
+- Python 3.12+
+- uv (for dependency management)
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/narumiruna/ics-mcp.git
+cd ics-mcp
+
+# Install dependencies
+uv sync
+
+# Run tests
+uv run pytest
+
+# Run linting
+uv run ruff check .
+
+# Run type checking
+uv run mypy .
+```
+
+### Available Commands
+
+- `make lint` - Run code linting
+- `make type` - Run type checking  
+- `make test` - Run test suite
+- `make publish` - Build and publish package
+
+## Example Usage
+
+Once configured as an MCP server, you can create calendar events like:
+
+```python
+# Create a basic meeting
+create_ics_event(
+    name="Team Meeting",
+    begin="2024-07-04T10:00:00",
+    end="2024-07-04T11:00:00",
+    description="Weekly team sync",
+    location="Conference Room A"
+)
+
+# Create an all-day event with alarm
+create_ics_event(
+    name="Project Deadline", 
+    begin="2024-07-04T00:00:00",
+    all_day=True,
+    alarm_minutes_before=1440  # 24 hours before
+)
+
+# Create event with duration
+create_ics_event(
+    name="Workshop",
+    begin="2024-07-04T14:00:00", 
+    duration_minutes=90,
+    url="https://example.com/workshop"
+)
+```
+
+The tool returns properly formatted ICS strings that can be imported into any calendar application.
+
+## License
+
+See [LICENSE](LICENSE) file for details.
