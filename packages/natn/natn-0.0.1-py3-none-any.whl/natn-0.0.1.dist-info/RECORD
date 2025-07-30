@@ -1,0 +1,10 @@
+natn/__about__.py,sha256=fl4wNQDFKN_UpIBv3Pk_7S6CSSiFDpYZpYjDyGpJN9s,142
+natn/__init__.py,sha256=JKOxu5a3rfq8y-yB0BgdpQu389FUt7-yZ3YpXhGWgPE,356
+natn/config.py,sha256=yELuf9nOa6Dwnb8l3LJC_RoD64pAkhsHIVukDCuV6tk,240
+natn/clipboard/__init__.py,sha256=JzHOIV3Q36sX7FUkfC6phSdblDqcnQb56CX09LAb5kk,1517
+natn/core/__init__.py,sha256=dQ940_vomNP7xG2ydluHsX3KGZRmMmGnH0qZ5MH1oAA,593
+natn/network/__init__.py,sha256=DohbeaIN12pp4OhORZdm9-8XdIp25mfvp4j7Evh3TUE,714
+natn-0.0.1.dist-info/METADATA,sha256=v0fN88tIUKTky_YtT7Zf9qgAzjq3fK59J1CswBP1Q04,1490
+natn-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+natn-0.0.1.dist-info/licenses/LICENSE.txt,sha256=xHwx6qd6XwpRUaprfb9OHr5sf0ucDUb6j5FlXjiRGV8,1112
+natn-0.0.1.dist-info/RECORD,,
