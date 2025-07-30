@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "octopi"
+version = "1.1"
+description = "Model architecture exploration for cryoET particle picking"
+authors = ["Jonathan Schwartz", "Kevin Zhao"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+matplotlib = "*"
+tqdm = "*"
+copick = "*"
+nibabel = "*"
+mlflow = "2.17.0"
+optuna = "4.0.0"
+plotly = "*"
+pandas = "*"
+mrcfile = "*"
+kaleido = "*"
+seaborn = "*"
+ipywidgets = "*"
+torch-ema = "*"
+multiprocess = "*"
+python-dotenv = "*"
+pytorch-lightning = "2.4.0"
+monai-weekly = { version = "1.5.dev2448", allow-prereleases = true }
+optuna-integration = { version = "*", extras = ["botorch", "pytorch_lightning"] }
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.3"
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+ruff = "^0.6.4"
+
+[tool.poetry.scripts]
+octopi = "octopi.main:cli_main"
+octopi-slurm = "octopi.main:cli_slurm_main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/chanzuckerberg/octopi"
+"Documentation" = "https://chanzuckerberg.github.io/octopi/"
+"Issues" = "https://github.com/chanzuckerberg/octopi/issues"
