@@ -1,0 +1,13 @@
+binance_futures_mcp-1.2.1.dist-info/licenses/LICENSE,sha256=zqfwopvOi7kOx5YVOnehgmRFR-IU3x1n9JEShr3QOYg,1075
+binance_mcp/__init__.py,sha256=OlItx3W9KF1HdhXVL2pHVeELayF45i9Mw9YG4GS1fOQ,106
+binance_mcp/__main__.py,sha256=_9DBrtv0PAvjLjCqKk_cMfGtkqSUOcmU6HeQKFjuFMQ,214
+binance_mcp/client.py,sha256=hYhsQNOZogfSsAKmbD-_JeUJpBiVydZJZjQPdapSkC4,3795
+binance_mcp/config.py,sha256=rORtYwHMe06k2HWfOMojEcimGuEDrz8TYNz0NflHmw0,306
+binance_mcp/handlers.py,sha256=T4XqylIsPBS_spKJDvwAb8JT6el8XusR8oRG-4nyMYo,6862
+binance_mcp/server.py,sha256=zhUPnAF3QOKiitev3TNxDNaLKArukXbASmlc79XFHNk,3684
+binance_mcp/tools.py,sha256=GRG9VywRiMcR392V-91LLu2pzRicnp-Tdh5RDKb8Vn0,5067
+binance_futures_mcp-1.2.1.dist-info/METADATA,sha256=WGuStMl-GmaYoFXRY7zohpKJ367GS4f8SV8ljl9bCoQ,12615
+binance_futures_mcp-1.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+binance_futures_mcp-1.2.1.dist-info/entry_points.txt,sha256=-1iVs9AF7JQBS-xMichP9hQhbCY7YfLFRJVaNKwuN34,69
+binance_futures_mcp-1.2.1.dist-info/top_level.txt,sha256=RqGhe1caZUvBF_ezvTiLZD8kVS25eiWVkfJfmoND9m8,12
+binance_futures_mcp-1.2.1.dist-info/RECORD,,
