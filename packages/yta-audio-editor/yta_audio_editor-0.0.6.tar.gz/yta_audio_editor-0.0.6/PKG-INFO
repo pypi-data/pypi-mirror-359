@@ -1,0 +1,16 @@
+Metadata-Version: 2.3
+Name: yta-audio-editor
+Version: 0.0.6
+Summary: Youtube Autonomous Audio Edition Module.
+Author: danialcala94
+Author-email: danielalcalavalera@gmail.com
+Requires-Python: ==3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# Youtube Autonomous Audio Editor Module
+
+The Audio editor module.
+
+Please, check the 'pyproject.toml' file to see the dependencies.
