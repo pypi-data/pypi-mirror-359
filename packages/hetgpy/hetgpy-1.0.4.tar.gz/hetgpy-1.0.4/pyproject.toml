@@ -1,0 +1,33 @@
+[project]
+name = "hetgpy"
+version = "1.0.4"
+description = "Python implementation of hetGP"
+authors = [
+{name="David O'Gara", email="david.ogara@wustl.edu"},
+{name="Mickaël Binois", email="mickael.binois@inria.fr"},
+]
+readme = "README.md"
+requires-python = ">3.10"
+
+
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools]
+packages=['hetgpy','docs','tests','tests.R','tests.R.results','tests.data']
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.mat",".R","",'*.py']
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = { file = ["requirements_dev.txt"] }}
+
+
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0","setuptools-cpp","pybind11"]
+
+
+
+
