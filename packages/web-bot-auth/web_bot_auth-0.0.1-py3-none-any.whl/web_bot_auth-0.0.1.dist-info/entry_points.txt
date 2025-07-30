@@ -1,0 +1,2 @@
+[nbdev]
+web_bot_auth = web_bot_auth._modidx:d
