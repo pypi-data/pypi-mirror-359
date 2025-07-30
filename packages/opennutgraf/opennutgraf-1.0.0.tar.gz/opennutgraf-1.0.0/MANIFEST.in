@@ -1,0 +1,28 @@
+# Include important files in the distribution
+include README.md
+include LICENSE
+include CHANGELOG.md
+include pyproject.toml
+
+# Include all Python files
+recursive-include opennutgraf *.py
+
+# Include type stubs if any
+recursive-include opennutgraf *.pyi
+include opennutgraf/py.typed
+
+# Exclude development and build files
+exclude *.pyc
+exclude *.pyo
+exclude *.orig
+exclude *.rej
+exclude .coverage
+exclude .DS_Store
+global-exclude __pycache__/*
+global-exclude *.py[co]
+global-exclude .git*
+global-exclude .pytest_cache/*
+global-exclude .mypy_cache/*
+prune build/
+prune dist/
+prune *.egg-info/

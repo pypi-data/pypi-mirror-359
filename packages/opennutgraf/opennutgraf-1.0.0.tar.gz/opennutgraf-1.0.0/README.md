@@ -1,0 +1,305 @@
+# OpenNutgraf
+
+[![PyPI version](https://badge.fury.io/py/opennutgraf.svg)](https://badge.fury.io/py/opennutgraf)
+[![Python versions](https://img.shields.io/pypi/pyversions/opennutgraf.svg)](https://pypi.org/project/opennutgraf/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A powerful Python library for article extraction and AI-powered summarization. Extract clean content from web articles and generate intelligent summaries using state-of-the-art language models from OpenAI and Anthropic.
+
+## 🚀 Features
+
+- **Smart Article Extraction**: Extract clean, readable content from any web article
+- **Multi-LLM Support**: Generate summaries using OpenAI GPT models or Anthropic Claude
+- **Flexible Summarization**: Customize length, tone, and format of summaries
+- **Paywall Detection**: Intelligent detection of paywalled content
+- **Long Content Handling**: Automatic chunking for articles that exceed token limits
+- **Easy Integration**: Simple, intuitive API for developers
+- **Type Safe**: Full type hints for better development experience
+
+## 📦 Installation
+
+Install OpenNutgraf using pip:
+
+```bash
+pip install opennutgraf
+```
+
+For development features:
+
+```bash
+pip install opennutgraf[dev]
+```
+
+## 🔧 Quick Start
+
+### Basic Usage
+
+```python
+from opennutgraf import OpenNutgrafClient, SummaryOptions
+
+# Initialize the client
+client = OpenNutgrafClient(
+    openai_api_key="your-openai-api-key",
+    anthropic_api_key="your-anthropic-api-key"  # Optional
+)
+
+# Extract an article
+article = client.extract_article("https://example.com/article")
+print(f"Title: {article.title}")
+print(f"Author: {article.author}")
+print(f"Content: {article.content[:200]}...")
+```
+
+### Generate Summaries
+
+```python
+# Create summary options
+options = SummaryOptions(
+    length='standard',        # 'brief', 'standard', 'in_depth', 'custom'
+    tone='neutral',          # 'neutral', 'conversational', 'professional'
+    format_type='prose',     # 'prose', 'bullets'
+    model='gpt-3.5-turbo'   # Any supported model
+)
+
+# Generate a summary
+summary = client.generate_summary(article.content, options)
+print(f"Summary ({summary.word_count} words):")
+print(summary.text)
+```
+
+### One-Step Extract and Summarize
+
+```python
+# Extract and summarize in one call
+result = client.extract_and_summarize(
+    "https://example.com/article", 
+    options
+)
+
+if result['error']:
+    print(f"Error: {result['error']}")
+else:
+    print("Article:", result['article']['title'])
+    print("Summary:", result['summary']['text'])
+```
+
+## 🎯 Advanced Usage
+
+### Custom Summary Length
+
+```python
+# Use custom word count
+custom_options = SummaryOptions(
+    length='custom',
+    custom_word_count=150,
+    tone='conversational',
+    format_type='bullets',
+    model='gpt-4'
+)
+
+summary = client.generate_summary(content, custom_options)
+```
+
+### Handling Long Articles
+
+```python
+# OpenNutgraf automatically handles long content
+long_article = client.extract_article("https://example.com/long-article")
+
+# This will automatically chunk the content if needed
+summary = client.generate_summary(long_article.content, options)
+```
+
+### Working with Manual Text
+
+```python
+# Summarize text directly without extraction
+manual_text = """
+Your article text here...
+"""
+
+summary = client.summarize_text(manual_text, options)
+print(summary.text)
+```
+
+## 🤖 Supported Models
+
+### OpenAI Models
+- `gpt-3.5-turbo` - Fast and cost-effective
+- `gpt-4` - Higher quality, slower
+- `gpt-4-turbo` - Optimized GPT-4
+- `gpt-4o` - Latest GPT-4 variant
+
+### Anthropic Models
+- `claude-3-haiku` - Fast and efficient
+- `claude-3-sonnet` - Balanced performance (Claude 3.5 Sonnet)
+- `claude-3-opus` - Highest quality
+
+```python
+# Check available models
+models = client.get_available_models()
+for model in models:
+    print(f"{model['name']} - {model['provider']}")
+```
+
+## 📚 API Reference
+
+### OpenNutgrafClient
+
+Main client class for all operations.
+
+```python
+client = OpenNutgrafClient(
+    openai_api_key: Optional[str] = None,
+    anthropic_api_key: Optional[str] = None
+)
+```
+
+#### Methods
+
+- `extract_article(url: str) -> Article`
+- `generate_summary(content: str, options: SummaryOptions = None) -> Summary`
+- `extract_and_summarize(url: str, options: SummaryOptions = None) -> Dict`
+- `summarize_text(text: str, options: SummaryOptions = None) -> Summary`
+- `get_available_models() -> List[Dict[str, str]]`
+
+### Data Models
+
+#### Article
+```python
+@dataclass
+class Article:
+    url: str
+    title: Optional[str]
+    author: Optional[str]
+    publication_date: Optional[datetime]
+    content: Optional[str]
+    word_count: int
+    is_paywalled: bool
+    error: Optional[str]
+    paywall_warning: Optional[str]
+```
+
+#### Summary
+```python
+@dataclass
+class Summary:
+    text: str
+    word_count: int
+    settings: Optional[Dict[str, Any]]
+```
+
+#### SummaryOptions
+```python
+@dataclass
+class SummaryOptions:
+    length: str = 'standard'           # 'brief', 'standard', 'in_depth', 'custom'
+    tone: str = 'neutral'              # 'neutral', 'conversational', 'professional'
+    format_type: str = 'prose'         # 'prose', 'bullets'
+    model: str = 'gpt-3.5-turbo'      # Any supported model ID
+    custom_word_count: Optional[int] = None
+```
+
+## 🔐 Authentication
+
+### Environment Variables
+
+Set your API keys as environment variables:
+
+```bash
+export OPENAI_API_KEY="your-openai-api-key"
+export ANTHROPIC_API_KEY="your-anthropic-api-key"
+```
+
+### Direct Initialization
+
+```python
+client = OpenNutgrafClient(
+    openai_api_key="sk-...",
+    anthropic_api_key="claude-..."
+)
+```
+
+### Using Only One Provider
+
+```python
+# OpenAI only
+client = OpenNutgrafClient(openai_api_key="sk-...")
+
+# Anthropic only  
+client = OpenNutgrafClient(anthropic_api_key="claude-...")
+```
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+# Install test dependencies
+pip install opennutgraf[test]
+
+# Run tests
+pytest
+
+# Run with coverage
+pytest --cov=opennutgraf
+```
+
+## 🛠️ Development
+
+### Setting Up Development Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/nutgraf/opennutgraf.git
+cd opennutgraf
+
+# Install in development mode
+pip install -e .[dev]
+
+# Install pre-commit hooks
+pre-commit install
+```
+
+### Code Quality
+
+```bash
+# Format code
+black opennutgraf/
+
+# Lint code
+flake8 opennutgraf/
+
+# Type checking
+mypy opennutgraf/
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+- 📧 Email: support@nutgraf.com
+- 🐛 Issues: [GitHub Issues](https://github.com/nutgraf/opennutgraf/issues)
+- 📖 Documentation: [GitHub README](https://github.com/nutgraf/opennutgraf#readme)
+
+## 🎉 Acknowledgments
+
+- Built on top of excellent libraries like `requests`, `beautifulsoup4`, and `readability-lxml`
+- Powered by OpenAI and Anthropic APIs
+- Inspired by the need for clean, simple article processing tools
+
+---
+
+Made with ❤️ by the Nutgraf team
