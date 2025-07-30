@@ -1,0 +1,2 @@
+[console_scripts]
+nerdicons-gen = nerdicons.nerdicons_gen:main
