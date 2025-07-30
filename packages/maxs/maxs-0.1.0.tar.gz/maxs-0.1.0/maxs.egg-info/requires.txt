@@ -1,0 +1,12 @@
+strands-agents[ollama]>=0.1.0
+prompt_toolkit>=3.0.0
+
+[binary]
+pyinstaller>=5.0
+
+[dev]
+pytest>=7.0
+black>=22.0
+isort>=5.0
+flake8>=4.0
+mypy>=0.950
