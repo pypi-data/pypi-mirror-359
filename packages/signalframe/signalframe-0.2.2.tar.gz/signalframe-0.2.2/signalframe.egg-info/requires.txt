@@ -1,0 +1,7 @@
+pandas
+numpy
+pyBigWig
+matplotlib
+scipy==1.14.1
+statsmodels
+tqdm
