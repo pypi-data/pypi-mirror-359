@@ -1,0 +1,25 @@
+LICENSE
+README.md
+pyproject.toml
+src/browser core/__init__.py
+src/browser core/browser.py
+src/browser core/cli.py
+src/browser core/exceptions.py
+src/browser core/logging.py
+src/browser core/profile.py
+src/browser core/session.py
+src/browser core/settings.py
+src/browser core/types.py
+src/browser core/utils.py
+src/browser core/drivers/__init__.py
+src/browser core/drivers/manager.py
+src/browser core/selectors/__init__.py
+src/browser core/selectors/manager.py
+src/browser core/windows/__init__.py
+src/browser core/windows/manager.py
+src/browser_core.egg-info/PKG-INFO
+src/browser_core.egg-info/SOURCES.txt
+src/browser_core.egg-info/dependency_links.txt
+src/browser_core.egg-info/entry_points.txt
+src/browser_core.egg-info/requires.txt
+src/browser_core.egg-info/top_level.txt
