@@ -1,0 +1,2 @@
+[console_scripts]
+dicom-maker = dicom_maker.main:main
