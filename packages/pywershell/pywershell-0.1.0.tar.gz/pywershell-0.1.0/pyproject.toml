@@ -1,0 +1,25 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pywershell"
+version = "0.1.0"
+description = "Async PowerShell wrapper for Python"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "genderlessput" }]
+requires-python = ">=3.8"
+dependencies = [
+  "async-property",
+  "propcache",
+  "loguru"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pywershell"]
+
+[tool.setuptools.package-data]
+pywershell = ["pywershell.ps1"]
