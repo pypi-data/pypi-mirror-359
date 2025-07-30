@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv src/troop/commands/keys.py src/troop/commands/provider.py)",
+      "mcp__web-tools__fetch_url",
+      "mcp__web-tools__search_web",
+      "Bash(uv add --dev pytest pytest-asyncio pytest-mock pytest-cov typer[all])",
+      "Bash(uv add --dev pytest pytest-asyncio pytest-mock pytest-cov)",
+      "Bash(troop --help)",
+      "Bash(troop mcp list)",
+      "Bash(troop agent list)"
+    ],
+    "deny": []
+  }
+}
