@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+gitsc/__init__.py
+gitsc/cli.py
+gitsc.egg-info/PKG-INFO
+gitsc.egg-info/SOURCES.txt
+gitsc.egg-info/dependency_links.txt
+gitsc.egg-info/entry_points.txt
+gitsc.egg-info/requires.txt
+gitsc.egg-info/top_level.txt
