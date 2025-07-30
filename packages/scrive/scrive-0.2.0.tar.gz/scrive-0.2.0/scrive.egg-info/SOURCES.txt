@@ -1,0 +1,14 @@
+README.md
+setup.py
+scrive/__init__.py
+scrive/core.py
+scrive/factory.py
+scrive/macros.py
+scrive/patterns.py
+scrive.egg-info/PKG-INFO
+scrive.egg-info/SOURCES.txt
+scrive.egg-info/dependency_links.txt
+scrive.egg-info/not-zip-safe
+scrive.egg-info/requires.txt
+scrive.egg-info/top_level.txt
+tests/test_unified_api.py
