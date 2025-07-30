@@ -1,0 +1,217 @@
+# Creditum - Advanced Credit Risk Assessment
+
+[![PyPI version](https://badge.fury.io/py/credit-risk-creditum.svg)](https://badge.fury.io/py/credit-risk-creditum)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A comprehensive Python package for credit risk assessment and stress testing with real-time economic data integration. Built for financial institutions, fintech companies, and researchers who need robust, explainable credit risk evaluation.
+
+## 🌟 Features
+
+- **Advanced Credit Scoring**: Individual and corporate credit risk assessment
+- **Economic Integration**: Real-time economic indicators and stress testing
+- **Stress Testing**: Multi-scenario analysis for portfolio resilience
+- **Machine Learning Ready**: Built-in support for scikit-learn models
+- **Easy Integration**: Simple API for seamless integration
+- **Comprehensive Documentation**: Detailed guides and examples
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install credit-risk-creditum
+```
+
+### Basic Usage
+
+```python
+from credit_risk import CreditApplication
+
+# Initialize the credit application processor
+app = CreditApplication()
+
+# Update economic indicators
+economic_data = {
+    'gdp_growth': 0.02,
+    'unemployment_rate': 0.04,
+    'inflation_rate': 0.025,
+    'interest_rate': 0.035
+}
+app.economic_indicators.update_indicators(economic_data)
+
+# Assess individual credit risk
+individual_application = {
+    'credit_score': 720,
+    'monthly_income': 5000,
+    'monthly_debt': 1500,
+    'loan_amount': 25000,
+    'loan_purpose': 'home_improvement'
+}
+
+decision = app.make_decision(individual_application, 'individual')
+print(f"Decision: {decision['decision']}")
+print(f"Risk Score: {decision['risk_score']:.3f}")
+print(f"Risk Category: {decision['risk_category']}")
+```
+
+## 📊 Advanced Features
+
+### Stress Testing
+
+#### View Available Scenarios
+```python
+# List all available stress scenarios
+scenarios = app.get_stress_scenarios()
+for scenario in scenarios:
+    print(f"- {scenario['name']}: {scenario['description']}")
+```
+
+#### Apply Specific Stress Scenario
+```python
+# Test with specific stress scenario
+recession_decision = app.make_decision(
+    individual_application, 
+    'individual', 
+    stress_scenario='recession'
+)
+
+print(f"Normal Risk Score: {decision['risk_score']:.3f}")
+print(f"Recession Risk Score: {recession_decision['risk_score']:.3f}")
+```
+
+#### Comprehensive Stress Testing
+```python
+# Run all stress scenarios at once
+stress_results = app.run_stress_tests(individual_application, 'individual')
+
+print(f"Scenarios tested: {len(stress_results['scenario_results'])}")
+print(f"Decision changes: {stress_results['summary']['decision_changes']}")
+print(f"Worst case risk: {stress_results['summary']['worst_case_risk_score']:.3f}")
+
+# Show results for each scenario
+for scenario_name, result in stress_results['scenario_results'].items():
+    decision = result['decision']
+    change = "🔴" if result['decision_change'] else "🟢"
+    print(f"{change} {scenario_name}: {decision['decision']} (Risk: {decision['risk_score']:.3f})")
+```
+
+#### Compare Multiple Scenarios
+```python
+# Compare scenarios side by side
+test_scenarios = ['recession', 'inflation_surge', 'optimistic']
+
+print("Scenario Comparison:")
+print("-" * 50)
+
+# Baseline
+baseline = app.make_decision(individual_application, 'individual')
+print(f"Baseline: Risk {baseline['risk_score']:.3f} | {baseline['decision']}")
+
+# Test each scenario
+for scenario in test_scenarios:
+    decision = app.make_decision(individual_application, 'individual', stress_scenario=scenario)
+    print(f"{scenario}: Risk {decision['risk_score']:.3f} | {decision['decision']}")
+```
+
+### Corporate Credit Assessment
+
+```python
+# Assess corporate credit risk
+corporate_application = {
+    'years_in_business': 5,
+    'annual_revenue': 500000,
+    'industry': 'technology',
+    'loan_amount': 100000,
+    'loan_purpose': 'expansion'
+}
+
+corp_decision = app.make_decision(corporate_application, 'corporate')
+print(f"Corporate Decision: {corp_decision['decision']}")
+print(f"Max Loan Amount: ${corp_decision['max_loan_amount']:,.0f}")
+```
+
+### Available Stress Scenarios
+
+- **Economic Recession**: High unemployment, negative GDP growth
+- **High Inflation**: Rising prices and interest rates
+- **Market Volatility**: Extreme market uncertainty
+- **Economic Boom**: Strong growth conditions
+
+## 🔧 API Reference
+
+### CreditApplication
+
+Main class for processing credit applications and making decisions.
+
+**Methods:**
+- `make_decision(application_data, entity_type)`: Make credit approval decision
+- `run_stress_tests(application_data, entity_type)`: Run comprehensive stress tests
+- `validate_application(application_data, entity_type)`: Validate application data
+
+### EconomicIndicators
+
+Manages economic data and calculates economic risk factors.
+
+**Methods:**
+- `update_indicators(indicator_data)`: Update economic indicators
+- `apply_stress_scenario(scenario_name)`: Apply stress testing scenario
+- `calculate_economic_risk_factor(entity_type, industry)`: Calculate risk factor
+
+## 📈 Use Cases
+
+- **Banks & Credit Unions**: Enhance underwriting with stress testing
+- **Fintech Platforms**: Integrate advanced risk assessment
+- **Portfolio Management**: Analyze credit portfolio resilience
+- **Regulatory Compliance**: Meet stress testing requirements
+- **Academic Research**: Study credit risk dynamics
+
+## 🏗️ Project Structure
+
+```
+credit_risk/
+├── core/
+│   ├── application.py    # Main application logic
+│   └── economic.py       # Economic indicators and stress testing
+├── models/
+│   ├── base.py          # Base risk assessment class
+│   ├── individual.py    # Individual credit risk models
+│   └── corporate.py     # Corporate credit risk models
+└── utils/               # Utility functions
+```
+
+## 📚 Documentation
+
+- **Website**: [https://crcreditum.com](https://crcreditum.com)
+- **Documentation**: [https://crcreditum.com/documentation](https://crcreditum.com/documentation)
+- **Examples**: [GitHub Repository](https://github.com/credit-risk-creditum/creditum/tree/main/examples)
+- **API Reference**: [API Documentation](https://github.com/credit-risk-creditum/creditum/blob/main/docs/api/README.md)
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](https://github.com/credit-risk-creditum/creditum/blob/main/CONTRIBUTING.md) for details.
+
+- Report bugs: [GitHub Issues](https://github.com/credit-risk-creditum/creditum/issues)
+- Suggest features: [Feature Requests](https://github.com/credit-risk-creditum/creditum/issues/new?template=feature_request.md)
+- Join discussions: [GitHub Discussions](https://github.com/credit-risk-creditum/creditum/discussions)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/credit-risk-creditum/creditum/blob/main/LICENSE) file for details.
+
+## 🔗 Links
+
+- **PyPI Package**: [https://pypi.org/project/credit-risk-creditum/](https://pypi.org/project/credit-risk-creditum/)
+- **GitHub Repository**: [https://github.com/credit-risk-creditum/creditum](https://github.com/credit-risk-creditum/creditum)
+- **Website**: [https://crcreditum.com](https://crcreditum.com)
+- **LinkedIn**: [Creditum Company Page](https://www.linkedin.com/company/creditum-credit-risk/)
+
+## 📞 Support
+
+- **Email**: owolabi.omoshola@outlook.com
+- **Issues**: [GitHub Issues](https://github.com/credit-risk-creditum/creditum/issues)
+- **Documentation**: [User Guide](https://crcreditum.com/documentation)
+
+---
+
+**Created by [Omoshola Owolabi](https://linkedin.com/in/omosholaowolabi)**
