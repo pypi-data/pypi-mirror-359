@@ -1,0 +1,13 @@
+wgen/__init__.py,sha256=BS_TT_aH4bAvvbflfc2es2eAEpqGlrIkZ0dfKGylSQQ,46
+wgen/wgen.py,sha256=Z93fDBcnfjK5s3MW79asvC6OCv4bd5UO-GWuRdPeSUk,1219
+wgen/core/__init__.py,sha256=pps2I8Wlds6GHtawsg810DvZUu1jJ3DTNMi4tRHQ9qI,713
+wgen/core/base.py,sha256=nhQKE2Iky5CY9WOWZ5Luulw4zMFjqMYKAilSO7AMPAc,3981
+wgen/core/charset.py,sha256=MkDUg9Z6XkYA5MXH6q0RNQ1BQ9q-zJDZ1jtot3-svQo,475
+wgen/core/cli.py,sha256=l0N7b5UgHutSGK7LfP8HGFv9DATIhgwSovl74XDmPX4,4997
+wgen/core/help.py,sha256=m3oyJs52yFBT2SB-kNwvfFRlKN5d9JqqL1ut0HyDGa0,539
+wgen-4.7.9.dist-info/licenses/LICENSE,sha256=YF-rEFFDsvF9mInKJuiBYrS8vXl8Zh_JDvt8o_VbVfA,1088
+wgen-4.7.9.dist-info/METADATA,sha256=qdxN9u9ht9Wzu2T0D4o00bkFtsRDztmP7CK30uFE8tU,6654
+wgen-4.7.9.dist-info/WHEEL,sha256=SmOxYU7pzNKBqASvQJ7DjX3XGUF92lrGhMb3R6_iiqI,91
+wgen-4.7.9.dist-info/entry_points.txt,sha256=brvUYymY0L5zeNYLN7wsYU7Nnf-5R8GbQ1eUEYJtYYk,40
+wgen-4.7.9.dist-info/top_level.txt,sha256=hCqHqjK6OclrBzo9EcDqu9pq42JYI4ZncrFsUieSf6c,5
+wgen-4.7.9.dist-info/RECORD,,
