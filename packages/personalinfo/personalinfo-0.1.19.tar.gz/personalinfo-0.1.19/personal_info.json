@@ -1,0 +1,117 @@
+{
+    "John Doe": {
+        "dob": "1990-01-01",
+        "age": 35,
+        "email": "john@example.com",
+        "height_cm": 180,
+        "weight_kg": 75,
+        "bmi": 23.15,
+        "bmi_description": "Normal weight: Keep up the good work!",
+        "bio": "Software engineer with a passion for open source.",
+        "blood_group": "O+",
+        "family_details": {
+            "father": "John Sr.",
+            "mother": "Jane Sr.",
+            "siblings": [
+                "Jake"
+            ],
+            "spouse": "Jane Doe",
+            "children": [
+                "Junior"
+            ]
+        },
+        "aadhar_number": "1234-5678-9012",
+        "address": "123 Main St, City, Country",
+        "vehicle_details": [
+            {
+                "vehicle_type": "Car",
+                "make": "Brand",
+                "model": "Sedan",
+                "year": 2018,
+                "registration_number": "XYZ 1234",
+                "color": "Red",
+                "insurance_number": "INS123456",
+                "insurance_expiry": "2026-01-01",
+                "mileage": 15000.0,
+                "engine_number": "EN123456",
+                "chassis_number": "CH123456"
+            }
+        ],
+        "contact_details": {
+            "phone_numbers": [
+                "123-456-7890"
+            ],
+            "email_addresses": [
+                "john@example.com"
+            ],
+            "emergency_contacts": [],
+            "native_place": "Hometown",
+            "languages_known": [
+                "English",
+                "Hindi"
+            ],
+            "communication_address": "123 Main St, City, Country",
+            "permanent_address": "",
+            "alternate_phone": "",
+            "whatsapp_number": "",
+            "telegram_id": "",
+            "linkedin": "john-linkedin",
+            "facebook": "john-facebook",
+            "twitter": "",
+            "website": "",
+            "guardian_name": "",
+            "guardian_contact": ""
+        },
+        "education_details": [
+            {
+                "degree": "B.Sc",
+                "institution": "Example University",
+                "year_of_passing": 2020,
+                "grade": "A",
+                "specialization": "Computer Science",
+                "board": "State Board",
+                "school_name": "Example School",
+                "start_year": 2016,
+                "end_year": 2020,
+                "location": "City"
+            }
+        ],
+        "professional_details": [
+            {
+                "designation": "Engineer",
+                "company": "Example Corp",
+                "start_date": "2020-01-01",
+                "end_date": "Present",
+                "location": "City",
+                "skills": [
+                    "Python",
+                    "Data Analysis"
+                ],
+                "responsibilities": [
+                    "Development",
+                    "Testing"
+                ],
+                "achievements": [
+                    "Employee of the Month"
+                ],
+                "salary": 100000.0,
+                "employment_type": "Full-time",
+                "currently_working": true
+            }
+        ],
+        "bank_details": [
+            {
+                "bank_name": "Bank of Example",
+                "account_number": "123456789",
+                "ifsc_code": "EXAMP001",
+                "branch": "Main Branch",
+                "account_type": "Savings",
+                "upi_id": "john@upi",
+                "pan_number": "ABCDE1234F",
+                "swift_code": "",
+                "micr_code": "",
+                "nominee": ""
+            }
+        ]
+    }
+}

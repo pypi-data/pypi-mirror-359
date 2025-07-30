@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John Doe - Personal Info</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      padding-bottom: 5rem;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .download-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .section-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-bottom: 1px solid #e9ecef;
+      padding-bottom: 0.3rem;
+    }
+
+    .family-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tree-level {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tree-node {
+      background: #fff;
+      border: 2px solid #0d6efd;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 140px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-weight: 600;
+      color: #0d6efd;
+    }
+
+    .tree-node small {
+      display: block;
+      font-weight: normal;
+      color: #6c757d;
+      margin-top: 4px;
+    }
+
+    .tree-connector {
+      height: 20px;
+      border-left: 2px solid #dee2e6;
+      margin-bottom: -20px;
+    }
+
+    @media print {
+      .download-btn, .header {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <div class="header d-flex align-items-center justify-content-between">
+    <h1>John Doe's Personal Info</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4" id="pdf-content">
+
+    <!-- Family Tree Section -->
+    
+
+    <!-- Other Sections -->
+    
+
+    
+      
+        <div class="section-card">
+          <div class="section-header">Personal Information</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Full Name:</strong> 
+      
+        John Doe
+      
+    </li>
+          
+            <li><strong>Date of Birth:</strong> 
+      
+        1990-01-01
+      
+    </li>
+          
+            <li><strong>Age:</strong> 
+      
+        35
+      
+    </li>
+          
+            <li><strong>Email:</strong> 
+      
+        john@example.com
+      
+    </li>
+          
+            <li><strong>Height (cm):</strong> 
+      
+        180
+      
+    </li>
+          
+            <li><strong>Weight (kg):</strong> 
+      
+        75
+      
+    </li>
+          
+            <li><strong>BMI:</strong> 
+      
+        23.15
+      
+    </li>
+          
+            <li><strong>BMI Description:</strong> 
+      
+        Normal weight: Keep up the good work!
+      
+    </li>
+          
+            <li><strong>Blood Group:</strong> 
+      
+        O+
+      
+    </li>
+          
+            <li><strong>Aadhar Number:</strong> 
+      
+        1234-5678-9012
+      
+    </li>
+          
+            <li><strong>Address:</strong> 
+      
+        123 Main St, City, Country
+      
+    </li>
+          
+            <li><strong>Bio:</strong> 
+      
+        Software engineer with a passion for open source.
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Family</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Father:</strong> 
+      
+        John Sr.
+      
+    </li>
+          
+            <li><strong>Mother:</strong> 
+      
+        Jane Sr.
+      
+    </li>
+          
+            <li><strong>Siblings:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        Jake
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Spouse:</strong> 
+      
+        Jane Doe
+      
+    </li>
+          
+            <li><strong>Children:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        Junior
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Contact</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Phone Numbers:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        123-456-7890
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Email Addresses:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        john@example.com
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Native Place:</strong> 
+      
+        Hometown
+      
+    </li>
+          
+            <li><strong>Languages Known:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        English
+      
+    </li>
+          
+            <li>
+      
+        Hindi
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Communication Address:</strong> 
+      
+        123 Main St, City, Country
+      
+    </li>
+          
+            <li><strong>Linkedin:</strong> 
+      
+        john-linkedin
+      
+    </li>
+          
+            <li><strong>Facebook:</strong> 
+      
+        john-facebook
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Vehicles</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Vehicle Type:</strong> 
+      
+        Car
+      
+    </li>
+          
+            <li><strong>Make:</strong> 
+      
+        Brand
+      
+    </li>
+          
+            <li><strong>Model:</strong> 
+      
+        Sedan
+      
+    </li>
+          
+            <li><strong>Year:</strong> 
+      
+        2018
+      
+    </li>
+          
+            <li><strong>Registration Number:</strong> 
+      
+        XYZ 1234
+      
+    </li>
+          
+            <li><strong>Color:</strong> 
+      
+        Red
+      
+    </li>
+          
+            <li><strong>Insurance Number:</strong> 
+      
+        INS123456
+      
+    </li>
+          
+            <li><strong>Insurance Expiry:</strong> 
+      
+        2026-01-01
+      
+    </li>
+          
+            <li><strong>Mileage:</strong> 
+      
+        15000.0
+      
+    </li>
+          
+            <li><strong>Engine Number:</strong> 
+      
+        EN123456
+      
+    </li>
+          
+            <li><strong>Chassis Number:</strong> 
+      
+        CH123456
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Education</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Degree:</strong> 
+      
+        B.Sc
+      
+    </li>
+          
+            <li><strong>Institution:</strong> 
+      
+        Example University
+      
+    </li>
+          
+            <li><strong>Year Of Passing:</strong> 
+      
+        2020
+      
+    </li>
+          
+            <li><strong>Grade:</strong> 
+      
+        A
+      
+    </li>
+          
+            <li><strong>Specialization:</strong> 
+      
+        Computer Science
+      
+    </li>
+          
+            <li><strong>Board:</strong> 
+      
+        State Board
+      
+    </li>
+          
+            <li><strong>School Name:</strong> 
+      
+        Example School
+      
+    </li>
+          
+            <li><strong>Start Year:</strong> 
+      
+        2016
+      
+    </li>
+          
+            <li><strong>End Year:</strong> 
+      
+        2020
+      
+    </li>
+          
+            <li><strong>Location:</strong> 
+      
+        City
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Professional Experience</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Designation:</strong> 
+      
+        Engineer
+      
+    </li>
+          
+            <li><strong>Company:</strong> 
+      
+        Example Corp
+      
+    </li>
+          
+            <li><strong>Start Date:</strong> 
+      
+        2020-01-01
+      
+    </li>
+          
+            <li><strong>End Date:</strong> 
+      
+        Present
+      
+    </li>
+          
+            <li><strong>Location:</strong> 
+      
+        City
+      
+    </li>
+          
+            <li><strong>Skills:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        Python
+      
+    </li>
+          
+            <li>
+      
+        Data Analysis
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Responsibilities:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        Development
+      
+    </li>
+          
+            <li>
+      
+        Testing
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Achievements:</strong> 
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        Employee of the Month
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+            <li><strong>Salary:</strong> 
+      
+        100000.0
+      
+    </li>
+          
+            <li><strong>Employment Type:</strong> 
+      
+        Full-time
+      
+    </li>
+          
+            <li><strong>Currently Working:</strong> 
+      
+        True
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+      
+        <div class="section-card">
+          <div class="section-header">Bank Accounts</div>
+          
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li>
+      
+        <ul class="list-unstyled ps-3">
+          
+            <li><strong>Bank Name:</strong> 
+      
+        Bank of Example
+      
+    </li>
+          
+            <li><strong>Account Number:</strong> 
+      
+        123456789
+      
+    </li>
+          
+            <li><strong>Ifsc Code:</strong> 
+      
+        EXAMP001
+      
+    </li>
+          
+            <li><strong>Branch:</strong> 
+      
+        Main Branch
+      
+    </li>
+          
+            <li><strong>Account Type:</strong> 
+      
+        Savings
+      
+    </li>
+          
+            <li><strong>Upi Id:</strong> 
+      
+        john@upi
+      
+    </li>
+          
+            <li><strong>Pan Number:</strong> 
+      
+        ABCDE1234F
+      
+    </li>
+          
+        </ul>
+      
+    </li>
+          
+        </ul>
+      
+    
+        </div>
+      
+    
+
+  </div>
+
+  <!-- Download Button -->
+  <button class="btn btn-primary btn-lg rounded-pill shadow download-btn" onclick="downloadPDF()">
+    <i class="bi bi-download me-2"></i>Download PDF
+  </button>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("pdf-content");
+      const opt = {
+        margin: 0.5,
+        filename: 'john_doe_info.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+
+</body>
+</html>
