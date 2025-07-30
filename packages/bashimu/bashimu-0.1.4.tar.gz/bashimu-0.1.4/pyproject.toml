@@ -1,0 +1,37 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"] # Required for setuptools to be the build backend
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bashimu"
+version = "0.1.4"
+authors = [
+  { name="Wiktor Lukasik", email="contact@wiktor.io" },
+]
+description = "LLM chat"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [ # See https://pypi.org/classifiers/
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["example", "demo", "packaging"]
+dependencies = [ # List of required packages
+    "openai>=1.93.0",
+    "requests>=2.20.0",
+    "rich>=13.0.0",
+    "prompt_toolkit"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/wiktorjl/bashimu"
+"Bug Tracker" = "https://github.com/wiktorjl/bashimu/issues"
+
+[project.scripts]
+bashimu-cli = "bashimu:run_repl"
+
+[tool.setuptools]
+packages = ["bashimu"]

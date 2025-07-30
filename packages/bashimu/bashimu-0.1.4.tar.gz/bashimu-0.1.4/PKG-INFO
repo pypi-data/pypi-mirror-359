@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: bashimu
+Version: 0.1.4
+Summary: LLM chat
+Author-email: Wiktor Lukasik <contact@wiktor.io>
+Project-URL: Homepage, https://github.com/wiktorjl/bashimu
+Project-URL: Bug Tracker, https://github.com/wiktorjl/bashimu/issues
+Keywords: example,demo,packaging
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.93.0
+Requires-Dist: requests>=2.20.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: prompt_toolkit
+Dynamic: license-file
+
+<img src="img/bashimu.jpeg" alt="drawing" width="200"/>
+
+WIP

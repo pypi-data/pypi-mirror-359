@@ -1,0 +1,4 @@
+openai>=1.93.0
+requests>=2.20.0
+rich>=13.0.0
+prompt_toolkit
