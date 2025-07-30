@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+aiogram_fsm_storage.egg-info/PKG-INFO
+aiogram_fsm_storage.egg-info/SOURCES.txt
+aiogram_fsm_storage.egg-info/dependency_links.txt
+aiogram_fsm_storage.egg-info/requires.txt
+aiogram_fsm_storage.egg-info/top_level.txt
