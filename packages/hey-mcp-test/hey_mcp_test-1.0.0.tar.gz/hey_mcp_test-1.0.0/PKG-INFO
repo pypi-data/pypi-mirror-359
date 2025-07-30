@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: hey-mcp-test
+Version: 1.0.0
+Summary: hey MCP server.
+Author-email: Pradumna Saraf <pradumnasaraf@gmail.com>
+Requires-Python: >=3.13
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: mcp[cli]>=1.10.1
+Requires-Dist: requests
+Requires-Dist: twine>=6.1.0
+Description-Content-Type: text/markdown
+
+## He MCP Server

@@ -1,0 +1,22 @@
+[project]
+name = "hey-mcp-test"
+version = "1.0.0"
+description = "hey MCP server."
+readme = "README.md"
+authors = [
+    { name = "Pradumna Saraf", email = "pradumnasaraf@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "build>=1.2.2.post1",
+    "mcp[cli]>=1.10.1",
+    "requests",
+    "twine>=6.1.0",
+]
+
+[project.scripts]
+hey-mcp-test = "hey_mcp_test:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
