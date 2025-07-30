@@ -1,0 +1,6 @@
+videosdk/plugins/cerebras/__init__.py,sha256=eEvPnZnyW-6YiKhoVHrX3vgjsftyhQ0kiaDMN50a7ec,55
+videosdk/plugins/cerebras/llm.py,sha256=bT0lL3tRGS05P8KsRFpmsci70UgmWeNKoBxsr6XCRqg,7830
+videosdk/plugins/cerebras/version.py,sha256=9OK8yo7gxBYvFxF5sp_Pg19ucyUGzDpUXRaYqvJmYCQ,22
+videosdk_plugins_cerebras-0.0.19.dist-info/METADATA,sha256=_AGYTIt5g40ww-lnRQDnIZ74WKzAohSew3t0PgpQUVY,790
+videosdk_plugins_cerebras-0.0.19.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+videosdk_plugins_cerebras-0.0.19.dist-info/RECORD,,
