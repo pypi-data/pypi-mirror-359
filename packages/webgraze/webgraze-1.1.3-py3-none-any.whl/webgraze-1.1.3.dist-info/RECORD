@@ -1,0 +1,14 @@
+graze/__init__.py,sha256=ThjZG7kZJ2d970Gr-7df7uMt3F2wLy0sXD81oig0hbs,249
+graze/_britannica.py,sha256=9KJwK24AsDx-KX113QBHSbwgNoq-8WJFhkFXJxcjgDs,8103
+graze/_freesound.py,sha256=GLowVhB5sALi2GWoybme5rmuzqtwz0hUAvdzfNjkN-0,3423
+graze/_pexels.py,sha256=Now2TPTo6qKBBuS2hQs9ZW30DXKwVchbP4UvYlKJj4Y,3341
+graze/_transcripts.py,sha256=QxyBWV2ioLOmOOGAPzTGJ-MHYXel6g4aWCfchDhfouw,4937
+graze/_unsplash.py,sha256=8diF4RBnwIob_wMTuXtJwn9vNu8MNKXm3PMn0vZISWU,3577
+graze/_wiki.py,sha256=vTcmk6Opt3RtSzGwmT3E44DGKH2NSF4ZZPhrawysyo4,4377
+graze/queries.py,sha256=Nam-rfTQo8iPqM6o_fuo_nt8M0AYaZslx1KoAKucfpM,788
+graze/topics.json,sha256=1QR8D_0g0fo1chVBla4gYcKL48FDM77XOQwtRFPC3IA,14413
+webgraze-1.1.3.dist-info/licenses/LICENSE,sha256=CCCxZqLJ1Rv2LuJhlnhXBOV_HYTkH-UVB6VbCgePwao,1093
+webgraze-1.1.3.dist-info/METADATA,sha256=EjDTo0iahgt515VbVxbV6o9sEjn8xL7KyDNQxg44NxA,10056
+webgraze-1.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+webgraze-1.1.3.dist-info/top_level.txt,sha256=RlJoPyvbA5vsomqvTzXdlYFJjRYQNXd_CwEBdSXZzhs,6
+webgraze-1.1.3.dist-info/RECORD,,
