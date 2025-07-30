@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "uv-required-version"
+version = "1.0.0"
+description = "Run uv with a specific version if required-version is set in the uv config file."
+readme = "README.md"
+authors = [
+  {name = "Justin Flannery", email = "justin.flannery@juftin.com"}
+]
+requires-python = ">=3.9,<4"
+dependencies = [
+  "tomli>=1.1.0; python_version<'3.11'",
+  "uv>=0.5.14"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+
+[project.scripts]
+uv-required-version = "uv_required_version:cli"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.1",
+  "pytest-cov>=6.2.1",
+  "ruff>=0.12.1"
+]
+
+[tool.uv]
+required-version = ">=0.7.14"
+
+[tool.ruff.lint]
+extend-select = ["I"]

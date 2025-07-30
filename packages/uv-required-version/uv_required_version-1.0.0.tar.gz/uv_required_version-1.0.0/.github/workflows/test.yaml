@@ -1,0 +1,19 @@
+name: test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup-uv
+        uses: astral-sh/setup-uv@v6
+      - name: sync
+        run: uv sync
+      - name: test
+        run: uv run pytest --cov --cov-report=term-missing -vv

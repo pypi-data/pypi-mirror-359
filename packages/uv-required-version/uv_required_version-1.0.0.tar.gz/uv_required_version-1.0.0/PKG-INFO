@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: uv-required-version
+Version: 1.0.0
+Summary: Run uv with a specific version if required-version is set in the uv config file.
+Author-email: Justin Flannery <justin.flannery@juftin.com>
+License-File: LICENSE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: <4,>=3.9
+Requires-Dist: tomli>=1.1.0; python_version < '3.11'
+Requires-Dist: uv>=0.5.14
+Description-Content-Type: text/markdown
+
+# uv-required-version
+
+<p>
+  <a href="https://github.com/juftin/uv-required-version"><img src="https://img.shields.io/pypi/v/uv-required-version?color=blue&label=%E2%9A%A1%20uv-required-version" alt="PyPI"></a>
+  <a href="https://pypi.python.org/pypi/uv-required-version/"><img src="https://img.shields.io/pypi/pyversions/uv-required-version" alt="PyPI - Python Version"></a>
+  <a href="https://github.com/juftin/uv-required-version/blob/main/LICENSE"><img src="https://img.shields.io/github/license/juftin/uv-required-version?color=blue" alt="GitHub License"></a>
+  <a href="https://github.com/juftin/uv-required-version/actions/workflows/test.yaml?query=branch%3Amain"><img src="https://github.com/juftin/uv-required-version/actions/workflows/test.yaml/badge.svg?branch=main" alt="Testing Status"></a>
+  <a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json" alt="uv"></a>
+</p>
+
+`uv-required-version` is a command line wrapper around [uv](https://github.com/astral-sh/uv)
+that respects the [required-version](https://docs.astral.sh/uv/reference/settings/#required-version)
+setting in your `pyproject.toml` / `uv.toml` file.
+
+When `uv-required-version` detects a `required-version` setting, instead of running
+`uv` directly it will run `uv tool run "uv==<required-version>" <commands>`, ensuring that the
+correct version of `uv` is used.
+
+Ideally, the functionality of this tool would be integrated into `uv` itself
+(see [astral-sh/uv#11065](https://github.com/astral-sh/uv/issues/11065)) - until then
+you can use `uv-required-version`.
+
+## Usage
+
+```shell
+uv tool install uv-required-version
+```
+
+```shell
+uv-required-version sync
+```
