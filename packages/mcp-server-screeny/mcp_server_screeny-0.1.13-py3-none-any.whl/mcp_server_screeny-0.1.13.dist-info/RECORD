@@ -1,0 +1,9 @@
+screeny/__init__.py,sha256=QfATi2kvUuxl2z5BIAdCx7OwwGUWjWGdYzyJbU6FAQQ,1180
+screeny/__main__.py,sha256=cG-6UVIIyEpZwUMJdKT4aoseFqcbFHXDYdQ1hcKHpFE,236
+screeny/image_compression.py,sha256=r53XQFY-X0VQtim5IlRKyoju0opETrVyZbyO0Cg86Is,3013
+screeny/server.py,sha256=9v9LEnLI4Oq9LpV8rXVijft3kT-2cfjx-LOMEgVqOII,19576
+mcp_server_screeny-0.1.13.dist-info/METADATA,sha256=-8I5sV7elPj-drNSsdncaEwCNu7e-9lX-uQX3GXA8OA,8185
+mcp_server_screeny-0.1.13.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_server_screeny-0.1.13.dist-info/entry_points.txt,sha256=j530oCVE4VbCeXkGQDOZasY8YUMtY2cS50cF5PsIJ1g,61
+mcp_server_screeny-0.1.13.dist-info/licenses/LICENSE,sha256=ixrZIWeyptDXo0UbWvXsoOEp95IQbWhHU0SvzZc5m9c,1076
+mcp_server_screeny-0.1.13.dist-info/RECORD,,
