@@ -1,0 +1,17 @@
+coordax/__init__.py,sha256=Bjd8OWzjv15_KXath9lGy9XbuAMEMIsSOW1ixIkjBm8,1615
+coordax/coordinate_systems.py,sha256=3xSCgeUG-U7gvUt6J1SGIFupTLz1BCSrwjXr664fAzk,17067
+coordax/coordinate_systems_test.py,sha256=XVAhWP7cCWDvgObZmzD0KSrmd169QSO-8hVyvnloMVY,10035
+coordax/fields.py,sha256=1y_Rf5AIRykdjc_7CTDHtOekK12FQglt9FdZez3xEKA,25717
+coordax/fields_test.py,sha256=obFjH58I-q8XCzMTozA-A4h0x707EIQI9zWl-7twbIU,23009
+coordax/jax_datetime_integration_test.py,sha256=fHd-gnXYqZXt3JS65X0dXJdHlRZxr1eKqKQth2yZW-A,2028
+coordax/named_axes.py,sha256=r9p2anbPyxh_O5mmR-usqG7-2pP8CEihABaWNJnkBeQ,33311
+coordax/named_axes_test.py,sha256=3hwNc1CgcltMbJfUIW43sbxLUDLdEjzswG4uMKZIuZE,33568
+coordax/ndarrays.py,sha256=Icg2fg1zyBSEEvpbVCTSp2s36m6gP75mShH2RG0eBbw,4307
+coordax/testing.py,sha256=dX8m0MLRwwyJ1WC3RjZals6lnm7WdLpmZMBh2T6k-ls,2279
+coordax/utils.py,sha256=i7jG2Jfnlx3jp_rIZUQnraEUZPrgSmky6mOT0sSC2wA,724
+coordax/xarray_test.py,sha256=hcpaMTDLw9Qyl4TQDaMgdPgwib5Mw_r1vHe0uBJq2Qk,8108
+coordax-0.1.2.dist-info/licenses/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+coordax-0.1.2.dist-info/METADATA,sha256=rwxLHXDy8JXr1E1udElBsoOByi5YEL0Uyss1c6DlBAE,2509
+coordax-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+coordax-0.1.2.dist-info/top_level.txt,sha256=vltn7IimqMZ4B13Xc1bEu971IcxtaaGHLRcvu5Ub7Wg,8
+coordax-0.1.2.dist-info/RECORD,,
