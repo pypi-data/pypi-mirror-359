@@ -1,0 +1,10 @@
+openai>=0.28.0
+pandas>=2.2.0
+plotly>=5.0.0
+google-generativeai>=0.8.0
+
+[dev]
+pytest
+pytest-cov
+black
+isort

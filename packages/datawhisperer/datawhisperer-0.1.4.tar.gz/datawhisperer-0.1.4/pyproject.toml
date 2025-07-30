@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datawhisperer"
+version = "0.1.4"
+description = "Natural language interface for DataFrames using LLMs"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+  { name = "JosueARz", email = "josueayalaruiz@gmail.com" }
+]
+requires-python = ">=3.8"
+keywords = ["LLM", "DataFrame", "pandas", "chatbot", "OpenAI", "Gemini"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11"
+]
+dependencies = [
+  "openai>=0.28.0",
+  "pandas>=2.2.0",
+  "plotly>=5.0.0",
+  "google-generativeai>=0.8.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-cov",
+  "black",
+  "isort"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/JosueARz/datawhisperer"
+"Bug Tracker" = "https://github.com/JosueARz/datawhisperer/issues"
+
+[tool.setuptools.packages.find]
+include = ["datawhisperer*"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=datawhisperer --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310"]
+
+[tool.isort]
+profile = "black"
