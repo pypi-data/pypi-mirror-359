@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: docxfill
+Version: 1.0.5
+Summary: Fill text and images into .docx files from placeholders.
+Author-email: ThuyHangNguyen <littlenysvcs@gmail.com>
+License: MIT
+Project-URL: Source, https://github.com/ThuyHangNguyen/docxfill
+Project-URL: Bug Tracker, https://github.com/ThuyHangNguyen/docxfill/issues
+Project-URL: Documentation, https://github.com/ThuyHangNguyen/docxfill#readme
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-docx
+Requires-Dist: openpyxl
+Provides-Extra: testing
+Requires-Dist: pytest; extra == "testing"
+Dynamic: license-file
+
+# DocxFill
+
+`docxfill` lets you:
+
+✅ Fill `{{placeholders}}` in `.docx` files with **text or images**  
+✅ Fill `{{placeholders}}` in **chart files** within `.docx`  
+✅ Preserve existing **comments** in `.docx` documents
+
+## Installation
+
+```bash
+pip install docxfill
