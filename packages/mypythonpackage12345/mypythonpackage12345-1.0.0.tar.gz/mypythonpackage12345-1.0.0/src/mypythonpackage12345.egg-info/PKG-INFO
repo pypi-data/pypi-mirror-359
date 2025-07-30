@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: mypythonpackage12345
+Version: 1.0.0
+Summary: Python code package
+Author: Isabella Abbate
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+This package contains the Python code for the Basic Programming Quest.

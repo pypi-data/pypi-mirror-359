@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+src/mypythonpackage12345/__init__.py
+src/mypythonpackage12345/task7.py
+src/mypythonpackage12345/tasks1-4.py
+src/mypythonpackage12345/tasks5-6.py
+src/mypythonpackage12345/tasks8-9.py
+src/mypythonpackage12345.egg-info/PKG-INFO
+src/mypythonpackage12345.egg-info/SOURCES.txt
+src/mypythonpackage12345.egg-info/dependency_links.txt
+src/mypythonpackage12345.egg-info/top_level.txt
