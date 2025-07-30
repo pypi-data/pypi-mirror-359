@@ -1,0 +1,40 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "Jupyter Fsspec",
+  "description": "Settings for the jupyter-fsspec extension.",
+  "type": "object",
+  "properties": {
+    "logLevel": {
+      "type": "string",
+      "title": "Log Level",
+      "description": "Set the verbosity of logging (none, error, warn, info, debug)",
+      "enum": ["none", "error", "warn", "info", "debug"],
+      "default": "info"
+    }
+  },
+  "additionalProperties": false,
+  "jupyter.lab.menus": {
+    "main": [
+      {
+        "id": "jp-mainmenu-view",
+        "items": [
+          {
+            "command": "jupyter_fsspec:open",
+            "rank": 0
+          },
+          {
+            "type": "separator",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "context": [
+      {
+        "command": "jupyter_fsspec:filebrowser-context-upload",
+        "selector": ".jp-DirListing-item",
+        "rank": 100
+      }
+    ]
+  }
+}
