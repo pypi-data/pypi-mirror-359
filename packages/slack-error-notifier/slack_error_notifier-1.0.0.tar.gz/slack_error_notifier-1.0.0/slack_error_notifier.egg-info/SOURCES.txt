@@ -1,0 +1,7 @@
+setup.py
+slack_error_notifier.py
+slack_error_notifier.egg-info/PKG-INFO
+slack_error_notifier.egg-info/SOURCES.txt
+slack_error_notifier.egg-info/dependency_links.txt
+slack_error_notifier.egg-info/requires.txt
+slack_error_notifier.egg-info/top_level.txt
