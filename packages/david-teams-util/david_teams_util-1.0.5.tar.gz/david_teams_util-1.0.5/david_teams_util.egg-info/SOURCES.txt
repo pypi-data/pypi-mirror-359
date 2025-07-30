@@ -1,0 +1,10 @@
+README.md
+setup.py
+david_teams_util.egg-info/PKG-INFO
+david_teams_util.egg-info/SOURCES.txt
+david_teams_util.egg-info/dependency_links.txt
+david_teams_util.egg-info/entry_points.txt
+david_teams_util.egg-info/requires.txt
+david_teams_util.egg-info/top_level.txt
+teams_util/__init__.py
+teams_util/teams.py
