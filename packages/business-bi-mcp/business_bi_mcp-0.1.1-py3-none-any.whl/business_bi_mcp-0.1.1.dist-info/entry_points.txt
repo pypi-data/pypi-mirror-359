@@ -1,0 +1,5 @@
+[console_scripts]
+bi-mcp = main:main
+bi-mcp-http = main_sse:main
+business-bi-mcp = main:main
+business-bi-mcp-http = main_sse:main
