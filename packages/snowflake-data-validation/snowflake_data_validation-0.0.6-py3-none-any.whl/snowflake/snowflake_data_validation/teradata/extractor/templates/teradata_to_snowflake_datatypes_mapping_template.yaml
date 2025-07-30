@@ -1,0 +1,6 @@
+# Common Teradata types (placeholder mappings)
+INTEGER: NUMBER
+VARCHAR: VARCHAR
+DECIMAL: NUMBER
+DATE: DATE
+TIMESTAMP: TIMESTAMP_NTZ 
