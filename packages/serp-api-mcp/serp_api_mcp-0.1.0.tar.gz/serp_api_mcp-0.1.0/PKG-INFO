@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: serp-api-mcp
+Version: 0.1.0
+Summary: MCP server for Google search using SERPAPI
+Project-URL: Homepage, https://github.com/lukelanterme/serp-api-mcp
+Project-URL: Repository, https://github.com/lukelanterme/serp-api-mcp
+Project-URL: Issues, https://github.com/lukelanterme/serp-api-mcp/issues
+Author-email: Luke Lanterme <llanterme@gmail.com>
+License: MIT
+Keywords: google,mcp,model-context-protocol,search,serpapi
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP :: Indexing/Search
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Requires-Dist: fastmcp
+Requires-Dist: httpx
+Requires-Dist: pydantic
+Requires-Dist: python-dotenv
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: mcp[cli]>=1.10.1; extra == 'dev'
