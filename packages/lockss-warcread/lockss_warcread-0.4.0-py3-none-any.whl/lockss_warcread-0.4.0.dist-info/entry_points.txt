@@ -1,0 +1,3 @@
+[console_scripts]
+warcread=lockss.warcread.cli:main
+
