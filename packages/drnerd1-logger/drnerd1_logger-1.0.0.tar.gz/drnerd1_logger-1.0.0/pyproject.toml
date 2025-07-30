@@ -1,0 +1,18 @@
+[project]
+name = "drnerd1-logger"
+version = "1.0.0"
+description = "A custom colored logger with ANSI support"
+authors = [
+  { name="Ron Roitburg", email="ronroitburg@gmail.com" }
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "colorlog",
+    "colorama"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
