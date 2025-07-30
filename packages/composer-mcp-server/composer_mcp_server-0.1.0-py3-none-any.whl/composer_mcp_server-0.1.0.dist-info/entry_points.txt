@@ -1,0 +1,2 @@
+[console_scripts]
+composer-mcp-server = composer_mcp_server.server:main
