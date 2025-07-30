@@ -1,0 +1,5 @@
+recursive-include docs *.md
+include requirements.txt
+recursive-include examples *.py
+recursive-include formatters *.py
+recursive-include handlers *.py
