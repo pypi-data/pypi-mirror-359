@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yrwatertemperatures"
+dynamic = ["version"]
+description = "A Python client to fetch water temperatures in Norway from YR.no."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Jørn Pettersen", email = "joern.pettersen@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+]
+dependencies = [
+    "requests>=2.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jornpe/yr-norwegian-water-temperatures"
+"Bug Tracker" = "https://github.com/jornpe/yr-norwegian-water-temperatures/issues"
+
+[tool.setuptools]
+packages = ["yrwatertemperatures"]
+
+[tool.setuptools.package-data]
+yrwatertemperatures = ["py.typed"]
+
+[tool.setuptools_scm]
+write_to = "yrwatertemperatures/_version.py"
