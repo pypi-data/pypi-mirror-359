@@ -1,0 +1,7 @@
+pillow~=11.1
+bitstring~=4.3
+
+[dev]
+setuptools>=69
+build~=1.2
+twine~=6.0
