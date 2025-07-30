@@ -1,0 +1,17 @@
+sferriol/python/__init__.py,sha256=0xEJUOwjpmNdaFrWL2jbdavbpq5_DJFyVFUmaE81Gg4,1809
+sferriol/python/asyncio.py,sha256=V49BGtYk285uPxIAAnKCKpPb4vkgUKR-wtRPDmeNiKw,431
+sferriol/python/env.py,sha256=Roif6KTT4o791v6tXYUwqSqL6fGzZJXrzpjUmJXtcQM,895
+sferriol/python/json.py,sha256=tBtr9g8o_rFb8eLcCQBCSOPpQ-DQdEjj8do-KyqB9VE,554
+sferriol/python/net.py,sha256=kA34C9yN2ApTtiBirDXC0WEgNYV10ldM9LRkKzDBx44,3461
+sferriol/python/object.py,sha256=oFTgbZq8OC9MmAbiiwgYRYKz5Yk9R5QSSjfZ8uCAm5U,1239
+sferriol/python/os_.py,sha256=fzURDMgKQEn_geH_6alL_lXwwTJvu-HkrQLrMjTzbbg,213
+sferriol/python/pkg.py,sha256=JxVTePX_udmI6gsJH8eEWW4xY7vbNzLA9-UO6T6qaAM,480
+sferriol/python/dictionary/__init__.py,sha256=jFlBw_8AZ3bLH5TD03lqjvoHN_JXmcOsACVX7oPbMgw,2036
+sferriol/python/test/pkg/__init__.py,sha256=VtNkKKsY7zKuXGK1Agq2gNJ4aSZjZMEskPGSuExAvL8,59
+sferriol/python/test/pkg/toto.py,sha256=jiwtZPwJudwxx-vojvgVwjPIEVVQQWhX3ua1OAOaJPw,16
+sferriol/python/test/pkg/tutu.py,sha256=ho22enerDO_bfLEl0C2mBpfhC9Aw6oe-AumtypD8Kl8,18
+sferriol_python-0.8.1.dist-info/licenses/LICENSE,sha256=awOCsWJ58m_2kBQwBUGWejVqZm6wuRtCL2hi9rfa0X4,1211
+sferriol_python-0.8.1.dist-info/METADATA,sha256=PKcma2cTsXwbHKyVU0_U-HSG2HdG8vrP3NfZnS3vl50,769
+sferriol_python-0.8.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sferriol_python-0.8.1.dist-info/top_level.txt,sha256=OZwPBarx0XWpgPVyXyHb5Aoe-RjU5Q0vkqE9AwXNxtM,9
+sferriol_python-0.8.1.dist-info/RECORD,,
