@@ -1,0 +1,47 @@
+[project]
+name = "hypline"
+version = "0.2.4"
+description = "Data Cleaning and Analysis Pipeline for Hyperscanning Research"
+readme = "README.md"
+authors = [
+    { name = "Sangyoon Park", email = "datumvitae@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "dill>=0.3.9",
+    "nibabel>=5.3.2",
+    "nilearn>=0.11.1",
+    "numpy>=2.2.4",
+    "polars>=1.26.0",
+    "pydantic>=2.10.6",
+    "pyyaml>=6.0.2",
+    "rich>=14.0.0",
+    "typer>=0.15.2",
+]
+
+[project.urls]
+Repository = "https://github.com/princeton-ddss/hypline"
+Documentation = "https://princeton-ddss.github.io/hypline/latest/"
+
+[project.scripts]
+hypline = "hypline:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mkdocs-material>=9.6.11",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "pytest-mock>=3.14.1",
+]
+
+[tool.ruff.lint]
+select = [
+    "F",    # Pyflakes rules
+    "W",    # PyCodeStyle warnings
+    "E",    # PyCodeStyle errors
+    "I",    # Sort imports properly
+]
