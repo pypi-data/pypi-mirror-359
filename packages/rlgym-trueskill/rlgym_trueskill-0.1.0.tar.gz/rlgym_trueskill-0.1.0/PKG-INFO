@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: rlgym-trueskill
+Version: 0.1.0
+Summary: A Python package for TrueSkill-based ranking in RLGym environments
+Author: chrisrca, ericle85
+License: Copyright 2025 chrisrca
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        
+Project-URL: Repository, https://github.com/chrisrca/rlgym-trueskill
+Keywords: rlgym,trueskill,rocket-league,ranking
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.9.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rlgym==2.0.1
+Requires-Dist: trueskill==0.4.5
+Requires-Dist: setuptools
+Requires-Dist: wheel
+Requires-Dist: build
+Requires-Dist: twine
+Requires-Dist: pytest
+Dynamic: license-file
+
+# rlgym-trueskill
+
+A Python package for implementing TrueSkill-based ranking in RLGym environments.
+
+Installation:
+
+    pip install rlgym-trueskill
+
+# Development Setup:
+
+- Install [Anaconda](https://www.anaconda.com/download/success), we use this to create consistent environments.
+- ```conda-env.bat``` to create rlgym-trueskill python environment.
+- ```build.bat``` to build to wheel.

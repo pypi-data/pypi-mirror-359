@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+rlgym_trueskill/__init__.py
+rlgym_trueskill/trueskillworkers.py
+rlgym_trueskill.egg-info/PKG-INFO
+rlgym_trueskill.egg-info/SOURCES.txt
+rlgym_trueskill.egg-info/dependency_links.txt
+rlgym_trueskill.egg-info/requires.txt
+rlgym_trueskill.egg-info/top_level.txt
+tests/test_trueskillworker.py
