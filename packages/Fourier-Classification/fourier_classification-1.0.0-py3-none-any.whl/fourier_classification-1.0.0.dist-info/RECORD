@@ -1,0 +1,11 @@
+fourier_classification/__init__.py,sha256=R09I0p4tBkmBSa9JIbf5cb5TBP5vRRCWPSdNjxIfYsU,566
+fourier_classification/fourier.py,sha256=mjXcVNY6LTPWqsTRjTX8ivDC8vBDT8JA5E3xxZukS_w,6154
+fourier_classification/models.py,sha256=bdPJJx5-yZ06R4ByBw1oM9Lv22PM1bgI__wqEh9Zy8Q,8218
+fourier_classification/operations.py,sha256=TXIX36yLfCCqvTsnEnEOiTfObVfH2u6DVd96qFa9CTQ,1974
+fourier_classification/signals.py,sha256=FZKz3-I6oYnlX0i3g64dqOpdBNUeMPKDm56M2cU-URM,19073
+fourier_classification/utils.py,sha256=0T0Da3duamddSVHK5kTwjSrt3lAlmRtBa23aK6Si6Ro,4693
+fourier_classification/visualization.py,sha256=U9sI7fZ88ok4BBgyeb4KDWMWPmn3KVK81YwLuU0mN90,9447
+fourier_classification-1.0.0.dist-info/METADATA,sha256=_MLzYLE-O-Sbatze1n4lPte8MfES1U5jFRWQsH55ubI,4237
+fourier_classification-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fourier_classification-1.0.0.dist-info/top_level.txt,sha256=av2thGzsP6FcdQa8O2afWax4zIu-P-jGj05qfj0E39o,23
+fourier_classification-1.0.0.dist-info/RECORD,,
