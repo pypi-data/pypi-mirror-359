@@ -1,0 +1,15 @@
+analytics_ingest/__init__.py,sha256=EHaqFaPxOeDNv15KzTrjKOIQ-4Kb2AjnKJxUfbaNiks,85
+analytics_ingest/ingest_client.py,sha256=kgh9e0GVeC4N4qkzZR56Yn2RM_RqkyXPBCpldcHg-NM,4998
+analytics_ingest/internal/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+analytics_ingest/internal/batching.py,sha256=ylCFJm7Bo4JFGs3TP-HYUosJpsbL6pbBpNlhi2JMoFA,449
+analytics_ingest/internal/graphql_executor.py,sha256=BEpvAK0YIEqgQDDjXNIYBrZfb1VfxBTS7eNcUvdxbaA,1306
+analytics_ingest/internal/message_utils.py,sha256=XSw6hGldXHU7ozmAQKgE5lcQBxCHTOa18SVdfd4Hf2E,925
+analytics_ingest/internal/mutations.py,sha256=i-DPc_XZF9l84V9AmxcJ8aoHM22dIp-D94TGXZE90yc,1232
+factories/__init__.py,sha256=ZrEwavg-6Pd6cj-uPc_Xd9R6__yYmUMGD34dfeS4Mxs,194
+factories/configuration.py,sha256=nei-nnq2Y2RQQezeUGiP9VqACVkfK4zPi8kzvLzp7vs,550
+factories/message.py,sha256=xVw5XRZ43Cs0vj2bLHNYxGc_9QOMPd-almB6H5PchVE,637
+factories/signal.py,sha256=ng8nolsk5eMahV1dXgGvJ5pakKnJiGw9W-qgu56exAY,971
+analytics_ingest-0.1.4.dist-info/METADATA,sha256=XSxHynI9dAIPR_WAmxo55c70D6KEe7QYSNOIDU3AKWQ,1099
+analytics_ingest-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+analytics_ingest-0.1.4.dist-info/top_level.txt,sha256=SSaHIk3V55_kvJGdVYLZUIP5tJVdSibTLt1rFtqKN00,27
+analytics_ingest-0.1.4.dist-info/RECORD,,
