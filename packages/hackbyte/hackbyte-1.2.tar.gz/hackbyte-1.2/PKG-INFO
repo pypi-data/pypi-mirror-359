@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: hackbyte
+Version: 1.2
+Summary: Memory scan and edit in simple Python CLI style.
+Author: Dx4Grey
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary
