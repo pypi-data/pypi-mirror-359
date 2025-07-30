@@ -1,0 +1,20 @@
+div.activitystream {
+  display: table;
+  width: 100%;
+}
+
+div.activitystream span.author {
+  display: table-cell;
+  width: 10%;
+}
+
+div.activitystream span.msgtxt {
+}
+
+div.activitystream span.meta {
+  display: table-cell;
+  width: 20%;
+}
+
+div.activitystream span.meta a {
+}
