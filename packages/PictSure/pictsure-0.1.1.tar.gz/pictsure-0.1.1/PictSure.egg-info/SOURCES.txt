@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+Examples/example.py
+PictSure/__init__.py
+PictSure/model_PictSure.py
+PictSure/model_ViT.py
+PictSure/model_embeddings.py
+PictSure.egg-info/PKG-INFO
+PictSure.egg-info/SOURCES.txt
+PictSure.egg-info/dependency_links.txt
+PictSure.egg-info/entry_points.txt
+PictSure.egg-info/requires.txt
+PictSure.egg-info/top_level.txt
