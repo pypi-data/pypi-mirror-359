@@ -1,0 +1,16 @@
+typer>=0.15.0
+pydantic>=2.11.0
+psutil>=7.0.0
+tree-sitter>=0.21.0
+py-tree-sitter-spthy>=1.1.2
+
+[dev]
+black>=25.1.0
+isort>=6.0.1
+autoflake>=2.3.1
+pre-commit>=4.2.0
+pytest>=8.3.5
+build>=1.0.0
+twine>=4.0.0
+setuptools>=61.0
+wheel>=0.40.0
