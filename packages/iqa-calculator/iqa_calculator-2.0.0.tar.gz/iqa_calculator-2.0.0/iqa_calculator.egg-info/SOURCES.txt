@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+IQA/__init__.py
+IQA/iqa_calculator.py
+iqa_calculator.egg-info/PKG-INFO
+iqa_calculator.egg-info/SOURCES.txt
+iqa_calculator.egg-info/dependency_links.txt
+iqa_calculator.egg-info/top_level.txt
+tests/test_iqa_calculator.py
