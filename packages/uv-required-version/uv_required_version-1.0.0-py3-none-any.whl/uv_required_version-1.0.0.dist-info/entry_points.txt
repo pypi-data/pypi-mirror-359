@@ -1,0 +1,2 @@
+[console_scripts]
+uv-required-version = uv_required_version:cli
