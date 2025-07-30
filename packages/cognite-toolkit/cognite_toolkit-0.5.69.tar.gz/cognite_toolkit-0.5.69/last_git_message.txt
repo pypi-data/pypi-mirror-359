@@ -1,0 +1,29 @@
+ [CDF-24921] 👻 Raw profiler try 2 (#1663)
+
+# Description
+
+Stacked on <del> #1653 #1655 #1660 #1664 </del>
+
+In the migration work, we need to have a simple way of understanding the
+data flow of a project. This profiling command gives a quick overview.
+
+Example output from real project.
+
+![image](https://github.com/user-attachments/assets/96bd96f2-8d86-47cf-ae6b-5eb1e47c5505)
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Added
+
+- [alpha] `cdf profile raw` command for profiling all raw tables that
+writes to a given destination.
+
+## templates
+
+No changes.
