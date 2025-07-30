@@ -1,0 +1,2 @@
+[console_scripts]
+wirelesssgx = wirelesssgx.app:main
