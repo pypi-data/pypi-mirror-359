@@ -1,0 +1,11 @@
+semantic_prompt_packager/__init__.py,sha256=XSPiN5PxpFp27m60l11CoS5m_KM6hQFgVaeU-4AQTzc,128
+semantic_prompt_packager/cli.py,sha256=NULeiqkfQYkP5-fjm-4NzA30SrH1M89wgx15nXiyy5E,4401
+semantic_prompt_packager/core.py,sha256=TX_BdzXfRnFzv0eLJMmFRTXa9h46VCkNBo22JzGJl9Q,5107
+semantic_prompt_packager/embedding.py,sha256=-N9MVAzxzr71-StlfijWqCVTvc0CwnOY5s7jHBFuQ9o,2318
+semantic_prompt_packager/manifest.py,sha256=kCPqsGfLHhCPWk8_HmRlD1uZ7S2-9sqC1ggjBvokomo,1091
+semantic_prompt_packager/schema.json,sha256=SeiShS0muiTeH1bQZajD_4AQiVRSb8Nwk9csMJ3PM3o,1212
+llm_prompt_semantic_diff-0.1.0.dist-info/METADATA,sha256=53Ox29TzW1H86eCenE9J-183lPlk9TwymOUm5Zrbv9w,5761
+llm_prompt_semantic_diff-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+llm_prompt_semantic_diff-0.1.0.dist-info/entry_points.txt,sha256=kawxWZDJXNTzQRLiBL9MIcd34fuwQlqETloLADt-LkI,60
+llm_prompt_semantic_diff-0.1.0.dist-info/licenses/LICENSE,sha256=Mndt75cTbMJrkz32bA450a8eFECz2LRW-wZg_ZpDu9o,1094
+llm_prompt_semantic_diff-0.1.0.dist-info/RECORD,,
