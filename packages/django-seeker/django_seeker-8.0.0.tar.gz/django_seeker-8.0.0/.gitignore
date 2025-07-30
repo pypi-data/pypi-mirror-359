@@ -1,0 +1,16 @@
+*.pyc
+
+.pydevproject
+.settings
+
+build
+dist
+*.egg-info
+
+docs/_build/
+
+.DS_Store
+
+.idea/
+
+git_commit_message.txt
