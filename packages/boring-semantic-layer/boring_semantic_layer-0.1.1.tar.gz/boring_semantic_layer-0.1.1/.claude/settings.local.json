@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/test_semantic_mcp.py -v)",
+      "Bash(pip install:*)",
+      "Bash(grep:*)",
+      "Bash(python -m pytest tests/test_semantic_mcp.py::TestQueryModelTool::test_query_model_invalid_order_by -v)",
+      "mcp__flight_sm__get_time_range",
+      "mcp__flight_sm__query_model",
+      "mcp__flight_sm__list_models",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}
