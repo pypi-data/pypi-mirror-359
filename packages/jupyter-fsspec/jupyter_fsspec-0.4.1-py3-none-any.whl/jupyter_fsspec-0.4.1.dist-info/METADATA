@@ -1,0 +1,163 @@
+Metadata-Version: 2.4
+Name: jupyter_fsspec
+Version: 0.4.1
+Summary: A Jupyter interface for fsspec.
+Project-URL: Homepage, https://github.com/fsspec/jupyter-fsspec
+Project-URL: Bug Tracker, https://github.com/fsspec/jupyter-fsspec/issues
+Project-URL: Repository, https://github.com/fsspec/jupyter-fsspec.git
+Author: Jupyter Fsspec contributors
+License: BSD 3-Clause License
+        
+        Copyright (c) 2024, Jupyter fsspec contributors
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Keywords: jupyter,jupyterlab,jupyterlab-extension
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 4
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Requires-Dist: fsspec
+Requires-Dist: jupyter-server<3,>=2.4.0
+Requires-Dist: pydantic>=2
+Provides-Extra: dev
+Requires-Dist: hatch; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: ruff==0.7.2; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: myst-parser; extra == 'docs'
+Requires-Dist: sphinx; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: aiobotocore<3.0.0,>=2.5.4; extra == 'test'
+Requires-Dist: boto3; extra == 'test'
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: fsspec; extra == 'test'
+Requires-Dist: moto[server]>=5; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-asyncio; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Requires-Dist: pytest-jupyter; extra == 'test'
+Requires-Dist: s3fs; extra == 'test'
+Description-Content-Type: text/markdown
+
+# jupyter_fsspec
+
+[![Github Actions Status](https://github.com/fsspec/jupyter-fsspec/workflows/Build/badge.svg)](https://github.com/fsspec/jupyter-fsspec/actions/workflows/build.yml)
+
+Welcome to the `jupyter_fsspec` repo, a Jupyter extension for the `fsspec` Python library.
+Browse your fsspec filesystems in Jupyter, copy files and paths and otherwise interact with
+your data in the Jupyter interface and inside your notebooks.
+
+![jupyter-fsspec preview](docs/_static/jupyter-fsspec.png)
+
+## Documentation
+
+Read the documentation at https://jupyter-fsspec.readthedocs.io/en/latest/
+
+## Requirements
+
+- JupyterLab >= 4.0.0
+
+## Install
+
+To install the extension, execute:
+
+```bash
+pip install jupyter_fsspec
+```
+
+## Uninstall
+
+To remove the extension, execute:
+
+```bash
+pip uninstall jupyter_fsspec
+```
+
+## Motivation
+
+`jupyter_fsspec` was created to provide seamless integration between Jupyter
+environments and the powerful `fsspec` ecosystem. While the Jupyter ecosystem
+already had file browsing capabilities, there was a need for a dedicated extension
+that could leverage the full power of `fsspec`'s unified interface to various
+filesystems.
+
+### Why We Created jupyter_fsspec
+
+The creation of `jupyter_fsspec` was inspired by several ideas we wanted to explore:
+
+1. **Direct fsspec Integration**: We wanted to build a bridge directly to the
+   `fsspec` ecosystem, making it simple to access all filesystems supported by
+   `fsspec` with minimal layers.
+
+2. **Unified Interface**: `fsspec` offers a consistent API across different storage
+   backends (local, cloud, and remote filesystems). We thought it would be valuable
+   to bring this unified approach to the Jupyter interface.
+
+3. **Complementary Approach**: We designed the UI with certain workflows in mind,
+   focusing on unified browsing, easy file path copying, and seamless notebook
+   integration.
+
+### Complementary to jupyter-fs
+
+[`jupyter-fs`](https://github.com/jpmorganchase/jupyter-fs) is also a great project
+with similar goals but different design choices that make it excellent for certain
+use cases:
+
+- `jupyter-fs` leverages PyFilesystem, providing robust filesystem abstractions
+  with its own set of advantages
+- The separate panel per filesystem in `jupyter-fs` offers a clean separation that
+  some users may prefer for their workflows
+- Both projects enhance the Jupyter experience by bringing better filesystem access
+  to users
+
+We see `jupyter_fsspec` and `jupyter-fs` as complementary tools in the ecosystem.
+We have also been discussing trying to merge the projects and `jupyter-fs` recently
+added a `fsspec` backend as well.
+
+If you're deciding between the two, consider your specific needs:
+
+- If you're already using `fsspec` in your Python code, `jupyter_fsspec` provides a
+  consistent experience
+- If you prefer separate filesystem panels or are already using PyFilesystem,
+  `jupyter-fs` might be more aligned with your workflow
+
+We welcome contributions and feedback from the community as we continue developing
+this extension. We're also open to collaborations with other filesystem projects in
+the Jupyter ecosystem to collectively improve the experience for data scientists and
+researchers working with diverse data sources.
