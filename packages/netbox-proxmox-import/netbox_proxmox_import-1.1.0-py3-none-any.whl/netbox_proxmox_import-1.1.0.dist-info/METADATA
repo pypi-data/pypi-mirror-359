@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: netbox_proxmox_import
+Version: 1.1.0
+Summary: NetBox plugin to import Proxmox Cluster information.
+Author-email: Marcus VRP <mvrp21@inf.ufpr.br>
+Project-URL: Homepage, https://github.com/mvrp21/netbox-proxmox-sync
+Project-URL: Repository, https://github.com/mvrp21/netbox-proxmox-sync
+Requires-Python: >=3.6
+Requires-Dist: proxmoxer
