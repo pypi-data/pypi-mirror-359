@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: tglib-python
+Version: 1.0.2
+Summary: TGLib is an open-source temporal graph library focusing on temporal distance and centrality computations, and other local and global temporal graph statistics.
+Project-URL: Homepage, https://gitlab.com/tgpublic/tglib
+Project-URL: Repository, https://gitlab.com/tgpublic/tglib
+Project-URL: Documentation, https://tgpublic.gitlab.io/tglib/
+Project-URL: Bug Reports, https://gitlab.com/tgpublic/tglib/-/issues
+Keywords: temporal,tglib,graph
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Dynamic: license-file
+Dynamic: requires-python
+
+# Introduction to TGLib
+TGLib is an open-source temporal graph library focusing on temporal distance and centrality
+computations, and other local and global temporal graph statistics.
+
+TGLib-Python is a pre-compiled, pre-built version of TGLib 1.5 which can be installed as a simple Python package.
+No examples have been packaged with TGLib-Python, please get them from the official tglib repo below.
+
+All credits go to the original authors at [https://gitlab.com/tgpublic/tglib](https://gitlab.com/tgpublic/tglib).
+
+## Requirements
+
+TGLib was compiled using:
+   - Python 3.10
+   - Ubuntu 22.04
+
+Therefore, this package will not work on Windows or Mac and is untested for other Linux distros.
+
+## Installation
+
+```
+pip install tglib-python
+```
+
+## Usage
+
+Simply replace any usages of `pytglib` with `tglib`.
+
+```
+import tglib as tgl
+tg = tgl.load_ordered_edge_list("your_tg_file.tg")
+```
+
+## License
+TGLib is released under MIT license.
+See [LICENSE.md](https://gitlab.com/tgpublic/tglib/-/blob/main/LICENSE.md?ref_type=heads) for details.
+

@@ -1,0 +1,14 @@
+LICENCE
+MANIFEST.in
+README.md
+example_from_paper.tg
+main.py
+pyproject.toml
+setup.py
+tglib/__init__.py
+tglib/pytglib.cpython-310-x86_64-linux-gnu.so
+tglib_python.egg-info/PKG-INFO
+tglib_python.egg-info/SOURCES.txt
+tglib_python.egg-info/dependency_links.txt
+tglib_python.egg-info/not-zip-safe
+tglib_python.egg-info/top_level.txt
