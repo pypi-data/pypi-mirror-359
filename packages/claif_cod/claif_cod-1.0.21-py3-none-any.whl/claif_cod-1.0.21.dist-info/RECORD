@@ -1,0 +1,12 @@
+claif_cod/__init__.py,sha256=xOCsXTTvUlwyyJD0T_dlEGdaUzkU4FOyf2_FG3Sj0_A,1107
+claif_cod/__version__.py,sha256=g7FymxsO4UOlQK3_L_LgkfZpg9TaXmdr6hXI3ckiUE0,513
+claif_cod/cli.py,sha256=qv_dHecmDbcg1YW0xwgh8Tha0iixsLlV0hMO09iqGgc,19309
+claif_cod/client.py,sha256=UhrfXdLdStpKvdm37xxXlXCC6KRekFswmquzKoYfbIU,7433
+claif_cod/install.py,sha256=qc_AXOyxjn-gQXQjWjA-TZ2sBAE87PhJzAvLFi35Du8,4119
+claif_cod/transport.py,sha256=6kkVHQB6vqqnD4WDrXGc7k2JvB7H2MR4G5IO__q2URY,19344
+claif_cod/types.py,sha256=DCHhdagWugItuQypCif3MrmSBWQ1tOYDPV4h1FQRoU0,8069
+claif_cod-1.0.21.dist-info/METADATA,sha256=vOxxCXKLZLnSrWCq6srhrsSVw5xsDVe2pBhi1LqHI1k,20661
+claif_cod-1.0.21.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claif_cod-1.0.21.dist-info/entry_points.txt,sha256=g_V9FPMM_2I-TrGArAkKcM2yWzuvmjJuceGHyZ2BKIY,82
+claif_cod-1.0.21.dist-info/licenses/LICENSE,sha256=owbwpVdTHiU18mRyRzvr1DDQe_Rjs1FCkEdzMGJIU9U,1069
+claif_cod-1.0.21.dist-info/RECORD,,
