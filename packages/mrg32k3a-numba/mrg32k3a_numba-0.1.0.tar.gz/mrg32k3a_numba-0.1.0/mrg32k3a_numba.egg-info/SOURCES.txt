@@ -1,0 +1,10 @@
+LICENSE
+README
+pyproject.toml
+mrg32k3a_numba.egg-info/PKG-INFO
+mrg32k3a_numba.egg-info/SOURCES.txt
+mrg32k3a_numba.egg-info/dependency_links.txt
+mrg32k3a_numba.egg-info/requires.txt
+mrg32k3a_numba.egg-info/top_level.txt
+scr/mrg32k3a_numba/__init__.py
+scr/mrg32k3a_numba/mrg32k3a_numba.py
