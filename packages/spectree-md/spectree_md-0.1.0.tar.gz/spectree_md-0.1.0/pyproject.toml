@@ -1,0 +1,30 @@
+[project]
+name = "spectree-md"
+version = "0.1.0"
+description = "Composable Markdown trees using @ references"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "typer",
+    "rich",
+]
+
+[project.scripts]
+spectree = "spectree.cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spectree"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
