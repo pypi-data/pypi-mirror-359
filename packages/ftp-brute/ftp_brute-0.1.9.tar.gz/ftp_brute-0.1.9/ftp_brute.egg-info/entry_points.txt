@@ -1,0 +1,2 @@
+[console_scripts]
+ftp-brute = ftp_brute_force.ftp_brute_force:main
