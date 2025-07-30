@@ -1,0 +1,5 @@
+aiohttp
+websockets>=15.0
+jupyter
+jupyterlab
+voitta
