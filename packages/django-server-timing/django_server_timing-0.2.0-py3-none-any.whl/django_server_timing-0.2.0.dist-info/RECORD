@@ -1,0 +1,7 @@
+server_timing/__init__.py,sha256=4kY8JksSc9ZqX7-d9j9HmUlC34ZD3MGhlZPoaK1-B74,215
+server_timing/middleware.py,sha256=323rnj7QGYwJNgy_a5_87acJiW_xx6omt4Yug610Yyk,2062
+server_timing/silk.py,sha256=78KnMcykrTbkCyC5eRdfkc6P-0zEF2B4UnnkfvKJwR0,1604
+django_server_timing-0.2.0.dist-info/METADATA,sha256=_fXbfL9O2uNJFjgwpGOX7l4qFzbowWGEQRI58V7U-Tc,44940
+django_server_timing-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+django_server_timing-0.2.0.dist-info/licenses/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+django_server_timing-0.2.0.dist-info/RECORD,,
