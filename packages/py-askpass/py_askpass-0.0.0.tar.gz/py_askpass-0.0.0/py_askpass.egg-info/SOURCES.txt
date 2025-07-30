@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+py_askpass.egg-info/PKG-INFO
+py_askpass.egg-info/SOURCES.txt
+py_askpass.egg-info/dependency_links.txt
+py_askpass.egg-info/entry_points.txt
+py_askpass.egg-info/requires.txt
+py_askpass.egg-info/top_level.txt
+pyaskpass/__init__.py
+pyaskpass/main.py
+pyaskpass/pssh

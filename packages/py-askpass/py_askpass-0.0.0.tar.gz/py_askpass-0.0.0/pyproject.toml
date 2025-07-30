@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-askpass"
+dynamic = ["version"]
+description = "SSH Wrapper with Password and TOTP Support"
+authors = [{name = "Chon-Hei Lo"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pyotp>=2.8.0"]
+keywords = ["ssh", "password", "totp", "authentication", "wrapper"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/hheei/py-askpass"
+Repository = "https://github.com/hheei/py-askpass"
+Issues = "https://github.com/hheei/py-askpass/issues"
+
+[project.scripts]
+paskpass = "pyaskpass.main:main"  # Python CLI 工具
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.data-files]
+"bin" = ["pyaskpass/pssh"]  # 安裝 bin/pssh 到 $PREFIX/bin/
