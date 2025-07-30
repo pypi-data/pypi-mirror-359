@@ -1,0 +1,57 @@
+[project]
+name = "cdk-tutor"
+dynamic = ["version"]
+description = "A CLI application that teaches AWS CDK in Python to software engineers."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.7.0",
+    "aws-cdk-lib>=2.0.0",
+    "pydantic>=2.0.0",
+    "PyYAML>=6.0",
+    "deepdiff>=6.0.0",
+    "pytest>=8.3.5",
+]
+packages = [{include = "cdk_tutor", from = "src"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "mypy>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cdk_tutor"]
+
+[project.scripts]
+cdk-tutor = "cdk_tutor.cli:app"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
