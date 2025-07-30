@@ -1,0 +1,37 @@
+[project]
+name = "streamlit-typed-session"
+version = "0.1.0.post2"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<4"
+dependencies = ["streamlit>=1.46.0", "typing-extensions>=4.14.0"]
+
+
+[dependency-groups]
+dev = ["deptry>=0.23.0", "pydantic>=2.11.7", "pytest>=8.4.1", "ruff>=0.12.1"]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.ruff]
+line-length = 120
+
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D", "COM812"]
+
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["T201", "INP001"]
+
+
+[tool.deptry]
+extend_exclude = ["scripts/*"]
+
+
+[tool.deptry.per_rule_ignores]
+DEP003 = ["streamlit_typed_session"]
