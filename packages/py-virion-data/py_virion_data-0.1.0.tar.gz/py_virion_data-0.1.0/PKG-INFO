@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: py-virion-data
+Version: 0.1.0
+Project-URL: Documentation, https://github.com/viralemergence/py-virion-data#readme
+Project-URL: Issues, https://github.com/viralemergence/py-virion-data/issues
+Project-URL: Source, https://github.com/viralemergence/py-virion-data
+Author-email: collinschwantes <collin@viralemergence.org>, ricardorivera <rrh9619@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: fs
+Requires-Dist: pandas
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# py-virion-data
+
+[![PyPI - Version](https://img.shields.io/pypi/v/py-virion-data.svg)](https://pypi.org/project/py-virion-data)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/py-virion-data.svg)](https://pypi.org/project/py-virion-data)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install py-virion-data
+```
+
+## License
+
+`py-virion-data` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
