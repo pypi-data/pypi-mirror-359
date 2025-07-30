@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.cfg
+src/fixedpackage1234567/__init__.py
+src/fixedpackage1234567.egg-info/PKG-INFO
+src/fixedpackage1234567.egg-info/SOURCES.txt
+src/fixedpackage1234567.egg-info/dependency_links.txt
+src/fixedpackage1234567.egg-info/top_level.txt
