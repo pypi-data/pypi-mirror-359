@@ -1,0 +1,6 @@
+vidtoolz
+vidtoolz-concat
+vidtoolz-trim
+
+[test]
+pytest
