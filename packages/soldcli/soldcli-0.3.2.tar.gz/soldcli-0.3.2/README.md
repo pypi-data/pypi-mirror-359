@@ -1,0 +1,81 @@
+# soldcli - Infrastructure as Code 命令列工具
+
+透過標籤式指令系統，實現基礎設施即代碼的理念。
+
+## 快速開始
+
+```bash
+# 使用 uvx 執行（推薦）
+uvx soldcli@latest run demo     # 執行 demo 標籤的指令組
+uvx soldcli@latest run --list   # 查看所有可用標籤
+```
+
+> 部分功能需要安裝 `uv`
+> 請參考 `uv` 官方網站 [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
+
+
+## 核心功能
+
+### Static-Run 標籤系統
+- `run <tag>` - 執行預定義的指令組合
+- 內建標籤：tag1, demo, qtwu, qtwu1122
+- 支援自定義標籤擴充
+
+### 環境配置
+- `toml <project>` - 建立 uv 友善的 Python 專案
+- `info` - 顯示系統診斷資訊
+
+## Infrastructure as Code 實踐
+
+將常用指令組合定義為標籤，一鍵執行複雜配置：
+
+```bash
+uvx soldcli@latest run qtwu1122  # 建立完整的 Python + Node 開發環境
+```
+
+## 需求
+
+- Python 3.10+
+- Unix-like 系統
+
+---
+
+# soldcli - Infrastructure as Code CLI Tool
+
+Implement Infrastructure as Code principles through a tag-based command execution system.
+
+## Quick Start
+
+```bash
+# Run with uvx (recommended)
+uvx soldcli@latest run demo     # Execute demo tag commands
+uvx soldcli@latest run --list   # List all available tags
+```
+
+## Core Features
+
+### Static-Run Tag System
+- `run <tag>` - Execute predefined command sets
+- Built-in tags: tag1, demo, qtwu, qtwu1122
+- Extensible for custom tags
+
+### Environment Configuration
+- `toml <project>` - Create uv-friendly Python project
+- `info` - Display system diagnostics
+
+## Infrastructure as Code in Practice
+
+Define common command sequences as tags, execute complex configurations with one command:
+
+```bash
+uvx soldcli@latest run qtwu1122  # Setup complete Python + Node development environment
+```
+
+## Requirements
+
+- Python 3.10+
+- Unix-like system
+
+## License
+
+MIT License

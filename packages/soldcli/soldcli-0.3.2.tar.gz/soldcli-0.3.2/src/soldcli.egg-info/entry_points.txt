@@ -1,0 +1,2 @@
+[console_scripts]
+soldcli = soldcli.cli:main
