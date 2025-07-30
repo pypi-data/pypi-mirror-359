@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+chess_tcn/__init__.py
+chess_tcn.egg-info/PKG-INFO
+chess_tcn.egg-info/SOURCES.txt
+chess_tcn.egg-info/dependency_links.txt
+chess_tcn.egg-info/top_level.txt
