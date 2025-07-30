@@ -1,0 +1,46 @@
+[project]
+name = "token-counter-cli"
+version = "0.1.1"
+description = "A fast, user-friendly CLI tool to count tokens in text files using tiktoken, with LLM context limit comparison and rich formatting."
+authors = [
+    { name = "Puya", email = "puya@example.com" },
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = ["cli", "tokens", "tiktoken", "openai", "llm", "text-analysis"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "inquirerpy>=0.3.4",
+    "rich>=14.0.0",
+    "tiktoken>=0.9.0",
+    "typer>=0.16.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/puya/token-counter-cli"
+Repository = "https://github.com/puya/token-counter-cli"
+Issues = "https://github.com/puya/token-counter-cli/issues"
+
+[project.scripts]
+token-counter = "token_counter.cli:app"
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
