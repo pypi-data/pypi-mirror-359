@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: afnio-core
+Version: 0.0.0
+Summary: A dummy starter package for afnio-core.
+Author-email: Tellurio <contact@tellurio.ai>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# afnio-core
+
+A dummy starter package for afnio-core.
+
