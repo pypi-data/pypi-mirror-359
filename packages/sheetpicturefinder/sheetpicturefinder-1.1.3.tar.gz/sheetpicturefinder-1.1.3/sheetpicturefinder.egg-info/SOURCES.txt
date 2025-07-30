@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+sheetpicturefinder/__init__.py
+sheetpicturefinder/xlsx_picture_finder.py
+sheetpicturefinder.egg-info/PKG-INFO
+sheetpicturefinder.egg-info/SOURCES.txt
+sheetpicturefinder.egg-info/dependency_links.txt
+sheetpicturefinder.egg-info/requires.txt
+sheetpicturefinder.egg-info/top_level.txt
