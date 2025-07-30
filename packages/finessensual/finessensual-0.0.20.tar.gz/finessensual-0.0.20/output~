@@ -1,0 +1,2956 @@
+=================================================
+finessensual v0.0.20
+(C) 2025 Walter Daems - No Warranty Whatsoever
+    This package is released under an MIT License
+=================================================
+- Parsing tests/2025-05/Projects.xlsx
+- Parsing tests/2025-05/Persons.xlsx
+- Parsing tests/2025-05/Planning.xlsx
+{'AK160007-2025-01-12884': AK160007 / 12884 / 2025-01 / 1 -> 1200.0
+  2025-01 / Loonschatting /  / 12884 / 1200 / 
+, 'AK160007-2025-02-12884': AK160007 / 12884 / 2025-02 / 1 -> 1200.0
+  2025-02 / Loonschatting /  / 12884 / 1200 / 
+, '9695-2025-02-19419': 9695 / 19419 / 2025-02 / 1 -> 8157.46
+  2025-02 / Loonschatting /  / 19419 / 8157.46 / 
+, 'AK160007-2025-03-12884': AK160007 / 12884 / 2025-03 / 1 -> 1200.0
+  2025-03 / Loonschatting /  / 12884 / 1200 / 
+, '9695-2025-03-19419': 9695 / 19419 / 2025-03 / 1 -> 8157.46
+  2025-03 / Loonschatting /  / 19419 / 8157.46 / 
+, 'AK160007-2025-04-12884': AK160007 / 12884 / 2025-04 / 1 -> 1200.0
+  2025-04 / Loonschatting /  / 12884 / 1200 / 
+, '9695-2025-04-19419': 9695 / 19419 / 2025-04 / 1 -> 8157.46
+  2025-04 / Loonschatting /  / 19419 / 8157.46 / 
+, 'AK160007-2025-05-12884': AK160007 / 12884 / 2025-05 / 1 -> 1200.0
+  2025-05 / Loonschatting /  / 12884 / 1200 / 
+, '9695-2025-05-19419': 9695 / 19419 / 2025-05 / 1 -> 8157.46
+  2025-05 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-05-19978': 10123 / 19978 / 2025-05 / 1 -> 8719.67
+  2025-05 / Loonschatting /  / 19978 / 8719.67 / 
+, '9972-2025-05-20033': 9972 / 20033 / 2025-05 / 1 -> 8320.33
+  2025-05 / Loonschatting /  / 20033 / 8320.33 / 
+, 'AK160007-2025-06-12884': AK160007 / 12884 / 2025-06 / 1 -> 1200.0
+  2025-06 / Loonschatting /  / 12884 / 1200 / 
+, '9695-2025-06-19419': 9695 / 19419 / 2025-06 / 1 -> 8157.46
+  2025-06 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-06-19978': 10123 / 19978 / 2025-06 / 1 -> 8719.67
+  2025-06 / Loonschatting /  / 19978 / 8719.67 / 
+, '9972-2025-06-20033': 9972 / 20033 / 2025-06 / 1 -> 8320.33
+  2025-06 / Loonschatting /  / 20033 / 8320.33 / 
+, 'AK160007-2025-07-12884': AK160007 / 12884 / 2025-07 / 1 -> 1200.0
+  2025-07 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-07-17657': 9972 / 17657 / 2025-07 / 1 -> 9000.0
+  2025-07 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-07-19419': 9695 / 19419 / 2025-07 / 1 -> 8157.46
+  2025-07 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-07-19978': 10123 / 19978 / 2025-07 / 1 -> 10000.0
+  2025-07 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-07-20033': 9972 / 20033 / 2025-07 / 1 -> 8320.33
+  2025-07 / Loonschatting /  / 20033 / 8320.33 / 
+, 'AK160007-2025-08-12884': AK160007 / 12884 / 2025-08 / 1 -> 1200.0
+  2025-08 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-08-17657': 9972 / 17657 / 2025-08 / 1 -> 9000.0
+  2025-08 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-08-19419': 9695 / 19419 / 2025-08 / 1 -> 8157.46
+  2025-08 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-08-19978': 10123 / 19978 / 2025-08 / 1 -> 10000.0
+  2025-08 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-08-20033': 9972 / 20033 / 2025-08 / 1 -> 8320.33
+  2025-08 / Loonschatting /  / 20033 / 8320.33 / 
+, 'AK160007-2025-09-12884': AK160007 / 12884 / 2025-09 / 1 -> 1200.0
+  2025-09 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-09-17657': 9972 / 17657 / 2025-09 / 1 -> 9000.0
+  2025-09 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-09-19419': 9695 / 19419 / 2025-09 / 1 -> 8157.46
+  2025-09 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-09-19978': 10123 / 19978 / 2025-09 / 1 -> 10000.0
+  2025-09 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-09-20033': 9972 / 20033 / 2025-09 / 1 -> 8320.33
+  2025-09 / Loonschatting /  / 20033 / 8320.33 / 
+, 'AK160007-2025-10-12884': AK160007 / 12884 / 2025-10 / 1 -> 1200.0
+  2025-10 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-10-17657': 9972 / 17657 / 2025-10 / 1 -> 9000.0
+  2025-10 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-10-19419': 9695 / 19419 / 2025-10 / 1 -> 8157.46
+  2025-10 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-10-19978': 10123 / 19978 / 2025-10 / 1 -> 10000.0
+  2025-10 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-10-20033': 9972 / 20033 / 2025-10 / 1 -> 9000.0
+  2025-10 / Loonschatting /  / 20033 / 9000 / 
+, 'AK160007-2025-11-12884': AK160007 / 12884 / 2025-11 / 1 -> 1200.0
+  2025-11 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-11-17657': 9972 / 17657 / 2025-11 / 1 -> 9000.0
+  2025-11 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-11-19419': 9695 / 19419 / 2025-11 / 1 -> 8157.46
+  2025-11 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-11-19978': 10123 / 19978 / 2025-11 / 1 -> 10000.0
+  2025-11 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-11-20033': 9972 / 20033 / 2025-11 / 1 -> 9000.0
+  2025-11 / Loonschatting /  / 20033 / 9000 / 
+, 'AK160007-2025-12-12884': AK160007 / 12884 / 2025-12 / 1 -> 1200.0
+  2025-12 / Loonschatting /  / 12884 / 1200 / 
+, '9972-2025-12-17657': 9972 / 17657 / 2025-12 / 1 -> 9000.0
+  2025-12 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2025-12-19419': 9695 / 19419 / 2025-12 / 1 -> 8157.46
+  2025-12 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2025-12-19978': 10123 / 19978 / 2025-12 / 1 -> 10000.0
+  2025-12 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2025-12-20033': 9972 / 20033 / 2025-12 / 1 -> 9000.0
+  2025-12 / Loonschatting /  / 20033 / 9000 / 
+, '9972-2026-01-17657': 9972 / 17657 / 2026-01 / 1 -> 9000.0
+  2026-01 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2026-01-19419': 9695 / 19419 / 2026-01 / 1 -> 8157.46
+  2026-01 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-01-19978': 10123 / 19978 / 2026-01 / 1 -> 10000.0
+  2026-01 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-01-20033': 9972 / 20033 / 2026-01 / 1 -> 9000.0
+  2026-01 / Loonschatting /  / 20033 / 9000 / 
+, '9972-2026-02-17657': 9972 / 17657 / 2026-02 / 1 -> 9000.0
+  2026-02 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2026-02-19419': 9695 / 19419 / 2026-02 / 1 -> 8157.46
+  2026-02 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-02-19978': 10123 / 19978 / 2026-02 / 1 -> 10000.0
+  2026-02 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-02-20033': 9972 / 20033 / 2026-02 / 1 -> 10000.0
+  2026-02 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2026-03-17657': 9972 / 17657 / 2026-03 / 1 -> 9000.0
+  2026-03 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2026-03-19419': 9695 / 19419 / 2026-03 / 1 -> 8157.46
+  2026-03 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-03-19978': 10123 / 19978 / 2026-03 / 1 -> 10000.0
+  2026-03 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-03-20033': 9972 / 20033 / 2026-03 / 1 -> 10000.0
+  2026-03 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2026-04-17657': 9972 / 17657 / 2026-04 / 1 -> 9000.0
+  2026-04 / Loonschatting /  / 17657 / 9000 / 
+, '9695-2026-04-19419': 9695 / 19419 / 2026-04 / 1 -> 8157.46
+  2026-04 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-04-19978': 10123 / 19978 / 2026-04 / 1 -> 10000.0
+  2026-04 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-04-20033': 9972 / 20033 / 2026-04 / 1 -> 10000.0
+  2026-04 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-05-19419': 9695 / 19419 / 2026-05 / 1 -> 8157.46
+  2026-05 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-05-19978': 10123 / 19978 / 2026-05 / 1 -> 10000.0
+  2026-05 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-05-20033': 9972 / 20033 / 2026-05 / 1 -> 10000.0
+  2026-05 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-06-19419': 9695 / 19419 / 2026-06 / 1 -> 8157.46
+  2026-06 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-06-19978': 10123 / 19978 / 2026-06 / 1 -> 10000.0
+  2026-06 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-06-20033': 9972 / 20033 / 2026-06 / 1 -> 10000.0
+  2026-06 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-07-19419': 9695 / 19419 / 2026-07 / 1 -> 8157.46
+  2026-07 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-07-19978': 10123 / 19978 / 2026-07 / 1 -> 10000.0
+  2026-07 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-07-20033': 9972 / 20033 / 2026-07 / 1 -> 10000.0
+  2026-07 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-08-19419': 9695 / 19419 / 2026-08 / 1 -> 8157.46
+  2026-08 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-08-19978': 10123 / 19978 / 2026-08 / 1 -> 10000.0
+  2026-08 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-08-20033': 9972 / 20033 / 2026-08 / 1 -> 10000.0
+  2026-08 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-09-19419': 9695 / 19419 / 2026-09 / 1 -> 8157.46
+  2026-09 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-09-19978': 10123 / 19978 / 2026-09 / 1 -> 10000.0
+  2026-09 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-09-20033': 9972 / 20033 / 2026-09 / 1 -> 10000.0
+  2026-09 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-10-19419': 9695 / 19419 / 2026-10 / 1 -> 8157.46
+  2026-10 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-10-19978': 10123 / 19978 / 2026-10 / 1 -> 10000.0
+  2026-10 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-10-20033': 9972 / 20033 / 2026-10 / 1 -> 10000.0
+  2026-10 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2026-11-19419': 9695 / 19419 / 2026-11 / 1 -> 8157.46
+  2026-11 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-11-19978': 10123 / 19978 / 2026-11 / 1 -> 10000.0
+  2026-11 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-11-20033': 9972 / 20033 / 2026-11 / 1 -> 10000.0
+  2026-11 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2026-12-16363': 9972 / 16363 / 2026-12 / 1 -> 110269.14
+  2026-12 / Loonschatting /  / 16363 / 110269.14 / 
+, '9695-2026-12-19419': 9695 / 19419 / 2026-12 / 1 -> 8157.46
+  2026-12 / Loonschatting /  / 19419 / 8157.46 / 
+, '10123-2026-12-19978': 10123 / 19978 / 2026-12 / 1 -> 10000.0
+  2026-12 / Loonschatting /  / 19978 / 10000 / 
+, '9972-2026-12-20033': 9972 / 20033 / 2026-12 / 1 -> 10000.0
+  2026-12 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-01-16363': 9972 / 16363 / 2027-01 / 1 -> 11202.3
+  2027-01 / Loonschatting /  / 16363 / 11202.3 / 
+, '9695-2027-01-19419': 9695 / 19419 / 2027-01 / 1 -> 8157.46
+  2027-01 / Loonschatting /  / 19419 / 8157.46 / 
+, '9972-2027-01-20033': 9972 / 20033 / 2027-01 / 1 -> 10000.0
+  2027-01 / Loonschatting /  / 20033 / 10000 / 
+, '9695-2027-02-19419': 9695 / 19419 / 2027-02 / 1 -> 8157.46
+  2027-02 / Loonschatting /  / 19419 / 8157.46 / 
+, '9972-2027-02-20033': 9972 / 20033 / 2027-02 / 1 -> 10000.0
+  2027-02 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-03-20033': 9972 / 20033 / 2027-03 / 1 -> 10000.0
+  2027-03 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-04-20033': 9972 / 20033 / 2027-04 / 1 -> 10000.0
+  2027-04 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-05-20033': 9972 / 20033 / 2027-05 / 1 -> 10000.0
+  2027-05 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-06-20033': 9972 / 20033 / 2027-06 / 1 -> 10000.0
+  2027-06 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-07-20033': 9972 / 20033 / 2027-07 / 1 -> 10000.0
+  2027-07 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-08-20033': 9972 / 20033 / 2027-08 / 1 -> 10000.0
+  2027-08 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-09-20033': 9972 / 20033 / 2027-09 / 1 -> 10000.0
+  2027-09 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-10-20033': 9972 / 20033 / 2027-10 / 1 -> 10000.0
+  2027-10 / Loonschatting /  / 20033 / 10000 / 
+, '9972-2027-12-16363': 9972 / 16363 / 2027-12 / 1 -> 110269.14
+  2027-12 / Loonschatting /  / 16363 / 110269.14 / 
+, '9972-2028-01-16363': 9972 / 16363 / 2028-01 / 1 -> 11202.3
+  2028-01 / Loonschatting /  / 16363 / 11202.3 / 
+}
+- Parsing Budgets
+  - tests/2025-05/UB-STJ.xml
+  - tests/2025-05/UB-DMW.xml
+  - tests/2025-05/Budgetboekingen-FFI240377.xls
+  - tests/2025-05/Budgetboekingen-FFI230414.xls
+  - tests/2025-05/Budgetboekingen-FFP230382.xls
+  - tests/2025-05/Budgetboekingen-FFP230001.xls
+  - tests/2025-05/Budgetboekingen-FFP240410.xls
+  - tests/2025-05/Budgetboekingen-FFP250084.xls
+  - tests/2025-05/Budgetboekingen-FFP240117.xls
+  - tests/2025-05/Budgetboekingen-FFP230383.xls
+- Parsing Vlottende transacties
+  - tests/2025-05/VBTransacties-WO170003.xls
+  - tests/2025-05/VBTransacties-AO240005.xls
+  - tests/2025-05/VBTransacties-AK130109.xls
+  - tests/2025-05/VBTransacties-RA140003.xls
+  - tests/2025-05/VBTransacties-AK160007.xls
+- Parsing Forfaitaire transacties
+  - tests/2025-05/Transacties-FFI240377.xls
+  - tests/2025-05/Transacties-FFP240410.xls
+  - tests/2025-05/Transacties-FFP230383.xls
+  - tests/2025-05/Transacties-FFI230414.xls
+  - tests/2025-05/Transacties-FFP230001.xls
+  - tests/2025-05/Transacties-FFP240117.xls
+- Parsing Lonen transacties
+  - tests/2025-05/Lonen-transacties-DMW.xml
+  - tests/2025-05/Lonen-transacties-VRJ.xml
+  - tests/2025-05/Lonen-transacties-STJ.xml
+- Parsing Uitgaven
+  - tests/2025-05/UU-STJ.xml
+  - tests/2025-05/UU-DMW.xml
+- Parsing Vastleggingen
+  - tests/2025-05/UV-DMW.xml
+  - tests/2025-05/UV-STJ.xml
+- Creating output file tests/2025-05/financial-overview.xlsx
+  - information tab page
+  - personnel tab page
+  - expense budgets tab page
+  - projects tab pages
+    - 9935 - CAVE
+========================
+{'2025-10': {'16363': [<ExpenditurePhase.FIXED: 2>, 9935 / 16363 / 2025-10 / 1 -> 9760.8
+  2025-10 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 16363 / 1222.38 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-11': {'16363': [<ExpenditurePhase.FIXED: 2>, 9935 / 16363 / 2025-11 / 1 -> 9760.8
+  2025-11 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 16363 / 1222.38 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-12': {'16363': [<ExpenditurePhase.FIXED: 2>, 9935 / 16363 / 2025-12 / 1 -> 9760.8
+  2025-12 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 16363 / 1222.38 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2024-02': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-02 / 1 -> 9951.519999999997
+  2024-02 / Salarissen CWP /  / 16363 / 5737.28 / 
+  2024-02 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 16363 / 1251.94 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 16363 / 510.98 / 
+  2024-02 / RSZ CWP /  / 16363 / 1957.56 / 
+  2024-02 / Ongevallenverz CWP /  / 16363 / 20.46 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 30.47 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 343.88 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 37.25 / 
+  2024-02 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-02 / Fietsvergoeding CWP /  / 16363 / 62.5 / 
+]}, '2024-05': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-05 / 1 -> 9951.539999999997
+  2024-05 / Salarissen CWP /  / 16363 / 5737.28 / 
+  2024-05 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-05 / Aanleg vakantiegeld CWP /  / 16363 / 1251.94 / 
+  2024-05 / Aanleg eindejaarstoelage CWP /  / 16363 / 510.98 / 
+  2024-05 / RSZ CWP /  / 16363 / 1957.58 / 
+  2024-05 / Ongevallenverz CWP /  / 16363 / 20.46 / 
+  2024-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 30.47 / 
+  2024-05 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 343.88 / 
+  2024-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 37.25 / 
+  2024-05 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-05 / Fietsvergoeding CWP /  / 16363 / 62.5 / 
+]}, '2024-06': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-06 / 1 -> 20.0
+  2024-06 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2024-07': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-07 / 1 -> 10106.070000000002
+  2024-07 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-07 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2024-07 / RSZ CWP /  / 16363 / 1996.09 / 
+  2024-07 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-07 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-07 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2024-08': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-08 / 1 -> 10318.570000000002
+  2024-08 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-08 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2024-08 / RSZ CWP /  / 16363 / 1996.09 / 
+  2024-08 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-08 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-08 / Fietsvergoeding CWP /  / 16363 / 212.5 / 
+  2024-08 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2024-09': {'16363': [<ExpenditurePhase.BOOKED: 3>, 9935 / 16363 / 2024-09 / 1 -> 20.0
+  2024-09 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}}
+    - 9695 - NORM.AI
+========================
+{'2025-02': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2025-02 / 1 -> 8134.719999999998
+  2025-02 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2025-02 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 19419 / 1024.48 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 19419 / 470.91 / 
+  2025-02 / RSZ CWP /  / 19419 / 1592.29 / 
+  2025-02 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2025-02 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2025-02 / Fietsvergoeding CWP /  / 19419 / 20.0 / 
+  2025-02 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2025-03': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2025-03 / 1 -> 8290.42
+  2025-03 / Salarissen CWP /  / 19419 / 4750.19 / 
+  2025-03 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-03 / RSZ CWP /  / 19419 / 1624.1 / 
+  2025-03 / Ongevallenverz CWP /  / 19419 / 16.94 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 25.22 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 284.65 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.84 / 
+  2025-03 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 19419 / 14.0 / 
+  2025-03 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2025-04': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-04 / 1 -> 8320.33
+  2025-04 / Salarissen CWP /  / 19419 / 6462.95 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-05': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-05 / 1 -> 1857.38
+  2025-05 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-06': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-06 / 1 -> 8321.119999999999
+  2025-06 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-07': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-07 / 1 -> 8321.119999999999
+  2025-07 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-08': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-08 / 1 -> 8321.119999999999
+  2025-08 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-09': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-09 / 1 -> 8321.119999999999
+  2025-09 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 19419 / 1044.96 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 19419 / 480.32 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-10': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-10 / 1 -> 7768.4
+  2025-10 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 19419 / 972.56 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-11': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-11 / 1 -> 7768.4
+  2025-11 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 19419 / 972.56 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2025-12': {'19419': [<ExpenditurePhase.FIXED: 2>, 9695 / 19419 / 2025-12 / 1 -> 7768.4
+  2025-12 / Salarissen CWP /  / 19419 / 6463.74 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 19419 / 972.56 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 19419 / 332.1 / 
+]}, '2026-01': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-01 / 1 -> 8157.46
+  2026-01 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-02': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-02 / 1 -> 8157.46
+  2026-02 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-03': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-03 / 1 -> 8157.46
+  2026-03 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-04': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-04 / 1 -> 8157.46
+  2026-04 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-05': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-05 / 1 -> 8157.46
+  2026-05 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-06': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-06 / 1 -> 8157.46
+  2026-06 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-07': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-07 / 1 -> 8157.46
+  2026-07 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-08': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-08 / 1 -> 8157.46
+  2026-08 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-09': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-09 / 1 -> 8157.46
+  2026-09 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-10': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-10 / 1 -> 8157.46
+  2026-10 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-11': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-11 / 1 -> 8157.46
+  2026-11 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2026-12': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2026-12 / 1 -> 8157.46
+  2026-12 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2027-01': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2027-01 / 1 -> 8157.46
+  2027-01 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2027-02': {'19419': [<ExpenditurePhase.PLANNED: 1>, 9695 / 19419 / 2027-02 / 1 -> 8157.46
+  2027-02 / Loonschatting /  / 19419 / 8157.46 / 
+]}, '2024-02': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9695 / 17657 / 2024-02 / 1 -> 7952.93
+  2024-02 / Salarissen CWP /  / 17657 / 4565.99 / 
+  2024-02 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 17657 / 1004.39 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 17657 / 461.68 / 
+  2024-02 / RSZ CWP /  / 17657 / 1557.91 / 
+  2024-02 / Ongevallenverz CWP /  / 17657 / 16.28 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.24 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 273.6 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 29.64 / 
+  2024-02 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-02 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+], '19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-02 / 1 -> 7574.030000000001
+  2024-02 / Salarissen CWP /  / 19419 / 4346.85 / 
+  2024-02 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 19419 / 956.12 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 19419 / 439.48 / 
+  2024-02 / RSZ CWP /  / 19419 / 1483.13 / 
+  2024-02 / Ongevallenverz CWP /  / 19419 / 15.5 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 23.08 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 260.45 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 28.22 / 
+  2024-02 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-02 / Fietsvergoeding CWP /  / 19419 / 22.0 / 
+]}, '2024-03': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9695 / 17657 / 2024-03 / 1 -> 7968.9400000000005
+  2024-03 / Salarissen CWP /  / 17657 / 4565.99 / 
+  2024-03 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-03 / Aanleg vakantiegeld CWP /  / 17657 / 1004.39 / 
+  2024-03 / Aanleg eindejaarstoelage CWP /  / 17657 / 461.68 / 
+  2024-03 / RSZ CWP /  / 17657 / 1557.92 / 
+  2024-03 / Ongevallenverz CWP /  / 17657 / 16.28 / 
+  2024-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.24 / 
+  2024-03 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 273.6 / 
+  2024-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 29.64 / 
+  2024-03 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-03 / Fietsvergoeding CWP /  / 17657 / 6.0 / 
+  2024-03 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+], '19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-03 / 1 -> 7593.05
+  2024-03 / Salarissen CWP /  / 19419 / 4346.85 / 
+  2024-03 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-03 / Aanleg vakantiegeld CWP /  / 19419 / 956.12 / 
+  2024-03 / Aanleg eindejaarstoelage CWP /  / 19419 / 439.48 / 
+  2024-03 / RSZ CWP /  / 19419 / 1483.15 / 
+  2024-03 / Ongevallenverz CWP /  / 19419 / 15.5 / 
+  2024-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 23.08 / 
+  2024-03 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 260.45 / 
+  2024-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 28.22 / 
+  2024-03 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-03 / Fietsvergoeding CWP /  / 19419 / 21.0 / 
+  2024-03 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-04': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9695 / 17657 / 2024-04 / 1 -> 20.0
+  2024-04 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+], '19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-04 / 1 -> 7592.06
+  2024-04 / Salarissen CWP /  / 19419 / 4346.85 / 
+  2024-04 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-04 / Aanleg vakantiegeld CWP /  / 19419 / 956.12 / 
+  2024-04 / Aanleg eindejaarstoelage CWP /  / 19419 / 439.48 / 
+  2024-04 / RSZ CWP /  / 19419 / 1483.16 / 
+  2024-04 / Ongevallenverz CWP /  / 19419 / 15.5 / 
+  2024-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 23.08 / 
+  2024-04 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 260.45 / 
+  2024-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 28.22 / 
+  2024-04 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-04 / Fietsvergoeding CWP /  / 19419 / 20.0 / 
+  2024-04 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-05': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-05 / 1 -> 1767.1699999999998
+  2024-05 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-05 / Aanleg vakantiegeld CWP /  / 19419 / 956.12 / 
+  2024-05 / Aanleg eindejaarstoelage CWP /  / 19419 / 439.48 / 
+  2024-05 / Ongevallenverz CWP /  / 19419 / 22.62 / 
+  2024-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 23.08 / 
+  2024-05 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 260.45 / 
+  2024-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 28.22 / 
+  2024-05 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-05 / Fietsvergoeding CWP /  / 19419 / 18.0 / 
+  2024-05 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-06': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-06 / 1 -> 7736.959999999999
+  2024-06 / Salarissen CWP /  / 19419 / 4433.67 / 
+  2024-06 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-06 / Aanleg vakantiegeld CWP /  / 19419 / 975.25 / 
+  2024-06 / Aanleg eindejaarstoelage CWP /  / 19419 / 448.28 / 
+  2024-06 / RSZ CWP /  / 19419 / 1512.77 / 
+  2024-06 / Ongevallenverz CWP /  / 19419 / 15.81 / 
+  2024-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 23.54 / 
+  2024-06 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 265.66 / 
+  2024-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 28.78 / 
+  2024-06 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-06 / Fietsvergoeding CWP /  / 19419 / 14.0 / 
+  2024-06 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-07': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-07 / 1 -> 8131.009999999998
+  2024-07 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-07 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 19419 / 1024.48 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 19419 / 470.91 / 
+  2024-07 / RSZ CWP /  / 19419 / 1588.58 / 
+  2024-07 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-07 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-07 / Fietsvergoeding CWP /  / 19419 / 20.0 / 
+  2024-07 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-08': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-08 / 1 -> 8128.999999999998
+  2024-08 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-08 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 19419 / 1024.48 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 19419 / 470.91 / 
+  2024-08 / RSZ CWP /  / 19419 / 1588.57 / 
+  2024-08 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-08 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-08 / Fietsvergoeding CWP /  / 19419 / 18.0 / 
+  2024-08 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-09': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-09 / 1 -> 8132.009999999998
+  2024-09 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-09 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-09 / Aanleg vakantiegeld CWP /  / 19419 / 1024.48 / 
+  2024-09 / Aanleg eindejaarstoelage CWP /  / 19419 / 470.91 / 
+  2024-09 / RSZ CWP /  / 19419 / 1588.58 / 
+  2024-09 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2024-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-09 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-09 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-09 / Fietsvergoeding CWP /  / 19419 / 21.0 / 
+  2024-09 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-10': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-10 / 1 -> 7590.119999999998
+  2024-10 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-10 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-10 / Aanleg vakantiegeld CWP /  / 19419 / 953.5 / 
+  2024-10 / RSZ CWP /  / 19419 / 1588.58 / 
+  2024-10 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2024-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-10 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-10 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-10 / Fietsvergoeding CWP /  / 19419 / 21.0 / 
+  2024-10 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-11': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-11 / 1 -> 7588.209999999999
+  2024-11 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-11 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-11 / Aanleg vakantiegeld CWP /  / 19419 / 953.5 / 
+  2024-11 / RSZ CWP /  / 19419 / 1588.56 / 
+  2024-11 / Ongevallenverz CWP /  / 19419 / 27.72 / 
+  2024-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-11 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-11 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-11 / Fietsvergoeding CWP /  / 19419 / 8.0 / 
+  2024-11 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2024-12': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2024-12 / 1 -> 7579.119999999998
+  2024-12 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2024-12 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2024-12 / Aanleg vakantiegeld CWP /  / 19419 / 953.5 / 
+  2024-12 / RSZ CWP /  / 19419 / 1588.58 / 
+  2024-12 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2024-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2024-12 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2024-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2024-12 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2024-12 / Fietsvergoeding CWP /  / 19419 / 10.0 / 
+  2024-12 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}, '2025-01': {'19419': [<ExpenditurePhase.BOOKED: 3>, 9695 / 19419 / 2025-01 / 1 -> 8129.739999999998
+  2025-01 / Salarissen CWP /  / 19419 / 4657.2 / 
+  2025-01 / Voordelen in natura CWP /  / 19419 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 19419 / 1024.48 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 19419 / 470.91 / 
+  2025-01 / RSZ CWP /  / 19419 / 1592.31 / 
+  2025-01 / Ongevallenverz CWP /  / 19419 / 16.61 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19419 / 24.73 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 19419 / 279.07 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19419 / 30.23 / 
+  2025-01 / Externe medische dienst CWP /  / 19419 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 19419 / 15.0 / 
+  2025-01 / Internetvergoeding CWP /  / 19419 / 20.0 / 
+]}}
+    - 9972 - SITANAV
+========================
+{'2025-07': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-07 / 1 -> 9000.0
+  2025-07 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-07 / 1 -> 8321.119999999999
+  2025-07 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-08': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-08 / 1 -> 9000.0
+  2025-08 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-08 / 1 -> 8321.119999999999
+  2025-08 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-09': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-09 / 1 -> 9000.0
+  2025-09 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-09 / 1 -> 8321.119999999999
+  2025-09 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-10': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-10 / 1 -> 9000.0
+  2025-10 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-10 / 1 -> 7768.4
+  2025-10 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 20033 / 972.56 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-11': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-11 / 1 -> 9000.0
+  2025-11 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-11 / 1 -> 7768.4
+  2025-11 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 20033 / 972.56 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-12': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2025-12 / 1 -> 9000.0
+  2025-12 / Loonschatting /  / 17657 / 9000 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-12 / 1 -> 7768.4
+  2025-12 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 20033 / 972.56 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2026-01': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2026-01 / 1 -> 9000.0
+  2026-01 / Loonschatting /  / 17657 / 9000 / 
+]}, '2026-02': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2026-02 / 1 -> 9000.0
+  2026-02 / Loonschatting /  / 17657 / 9000 / 
+]}, '2026-03': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2026-03 / 1 -> 9000.0
+  2026-03 / Loonschatting /  / 17657 / 9000 / 
+]}, '2026-04': {'17657': [<ExpenditurePhase.PLANNED: 1>, 9972 / 17657 / 2026-04 / 1 -> 9000.0
+  2026-04 / Loonschatting /  / 17657 / 9000 / 
+]}, '2026-12': {'16363': [<ExpenditurePhase.PLANNED: 1>, 9972 / 16363 / 2026-12 / 1 -> 110269.14
+  2026-12 / Loonschatting /  / 16363 / 110269.14 / 
+]}, '2027-01': {'16363': [<ExpenditurePhase.PLANNED: 1>, 9972 / 16363 / 2027-01 / 1 -> 11202.3
+  2027-01 / Loonschatting /  / 16363 / 11202.3 / 
+]}, '2027-12': {'16363': [<ExpenditurePhase.PLANNED: 1>, 9972 / 16363 / 2027-12 / 1 -> 110269.14
+  2027-12 / Loonschatting /  / 16363 / 110269.14 / 
+]}, '2028-01': {'16363': [<ExpenditurePhase.PLANNED: 1>, 9972 / 16363 / 2028-01 / 1 -> 11202.3
+  2028-01 / Loonschatting /  / 16363 / 11202.3 / 
+]}, '2025-04': {'17657': [<ExpenditurePhase.FIXED: 2>, 9972 / 17657 / 2025-04 / 1 -> 8719.67
+  2025-04 / Salarissen CWP /  / 17657 / 6773.03 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 17657 / 1095.18 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 17657 / 503.4 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 17657 / 348.06 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-04 / 1 -> 8320.33
+  2025-04 / Salarissen CWP /  / 20033 / 6462.95 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+], '22474': [<ExpenditurePhase.FIXED: 2>, 9972 / 22474 / 2025-04 / 1 -> 9917.66
+  2025-04 / Salarissen CWP /  / 22474 / 7703.23 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 22474 / 1245.83 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 22474 / 572.66 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 22474 / 395.94 / 
+]}, '2025-05': {'17657': [<ExpenditurePhase.FIXED: 2>, 9972 / 17657 / 2025-05 / 1 -> 1946.6399999999999
+  2025-05 / Aanleg vakantiegeld CWP /  / 17657 / 1095.18 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 17657 / 503.4 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 17657 / 348.06 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-05 / 1 -> 1857.38
+  2025-05 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2025-06': {'17657': [<ExpenditurePhase.FIXED: 2>, 9972 / 17657 / 2025-06 / 1 -> 8720.46
+  2025-06 / Salarissen CWP /  / 17657 / 6773.82 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 17657 / 1095.18 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 17657 / 503.4 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 17657 / 348.06 / 
+], '20033': [<ExpenditurePhase.FIXED: 2>, 9972 / 20033 / 2025-06 / 1 -> 8321.119999999999
+  2025-06 / Salarissen CWP /  / 20033 / 6463.74 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 20033 / 332.1 / 
+]}, '2024-07': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-07 / 1 -> 8127.009999999998
+  2024-07 / Salarissen CWP /  / 17657 / 4657.2 / 
+  2024-07 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 17657 / 1024.48 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 17657 / 470.91 / 
+  2024-07 / RSZ CWP /  / 17657 / 1588.58 / 
+  2024-07 / Ongevallenverz CWP /  / 17657 / 16.61 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.73 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 279.07 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 30.23 / 
+  2024-07 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-07 / Fietsvergoeding CWP /  / 17657 / 6.0 / 
+  2024-07 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+]}, '2024-08': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-08 / 1 -> 8117.499999999998
+  2024-08 / Salarissen CWP /  / 17657 / 4657.2 / 
+  2024-08 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 17657 / 1024.48 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 17657 / 470.91 / 
+  2024-08 / RSZ CWP /  / 17657 / 1588.57 / 
+  2024-08 / Ongevallenverz CWP /  / 17657 / 16.61 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.73 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 279.07 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 30.23 / 
+  2024-08 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-08 / Fietsvergoeding CWP /  / 17657 / 6.5 / 
+  2024-08 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+]}, '2024-09': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-09 / 1 -> 8116.509999999998
+  2024-09 / Salarissen CWP /  / 17657 / 4657.2 / 
+  2024-09 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-09 / Aanleg vakantiegeld CWP /  / 17657 / 1024.48 / 
+  2024-09 / Aanleg eindejaarstoelage CWP /  / 17657 / 470.91 / 
+  2024-09 / RSZ CWP /  / 17657 / 1588.58 / 
+  2024-09 / Ongevallenverz CWP /  / 17657 / 16.61 / 
+  2024-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.73 / 
+  2024-09 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 279.07 / 
+  2024-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 30.23 / 
+  2024-09 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-09 / Fietsvergoeding CWP /  / 17657 / 5.5 / 
+  2024-09 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+]}, '2024-10': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-10 / 1 -> 7607.619999999998
+  2024-10 / Salarissen CWP /  / 17657 / 4657.2 / 
+  2024-10 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-10 / Aanleg vakantiegeld CWP /  / 17657 / 953.5 / 
+  2024-10 / RSZ CWP /  / 17657 / 1588.58 / 
+  2024-10 / Ongevallenverz CWP /  / 17657 / 16.61 / 
+  2024-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 24.73 / 
+  2024-10 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 279.07 / 
+  2024-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 30.23 / 
+  2024-10 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-10 / Fietsvergoeding CWP /  / 17657 / 8.5 / 
+  2024-10 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+  2024-10 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+]}, '2024-11': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-11 / 1 -> 7981.68
+  2024-11 / Salarissen CWP /  / 17657 / 4880.72 / 
+  2024-11 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-11 / Aanleg vakantiegeld CWP /  / 17657 / 999.32 / 
+  2024-11 / RSZ CWP /  / 17657 / 1664.81 / 
+  2024-11 / Ongevallenverz CWP /  / 17657 / 29.05 / 
+  2024-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 25.91 / 
+  2024-11 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 292.48 / 
+  2024-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 31.69 / 
+  2024-11 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-11 / Fietsvergoeding CWP /  / 17657 / 8.5 / 
+  2024-11 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+  2024-11 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+]}, '2024-12': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2024-12 / 1 -> 7918.539999999999
+  2024-12 / Salarissen CWP /  / 17657 / 4880.72 / 
+  2024-12 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2024-12 / Aanleg vakantiegeld CWP /  / 17657 / 999.32 / 
+  2024-12 / RSZ CWP /  / 17657 / 1664.82 / 
+  2024-12 / Ongevallenverz CWP /  / 17657 / 17.4 / 
+  2024-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 25.91 / 
+  2024-12 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 292.48 / 
+  2024-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 31.69 / 
+  2024-12 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2024-12 / Fietsvergoeding CWP /  / 17657 / 7.0 / 
+]}, '2025-01': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2025-01 / 1 -> 8506.37
+  2025-01 / Salarissen CWP /  / 17657 / 4880.72 / 
+  2025-01 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 17657 / 1073.71 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 17657 / 493.54 / 
+  2025-01 / RSZ CWP /  / 17657 / 1668.72 / 
+  2025-01 / Ongevallenverz CWP /  / 17657 / 17.4 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 25.91 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 292.48 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 31.69 / 
+  2025-01 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 17657 / 3.0 / 
+  2025-01 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+], '22474': [<ExpenditurePhase.BOOKED: 3>, 9972 / 22474 / 2025-01 / 1 -> 9676.39
+  2025-01 / Salarissen CWP /  / 22474 / 5551.29 / 
+  2025-01 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 22474 / 1221.42 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 22474 / 561.44 / 
+  2025-01 / RSZ CWP /  / 22474 / 1898.0 / 
+  2025-01 / Ongevallenverz CWP /  / 22474 / 19.8 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 29.48 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 332.72 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 36.04 / 
+  2025-01 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 22474 / 27.0 / 
+]}, '2025-02': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2025-02 / 1 -> 8538.86
+  2025-02 / Salarissen CWP /  / 17657 / 4880.72 / 
+  2025-02 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 17657 / 1073.71 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 17657 / 493.54 / 
+  2025-02 / RSZ CWP /  / 17657 / 1668.71 / 
+  2025-02 / Ongevallenverz CWP /  / 17657 / 17.4 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 25.91 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 292.48 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 31.69 / 
+  2025-02 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2025-02 / Fietsvergoeding CWP /  / 17657 / 5.5 / 
+  2025-02 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+  2025-02 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+], '22474': [<ExpenditurePhase.BOOKED: 3>, 9972 / 22474 / 2025-02 / 1 -> 9744.38
+  2025-02 / Salarissen CWP /  / 22474 / 5551.29 / 
+  2025-02 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 22474 / 1221.42 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 22474 / 561.44 / 
+  2025-02 / RSZ CWP /  / 22474 / 1897.99 / 
+  2025-02 / Ongevallenverz CWP /  / 22474 / 19.8 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 29.48 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 332.72 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 36.04 / 
+  2025-02 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2025-02 / Fietsvergoeding CWP /  / 22474 / 45.0 / 
+  2025-02 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2025-02 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2025-03': {'17657': [<ExpenditurePhase.BOOKED: 3>, 9972 / 17657 / 2025-03 / 1 -> 8710.320000000002
+  2025-03 / Salarissen CWP /  / 17657 / 4978.18 / 
+  2025-03 / Voordelen in natura CWP /  / 17657 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 17657 / 1095.18 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 17657 / 503.4 / 
+  2025-03 / RSZ CWP /  / 17657 / 1702.03 / 
+  2025-03 / Ongevallenverz CWP /  / 17657 / 17.75 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 17657 / 26.43 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 17657 / 298.33 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 17657 / 32.32 / 
+  2025-03 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 17657 / 7.5 / 
+  2025-03 / Internetvergoeding CWP /  / 17657 / 20.0 / 
+  2025-03 / Telewerkvergoeding CWP /  / 17657 / 30.0 / 
+], '22474': [<ExpenditurePhase.BOOKED: 3>, 9972 / 22474 / 2025-03 / 1 -> 9928.140000000001
+  2025-03 / Salarissen CWP /  / 22474 / 5662.16 / 
+  2025-03 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 22474 / 1245.83 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 22474 / 572.66 / 
+  2025-03 / RSZ CWP /  / 22474 / 1935.89 / 
+  2025-03 / Ongevallenverz CWP /  / 22474 / 20.19 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 30.07 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 339.37 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 36.77 / 
+  2025-03 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 22474 / 36.0 / 
+  2025-03 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2025-03 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}}
+    - 8380 - SMARTFLUSH
+========================
+{'2020-04': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-04 / 1 -> 5.733191699164308e-13
+  2020-04 / Salarissen CWP /  / 21092 / 3511.33 / 
+  2020-04 / Aanleg vakantiegeld CWP /  / 21092 / 762.21 / 
+  2020-04 / Aanleg eindejaarstoelage CWP /  / 21092 / 281.22 / 
+  2020-04 / RSZ CWP /  / 21092 / 1198.06 / 
+  2020-04 / Ongevallenverz CWP /  / 21092 / 12.52 / 
+  2020-04 / Externe medische dienst CWP /  / 21092 / 3.35 / 
+  2020-04 / Salarissen CWP /  / 21092 / -3511.33 / 
+  2020-04 / Aanleg vakantiegeld CWP /  / 21092 / -762.21 / 
+  2020-04 / Aanleg eindejaarstoelage CWP /  / 21092 / -281.22 / 
+  2020-04 / RSZ CWP /  / 21092 / -1198.06 / 
+  2020-04 / Ongevallenverz CWP /  / 21092 / -12.52 / 
+  2020-04 / Externe medische dienst CWP /  / 21092 / -3.35 / 
+]}, '2020-05': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-05 / 1 -> 8957.970000000001
+  2020-05 / Salarissen CWP /  / 21092 / 5452.59 / 
+  2020-05 / Aanleg vakantiegeld CWP /  / 21092 / 1183.61 / 
+  2020-05 / Aanleg eindejaarstoelage CWP /  / 21092 / 436.7 / 
+  2020-05 / RSZ CWP /  / 21092 / 1860.43 / 
+  2020-05 / Ongevallenverz CWP /  / 21092 / 19.44 / 
+  2020-05 / Externe medische dienst CWP /  / 21092 / 5.2 / 
+]}, '2020-06': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-06 / 1 -> 6132.210000000001
+  2020-06 / Salarissen CWP /  / 21092 / 19331.91 / 
+  2020-06 / Salarissen CWP /  / 21092 / -13821.07 / 
+  2020-06 / Aanleg vakantiegeld CWP /  / 21092 / 1183.61 / 
+  2020-06 / Aanleg eindejaarstoelage CWP /  / 21092 / 436.7 / 
+  2020-06 / RSZ CWP /  / 21092 / 7331.01 / 
+  2020-06 / RSZ CWP /  / 21092 / -3639.05 / 
+  2020-06 / RSZ CWP /  / 21092 / -4715.75 / 
+  2020-06 / Ongevallenverz CWP /  / 21092 / 68.93 / 
+  2020-06 / Ongevallenverz CWP /  / 21092 / -49.28 / 
+  2020-06 / Externe medische dienst CWP /  / 21092 / 20.8 / 
+  2020-06 / Externe medische dienst CWP /  / 21092 / -15.6 / 
+]}, '2020-07': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-07 / 1 -> 3.2596148002994596e-13
+  2020-07 / Salarissen CWP /  / 21092 / 5452.59 / 
+  2020-07 / Aanleg vakantiegeld CWP /  / 21092 / 1183.61 / 
+  2020-07 / Aanleg eindejaarstoelage CWP /  / 21092 / 436.7 / 
+  2020-07 / RSZ CWP /  / 21092 / 188.35 / 
+  2020-07 / RSZ CWP /  / 21092 / 8456.48 / 
+  2020-07 / RSZ CWP /  / 21092 / 3639.05 / 
+  2020-07 / RSZ CWP /  / 21092 / 412.22 / 
+  2020-07 / RSZ CWP /  / 21092 / -7175.51 / 
+  2020-07 / Ongevallenverz CWP /  / 21092 / 19.44 / 
+  2020-07 / Externe medische dienst CWP /  / 21092 / 5.2 / 
+  2020-07 / Salarissen CWP /  / 21092 / -5452.59 / 
+  2020-07 / Aanleg vakantiegeld CWP /  / 21092 / -1183.61 / 
+  2020-07 / Aanleg eindejaarstoelage CWP /  / 21092 / -436.7 / 
+  2020-07 / RSZ CWP /  / 21092 / -12095.53 / 
+  2020-07 / RSZ CWP /  / 21092 / 6574.94 / 
+  2020-07 / Ongevallenverz CWP /  / 21092 / -19.44 / 
+  2020-07 / Externe medische dienst CWP /  / 21092 / -5.2 / 
+]}, '2020-08': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-08 / 1 -> 8957.970000000001
+  2020-08 / Salarissen CWP /  / 21092 / 5452.59 / 
+  2020-08 / Aanleg vakantiegeld CWP /  / 21092 / 1183.61 / 
+  2020-08 / Aanleg eindejaarstoelage CWP /  / 21092 / 436.7 / 
+  2020-08 / RSZ CWP /  / 21092 / 1860.43 / 
+  2020-08 / Ongevallenverz CWP /  / 21092 / 19.44 / 
+  2020-08 / Externe medische dienst CWP /  / 21092 / 5.2 / 
+]}, '2020-10': {'21092': [<ExpenditurePhase.BOOKED: 3>, 8380 / 21092 / 2020-10 / 1 -> -1.09
+  2020-10 / RSZ CWP /  / 21092 / -1.09 / 
+]}, '2021-01': {'20029': [<ExpenditurePhase.BOOKED: 3>, 8380 / 20029 / 2021-01 / 1 -> 3914.4799999999996
+  2021-01 / Salarissen burs RSZ /  / 20029 / 2539.85 / 
+  2021-01 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 152.39 / 
+  2021-01 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 172.71 / 
+  2021-01 / RSZ burs RSZ /  / 20029 / 866.6 / 
+  2021-01 / Ongevallenverz burs RSZ /  / 20029 / 9.06 / 
+  2021-01 / Externe medische dienst burs RSZ /  / 20029 / 5.2 / 
+  2021-01 / Openbaar vervoer burs RSZ /  / 20029 / 168.67 / 
+]}, '2021-02': {'20029': [<ExpenditurePhase.BOOKED: 3>, 8380 / 20029 / 2021-02 / 1 -> 3915.49
+  2021-02 / Salarissen burs RSZ /  / 20029 / 2539.85 / 
+  2021-02 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 152.39 / 
+  2021-02 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 172.71 / 
+  2021-02 / RSZ burs RSZ /  / 20029 / 867.61 / 
+  2021-02 / Ongevallenverz burs RSZ /  / 20029 / 9.06 / 
+  2021-02 / Externe medische dienst burs RSZ /  / 20029 / 5.2 / 
+  2021-02 / Openbaar vervoer burs RSZ /  / 20029 / 168.67 / 
+]}, '2021-03': {'20029': [<ExpenditurePhase.BOOKED: 3>, 8380 / 20029 / 2021-03 / 1 -> 3918.8099999999995
+  2021-03 / Salarissen burs RSZ /  / 20029 / 2539.85 / 
+  2021-03 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 152.39 / 
+  2021-03 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 172.71 / 
+  2021-03 / RSZ burs RSZ /  / 20029 / 867.6 / 
+  2021-03 / Ongevallenverz burs RSZ /  / 20029 / 9.06 / 
+  2021-03 / Externe medische dienst burs RSZ /  / 20029 / 5.2 / 
+  2021-03 / Openbaar vervoer burs RSZ /  / 20029 / 172.0 / 
+]}, '2021-04': {'20029': [<ExpenditurePhase.BOOKED: 3>, 8380 / 20029 / 2021-04 / 1 -> 3919.8499999999995
+  2021-04 / Salarissen burs RSZ /  / 20029 / 2539.85 / 
+  2021-04 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 152.39 / 
+  2021-04 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 172.71 / 
+  2021-04 / RSZ burs RSZ /  / 20029 / 868.64 / 
+  2021-04 / Ongevallenverz burs RSZ /  / 20029 / 9.06 / 
+  2021-04 / Externe medische dienst burs RSZ /  / 20029 / 5.2 / 
+  2021-04 / Openbaar vervoer burs RSZ /  / 20029 / 172.0 / 
+]}}
+    - 10097 - HAIROAD
+========================
+{'2025-04': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-04 / 1 -> 10371.75
+  2025-04 / Salarissen CWP /  / 16363 / 8120.24 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-05': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-05 / 1 -> 2251.5099999999998
+  2025-05 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-06': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-06 / 1 -> 10372.539999999999
+  2025-06 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-07': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-07 / 1 -> 10372.539999999999
+  2025-07 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-08': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-08 / 1 -> 10372.539999999999
+  2025-08 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2025-09': {'16363': [<ExpenditurePhase.FIXED: 2>, 10097 / 16363 / 2025-09 / 1 -> 10372.539999999999
+  2025-09 / Salarissen CWP /  / 16363 / 8121.03 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 16363 / 417.39 / 
+]}, '2024-10': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2024-10 / 1 -> 9598.810000000001
+  2024-10 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-10 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-10 / Aanleg vakantiegeld CWP /  / 16363 / 1198.41 / 
+  2024-10 / RSZ CWP /  / 16363 / 1996.09 / 
+  2024-10 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-10 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-10 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-10 / Fietsvergoeding CWP /  / 16363 / 112.5 / 
+]}, '2024-11': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2024-11 / 1 -> 9604.67
+  2024-11 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-11 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-11 / Aanleg vakantiegeld CWP /  / 16363 / 1198.41 / 
+  2024-11 / RSZ CWP /  / 16363 / 1996.1 / 
+  2024-11 / Ongevallenverz CWP /  / 16363 / 31.72 / 
+  2024-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-11 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-11 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-11 / Fietsvergoeding CWP /  / 16363 / 87.5 / 
+  2024-11 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2024-12': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2024-12 / 1 -> 9506.310000000001
+  2024-12 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-12 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-12 / Aanleg vakantiegeld CWP /  / 16363 / 1198.41 / 
+  2024-12 / RSZ CWP /  / 16363 / 1996.09 / 
+  2024-12 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-12 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-12 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-12 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2025-01': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2025-01 / 1 -> 10110.760000000002
+  2025-01 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2025-01 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2025-01 / RSZ CWP /  / 16363 / 2000.78 / 
+  2025-01 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2025-01 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2025-01 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2025-02': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2025-02 / 1 -> 4154.11
+  2025-02 / Salarissen CWP /  / 16363 / 1416.64 / 
+  2025-02 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2025-02 / RSZ CWP /  / 16363 / 484.34 / 
+  2025-02 / Ongevallenverz CWP /  / 16363 / 5.05 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.88 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 359.85 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.98 / 
+  2025-02 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2025-02 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2025-03': {'16363': [<ExpenditurePhase.BOOKED: 3>, 10097 / 16363 / 2025-03 / 1 -> 10312.340000000002
+  2025-03 / Salarissen CWP /  / 16363 / 5968.79 / 
+  2025-03 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 16363 / 1302.51 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 16363 / 531.61 / 
+  2025-03 / RSZ CWP /  / 16363 / 2040.72 / 
+  2025-03 / Ongevallenverz CWP /  / 16363 / 21.28 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.7 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 357.77 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.76 / 
+  2025-03 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2025-03 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}}
+    - FFI200361 - ModAu
+========================
+{'2021-02': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-02 / 1 -> 0.0
+  2021-02 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-02 / Salarissen CWP /  / 20618 / -3504.87 / 
+  2021-02 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-02 / Aanleg vakantiegeld CWP /  / 20618 / -771.99 / 
+  2021-02 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-02 / Aanleg eindejaarstoelage CWP /  / 20618 / -354.85 / 
+  2021-02 / RSZ CWP /  / 20618 / 1197.25 / 
+  2021-02 / RSZ CWP /  / 20618 / -1197.25 / 
+  2021-02 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-02 / Ongevallenverz CWP /  / 20618 / -12.5 / 
+  2021-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / -9.32 / 
+  2021-02 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-02 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / -105.15 / 
+  2021-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / -14.72 / 
+  2021-02 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2021-02 / Externe medische dienst CWP /  / 20618 / -5.2 / 
+]}, '2021-03': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-03 / 1 -> 4481.8899999999985
+  2021-03 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-03 / Salarissen CWP /  / 20618 / -876.22 / 
+  2021-03 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-03 / Aanleg vakantiegeld CWP /  / 20618 / -193.0 / 
+  2021-03 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-03 / Aanleg eindejaarstoelage CWP /  / 20618 / -88.71 / 
+  2021-03 / RSZ CWP /  / 20618 / 1197.27 / 
+  2021-03 / RSZ CWP /  / 20618 / -299.32 / 
+  2021-03 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-03 / Ongevallenverz CWP /  / 20618 / -3.13 / 
+  2021-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / -2.33 / 
+  2021-03 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-03 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / -26.29 / 
+  2021-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / -3.68 / 
+  2021-03 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2021-03 / Externe medische dienst CWP /  / 20618 / -1.3 / 
+]}, '2021-04': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-04 / 1 -> 5977.2699999999995
+  2021-04 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-04 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-04 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-04 / RSZ CWP /  / 20618 / 1198.67 / 
+  2021-04 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-04 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-04 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-05': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-05 / 1 -> 1280.3900000000003
+  2021-05 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-05 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-05 / Ongevallenverz CWP /  / 20618 / 19.16 / 
+  2021-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-05 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-05 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-06': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-06 / 1 -> 5975.849999999999
+  2021-06 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-06 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-06 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-06 / RSZ CWP /  / 20618 / 1197.25 / 
+  2021-06 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-06 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-06 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-07': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-07 / 1 -> 5975.5199999999995
+  2021-07 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-07 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-07 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-07 / RSZ CWP /  / 20618 / 1196.92 / 
+  2021-07 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-07 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-07 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-08': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-08 / 1 -> 5975.5
+  2021-08 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-08 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-08 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-08 / RSZ CWP /  / 20618 / 1196.9 / 
+  2021-08 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-08 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-08 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-09': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-09 / 1 -> 5975.509999999999
+  2021-09 / Salarissen CWP /  / 20618 / 3504.87 / 
+  2021-09 / Aanleg vakantiegeld CWP /  / 20618 / 771.99 / 
+  2021-09 / Aanleg eindejaarstoelage CWP /  / 20618 / 354.85 / 
+  2021-09 / RSZ CWP /  / 20618 / 1196.91 / 
+  2021-09 / Ongevallenverz CWP /  / 20618 / 12.5 / 
+  2021-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.32 / 
+  2021-09 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 105.15 / 
+  2021-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 14.72 / 
+  2021-09 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2021-10': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-10 / 1 -> 4258.759999999998
+  2021-10 / Salarissen CWP /  / 20618 / 3574.92 / 
+  2021-10 / Aanleg vakantiegeld CWP /  / 20618 / 732.86 / 
+  2021-10 / RSZ CWP /  / 20618 / 1220.85 / 
+  2021-10 / Ongevallenverz CWP /  / 20618 / 12.75 / 
+  2021-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.5 / 
+  2021-10 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 107.25 / 
+  2021-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.01 / 
+  2021-10 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2021-10 / Salarissen CWP /  / 20618 / -893.73 / 
+  2021-10 / Aanleg vakantiegeld CWP /  / 20618 / -183.21 / 
+  2021-10 / RSZ CWP /  / 20618 / -305.21 / 
+  2021-10 / Ongevallenverz CWP /  / 20618 / -3.19 / 
+  2021-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / -2.38 / 
+  2021-10 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / -26.81 / 
+  2021-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / -3.75 / 
+  2021-10 / Externe medische dienst CWP /  / 20618 / -1.3 / 
+]}, '2021-11': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-11 / 1 -> -4.46753745109163e-13
+  2021-11 / Salarissen CWP /  / 20618 / 3574.92 / 
+  2021-11 / Aanleg vakantiegeld CWP /  / 20618 / 732.86 / 
+  2021-11 / RSZ CWP /  / 20618 / 1220.83 / 
+  2021-11 / Ongevallenverz CWP /  / 20618 / 21.29 / 
+  2021-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.5 / 
+  2021-11 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 107.25 / 
+  2021-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.01 / 
+  2021-11 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2021-11 / Salarissen CWP /  / 20618 / -3574.92 / 
+  2021-11 / Aanleg vakantiegeld CWP /  / 20618 / -732.86 / 
+  2021-11 / RSZ CWP /  / 20618 / -1220.83 / 
+  2021-11 / Ongevallenverz CWP /  / 20618 / -21.29 / 
+  2021-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / -9.5 / 
+  2021-11 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / -107.25 / 
+  2021-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / -15.01 / 
+  2021-11 / Externe medische dienst CWP /  / 20618 / -5.2 / 
+]}, '2021-12': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2021-12 / 1 -> -3.2596148002994596e-13
+  2021-12 / Salarissen CWP /  / 20618 / 3676.89 / 
+  2021-12 / Aanleg vakantiegeld CWP /  / 20618 / 753.77 / 
+  2021-12 / RSZ CWP /  / 20618 / 1255.66 / 
+  2021-12 / Ongevallenverz CWP /  / 20618 / 13.11 / 
+  2021-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 9.77 / 
+  2021-12 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 110.31 / 
+  2021-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.44 / 
+  2021-12 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2021-12 / Salarissen CWP /  / 20618 / -3676.89 / 
+  2021-12 / Aanleg vakantiegeld CWP /  / 20618 / -753.77 / 
+  2021-12 / RSZ CWP /  / 20618 / -1255.66 / 
+  2021-12 / Ongevallenverz CWP /  / 20618 / -13.11 / 
+  2021-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / -9.77 / 
+  2021-12 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / -110.31 / 
+  2021-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / -15.44 / 
+  2021-12 / Externe medische dienst CWP /  / 20618 / -5.2 / 
+]}, '2022-01': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-01 / 1 -> 6307.439999999999
+  2022-01 / Salarissen CWP /  / 20618 / 3676.89 / 
+  2022-01 / Aanleg vakantiegeld CWP /  / 20618 / 809.87 / 
+  2022-01 / Aanleg eindejaarstoelage CWP /  / 20618 / 372.26 / 
+  2022-01 / RSZ CWP /  / 20618 / 1254.56 / 
+  2022-01 / Ongevallenverz CWP /  / 20618 / 13.11 / 
+  2022-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 13.03 / 
+  2022-01 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 147.08 / 
+  2022-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.44 / 
+  2022-01 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+]}, '2022-02': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-02 / 1 -> 6453.77
+  2022-02 / Salarissen CWP /  / 20618 / 3750.6 / 
+  2022-02 / Aanleg vakantiegeld CWP /  / 20618 / 826.1 / 
+  2022-02 / Aanleg eindejaarstoelage CWP /  / 20618 / 379.73 / 
+  2022-02 / RSZ CWP /  / 20618 / 1279.71 / 
+  2022-02 / Ongevallenverz CWP /  / 20618 / 13.37 / 
+  2022-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 13.29 / 
+  2022-02 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 150.02 / 
+  2022-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.75 / 
+  2022-02 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2022-02 / Internetvergoeding CWP /  / 20618 / 20.0 / 
+]}, '2022-03': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-03 / 1 -> 6453.76
+  2022-03 / Salarissen CWP /  / 20618 / 3750.6 / 
+  2022-03 / Aanleg vakantiegeld CWP /  / 20618 / 826.1 / 
+  2022-03 / Aanleg eindejaarstoelage CWP /  / 20618 / 379.73 / 
+  2022-03 / RSZ CWP /  / 20618 / 1279.7 / 
+  2022-03 / Ongevallenverz CWP /  / 20618 / 13.37 / 
+  2022-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 13.29 / 
+  2022-03 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 150.02 / 
+  2022-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 15.75 / 
+  2022-03 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2022-03 / Internetvergoeding CWP /  / 20618 / 20.0 / 
+]}, '2022-04': {'20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-04 / 1 -> 20.0
+  2022-04 / Internetvergoeding CWP /  / 20618 / 20.0 / 
+]}, '2022-07': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-07 / 1 -> 1043.03
+  2022-07 / Salarissen CWP /  / 12884 / 610.45 / 
+  2022-07 / Aanleg vakantiegeld CWP /  / 12884 / 133.34 / 
+  2022-07 / Aanleg eindejaarstoelage CWP /  / 12884 / 54.43 / 
+  2022-07 / RSZ CWP /  / 12884 / 208.29 / 
+  2022-07 / Ongevallenverz CWP /  / 12884 / 2.18 / 
+  2022-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.16 / 
+  2022-07 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 24.42 / 
+  2022-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.56 / 
+  2022-07 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+], '20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-07 / 1 -> 6738.179999999999
+  2022-07 / Salarissen CWP /  / 20618 / 3901.96 / 
+  2022-07 / Aanleg vakantiegeld CWP /  / 20618 / 859.45 / 
+  2022-07 / Aanleg eindejaarstoelage CWP /  / 20618 / 395.05 / 
+  2022-07 / RSZ CWP /  / 20618 / 1331.35 / 
+  2022-07 / Ongevallenverz CWP /  / 20618 / 13.91 / 
+  2022-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 13.83 / 
+  2022-07 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 156.08 / 
+  2022-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 16.39 / 
+  2022-07 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2022-07 / Fietsvergoeding CWP /  / 20618 / 24.96 / 
+  2022-07 / Internetvergoeding CWP /  / 20618 / 20.0 / 
+]}, '2022-08': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-08 / 1 -> 1043.02
+  2022-08 / Salarissen CWP /  / 12884 / 610.45 / 
+  2022-08 / Aanleg vakantiegeld CWP /  / 12884 / 133.34 / 
+  2022-08 / Aanleg eindejaarstoelage CWP /  / 12884 / 54.43 / 
+  2022-08 / RSZ CWP /  / 12884 / 208.28 / 
+  2022-08 / Ongevallenverz CWP /  / 12884 / 2.18 / 
+  2022-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.16 / 
+  2022-08 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 24.42 / 
+  2022-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.56 / 
+  2022-08 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+], '20618': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 20618 / 2022-08 / 1 -> 6750.65
+  2022-08 / Salarissen CWP /  / 20618 / 3901.96 / 
+  2022-08 / Aanleg vakantiegeld CWP /  / 20618 / 859.45 / 
+  2022-08 / Aanleg eindejaarstoelage CWP /  / 20618 / 395.05 / 
+  2022-08 / RSZ CWP /  / 20618 / 1331.34 / 
+  2022-08 / Ongevallenverz CWP /  / 20618 / 13.91 / 
+  2022-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20618 / 13.83 / 
+  2022-08 / Groepsverzekering CWP (vanaf 2021) /  / 20618 / 156.08 / 
+  2022-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20618 / 16.39 / 
+  2022-08 / Externe medische dienst CWP /  / 20618 / 5.2 / 
+  2022-08 / Fietsvergoeding CWP /  / 20618 / 37.44 / 
+  2022-08 / Internetvergoeding CWP /  / 20618 / 20.0 / 
+]}, '2022-09': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-09 / 1 -> 1063.8
+  2022-09 / Salarissen CWP /  / 12884 / 622.66 / 
+  2022-09 / Aanleg vakantiegeld CWP /  / 12884 / 136.01 / 
+  2022-09 / Aanleg eindejaarstoelage CWP /  / 12884 / 55.52 / 
+  2022-09 / RSZ CWP /  / 12884 / 212.45 / 
+  2022-09 / Ongevallenverz CWP /  / 12884 / 2.22 / 
+  2022-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.21 / 
+  2022-09 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 24.91 / 
+  2022-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.62 / 
+  2022-09 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+]}, '2022-10': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-10 / 1 -> 999.84
+  2022-10 / Salarissen CWP /  / 12884 / 622.66 / 
+  2022-10 / Aanleg vakantiegeld CWP /  / 12884 / 127.64 / 
+  2022-10 / RSZ CWP /  / 12884 / 212.38 / 
+  2022-10 / Ongevallenverz CWP /  / 12884 / 2.22 / 
+  2022-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.21 / 
+  2022-10 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 24.91 / 
+  2022-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.62 / 
+  2022-10 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+]}, '2022-11': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-11 / 1 -> 1000.96
+  2022-11 / Salarissen CWP /  / 12884 / 622.66 / 
+  2022-11 / Aanleg vakantiegeld CWP /  / 12884 / 127.64 / 
+  2022-11 / RSZ CWP /  / 12884 / 212.4 / 
+  2022-11 / Ongevallenverz CWP /  / 12884 / 3.32 / 
+  2022-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.21 / 
+  2022-11 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 24.91 / 
+  2022-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.62 / 
+  2022-11 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+]}, '2022-12': {'12884': [<ExpenditurePhase.BOOKED: 3>, FFI200361 / 12884 / 2022-12 / 1 -> 1019.7499999999999
+  2022-12 / Salarissen CWP /  / 12884 / 635.13 / 
+  2022-12 / Aanleg vakantiegeld CWP /  / 12884 / 130.2 / 
+  2022-12 / RSZ CWP /  / 12884 / 216.63 / 
+  2022-12 / Ongevallenverz CWP /  / 12884 / 2.26 / 
+  2022-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 2.25 / 
+  2022-12 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 25.41 / 
+  2022-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 2.67 / 
+  2022-12 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+]}}
+    - FFP230382 - SmartDock-1
+========================
+{'2024-04': {'16363': [<ExpenditurePhase.BOOKED: 3>, FFP230382 / 16363 / 2024-04 / 1 -> 10029.019999999997
+  2024-04 / Salarissen CWP /  / 16363 / 5737.28 / 
+  2024-04 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-04 / Aanleg vakantiegeld CWP /  / 16363 / 1251.94 / 
+  2024-04 / Aanleg eindejaarstoelage CWP /  / 16363 / 510.98 / 
+  2024-04 / RSZ CWP /  / 16363 / 1957.56 / 
+  2024-04 / Ongevallenverz CWP /  / 16363 / 20.46 / 
+  2024-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 30.47 / 
+  2024-04 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 343.88 / 
+  2024-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 37.25 / 
+  2024-04 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-04 / Fietsvergoeding CWP /  / 16363 / 100.0 / 
+  2024-04 / Internetvergoeding CWP /  / 16363 / 40.0 / 
+]}, '2024-05': {'16363': [<ExpenditurePhase.BOOKED: 3>, FFP230382 / 16363 / 2024-05 / 1 -> 20.0
+  2024-05 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}, '2024-06': {'16363': [<ExpenditurePhase.BOOKED: 3>, FFP230382 / 16363 / 2024-06 / 1 -> 10249.140000000001
+  2024-06 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-06 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-06 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2024-06 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2024-06 / RSZ CWP /  / 16363 / 1996.66 / 
+  2024-06 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-06 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-06 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-06 / Fietsvergoeding CWP /  / 16363 / 162.5 / 
+]}}
+    - FFP230383 - SmartDock-2
+========================
+{'2023-09': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFP230383 / 25221 / 2023-09 / 1 -> 6783.2
+  2023-09 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-09 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-09 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-09 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-09 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-09 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-09 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-09 / Fietsvergoeding CWP /  / 25221 / 31.5 / 
+]}, '2023-10': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFP230383 / 25221 / 2023-10 / 1 -> 6347.52
+  2023-10 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-10 / Aanleg vakantiegeld CWP /  / 25221 / 801.81 / 
+  2023-10 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-10 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-10 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-10 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-10 / Fietsvergoeding CWP /  / 25221 / 31.5 / 
+  2023-10 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-11': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFP230383 / 25221 / 2023-11 / 1 -> 6336.36
+  2023-11 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-11 / Aanleg vakantiegeld CWP /  / 25221 / 801.81 / 
+  2023-11 / RSZ CWP /  / 25221 / 1334.52 / 
+  2023-11 / Ongevallenverz CWP /  / 25221 / 21.28 / 
+  2023-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-11 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-11 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-11 / Fietsvergoeding CWP /  / 25221 / 33.0 / 
+]}, '2023-12': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFP230383 / 25221 / 2023-12 / 1 -> 6469.33
+  2023-12 / Salarissen CWP /  / 25221 / 3989.46 / 
+  2023-12 / Aanleg vakantiegeld CWP /  / 25221 / 817.84 / 
+  2023-12 / RSZ CWP /  / 25221 / 1360.2 / 
+  2023-12 / Ongevallenverz CWP /  / 25221 / 14.23 / 
+  2023-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.67 / 
+  2023-12 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 199.47 / 
+  2023-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.76 / 
+  2023-12 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-12 / Fietsvergoeding CWP /  / 25221 / 28.5 / 
+  2023-12 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2024-01': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFP230383 / 25221 / 2024-01 / 1 -> 20.0
+  2024-01 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}}
+    - FFI220239 - ABN-HF-1
+========================
+{'2023-03': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-03 / 1 -> 6751.7
+  2023-03 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-03 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-03 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-03 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-03 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-03 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-03 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+]}, '2023-04': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-04 / 1 -> 7778.499999999999
+  2023-04 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-04 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-04 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-04 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-04 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-04 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-04 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-04 / Fietsvergoeding CWP /  / 16051 / 12.0 / 
+  2023-04 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-04 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-04 / 1 -> 6803.2
+  2023-04 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-04 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-04 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-04 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-04 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-04 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-04 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-04 / Fietsvergoeding CWP /  / 25221 / 31.5 / 
+  2023-04 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-05': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-05 / 1 -> 1797.2299999999998
+  2023-05 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-05 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-05 / Ongevallenverz CWP /  / 16051 / 30.61 / 
+  2023-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-05 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-05 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-05 / Fietsvergoeding CWP /  / 16051 / 12.0 / 
+  2023-05 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-05 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-05 / 1 -> 6800.19
+  2023-05 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-05 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-05 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-05 / RSZ CWP /  / 25221 / 1334.5 / 
+  2023-05 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-05 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-05 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-05 / Fietsvergoeding CWP /  / 25221 / 28.5 / 
+  2023-05 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-06': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-06 / 1 -> 7826.499999999999
+  2023-06 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-06 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-06 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-06 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-06 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-06 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-06 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-06 / Fietsvergoeding CWP /  / 16051 / 60.0 / 
+  2023-06 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-06 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-06 / 1 -> 6818.2
+  2023-06 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-06 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-06 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-06 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-06 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-06 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-06 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-06 / Fietsvergoeding CWP /  / 25221 / 46.5 / 
+  2023-06 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-07': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-07 / 1 -> 7736.499999999999
+  2023-07 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-07 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-07 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-07 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-07 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-07 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-07 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-07 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-07 / 1 -> 6771.7
+  2023-07 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-07 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-07 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-07 / RSZ CWP /  / 25221 / 1334.51 / 
+  2023-07 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-07 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-07 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-07 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-08': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-08 / 1 -> 7886.489999999999
+  2023-08 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-08 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-08 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-08 / RSZ CWP /  / 16051 / 1525.35 / 
+  2023-08 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-08 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-08 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-08 / Fietsvergoeding CWP /  / 16051 / 120.0 / 
+  2023-08 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-08 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-08 / 1 -> 6791.19
+  2023-08 / Salarissen CWP /  / 25221 / 3911.23 / 
+  2023-08 / Aanleg vakantiegeld CWP /  / 25221 / 861.5 / 
+  2023-08 / Aanleg eindejaarstoelage CWP /  / 25221 / 395.99 / 
+  2023-08 / RSZ CWP /  / 25221 / 1334.5 / 
+  2023-08 / Ongevallenverz CWP /  / 25221 / 13.95 / 
+  2023-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 17.33 / 
+  2023-08 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 195.56 / 
+  2023-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 16.43 / 
+  2023-08 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2023-08 / Fietsvergoeding CWP /  / 25221 / 19.5 / 
+  2023-08 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-09': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-09 / 1 -> 7850.499999999999
+  2023-09 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-09 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-09 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-09 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-09 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-09 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-09 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-09 / Fietsvergoeding CWP /  / 16051 / 84.0 / 
+  2023-09 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-09 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 25221 / 2023-09 / 1 -> 20.0
+  2023-09 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2023-10': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-10 / 1 -> 7639.220000000001
+  2023-10 / Salarissen CWP /  / 16051 / 4685.42 / 
+  2023-10 / Aanleg vakantiegeld CWP /  / 16051 / 960.51 / 
+  2023-10 / RSZ CWP /  / 16051 / 1598.67 / 
+  2023-10 / Ongevallenverz CWP /  / 16051 / 16.71 / 
+  2023-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 20.76 / 
+  2023-10 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 234.27 / 
+  2023-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 19.68 / 
+  2023-10 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-10 / Fietsvergoeding CWP /  / 16051 / 48.0 / 
+  2023-10 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-10 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+]}, '2023-11': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-11 / 1 -> 7572.400000000001
+  2023-11 / Salarissen CWP /  / 16051 / 4685.42 / 
+  2023-11 / Aanleg vakantiegeld CWP /  / 16051 / 960.51 / 
+  2023-11 / RSZ CWP /  / 16051 / 1598.66 / 
+  2023-11 / Ongevallenverz CWP /  / 16051 / 27.9 / 
+  2023-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 20.76 / 
+  2023-11 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 234.27 / 
+  2023-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 19.68 / 
+  2023-11 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-11 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2023-12': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2023-12 / 1 -> 7938.2
+  2023-12 / Salarissen CWP /  / 16051 / 4779.13 / 
+  2023-12 / Aanleg vakantiegeld CWP /  / 16051 / 979.72 / 
+  2023-12 / RSZ CWP /  / 16051 / 1629.7 / 
+  2023-12 / Ongevallenverz CWP /  / 16051 / 17.04 / 
+  2023-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 21.17 / 
+  2023-12 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 238.96 / 
+  2023-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 20.07 / 
+  2023-12 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-12 / Fietsvergoeding CWP /  / 16051 / 168.0 / 
+  2023-12 / Telewerkvergoeding CWP /  / 16051 / 60.0 / 
+  2023-12 / RSZ CWP /  / 16051 / -0.79 / 
+  2023-12 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2024-01': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI220239 / 16051 / 2024-01 / 1 -> 20.0
+  2024-01 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}}
+    - FFI230414 - ABN-HF-2
+========================
+{'2025-04': {'16051': [<ExpenditurePhase.FIXED: 2>, FFI230414 / 16051 / 2025-04 / 1 -> 1609.4299999999998
+  2025-04 / Salarissen CWP /  / 16051 / 10.85 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 16051 / 1095.18 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 16051 / 503.4 / 
+]}, '2024-02': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-02 / 1 -> 6939.25
+  2024-02 / Salarissen CWP /  / 25221 / 3989.46 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 25221 / 878.73 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 25221 / 403.91 / 
+  2024-02 / RSZ CWP /  / 25221 / 1361.21 / 
+  2024-02 / Ongevallenverz CWP /  / 25221 / 14.23 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 21.21 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 239.37 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 25.93 / 
+  2024-02 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+]}, '2024-03': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-03 / 1 -> 8455.75
+  2024-03 / Salarissen CWP /  / 16051 / 4779.13 / 
+  2024-03 / Aanleg vakantiegeld CWP /  / 16051 / 1052.66 / 
+  2024-03 / Aanleg eindejaarstoelage CWP /  / 16051 / 483.86 / 
+  2024-03 / RSZ CWP /  / 16051 / 1630.64 / 
+  2024-03 / Ongevallenverz CWP /  / 16051 / 17.04 / 
+  2024-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.41 / 
+  2024-03 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 286.75 / 
+  2024-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.06 / 
+  2024-03 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-03 / Fietsvergoeding CWP /  / 16051 / 84.0 / 
+  2024-03 / Telewerkvergoeding CWP /  / 16051 / 60.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-03 / 1 -> 7227.319999999999
+  2024-03 / Salarissen CWP /  / 25221 / 4106.59 / 
+  2024-03 / Aanleg vakantiegeld CWP /  / 25221 / 904.53 / 
+  2024-03 / Aanleg eindejaarstoelage CWP /  / 25221 / 415.77 / 
+  2024-03 / RSZ CWP /  / 25221 / 1401.17 / 
+  2024-03 / Ongevallenverz CWP /  / 25221 / 14.64 / 
+  2024-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 21.83 / 
+  2024-03 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 246.4 / 
+  2024-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 26.69 / 
+  2024-03 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-03 / Fietsvergoeding CWP /  / 25221 / 64.5 / 
+  2024-03 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2024-04': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-04 / 1 -> 8331.76
+  2024-04 / Salarissen CWP /  / 16051 / 4779.13 / 
+  2024-04 / Aanleg vakantiegeld CWP /  / 16051 / 1052.66 / 
+  2024-04 / Aanleg eindejaarstoelage CWP /  / 16051 / 483.86 / 
+  2024-04 / RSZ CWP /  / 16051 / 1630.65 / 
+  2024-04 / Ongevallenverz CWP /  / 16051 / 17.04 / 
+  2024-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.41 / 
+  2024-04 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 286.75 / 
+  2024-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.06 / 
+  2024-04 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-04 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-04 / 1 -> 7194.319999999999
+  2024-04 / Salarissen CWP /  / 25221 / 4106.59 / 
+  2024-04 / Aanleg vakantiegeld CWP /  / 25221 / 904.53 / 
+  2024-04 / Aanleg eindejaarstoelage CWP /  / 25221 / 415.77 / 
+  2024-04 / RSZ CWP /  / 25221 / 1401.17 / 
+  2024-04 / Ongevallenverz CWP /  / 25221 / 14.64 / 
+  2024-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 21.83 / 
+  2024-04 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 246.4 / 
+  2024-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 26.69 / 
+  2024-04 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-04 / Fietsvergoeding CWP /  / 25221 / 31.5 / 
+  2024-04 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+]}, '2024-05': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-05 / 1 -> 1937.66
+  2024-05 / Aanleg vakantiegeld CWP /  / 16051 / 1052.66 / 
+  2024-05 / Aanleg eindejaarstoelage CWP /  / 16051 / 483.86 / 
+  2024-05 / Ongevallenverz CWP /  / 16051 / 32.72 / 
+  2024-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.41 / 
+  2024-05 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 286.75 / 
+  2024-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.06 / 
+  2024-05 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-05 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-05 / 1 -> 848.9100000000001
+  2024-05 / Aanleg vakantiegeld CWP /  / 25221 / 904.53 / 
+  2024-05 / Aanleg vakantiegeld CWP /  / 25221 / -452.27 / 
+  2024-05 / Aanleg eindejaarstoelage CWP /  / 25221 / 415.77 / 
+  2024-05 / Aanleg eindejaarstoelage CWP /  / 25221 / -207.89 / 
+  2024-05 / Ongevallenverz CWP /  / 25221 / 25.94 / 
+  2024-05 / Ongevallenverz CWP /  / 25221 / -12.97 / 
+  2024-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 21.83 / 
+  2024-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / -10.92 / 
+  2024-05 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 246.4 / 
+  2024-05 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / -123.2 / 
+  2024-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 26.69 / 
+  2024-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / -13.35 / 
+  2024-05 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-05 / Externe medische dienst CWP /  / 25221 / -2.6 / 
+  2024-05 / Fietsvergoeding CWP /  / 25221 / 31.5 / 
+  2024-05 / Fietsvergoeding CWP /  / 25221 / -15.75 / 
+  2024-05 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+  2024-05 / Internetvergoeding CWP /  / 25221 / -10.0 / 
+]}, '2024-06': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-06 / 1 -> 8497.87
+  2024-06 / Salarissen CWP /  / 16051 / 4874.72 / 
+  2024-06 / Aanleg vakantiegeld CWP /  / 16051 / 1073.71 / 
+  2024-06 / Aanleg eindejaarstoelage CWP /  / 16051 / 493.54 / 
+  2024-06 / RSZ CWP /  / 16051 / 1663.24 / 
+  2024-06 / Ongevallenverz CWP /  / 16051 / 17.38 / 
+  2024-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.91 / 
+  2024-06 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 292.48 / 
+  2024-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.69 / 
+  2024-06 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-06 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-06 / 1 -> 3673.76
+  2024-06 / Salarissen CWP /  / 25221 / 4188.73 / 
+  2024-06 / Salarissen CWP /  / 25221 / -2094.37 / 
+  2024-06 / Aanleg vakantiegeld CWP /  / 25221 / 922.61 / 
+  2024-06 / Aanleg vakantiegeld CWP /  / 25221 / -461.31 / 
+  2024-06 / Aanleg eindejaarstoelage CWP /  / 25221 / 424.09 / 
+  2024-06 / Aanleg eindejaarstoelage CWP /  / 25221 / -212.05 / 
+  2024-06 / RSZ CWP /  / 25221 / 1429.19 / 
+  2024-06 / RSZ CWP /  / 25221 / -714.6 / 
+  2024-06 / Ongevallenverz CWP /  / 25221 / 14.94 / 
+  2024-06 / Ongevallenverz CWP /  / 25221 / -7.47 / 
+  2024-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 22.27 / 
+  2024-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / -11.14 / 
+  2024-06 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 251.32 / 
+  2024-06 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / -125.66 / 
+  2024-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 27.23 / 
+  2024-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / -13.62 / 
+  2024-06 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-06 / Externe medische dienst CWP /  / 25221 / -2.6 / 
+  2024-06 / Fietsvergoeding CWP /  / 25221 / 42.0 / 
+  2024-06 / Fietsvergoeding CWP /  / 25221 / -21.0 / 
+  2024-06 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+  2024-06 / Internetvergoeding CWP /  / 25221 / -10.0 / 
+]}, '2024-07': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-07 / 1 -> 8497.410000000002
+  2024-07 / Salarissen CWP /  / 16051 / 4874.72 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 16051 / 1073.71 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 16051 / 493.54 / 
+  2024-07 / RSZ CWP /  / 16051 / 1662.78 / 
+  2024-07 / Ongevallenverz CWP /  / 16051 / 17.38 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.91 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 292.48 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.69 / 
+  2024-07 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-07 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-07 / 1 -> 3652.5600000000004
+  2024-07 / Salarissen CWP /  / 25221 / 4188.73 / 
+  2024-07 / Salarissen CWP /  / 25221 / -2094.37 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 25221 / 922.61 / 
+  2024-07 / Aanleg vakantiegeld CWP /  / 25221 / -461.31 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 25221 / 424.09 / 
+  2024-07 / Aanleg eindejaarstoelage CWP /  / 25221 / -212.05 / 
+  2024-07 / RSZ CWP /  / 25221 / 1428.78 / 
+  2024-07 / RSZ CWP /  / 25221 / -714.39 / 
+  2024-07 / Ongevallenverz CWP /  / 25221 / 14.94 / 
+  2024-07 / Ongevallenverz CWP /  / 25221 / -7.47 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 22.27 / 
+  2024-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / -11.14 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 251.32 / 
+  2024-07 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / -125.66 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 27.23 / 
+  2024-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / -13.62 / 
+  2024-07 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-07 / Externe medische dienst CWP /  / 25221 / -2.6 / 
+  2024-07 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+  2024-07 / Internetvergoeding CWP /  / 25221 / -10.0 / 
+]}, '2024-08': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-08 / 1 -> 7901.97
+  2024-08 / Salarissen CWP /  / 16051 / 4431.56 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 16051 / 1073.71 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 16051 / 493.54 / 
+  2024-08 / RSZ CWP /  / 16051 / 1511.59 / 
+  2024-08 / Ongevallenverz CWP /  / 16051 / 15.8 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.95 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 292.89 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 31.73 / 
+  2024-08 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2024-08 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-08 / 1 -> 3652.55
+  2024-08 / Salarissen CWP /  / 25221 / 4188.73 / 
+  2024-08 / Salarissen CWP /  / 25221 / -2094.37 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 25221 / 922.61 / 
+  2024-08 / Aanleg vakantiegeld CWP /  / 25221 / -461.31 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 25221 / 424.09 / 
+  2024-08 / Aanleg eindejaarstoelage CWP /  / 25221 / -212.05 / 
+  2024-08 / RSZ CWP /  / 25221 / 1428.77 / 
+  2024-08 / RSZ CWP /  / 25221 / -714.39 / 
+  2024-08 / Ongevallenverz CWP /  / 25221 / 14.94 / 
+  2024-08 / Ongevallenverz CWP /  / 25221 / -7.47 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 22.27 / 
+  2024-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / -11.14 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 251.32 / 
+  2024-08 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / -125.66 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 27.23 / 
+  2024-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / -13.62 / 
+  2024-08 / Externe medische dienst CWP /  / 25221 / 5.2 / 
+  2024-08 / Externe medische dienst CWP /  / 25221 / -2.6 / 
+  2024-08 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+  2024-08 / Internetvergoeding CWP /  / 25221 / -10.0 / 
+]}, '2024-09': {'16051': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 16051 / 2024-09 / 1 -> 425.31999999999994
+  2024-09 / Salarissen CWP /  / 16051 / -1101.89 / 
+  2024-09 / Voordelen in natura CWP /  / 16051 / -6.0 / 
+  2024-09 / Aanleg vakantiegeld CWP /  / 16051 / 1073.71 / 
+  2024-09 / Aanleg eindejaarstoelage CWP /  / 16051 / 493.54 / 
+  2024-09 / RSZ CWP /  / 16051 / -375.84 / 
+  2024-09 / Ongevallenverz CWP /  / 16051 / -3.93 / 
+  2024-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 25.21 / 
+  2024-09 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 284.5 / 
+  2024-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 30.82 / 
+  2024-09 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+], '25221': [<ExpenditurePhase.BOOKED: 3>, FFI230414 / 25221 / 2024-09 / 1 -> 10.0
+  2024-09 / Internetvergoeding CWP /  / 25221 / 20.0 / 
+  2024-09 / Internetvergoeding CWP /  / 25221 / -10.0 / 
+]}}
+    - FFP240117 - CNH
+========================
+{}
+    - FFP230001 - Grimlock
+========================
+{'2024-02': {'16363': [<ExpenditurePhase.BOOKED: 3>, FFP230001 / 16363 / 2024-02 / 1 -> 0.0
+  2024-02 / Salarissen CWP /  / 16363 / -5737.28 / 
+  2024-02 / Salarissen CWP /  / 16363 / 5737.28 / 
+  2024-02 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-02 / Voordelen in natura CWP /  / 16363 / 6.0 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 16363 / 1251.94 / 
+  2024-02 / Aanleg vakantiegeld CWP /  / 16363 / -1251.94 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 16363 / -510.98 / 
+  2024-02 / Aanleg eindejaarstoelage CWP /  / 16363 / 510.98 / 
+  2024-02 / RSZ CWP /  / 16363 / 1957.56 / 
+  2024-02 / RSZ CWP /  / 16363 / -1957.56 / 
+  2024-02 / Ongevallenverz CWP /  / 16363 / 20.46 / 
+  2024-02 / Ongevallenverz CWP /  / 16363 / -20.46 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / -30.47 / 
+  2024-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 30.47 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 343.88 / 
+  2024-02 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / -343.88 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / -37.25 / 
+  2024-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 37.25 / 
+  2024-02 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-02 / Externe medische dienst CWP /  / 16363 / -5.2 / 
+  2024-02 / Fietsvergoeding CWP /  / 16363 / -62.5 / 
+  2024-02 / Fietsvergoeding CWP /  / 16363 / 62.5 / 
+]}, '2024-03': {'16363': [<ExpenditurePhase.BOOKED: 3>, FFP230001 / 16363 / 2024-03 / 1 -> 9976.539999999997
+  2024-03 / Salarissen CWP /  / 16363 / 5737.28 / 
+  2024-03 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-03 / Aanleg vakantiegeld CWP /  / 16363 / 1251.94 / 
+  2024-03 / Aanleg eindejaarstoelage CWP /  / 16363 / 510.98 / 
+  2024-03 / RSZ CWP /  / 16363 / 1957.58 / 
+  2024-03 / Ongevallenverz CWP /  / 16363 / 20.46 / 
+  2024-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 30.47 / 
+  2024-03 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 343.88 / 
+  2024-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 37.25 / 
+  2024-03 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-03 / Fietsvergoeding CWP /  / 16363 / 87.5 / 
+]}}
+    - FFI240377 - SLK
+========================
+{'2025-04': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-04 / 1 -> 3853.78
+  2025-04 / Salarissen CWP /  / 25221 / 2993.57 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 25221 / 153.8 / 
+]}, '2025-05': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-05 / 1 -> 860.21
+  2025-05 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 25221 / 153.8 / 
+]}, '2025-06': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-06 / 1 -> 3854.17
+  2025-06 / Salarissen CWP /  / 25221 / 2993.96 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 25221 / 153.8 / 
+]}, '2025-07': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-07 / 1 -> 3854.17
+  2025-07 / Salarissen CWP /  / 25221 / 2993.96 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 25221 / 153.8 / 
+]}, '2025-08': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-08 / 1 -> 3854.17
+  2025-08 / Salarissen CWP /  / 25221 / 2993.96 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 25221 / 153.8 / 
+]}, '2025-09': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-09 / 1 -> 7708.33
+  2025-09 / Salarissen CWP /  / 25221 / 5987.93 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 25221 / 967.89 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 25221 / 444.9 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 25221 / 307.61 / 
+]}, '2025-10': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-10 / 1 -> 7196.37
+  2025-10 / Salarissen CWP /  / 25221 / 5987.93 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 25221 / 900.83 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 25221 / 307.61 / 
+]}, '2025-11': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-11 / 1 -> 7196.37
+  2025-11 / Salarissen CWP /  / 25221 / 5987.93 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 25221 / 900.83 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 25221 / 307.61 / 
+]}, '2025-12': {'25221': [<ExpenditurePhase.FIXED: 2>, FFI240377 / 25221 / 2025-12 / 1 -> 7196.37
+  2025-12 / Salarissen CWP /  / 25221 / 5987.93 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 25221 / 900.83 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 25221 / 307.61 / 
+]}, '2025-01': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFI240377 / 25221 / 2025-01 / 1 -> 3667.77
+  2025-01 / Salarissen CWP /  / 25221 / 2097.36 / 
+  2025-01 / Voordelen in natura CWP /  / 25221 / -3.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 25221 / 461.31 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 25221 / 212.04 / 
+  2025-01 / RSZ CWP /  / 25221 / 717.08 / 
+  2025-01 / Ongevallenverz CWP /  / 25221 / 7.48 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 11.13 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 125.66 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 13.61 / 
+  2025-01 / Externe medische dienst CWP /  / 25221 / 2.6 / 
+  2025-01 / Fietsvergoeding CWP /  / 25221 / 22.5 / 
+]}, '2025-02': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFI240377 / 25221 / 2025-02 / 1 -> 3655.27
+  2025-02 / Salarissen CWP /  / 25221 / 2097.36 / 
+  2025-02 / Voordelen in natura CWP /  / 25221 / -3.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 25221 / 461.31 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 25221 / 212.04 / 
+  2025-02 / RSZ CWP /  / 25221 / 717.08 / 
+  2025-02 / Ongevallenverz CWP /  / 25221 / 7.48 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 11.13 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 125.66 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 13.61 / 
+  2025-02 / Externe medische dienst CWP /  / 25221 / 2.6 / 
+  2025-02 / Internetvergoeding CWP /  / 25221 / 10.0 / 
+]}, '2025-03': {'25221': [<ExpenditurePhase.BOOKED: 3>, FFI240377 / 25221 / 2025-03 / 1 -> 3843.04
+  2025-03 / Salarissen CWP /  / 25221 / 2200.17 / 
+  2025-03 / Voordelen in natura CWP /  / 25221 / -3.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 25221 / 483.95 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 25221 / 222.46 / 
+  2025-03 / RSZ CWP /  / 25221 / 752.23 / 
+  2025-03 / Ongevallenverz CWP /  / 25221 / 7.84 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 25221 / 11.68 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 25221 / 131.83 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 25221 / 14.28 / 
+  2025-03 / Externe medische dienst CWP /  / 25221 / 2.6 / 
+  2025-03 / Fietsvergoeding CWP /  / 25221 / 9.0 / 
+  2025-03 / Internetvergoeding CWP /  / 25221 / 10.0 / 
+]}}
+    - AO240005 - AK-SSP
+========================
+{}
+    - WO170003 - WO-SSP
+========================
+{}
+    - RA140003 - RA-Daems
+========================
+{'2025-01': {'12884': [<ExpenditurePhase.BOOKED: 3>, RA140003 / 12884 / 2025-01 / 1 -> 0.0
+  2025-01 / Salarissen CWP /  / 12884 / 724.71 / 
+  2025-01 / Salarissen CWP /  / 12884 / -724.71 / 
+  2025-01 / Voordelen in natura CWP /  / 12884 / 6.0 / 
+  2025-01 / Voordelen in natura CWP /  / 12884 / -6.0 / 
+  2025-01 / RSZ CWP /  / 12884 / 247.78 / 
+  2025-01 / RSZ CWP /  / 12884 / -247.78 / 
+  2025-01 / Ongevallenverz CWP /  / 12884 / 2.58 / 
+  2025-01 / Ongevallenverz CWP /  / 12884 / -2.58 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / -3.82 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 3.82 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 43.12 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / -43.12 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / -4.67 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 4.67 / 
+  2025-01 / Externe medische dienst CWP /  / 12884 / -5.2 / 
+  2025-01 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 12884 / 7.5 / 
+  2025-01 / Fietsvergoeding CWP /  / 12884 / -7.5 / 
+]}}
+    - AK160007 - AK-Daems
+========================
+{'2025-01': {'12884': [<ExpenditurePhase.BOOKED: 3>, AK160007 / 12884 / 2025-01 / 1 -> 1033.38
+  2025-01 / Salarissen CWP /  / 12884 / 724.71 / 
+  2025-01 / Voordelen in natura CWP /  / 12884 / -6.0 / 
+  2025-01 / RSZ CWP /  / 12884 / 247.78 / 
+  2025-01 / Ongevallenverz CWP /  / 12884 / 2.58 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 3.82 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 43.12 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 4.67 / 
+  2025-01 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 12884 / 7.5 / 
+]}, '2025-02': {'12884': [<ExpenditurePhase.BOOKED: 3>, AK160007 / 12884 / 2025-02 / 1 -> 1246.97
+  2025-02 / Salarissen CWP /  / 12884 / 724.71 / 
+  2025-02 / Voordelen in natura CWP /  / 12884 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 12884 / 156.99 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 12884 / 64.08 / 
+  2025-02 / RSZ CWP /  / 12884 / 247.8 / 
+  2025-02 / Ongevallenverz CWP /  / 12884 / 2.58 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 3.82 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 43.12 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 4.67 / 
+  2025-02 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+]}, '2025-03': {'12884': [<ExpenditurePhase.BOOKED: 3>, AK160007 / 12884 / 2025-03 / 1 -> 1281.7500000000002
+  2025-03 / Salarissen CWP /  / 12884 / 739.08 / 
+  2025-03 / Voordelen in natura CWP /  / 12884 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-03 / RSZ CWP /  / 12884 / 252.68 / 
+  2025-03 / Ongevallenverz CWP /  / 12884 / 2.64 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 12884 / 3.9 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 12884 / 43.98 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 12884 / 4.77 / 
+  2025-03 / Externe medische dienst CWP /  / 12884 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 12884 / 10.0 / 
+]}, '2025-04': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-04 / 1 -> 1284.6599999999999
+  2025-04 / Salarissen CWP /  / 12884 / 1007.84 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-05': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-05 / 1 -> 276.82
+  2025-05 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-06': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-06 / 1 -> 1285.4499999999998
+  2025-06 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-07': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-07 / 1 -> 1285.4499999999998
+  2025-07 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+], '16051': [<ExpenditurePhase.FIXED: 2>, AK160007 / 16051 / 2025-07 / 1 -> 7597.0199999999995
+  2025-07 / Salarissen CWP /  / 16051 / 5901.5 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 16051 / 953.9 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 16051 / 438.46 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 16051 / 303.16 / 
+]}, '2025-08': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-08 / 1 -> 1285.4499999999998
+  2025-08 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-09': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-09 / 1 -> 1285.4499999999998
+  2025-09 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 12884 / 160.14 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 12884 / 65.36 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-10': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-10 / 1 -> 1210.23
+  2025-10 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 12884 / 150.28 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-11': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-11 / 1 -> 1210.23
+  2025-11 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 12884 / 150.28 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}, '2025-12': {'12884': [<ExpenditurePhase.FIXED: 2>, AK160007 / 12884 / 2025-12 / 1 -> 1210.23
+  2025-12 / Salarissen CWP /  / 12884 / 1008.63 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 12884 / 150.28 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 12884 / 51.32 / 
+]}}
+    - AK130109 - AK-Levrie
+========================
+{}
+    - 6345 - Wheelchairs
+========================
+{}
+    - 7269 - LOCATOR
+========================
+{'2017-06': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-06 / 1 -> 3670.8200000000006
+  2017-06 / Salarissen burs RSZ /  / 13835 / 2419.84 / 
+  2017-06 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 145.19 / 
+  2017-06 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 164.55 / 
+  2017-06 / RSZ burs RSZ /  / 13835 / 826.61 / 
+  2017-06 / Ongevallenverz burs RSZ /  / 13835 / 8.63 / 
+  2017-06 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+  2017-06 / Fietsvergoeding burs RSZ /  / 13835 / 100.8 / 
+]}, '2017-07': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-07 / 1 -> 3569.7900000000004
+  2017-07 / Salarissen burs RSZ /  / 13835 / 2419.84 / 
+  2017-07 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 145.19 / 
+  2017-07 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 164.55 / 
+  2017-07 / RSZ burs RSZ /  / 13835 / 826.38 / 
+  2017-07 / Ongevallenverz burs RSZ /  / 13835 / 8.63 / 
+  2017-07 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+]}, '2017-08': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-08 / 1 -> 3650.44
+  2017-08 / Salarissen burs RSZ /  / 13835 / 2419.84 / 
+  2017-08 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 145.19 / 
+  2017-08 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 164.55 / 
+  2017-08 / RSZ burs RSZ /  / 13835 / 826.39 / 
+  2017-08 / Ongevallenverz burs RSZ /  / 13835 / 8.63 / 
+  2017-08 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+  2017-08 / Fietsvergoeding burs RSZ /  / 13835 / 80.64 / 
+]}, '2017-09': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-09 / 1 -> 3569.78
+  2017-09 / Salarissen burs RSZ /  / 13835 / 2419.84 / 
+  2017-09 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 145.19 / 
+  2017-09 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 164.55 / 
+  2017-09 / RSZ burs RSZ /  / 13835 / 826.37 / 
+  2017-09 / Ongevallenverz burs RSZ /  / 13835 / 8.63 / 
+  2017-09 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+]}, '2017-10': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-10 / 1 -> 3540.66
+  2017-10 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2017-10 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2017-10 / RSZ burs RSZ /  / 13835 / 843.2 / 
+  2017-10 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2017-10 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+  2017-10 / Fietsvergoeding burs RSZ /  / 13835 / 66.24 / 
+]}, '2017-11': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-11 / 1 -> 3477.91
+  2017-11 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2017-11 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2017-11 / RSZ burs RSZ /  / 13835 / 843.19 / 
+  2017-11 / Ongevallenverz burs RSZ /  / 13835 / 12.3 / 
+  2017-11 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2017-11 / 1 -> 5078.089999999999
+  2017-11 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2017-11 / Aanleg vakantiegeld CWP /  / 17657 / 670.91 / 
+  2017-11 / RSZ CWP /  / 17657 / 1117.62 / 
+  2017-11 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2017-11 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+]}, '2017-12': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2017-12 / 1 -> 3474.42
+  2017-12 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2017-12 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2017-12 / RSZ burs RSZ /  / 13835 / 843.2 / 
+  2017-12 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2017-12 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2017-12 / 1 -> 5084.219999999999
+  2017-12 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2017-12 / Aanleg vakantiegeld CWP /  / 17657 / 670.91 / 
+  2017-12 / RSZ CWP /  / 17657 / 1117.63 / 
+  2017-12 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2017-12 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2017-12 / Fietsvergoeding CWP /  / 17657 / 6.12 / 
+]}, '2018-01': {'05286': [<ExpenditurePhase.BOOKED: 3>, 7269 / 05286 / 2018-01 / 1 -> 7649.969999999998
+  2018-01 / Salarissen CWP /  / 05286 / 4624.15 / 
+  2018-01 / Aanleg vakantiegeld CWP /  / 05286 / 1003.78 / 
+  2018-01 / Aanleg eindejaarstoelage CWP /  / 05286 / 370.34 / 
+  2018-01 / RSZ CWP /  / 05286 / 1579.61 / 
+  2018-01 / Ongevallenverz CWP /  / 05286 / 16.49 / 
+  2018-01 / Externe medische dienst CWP /  / 05286 / 5.2 / 
+  2018-01 / Fietsvergoeding CWP /  / 05286 / 50.4 / 
+], '13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-01 / 1 -> 3740.4799999999996
+  2018-01 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2018-01 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2018-01 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 167.89 / 
+  2018-01 / RSZ burs RSZ /  / 13835 / 843.45 / 
+  2018-01 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2018-01 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+  2018-01 / Fietsvergoeding burs RSZ /  / 13835 / 97.92 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-01 / 1 -> 5419.2
+  2018-01 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-01 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-01 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-01 / RSZ CWP /  / 17657 / 1117.95 / 
+  2018-01 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-01 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-01 / Fietsvergoeding CWP /  / 17657 / 5.04 / 
+]}, '2018-02': {'05286': [<ExpenditurePhase.BOOKED: 3>, 7269 / 05286 / 2018-02 / 1 -> 7598.649999999999
+  2018-02 / Salarissen CWP /  / 05286 / 4624.15 / 
+  2018-02 / Aanleg vakantiegeld CWP /  / 05286 / 1003.78 / 
+  2018-02 / Aanleg eindejaarstoelage CWP /  / 05286 / 370.34 / 
+  2018-02 / RSZ CWP /  / 05286 / 1578.69 / 
+  2018-02 / Ongevallenverz CWP /  / 05286 / 16.49 / 
+  2018-02 / Externe medische dienst CWP /  / 05286 / 5.2 / 
+], '13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-02 / 1 -> 3642.0599999999995
+  2018-02 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2018-02 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2018-02 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 167.89 / 
+  2018-02 / RSZ burs RSZ /  / 13835 / 842.95 / 
+  2018-02 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2018-02 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-02 / 1 -> 5421.139999999999
+  2018-02 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-02 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-02 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-02 / RSZ CWP /  / 17657 / 1116.65 / 
+  2018-02 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-02 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-02 / Fietsvergoeding CWP /  / 17657 / 8.28 / 
+]}, '2018-03': {'05286': [<ExpenditurePhase.BOOKED: 3>, 7269 / 05286 / 2018-03 / 1 -> 7675.9299999999985
+  2018-03 / Salarissen CWP /  / 05286 / 4624.15 / 
+  2018-03 / Aanleg vakantiegeld CWP /  / 05286 / 1003.78 / 
+  2018-03 / Aanleg eindejaarstoelage CWP /  / 05286 / 370.34 / 
+  2018-03 / RSZ CWP /  / 05286 / 1578.69 / 
+  2018-03 / Ongevallenverz CWP /  / 05286 / 16.49 / 
+  2018-03 / Externe medische dienst CWP /  / 05286 / 5.2 / 
+  2018-03 / Fietsvergoeding CWP /  / 05286 / 77.28 / 
+], '13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-03 / 1 -> 3642.0499999999997
+  2018-03 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2018-03 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2018-03 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 167.89 / 
+  2018-03 / RSZ burs RSZ /  / 13835 / 842.94 / 
+  2018-03 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2018-03 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-03 / 1 -> 5422.7
+  2018-03 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-03 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-03 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-03 / RSZ CWP /  / 17657 / 1117.29 / 
+  2018-03 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-03 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-03 / Fietsvergoeding CWP /  / 17657 / 9.2 / 
+]}, '2018-04': {'05286': [<ExpenditurePhase.BOOKED: 3>, 7269 / 05286 / 2018-04 / 1 -> -0.92
+  2018-04 / RSZ CWP /  / 05286 / -0.92 / 
+], '13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-04 / 1 -> 3641.5699999999997
+  2018-04 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2018-04 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2018-04 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 167.89 / 
+  2018-04 / RSZ burs RSZ /  / 13835 / 842.46 / 
+  2018-04 / Ongevallenverz burs RSZ /  / 13835 / 8.8 / 
+  2018-04 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-04 / 1 -> 5419.95
+  2018-04 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-04 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-04 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-04 / RSZ CWP /  / 17657 / 1117.3 / 
+  2018-04 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-04 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-04 / Fietsvergoeding CWP /  / 17657 / 6.44 / 
+]}, '2018-05': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-05 / 1 -> 3651.6499999999996
+  2018-05 / Salarissen burs RSZ /  / 13835 / 2469.08 / 
+  2018-05 / Aanleg vakantiegeld bursalen met RSZ /  / 13835 / 148.14 / 
+  2018-05 / Aanleg eindejaarstoelage bursalen met RSZ /  / 13835 / 167.89 / 
+  2018-05 / RSZ burs RSZ /  / 13835 / 842.94 / 
+  2018-05 / Ongevallenverz burs RSZ /  / 13835 / 18.4 / 
+  2018-05 / Externe medische dienst burs RSZ /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-05 / 1 -> 1033.12
+  2018-05 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-05 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-05 / Ongevallenverz CWP /  / 17657 / 13.45 / 
+  2018-05 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-05 / Fietsvergoeding CWP /  / 17657 / 7.82 / 
+]}, '2018-06': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-06 / 1 -> 5889.87
+  2018-06 / Salarissen CWP /  / 13835 / 3560.95 / 
+  2018-06 / Aanleg vakantiegeld CWP /  / 13835 / 777.84 / 
+  2018-06 / Aanleg eindejaarstoelage CWP /  / 13835 / 317.48 / 
+  2018-06 / RSZ CWP /  / 13835 / 1215.7 / 
+  2018-06 / Ongevallenverz CWP /  / 13835 / 12.7 / 
+  2018-06 / Externe medische dienst CWP /  / 13835 / 5.2 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-06 / 1 -> 5422.24
+  2018-06 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-06 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-06 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-06 / RSZ CWP /  / 17657 / 1117.29 / 
+  2018-06 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-06 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-06 / Fietsvergoeding CWP /  / 17657 / 8.74 / 
+]}, '2018-07': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-07 / 1 -> 6007.280000000001
+  2018-07 / Salarissen CWP /  / 13835 / 3560.95 / 
+  2018-07 / Aanleg vakantiegeld CWP /  / 13835 / 777.84 / 
+  2018-07 / Aanleg eindejaarstoelage CWP /  / 13835 / 317.48 / 
+  2018-07 / RSZ CWP /  / 13835 / 1215.35 / 
+  2018-07 / Ongevallenverz CWP /  / 13835 / 12.7 / 
+  2018-07 / Externe medische dienst CWP /  / 13835 / 5.2 / 
+  2018-07 / Fietsvergoeding CWP /  / 13835 / 117.76 / 
+], '17657': [<ExpenditurePhase.BOOKED: 3>, 7269 / 17657 / 2018-07 / 1 -> 5421.46
+  2018-07 / Salarissen CWP /  / 17657 / 3272.69 / 
+  2018-07 / Aanleg vakantiegeld CWP /  / 17657 / 714.88 / 
+  2018-07 / Aanleg eindejaarstoelage CWP /  / 17657 / 291.77 / 
+  2018-07 / RSZ CWP /  / 17657 / 1116.97 / 
+  2018-07 / Ongevallenverz CWP /  / 17657 / 11.67 / 
+  2018-07 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2018-07 / Fietsvergoeding CWP /  / 17657 / 8.28 / 
+]}, '2018-08': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-08 / 1 -> 5889.52
+  2018-08 / Salarissen CWP /  / 13835 / 3560.95 / 
+  2018-08 / Aanleg vakantiegeld CWP /  / 13835 / 777.84 / 
+  2018-08 / Aanleg eindejaarstoelage CWP /  / 13835 / 317.48 / 
+  2018-08 / RSZ CWP /  / 13835 / 1215.35 / 
+  2018-08 / Ongevallenverz CWP /  / 13835 / 12.7 / 
+  2018-08 / Externe medische dienst CWP /  / 13835 / 5.2 / 
+]}, '2018-09': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-09 / 1 -> 5889.52
+  2018-09 / Salarissen CWP /  / 13835 / 3560.95 / 
+  2018-09 / Aanleg vakantiegeld CWP /  / 13835 / 777.84 / 
+  2018-09 / Aanleg eindejaarstoelage CWP /  / 13835 / 317.48 / 
+  2018-09 / RSZ CWP /  / 13835 / 1215.35 / 
+  2018-09 / Ongevallenverz CWP /  / 13835 / 12.7 / 
+  2018-09 / Externe medische dienst CWP /  / 13835 / 5.2 / 
+]}, '2018-10': {'13835': [<ExpenditurePhase.BOOKED: 3>, 7269 / 13835 / 2018-10 / 1 -> 5688.86
+  2018-10 / Salarissen CWP /  / 13835 / 3632.24 / 
+  2018-10 / Aanleg vakantiegeld CWP /  / 13835 / 744.6 / 
+  2018-10 / RSZ CWP /  / 13835 / 1239.69 / 
+  2018-10 / Ongevallenverz CWP /  / 13835 / 26.65 / 
+  2018-10 / Externe medische dienst CWP /  / 13835 / 5.2 / 
+  2018-10 / Fietsvergoeding CWP /  / 13835 / 40.48 / 
+]}, '2019-03': {'19419': [<ExpenditurePhase.BOOKED: 3>, 7269 / 19419 / 2019-03 / 1 -> 662.5699999999999
+  2019-03 / Salarissen CWP /  / 19419 / 400.59 / 
+  2019-03 / Aanleg vakantiegeld CWP /  / 19419 / 87.5 / 
+  2019-03 / Aanleg eindejaarstoelage CWP /  / 19419 / 35.71 / 
+  2019-03 / RSZ CWP /  / 19419 / 136.72 / 
+  2019-03 / Ongevallenverz CWP /  / 19419 / 1.43 / 
+  2019-03 / Externe medische dienst CWP /  / 19419 / 0.62 / 
+]}}
+    - 8372 - CORELSA
+========================
+{'2020-03': {'17657': [<ExpenditurePhase.BOOKED: 3>, 8372 / 17657 / 2020-03 / 1 -> 2925.8800000000006
+  2020-03 / Salarissen CWP /  / 17657 / 1767.12 / 
+  2020-03 / Aanleg vakantiegeld CWP /  / 17657 / 386.01 / 
+  2020-03 / Aanleg eindejaarstoelage CWP /  / 17657 / 157.55 / 
+  2020-03 / RSZ CWP /  / 17657 / 602.94 / 
+  2020-03 / Ongevallenverz CWP /  / 17657 / 6.3 / 
+  2020-03 / Externe medische dienst CWP /  / 17657 / 2.6 / 
+  2020-03 / Fietsvergoeding CWP /  / 17657 / 3.36 / 
+], '19419': [<ExpenditurePhase.BOOKED: 3>, 8372 / 19419 / 2020-03 / 1 -> 1804.6899999999998
+  2020-03 / Salarissen burs RSZ /  / 19419 / 1223.6 / 
+  2020-03 / Aanleg vakantiegeld bursalen met RSZ /  / 19419 / 73.42 / 
+  2020-03 / Aanleg eindejaarstoelage bursalen met RSZ /  / 19419 / 83.21 / 
+  2020-03 / RSZ burs RSZ /  / 19419 / 417.49 / 
+  2020-03 / Ongevallenverz burs RSZ /  / 19419 / 4.37 / 
+  2020-03 / Externe medische dienst burs RSZ /  / 19419 / 2.6 / 
+], '20029': [<ExpenditurePhase.BOOKED: 3>, 8372 / 20029 / 2020-03 / 1 -> 1904.3899999999996
+  2020-03 / Salarissen burs RSZ /  / 20029 / 1223.6 / 
+  2020-03 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 73.42 / 
+  2020-03 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 83.21 / 
+  2020-03 / RSZ burs RSZ /  / 20029 / 417.49 / 
+  2020-03 / Ongevallenverz burs RSZ /  / 20029 / 4.37 / 
+  2020-03 / Externe medische dienst burs RSZ /  / 20029 / 2.6 / 
+  2020-03 / Openbaar vervoer burs RSZ /  / 20029 / 84.34 / 
+  2020-03 / Fietsvergoeding burs RSZ /  / 20029 / 15.36 / 
+]}, '2020-04': {'17657': [<ExpenditurePhase.BOOKED: 3>, 8372 / 17657 / 2020-04 / 1 -> 5965.530000000001
+  2020-04 / Salarissen CWP /  / 17657 / 3604.83 / 
+  2020-04 / Aanleg vakantiegeld CWP /  / 17657 / 787.44 / 
+  2020-04 / Aanleg eindejaarstoelage CWP /  / 17657 / 321.4 / 
+  2020-04 / RSZ CWP /  / 17657 / 1229.97 / 
+  2020-04 / Ongevallenverz CWP /  / 17657 / 12.85 / 
+  2020-04 / Externe medische dienst CWP /  / 17657 / 5.2 / 
+  2020-04 / Fietsvergoeding CWP /  / 17657 / 3.84 / 
+], '19419': [<ExpenditurePhase.BOOKED: 3>, 8372 / 19419 / 2020-04 / 1 -> 3609.359999999999
+  2020-04 / Salarissen burs RSZ /  / 19419 / 2447.2 / 
+  2020-04 / Aanleg vakantiegeld bursalen met RSZ /  / 19419 / 146.83 / 
+  2020-04 / Aanleg eindejaarstoelage bursalen met RSZ /  / 19419 / 166.41 / 
+  2020-04 / RSZ burs RSZ /  / 19419 / 834.99 / 
+  2020-04 / Ongevallenverz burs RSZ /  / 19419 / 8.73 / 
+  2020-04 / Externe medische dienst burs RSZ /  / 19419 / 5.2 / 
+], '20029': [<ExpenditurePhase.BOOKED: 3>, 8372 / 20029 / 2020-04 / 1 -> 3795.3099999999995
+  2020-04 / Salarissen burs RSZ /  / 20029 / 2447.2 / 
+  2020-04 / Aanleg vakantiegeld bursalen met RSZ /  / 20029 / 146.83 / 
+  2020-04 / Aanleg eindejaarstoelage bursalen met RSZ /  / 20029 / 166.41 / 
+  2020-04 / RSZ burs RSZ /  / 20029 / 834.99 / 
+  2020-04 / Ongevallenverz burs RSZ /  / 20029 / 8.73 / 
+  2020-04 / Externe medische dienst burs RSZ /  / 20029 / 5.2 / 
+  2020-04 / Openbaar vervoer burs RSZ /  / 20029 / 168.67 / 
+  2020-04 / Fietsvergoeding burs RSZ /  / 20029 / 17.28 / 
+]}, '2020-10': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8372 / 16051 / 2020-10 / 1 -> 4986.92
+  2020-10 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2020-10 / RSZ CWP /  / 16051 / 1263.71 / 
+  2020-10 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2020-10 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2020-11': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8372 / 16051 / 2020-11 / 1 -> 5746.41
+  2020-11 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2020-11 / Aanleg vakantiegeld CWP /  / 16051 / 759.49 / 
+  2020-11 / RSZ CWP /  / 16051 / 1263.71 / 
+  2020-11 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2020-11 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2020-12': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8372 / 16051 / 2020-12 / 1 -> 5746.41
+  2020-12 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2020-12 / Aanleg vakantiegeld CWP /  / 16051 / 759.49 / 
+  2020-12 / RSZ CWP /  / 16051 / 1263.71 / 
+  2020-12 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2020-12 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}}
+    - 8789 - MARLOC
+========================
+{'2021-04': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-04 / 1 -> 6317.910000000001
+  2021-04 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2021-04 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-04 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-04 / RSZ CWP /  / 16051 / 1267.04 / 
+  2021-04 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2021-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.85 / 
+  2021-04 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 111.14 / 
+  2021-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.56 / 
+  2021-04 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-05': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-05 / 1 -> 1349.1299999999999
+  2021-05 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-05 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-05 / Ongevallenverz CWP /  / 16051 / 16.27 / 
+  2021-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.85 / 
+  2021-05 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 111.14 / 
+  2021-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.56 / 
+  2021-05 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-06': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-06 / 1 -> 6316.43
+  2021-06 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2021-06 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-06 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-06 / RSZ CWP /  / 16051 / 1265.56 / 
+  2021-06 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2021-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.85 / 
+  2021-06 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 111.14 / 
+  2021-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.56 / 
+  2021-06 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-07': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-07 / 1 -> 6316.060000000001
+  2021-07 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2021-07 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-07 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-07 / RSZ CWP /  / 16051 / 1265.19 / 
+  2021-07 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2021-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.85 / 
+  2021-07 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 111.14 / 
+  2021-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.56 / 
+  2021-07 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-08': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-08 / 1 -> 6316.060000000001
+  2021-08 / Salarissen CWP /  / 16051 / 3704.8 / 
+  2021-08 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-08 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-08 / RSZ CWP /  / 16051 / 1265.19 / 
+  2021-08 / Ongevallenverz CWP /  / 16051 / 13.21 / 
+  2021-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.85 / 
+  2021-08 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 111.14 / 
+  2021-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.56 / 
+  2021-08 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-09': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-09 / 1 -> 3599.11
+  2021-09 / Salarissen CWP /  / 16051 / 1684.0 / 
+  2021-09 / Aanleg vakantiegeld CWP /  / 16051 / 816.02 / 
+  2021-09 / Aanleg eindejaarstoelage CWP /  / 16051 / 375.09 / 
+  2021-09 / RSZ CWP /  / 16051 / 575.09 / 
+  2021-09 / Ongevallenverz CWP /  / 16051 / 6.01 / 
+  2021-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 9.93 / 
+  2021-09 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 112.08 / 
+  2021-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 15.69 / 
+  2021-09 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-10': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-10 / 1 -> 6304.69
+  2021-10 / Salarissen CWP /  / 16051 / 3969.62 / 
+  2021-10 / Aanleg vakantiegeld CWP /  / 16051 / 813.77 / 
+  2021-10 / RSZ CWP /  / 16051 / 1355.63 / 
+  2021-10 / Ongevallenverz CWP /  / 16051 / 14.16 / 
+  2021-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 10.55 / 
+  2021-10 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 119.09 / 
+  2021-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 16.67 / 
+  2021-10 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2021-11': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-11 / 1 -> 6360.25
+  2021-11 / Salarissen CWP /  / 16051 / 3969.62 / 
+  2021-11 / Aanleg vakantiegeld CWP /  / 16051 / 813.77 / 
+  2021-11 / RSZ CWP /  / 16051 / 1355.63 / 
+  2021-11 / Ongevallenverz CWP /  / 16051 / 23.64 / 
+  2021-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 10.55 / 
+  2021-11 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 119.09 / 
+  2021-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 16.67 / 
+  2021-11 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2021-11 / Fietsvergoeding CWP /  / 16051 / 46.08 / 
+]}, '2021-12': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2021-12 / 1 -> 6316.21
+  2021-12 / Salarissen CWP /  / 16051 / 3969.62 / 
+  2021-12 / Aanleg vakantiegeld CWP /  / 16051 / 813.77 / 
+  2021-12 / RSZ CWP /  / 16051 / 1355.63 / 
+  2021-12 / Ongevallenverz CWP /  / 16051 / 14.16 / 
+  2021-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 10.55 / 
+  2021-12 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 119.09 / 
+  2021-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 16.67 / 
+  2021-12 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2021-12 / Fietsvergoeding CWP /  / 16051 / 11.52 / 
+]}, '2022-01': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-01 / 1 -> 6809.199999999999
+  2022-01 / Salarissen CWP /  / 16051 / 3969.62 / 
+  2022-01 / Aanleg vakantiegeld CWP /  / 16051 / 874.35 / 
+  2022-01 / Aanleg eindejaarstoelage CWP /  / 16051 / 401.91 / 
+  2022-01 / RSZ CWP /  / 16051 / 1354.44 / 
+  2022-01 / Ongevallenverz CWP /  / 16051 / 14.16 / 
+  2022-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.07 / 
+  2022-01 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 158.78 / 
+  2022-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 16.67 / 
+  2022-01 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+]}, '2022-02': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-02 / 1 -> 6965.610000000001
+  2022-02 / Salarissen CWP /  / 16051 / 4049.2 / 
+  2022-02 / Aanleg vakantiegeld CWP /  / 16051 / 891.89 / 
+  2022-02 / Aanleg eindejaarstoelage CWP /  / 16051 / 409.96 / 
+  2022-02 / RSZ CWP /  / 16051 / 1381.59 / 
+  2022-02 / Ongevallenverz CWP /  / 16051 / 14.44 / 
+  2022-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.35 / 
+  2022-02 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 161.97 / 
+  2022-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.01 / 
+  2022-02 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-02 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-03': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-03 / 1 -> 7023.210000000001
+  2022-03 / Salarissen CWP /  / 16051 / 4049.2 / 
+  2022-03 / Aanleg vakantiegeld CWP /  / 16051 / 891.89 / 
+  2022-03 / Aanleg eindejaarstoelage CWP /  / 16051 / 409.96 / 
+  2022-03 / RSZ CWP /  / 16051 / 1381.59 / 
+  2022-03 / Ongevallenverz CWP /  / 16051 / 14.44 / 
+  2022-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.35 / 
+  2022-03 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 161.97 / 
+  2022-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.01 / 
+  2022-03 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-03 / Fietsvergoeding CWP /  / 16051 / 57.6 / 
+  2022-03 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-04': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-04 / 1 -> 7138.87
+  2022-04 / Salarissen CWP /  / 16051 / 4130.13 / 
+  2022-04 / Aanleg vakantiegeld CWP /  / 16051 / 909.7 / 
+  2022-04 / Aanleg eindejaarstoelage CWP /  / 16051 / 418.15 / 
+  2022-04 / RSZ CWP /  / 16051 / 1409.2 / 
+  2022-04 / Ongevallenverz CWP /  / 16051 / 14.73 / 
+  2022-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.64 / 
+  2022-04 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 165.21 / 
+  2022-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.35 / 
+  2022-04 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-04 / Fietsvergoeding CWP /  / 16051 / 34.56 / 
+  2022-04 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-05': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-05 / 1 -> 1578.53
+  2022-05 / Aanleg vakantiegeld CWP /  / 16051 / 909.7 / 
+  2022-05 / Aanleg eindejaarstoelage CWP /  / 16051 / 418.15 / 
+  2022-05 / Ongevallenverz CWP /  / 16051 / 28.28 / 
+  2022-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.64 / 
+  2022-05 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 165.21 / 
+  2022-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.35 / 
+  2022-05 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-05 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-06': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-06 / 1 -> 7291.76
+  2022-06 / Salarissen CWP /  / 16051 / 4212.61 / 
+  2022-06 / Aanleg vakantiegeld CWP /  / 16051 / 927.88 / 
+  2022-06 / Aanleg eindejaarstoelage CWP /  / 16051 / 426.51 / 
+  2022-06 / RSZ CWP /  / 16051 / 1437.34 / 
+  2022-06 / Ongevallenverz CWP /  / 16051 / 15.02 / 
+  2022-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.93 / 
+  2022-06 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 168.5 / 
+  2022-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.69 / 
+  2022-06 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-06 / Fietsvergoeding CWP /  / 16051 / 46.08 / 
+  2022-06 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-07': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-07 / 1 -> 7326.320000000001
+  2022-07 / Salarissen CWP /  / 16051 / 4212.61 / 
+  2022-07 / Aanleg vakantiegeld CWP /  / 16051 / 927.88 / 
+  2022-07 / Aanleg eindejaarstoelage CWP /  / 16051 / 426.51 / 
+  2022-07 / RSZ CWP /  / 16051 / 1437.34 / 
+  2022-07 / Ongevallenverz CWP /  / 16051 / 15.02 / 
+  2022-07 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.93 / 
+  2022-07 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 168.5 / 
+  2022-07 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.69 / 
+  2022-07 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-07 / Fietsvergoeding CWP /  / 16051 / 80.64 / 
+  2022-07 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-08': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-08 / 1 -> 7257.200000000001
+  2022-08 / Salarissen CWP /  / 16051 / 4212.61 / 
+  2022-08 / Aanleg vakantiegeld CWP /  / 16051 / 927.88 / 
+  2022-08 / Aanleg eindejaarstoelage CWP /  / 16051 / 426.51 / 
+  2022-08 / RSZ CWP /  / 16051 / 1437.34 / 
+  2022-08 / Ongevallenverz CWP /  / 16051 / 15.02 / 
+  2022-08 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 14.93 / 
+  2022-08 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 168.5 / 
+  2022-08 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 17.69 / 
+  2022-08 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-08 / Fietsvergoeding CWP /  / 16051 / 11.52 / 
+  2022-08 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2022-09': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-09 / 1 -> 7413.18
+  2022-09 / Salarissen CWP /  / 16051 / 4296.89 / 
+  2022-09 / Aanleg vakantiegeld CWP /  / 16051 / 946.43 / 
+  2022-09 / Aanleg eindejaarstoelage CWP /  / 16051 / 435.04 / 
+  2022-09 / RSZ CWP /  / 16051 / 1466.1 / 
+  2022-09 / Ongevallenverz CWP /  / 16051 / 15.32 / 
+  2022-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 15.23 / 
+  2022-09 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 171.88 / 
+  2022-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.05 / 
+  2022-09 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-09 / Fietsvergoeding CWP /  / 16051 / 23.04 / 
+  2022-09 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+], '22474': [<ExpenditurePhase.BOOKED: 3>, 8789 / 22474 / 2022-09 / 1 -> 5311.0599999999995
+  2022-09 / Salarissen CWP /  / 22474 / 3073.72 / 
+  2022-09 / Aanleg vakantiegeld CWP /  / 22474 / 677.02 / 
+  2022-09 / Aanleg eindejaarstoelage CWP /  / 22474 / 311.2 / 
+  2022-09 / RSZ CWP /  / 22474 / 1048.75 / 
+  2022-09 / Ongevallenverz CWP /  / 22474 / 10.96 / 
+  2022-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 10.89 / 
+  2022-09 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 122.95 / 
+  2022-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 12.91 / 
+  2022-09 / Externe medische dienst CWP /  / 22474 / 3.9 / 
+  2022-09 / Fietsvergoeding CWP /  / 22474 / 23.76 / 
+  2022-09 / Internetvergoeding CWP /  / 22474 / 15.0 / 
+]}, '2022-10': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-10 / 1 -> 6967.12
+  2022-10 / Salarissen CWP /  / 16051 / 4296.89 / 
+  2022-10 / Aanleg vakantiegeld CWP /  / 16051 / 880.87 / 
+  2022-10 / RSZ CWP /  / 16051 / 1465.68 / 
+  2022-10 / Ongevallenverz CWP /  / 16051 / 15.32 / 
+  2022-10 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 15.23 / 
+  2022-10 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 171.88 / 
+  2022-10 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.05 / 
+  2022-10 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-10 / Fietsvergoeding CWP /  / 16051 / 48.0 / 
+  2022-10 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2022-10 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+]}, '2022-11': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-11 / 1 -> 6941.37
+  2022-11 / Salarissen CWP /  / 16051 / 4296.89 / 
+  2022-11 / Aanleg vakantiegeld CWP /  / 16051 / 880.87 / 
+  2022-11 / RSZ CWP /  / 16051 / 1465.66 / 
+  2022-11 / Ongevallenverz CWP /  / 16051 / 25.59 / 
+  2022-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 15.23 / 
+  2022-11 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 171.88 / 
+  2022-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.05 / 
+  2022-11 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-11 / Fietsvergoeding CWP /  / 16051 / 12.0 / 
+  2022-11 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2022-11 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+]}, '2022-12': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2022-12 / 1 -> 7080.559999999999
+  2022-12 / Salarissen CWP /  / 16051 / 4382.95 / 
+  2022-12 / Aanleg vakantiegeld CWP /  / 16051 / 898.5 / 
+  2022-12 / RSZ CWP /  / 16051 / 1495.02 / 
+  2022-12 / Ongevallenverz CWP /  / 16051 / 15.63 / 
+  2022-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 15.53 / 
+  2022-12 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 175.32 / 
+  2022-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.41 / 
+  2022-12 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2022-12 / Fietsvergoeding CWP /  / 16051 / 24.0 / 
+  2022-12 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2022-12 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+]}, '2023-01': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2023-01 / 1 -> 7766.499999999999
+  2023-01 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-01 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-01 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-01 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-01 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-01 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-01 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-01 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-01 / Telewerkvergoeding CWP /  / 16051 / 30.0 / 
+]}, '2023-02': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2023-02 / 1 -> 7772.489999999999
+  2023-02 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-02 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-02 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-02 / RSZ CWP /  / 16051 / 1525.35 / 
+  2023-02 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-02 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-02 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-02 / Fietsvergoeding CWP /  / 16051 / 36.0 / 
+  2023-02 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+]}, '2023-03': {'16051': [<ExpenditurePhase.BOOKED: 3>, 8789 / 16051 / 2023-03 / 1 -> 7844.499999999999
+  2023-03 / Salarissen CWP /  / 16051 / 4470.58 / 
+  2023-03 / Aanleg vakantiegeld CWP /  / 16051 / 984.69 / 
+  2023-03 / Aanleg eindejaarstoelage CWP /  / 16051 / 452.62 / 
+  2023-03 / RSZ CWP /  / 16051 / 1525.36 / 
+  2023-03 / Ongevallenverz CWP /  / 16051 / 15.94 / 
+  2023-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16051 / 19.8 / 
+  2023-03 / Groepsverzekering CWP (vanaf 2021) /  / 16051 / 223.53 / 
+  2023-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16051 / 18.78 / 
+  2023-03 / Externe medische dienst CWP /  / 16051 / 5.2 / 
+  2023-03 / Fietsvergoeding CWP /  / 16051 / 48.0 / 
+  2023-03 / Internetvergoeding CWP /  / 16051 / 20.0 / 
+  2023-03 / Telewerkvergoeding CWP /  / 16051 / 60.0 / 
+]}}
+    - 8928 - PIONEERS
+========================
+{'2022-11': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2022-11 / 1 -> 6590.110000000001
+  2022-11 / Salarissen CWP /  / 22474 / 4098.3 / 
+  2022-11 / Aanleg vakantiegeld CWP /  / 22474 / 840.15 / 
+  2022-11 / RSZ CWP /  / 22474 / 1397.93 / 
+  2022-11 / Ongevallenverz CWP /  / 22474 / 16.87 / 
+  2022-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 14.52 / 
+  2022-11 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 163.93 / 
+  2022-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 17.21 / 
+  2022-11 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2022-11 / Fietsvergoeding CWP /  / 22474 / 36.0 / 
+]}, '2022-12': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2022-12 / 1 -> 6802.000000000001
+  2022-12 / Salarissen CWP /  / 22474 / 4180.38 / 
+  2022-12 / Aanleg vakantiegeld CWP /  / 22474 / 856.98 / 
+  2022-12 / RSZ CWP /  / 22474 / 1425.93 / 
+  2022-12 / Ongevallenverz CWP /  / 22474 / 14.91 / 
+  2022-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 14.82 / 
+  2022-12 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 167.22 / 
+  2022-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 17.56 / 
+  2022-12 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2022-12 / Fietsvergoeding CWP /  / 22474 / 69.0 / 
+  2022-12 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2022-12 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-01': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-01 / 1 -> 7138.769999999998
+  2023-01 / Salarissen CWP /  / 22474 / 5335.95 / 
+  2023-01 / Salarissen CWP /  / 22474 / -1204.89 / 
+  2023-01 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-01 / Voordelen in natura CWP /  / 22474 / 1.35 / 
+  2023-01 / Aanleg vakantiegeld CWP /  / 22474 / 1173.98 / 
+  2023-01 / Aanleg vakantiegeld CWP /  / 22474 / -265.09 / 
+  2023-01 / Aanleg eindejaarstoelage CWP /  / 22474 / 539.63 / 
+  2023-01 / Aanleg eindejaarstoelage CWP /  / 22474 / -121.85 / 
+  2023-01 / RSZ CWP /  / 22474 / 1820.63 / 
+  2023-01 / RSZ CWP /  / 22474 / -411.11 / 
+  2023-01 / Ongevallenverz CWP /  / 22474 / 19.03 / 
+  2023-01 / Ongevallenverz CWP /  / 22474 / -4.3 / 
+  2023-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 23.61 / 
+  2023-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / -5.33 / 
+  2023-01 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 266.5 / 
+  2023-01 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / -60.18 / 
+  2023-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 22.39 / 
+  2023-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / -5.06 / 
+  2023-01 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-01 / Externe medische dienst CWP /  / 22474 / -1.17 / 
+  2023-01 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-01 / Internetvergoeding CWP /  / 22474 / -4.52 / 
+]}, '2023-02': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-02 / 1 -> 9283.910000000002
+  2023-02 / Salarissen CWP /  / 22474 / 5335.95 / 
+  2023-02 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-02 / Aanleg vakantiegeld CWP /  / 22474 / 1173.98 / 
+  2023-02 / Aanleg eindejaarstoelage CWP /  / 22474 / 539.63 / 
+  2023-02 / RSZ CWP /  / 22474 / 1820.62 / 
+  2023-02 / Ongevallenverz CWP /  / 22474 / 19.03 / 
+  2023-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 23.61 / 
+  2023-02 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 266.5 / 
+  2023-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 22.39 / 
+  2023-02 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-02 / Fietsvergoeding CWP /  / 22474 / 33.0 / 
+  2023-02 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-02 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-03': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-03 / 1 -> 9286.920000000002
+  2023-03 / Salarissen CWP /  / 22474 / 5335.95 / 
+  2023-03 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-03 / Aanleg vakantiegeld CWP /  / 22474 / 1173.98 / 
+  2023-03 / Aanleg eindejaarstoelage CWP /  / 22474 / 539.63 / 
+  2023-03 / RSZ CWP /  / 22474 / 1820.63 / 
+  2023-03 / Ongevallenverz CWP /  / 22474 / 19.03 / 
+  2023-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 23.61 / 
+  2023-03 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 266.5 / 
+  2023-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 22.39 / 
+  2023-03 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-03 / Fietsvergoeding CWP /  / 22474 / 36.0 / 
+  2023-03 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-03 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-04': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-04 / 1 -> 9672.490000000002
+  2023-04 / Salarissen CWP /  / 22474 / 5550.8 / 
+  2023-04 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-04 / Aanleg vakantiegeld CWP /  / 22474 / 1221.3 / 
+  2023-04 / Aanleg eindejaarstoelage CWP /  / 22474 / 561.38 / 
+  2023-04 / RSZ CWP /  / 22474 / 1893.93 / 
+  2023-04 / Ongevallenverz CWP /  / 22474 / 19.79 / 
+  2023-04 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 24.56 / 
+  2023-04 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 277.24 / 
+  2023-04 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 23.29 / 
+  2023-04 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-04 / Fietsvergoeding CWP /  / 22474 / 51.0 / 
+  2023-04 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-04 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-05': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-05 / 1 -> 2204.6799999999994
+  2023-05 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-05 / Aanleg vakantiegeld CWP /  / 22474 / 1221.3 / 
+  2023-05 / Aanleg eindejaarstoelage CWP /  / 22474 / 561.38 / 
+  2023-05 / Ongevallenverz CWP /  / 22474 / 20.71 / 
+  2023-05 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 24.56 / 
+  2023-05 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 277.24 / 
+  2023-05 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 23.29 / 
+  2023-05 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-05 / Fietsvergoeding CWP /  / 22474 / 27.0 / 
+  2023-05 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-05 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-06': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-06 / 1 -> 9693.6
+  2023-06 / Salarissen CWP /  / 22474 / 5550.8 / 
+  2023-06 / Voordelen in natura CWP /  / 22474 / -6.0 / 
+  2023-06 / Aanleg vakantiegeld CWP /  / 22474 / 1221.3 / 
+  2023-06 / Aanleg eindejaarstoelage CWP /  / 22474 / 561.38 / 
+  2023-06 / RSZ CWP /  / 22474 / 1893.93 / 
+  2023-06 / Ongevallenverz CWP /  / 22474 / 52.9 / 
+  2023-06 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22474 / 24.56 / 
+  2023-06 / Groepsverzekering CWP (vanaf 2021) /  / 22474 / 277.24 / 
+  2023-06 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22474 / 23.29 / 
+  2023-06 / Externe medische dienst CWP /  / 22474 / 5.2 / 
+  2023-06 / Fietsvergoeding CWP /  / 22474 / 39.0 / 
+  2023-06 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+  2023-06 / Telewerkvergoeding CWP /  / 22474 / 30.0 / 
+]}, '2023-07': {'22474': [<ExpenditurePhase.BOOKED: 3>, 8928 / 22474 / 2023-07 / 1 -> 20.0
+  2023-07 / Internetvergoeding CWP /  / 22474 / 20.0 / 
+]}, '2024-09': {'16363': [<ExpenditurePhase.BOOKED: 3>, 8928 / 16363 / 2024-09 / 1 -> 10223.580000000002
+  2024-09 / Salarissen CWP /  / 16363 / 5851.91 / 
+  2024-09 / Voordelen in natura CWP /  / 16363 / -6.0 / 
+  2024-09 / Aanleg vakantiegeld CWP /  / 16363 / 1276.98 / 
+  2024-09 / Aanleg eindejaarstoelage CWP /  / 16363 / 521.19 / 
+  2024-09 / RSZ CWP /  / 16363 / 1996.1 / 
+  2024-09 / Ongevallenverz CWP /  / 16363 / 20.87 / 
+  2024-09 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 16363 / 31.08 / 
+  2024-09 / Groepsverzekering CWP (vanaf 2021) /  / 16363 / 350.75 / 
+  2024-09 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 16363 / 38.0 / 
+  2024-09 / Externe medische dienst CWP /  / 16363 / 5.2 / 
+  2024-09 / Fietsvergoeding CWP /  / 16363 / 137.5 / 
+]}, '2024-10': {'16363': [<ExpenditurePhase.BOOKED: 3>, 8928 / 16363 / 2024-10 / 1 -> 20.0
+  2024-10 / Internetvergoeding CWP /  / 16363 / 20.0 / 
+]}}
+    - 10123 - ASORE
+========================
+{'2025-05': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-05 / 1 -> 1946.6399999999999
+  2025-05 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-06': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-06 / 1 -> 8720.46
+  2025-06 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-07': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-07 / 1 -> 8720.46
+  2025-07 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-08': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-08 / 1 -> 8720.46
+  2025-08 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-09': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-09 / 1 -> 8720.46
+  2025-09 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-10': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-10 / 1 -> 8141.18
+  2025-10 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 19978 / 1019.3 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-11': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-11 / 1 -> 8141.18
+  2025-11 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-11 / Aanleg vakantiegeld CWP /  / 19978 / 1019.3 / 
+  2025-11 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2025-12': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-12 / 1 -> 8141.18
+  2025-12 / Salarissen CWP /  / 19978 / 6773.82 / 
+  2025-12 / Aanleg vakantiegeld CWP /  / 19978 / 1019.3 / 
+  2025-12 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2026-01': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-01 / 1 -> 10000.0
+  2026-01 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-02': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-02 / 1 -> 10000.0
+  2026-02 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-03': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-03 / 1 -> 10000.0
+  2026-03 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-04': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-04 / 1 -> 10000.0
+  2026-04 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-05': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-05 / 1 -> 10000.0
+  2026-05 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-06': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-06 / 1 -> 10000.0
+  2026-06 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-07': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-07 / 1 -> 10000.0
+  2026-07 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-08': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-08 / 1 -> 10000.0
+  2026-08 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-09': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-09 / 1 -> 10000.0
+  2026-09 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-10': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-10 / 1 -> 10000.0
+  2026-10 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-11': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-11 / 1 -> 10000.0
+  2026-11 / Loonschatting /  / 19978 / 10000 / 
+]}, '2026-12': {'19978': [<ExpenditurePhase.PLANNED: 1>, 10123 / 19978 / 2026-12 / 1 -> 10000.0
+  2026-12 / Loonschatting /  / 19978 / 10000 / 
+]}, '2025-04': {'19978': [<ExpenditurePhase.FIXED: 2>, 10123 / 19978 / 2025-04 / 1 -> 8719.67
+  2025-04 / Salarissen CWP /  / 19978 / 6773.03 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 19978 / 348.06 / 
+]}, '2024-11': {'19978': [<ExpenditurePhase.BOOKED: 3>, 10123 / 19978 / 2024-11 / 1 -> 7598.119999999998
+  2024-11 / Salarissen CWP /  / 19978 / 4657.2 / 
+  2024-11 / Voordelen in natura CWP /  / 19978 / -6.0 / 
+  2024-11 / Aanleg vakantiegeld CWP /  / 19978 / 953.5 / 
+  2024-11 / RSZ CWP /  / 19978 / 1588.58 / 
+  2024-11 / Ongevallenverz CWP /  / 19978 / 16.61 / 
+  2024-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19978 / 24.73 / 
+  2024-11 / Groepsverzekering CWP (vanaf 2021) /  / 19978 / 279.07 / 
+  2024-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19978 / 30.23 / 
+  2024-11 / Externe medische dienst CWP /  / 19978 / 5.2 / 
+  2024-11 / Openbaar vervoer CWP /  / 19978 / 49.0 / 
+], '20033': [<ExpenditurePhase.BOOKED: 3>, 10123 / 20033 / 2024-11 / 1 -> 7549.119999999998
+  2024-11 / Salarissen CWP /  / 20033 / 4657.2 / 
+  2024-11 / Voordelen in natura CWP /  / 20033 / -6.0 / 
+  2024-11 / Aanleg vakantiegeld CWP /  / 20033 / 953.5 / 
+  2024-11 / RSZ CWP /  / 20033 / 1588.58 / 
+  2024-11 / Ongevallenverz CWP /  / 20033 / 16.61 / 
+  2024-11 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20033 / 24.73 / 
+  2024-11 / Groepsverzekering CWP (vanaf 2021) /  / 20033 / 279.07 / 
+  2024-11 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20033 / 30.23 / 
+  2024-11 / Externe medische dienst CWP /  / 20033 / 5.2 / 
+]}, '2024-12': {'19978': [<ExpenditurePhase.BOOKED: 3>, 10123 / 19978 / 2024-12 / 1 -> 7578.109999999998
+  2024-12 / Salarissen CWP /  / 19978 / 4657.2 / 
+  2024-12 / Voordelen in natura CWP /  / 19978 / -6.0 / 
+  2024-12 / Aanleg vakantiegeld CWP /  / 19978 / 953.5 / 
+  2024-12 / RSZ CWP /  / 19978 / 1588.57 / 
+  2024-12 / Ongevallenverz CWP /  / 19978 / 16.61 / 
+  2024-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19978 / 24.73 / 
+  2024-12 / Groepsverzekering CWP (vanaf 2021) /  / 19978 / 279.07 / 
+  2024-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19978 / 30.23 / 
+  2024-12 / Externe medische dienst CWP /  / 19978 / 5.2 / 
+  2024-12 / Fietsvergoeding CWP /  / 19978 / 9.0 / 
+  2024-12 / Internetvergoeding CWP /  / 19978 / 20.0 / 
+], '20033': [<ExpenditurePhase.BOOKED: 3>, 10123 / 20033 / 2024-12 / 1 -> 7605.109999999998
+  2024-12 / Salarissen CWP /  / 20033 / 4657.2 / 
+  2024-12 / Voordelen in natura CWP /  / 20033 / -6.0 / 
+  2024-12 / Aanleg vakantiegeld CWP /  / 20033 / 953.5 / 
+  2024-12 / RSZ CWP /  / 20033 / 1588.57 / 
+  2024-12 / Ongevallenverz CWP /  / 20033 / 16.61 / 
+  2024-12 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20033 / 24.73 / 
+  2024-12 / Groepsverzekering CWP (vanaf 2021) /  / 20033 / 279.07 / 
+  2024-12 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20033 / 30.23 / 
+  2024-12 / Externe medische dienst CWP /  / 20033 / 5.2 / 
+  2024-12 / Fietsvergoeding CWP /  / 20033 / 36.0 / 
+  2024-12 / Internetvergoeding CWP /  / 20033 / 20.0 / 
+]}, '2025-01': {'19978': [<ExpenditurePhase.BOOKED: 3>, 10123 / 19978 / 2025-01 / 1 -> 8131.239999999998
+  2025-01 / Salarissen CWP /  / 19978 / 4657.2 / 
+  2025-01 / Voordelen in natura CWP /  / 19978 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 19978 / 1024.48 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 19978 / 470.91 / 
+  2025-01 / RSZ CWP /  / 19978 / 1592.31 / 
+  2025-01 / Ongevallenverz CWP /  / 19978 / 16.61 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19978 / 24.73 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 19978 / 279.07 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19978 / 30.23 / 
+  2025-01 / Externe medische dienst CWP /  / 19978 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 19978 / 16.5 / 
+  2025-01 / Internetvergoeding CWP /  / 19978 / 20.0 / 
+], '20033': [<ExpenditurePhase.BOOKED: 3>, 10123 / 20033 / 2025-01 / 1 -> 8138.739999999998
+  2025-01 / Salarissen CWP /  / 20033 / 4657.2 / 
+  2025-01 / Voordelen in natura CWP /  / 20033 / -6.0 / 
+  2025-01 / Aanleg vakantiegeld CWP /  / 20033 / 1024.48 / 
+  2025-01 / Aanleg eindejaarstoelage CWP /  / 20033 / 470.91 / 
+  2025-01 / RSZ CWP /  / 20033 / 1592.31 / 
+  2025-01 / Ongevallenverz CWP /  / 20033 / 16.61 / 
+  2025-01 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20033 / 24.73 / 
+  2025-01 / Groepsverzekering CWP (vanaf 2021) /  / 20033 / 279.07 / 
+  2025-01 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20033 / 30.23 / 
+  2025-01 / Externe medische dienst CWP /  / 20033 / 5.2 / 
+  2025-01 / Fietsvergoeding CWP /  / 20033 / 24.0 / 
+  2025-01 / Internetvergoeding CWP /  / 20033 / 20.0 / 
+]}, '2025-02': {'19978': [<ExpenditurePhase.BOOKED: 3>, 10123 / 19978 / 2025-02 / 1 -> 8525.86
+  2025-02 / Salarissen CWP /  / 19978 / 4880.72 / 
+  2025-02 / Voordelen in natura CWP /  / 19978 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 19978 / 1073.71 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 19978 / 493.54 / 
+  2025-02 / RSZ CWP /  / 19978 / 1668.71 / 
+  2025-02 / Ongevallenverz CWP /  / 19978 / 17.4 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19978 / 25.91 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 19978 / 292.48 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19978 / 31.69 / 
+  2025-02 / Externe medische dienst CWP /  / 19978 / 5.2 / 
+  2025-02 / Fietsvergoeding CWP /  / 19978 / 22.5 / 
+  2025-02 / Internetvergoeding CWP /  / 19978 / 20.0 / 
+], '20033': [<ExpenditurePhase.BOOKED: 3>, 10123 / 20033 / 2025-02 / 1 -> 8162.719999999998
+  2025-02 / Salarissen CWP /  / 20033 / 4657.2 / 
+  2025-02 / Voordelen in natura CWP /  / 20033 / -6.0 / 
+  2025-02 / Aanleg vakantiegeld CWP /  / 20033 / 1024.48 / 
+  2025-02 / Aanleg eindejaarstoelage CWP /  / 20033 / 470.91 / 
+  2025-02 / RSZ CWP /  / 20033 / 1592.29 / 
+  2025-02 / Ongevallenverz CWP /  / 20033 / 16.61 / 
+  2025-02 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20033 / 24.73 / 
+  2025-02 / Groepsverzekering CWP (vanaf 2021) /  / 20033 / 279.07 / 
+  2025-02 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20033 / 30.23 / 
+  2025-02 / Externe medische dienst CWP /  / 20033 / 5.2 / 
+  2025-02 / Fietsvergoeding CWP /  / 20033 / 48.0 / 
+  2025-02 / Internetvergoeding CWP /  / 20033 / 20.0 / 
+]}, '2025-03': {'19978': [<ExpenditurePhase.BOOKED: 3>, 10123 / 19978 / 2025-03 / 1 -> 8313.670000000002
+  2025-03 / Salarissen CWP /  / 19978 / 4978.18 / 
+  2025-03 / Voordelen in natura CWP /  / 19978 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 19978 / 1095.18 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 19978 / 503.4 / 
+  2025-03 / RSZ CWP /  / 19978 / 1266.43 / 
+  2025-03 / Ongevallenverz CWP /  / 19978 / 13.2 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 19978 / 26.43 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 19978 / 298.33 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 19978 / 32.32 / 
+  2025-03 / Externe medische dienst CWP /  / 19978 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 19978 / 21.0 / 
+  2025-03 / Internetvergoeding CWP /  / 19978 / 20.0 / 
+  2025-03 / Telewerkvergoeding CWP /  / 19978 / 60.0 / 
+], '20033': [<ExpenditurePhase.BOOKED: 3>, 10123 / 20033 / 2025-03 / 1 -> 8308.42
+  2025-03 / Salarissen CWP /  / 20033 / 4750.19 / 
+  2025-03 / Voordelen in natura CWP /  / 20033 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 20033 / 1044.96 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 20033 / 480.32 / 
+  2025-03 / RSZ CWP /  / 20033 / 1624.1 / 
+  2025-03 / Ongevallenverz CWP /  / 20033 / 16.94 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 20033 / 25.22 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 20033 / 284.65 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 20033 / 30.84 / 
+  2025-03 / Externe medische dienst CWP /  / 20033 / 5.2 / 
+  2025-03 / Fietsvergoeding CWP /  / 20033 / 32.0 / 
+  2025-03 / Internetvergoeding CWP /  / 20033 / 20.0 / 
+]}}
+    - 10315 - INFRA7
+========================
+{'2025-04': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-04 / 1 -> 7921.0
+  2025-04 / Salarissen CWP /  / 22047 / 6152.87 / 
+  2025-04 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-04 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-04 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-05': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-05 / 1 -> 1768.13
+  2025-05 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-05 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-05 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-06': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-06 / 1 -> 7921.79
+  2025-06 / Salarissen CWP /  / 22047 / 6153.66 / 
+  2025-06 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-06 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-06 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-07': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-07 / 1 -> 7921.79
+  2025-07 / Salarissen CWP /  / 22047 / 6153.66 / 
+  2025-07 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-07 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-07 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-08': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-08 / 1 -> 7921.79
+  2025-08 / Salarissen CWP /  / 22047 / 6153.66 / 
+  2025-08 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-08 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-08 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-09': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-09 / 1 -> 7921.79
+  2025-09 / Salarissen CWP /  / 22047 / 6153.66 / 
+  2025-09 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-09 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-09 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-10': {'22047': [<ExpenditurePhase.FIXED: 2>, 10315 / 22047 / 2025-10 / 1 -> 7395.62
+  2025-10 / Salarissen CWP /  / 22047 / 6153.66 / 
+  2025-10 / Aanleg vakantiegeld CWP /  / 22047 / 925.82 / 
+  2025-10 / Groepsverz en pensioenen CWP /  / 22047 / 316.14 / 
+]}, '2025-03': {'22047': [<ExpenditurePhase.BOOKED: 3>, 10315 / 22047 / 2025-03 / 1 -> 7890.01
+  2025-03 / Salarissen CWP /  / 22047 / 4522.2 / 
+  2025-03 / Voordelen in natura CWP /  / 22047 / -6.0 / 
+  2025-03 / Aanleg vakantiegeld CWP /  / 22047 / 994.74 / 
+  2025-03 / Aanleg eindejaarstoelage CWP /  / 22047 / 457.25 / 
+  2025-03 / RSZ CWP /  / 22047 / 1546.15 / 
+  2025-03 / Ongevallenverz CWP /  / 22047 / 16.13 / 
+  2025-03 / Patronale bijdragen RSZ op GV CWP (vanaf 2021) /  / 22047 / 24.01 / 
+  2025-03 / Groepsverzekering CWP (vanaf 2021) /  / 22047 / 270.97 / 
+  2025-03 / Gewaarborgd inkomen CWP (vanaf 2021) /  / 22047 / 29.36 / 
+  2025-03 / Externe medische dienst CWP /  / 22047 / 5.2 / 
+  2025-03 / Telewerkvergoeding CWP /  / 22047 / 30.0 / 
+]}}
+    - FFP250084 - SMARTDOCK-ND1
+========================
+{}
+    - FFP240410 - SMARTDOCK-ND2
+========================
+{}
+  - saving it all
+  - cleaning temporary files
+Done
