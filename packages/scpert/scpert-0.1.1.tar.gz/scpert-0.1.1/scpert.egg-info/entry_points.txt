@@ -1,0 +1,4 @@
+[console_scripts]
+scpert-infer = scpertpy.cli:infer_command
+scpert-train = scpertpy.cli:train_command
+
