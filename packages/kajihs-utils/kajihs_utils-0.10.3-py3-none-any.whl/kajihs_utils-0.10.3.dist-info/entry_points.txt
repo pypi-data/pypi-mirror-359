@@ -1,0 +1,5 @@
+[console_scripts]
+kajihs-utils = kajihs_utils:main_cli
+
+[commitizen.provider]
+custom = commitizen_version_provider:AboutPyProvider
