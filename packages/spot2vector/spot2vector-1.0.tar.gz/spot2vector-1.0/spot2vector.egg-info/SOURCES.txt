@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+spot2vector/__init__.py
+spot2vector/lossfunctions.py
+spot2vector/models.py
+spot2vector/spot2vector.py
+spot2vector/utils.py
+spot2vector.egg-info/PKG-INFO
+spot2vector.egg-info/SOURCES.txt
+spot2vector.egg-info/dependency_links.txt
+spot2vector.egg-info/top_level.txt
