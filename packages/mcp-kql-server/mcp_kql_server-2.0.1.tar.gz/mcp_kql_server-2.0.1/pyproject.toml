@@ -1,0 +1,241 @@
+[project]
+name = "mcp-kql-server"
+version = "2.0.1"
+description = "AI-Powered MCP server for KQL query execution with intelligent schema memory and context assistance"
+authors = [{ name = "Arjun Trivedi", email = "arjuntrivedi42@yahoo.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = [
+    "mcp", "model-context-protocol", "kql", "kusto", "azure", "data-explorer",
+    "ai", "schema-memory", "query-execution", "azure-data-explorer", "claude",
+    "anthropic", "intelligent-caching", "data-analytics"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Database :: Database Engines/Servers",
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.0.0",
+    "tabulate>=0.9.0",
+]
+
+[project.optional-dependencies]
+# Azure dependencies for KQL/Kusto access
+azure = [
+    "azure-kusto-data>=4.0.0",
+    "azure-identity>=1.15.0",
+    "azure-core>=1.29.0",
+]
+# MCP framework dependencies
+mcp = [
+    "fastmcp>=0.4.0",
+    "mcp>=1.9.0",
+]
+# Networking and HTTP dependencies
+networking = [
+    "httpx>=0.25.0",
+    "requests>=2.31.0",
+    "tenacity>=8.0.0",
+]
+# CLI and utility dependencies
+cli = [
+    "click>=8.0.0",
+    "colorama>=0.4.6",
+    "python-dotenv>=1.0.0",
+    "werkzeug>=2.0.0",
+]
+# Full production dependencies
+full = [
+    "azure-kusto-data>=4.0.0",
+    "azure-identity>=1.15.0",
+    "azure-core>=1.29.0",
+    "fastmcp>=0.4.0",
+    "mcp>=1.9.0",
+    "httpx>=0.25.0",
+    "requests>=2.31.0",
+    "tenacity>=8.0.0",
+    "click>=8.0.0",
+    "colorama>=0.4.6",
+    "python-dotenv>=1.0.0",
+    "werkzeug>=2.0.0",
+]
+# Development dependencies
+dev = [
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "bandit>=1.7.0",
+    "coverage>=7.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/4R9UN/mcp-kql-server"
+Repository = "https://github.com/4R9UN/mcp-kql-server.git"
+Issues = "https://github.com/4R9UN/mcp-kql-server/issues"
+Changelog = "https://github.com/4R9UN/mcp-kql-server/blob/main/CHANGELOG.md"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_kql_server"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Tool configurations
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | new_venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+known_first_party = ["mcp_kql_server"]
+known_third_party = ["azure", "fastmcp", "pydantic", "tabulate", "tenacity"]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503", "E501"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".tox",
+    ".venv",
+    "new_venv",
+    "*.egg-info"
+]
+per-file-ignores = [
+    "__init__.py:F401",
+    "tests/*:D103,D100"
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+ignore_missing_imports = true
+exclude = [
+    "build/",
+    "dist/",
+    "new_venv/",
+    ".venv/"
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "new_venv", ".venv", "build", "dist"]
+skips = ["B101", "B601"]
+
+[tool.coverage.run]
+source = ["mcp_kql_server"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__init__.py",
+    "*/conftest.py",
+    "new_venv/*",
+    ".venv/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod"
+]
+ignore_errors = true
+show_missing = true
+precision = 2
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+    "--tb=short",
+    "--cov=mcp_kql_server",
+    "--cov-report=term-missing",
+    "--cov-report=html:htmlcov",
+    "--cov-report=xml:coverage.xml",
+]
+markers = [
+    "unit: Unit tests that don't require external dependencies",
+    "integration: Integration tests that require Azure access",
+    "slow: Tests that take a long time to run",
+    "azure: Tests that require Azure Data Explorer access",
+    "memory: Tests related to schema memory functionality",
+    "auth: Tests related to authentication"
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+    "ignore:.*azure.*:UserWarning",
+    "ignore:.*urllib3.*:urllib3.exceptions.InsecureRequestWarning"
+]
