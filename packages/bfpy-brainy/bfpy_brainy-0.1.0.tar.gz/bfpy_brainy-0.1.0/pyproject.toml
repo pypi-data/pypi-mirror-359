@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bfpy-brainy"
+version = "0.1.0"
+authors = [
+  { name="Brainy7890" },
+]
+description = "A simple python package that interprets and compiles Brainfuck code."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/Brainy0789/BfPy"
+Issues = "https://github.com/Brainy0789/BfPy/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bfpy_package_brainy7890"]
