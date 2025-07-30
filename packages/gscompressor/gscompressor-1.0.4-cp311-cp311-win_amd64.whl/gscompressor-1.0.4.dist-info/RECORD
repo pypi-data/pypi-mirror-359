@@ -1,0 +1,14 @@
+gscompressor/__init__.py,sha256=pd-7C76F5vpEa5o2V5AjZnAgGERbzmRQFUM9NbbYaIk,106
+gscompressor/compress.py,sha256=XG7An1ARkbFa6tDWK_Vg5h8YNMQVkz_3ttPIK4T9wo4,4216
+gscompressor/compressor.py,sha256=pXTLHGa-BrobkU7r1Oc08VM3wjBLLXB2KgM8DadC7yc,2588
+gscompressor/draco_decoder.exe,sha256=lvqBcZKwGDwvPBSrYlK7I9RBTaWl1qdiN4OyAnJv4cQ,411136
+gscompressor/draco_encoder.exe,sha256=s8kOTIiScgU88ZHZ9M3tegleV-dFMFIcFWwcefDOefU,733184
+gscompressor/quantize.py,sha256=Y0frDHeaJky7aSYZQV9ZC4BHEEMEs_CWIOZV0-ienDw,5996
+gscompressor/quantization/__init__.py,sha256=nVf4OzDu51LlZJQ3MXG0KTmIlL58FOXNYqb5Ux67EME,54
+gscompressor/quantization/compressor.py,sha256=p75yhlIkVvHb4vqCnpckAtridZ94eo82-_64IJHjUpM,4230
+gscompressor/quantization/draco_decoder.exe,sha256=OhnwYezXYqW27iZw9JjjdLDLOorVwISMDhj26gykQj4,407040
+gscompressor/quantization/draco_encoder.exe,sha256=VHsAv6uoOnHWfIJ9wuSB55PWYAOH8I1QMtCyu302eLI,729088
+gscompressor-1.0.4.dist-info/METADATA,sha256=stK45_eh-zq6uF_3s1Wpz5pdijo2OAW_t8Qh0OqTZpg,2696
+gscompressor-1.0.4.dist-info/WHEEL,sha256=JLOMsP7F5qtkAkINx5UnzbFguf8CqZeraV8o04b0I8I,101
+gscompressor-1.0.4.dist-info/top_level.txt,sha256=qOqtBhYvqbOEOmiJ8QEHewru8YnlOYHm_afu4-WqR94,13
+gscompressor-1.0.4.dist-info/RECORD,,
