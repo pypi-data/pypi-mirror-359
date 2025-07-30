@@ -1,0 +1,2 @@
+[console_scripts]
+vagents = vagents.entrypoint.cli:app
