@@ -1,0 +1,47 @@
+
+[ci]
+pytest-xdist
+diff_cover
+
+[develop]
+mpmath[tests]
+pytest-cov
+wheel
+build
+
+[develop:python_version >= "3.9"]
+flake518>=1.5
+
+[docs]
+sphinx
+sphinxcontrib-autoprogram
+
+[docs:platform_python_implementation != "PyPy" and python_version < "3.14"]
+matplotlib
+
+[gmp]
+
+[gmp:platform_python_implementation != "PyPy"]
+python-gmp>=0.4.0a1
+
+[gmpy]
+mpmath[gmpy2]
+
+[gmpy2]
+
+[gmpy2:platform_python_implementation != "PyPy"]
+gmpy2>=2.2
+
+[tests]
+pytest>=6
+packaging
+pytest-timeout
+pexpect
+ipython
+hypothesis
+
+[tests:platform_python_implementation != "PyPy" and python_version < "3.14"]
+matplotlib
+
+[tests:python_version < "3.14"]
+numpy
