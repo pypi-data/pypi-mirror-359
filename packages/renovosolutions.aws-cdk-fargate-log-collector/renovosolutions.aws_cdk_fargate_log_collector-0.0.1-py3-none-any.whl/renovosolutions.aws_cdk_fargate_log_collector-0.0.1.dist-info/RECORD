@@ -1,0 +1,9 @@
+renovosolutions_fargate_log_collector/__init__.py,sha256=F77tMwTLiPQelnZuukkTqDMvCG0dmQKTXpGcjjQAdAA,91511
+renovosolutions_fargate_log_collector/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+renovosolutions_fargate_log_collector/_jsii/__init__.py,sha256=DBUZYaCEKbh9ucBap422i-orLqEud_I8FljRFlIjFYM,1507
+renovosolutions_fargate_log_collector/_jsii/cdk-library-fargate-log-collector@0.0.1.jsii.tgz,sha256=dyr9q7sYIgomk-Jj139y7Q_n-0zoPLyzhECUdteXK8E,68541
+renovosolutions.aws_cdk_fargate_log_collector-0.0.1.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+renovosolutions.aws_cdk_fargate_log_collector-0.0.1.dist-info/METADATA,sha256=UvS3e6LzRdJXkLKXTsEwMP5J95z7iGXz6Vg28_ESlbs,21184
+renovosolutions.aws_cdk_fargate_log_collector-0.0.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+renovosolutions.aws_cdk_fargate_log_collector-0.0.1.dist-info/top_level.txt,sha256=SHHrrpYKRFRI3-Q6EmMoAg7j-UIEtPiYVTvEM-2tYhU,38
+renovosolutions.aws_cdk_fargate_log_collector-0.0.1.dist-info/RECORD,,
