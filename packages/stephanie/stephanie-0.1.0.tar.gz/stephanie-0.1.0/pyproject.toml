@@ -1,0 +1,43 @@
+[project]
+name = "stephanie"
+version = "0.1.0"
+description = "A modular DSPy-based pipeline for LLM-powered scientific hypothesis generation and ranking."
+authors = [{ name = "Ernan Hughes", email = "ernanhughes@gmail.com" }]
+[project.license]
+file = "LICENSE"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "psycopg2-binary",
+    "pyyaml", 
+    "pgvector",
+    "hydra-core", 
+    "jinja2",
+    "numpy", 
+    "dspy", 
+    "tabulate",
+    "python_dotenv",
+    "ollama",
+    "unstructured",
+    "fuzzywuzzy",
+    "requests",
+    "wikipedia",
+    "duckduckgo-search",
+    "readability-lxml",
+    "beautifulsoup4",
+    "arxiv",
+    "gradio_client",
+    "torch",
+    "huggingface_hub",
+    "python-Levenshtein",
+    "matplotlib",
+    "scikit-learn",
+    "pdfminer.six"
+]
+
+[project.urls]
+Homepage = "https://github.com/ernanhughes/co-ai"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
