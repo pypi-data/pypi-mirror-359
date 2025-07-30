@@ -1,0 +1,12 @@
+TFDWT/DWT1DFB.py,sha256=E8WQk_OCpRpbtSJaZAMrrQqh8NY5e3ZmP-ZMoYk19oE,5974
+TFDWT/DWT2DFB.py,sha256=XVkswFlXSdHMW_HjdBlXavUAZ4KFXM0rL3WeGWjQYuY,8332
+TFDWT/DWT3DFB.py,sha256=R7y5cXZvGWIEk2-bQIWB4SKG5RjEGmRkJs9Q4MnM__A,8804
+TFDWT/DWTFilters.py,sha256=BXcdKsZ_WiLn5AnfodcZfyyVqgNVaty_3AGmL-bJ3Js,2818
+TFDWT/DWTop.py,sha256=hs965sXsRZUinMToz7XtMQowZ8gnoEY89gK9s-gE6ZI,3743
+TFDWT/__init__.py,sha256=3ruzoCEvyr9x4smC3N8z9CsjVE7_qCa1beOxTPTJAwI,1175
+TFDWT/dbFBimpulseResponse.py,sha256=eyoezrqMeW9qwg_ys2ta5Joo6GK9eUdKQm82neF-mXU,280946
+TFDWT/dwt_op.py,sha256=PuDmD7nnFY2x0YIBODg5NXoPC3LmS9iHr2zqtiIhEhA,1259
+tfdwt-0.0.4.dist-info/METADATA,sha256=qj-kSS2sF3LxT3O3t1uOWSSIh-Vd6D-93nq4cx7ygLs,5080
+tfdwt-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tfdwt-0.0.4.dist-info/licenses/LICENSE,sha256=owZVK3_Xyd2Wfpq9eStIjTIrQickZ9heb7YFTFPtbDY,35138
+tfdwt-0.0.4.dist-info/RECORD,,
