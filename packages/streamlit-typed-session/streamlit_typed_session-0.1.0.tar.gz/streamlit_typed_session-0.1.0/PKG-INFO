@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: streamlit-typed-session
+Version: 0.1.0
+Summary: Add your description here
+License-File: LICENSE
+Requires-Python: <4,>=3.10
+Requires-Dist: streamlit>=1.46.0
+Requires-Dist: typing-extensions>=4.14.0
