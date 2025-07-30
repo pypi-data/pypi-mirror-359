@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+crackify/__init__.py
+crackify/core.py
+crackify/version.py
+crackify.egg-info/PKG-INFO
+crackify.egg-info/SOURCES.txt
+crackify.egg-info/dependency_links.txt
+crackify.egg-info/requires.txt
+crackify.egg-info/top_level.txt
+test/test.py
