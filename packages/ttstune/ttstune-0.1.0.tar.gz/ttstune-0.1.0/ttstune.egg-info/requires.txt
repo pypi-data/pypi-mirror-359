@@ -1,0 +1,7 @@
+click
+
+[dev]
+ruff
+mypy
+pytest
+pre-commit
