@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+envstream/__init__.py
+envstream/core.py
+envstream.egg-info/PKG-INFO
+envstream.egg-info/SOURCES.txt
+envstream.egg-info/dependency_links.txt
+envstream.egg-info/top_level.txt
