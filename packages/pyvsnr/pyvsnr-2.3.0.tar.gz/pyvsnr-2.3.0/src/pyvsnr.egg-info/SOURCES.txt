@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/pyvsnr/__init__.py
+src/pyvsnr/utils.py
+src/pyvsnr/vsnr2d.py
+src/pyvsnr/vsnr2d_cuda.py
+src/pyvsnr.egg-info/PKG-INFO
+src/pyvsnr.egg-info/SOURCES.txt
+src/pyvsnr.egg-info/dependency_links.txt
+src/pyvsnr.egg-info/requires.txt
+src/pyvsnr.egg-info/top_level.txt
+tests/test_batch.py
+tests/test_core.py
+tests/test_cuda_equals_py.py
