@@ -1,0 +1,2 @@
+[console_scripts]
+llq-mcp-demo = llq_mcp_demo:main
