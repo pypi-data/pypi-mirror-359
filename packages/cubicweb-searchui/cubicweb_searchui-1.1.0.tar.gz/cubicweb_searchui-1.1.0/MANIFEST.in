@@ -1,0 +1,14 @@
+include *.py
+include */*.py
+recursive-include cubicweb_searchui *.py
+recursive-include cubicweb_searchui/data *.gif *.png *.ico *.css *.js
+recursive-include cubicweb_searchui/i18n *.po
+recursive-include test/data bootstrap_cubes *.py
+include *.ini
+recursive-include debian changelog compat control copyright rules
+include cubicweb-searchui.spec
+exclude .gitlab-ci.yml
+include README.rst
+exclude .yamllint
+exclude .gitlab-ci-extended.yml
+exclude CHANGELOG.md

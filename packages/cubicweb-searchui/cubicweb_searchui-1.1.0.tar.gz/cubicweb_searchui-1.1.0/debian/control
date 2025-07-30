@@ -1,0 +1,27 @@
+Source: cubicweb-searchui
+Section: web
+Priority: optional
+Maintainer: LOGILAB S.A. (Paris, FRANCE) <contact@logilab.fr>
+Build-Depends:
+ debhelper (>= 9),
+ python (>= 2.7),
+ dh-python,
+ python-seteuptools,
+Standards-Version: 3.9.8
+XS-Python-Version: >= 2.7
+
+Package: cubicweb-searchui
+Architecture: all
+Depends:
+ python-cubicweb (>= 3.24.0),
+ python-six (>= 1.4),
+ cubicweb-squareui,
+ ${python:Depends},
+ ${misc:Depends},
+Description: set of ui components to ease data browsing
+ CubicWeb is a semantic web application framework.
+ .
+ set of ui components to ease data browsing
+ .
+ This package will install all the components you need to run the
+ cubicweb-searchui application (cube :)..
