@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: satsur-banking-api
+Version: 0.0.4
+Summary: Banking api and datamodel
+Author-email: Satish Suryanarayan <satsur@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.13.0
+Description-Content-Type: text/markdown
+Requires-Dist: email-validator>=2.2.0
+Requires-Dist: pydantic>=2.11.7
+
+# banking-api
+
+## API and data-model for banking
+### Supports
+1. Creating customers
+2. Creating customer accounts with initial balance
+3. Transferring money between accounts
+4. Getting a list of all accounts for a customer
+5. Getting the balance for an account
+6. Getting a list of transactions for an account
