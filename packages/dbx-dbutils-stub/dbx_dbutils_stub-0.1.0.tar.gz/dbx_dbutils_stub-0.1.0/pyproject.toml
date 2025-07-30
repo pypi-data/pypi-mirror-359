@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dbx-dbutils-stub"
+version = "0.1.0"
+description = "Stub for Databricks dbutils to enable VSCode linting"
+authors = ["francisco javier larios <fjlsoto@gmail.com>"]
+readme = "README.md"
+packages = [
+    {include = 'dbutils'}
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
