@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+src/MediaLib.egg-info/PKG-INFO
+src/MediaLib.egg-info/SOURCES.txt
+src/MediaLib.egg-info/dependency_links.txt
+src/MediaLib.egg-info/requires.txt
+src/MediaLib.egg-info/top_level.txt
+src/medialib/__init__.py
+src/medialib/medialib.py

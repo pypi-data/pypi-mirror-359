@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: MediaLib
+Version: 3.1
+Summary: The first cut-down Python library that simplifies multimedia programming
+Home-page: http://medialib.club
+Author: Jingyun Wang
+Author-email: jingyun.wang@durham.ac.uk
+License: MIT
+Keywords: Multimedia
+
+The first cut-down Python library that simplifies multimedia programming.
