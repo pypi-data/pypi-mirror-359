@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: django-liveload
+Version: 0.1.0
+Summary: Easily add live progress updates in Django using Django Channels.
+Home-page: https://github.com/Sanat-Jha/django-liveload
+Author: Sanat Jha
+Author-email: sanatjha4@gmail.com
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: channels>=4.0.0
+Requires-Dist: asgiref>=3.5.0
+Requires-Dist: daphne>=4.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# django-live-progress
+
+This project provides live progress tracking for Django applications using Django Channels and WebSockets.
+
+## Structure
+
+- `liveload/`: Core package code
+- `example_project/`: Example Django app using this package
+- `setup.py`: Package setup script
+- `LICENSE`: License information
+
+See individual files and directories for more details.
