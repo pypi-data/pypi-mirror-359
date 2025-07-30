@@ -1,0 +1,2 @@
+[console_scripts]
+ss-gcj02towgs84 = ss_gcj02towgs84:main
