@@ -1,0 +1,8 @@
+parakeet_asr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+parakeet_asr/cli.py,sha256=rS8_P1JuK-HK_Q0tcad_3aWPn_e_7kO8qzGbgwGmVv8,3543
+parakeet_asr/model.py,sha256=g9hbeqhe5fpK196j2w_V_JrhTLEVg-Hg5fF_Tp1H2h4,13643
+parakeet_asr/segment.py,sha256=4D5CBXi5RX1FP0wgKo1N71vhELtup9le_4cVhyGDGVU,1474
+parakeet_asr-0.1.0.dist-info/METADATA,sha256=w4ro1tRcL3fnS7vPZDK9imuaK0JatbjNCkxx2ncLtkM,715
+parakeet_asr-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+parakeet_asr-0.1.0.dist-info/entry_points.txt,sha256=3HFJfrnfeKrO4evaqa7_qlOWRtmkdQmQIZQe8PWaz68,51
+parakeet_asr-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+parakeet = parakeet_asr.cli:main
