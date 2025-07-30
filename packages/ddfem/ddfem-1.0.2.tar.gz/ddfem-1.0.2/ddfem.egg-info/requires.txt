@@ -1,0 +1,2 @@
+fenics-ufl==2022.2.0
+numpy

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ddfem","ddfem.geometry","ddfem.transformers","ddfem.examples"]
+
+[project]
+name = "ddfem"
+version = "1.0.2"
+dependencies = [ "fenics-ufl == 2022.2.0", "numpy" ]
+authors = [
+  { name="Luke Benfield", email="luke.benfield@warwick.ac.uk" },
+  { name="Andreas Dedner", email="a.s.dedner@warwick.ac.uk" },
+]
+description = "Diffuse domain finite element solver"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://..."
+Issues = "https://..."
