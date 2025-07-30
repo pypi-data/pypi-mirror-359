@@ -1,0 +1,166 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+from __future__ import absolute_import
+
+import unittest
+
+import signer_client
+from signer_client.api.documents_api import DocumentsApi  # noqa: E501
+from signer_client.rest import ApiException
+
+
+class TestDocumentsApi(unittest.TestCase):
+    """DocumentsApi unit test stubs"""
+
+    def setUp(self):
+        self.api = DocumentsApi()  # noqa: E501
+
+    def tearDown(self):
+        pass
+
+    def test_api_documents_batch_folder_post(self):
+        """Test case for api_documents_batch_folder_post
+
+        Moves a batch of documents to a folder.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_get(self):
+        """Test case for api_documents_get
+
+        Retrieves the documents of the organization paginating the response.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_action_url_post(self):
+        """Test case for api_documents_id_action_url_post
+
+        Retrieves an URL to redirect the user to the first pending action of the document.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_cancellation_post(self):
+        """Test case for api_documents_id_cancellation_post
+
+        Cancels the document by providing a reason for the cancellation.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_content_b64_get(self):
+        """Test case for api_documents_id_content_b64_get
+
+        Downloads a specific version type of the document encoding the bytes in Base 64 format.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_content_get(self):
+        """Test case for api_documents_id_content_get
+
+        Downloads a specific version type of the document.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_delete(self):
+        """Test case for api_documents_id_delete
+
+        Deletes a specific document using it's id.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_envelope_versions_post(self):
+        """Test case for api_documents_id_envelope_versions_post
+
+        Adds a new version for an envelope.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_flow_post(self):
+        """Test case for api_documents_id_flow_post
+
+        Updates the document's flow.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_folder_post(self):
+        """Test case for api_documents_id_folder_post
+
+        Moves a document to a folder.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_get(self):
+        """Test case for api_documents_id_get
+
+        Retrieves the document's details.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_notified_emails_put(self):
+        """Test case for api_documents_id_notified_emails_put
+
+        Updates the document's notified emails  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_refusal_post(self):
+        """Test case for api_documents_id_refusal_post
+
+        Refuses a document by providing a reason for the refusal.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_signatures_details_get(self):
+        """Test case for api_documents_id_signatures_details_get
+
+        Retrieves the details of the document's signatures.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_ticket_get(self):
+        """Test case for api_documents_id_ticket_get
+
+        Generates a URL (ticket) to download a specific version type of the document.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_id_versions_post(self):
+        """Test case for api_documents_id_versions_post
+
+        Adds a new version for the document.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_keys_key_signatures_get(self):
+        """Test case for api_documents_keys_key_signatures_get
+
+        Validates each signature in a document using the verification code  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_post(self):
+        """Test case for api_documents_post
+
+        Creates one or multiple documents.  # noqa: E501
+        """
+        pass
+
+    def test_api_documents_validate_signatures_post(self):
+        """Test case for api_documents_validate_signatures_post
+
+        Validates each signature in the uploaded document  # noqa: E501
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

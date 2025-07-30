@@ -1,0 +1,511 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class BillingBillingInformationModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'contact_name': 'str',
+        'email': 'str',
+        'phone': 'str',
+        'type': 'BillingInformationTypes',
+        'individual': 'BillingIndividualBillingInformationModel',
+        'company': 'BillingCompanyBillingInformationModel',
+        'street_address': 'str',
+        'address_number': 'str',
+        'additional_address_info': 'str',
+        'neighborhood': 'str',
+        'address': 'str',
+        'address2': 'str',
+        'zip_code': 'str',
+        'city': 'str',
+        'state': 'str',
+        'city_code': 'str'
+    }
+
+    attribute_map = {
+        'contact_name': 'contactName',
+        'email': 'email',
+        'phone': 'phone',
+        'type': 'type',
+        'individual': 'individual',
+        'company': 'company',
+        'street_address': 'streetAddress',
+        'address_number': 'addressNumber',
+        'additional_address_info': 'additionalAddressInfo',
+        'neighborhood': 'neighborhood',
+        'address': 'address',
+        'address2': 'address2',
+        'zip_code': 'zipCode',
+        'city': 'city',
+        'state': 'state',
+        'city_code': 'cityCode'
+    }
+
+    def __init__(self, contact_name=None, email=None, phone=None, type=None, individual=None, company=None, street_address=None, address_number=None, additional_address_info=None, neighborhood=None, address=None, address2=None, zip_code=None, city=None, state=None, city_code=None):  # noqa: E501
+        """BillingBillingInformationModel - a model defined in Swagger"""  # noqa: E501
+        self._contact_name = None
+        self._email = None
+        self._phone = None
+        self._type = None
+        self._individual = None
+        self._company = None
+        self._street_address = None
+        self._address_number = None
+        self._additional_address_info = None
+        self._neighborhood = None
+        self._address = None
+        self._address2 = None
+        self._zip_code = None
+        self._city = None
+        self._state = None
+        self._city_code = None
+        self.discriminator = None
+        if contact_name is not None:
+            self.contact_name = contact_name
+        self.email = email
+        self.phone = phone
+        if type is not None:
+            self.type = type
+        if individual is not None:
+            self.individual = individual
+        if company is not None:
+            self.company = company
+        if street_address is not None:
+            self.street_address = street_address
+        if address_number is not None:
+            self.address_number = address_number
+        if additional_address_info is not None:
+            self.additional_address_info = additional_address_info
+        if neighborhood is not None:
+            self.neighborhood = neighborhood
+        if address is not None:
+            self.address = address
+        if address2 is not None:
+            self.address2 = address2
+        self.zip_code = zip_code
+        self.city = city
+        self.state = state
+        if city_code is not None:
+            self.city_code = city_code
+
+    @property
+    def contact_name(self):
+        """Gets the contact_name of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The contact_name of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._contact_name
+
+    @contact_name.setter
+    def contact_name(self, contact_name):
+        """Sets the contact_name of this BillingBillingInformationModel.
+
+
+        :param contact_name: The contact_name of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._contact_name = contact_name
+
+    @property
+    def email(self):
+        """Gets the email of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The email of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this BillingBillingInformationModel.
+
+
+        :param email: The email of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
+
+        self._email = email
+
+    @property
+    def phone(self):
+        """Gets the phone of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The phone of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this BillingBillingInformationModel.
+
+
+        :param phone: The phone of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+        if phone is None:
+            raise ValueError("Invalid value for `phone`, must not be `None`")  # noqa: E501
+
+        self._phone = phone
+
+    @property
+    def type(self):
+        """Gets the type of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The type of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: BillingInformationTypes
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this BillingBillingInformationModel.
+
+
+        :param type: The type of this BillingBillingInformationModel.  # noqa: E501
+        :type: BillingInformationTypes
+        """
+
+        self._type = type
+
+    @property
+    def individual(self):
+        """Gets the individual of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The individual of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: BillingIndividualBillingInformationModel
+        """
+        return self._individual
+
+    @individual.setter
+    def individual(self, individual):
+        """Sets the individual of this BillingBillingInformationModel.
+
+
+        :param individual: The individual of this BillingBillingInformationModel.  # noqa: E501
+        :type: BillingIndividualBillingInformationModel
+        """
+
+        self._individual = individual
+
+    @property
+    def company(self):
+        """Gets the company of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The company of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: BillingCompanyBillingInformationModel
+        """
+        return self._company
+
+    @company.setter
+    def company(self, company):
+        """Sets the company of this BillingBillingInformationModel.
+
+
+        :param company: The company of this BillingBillingInformationModel.  # noqa: E501
+        :type: BillingCompanyBillingInformationModel
+        """
+
+        self._company = company
+
+    @property
+    def street_address(self):
+        """Gets the street_address of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The street_address of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._street_address
+
+    @street_address.setter
+    def street_address(self, street_address):
+        """Sets the street_address of this BillingBillingInformationModel.
+
+
+        :param street_address: The street_address of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._street_address = street_address
+
+    @property
+    def address_number(self):
+        """Gets the address_number of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The address_number of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._address_number
+
+    @address_number.setter
+    def address_number(self, address_number):
+        """Sets the address_number of this BillingBillingInformationModel.
+
+
+        :param address_number: The address_number of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._address_number = address_number
+
+    @property
+    def additional_address_info(self):
+        """Gets the additional_address_info of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The additional_address_info of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._additional_address_info
+
+    @additional_address_info.setter
+    def additional_address_info(self, additional_address_info):
+        """Sets the additional_address_info of this BillingBillingInformationModel.
+
+
+        :param additional_address_info: The additional_address_info of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._additional_address_info = additional_address_info
+
+    @property
+    def neighborhood(self):
+        """Gets the neighborhood of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The neighborhood of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._neighborhood
+
+    @neighborhood.setter
+    def neighborhood(self, neighborhood):
+        """Sets the neighborhood of this BillingBillingInformationModel.
+
+
+        :param neighborhood: The neighborhood of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._neighborhood = neighborhood
+
+    @property
+    def address(self):
+        """Gets the address of this BillingBillingInformationModel.  # noqa: E501
+
+        International address line 1.  Currently not used  # noqa: E501
+
+        :return: The address of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address):
+        """Sets the address of this BillingBillingInformationModel.
+
+        International address line 1.  Currently not used  # noqa: E501
+
+        :param address: The address of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._address = address
+
+    @property
+    def address2(self):
+        """Gets the address2 of this BillingBillingInformationModel.  # noqa: E501
+
+        International address line 2.  Currently not used  # noqa: E501
+
+        :return: The address2 of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._address2
+
+    @address2.setter
+    def address2(self, address2):
+        """Sets the address2 of this BillingBillingInformationModel.
+
+        International address line 2.  Currently not used  # noqa: E501
+
+        :param address2: The address2 of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._address2 = address2
+
+    @property
+    def zip_code(self):
+        """Gets the zip_code of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The zip_code of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._zip_code
+
+    @zip_code.setter
+    def zip_code(self, zip_code):
+        """Sets the zip_code of this BillingBillingInformationModel.
+
+
+        :param zip_code: The zip_code of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+        if zip_code is None:
+            raise ValueError("Invalid value for `zip_code`, must not be `None`")  # noqa: E501
+
+        self._zip_code = zip_code
+
+    @property
+    def city(self):
+        """Gets the city of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The city of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._city
+
+    @city.setter
+    def city(self, city):
+        """Sets the city of this BillingBillingInformationModel.
+
+
+        :param city: The city of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+        if city is None:
+            raise ValueError("Invalid value for `city`, must not be `None`")  # noqa: E501
+
+        self._city = city
+
+    @property
+    def state(self):
+        """Gets the state of this BillingBillingInformationModel.  # noqa: E501
+
+
+        :return: The state of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this BillingBillingInformationModel.
+
+
+        :param state: The state of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+        if state is None:
+            raise ValueError("Invalid value for `state`, must not be `None`")  # noqa: E501
+
+        self._state = state
+
+    @property
+    def city_code(self):
+        """Gets the city_code of this BillingBillingInformationModel.  # noqa: E501
+
+        IBGE Code  # noqa: E501
+
+        :return: The city_code of this BillingBillingInformationModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._city_code
+
+    @city_code.setter
+    def city_code(self, city_code):
+        """Sets the city_code of this BillingBillingInformationModel.
+
+        IBGE Code  # noqa: E501
+
+        :param city_code: The city_code of this BillingBillingInformationModel.  # noqa: E501
+        :type: str
+        """
+
+        self._city_code = city_code
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(BillingBillingInformationModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, BillingBillingInformationModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

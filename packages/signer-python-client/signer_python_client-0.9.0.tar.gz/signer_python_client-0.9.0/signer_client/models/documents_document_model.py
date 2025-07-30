@@ -1,0 +1,976 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class DocumentsDocumentModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'checksum_md5': 'str',
+        'is_deleted': 'bool',
+        'flow_actions': 'list[FlowActionsFlowActionModel]',
+        'observers': 'list[ObserversObserverModel]',
+        'attachments': 'list[AttachmentsAttachmentModel]',
+        'permissions': 'DocumentsDocumentPermissionsModel',
+        'notified_emails': 'list[str]',
+        'key': 'str',
+        'hide_download_option_for_pending_documents': 'bool',
+        'id': 'str',
+        'name': 'str',
+        'filename': 'str',
+        'file_size': 'int',
+        'mime_type': 'str',
+        'has_signature': 'bool',
+        'status': 'DocumentStatus',
+        'is_concluded': 'bool',
+        'folder': 'FoldersFolderInfoModel',
+        'organization': 'OrganizationsOrganizationInfoModel',
+        'creation_date': 'datetime',
+        'update_date': 'datetime',
+        'expiration_date': 'datetime',
+        'expiration_date_without_time': 'str',
+        'created_by': 'DocumentsCreatorModel',
+        'description': 'str',
+        'force_cades_signature': 'bool',
+        'is_scanned': 'bool',
+        'is_envelope': 'bool',
+        'status_updated_by': 'AgentsAgentModel',
+        'status_update_reason': 'str',
+        'tags': 'list[DocumentsDocumentTagModel]',
+        'signature_type': 'SignatureTypes',
+        'security_context': 'SecurityContextsSecurityContextSimpleModel'
+    }
+
+    attribute_map = {
+        'checksum_md5': 'checksumMd5',
+        'is_deleted': 'isDeleted',
+        'flow_actions': 'flowActions',
+        'observers': 'observers',
+        'attachments': 'attachments',
+        'permissions': 'permissions',
+        'notified_emails': 'notifiedEmails',
+        'key': 'key',
+        'hide_download_option_for_pending_documents': 'hideDownloadOptionForPendingDocuments',
+        'id': 'id',
+        'name': 'name',
+        'filename': 'filename',
+        'file_size': 'fileSize',
+        'mime_type': 'mimeType',
+        'has_signature': 'hasSignature',
+        'status': 'status',
+        'is_concluded': 'isConcluded',
+        'folder': 'folder',
+        'organization': 'organization',
+        'creation_date': 'creationDate',
+        'update_date': 'updateDate',
+        'expiration_date': 'expirationDate',
+        'expiration_date_without_time': 'expirationDateWithoutTime',
+        'created_by': 'createdBy',
+        'description': 'description',
+        'force_cades_signature': 'forceCadesSignature',
+        'is_scanned': 'isScanned',
+        'is_envelope': 'isEnvelope',
+        'status_updated_by': 'statusUpdatedBy',
+        'status_update_reason': 'statusUpdateReason',
+        'tags': 'tags',
+        'signature_type': 'signatureType',
+        'security_context': 'securityContext'
+    }
+
+    def __init__(self, checksum_md5=None, is_deleted=None, flow_actions=None, observers=None, attachments=None, permissions=None, notified_emails=None, key=None, hide_download_option_for_pending_documents=None, id=None, name=None, filename=None, file_size=None, mime_type=None, has_signature=None, status=None, is_concluded=None, folder=None, organization=None, creation_date=None, update_date=None, expiration_date=None, expiration_date_without_time=None, created_by=None, description=None, force_cades_signature=None, is_scanned=None, is_envelope=None, status_updated_by=None, status_update_reason=None, tags=None, signature_type=None, security_context=None):  # noqa: E501
+        """DocumentsDocumentModel - a model defined in Swagger"""  # noqa: E501
+        self._checksum_md5 = None
+        self._is_deleted = None
+        self._flow_actions = None
+        self._observers = None
+        self._attachments = None
+        self._permissions = None
+        self._notified_emails = None
+        self._key = None
+        self._hide_download_option_for_pending_documents = None
+        self._id = None
+        self._name = None
+        self._filename = None
+        self._file_size = None
+        self._mime_type = None
+        self._has_signature = None
+        self._status = None
+        self._is_concluded = None
+        self._folder = None
+        self._organization = None
+        self._creation_date = None
+        self._update_date = None
+        self._expiration_date = None
+        self._expiration_date_without_time = None
+        self._created_by = None
+        self._description = None
+        self._force_cades_signature = None
+        self._is_scanned = None
+        self._is_envelope = None
+        self._status_updated_by = None
+        self._status_update_reason = None
+        self._tags = None
+        self._signature_type = None
+        self._security_context = None
+        self.discriminator = None
+        if checksum_md5 is not None:
+            self.checksum_md5 = checksum_md5
+        if is_deleted is not None:
+            self.is_deleted = is_deleted
+        if flow_actions is not None:
+            self.flow_actions = flow_actions
+        if observers is not None:
+            self.observers = observers
+        if attachments is not None:
+            self.attachments = attachments
+        if permissions is not None:
+            self.permissions = permissions
+        if notified_emails is not None:
+            self.notified_emails = notified_emails
+        if key is not None:
+            self.key = key
+        if hide_download_option_for_pending_documents is not None:
+            self.hide_download_option_for_pending_documents = hide_download_option_for_pending_documents
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if filename is not None:
+            self.filename = filename
+        if file_size is not None:
+            self.file_size = file_size
+        if mime_type is not None:
+            self.mime_type = mime_type
+        if has_signature is not None:
+            self.has_signature = has_signature
+        if status is not None:
+            self.status = status
+        if is_concluded is not None:
+            self.is_concluded = is_concluded
+        if folder is not None:
+            self.folder = folder
+        if organization is not None:
+            self.organization = organization
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if update_date is not None:
+            self.update_date = update_date
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
+        if expiration_date_without_time is not None:
+            self.expiration_date_without_time = expiration_date_without_time
+        if created_by is not None:
+            self.created_by = created_by
+        if description is not None:
+            self.description = description
+        if force_cades_signature is not None:
+            self.force_cades_signature = force_cades_signature
+        if is_scanned is not None:
+            self.is_scanned = is_scanned
+        if is_envelope is not None:
+            self.is_envelope = is_envelope
+        if status_updated_by is not None:
+            self.status_updated_by = status_updated_by
+        if status_update_reason is not None:
+            self.status_update_reason = status_update_reason
+        if tags is not None:
+            self.tags = tags
+        if signature_type is not None:
+            self.signature_type = signature_type
+        if security_context is not None:
+            self.security_context = security_context
+
+    @property
+    def checksum_md5(self):
+        """Gets the checksum_md5 of this DocumentsDocumentModel.  # noqa: E501
+
+        MD5 checksum of the document's file.  # noqa: E501
+
+        :return: The checksum_md5 of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._checksum_md5
+
+    @checksum_md5.setter
+    def checksum_md5(self, checksum_md5):
+        """Sets the checksum_md5 of this DocumentsDocumentModel.
+
+        MD5 checksum of the document's file.  # noqa: E501
+
+        :param checksum_md5: The checksum_md5 of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._checksum_md5 = checksum_md5
+
+    @property
+    def is_deleted(self):
+        """Gets the is_deleted of this DocumentsDocumentModel.  # noqa: E501
+
+        True if the document is deleted.  # noqa: E501
+
+        :return: The is_deleted of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_deleted
+
+    @is_deleted.setter
+    def is_deleted(self, is_deleted):
+        """Sets the is_deleted of this DocumentsDocumentModel.
+
+        True if the document is deleted.  # noqa: E501
+
+        :param is_deleted: The is_deleted of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_deleted = is_deleted
+
+    @property
+    def flow_actions(self):
+        """Gets the flow_actions of this DocumentsDocumentModel.  # noqa: E501
+
+        Signers and approvers of the document.  # noqa: E501
+
+        :return: The flow_actions of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: list[FlowActionsFlowActionModel]
+        """
+        return self._flow_actions
+
+    @flow_actions.setter
+    def flow_actions(self, flow_actions):
+        """Sets the flow_actions of this DocumentsDocumentModel.
+
+        Signers and approvers of the document.  # noqa: E501
+
+        :param flow_actions: The flow_actions of this DocumentsDocumentModel.  # noqa: E501
+        :type: list[FlowActionsFlowActionModel]
+        """
+
+        self._flow_actions = flow_actions
+
+    @property
+    def observers(self):
+        """Gets the observers of this DocumentsDocumentModel.  # noqa: E501
+
+        Observers of the document.  # noqa: E501
+
+        :return: The observers of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: list[ObserversObserverModel]
+        """
+        return self._observers
+
+    @observers.setter
+    def observers(self, observers):
+        """Sets the observers of this DocumentsDocumentModel.
+
+        Observers of the document.  # noqa: E501
+
+        :param observers: The observers of this DocumentsDocumentModel.  # noqa: E501
+        :type: list[ObserversObserverModel]
+        """
+
+        self._observers = observers
+
+    @property
+    def attachments(self):
+        """Gets the attachments of this DocumentsDocumentModel.  # noqa: E501
+
+        Document attachments  # noqa: E501
+
+        :return: The attachments of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: list[AttachmentsAttachmentModel]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """Sets the attachments of this DocumentsDocumentModel.
+
+        Document attachments  # noqa: E501
+
+        :param attachments: The attachments of this DocumentsDocumentModel.  # noqa: E501
+        :type: list[AttachmentsAttachmentModel]
+        """
+
+        self._attachments = attachments
+
+    @property
+    def permissions(self):
+        """Gets the permissions of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The permissions of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: DocumentsDocumentPermissionsModel
+        """
+        return self._permissions
+
+    @permissions.setter
+    def permissions(self, permissions):
+        """Sets the permissions of this DocumentsDocumentModel.
+
+
+        :param permissions: The permissions of this DocumentsDocumentModel.  # noqa: E501
+        :type: DocumentsDocumentPermissionsModel
+        """
+
+        self._permissions = permissions
+
+    @property
+    def notified_emails(self):
+        """Gets the notified_emails of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The notified_emails of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._notified_emails
+
+    @notified_emails.setter
+    def notified_emails(self, notified_emails):
+        """Sets the notified_emails of this DocumentsDocumentModel.
+
+
+        :param notified_emails: The notified_emails of this DocumentsDocumentModel.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._notified_emails = notified_emails
+
+    @property
+    def key(self):
+        """Gets the key of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The key of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """Sets the key of this DocumentsDocumentModel.
+
+
+        :param key: The key of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._key = key
+
+    @property
+    def hide_download_option_for_pending_documents(self):
+        """Gets the hide_download_option_for_pending_documents of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The hide_download_option_for_pending_documents of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._hide_download_option_for_pending_documents
+
+    @hide_download_option_for_pending_documents.setter
+    def hide_download_option_for_pending_documents(self, hide_download_option_for_pending_documents):
+        """Sets the hide_download_option_for_pending_documents of this DocumentsDocumentModel.
+
+
+        :param hide_download_option_for_pending_documents: The hide_download_option_for_pending_documents of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._hide_download_option_for_pending_documents = hide_download_option_for_pending_documents
+
+    @property
+    def id(self):
+        """Gets the id of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The id of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DocumentsDocumentModel.
+
+
+        :param id: The id of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The name of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this DocumentsDocumentModel.
+
+
+        :param name: The name of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def filename(self):
+        """Gets the filename of this DocumentsDocumentModel.  # noqa: E501
+
+        The document's file name.  # noqa: E501
+
+        :return: The filename of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._filename
+
+    @filename.setter
+    def filename(self, filename):
+        """Sets the filename of this DocumentsDocumentModel.
+
+        The document's file name.  # noqa: E501
+
+        :param filename: The filename of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._filename = filename
+
+    @property
+    def file_size(self):
+        """Gets the file_size of this DocumentsDocumentModel.  # noqa: E501
+
+        The document's file size in bytes.  # noqa: E501
+
+        :return: The file_size of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._file_size
+
+    @file_size.setter
+    def file_size(self, file_size):
+        """Sets the file_size of this DocumentsDocumentModel.
+
+        The document's file size in bytes.  # noqa: E501
+
+        :param file_size: The file_size of this DocumentsDocumentModel.  # noqa: E501
+        :type: int
+        """
+
+        self._file_size = file_size
+
+    @property
+    def mime_type(self):
+        """Gets the mime_type of this DocumentsDocumentModel.  # noqa: E501
+
+        The document's file mime type.  # noqa: E501
+
+        :return: The mime_type of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._mime_type
+
+    @mime_type.setter
+    def mime_type(self, mime_type):
+        """Sets the mime_type of this DocumentsDocumentModel.
+
+        The document's file mime type.  # noqa: E501
+
+        :param mime_type: The mime_type of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._mime_type = mime_type
+
+    @property
+    def has_signature(self):
+        """Gets the has_signature of this DocumentsDocumentModel.  # noqa: E501
+
+        True if the document was already signed once.  # noqa: E501
+
+        :return: The has_signature of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_signature
+
+    @has_signature.setter
+    def has_signature(self, has_signature):
+        """Sets the has_signature of this DocumentsDocumentModel.
+
+        True if the document was already signed once.  # noqa: E501
+
+        :param has_signature: The has_signature of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_signature = has_signature
+
+    @property
+    def status(self):
+        """Gets the status of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The status of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: DocumentStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this DocumentsDocumentModel.
+
+
+        :param status: The status of this DocumentsDocumentModel.  # noqa: E501
+        :type: DocumentStatus
+        """
+
+        self._status = status
+
+    @property
+    def is_concluded(self):
+        """Gets the is_concluded of this DocumentsDocumentModel.  # noqa: E501
+
+        [DEPRECATED] True if all actions requested in the document are concluded. Please use Lacuna.Signer.Api.Documents.DocumentInfoModel.Status instead.  # noqa: E501
+
+        :return: The is_concluded of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_concluded
+
+    @is_concluded.setter
+    def is_concluded(self, is_concluded):
+        """Sets the is_concluded of this DocumentsDocumentModel.
+
+        [DEPRECATED] True if all actions requested in the document are concluded. Please use Lacuna.Signer.Api.Documents.DocumentInfoModel.Status instead.  # noqa: E501
+
+        :param is_concluded: The is_concluded of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_concluded = is_concluded
+
+    @property
+    def folder(self):
+        """Gets the folder of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The folder of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: FoldersFolderInfoModel
+        """
+        return self._folder
+
+    @folder.setter
+    def folder(self, folder):
+        """Sets the folder of this DocumentsDocumentModel.
+
+
+        :param folder: The folder of this DocumentsDocumentModel.  # noqa: E501
+        :type: FoldersFolderInfoModel
+        """
+
+        self._folder = folder
+
+    @property
+    def organization(self):
+        """Gets the organization of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The organization of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: OrganizationsOrganizationInfoModel
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this DocumentsDocumentModel.
+
+
+        :param organization: The organization of this DocumentsDocumentModel.  # noqa: E501
+        :type: OrganizationsOrganizationInfoModel
+        """
+
+        self._organization = organization
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this DocumentsDocumentModel.  # noqa: E501
+
+        The date the document was created.  # noqa: E501
+
+        :return: The creation_date of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this DocumentsDocumentModel.
+
+        The date the document was created.  # noqa: E501
+
+        :param creation_date: The creation_date of this DocumentsDocumentModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def update_date(self):
+        """Gets the update_date of this DocumentsDocumentModel.  # noqa: E501
+
+        The date of the last update to the document. This includes the following actions: moving to folder, signing, approving, deleting and editing the flow.  # noqa: E501
+
+        :return: The update_date of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._update_date
+
+    @update_date.setter
+    def update_date(self, update_date):
+        """Sets the update_date of this DocumentsDocumentModel.
+
+        The date of the last update to the document. This includes the following actions: moving to folder, signing, approving, deleting and editing the flow.  # noqa: E501
+
+        :param update_date: The update_date of this DocumentsDocumentModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._update_date = update_date
+
+    @property
+    def expiration_date(self):
+        """Gets the expiration_date of this DocumentsDocumentModel.  # noqa: E501
+
+        The expiration date of the document in the default timezone.  # noqa: E501
+
+        :return: The expiration_date of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_date
+
+    @expiration_date.setter
+    def expiration_date(self, expiration_date):
+        """Sets the expiration_date of this DocumentsDocumentModel.
+
+        The expiration date of the document in the default timezone.  # noqa: E501
+
+        :param expiration_date: The expiration_date of this DocumentsDocumentModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_date = expiration_date
+
+    @property
+    def expiration_date_without_time(self):
+        """Gets the expiration_date_without_time of this DocumentsDocumentModel.  # noqa: E501
+
+        The expiration date without time: in yyyy-MM-dd format (useful for display purposes).  # noqa: E501
+
+        :return: The expiration_date_without_time of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._expiration_date_without_time
+
+    @expiration_date_without_time.setter
+    def expiration_date_without_time(self, expiration_date_without_time):
+        """Sets the expiration_date_without_time of this DocumentsDocumentModel.
+
+        The expiration date without time: in yyyy-MM-dd format (useful for display purposes).  # noqa: E501
+
+        :param expiration_date_without_time: The expiration_date_without_time of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._expiration_date_without_time = expiration_date_without_time
+
+    @property
+    def created_by(self):
+        """Gets the created_by of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The created_by of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: DocumentsCreatorModel
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this DocumentsDocumentModel.
+
+
+        :param created_by: The created_by of this DocumentsDocumentModel.  # noqa: E501
+        :type: DocumentsCreatorModel
+        """
+
+        self._created_by = created_by
+
+    @property
+    def description(self):
+        """Gets the description of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The description of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this DocumentsDocumentModel.
+
+
+        :param description: The description of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def force_cades_signature(self):
+        """Gets the force_cades_signature of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The force_cades_signature of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_cades_signature
+
+    @force_cades_signature.setter
+    def force_cades_signature(self, force_cades_signature):
+        """Sets the force_cades_signature of this DocumentsDocumentModel.
+
+
+        :param force_cades_signature: The force_cades_signature of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_cades_signature = force_cades_signature
+
+    @property
+    def is_scanned(self):
+        """Gets the is_scanned of this DocumentsDocumentModel.  # noqa: E501
+
+        True if the document source was a scanning process.  # noqa: E501
+
+        :return: The is_scanned of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_scanned
+
+    @is_scanned.setter
+    def is_scanned(self, is_scanned):
+        """Sets the is_scanned of this DocumentsDocumentModel.
+
+        True if the document source was a scanning process.  # noqa: E501
+
+        :param is_scanned: The is_scanned of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_scanned = is_scanned
+
+    @property
+    def is_envelope(self):
+        """Gets the is_envelope of this DocumentsDocumentModel.  # noqa: E501
+
+        True if the document is an envelope (Lacuna.Signer.Api.Documents.CreateDocumentRequest.IsEnvelope).  # noqa: E501
+
+        :return: The is_envelope of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_envelope
+
+    @is_envelope.setter
+    def is_envelope(self, is_envelope):
+        """Sets the is_envelope of this DocumentsDocumentModel.
+
+        True if the document is an envelope (Lacuna.Signer.Api.Documents.CreateDocumentRequest.IsEnvelope).  # noqa: E501
+
+        :param is_envelope: The is_envelope of this DocumentsDocumentModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_envelope = is_envelope
+
+    @property
+    def status_updated_by(self):
+        """Gets the status_updated_by of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The status_updated_by of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: AgentsAgentModel
+        """
+        return self._status_updated_by
+
+    @status_updated_by.setter
+    def status_updated_by(self, status_updated_by):
+        """Sets the status_updated_by of this DocumentsDocumentModel.
+
+
+        :param status_updated_by: The status_updated_by of this DocumentsDocumentModel.  # noqa: E501
+        :type: AgentsAgentModel
+        """
+
+        self._status_updated_by = status_updated_by
+
+    @property
+    def status_update_reason(self):
+        """Gets the status_update_reason of this DocumentsDocumentModel.  # noqa: E501
+
+        The reason for the status update (see \"StatusUpdatedBy\" property).  # noqa: E501
+
+        :return: The status_update_reason of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._status_update_reason
+
+    @status_update_reason.setter
+    def status_update_reason(self, status_update_reason):
+        """Sets the status_update_reason of this DocumentsDocumentModel.
+
+        The reason for the status update (see \"StatusUpdatedBy\" property).  # noqa: E501
+
+        :param status_update_reason: The status_update_reason of this DocumentsDocumentModel.  # noqa: E501
+        :type: str
+        """
+
+        self._status_update_reason = status_update_reason
+
+    @property
+    def tags(self):
+        """Gets the tags of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The tags of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: list[DocumentsDocumentTagModel]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this DocumentsDocumentModel.
+
+
+        :param tags: The tags of this DocumentsDocumentModel.  # noqa: E501
+        :type: list[DocumentsDocumentTagModel]
+        """
+
+        self._tags = tags
+
+    @property
+    def signature_type(self):
+        """Gets the signature_type of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The signature_type of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: SignatureTypes
+        """
+        return self._signature_type
+
+    @signature_type.setter
+    def signature_type(self, signature_type):
+        """Sets the signature_type of this DocumentsDocumentModel.
+
+
+        :param signature_type: The signature_type of this DocumentsDocumentModel.  # noqa: E501
+        :type: SignatureTypes
+        """
+
+        self._signature_type = signature_type
+
+    @property
+    def security_context(self):
+        """Gets the security_context of this DocumentsDocumentModel.  # noqa: E501
+
+
+        :return: The security_context of this DocumentsDocumentModel.  # noqa: E501
+        :rtype: SecurityContextsSecurityContextSimpleModel
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """Sets the security_context of this DocumentsDocumentModel.
+
+
+        :param security_context: The security_context of this DocumentsDocumentModel.  # noqa: E501
+        :type: SecurityContextsSecurityContextSimpleModel
+        """
+
+        self._security_context = security_context
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(DocumentsDocumentModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, DocumentsDocumentModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

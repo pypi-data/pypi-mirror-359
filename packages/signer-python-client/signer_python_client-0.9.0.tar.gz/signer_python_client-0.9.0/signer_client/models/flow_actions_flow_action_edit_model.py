@@ -1,0 +1,302 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class FlowActionsFlowActionEditModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'flow_action_id': 'str',
+        'step': 'int',
+        'participant_email_address': 'str',
+        'rule_name': 'str',
+        'sign_rule_users': 'list[FlowActionsSignRuleUserEditModel]',
+        'title': 'str',
+        'pre_positioned_marks': 'list[DocumentMarkPrePositionedDocumentMarkModel]',
+        'signature_initials_mode': 'SignatureInitialsModes'
+    }
+
+    attribute_map = {
+        'flow_action_id': 'flowActionId',
+        'step': 'step',
+        'participant_email_address': 'participantEmailAddress',
+        'rule_name': 'ruleName',
+        'sign_rule_users': 'signRuleUsers',
+        'title': 'title',
+        'pre_positioned_marks': 'prePositionedMarks',
+        'signature_initials_mode': 'signatureInitialsMode'
+    }
+
+    def __init__(self, flow_action_id=None, step=None, participant_email_address=None, rule_name=None, sign_rule_users=None, title=None, pre_positioned_marks=None, signature_initials_mode=None):  # noqa: E501
+        """FlowActionsFlowActionEditModel - a model defined in Swagger"""  # noqa: E501
+        self._flow_action_id = None
+        self._step = None
+        self._participant_email_address = None
+        self._rule_name = None
+        self._sign_rule_users = None
+        self._title = None
+        self._pre_positioned_marks = None
+        self._signature_initials_mode = None
+        self.discriminator = None
+        if flow_action_id is not None:
+            self.flow_action_id = flow_action_id
+        if step is not None:
+            self.step = step
+        if participant_email_address is not None:
+            self.participant_email_address = participant_email_address
+        if rule_name is not None:
+            self.rule_name = rule_name
+        if sign_rule_users is not None:
+            self.sign_rule_users = sign_rule_users
+        if title is not None:
+            self.title = title
+        if pre_positioned_marks is not None:
+            self.pre_positioned_marks = pre_positioned_marks
+        if signature_initials_mode is not None:
+            self.signature_initials_mode = signature_initials_mode
+
+    @property
+    def flow_action_id(self):
+        """Gets the flow_action_id of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+        The Id of the flow action being modified.  # noqa: E501
+
+        :return: The flow_action_id of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._flow_action_id
+
+    @flow_action_id.setter
+    def flow_action_id(self, flow_action_id):
+        """Sets the flow_action_id of this FlowActionsFlowActionEditModel.
+
+        The Id of the flow action being modified.  # noqa: E501
+
+        :param flow_action_id: The flow_action_id of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: str
+        """
+
+        self._flow_action_id = flow_action_id
+
+    @property
+    def step(self):
+        """Gets the step of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+        The new step of the action.  This must be greater or equal to the current pending step.  # noqa: E501
+
+        :return: The step of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._step
+
+    @step.setter
+    def step(self, step):
+        """Sets the step of this FlowActionsFlowActionEditModel.
+
+        The new step of the action.  This must be greater or equal to the current pending step.  # noqa: E501
+
+        :param step: The step of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: int
+        """
+
+        self._step = step
+
+    @property
+    def participant_email_address(self):
+        """Gets the participant_email_address of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+        The new email address of the action's participant (if the type is Lacuna.Signer.Api.FlowActionType.Signer or Lacuna.Signer.Api.FlowActionType.Approver).  # noqa: E501
+
+        :return: The participant_email_address of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._participant_email_address
+
+    @participant_email_address.setter
+    def participant_email_address(self, participant_email_address):
+        """Sets the participant_email_address of this FlowActionsFlowActionEditModel.
+
+        The new email address of the action's participant (if the type is Lacuna.Signer.Api.FlowActionType.Signer or Lacuna.Signer.Api.FlowActionType.Approver).  # noqa: E501
+
+        :param participant_email_address: The participant_email_address of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: str
+        """
+
+        self._participant_email_address = participant_email_address
+
+    @property
+    def rule_name(self):
+        """Gets the rule_name of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+        The new rule name (if the type is Lacuna.Signer.Api.FlowActionType.SignRule).  # noqa: E501
+
+        :return: The rule_name of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """Sets the rule_name of this FlowActionsFlowActionEditModel.
+
+        The new rule name (if the type is Lacuna.Signer.Api.FlowActionType.SignRule).  # noqa: E501
+
+        :param rule_name: The rule_name of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: str
+        """
+
+        self._rule_name = rule_name
+
+    @property
+    def sign_rule_users(self):
+        """Gets the sign_rule_users of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+        The rule users to be edited (if the type is Lacuna.Signer.Api.FlowActionType.SignRule).  # noqa: E501
+
+        :return: The sign_rule_users of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: list[FlowActionsSignRuleUserEditModel]
+        """
+        return self._sign_rule_users
+
+    @sign_rule_users.setter
+    def sign_rule_users(self, sign_rule_users):
+        """Sets the sign_rule_users of this FlowActionsFlowActionEditModel.
+
+        The rule users to be edited (if the type is Lacuna.Signer.Api.FlowActionType.SignRule).  # noqa: E501
+
+        :param sign_rule_users: The sign_rule_users of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: list[FlowActionsSignRuleUserEditModel]
+        """
+
+        self._sign_rule_users = sign_rule_users
+
+    @property
+    def title(self):
+        """Gets the title of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+
+        :return: The title of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this FlowActionsFlowActionEditModel.
+
+
+        :param title: The title of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
+
+    @property
+    def pre_positioned_marks(self):
+        """Gets the pre_positioned_marks of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+
+        :return: The pre_positioned_marks of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: list[DocumentMarkPrePositionedDocumentMarkModel]
+        """
+        return self._pre_positioned_marks
+
+    @pre_positioned_marks.setter
+    def pre_positioned_marks(self, pre_positioned_marks):
+        """Sets the pre_positioned_marks of this FlowActionsFlowActionEditModel.
+
+
+        :param pre_positioned_marks: The pre_positioned_marks of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: list[DocumentMarkPrePositionedDocumentMarkModel]
+        """
+
+        self._pre_positioned_marks = pre_positioned_marks
+
+    @property
+    def signature_initials_mode(self):
+        """Gets the signature_initials_mode of this FlowActionsFlowActionEditModel.  # noqa: E501
+
+
+        :return: The signature_initials_mode of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :rtype: SignatureInitialsModes
+        """
+        return self._signature_initials_mode
+
+    @signature_initials_mode.setter
+    def signature_initials_mode(self, signature_initials_mode):
+        """Sets the signature_initials_mode of this FlowActionsFlowActionEditModel.
+
+
+        :param signature_initials_mode: The signature_initials_mode of this FlowActionsFlowActionEditModel.  # noqa: E501
+        :type: SignatureInitialsModes
+        """
+
+        self._signature_initials_mode = signature_initials_mode
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(FlowActionsFlowActionEditModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, FlowActionsFlowActionEditModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

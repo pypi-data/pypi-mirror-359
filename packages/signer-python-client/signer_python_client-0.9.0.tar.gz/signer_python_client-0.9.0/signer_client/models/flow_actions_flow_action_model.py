@@ -1,0 +1,922 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class FlowActionsFlowActionModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'id': 'str',
+        'creation_date': 'datetime',
+        'pending_date': 'datetime',
+        'update_date': 'datetime',
+        'user': 'UsersParticipantUserModel',
+        'number_required_signatures': 'int',
+        'sign_rule_users': 'list[FlowActionsSignRuleUserModel]',
+        'marks': 'list[DocumentMarkDocumentMarkPositionModel]',
+        'allow_electronic_signature': 'bool',
+        'require_email_authentication_to_sign_electronically': 'bool',
+        'require_sms_authentication_to_sign_electronically': 'bool',
+        'require_whatsapp_authentication_to_sign_electronically': 'bool',
+        'require_authenticator_app_to_sign_electronically': 'bool',
+        'require_selfie_authentication_to_sign_electronically': 'bool',
+        'require_datavalid_authentication_to_sign_electronically': 'bool',
+        'require_pix_authentication_to_sign_electronically': 'bool',
+        'require_liveness_authentication_to_sign_electronically': 'bool',
+        'require_id_scan_authentication_to_sign_electronically': 'bool',
+        'required_certificate_type_to_sign': 'CertificateTypes',
+        'require_company_certificate': 'bool',
+        'required_company_identifier': 'str',
+        'required_certificate_holder_type_to_sign': 'CertificateHolderTypes',
+        'refusal_reason': 'str',
+        'signature_initials_mode': 'SignatureInitialsModes',
+        'is_electronic': 'bool',
+        'allow_rule_flow_to_continue_if_refused': 'bool',
+        'type': 'FlowActionType',
+        'status': 'ActionStatus',
+        'step': 'int',
+        'rule_name': 'str',
+        'title': 'str'
+    }
+
+    attribute_map = {
+        'id': 'id',
+        'creation_date': 'creationDate',
+        'pending_date': 'pendingDate',
+        'update_date': 'updateDate',
+        'user': 'user',
+        'number_required_signatures': 'numberRequiredSignatures',
+        'sign_rule_users': 'signRuleUsers',
+        'marks': 'marks',
+        'allow_electronic_signature': 'allowElectronicSignature',
+        'require_email_authentication_to_sign_electronically': 'requireEmailAuthenticationToSignElectronically',
+        'require_sms_authentication_to_sign_electronically': 'requireSmsAuthenticationToSignElectronically',
+        'require_whatsapp_authentication_to_sign_electronically': 'requireWhatsappAuthenticationToSignElectronically',
+        'require_authenticator_app_to_sign_electronically': 'requireAuthenticatorAppToSignElectronically',
+        'require_selfie_authentication_to_sign_electronically': 'requireSelfieAuthenticationToSignElectronically',
+        'require_datavalid_authentication_to_sign_electronically': 'requireDatavalidAuthenticationToSignElectronically',
+        'require_pix_authentication_to_sign_electronically': 'requirePixAuthenticationToSignElectronically',
+        'require_liveness_authentication_to_sign_electronically': 'requireLivenessAuthenticationToSignElectronically',
+        'require_id_scan_authentication_to_sign_electronically': 'requireIdScanAuthenticationToSignElectronically',
+        'required_certificate_type_to_sign': 'requiredCertificateTypeToSign',
+        'require_company_certificate': 'requireCompanyCertificate',
+        'required_company_identifier': 'requiredCompanyIdentifier',
+        'required_certificate_holder_type_to_sign': 'requiredCertificateHolderTypeToSign',
+        'refusal_reason': 'refusalReason',
+        'signature_initials_mode': 'signatureInitialsMode',
+        'is_electronic': 'isElectronic',
+        'allow_rule_flow_to_continue_if_refused': 'allowRuleFlowToContinueIfRefused',
+        'type': 'type',
+        'status': 'status',
+        'step': 'step',
+        'rule_name': 'ruleName',
+        'title': 'title'
+    }
+
+    def __init__(self, id=None, creation_date=None, pending_date=None, update_date=None, user=None, number_required_signatures=None, sign_rule_users=None, marks=None, allow_electronic_signature=None, require_email_authentication_to_sign_electronically=None, require_sms_authentication_to_sign_electronically=None, require_whatsapp_authentication_to_sign_electronically=None, require_authenticator_app_to_sign_electronically=None, require_selfie_authentication_to_sign_electronically=None, require_datavalid_authentication_to_sign_electronically=None, require_pix_authentication_to_sign_electronically=None, require_liveness_authentication_to_sign_electronically=None, require_id_scan_authentication_to_sign_electronically=None, required_certificate_type_to_sign=None, require_company_certificate=None, required_company_identifier=None, required_certificate_holder_type_to_sign=None, refusal_reason=None, signature_initials_mode=None, is_electronic=None, allow_rule_flow_to_continue_if_refused=None, type=None, status=None, step=None, rule_name=None, title=None):  # noqa: E501
+        """FlowActionsFlowActionModel - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._creation_date = None
+        self._pending_date = None
+        self._update_date = None
+        self._user = None
+        self._number_required_signatures = None
+        self._sign_rule_users = None
+        self._marks = None
+        self._allow_electronic_signature = None
+        self._require_email_authentication_to_sign_electronically = None
+        self._require_sms_authentication_to_sign_electronically = None
+        self._require_whatsapp_authentication_to_sign_electronically = None
+        self._require_authenticator_app_to_sign_electronically = None
+        self._require_selfie_authentication_to_sign_electronically = None
+        self._require_datavalid_authentication_to_sign_electronically = None
+        self._require_pix_authentication_to_sign_electronically = None
+        self._require_liveness_authentication_to_sign_electronically = None
+        self._require_id_scan_authentication_to_sign_electronically = None
+        self._required_certificate_type_to_sign = None
+        self._require_company_certificate = None
+        self._required_company_identifier = None
+        self._required_certificate_holder_type_to_sign = None
+        self._refusal_reason = None
+        self._signature_initials_mode = None
+        self._is_electronic = None
+        self._allow_rule_flow_to_continue_if_refused = None
+        self._type = None
+        self._status = None
+        self._step = None
+        self._rule_name = None
+        self._title = None
+        self.discriminator = None
+        if id is not None:
+            self.id = id
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if pending_date is not None:
+            self.pending_date = pending_date
+        if update_date is not None:
+            self.update_date = update_date
+        if user is not None:
+            self.user = user
+        if number_required_signatures is not None:
+            self.number_required_signatures = number_required_signatures
+        if sign_rule_users is not None:
+            self.sign_rule_users = sign_rule_users
+        if marks is not None:
+            self.marks = marks
+        if allow_electronic_signature is not None:
+            self.allow_electronic_signature = allow_electronic_signature
+        if require_email_authentication_to_sign_electronically is not None:
+            self.require_email_authentication_to_sign_electronically = require_email_authentication_to_sign_electronically
+        if require_sms_authentication_to_sign_electronically is not None:
+            self.require_sms_authentication_to_sign_electronically = require_sms_authentication_to_sign_electronically
+        if require_whatsapp_authentication_to_sign_electronically is not None:
+            self.require_whatsapp_authentication_to_sign_electronically = require_whatsapp_authentication_to_sign_electronically
+        if require_authenticator_app_to_sign_electronically is not None:
+            self.require_authenticator_app_to_sign_electronically = require_authenticator_app_to_sign_electronically
+        if require_selfie_authentication_to_sign_electronically is not None:
+            self.require_selfie_authentication_to_sign_electronically = require_selfie_authentication_to_sign_electronically
+        if require_datavalid_authentication_to_sign_electronically is not None:
+            self.require_datavalid_authentication_to_sign_electronically = require_datavalid_authentication_to_sign_electronically
+        if require_pix_authentication_to_sign_electronically is not None:
+            self.require_pix_authentication_to_sign_electronically = require_pix_authentication_to_sign_electronically
+        if require_liveness_authentication_to_sign_electronically is not None:
+            self.require_liveness_authentication_to_sign_electronically = require_liveness_authentication_to_sign_electronically
+        if require_id_scan_authentication_to_sign_electronically is not None:
+            self.require_id_scan_authentication_to_sign_electronically = require_id_scan_authentication_to_sign_electronically
+        if required_certificate_type_to_sign is not None:
+            self.required_certificate_type_to_sign = required_certificate_type_to_sign
+        if require_company_certificate is not None:
+            self.require_company_certificate = require_company_certificate
+        if required_company_identifier is not None:
+            self.required_company_identifier = required_company_identifier
+        if required_certificate_holder_type_to_sign is not None:
+            self.required_certificate_holder_type_to_sign = required_certificate_holder_type_to_sign
+        if refusal_reason is not None:
+            self.refusal_reason = refusal_reason
+        if signature_initials_mode is not None:
+            self.signature_initials_mode = signature_initials_mode
+        if is_electronic is not None:
+            self.is_electronic = is_electronic
+        if allow_rule_flow_to_continue_if_refused is not None:
+            self.allow_rule_flow_to_continue_if_refused = allow_rule_flow_to_continue_if_refused
+        if type is not None:
+            self.type = type
+        if status is not None:
+            self.status = status
+        if step is not None:
+            self.step = step
+        if rule_name is not None:
+            self.rule_name = rule_name
+        if title is not None:
+            self.title = title
+
+    @property
+    def id(self):
+        """Gets the id of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The id of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this FlowActionsFlowActionModel.
+
+
+        :param id: The id of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The creation_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this FlowActionsFlowActionModel.
+
+
+        :param creation_date: The creation_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def pending_date(self):
+        """Gets the pending_date of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The pending_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._pending_date
+
+    @pending_date.setter
+    def pending_date(self, pending_date):
+        """Sets the pending_date of this FlowActionsFlowActionModel.
+
+
+        :param pending_date: The pending_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._pending_date = pending_date
+
+    @property
+    def update_date(self):
+        """Gets the update_date of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The update_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._update_date
+
+    @update_date.setter
+    def update_date(self, update_date):
+        """Sets the update_date of this FlowActionsFlowActionModel.
+
+
+        :param update_date: The update_date of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._update_date = update_date
+
+    @property
+    def user(self):
+        """Gets the user of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The user of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: UsersParticipantUserModel
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """Sets the user of this FlowActionsFlowActionModel.
+
+
+        :param user: The user of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: UsersParticipantUserModel
+        """
+
+        self._user = user
+
+    @property
+    def number_required_signatures(self):
+        """Gets the number_required_signatures of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Number of required signatures if type is SignRule  # noqa: E501
+
+        :return: The number_required_signatures of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_required_signatures
+
+    @number_required_signatures.setter
+    def number_required_signatures(self, number_required_signatures):
+        """Sets the number_required_signatures of this FlowActionsFlowActionModel.
+
+        Number of required signatures if type is SignRule  # noqa: E501
+
+        :param number_required_signatures: The number_required_signatures of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: int
+        """
+
+        self._number_required_signatures = number_required_signatures
+
+    @property
+    def sign_rule_users(self):
+        """Gets the sign_rule_users of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Users that are allowed to sign if type is SignRule  # noqa: E501
+
+        :return: The sign_rule_users of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: list[FlowActionsSignRuleUserModel]
+        """
+        return self._sign_rule_users
+
+    @sign_rule_users.setter
+    def sign_rule_users(self, sign_rule_users):
+        """Sets the sign_rule_users of this FlowActionsFlowActionModel.
+
+        Users that are allowed to sign if type is SignRule  # noqa: E501
+
+        :param sign_rule_users: The sign_rule_users of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: list[FlowActionsSignRuleUserModel]
+        """
+
+        self._sign_rule_users = sign_rule_users
+
+    @property
+    def marks(self):
+        """Gets the marks of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The marks of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: list[DocumentMarkDocumentMarkPositionModel]
+        """
+        return self._marks
+
+    @marks.setter
+    def marks(self, marks):
+        """Sets the marks of this FlowActionsFlowActionModel.
+
+
+        :param marks: The marks of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: list[DocumentMarkDocumentMarkPositionModel]
+        """
+
+        self._marks = marks
+
+    @property
+    def allow_electronic_signature(self):
+        """Gets the allow_electronic_signature of this FlowActionsFlowActionModel.  # noqa: E501
+
+        True if the electronic signature option is available for this action (only if the type of the action is Signer or SignRule)  # noqa: E501
+
+        :return: The allow_electronic_signature of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_electronic_signature
+
+    @allow_electronic_signature.setter
+    def allow_electronic_signature(self, allow_electronic_signature):
+        """Sets the allow_electronic_signature of this FlowActionsFlowActionModel.
+
+        True if the electronic signature option is available for this action (only if the type of the action is Signer or SignRule)  # noqa: E501
+
+        :param allow_electronic_signature: The allow_electronic_signature of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_electronic_signature = allow_electronic_signature
+
+    @property
+    def require_email_authentication_to_sign_electronically(self):
+        """Gets the require_email_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to confirm a code sent to his e-mail to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  This requirement is not enforced if the user is logged in or was authenticated by an application (embedded signature mode).  # noqa: E501
+
+        :return: The require_email_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_email_authentication_to_sign_electronically
+
+    @require_email_authentication_to_sign_electronically.setter
+    def require_email_authentication_to_sign_electronically(self, require_email_authentication_to_sign_electronically):
+        """Sets the require_email_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to confirm a code sent to his e-mail to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  This requirement is not enforced if the user is logged in or was authenticated by an application (embedded signature mode).  # noqa: E501
+
+        :param require_email_authentication_to_sign_electronically: The require_email_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_email_authentication_to_sign_electronically = require_email_authentication_to_sign_electronically
+
+    @property
+    def require_sms_authentication_to_sign_electronically(self):
+        """Gets the require_sms_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to confirm a code sent to his phone to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_sms_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_sms_authentication_to_sign_electronically
+
+    @require_sms_authentication_to_sign_electronically.setter
+    def require_sms_authentication_to_sign_electronically(self, require_sms_authentication_to_sign_electronically):
+        """Sets the require_sms_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to confirm a code sent to his phone to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_sms_authentication_to_sign_electronically: The require_sms_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_sms_authentication_to_sign_electronically = require_sms_authentication_to_sign_electronically
+
+    @property
+    def require_whatsapp_authentication_to_sign_electronically(self):
+        """Gets the require_whatsapp_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to confirm a code sent to his Whatsapp number to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_whatsapp_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_whatsapp_authentication_to_sign_electronically
+
+    @require_whatsapp_authentication_to_sign_electronically.setter
+    def require_whatsapp_authentication_to_sign_electronically(self, require_whatsapp_authentication_to_sign_electronically):
+        """Sets the require_whatsapp_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to confirm a code sent to his Whatsapp number to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_whatsapp_authentication_to_sign_electronically: The require_whatsapp_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_whatsapp_authentication_to_sign_electronically = require_whatsapp_authentication_to_sign_electronically
+
+    @property
+    def require_authenticator_app_to_sign_electronically(self):
+        """Gets the require_authenticator_app_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to enter a one-time password (OTP) to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_authenticator_app_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_authenticator_app_to_sign_electronically
+
+    @require_authenticator_app_to_sign_electronically.setter
+    def require_authenticator_app_to_sign_electronically(self, require_authenticator_app_to_sign_electronically):
+        """Sets the require_authenticator_app_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to enter a one-time password (OTP) to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_authenticator_app_to_sign_electronically: The require_authenticator_app_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_authenticator_app_to_sign_electronically = require_authenticator_app_to_sign_electronically
+
+    @property
+    def require_selfie_authentication_to_sign_electronically(self):
+        """Gets the require_selfie_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to take a selfie to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_selfie_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_selfie_authentication_to_sign_electronically
+
+    @require_selfie_authentication_to_sign_electronically.setter
+    def require_selfie_authentication_to_sign_electronically(self, require_selfie_authentication_to_sign_electronically):
+        """Sets the require_selfie_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to take a selfie to sign electronically. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_selfie_authentication_to_sign_electronically: The require_selfie_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_selfie_authentication_to_sign_electronically = require_selfie_authentication_to_sign_electronically
+
+    @property
+    def require_datavalid_authentication_to_sign_electronically(self):
+        """Gets the require_datavalid_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to take a selfie to sign electronically. This selfie will be validated by SERPRO's Datavalid. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_datavalid_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_datavalid_authentication_to_sign_electronically
+
+    @require_datavalid_authentication_to_sign_electronically.setter
+    def require_datavalid_authentication_to_sign_electronically(self, require_datavalid_authentication_to_sign_electronically):
+        """Sets the require_datavalid_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to take a selfie to sign electronically. This selfie will be validated by SERPRO's Datavalid. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_datavalid_authentication_to_sign_electronically: The require_datavalid_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_datavalid_authentication_to_sign_electronically = require_datavalid_authentication_to_sign_electronically
+
+    @property
+    def require_pix_authentication_to_sign_electronically(self):
+        """Gets the require_pix_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to pay a Pix to sign electronically. The payer's CPF must be the same as that of the user who will be signing. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_pix_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_pix_authentication_to_sign_electronically
+
+    @require_pix_authentication_to_sign_electronically.setter
+    def require_pix_authentication_to_sign_electronically(self, require_pix_authentication_to_sign_electronically):
+        """Sets the require_pix_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to pay a Pix to sign electronically. The payer's CPF must be the same as that of the user who will be signing. (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_pix_authentication_to_sign_electronically: The require_pix_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_pix_authentication_to_sign_electronically = require_pix_authentication_to_sign_electronically
+
+    @property
+    def require_liveness_authentication_to_sign_electronically(self):
+        """Gets the require_liveness_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to perform a liveness test to sign electronically.  (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_liveness_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_liveness_authentication_to_sign_electronically
+
+    @require_liveness_authentication_to_sign_electronically.setter
+    def require_liveness_authentication_to_sign_electronically(self, require_liveness_authentication_to_sign_electronically):
+        """Sets the require_liveness_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to perform a liveness test to sign electronically.  (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_liveness_authentication_to_sign_electronically: The require_liveness_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_liveness_authentication_to_sign_electronically = require_liveness_authentication_to_sign_electronically
+
+    @property
+    def require_id_scan_authentication_to_sign_electronically(self):
+        """Gets the require_id_scan_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Requires the user to perform a photo id scan to sign electronically.  (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :return: The require_id_scan_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_id_scan_authentication_to_sign_electronically
+
+    @require_id_scan_authentication_to_sign_electronically.setter
+    def require_id_scan_authentication_to_sign_electronically(self, require_id_scan_authentication_to_sign_electronically):
+        """Sets the require_id_scan_authentication_to_sign_electronically of this FlowActionsFlowActionModel.
+
+        Requires the user to perform a photo id scan to sign electronically.  (If Lacuna.Signer.Api.FlowActions.FlowActionModel.AllowElectronicSignature is true)  # noqa: E501
+
+        :param require_id_scan_authentication_to_sign_electronically: The require_id_scan_authentication_to_sign_electronically of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_id_scan_authentication_to_sign_electronically = require_id_scan_authentication_to_sign_electronically
+
+    @property
+    def required_certificate_type_to_sign(self):
+        """Gets the required_certificate_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The required_certificate_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: CertificateTypes
+        """
+        return self._required_certificate_type_to_sign
+
+    @required_certificate_type_to_sign.setter
+    def required_certificate_type_to_sign(self, required_certificate_type_to_sign):
+        """Sets the required_certificate_type_to_sign of this FlowActionsFlowActionModel.
+
+
+        :param required_certificate_type_to_sign: The required_certificate_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: CertificateTypes
+        """
+
+        self._required_certificate_type_to_sign = required_certificate_type_to_sign
+
+    @property
+    def require_company_certificate(self):
+        """Gets the require_company_certificate of this FlowActionsFlowActionModel.  # noqa: E501
+
+        [DEPRECATED] The user is required to sign the document with a company certificate (e.g. e-CNPJ). Please use Lacuna.Signer.Api.FlowActions.FlowActionModel.RequiredCertificateHolderTypeToSign instead.  # noqa: E501
+
+        :return: The require_company_certificate of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_company_certificate
+
+    @require_company_certificate.setter
+    def require_company_certificate(self, require_company_certificate):
+        """Sets the require_company_certificate of this FlowActionsFlowActionModel.
+
+        [DEPRECATED] The user is required to sign the document with a company certificate (e.g. e-CNPJ). Please use Lacuna.Signer.Api.FlowActions.FlowActionModel.RequiredCertificateHolderTypeToSign instead.  # noqa: E501
+
+        :param require_company_certificate: The require_company_certificate of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_company_certificate = require_company_certificate
+
+    @property
+    def required_company_identifier(self):
+        """Gets the required_company_identifier of this FlowActionsFlowActionModel.  # noqa: E501
+
+        The user is required to sign the document with a company certificate (e.g. e-CNPJ) that has the provided company identifier.  # noqa: E501
+
+        :return: The required_company_identifier of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._required_company_identifier
+
+    @required_company_identifier.setter
+    def required_company_identifier(self, required_company_identifier):
+        """Sets the required_company_identifier of this FlowActionsFlowActionModel.
+
+        The user is required to sign the document with a company certificate (e.g. e-CNPJ) that has the provided company identifier.  # noqa: E501
+
+        :param required_company_identifier: The required_company_identifier of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._required_company_identifier = required_company_identifier
+
+    @property
+    def required_certificate_holder_type_to_sign(self):
+        """Gets the required_certificate_holder_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The required_certificate_holder_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: CertificateHolderTypes
+        """
+        return self._required_certificate_holder_type_to_sign
+
+    @required_certificate_holder_type_to_sign.setter
+    def required_certificate_holder_type_to_sign(self, required_certificate_holder_type_to_sign):
+        """Sets the required_certificate_holder_type_to_sign of this FlowActionsFlowActionModel.
+
+
+        :param required_certificate_holder_type_to_sign: The required_certificate_holder_type_to_sign of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: CertificateHolderTypes
+        """
+
+        self._required_certificate_holder_type_to_sign = required_certificate_holder_type_to_sign
+
+    @property
+    def refusal_reason(self):
+        """Gets the refusal_reason of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The refusal_reason of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._refusal_reason
+
+    @refusal_reason.setter
+    def refusal_reason(self, refusal_reason):
+        """Sets the refusal_reason of this FlowActionsFlowActionModel.
+
+
+        :param refusal_reason: The refusal_reason of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._refusal_reason = refusal_reason
+
+    @property
+    def signature_initials_mode(self):
+        """Gets the signature_initials_mode of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The signature_initials_mode of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: SignatureInitialsModes
+        """
+        return self._signature_initials_mode
+
+    @signature_initials_mode.setter
+    def signature_initials_mode(self, signature_initials_mode):
+        """Sets the signature_initials_mode of this FlowActionsFlowActionModel.
+
+
+        :param signature_initials_mode: The signature_initials_mode of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: SignatureInitialsModes
+        """
+
+        self._signature_initials_mode = signature_initials_mode
+
+    @property
+    def is_electronic(self):
+        """Gets the is_electronic of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The is_electronic of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_electronic
+
+    @is_electronic.setter
+    def is_electronic(self, is_electronic):
+        """Sets the is_electronic of this FlowActionsFlowActionModel.
+
+
+        :param is_electronic: The is_electronic of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_electronic = is_electronic
+
+    @property
+    def allow_rule_flow_to_continue_if_refused(self):
+        """Gets the allow_rule_flow_to_continue_if_refused of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The allow_rule_flow_to_continue_if_refused of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_rule_flow_to_continue_if_refused
+
+    @allow_rule_flow_to_continue_if_refused.setter
+    def allow_rule_flow_to_continue_if_refused(self, allow_rule_flow_to_continue_if_refused):
+        """Sets the allow_rule_flow_to_continue_if_refused of this FlowActionsFlowActionModel.
+
+
+        :param allow_rule_flow_to_continue_if_refused: The allow_rule_flow_to_continue_if_refused of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_rule_flow_to_continue_if_refused = allow_rule_flow_to_continue_if_refused
+
+    @property
+    def type(self):
+        """Gets the type of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The type of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: FlowActionType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this FlowActionsFlowActionModel.
+
+
+        :param type: The type of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: FlowActionType
+        """
+
+        self._type = type
+
+    @property
+    def status(self):
+        """Gets the status of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The status of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: ActionStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this FlowActionsFlowActionModel.
+
+
+        :param status: The status of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: ActionStatus
+        """
+
+        self._status = status
+
+    @property
+    def step(self):
+        """Gets the step of this FlowActionsFlowActionModel.  # noqa: E501
+
+
+        :return: The step of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._step
+
+    @step.setter
+    def step(self, step):
+        """Sets the step of this FlowActionsFlowActionModel.
+
+
+        :param step: The step of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: int
+        """
+
+        self._step = step
+
+    @property
+    def rule_name(self):
+        """Gets the rule_name of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Name of the rule if type is SignRule  # noqa: E501
+
+        :return: The rule_name of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """Sets the rule_name of this FlowActionsFlowActionModel.
+
+        Name of the rule if type is SignRule  # noqa: E501
+
+        :param rule_name: The rule_name of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._rule_name = rule_name
+
+    @property
+    def title(self):
+        """Gets the title of this FlowActionsFlowActionModel.  # noqa: E501
+
+        Title of the participant  # noqa: E501
+
+        :return: The title of this FlowActionsFlowActionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this FlowActionsFlowActionModel.
+
+        Title of the participant  # noqa: E501
+
+        :param title: The title of this FlowActionsFlowActionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(FlowActionsFlowActionModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, FlowActionsFlowActionModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other
