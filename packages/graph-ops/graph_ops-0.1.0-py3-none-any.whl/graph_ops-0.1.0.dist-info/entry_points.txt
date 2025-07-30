@@ -1,0 +1,3 @@
+[console_scripts]
+shell=src.shell.main:shell
+
