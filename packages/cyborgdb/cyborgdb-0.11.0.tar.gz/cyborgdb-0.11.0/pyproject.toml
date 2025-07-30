@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools-scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyborgdb"
+dynamic = ["version"]
+description = "CyborgDB Python Client"
+readme = "README.md"
+requires-python = ">= 3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Cyborg Inc."}
+]
+keywords = ["OpenAPI", "OpenAPI-Generator", "CyborgDB Service"]
+dependencies = [
+    "urllib3 >= 1.25.3, < 3.0.0",
+    "python-dateutil >= 2.8.2",
+    "pydantic >= 2",
+    "typing-extensions >= 4.7.1",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: C++",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+"Homepage" = "https://www.cyborg.co"
+"Documentation" = "https://docs.cyborg.co"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cyborgdb*"]
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "no-local-version"

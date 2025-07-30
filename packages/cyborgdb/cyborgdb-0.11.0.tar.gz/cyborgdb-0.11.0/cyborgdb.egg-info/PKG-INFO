@@ -1,0 +1,104 @@
+Metadata-Version: 2.4
+Name: cyborgdb
+Version: 0.11.0
+Summary: CyborgDB Python Client
+Author: Cyborg Inc.
+License: MIT
+Project-URL: Homepage, https://www.cyborg.co
+Project-URL: Documentation, https://docs.cyborg.co
+Keywords: OpenAPI,OpenAPI-Generator,CyborgDB Service
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: C++
+Classifier: Topic :: Database
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: urllib3<3.0.0,>=1.25.3
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+Dynamic: license-file
+
+# CyborgDB Python SDK
+
+The **CyborgDB Python SDK** provides a comprehensive client library for interacting with [CyborgDB](https://www.cyborg.co), the first Confidential Vector Database. This SDK enables you to perform encrypted vector operations including ingestion, search, and retrieval while maintaining end-to-end encryption of your vector embeddings.
+
+This SDK provides an interface to `cyborgdb-service` which you will need to separately install and run in order to use the SDK. For more info, please see our [docs](https://docs.cyborg.co)
+
+**Why CyborgDB?**
+
+Vector Search powers critical AI applications like RAG systems, recommendation engines, and semantic search. The CyborgDB JS/TS SDK brings confidential computing to your web applications and Node.js services, ensuring vector embeddings remain encrypted throughout their entire lifecycle while providing fast, accurate search capabilities.
+
+**Key Features**
+
+* **End-to-End Encryption**: All vector operations maintain encryption with client-side keys
+* **Batch Operations**: Efficient batch queries and upserts for high-throughput applications
+* **Flexible Indexing**: Support for multiple index types (IVFFlat, IVFPQ, etc.) with customizable parameters
+
+**Installation**
+
+1. Install `cyborgdb-service`
+
+```bash
+# Install the CyborgDB Service
+pip install cyborgdb-service
+```
+
+2. Install `cyborgdb` SDK:
+
+```bash
+# Install the CyborgDB Python SDK
+pip install cyborgdb
+```
+
+**Usage**
+
+```py
+# TBD
+```
+
+**Advanced Usage**
+
+**Batch Queries**
+
+```py
+# TBD
+```
+
+**Metadata Filtering**
+
+```py
+# TBD
+```
+
+**Index Training**
+
+```py
+# TBD
+```
+
+**Documentation**
+
+For more detailed documentation, visit:
+* [CyborgDB Documentation](https://docs.cyborg.co/)
+
+**License**
+
+The CyborgDB Python SDK is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+**About CyborgDB**
+
+CyborgDB is dedicated to making AI safe and secure through confidential computing. We develop solutions that enable organizations to leverage AI while maintaining the confidentiality and privacy of their data.
+
+[Visit our website](https://www.cyborg.co/) | [Contact Us](mailto:hello@cyborg.co)
