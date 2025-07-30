@@ -1,0 +1,2 @@
+fontTools>=4.45.0
+setuptools>=61.0

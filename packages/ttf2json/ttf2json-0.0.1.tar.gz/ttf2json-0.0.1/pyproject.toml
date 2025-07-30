@@ -1,0 +1,19 @@
+[project]
+name = "ttf2json"
+dynamic=["version"]
+description = "A Python library for converting .ttf files to JSON for use with Three.js, supporting both CLI and programmatic usage"
+authors = [{name="maslke", email="maslke@outlook.com"}]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "no-local-version"
+
+[tool.black]
+line-length = 80
