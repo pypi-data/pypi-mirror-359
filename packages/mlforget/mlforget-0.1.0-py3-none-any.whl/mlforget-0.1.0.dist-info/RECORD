@@ -1,0 +1,12 @@
+mlforget/__init__.py,sha256=cx2pjXSMt-ZHQgDbyr7UB3dP6ax0ooh_nKjDKShRyxM,306
+mlforget/data_utils.py,sha256=alE0f9UVsU87pdOHJUKXpkUpkLPuZCkZMO3Il9y3JY0,3129
+mlforget/evaluation.py,sha256=6UUalA0hDIuJTCO5Uj5WX728qGdwBYQwiaBhZWm_GvE,1108
+mlforget/model_utils.py,sha256=7KEMqQBXBAC9C4x2-W2dmGMgbe9vcHXrOA6u4LipbEc,407
+mlforget/training.py,sha256=fmK2NjyXqH0AHikLwwN-anRg6AMVTpHtkj2cFzgT7Rc,3027
+mlforget/unlearning.py,sha256=EY2yHsZZMLu0c6DuurhLldgLY0ri21CPN-991YCRDog,10000
+mlforget/workflow.py,sha256=7ri69vCMgHzO4M6SH8-gN-hpmOAOsE4wCK4Dg37ljxE,8137
+mlforget-0.1.0.dist-info/LICENSE,sha256=MHPXNmms2WBAORm_kZd6FGcTS0AqtIpYq_qx6VPqXzc,1062
+mlforget-0.1.0.dist-info/METADATA,sha256=-mIyHNuh3LUGXJQtGxi0ffKWjOqRhEU8KdhC2uWF4AY,3713
+mlforget-0.1.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+mlforget-0.1.0.dist-info/top_level.txt,sha256=BwJda-3q-hSraJC2TzOw54G6IAkHK822L7cf93L66W0,9
+mlforget-0.1.0.dist-info/RECORD,,
