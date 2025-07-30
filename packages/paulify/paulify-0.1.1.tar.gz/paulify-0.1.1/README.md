@@ -1,0 +1,27 @@
+## About
+
+paulify is a lightweight CLI tool for generating standardized attribution text for projects using the PAUL v1.1 license. PAUL v1.1 is aimed at ethical AI development a expressly forbids commercial use without a paid license while allowing personal and academic use, as long as the developer credits you. It outputs attribution in either plain text or Markdown. 
+
+## Sample Output
+
+`paulify "App Name" "Developer Name" --format markdown`
+
+yields
+
+App Name by Developer Name, used under [PAUL v1.1](https://github.com/cactusflatscoder/PAUL) license.
+
+![License: PAUL v1.1](https://img.shields.io/badge/license-PAUL--v1.1-blue)
+
+## How to Credit Your Work Under PAUL
+
+Those who use your work should credit you like this:
+
+*Built on App Name by Developer Name under [PAUL v1.1](https://github.com/cactusflatscoder/PAUL) license.*
+
+or 
+
+*Incorporates code from App Name by Developer Name under [PAUL v1.1](https://github.com/cactusflatscoder/PAUL) license.*
+
+## License
+
+This project is licensed under the [PAUL v1.1 License](https://github.com/cactusflatscoder/PAUL/blob/main/LICENSE.md).
