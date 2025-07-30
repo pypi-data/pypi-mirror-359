@@ -1,0 +1,15 @@
+[project]
+name = "SS_GCJ02toWGS84"
+version = "0.1.20"
+description = "SS_GCJ02toWGS84"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.8.0",
+    "fastmcp>=1.9.0",
+    "dashscope>=1.10.0", 
+    "uvicorn>=0.29.0",
+]
+
+[project.scripts]
+SS_GCJ02toWGS84 = "mcpServer:main"
