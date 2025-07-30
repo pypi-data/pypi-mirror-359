@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wagtail-admin-modals"
+version = "0.2.0"
+description = "Supports custom modal workflows for Wagtail admin"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-3.0-only" }
+authors = [
+  { name = "Nicholas Roy / FormuLearn B.V.", email = "nicholas.roy@formulearn.org" }
+]
+dependencies = [
+  "Django>=5.1",
+  "wagtail>=6.2"
+]
+
+# Project URLs
+[project.urls]
+Homepage       = "https://github.com/FormuLearn/wagtail-admin-modals"
+Documentation  = "https://docs.formulearn.org/docs/projects/wagtail-admin-modals/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"wagtail_admin_modals" = [
+  "templates/wagtail_admin_modals/*.html",
+  "templates/wagtail_admin_modals/**/*.html",
+  "static/wagtail_admin_modals/css/*.css",
+  "static/wagtail_admin_modals/js/*.js",
+]
+
