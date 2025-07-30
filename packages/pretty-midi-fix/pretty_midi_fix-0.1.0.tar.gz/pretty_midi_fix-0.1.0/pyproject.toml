@@ -1,0 +1,18 @@
+[project]
+name = "pretty-midi-fix"
+version = "0.1.0"
+description = "Updated Version of pretty-midi without fluidsynth"
+readme = "README.md"
+authors = [
+    { name = "dummyjenil", email = "dummyjenil@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "mido>=1.3.3",
+    "numpy>=1.7.0",
+    "six>=1.17.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
