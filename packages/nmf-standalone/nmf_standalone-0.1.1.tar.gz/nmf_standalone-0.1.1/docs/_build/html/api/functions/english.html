@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Text Processing &mdash; NMF Standalone 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8cbf4487" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NMF Standalone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#quick-install">Quick Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-uv-recommended">Using UV (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#visualization-dependencies">Visualization Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#turkish-text-analysis">Turkish Text Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/quickstart.html#english-text-analysis">English Text Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#input-data-format">Input Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#output-files">Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/configuration.html">Configuration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#core-parameters">Core Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#language-settings">Language Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#topic-configuration">Topic Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#algorithm-settings">Algorithm Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#output-settings">Output Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#visualization-options">Visualization Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#file-processing">File Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#advanced-configuration">Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#nmf-algorithm-parameters">NMF Algorithm Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#filtering-options">Filtering Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#example-configurations">Example Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#high-quality-analysis">High-Quality Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#fast-processing">Fast Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/configuration.html#large-dataset-processing">Large Dataset Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/configuration.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">nmf-standalone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../build_docs.html">build_docs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_docs.html#build_docs.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.english.html">functions.english package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.nmf.html">functions.nmf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.tfidf.html">functions.tfidf package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../functions.turkish.html">functions.turkish package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_nmf.html">standalone_nmf module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_turkish_file"><code class="docutils literal notranslate"><span class="pre">process_turkish_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_english_file"><code class="docutils literal notranslate"><span class="pre">process_english_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.process_file"><code class="docutils literal notranslate"><span class="pre">process_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standalone_nmf.html#standalone_nmf.run_standalone_nmf"><code class="docutils literal notranslate"><span class="pre">run_standalone_nmf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.other.html">utils.other package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.backup.html">utils.backup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.coherence_score.html">utils.coherence_score module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.distance_two_words.html">utils.distance_two_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.export_excel.html">utils.export_excel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.gen_cloud.html">utils.gen_cloud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.image_to_base.html">utils.image_to_base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.redis_bridge.html">utils.redis_bridge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_doc_score_pair.html">utils.save_doc_score_pair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.save_topics_db.html">utils.save_topics_db module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.topic_dist.html">utils.topic_dist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils.word_cooccurrence.html">utils.word_cooccurrence module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NMF Standalone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">English Text Processing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/functions/english.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="english-text-processing">
+<h1>English Text Processing<a class="headerlink" href="#english-text-processing" title="Link to this heading"></a></h1>
+<p>This module provides functions for processing English text, including dictionary creation, preprocessing, and topic analysis.</p>
+<section id="module-functions.english.sozluk">
+<span id="dictionary-creation"></span><h2>Dictionary Creation<a class="headerlink" href="#module-functions.english.sozluk" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.english.sozluk.sozluk_yarat">
+<span class="sig-prename descclassname"><span class="pre">functions.english.sozluk.</span></span><span class="sig-name descname"><span class="pre">sozluk_yarat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">veri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alanadi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lemmatize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/english/sozluk.html#sozluk_yarat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.english.sozluk.sozluk_yarat" title="Link to this definition"></a></dt>
+<dd><p>Creates a vocabulary list from a DataFrame column of text data.</p>
+<p>This function processes text data by tokenizing it, applying lemmatization
+(if enabled), and creating a set of unique tokens. It then converts this
+set into a sorted list of tokens, which serves as a vocabulary for further
+text analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>veri</strong> (<em>pd.DataFrame</em>) – The DataFrame containing the text data.</p></li>
+<li><p><strong>alanadi</strong> (<em>str</em>) – The name of the column in the DataFrame that contains the text data.</p></li>
+<li><p><strong>lemmatize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to apply lemmatization to the text data. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the vocabulary list and the number of documents processed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="text-preprocessing">
+<h2>Text Preprocessing<a class="headerlink" href="#text-preprocessing" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-functions.english.process">
+<dt class="sig sig-object py" id="functions.english.process.preprocess">
+<span class="sig-prename descclassname"><span class="pre">functions.english.process.</span></span><span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lemmatize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kategoriler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/english/process.html#preprocess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.english.process.preprocess" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses text data by applying lemmatization (if enabled) and removing stopwords.</p>
+<p>This function performs text normalization, including lowercasing, Unicode normalization,
+and removing specific character categories. It also removes common English stopwords
+and applies lemmatization (if enabled).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metin</strong> (<em>str</em>) – The text data to be preprocessed.</p></li>
+<li><p><strong>lemmatize</strong> (<em>bool</em>) – Whether to apply lemmatization to the text data.</p></li>
+<li><p><strong>kategoriler</strong> (<em>frozenset</em>) – A set of character categories to be removed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of preprocessed words.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the input text is None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="numerical-conversion">
+<h2>Numerical Conversion<a class="headerlink" href="#numerical-conversion" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-functions.english.sayisallastirma">
+<dt class="sig sig-object py" id="functions.english.sayisallastirma.sayisallastirma">
+<span class="sig-prename descclassname"><span class="pre">functions.english.sayisallastirma.</span></span><span class="sig-name descname"><span class="pre">sayisallastirma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sozluk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alanadi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lemmatize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/english/sayisallastirma.html#sayisallastirma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.english.sayisallastirma.sayisallastirma" title="Link to this definition"></a></dt>
+<dd><p>Convert text documents to numerical representation using tokenizer encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> – Number parameter (unused in current implementation)</p></li>
+<li><p><strong>sozluk</strong> – Dictionary/vocabulary (unused in current implementation)</p></li>
+<li><p><strong>data</strong> (<em>DataFrame</em>) – DataFrame containing text data</p></li>
+<li><p><strong>alanadi</strong> (<em>str</em>) – Column name containing text data</p></li>
+<li><p><strong>lemmatize</strong> (<em>bool</em>) – Whether to apply lemmatization during preprocessing</p></li>
+<li><p><strong>tokenizer</strong> – Tokenizer object with encode method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of tokenized document IDs or None on error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-functions.english.topic_analyze">
+<span id="topic-analysis"></span><h2>Topic Analysis<a class="headerlink" href="#module-functions.english.topic_analyze" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.english.topic_analyze.extract_topics">
+<span class="sig-prename descclassname"><span class="pre">functions.english.topic_analyze.</span></span><span class="sig-name descname"><span class="pre">extract_topics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc_by_topics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_by_topics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc_word_pairs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/english/topic_analyze.html#extract_topics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.english.topic_analyze.extract_topics" title="Link to this definition"></a></dt>
+<dd><p>Extract top words and documents for each topic from NMF matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>doc_by_topics</strong> (<em>sp.csr_matrix</em>) – Document-topic matrix (W matrix)</p></li>
+<li><p><strong>word_by_topics</strong> (<em>sp.csc_matrix</em>) – Word-topic matrix (H matrix)</p></li>
+<li><p><strong>top_n</strong> (<em>int</em>) – Number of top items to extract per topic</p></li>
+<li><p><strong>doc_word_pairs</strong> (<em>list</em><em>[</em><em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Optional word-document pairs</p></li>
+<li><p><strong>weights</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Optional weights (unused in current implementation)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(topic_words, topic_word_weights, topic_docs, topic_doc_weights)</dt><dd><ul class="simple">
+<li><p>topic_words: List of top word indices for each topic</p></li>
+<li><p>topic_word_weights: List of corresponding word weights</p></li>
+<li><p>topic_docs: List of top document indices for each topic</p></li>
+<li><p>topic_doc_weights: List of corresponding document weights</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-functions.english.topics">
+<dt class="sig sig-object py" id="functions.english.topics.get_topic_names_out">
+<span class="sig-prename descclassname"><span class="pre">functions.english.topics.</span></span><span class="sig-name descname"><span class="pre">get_topic_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_frame_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_topics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sozluk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_per_topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topics_db_eng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gen_cloud</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/functions/english/topics.html#get_topic_names_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.english.topics.get_topic_names_out" title="Link to this definition"></a></dt>
+<dd><p>Extract topics and their top words from NMF H matrix, optionally generate word clouds and save to database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_frame_name</strong> (<em>str</em>) – Name of the dataset</p></li>
+<li><p><strong>num_of_topics</strong> (<em>int</em>) – Number of topics to extract</p></li>
+<li><p><strong>sozluk</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of words in vocabulary</p></li>
+<li><p><strong>word_per_topic</strong> (<em>int</em>) – Number of top words to extract per topic</p></li>
+<li><p><strong>topics_db_eng</strong> – SQLAlchemy engine for database connection (optional)</p></li>
+<li><p><strong>H</strong> – Topic-word matrix from NMF (numpy array or sparse matrix)</p></li>
+<li><p><strong>gen_cloud</strong> (<em>bool</em>) – Whether to generate word clouds</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary mapping topic names to lists of top words with scores</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, NMF Project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
