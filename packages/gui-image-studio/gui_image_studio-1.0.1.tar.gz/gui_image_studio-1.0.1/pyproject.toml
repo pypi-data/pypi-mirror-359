@@ -1,0 +1,221 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gui-image-studio"
+version = "1.0.1"
+description = "GUI Image Studio - Complete toolkit for creating, embedding, and managing images in Python GUI applications"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Stan Griffiths", email = "stantgriffiths@gmail.com"},
+]
+maintainers = [
+    {name = "Stan Griffiths", email = "stantgriffiths@gmail.com"},
+]
+keywords = ["image", "gui", "tkinter", "customtkinter", "embed", "resources", "PIL", "Pillow"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: User Interfaces",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "Pillow>=8.0.0",
+]
+
+[project.optional-dependencies]
+customtkinter = ["customtkinter>=5.0.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-xvfb>=2.0; sys_platform=='linux'",
+    "pytest-timeout>=2.0",
+    "black>=22.0",
+    "flake8>=5.0",
+    "mypy>=1.0",
+    "isort>=5.0",
+    "pre-commit>=2.20",
+    "bandit>=1.7",
+    "safety>=2.0",
+    "tox>=4.0",
+]
+docs = [
+    "sphinx>=5.0",
+    "sphinx-rtd-theme>=1.0",
+    "myst-parser>=0.18",
+    "sphinx-autodoc-typehints>=1.19",
+    "sphinx-copybutton>=0.5",
+]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-xvfb>=2.0; sys_platform=='linux'",
+    "pytest-timeout>=2.0",
+]
+examples = [
+    "customtkinter>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/stntg/gui-image-studio"
+Documentation = "https://github.com/stntg/gui-image-studio#readme"
+Repository = "https://github.com/stntg/gui-image-studio"
+"Bug Reports" = "https://github.com/stntg/gui-image-studio/issues"
+
+[project.scripts]
+gui-image-studio-generate = "gui_image_studio.cli:generate_embedded_images"
+gui-image-studio-create-samples = "gui_image_studio.cli:create_sample_images"
+gui-image-studio-designer = "gui_image_studio.cli:launch_designer"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gui_image_studio = ["*.py", "py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | dev_files
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["gui_image_studio"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = "tkinter.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "customtkinter.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "PIL.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=gui-image-studio",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+    "--cov-config=.coveragerc",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "visual: marks tests requiring visual inspection",
+    "integration: marks tests as integration tests",
+    "gui: marks tests requiring GUI/Tkinter",
+    "image: marks tests requiring image processing",
+    "unit: marks tests as unit tests",
+    "functional: marks tests as functional tests",
+]
+filterwarnings = [
+    "error",
+    "ignore::UserWarning",
+    "ignore::DeprecationWarning",
+    "ignore::pytest.PytestUnraisableExceptionWarning",
+]
+
+[tool.coverage.run]
+source = ["gui_image_studio"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "setup.py",
+    "dev_files/*",
+    "*/__main__.py",
+    "*/cli.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+    "def on_.*",
+    "def handle_.*",
+    "def callback_.*",
+    "if sys\\.platform",
+    "if platform\\.system",
+    "if TYPE_CHECKING:",
+]
+show_missing = true
+fail_under = 70
+precision = 1
+
+[tool.coverage.html]
+directory = "htmlcov"
+title = "GUI Image Studio Coverage Report"
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.coverage.json]
+output = "coverage.json"
+
+[tool.bandit]
+exclude_dirs = ["tests", "dev_files"]
+skips = ["B101", "B404", "B603", "B606", "B607"]  # Skip assert_used test and subprocess warnings
