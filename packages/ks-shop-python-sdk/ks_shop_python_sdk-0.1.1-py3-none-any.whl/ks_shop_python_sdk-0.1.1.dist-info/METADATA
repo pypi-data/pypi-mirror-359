@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: ks-shop-python-sdk
+Version: 0.1.1
+Summary: Kuaishou Shop Python SDK
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: deprecation>=2.1.0
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.11.7
+
+# # # 安装使用
+
