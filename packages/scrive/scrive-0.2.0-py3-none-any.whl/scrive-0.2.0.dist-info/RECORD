@@ -1,0 +1,9 @@
+scrive/__init__.py,sha256=VuFVBq2qik68J7acoeYmomMVaTMgUKJPiHywjqpxE_E,1692
+scrive/core.py,sha256=C0Pr7IZLnHoHuvVVhKNGFG6Sa9-1oQbuAGokGGsc9Xs,45943
+scrive/factory.py,sha256=nB37v-AetVWeEYYF5uP6mrJp_KoFeNHc267L1aoFmrE,19434
+scrive/macros.py,sha256=YkxDs8egRu66Mwi3yD4PxiK8oCJSW3QCLeapA1AHNdM,11471
+scrive/patterns.py,sha256=KQvhWU6JIwkYw6nMS9ve6BoYP07eaWksNtJrYzal114,7128
+scrive-0.2.0.dist-info/METADATA,sha256=TDYU_iie3wNbI19sEIQ1IuhyjqDRNkGIsq7EjPxsVz0,14038
+scrive-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scrive-0.2.0.dist-info/top_level.txt,sha256=DCIzz_g3hZbsixUcRNkr0yMm7mJd8Lr3xSblerSR0xs,7
+scrive-0.2.0.dist-info/RECORD,,
