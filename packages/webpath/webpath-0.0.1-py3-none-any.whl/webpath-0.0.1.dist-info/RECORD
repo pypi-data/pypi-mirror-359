@@ -1,0 +1,11 @@
+webpath/__init__.py,sha256=MysweCGzJaXn-PZSyVBxPir8Tvf23-DHh-Yrm8p5G7w,130
+webpath/_http.py,sha256=fye-pXKz46K0aTGPKGMzmPwy7b3bkOJ57SdSZOLBWkE,20687
+webpath/cache.py,sha256=n2OOJussvZuP2SIbtAOEVoEFax7vPLfAwcdfLDeqLZI,2113
+webpath/cli.py,sha256=KEDmoHjFERQ80QDTT-AhwbWSVibYeYuRDhIZ2b7tSKU,1450
+webpath/core.py,sha256=41Pu9sAiO1qWzv4CdUIRexI5irvgi5ay6NXTeGCyOOQ,7188
+webpath/downloads.py,sha256=y0aejKSkfXlD4umRlWng0GMus9gtjJYlgZrWEG78w6I,1745
+webpath-0.0.1.dist-info/METADATA,sha256=gwujNq8BCyr5MJQDpkd2vRzmgO5V9Eg2RydfNrUPfy0,9021
+webpath-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+webpath-0.0.1.dist-info/entry_points.txt,sha256=4Eftf_MwrchpX4PW-YypdRtzXBIDbrbEliR7WX8MVII,47
+webpath-0.0.1.dist-info/top_level.txt,sha256=ZSfABa5m4u5SFTZE9Lvbq-JLIAL6kYksnNrDn0yUJrs,8
+webpath-0.0.1.dist-info/RECORD,,
