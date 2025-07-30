@@ -1,0 +1,10 @@
+{
+    "ServerApp": {
+      "jpserver_extensions": {
+        "jupytercheckpoints.extension": true
+      }
+    },
+    "AsyncContentsManager": {
+        "checkpoints_class": "jupytercheckpoints.checkpoints.AsyncMultiCheckpoints"
+    }
+}
