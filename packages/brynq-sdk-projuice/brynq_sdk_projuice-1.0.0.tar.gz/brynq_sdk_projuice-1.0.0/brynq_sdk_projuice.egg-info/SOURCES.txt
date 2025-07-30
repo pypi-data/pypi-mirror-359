@@ -1,0 +1,9 @@
+setup.py
+brynq_sdk_projuice/__init__.py
+brynq_sdk_projuice/projuice.py
+brynq_sdk_projuice.egg-info/PKG-INFO
+brynq_sdk_projuice.egg-info/SOURCES.txt
+brynq_sdk_projuice.egg-info/dependency_links.txt
+brynq_sdk_projuice.egg-info/not-zip-safe
+brynq_sdk_projuice.egg-info/requires.txt
+brynq_sdk_projuice.egg-info/top_level.txt
