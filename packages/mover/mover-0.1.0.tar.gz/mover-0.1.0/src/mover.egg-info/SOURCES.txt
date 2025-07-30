@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/mover/__init__.py
+src/mover/pipeline.py
+src/mover/stats.py
+src/mover.egg-info/PKG-INFO
+src/mover.egg-info/SOURCES.txt
+src/mover.egg-info/dependency_links.txt
+src/mover.egg-info/requires.txt
+src/mover.egg-info/top_level.txt

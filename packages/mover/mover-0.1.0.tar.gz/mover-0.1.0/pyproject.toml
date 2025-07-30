@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mover"
+version = "0.1.0"
+description = "Official implementation of MoVer: Motion Verification for Motion Graphics Animations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Jiaju Ma", email = "jiajuma@stanford.edu" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "cairosvg",
+    "fastapi==0.115.14",
+    "groq",
+    "Jinja2",
+    "numpy",
+    "openai",
+    "opencv-contrib-python==4.11.0.86",
+    "Pillow",
+    "playwright",
+    "protobuf",
+    "PyYAML",
+    "treelib",
+    "uvicorn==0.35.0",
+    "torch>=2.7.1",
+    "torchvision>=0.22.1",
+    "jacinle",
+    "concepts",
+    "ipykernel>=6.29.5",
+]
+
+[project.urls]
+Homepage = "https://mover-dsl.github.io/"
+Repository = "https://github.com/mover-dsl/MoVer"
+"Bug Tracker" = "https://github.com/mover-dsl/MoVer/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["mover"]
+
+[tool.uv.sources]
+jacinle = { git = "https://github.com/vacancy/Jacinle.git" }
+concepts = { git = "https://github.com/jama1017/Concepts.git"}
+
+
+[project.optional-dependencies]
+local = [
+    "ollama-python",
+    "vllm",
+]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
