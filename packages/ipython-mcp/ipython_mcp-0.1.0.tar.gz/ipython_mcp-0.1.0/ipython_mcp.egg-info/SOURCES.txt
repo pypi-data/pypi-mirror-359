@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+ipython_mcp/__init__.py
+ipython_mcp/__main__.py
+ipython_mcp/default_connection.json
+ipython_mcp/server.py
+ipython_mcp.egg-info/PKG-INFO
+ipython_mcp.egg-info/SOURCES.txt
+ipython_mcp.egg-info/dependency_links.txt
+ipython_mcp.egg-info/entry_points.txt
+ipython_mcp.egg-info/requires.txt
+ipython_mcp.egg-info/top_level.txt
