@@ -1,0 +1,10 @@
+datahub_semantic_agent.cpython-311-x86_64-linux-gnu.so,sha256=BUcOx4TrBHLQyAGs6XEP_ewK8A-yauO6wW87JA5Q-FM,1176456
+datahub_semantic_agent.pyi,sha256=gVGVgN3I81grE3n23IPP5Ln3vpEvzDmWs7Egxrw-aV4,1293
+datahub_semantic_agent/list_queries.gql,sha256=HxzdZPkAd9f0peLPT4e_t5XcGawsPUHx9-nMLhvfViU,407
+datahub_semantic_agent/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+datahub_semantic_agent.build/.gitignore,sha256=aEiIwOuxfzdCmLZe4oB1JsBmCUxwG8x-u-HBCV9JT8E,1
+datahub_semantic_agent-0.1.3.dist-info/METADATA,sha256=1HT77PAcS6vwTNQPmqWUquoHMcGhZvLj06Iso1011mM,2629
+datahub_semantic_agent-0.1.3.dist-info/WHEEL,sha256=VOEENQF1Qhs3zeP4V7bMt89rqAtI7Al4nTRqg8oRlGY,186
+datahub_semantic_agent-0.1.3.dist-info/entry_points.txt,sha256=fim2ULJA6iu181W2FOT1vpD_3giepiDSsPJIUGdeP4w,80
+datahub_semantic_agent-0.1.3.dist-info/top_level.txt,sha256=DnKRmLNn7f61fbGlH981hq91_lxbk_A0MiQp0zt4fCU,23
+datahub_semantic_agent-0.1.3.dist-info/RECORD,,
