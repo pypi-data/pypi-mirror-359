@@ -1,0 +1,3 @@
+[console_scripts]
+abstractart = random_stickman:main
+stickman = stickman:main
