@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  escobar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: escobar-jupyterlab
+    container_name: escobar-jupyterlab
+    ports:
+      - '8888:8888' # JupyterLab web interface
+      - '8777:8777' # WebSocket server
+    volumes:
+      - ./docker-config:/app/config
+    environment:
+      - DEBUG=1
+      - DEMO_USERS=roman,gregory,yc
+      # SERVER_URL will be set in the entrypoint script
+    command: >
+      bash -c "
+        # Get host IP (host.docker.internal works on Docker Desktop)
+        HOST_IP=$$(getent hosts host.docker.internal | awk '{ print $$1 }' || echo '172.17.0.1');
+        echo \"Using host IP: $$HOST_IP\";
+        echo \"DEBUG=1\" > /app/config/.env;
+        echo \"SERVER_URL=ws://$$HOST_IP:8777/ws\" >> /app/config/.env;
+        echo \"DEMO_USERS=roman,gregory,yc\" >> /app/config/.env;
+        export $$(grep -v '^#' /app/config/.env | xargs);
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+      "
