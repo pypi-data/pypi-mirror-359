@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+bsod/__init__.py
+bsod/main.py
+bsod/utils.py
+bsod.egg-info/PKG-INFO
+bsod.egg-info/SOURCES.txt
+bsod.egg-info/dependency_links.txt
+bsod.egg-info/entry_points.txt
+bsod.egg-info/requires.txt
+bsod.egg-info/top_level.txt
+bsod/assets/audio.mp3
+bsod/assets/image.png

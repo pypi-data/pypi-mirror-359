@@ -1,0 +1,65 @@
+Metadata-Version: 2.4
+Name: bsod
+Version: 0.1.4
+Summary: Blue Screen of Death
+Home-page: https://github.com/arpy8/bsod
+Author: arpy8
+Author-email: arpitsengar99@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame
+Requires-Dist: keyboard
+Requires-Dist: pywin32
+Requires-Dist: pyautogui
+Requires-Dist: setuptools==66.1.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+### Introduction
+
+Welcome to the `bsod` (Blue Screen of Death) Python Package – a silly lighthearted tool that pops up a bsod screen, that's it.
+
+![bsod](bsod/assets/image.png)
+<br>
+
+### Installation
+
+To install this package, simply use pip:
+
+```bash
+pip install bsod
+```
+
+### Usage
+
+Unleash the whimsy of the Blue Screen of Death with a single command:
+
+```bash
+bsod
+```
+
+Now, you can also add a timer, here's an example:
+```
+bsod -t 20
+```
+Note: the time is supposed to be passed in seconds.
+
+Now sit back and watch until the BSOD screen pops up.
+
+### License
+
+This package is provided under the MIT License, allowing you the freedom to enjoy and share the humor. Please take a moment to review the `LICENSE` file for more details.
+
+Feel free to contribute, report issues, or suggest improvements. Happy coding with a touch of nostalgia!

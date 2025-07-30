@@ -1,0 +1,5 @@
+pygame
+keyboard
+pywin32
+pyautogui
+setuptools==66.1.1
