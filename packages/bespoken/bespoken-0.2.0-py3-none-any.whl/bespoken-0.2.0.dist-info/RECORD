@@ -1,0 +1,12 @@
+bespoken/__init__.py,sha256=MkRNb_bGgVzIYPMaU0cgLZsn0iOkHxOSXiSUv_5nLvw,145
+bespoken/__main__.py,sha256=sDuwwhZUmJm5051Nw24MvuofYsbo2jFoNQHG8hSaBYA,3759
+bespoken/config.py,sha256=hZ4gMHdeZ29Oiq8dj1ENHfNBUFdgLEILNpNeSH9Apxo,885
+bespoken/tools/__init__.py,sha256=34CWuDkGdQyiMjfYVKEr3JnJZIheZaoUmFbWL0ceC1k,164
+bespoken/tools/filesystem.py,sha256=5tNAkkLL1WZJL_3Qw0Vzo-Q2Ddm80iHcWA3E94ZIJ0s,12084
+bespoken/tools/todo.py,sha256=eIOcWDE4IVeo9E5OsTpn_dBtUCSiHizYL6XDs--JqQs,2278
+bespoken-0.2.0.dist-info/licenses/LICENSE,sha256=gXjKaaJEKZHtteUoZx-FCwZH-yQ7TD9dlC0FWeCWM9A,1077
+bespoken-0.2.0.dist-info/METADATA,sha256=k8W3P13PkgN-ZoHBhbDNMKfIASerRPsGz_GkDbSX-CY,1478
+bespoken-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bespoken-0.2.0.dist-info/entry_points.txt,sha256=4IHnLYMvwJ8ip-eNWKwo5L7hjRotV0meEnbR7iODjGk,52
+bespoken-0.2.0.dist-info/top_level.txt,sha256=EtYl6GyZa_TXJq17eEL7c_5wKvHlxvpg6Y7wORjj1kQ,9
+bespoken-0.2.0.dist-info/RECORD,,
