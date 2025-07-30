@@ -1,0 +1,64 @@
+# MCP Server 工具与功能说明
+
+本项目包含 MCP Server 服务器脚本：`inspiration_server.py`，分别提供灵感库管理与灵感发散辅助功能。
+
+---
+
+## 1. inspiration_server.py（灵感库服务器）
+
+### 主要功能
+用于管理和操作灵感库，包括添加、查询、删除、导入导出灵感条目等。
+
+### 工具列表与说明
+
+- **add_inspiration(content, tags=None, source=None)**
+  - 用途：添加一条新的灵感条目。
+  - 参数：
+    - `content`（str）：灵感内容。
+    - `tags`（可选，List[str]）：标签列表。
+    - `source`（可选，str）：灵感来源。
+  - 返回：操作状态和新灵感条目的唯一ID。
+
+- **list_inspirations(tag=None)**
+  - 用途：列出所有灵感条目，或根据标签筛选灵感条目。
+  - 参数：
+    - `tag`（可选，str）：指定标签时只返回包含该标签的灵感条目。
+  - 返回：灵感条目列表。
+
+- **delete_inspiration(entry_id)**
+  - 用途：根据ID删除指定的灵感条目。
+  - 参数：
+    - `entry_id`（str）：要删除的灵感条目的唯一ID。
+  - 返回：操作状态。
+
+- **clear_inspirations()**
+  - 用途：清空所有灵感条目。
+  - 参数：无
+  - 返回：操作状态。
+
+- **tag_statistics()**
+  - 用途：获取所有灵感条目的标签统计信息。
+  - 参数：无
+  - 返回：每个标签及其对应的条目数量。
+
+- **import_inspirations(file_path)**
+  - 用途：从指定的JSON文件导入灵感条目。
+  - 参数：
+    - `file_path`（str）：要导入的JSON文件路径。
+  - 返回：操作状态。
+
+- **export_inspirations(file_path)**
+  - 用途：将所有灵感条目导出到指定的JSON文件。
+  - 参数：
+    - `file_path`（str）：导出目标JSON文件路径。
+  - 返回：操作状态。
+
+- **critical_thinking(context_content)**
+  - 用途：从给定的上下文内容中提取资料，生成结构化的创作提示词，作为真正的提示词输入给模型以获取灵感。
+  - 参数：
+    - `context_content`（str）：用于灵感发散的上下文内容。
+  - 返回：格式化的提示词，供创作参考。
+
+
+
+如需详细用法或二次开发，请查阅对应的 Python 源码文件。 

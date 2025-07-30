@@ -1,0 +1,22 @@
+[project]
+name = "draft2inspiration"
+version = "0.1.0"
+description = "获取用户给出的离散草稿灵感集，发散出可用的灵感。"
+authors = [
+    {name = "GZT",email = "ave1age@163.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    'mcp>=1.9.4'
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[project.scripts]
+draft2inspiration = "draft2inspiration.server:main"
