@@ -1,0 +1,37 @@
+[CDF-24991] 🌍 Asset profiler try 2 (#1662)
+
+# Description
+
+Stacked on <del>#1653 #1655 #1660 #1664 </del>
+
+The goal of this profiler is to get an overview over the linage of an
+Asset Hierarchy.
+It works by selecting an hierarchy, the profiler will then for each
+resource (assets, events, timeseries, files, sequences) do the following
+* Count the resources
+* Find the used data sets.
+* Count resources in each dataset
+* Find the transformations writing to the datasets.
+* Find the RAW tables used as the source.
+* Find the size of the raw tables.
+
+
+![image](https://github.com/user-attachments/assets/9d5df254-d100-4cf5-851b-95d8d5bd4049)
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Added
+
+- [alpha] New command `cdf profile assets` which enable profiling asset
+hierarchy, along with resources, datasets, transformations, and RAW
+tables, i.e., showing the linage of the asset hierarchy.
+
+## templates
+
+No changes.
