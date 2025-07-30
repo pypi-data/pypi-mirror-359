@@ -1,0 +1,3 @@
+[console_scripts]
+beanhub-cli = beanhub_cli.main:cli
+bh = beanhub_cli.main:cli

@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: beanhub-cli
+Version: 3.0.0
+Summary: Command line tools for BeanHub and Beancount users
+Project-URL: Documentation, https://beanhub-cli-docs.beanhub.io
+Author-email: Fang-Pen Lin <fangpen@launchplatform.com>
+License-Expression: MIT
+License-File: LICENSE
+Requires-Python: ~=3.10
+Requires-Dist: attrs>=22.2.0
+Requires-Dist: beancount-black<2,>=1.0.1
+Requires-Dist: beancount-parser<1.3.0,>=1.2.3
+Requires-Dist: beanhub-extract<1.0.0,>=0.1.0
+Requires-Dist: beanhub-forms<0.2,>=0.1.3
+Requires-Dist: beanhub-import<2.0.0,>=1.0.0
+Requires-Dist: beanhub-inbox<0.3.0,>=0.2.1
+Requires-Dist: click<9,>=8.1.7
+Requires-Dist: cryptography<45,>=44.0.0
+Requires-Dist: fastapi<1.0.0,>=0.98.0
+Requires-Dist: httpx<0.29.0,>=0.20.0
+Requires-Dist: jinja2<4.0.0,>=3.1.2
+Requires-Dist: pydantic-settings<3,>=2.0.3
+Requires-Dist: pydantic<3,>=2.4.0
+Requires-Dist: pynacl<2,>=1.5.0
+Requires-Dist: python-dateutil<3,>=2.8.0
+Requires-Dist: pyyaml<7,>=6.0.1
+Requires-Dist: rich<14,>=13.6.0
+Requires-Dist: starlette-wtf<0.5,>=0.4.3
+Requires-Dist: tomli-w<2,>=1.1.0
+Requires-Dist: tomli<3,>=2.2.1
+Requires-Dist: uvicorn<1.0.0,>=0.23.2
+Description-Content-Type: text/markdown
+
+# beanhub-cli [![CircleCI](https://dl.circleci.com/status-badge/img/gh/LaunchPlatform/beanhub-cli/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LaunchPlatform/beanhub-cli/tree/master)
+Command line tools for BeanHub or Beancount users.
+
+Please read the [documentation here](https://beanhub-cli-docs.beanhub.io).
+
+## Features
+
+- [**Connect**](https://beanhub-cli-docs.beanhub.io/commands/connect/) - [Import bank transactions from 12,000+ financial institutions in 17 countries](https://beanhub.io/blog/2024/06/24/introduction-of-beanhub-connect/) (a BeanHub paid account required)
+- [**Import**](https://beanhub-cli-docs.beanhub.io/commands/import/) - Simple yet powerful [beanhub-import](https://github.com/LaunchPlatform/beanhub-import) allows you to define importing rules in YAML to extract transactions from CSV files and generate Beancount transactions automatically
+- [**Formatter**](https://beanhub-cli-docs.beanhub.io/commands/format/) - Advanced Beancount file formatter based on top of [beancount-black](https://github.com/LaunchPlatform/beancount-black)
+- [**Beancount file manipulations**](https://beanhub-cli-docs.beanhub.io/commands/format/) - Effortless Beancount account name renaming and other basic manipulations
+- [**Forms**](https://beanhub-cli-docs.beanhub.io/commands/form/) - You can run a [BeanHub Form](https://beanhub.io/blog/2023/07/31/automating-beancount-data-input-with-beanhub-custom-forms/) web app locally to try out your forms
+- [**Inbox**](https://github.com/LaunchPlatform/beanhub-inbox) - Archive emails sending to a dedicated email address like yourname+repo@inbox.beanhub.io (BeanHub account needed) and then use LLM to extract values for your invoices and receipts
+- **Doesn't require a BeanHub account** - While some features require a BeanHub account to operate, but we make most of them usable even without a BeanHub account
+
+## Screenshots
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/eb496dab-cd95-4aca-8a29-89ff9d52570d" autoplay muted>
+</p>
+<p align="center">
+  <img src="https://github.com/LaunchPlatform/beanhub-cli/raw/master/assets/forms-screenshot.png?raw=true" alt="BeanHub Forms Screenshot" />
+</p>
+
+# Sponsor
+
+<p align="center">
+  <a href="https://beanhub.io"><img src="https://github.com/LaunchPlatform/beanhub-cli/raw/master/assets/beanhub.svg?raw=true" alt="BeanHub logo" /></a>
+</p>
+
+A modern accounting book service based on the most popular open source version control system [Git](https://git-scm.com/) and text-based double entry accounting book software [Beancount](https://beancount.github.io/docs/index.html).
