@@ -1,0 +1,192 @@
+[project]
+name = "django-workspaces"
+description = "Django reusable app to manage user workspaces"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "Christian Hartung", email = "hartung@live.com" },
+]
+keywords = []
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Framework :: Django :: 5.2",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Internet :: WWW/HTTP",
+  "Typing :: Typed",
+]
+dependencies = [
+  "django",
+  "django-stubs-ext",
+  "typing-extensions; python_version<'3.13'",
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://github.com/hartungstenio/django-workspaces#readme"
+Issues = "https://github.com/hartungstenio/django-workspaces/issues"
+Source = "https://github.com/hartungstenio/django-workspaces"
+
+[build-system]
+requires = ["hatch-vcs", "hatchling"]
+build-backend = "hatchling.build"
+
+[tool.coverage.run]
+source_pkgs = ["django_workspaces", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/django_workspaces/__about__.py",
+]
+
+[tool.coverage.paths]
+django_workspaces = [
+  "src/django_workspaces",
+  "*/django-workspaces/src/django_workspaces",
+]
+tests = ["tests", "*/django-workspaces/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.django-stubs]
+django_settings_module = "demo.settings"
+
+[tool.hatch.version]
+source = "vcs"
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.10", "3.11", "3.12", "3.13"]
+
+[tool.hatch.envs.default]
+dependencies = [
+  "coverage[toml]>=6.5",
+  "django-stubs",
+  "mypy",
+  "pytest",
+  "pytest-asyncio",
+  "pytest-deadfixtures",
+  "pytest-django",
+]
+
+[tool.hatch.envs.default.scripts]
+types = "mypy --install-types --non-interactive {args:src/django_workspaces tests}"
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = [
+  "- coverage combine",
+  "coverage report",
+]
+cov = [
+  "test-cov",
+  "cov-report",
+]
+
+[tool.hatch.envs.hatch-test]
+extra-dependencies = ["pytest-asyncio", "pytest-django"]
+
+[tool.hatch.envs.hatch-test.overrides]
+matrix.django.dependencies = [
+  { value = "django>=5.2,<5.3", if = ["5.2"] },
+]
+
+[[tool.hatch.envs.hatch-test.matrix]]
+django = ["5.2"]
+python = ["3.10", "3.11", "3.12", "3.13"]
+
+[tool.hatch.envs.hatch-static-analysis]
+config-path = "none"
+dependencies = ["ruff==0.12.0"]
+
+[tool.mypy]
+strict = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "demo.settings"
+pythonpath = [".", "src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+  "ERA",
+  "ANN",
+  "ASYNC",
+  "S",
+  "BLE",
+  "FBT",
+  "B",
+  "A",
+  "COM818",
+  "C4",
+  "DTZ",
+  "T10",
+  "DJ",
+  "EM",
+  "EXE",
+  "INT",
+  "ISC",
+  "ICN",
+  "LOG",
+  "G",
+  "PIE",
+  "T20",
+  "PYI",
+  "PT",
+  "RSE",
+  "RET",
+  "SLF",
+  "SIM",
+  "SLOT",
+  "TID",
+  "TD",
+  "TC",
+  "PTH",
+  "FLY",
+  "I",
+  "C90",
+  "N",
+  "PERF",
+  "E",
+  "W",
+  "D",
+  "F",
+  "PGH",
+  "PL",
+  "UP",
+  "FURB",
+  "RUF",
+  "TRY",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[tool.ruff.lint.per-file-ignores]
+"*/models.py" = ["D106"]
+"*/migrations/*.py" = ["D", "RUF012"]
+"tests/*.py" = ["D104", "S101"]
+"demo/*" = ["D"]

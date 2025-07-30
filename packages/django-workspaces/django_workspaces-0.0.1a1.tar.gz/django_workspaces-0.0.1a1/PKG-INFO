@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: django-workspaces
+Version: 0.0.1a1
+Summary: Django reusable app to manage user workspaces
+Project-URL: Documentation, https://github.com/hartungstenio/django-workspaces#readme
+Project-URL: Issues, https://github.com/hartungstenio/django-workspaces/issues
+Project-URL: Source, https://github.com/hartungstenio/django-workspaces
+Author-email: Christian Hartung <hartung@live.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 5.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: django
+Requires-Dist: django-stubs-ext
+Requires-Dist: typing-extensions; python_version < '3.13'
+Description-Content-Type: text/markdown
+
+# django-workspaces
+
+[![PyPI - Version](https://img.shields.io/pypi/v/django-workspaces.svg)](https://pypi.org/project/django-workspaces)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-workspaces.svg)](https://pypi.org/project/django-workspaces)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install django-workspaces
+```
+
+## License
+
+`django-workspaces` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
