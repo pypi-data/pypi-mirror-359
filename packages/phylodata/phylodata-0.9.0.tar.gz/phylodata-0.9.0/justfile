@@ -1,0 +1,15 @@
+test:
+    uv run pytest tests
+
+check:
+  ruff check --fix
+
+format:
+  ruff format
+
+build:
+    rm -rf dist
+    uv build
+
+publish:
+    uv publish
