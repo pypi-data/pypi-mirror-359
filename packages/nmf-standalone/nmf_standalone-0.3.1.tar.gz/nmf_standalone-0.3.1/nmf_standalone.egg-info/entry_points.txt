@@ -1,0 +1,2 @@
+[console_scripts]
+nmf-standalone = nmf_standalone.cli:main
