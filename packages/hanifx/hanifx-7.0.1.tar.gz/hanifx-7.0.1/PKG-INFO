@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: hanifx
+Version: 7.0.1
+Summary: Advanced Color Testing and Utilities Module
+Home-page: https://github.com/hanifx/hanifx
+Author: Hanif
+Author-email: sajim4653@gmail.com
+Project-URL: Bug Tracker, https://github.com/hanifx/hanifx/issues
+Project-URL: Source, https://github.com/hanifx/hanifx
+Project-URL: Facebook Profile, https://facebook.com/hanifx540
+Project-URL: Facebook Page, https://facebook.com/pyhanifx
+Keywords: color testing utilities hex rgb python module
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
+
+# Hanifx v7.0.1
+
+## About
+Hanifx is a powerful Python module for advanced color testing and utilities.  
+Supports testing any color format (HEX, RGB, Named) with real-time terminal preview.  
+Future-ready with multi-language color system support.
+
+## Features
+- Parse and test color codes from any language or format  
+- Terminal color preview  
+- Light/Dark color classification  
+- Ready for 100+ color system modules integration  
+
+## Installation
+```bash
+pip install hanifx
