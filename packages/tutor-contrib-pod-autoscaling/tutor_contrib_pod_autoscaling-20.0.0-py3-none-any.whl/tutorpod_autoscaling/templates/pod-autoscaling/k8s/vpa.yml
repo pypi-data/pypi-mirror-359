@@ -1,0 +1,15 @@
+{% set autoscaling_config = dict(iter_autoscaling_config().items(), **POD_AUTOSCALING_EXTRA_SERVICES) %}
+{% for service, autoscaling in autoscaling_config.items() if autoscaling.get("enable_vpa") %}
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: vpa-recommender-{{service}}
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind:       Deployment
+    name:       {{service}}
+  updatePolicy:
+    updateMode: "Off"
+{% endfor %}
