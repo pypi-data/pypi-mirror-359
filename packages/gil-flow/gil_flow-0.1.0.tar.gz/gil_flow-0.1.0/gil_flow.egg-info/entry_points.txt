@@ -1,0 +1,7 @@
+[console_scripts]
+gil-flow = gil_py.cli.main:main
+
+[gil.nodes]
+Control-Branch = gil_py.core.control.branch:ControlBranchNode
+Util-LogMessage = gil_py.core.util.log_message:UtilLogMessageNode
+Util-SetVariable = gil_py.core.util.set_variable:UtilSetVariableNode

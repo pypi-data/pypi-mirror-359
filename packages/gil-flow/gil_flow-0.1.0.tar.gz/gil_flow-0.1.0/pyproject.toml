@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gil-flow"
+version = "0.1.0"
+description = "Gil-Flow: A language-neutral, YAML-based workflow system core SDK"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "iyulab", email = "caveman@iyulab.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Distributed Computing",
+]
+keywords = ["workflow", "yaml", "ai", "automation", "node-based", "pipeline", "sdk"]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "aiohttp>=3.8.0",
+    "click>=8.0.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.0.270", # Replaced flake8 with ruff
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+gil-flow = "gil_py.cli.main:main"
+
+[project.entry-points."gil.nodes"]
+Util-LogMessage = "gil_py.core.util.log_message:UtilLogMessageNode"
+Util-SetVariable = "gil_py.core.util.set_variable:UtilSetVariableNode"
+Control-Branch = "gil_py.core.control.branch:ControlBranchNode"
+
+[project.urls]
+Homepage = "https://github.com/iyulab/gil"
+Repository = "https://github.com/iyulab/gil"
+Documentation = "https://github.com/iyulab/gil#readme"
+Issues = "https://github.com/iyulab/gil/issues"
+
+[tool.setuptools]
+packages = ["gil_py"]
+package-dir = {"gil_py" = "gil"}
+
+[tool.ruff]
+ignore = ["E402"]
+
+[tool.mypy]
+mypy_path = ["gil"]
+ignore_missing_imports = true
+
