@@ -1,0 +1,12 @@
+fabricatio-0.14.3.data/scripts/tdown.exe,sha256=iQ9yJC_c355JZvxli97RC7l65MX4urAS-BzDUZSly9Q,3813888
+fabricatio-0.14.3.dist-info/METADATA,sha256=xSawC4X6jnM2vO3om6F202kHCNWgacGSYpLrNB9FPcc,9782
+fabricatio-0.14.3.dist-info/WHEEL,sha256=0ua6B-UmXPKizyn4Mhcu6S66EB8t6wxm_Wsw5H1bZYs,96
+fabricatio-0.14.3.dist-info/licenses/LICENSE,sha256=do7J7EiCGbq0QPbMAL_FqLYufXpHnCnXBOuqVPwSV8Y,1088
+fabricatio/__init__.py,sha256=E4CcZi8ry4WxcO-Ety0lzQtln9VaYM9c0g7s925gR9k,590
+fabricatio/actions/__init__.py,sha256=LUG5gCijcn-QgAtjkLeQO3NAXW0wEiuTmm371avzQbQ,2322
+fabricatio/capabilities/__init__.py,sha256=XwfTGv9OTQRh0oItCEO5NAHzWw2TDaCNA2pIkVHs3HA,3228
+fabricatio/models/__init__.py,sha256=Nn1WXRlFOj2hwLB3VD-h0osXu6pL2nAaoga5BRn5Qjo,1659
+fabricatio/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricatio/rust.cp312-win_amd64.pyd,sha256=DMkNoxfmGiRbxN9d642DrtNSKE48bbwjxhTEmVfu6wM,279552
+fabricatio/workflows/__init__.py,sha256=Twr7FaI7scUhz0LOlPktB6lf_k3VdcHNabCjpTsw938,315
+fabricatio-0.14.3.dist-info/RECORD,,
