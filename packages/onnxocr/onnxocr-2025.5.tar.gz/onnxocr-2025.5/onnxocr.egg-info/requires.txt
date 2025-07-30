@@ -1,0 +1,8 @@
+opencv-python-headless
+opencv-contrib-python
+onnxruntime
+shapely
+pyclipper
+numpy<2.0.0
+pymupdf
+pdf2image

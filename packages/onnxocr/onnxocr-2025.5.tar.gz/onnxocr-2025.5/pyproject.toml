@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onnxocr"
+version = "2025.5"
+description = "A lightweight OCR system based on PaddleOCR"
+authors = [
+    {name = "jingsongliujing", email = "45508593+jingsongliujing@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "opencv-python-headless",
+    "opencv-contrib-python",
+    "onnxruntime",
+    "shapely",
+    "pyclipper",
+    "numpy<2.0.0",
+    "pymupdf",
+    "pdf2image",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/jingsongliujing/OnnxOCR"
+Repository = "https://github.com/jingsongliujing/OnnxOCR"
+Issues = "https://github.com/jingsongliujing/issues"
