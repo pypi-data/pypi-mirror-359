@@ -1,0 +1,15 @@
+biobase/analysis/__init__.py,sha256=8X9vAlw4uyMZ1nzvCrpsm8zxQxgTuu8HVZATMDEHHQg,193
+biobase/analysis/motif.py,sha256=uF5fRfQ5yE5CC9q08HCcgYthnTBSjaTm6yIMrfzs5ek,4513
+biobase/analysis/nucleic_analysis.py,sha256=KsJ1JfbLie6Zrqc-SBZ9kva3UZihyiHm2lqCNQU5DeY,7326
+biobase/constants/__init__.py,sha256=NZjxpLDNZzgiYx3_n068Gn0sJq3qpm75gKwEVt1ozvY,1547
+biobase/constants/amino_acid.py,sha256=b7OusOkAy6OKFrP50x2yjA1YibkXnfwgj9TOYY8Rmj4,4586
+biobase/constants/nucleic_acid.py,sha256=_1hsugtUrfnMpXCEpVb_QhL7V4G19Ozfd7fdn93qDv8,31829
+biobase/constants/rna_seq.py,sha256=kIkO_iSD4vJkc7qsC8MYqtwtXHCQmhexpShGQvgmTi0,5546
+biobase/matrix/__init__.py,sha256=1TfR7_yQSVR5ZDBK8lGHy4cBfUYnj16YyUDsgOlQpxQ,148
+biobase/matrix/matrix.py,sha256=XiHNE1kVQ-w3gD2iK3K5hEmDN0oX6ZfWFT403O0fMBg,13983
+biobase/matrix/matrices/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+biobase-0.4.2.dist-info/licenses/LICENSE,sha256=X7S0OGmbSWcNwi6GPjqriIv0x6CC32ZWC4wZQzoVlY0,1070
+biobase-0.4.2.dist-info/METADATA,sha256=naXHPbuIPz1UhoSGscmyh7pp9gGfIa41vJVU_7_G9os,4874
+biobase-0.4.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+biobase-0.4.2.dist-info/top_level.txt,sha256=bmU_36iZ-yU5BPWyHn4PaR-yPVuGzn7AUWMPuNx_wYg,8
+biobase-0.4.2.dist-info/RECORD,,
