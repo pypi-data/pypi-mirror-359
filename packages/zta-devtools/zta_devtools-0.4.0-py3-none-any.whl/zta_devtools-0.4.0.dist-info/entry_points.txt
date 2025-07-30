@@ -1,0 +1,2 @@
+[console_scripts]
+zta_devtools = zta_devtools.cli:main
