@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eolas-mech-mcp"
+version = "1.0.5"
+authors = [
+  { name="Eolas", email="nicflamel0x@gmail.com" },
+]
+description = "A Model Context Protocol (MCP) server for wallet and computation tools."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "mcp[cli]",
+    "pydantic",
+    "pycryptodome",
+    "web3",
+    "python-dotenv",
+    "keyring",
+]
+
+[project.urls]
+"Homepage" = "https://mcp.eolas.fun/"
+
+[project.scripts]
+eolas-mech-mcp = "eolas_mech_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"} 
