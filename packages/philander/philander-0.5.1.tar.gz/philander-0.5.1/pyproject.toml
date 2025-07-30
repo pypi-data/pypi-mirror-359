@@ -1,0 +1,69 @@
+# Build system selection
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Project details
+[project]
+name = "philander"
+dynamic = ["version"]
+authors = [
+  { name="Oliver Maye"}, { email="maye@ihp-microelectronics.com" },
+]
+description = "Driver collection for embedded systems or wireless sensor nodes."
+readme = "readme.md"
+requires-python = ">=3.4"
+license = {text = "EUPL-1.2"}
+keywords = ["accelerometer", "sensor", "driver", "hardware abstraction", "platform", "WSN" ]
+classifiers = [
+	"Development Status :: 6 - Mature",
+	"Environment :: Console",
+	"Environment :: No Input/Output (Daemon)",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Intended Audience :: Science/Research",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: 3 :: Only",
+	"Programming Language :: Python :: 3.4",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Programming Language :: Python :: Implementation :: MicroPython",
+	"Topic :: Software Development :: Embedded Systems",
+	"Topic :: Software Development :: Libraries :: Application Frameworks",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: System :: Hardware :: Hardware Drivers",
+]
+dependencies = [
+	"pymitter",
+
+	# "RPi.GPIO; platform_machine == \"aarch64\" and sys_platform==\"Linux\"",
+	"gpiozero; platform_machine == \"aarch64\"",
+	# "python-periphery; platform_machine == \"aarch64\"",
+	"smbus2; platform_machine == \"aarch64\"",
+
+	"logging; implementation_name == \"micropython\"",
+	"threading; implementation_name == \"micropython\"",
+	"warnings; implementation_name == \"micropython\"",
+	"argparse; implementation_name == \"micropython\"",
+	"unittest; implementation_name == \"micropython\"",
+]
+
+# Project URLs
+[project.urls]
+"Homepage" = "https://github.com/olimaye/philander"
+"Documentation" = "http://philander.readthedocs.io"
+"Bug Tracker" = "https://github.com/olimaye/philander/issues"
+"Changelog" = "https://github.com/olimaye/philander/blob/master/changelog.md"
+
+# Dynamic version identifier
+[tool.hatch.version]
+path = "philander/__init__.py"
+
+# Test configuration
+[tool.hatch.envs.hatch-test]
+default-args = ["test", "test/suiteNoHw.py"]
+extra-dependencies = [
+	"argparse; implementation_name == \"micropython\"",
+	"unittest; implementation_name == \"micropython\"",
+]

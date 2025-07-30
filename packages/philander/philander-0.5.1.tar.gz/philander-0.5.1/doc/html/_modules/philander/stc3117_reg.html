@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>philander.stc3117_reg &#8212; philander 0.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=b489f392"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for philander.stc3117_reg</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Register definitions for the STC311x family battery gas gauges.</span>
+<span class="sd">    </span>
+<span class="sd">Definition of registers and default values for the</span>
+<span class="sd">above-mentioned chips.</span>
+<span class="sd">Externalized, just for clarity of the source code.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Carl Bellgardt&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1&quot;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;STC3117_Reg&quot;</span><span class="p">,</span> <span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">philander.stc311x_reg</span> <span class="kn">import</span> <span class="n">STC311x_Reg</span>
+
+<div class="viewcode-block" id="STC3117_Reg">
+<a class="viewcode-back" href="../../philander.html#philander.stc3117_reg.STC3117_Reg">[docs]</a>
+<span class="k">class</span> <span class="nc">STC3117_Reg</span><span class="p">(</span><span class="n">STC311x_Reg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Definition of the STC3115 exclusive registers and values.</span>
+<span class="sd">    </span>
+<span class="sd">    Registers and content interpretation specific to this chip. It</span>
+<span class="sd">    complements those definitions inherited from the base class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Register REG_MODE</span>
+    <span class="n">MODE_BATD_PU</span> <span class="o">=</span> <span class="mh">0x02</span>  <span class="c1"># BATD internal pull-up enable</span>
+    <span class="n">MODE_FORCE_CD</span> <span class="o">=</span> <span class="mh">0x04</span>  <span class="c1"># CD driven by internal logic / forced high</span>
+    <span class="n">MODE_OFF</span> <span class="o">=</span> <span class="n">STC311x_Reg</span><span class="o">.</span><span class="n">MODE_OFF</span> <span class="o">|</span> <span class="n">MODE_BATD_PU</span>
+    <span class="n">MODE_DEFAULT</span> <span class="o">=</span> <span class="n">STC311x_Reg</span><span class="o">.</span><span class="n">MODE_DEFAULT</span> <span class="o">|</span> <span class="n">MODE_BATD_PU</span>
+
+    <span class="c1"># Register 1: REG_CTRL</span>
+    <span class="n">CTRL_UVLOD</span> <span class="o">=</span> <span class="mh">0x80</span>  <span class="c1"># UVLO event detection</span>
+
+    <span class="c1"># Register 2: REG_SOC_L</span>
+    <span class="c1"># Register 3: REG_SOC_H</span>
+    <span class="c1"># Register 4: REG_COUNTER_L</span>
+    <span class="c1"># Register 5: REG_COUNTER_H</span>
+    <span class="c1"># Register 6: REG_CURRENT_L</span>
+    <span class="c1"># Register 7: REG_CURRENT_H</span>
+    <span class="c1"># Register 8: REG_VOLTAGE_L</span>
+    <span class="c1"># Register 9: REG_VOLTAGE_H</span>
+    <span class="c1"># Register 10: REG_TEMPERATURE</span>
+
+    <span class="c1"># Register 11/12: REG_AVG_CURRENT_L/H</span>
+    <span class="n">REG_AVG_CURRENT_L</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REG_AVG_CURRENT_H</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">REG_AVG_CURRENT</span> <span class="o">=</span> <span class="n">REG_AVG_CURRENT_L</span>  <span class="c1"># Battery average current or SOC change rate</span>
+
+    <span class="c1"># Register 13: REG_OCV_L</span>
+    <span class="c1"># Register 14: REG_OCV_H</span>
+    <span class="c1"># Register 15: REG_CC_CNF_L</span>
+    <span class="c1"># Register 16: REG_CC_CNF_H</span>
+    <span class="c1"># Register 17: REG_VM_CNF_L</span>
+    <span class="c1"># Register 18: REG_VM_CNF_H</span>
+    <span class="c1"># Register 19: REG_ALARM_SOC</span>
+    <span class="c1"># Register 20: REG_ALARM_VOLTAGE</span>
+    <span class="c1"># Register 21: REG_CURRENT_THRES</span>
+    
+    <span class="c1"># Register 22: REG_CMONIT_COUNT</span>
+    <span class="n">REG_CMONIT_COUNT</span> <span class="o">=</span> <span class="mi">22</span>  <span class="c1"># Current monitoring counter</span>
+
+    <span class="c1"># Register 23: REG_CMONIT_MAX</span>
+    <span class="n">REG_CMONIT_MAX</span> <span class="o">=</span> <span class="mi">23</span>  <span class="c1"># Maximum counter value for current monitoring</span>
+    <span class="n">CMONIT_MAX_DEFAULT</span> <span class="o">=</span> <span class="mh">0x78</span>
+    
+    <span class="c1"># Register 24: REG_ID</span>
+    <span class="n">CHIP_ID</span> <span class="o">=</span> <span class="mh">0x16</span>  <span class="c1"># Expected ID found in REG_ID</span>
+
+    <span class="c1"># Register 25-26: not used</span>
+
+    <span class="c1"># Register 27/28: REG_CC_ADJ_L/H</span>
+    <span class="n">REG_CC_ADJ_L</span> <span class="o">=</span> <span class="mi">27</span>
+    <span class="n">REG_CC_ADJ_H</span> <span class="o">=</span> <span class="mi">28</span>
+    <span class="n">REG_CC_ADJ</span> <span class="o">=</span> <span class="n">REG_CC_ADJ_L</span>  <span class="c1"># Coulomb counter adjustment register</span>
+
+    <span class="c1"># Register 29/30: REG_VM_ADJ_L/H</span>
+    <span class="n">REG_VM_ADJ_L</span> <span class="o">=</span> <span class="mi">29</span>
+    <span class="n">REG_VM_ADJ_H</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">REG_VM_ADJ</span> <span class="o">=</span> <span class="n">REG_VM_ADJ_L</span>  <span class="c1"># Voltage mode adjustment register</span>
+
+    <span class="c1"># REG 31: not used</span>
+    <span class="c1"># REG 32-47: RAM registers, working registers for gas gauge</span>
+    <span class="c1"># REG 48-79: Open Circuit Voltage (OCV) table registers</span>
+    <span class="c1"># OCV points, 2 bytes per point [0.55mV]</span>
+    <span class="n">REG_OCVTAB0_L</span> <span class="o">=</span> <span class="mi">48</span>
+    <span class="n">REG_OCVTAB0_H</span> <span class="o">=</span> <span class="mi">49</span>
+    <span class="n">REG_OCVTAB0</span> <span class="o">=</span> <span class="n">REG_OCVTAB0_L</span>
+    <span class="n">REG_OCVTAB1_L</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">REG_OCVTAB1_H</span> <span class="o">=</span> <span class="mi">51</span>
+    <span class="n">REG_OCVTAB1</span> <span class="o">=</span> <span class="n">REG_OCVTAB1_L</span>
+    <span class="n">REG_OCVTAB2_L</span> <span class="o">=</span> <span class="mi">52</span>
+    <span class="n">REG_OCVTAB2_H</span> <span class="o">=</span> <span class="mi">53</span>
+    <span class="n">REG_OCVTAB2</span> <span class="o">=</span> <span class="n">REG_OCVTAB2_L</span>
+    <span class="n">REG_OCVTAB3_L</span> <span class="o">=</span> <span class="mi">54</span>
+    <span class="n">REG_OCVTAB3_H</span> <span class="o">=</span> <span class="mi">55</span>
+    <span class="n">REG_OCVTAB3</span> <span class="o">=</span> <span class="n">REG_OCVTAB3_L</span>
+    <span class="n">REG_OCVTAB4_L</span> <span class="o">=</span> <span class="mi">56</span>
+    <span class="n">REG_OCVTAB4_H</span> <span class="o">=</span> <span class="mi">57</span>
+    <span class="n">REG_OCVTAB4</span> <span class="o">=</span> <span class="n">REG_OCVTAB4_L</span>
+    <span class="n">REG_OCVTAB5_L</span> <span class="o">=</span> <span class="mi">58</span>
+    <span class="n">REG_OCVTAB5_H</span> <span class="o">=</span> <span class="mi">59</span>
+    <span class="n">REG_OCVTAB5</span> <span class="o">=</span> <span class="n">REG_OCVTAB5_L</span>
+    <span class="n">REG_OCVTAB6_L</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="n">REG_OCVTAB6_H</span> <span class="o">=</span> <span class="mi">61</span>
+    <span class="n">REG_OCVTAB6</span> <span class="o">=</span> <span class="n">REG_OCVTAB6_L</span>
+    <span class="n">REG_OCVTAB7_L</span> <span class="o">=</span> <span class="mi">62</span>
+    <span class="n">REG_OCVTAB7_H</span> <span class="o">=</span> <span class="mi">63</span>
+    <span class="n">REG_OCVTAB7</span> <span class="o">=</span> <span class="n">REG_OCVTAB7_L</span>
+    <span class="n">REG_OCVTAB8_L</span> <span class="o">=</span> <span class="mi">64</span>
+    <span class="n">REG_OCVTAB8_H</span> <span class="o">=</span> <span class="mi">65</span>
+    <span class="n">REG_OCVTAB8</span> <span class="o">=</span> <span class="n">REG_OCVTAB8_L</span>
+    <span class="n">REG_OCVTAB9_L</span> <span class="o">=</span> <span class="mi">66</span>
+    <span class="n">REG_OCVTAB9_H</span> <span class="o">=</span> <span class="mi">67</span>
+    <span class="n">REG_OCVTAB9</span> <span class="o">=</span> <span class="n">REG_OCVTAB9_L</span>
+    <span class="n">REG_OCVTAB10_L</span> <span class="o">=</span> <span class="mi">68</span>
+    <span class="n">REG_OCVTAB10_H</span> <span class="o">=</span> <span class="mi">69</span>
+    <span class="n">REG_OCVTAB10</span> <span class="o">=</span> <span class="n">REG_OCVTAB10_L</span>
+    <span class="n">REG_OCVTAB11_L</span> <span class="o">=</span> <span class="mi">70</span>
+    <span class="n">REG_OCVTAB11_H</span> <span class="o">=</span> <span class="mi">71</span>
+    <span class="n">REG_OCVTAB11</span> <span class="o">=</span> <span class="n">REG_OCVTAB11_L</span>
+    <span class="n">REG_OCVTAB12_L</span> <span class="o">=</span> <span class="mi">72</span>
+    <span class="n">REG_OCVTAB12_H</span> <span class="o">=</span> <span class="mi">73</span>
+    <span class="n">REG_OCVTAB12</span> <span class="o">=</span> <span class="n">REG_OCVTAB12_L</span>
+    <span class="n">REG_OCVTAB13_L</span> <span class="o">=</span> <span class="mi">74</span>
+    <span class="n">REG_OCVTAB13_H</span> <span class="o">=</span> <span class="mi">75</span>
+    <span class="n">REG_OCVTAB13</span> <span class="o">=</span> <span class="n">REG_OCVTAB13_L</span>
+    <span class="n">REG_OCVTAB14_L</span> <span class="o">=</span> <span class="mi">76</span>
+    <span class="n">REG_OCVTAB14_H</span> <span class="o">=</span> <span class="mi">77</span>
+    <span class="n">REG_OCVTAB14</span> <span class="o">=</span> <span class="n">REG_OCVTAB14_L</span>
+    <span class="n">REG_OCVTAB15_L</span> <span class="o">=</span> <span class="mi">78</span>
+    <span class="n">REG_OCVTAB15_H</span> <span class="o">=</span> <span class="mi">79</span>
+    <span class="n">REG_OCVTAB15</span> <span class="o">=</span> <span class="n">REG_OCVTAB15_L</span>
+    <span class="n">OCV0_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1770</span>  <span class="c1"># 3300 mV</span>
+    <span class="n">OCV1_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1926</span>  <span class="c1"># 3541 mV</span>
+    <span class="n">OCV2_DEFAULT</span> <span class="o">=</span> <span class="mh">0x19B2</span>  <span class="c1"># 3618 mV</span>
+    <span class="n">OCV3_DEFAULT</span> <span class="o">=</span> <span class="mh">0x19FB</span>  <span class="c1"># 3658 mV</span>
+    <span class="n">OCV4_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1A3E</span>  <span class="c1"># 3695 mV</span>
+    <span class="n">OCV5_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1A6D</span>  <span class="c1"># 3721 mV</span>
+    <span class="n">OCV6_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1A9D</span>  <span class="c1"># 3747 mV</span>
+    <span class="n">OCV7_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1AB6</span>  <span class="c1"># 3761 mV</span>
+    <span class="n">OCV8_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1AD5</span>  <span class="c1"># 3778 mV</span>
+    <span class="n">OCV9_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1B01</span>  <span class="c1"># 3802 mV</span>
+    <span class="n">OCV10_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1B70</span>  <span class="c1"># 3863 mV</span>
+    <span class="n">OCV11_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1BB1</span>  <span class="c1"># 3899 mV</span>
+    <span class="n">OCV12_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1BE8</span>  <span class="c1"># 3929 mV</span>
+    <span class="n">OCV13_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1C58</span>  <span class="c1"># 3991 mV</span>
+    <span class="n">OCV14_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1CF3</span>  <span class="c1"># 4076 mV</span>
+    <span class="n">OCV15_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1DA9</span>  <span class="c1"># 4176 mV</span>
+
+    <span class="c1"># REG 80-95: State Of Charge (SOC) SOC points [0.5%]</span>
+    <span class="n">REG_SOCTAB0</span> <span class="o">=</span> <span class="mi">80</span>
+    <span class="n">REG_SOCTAB1</span> <span class="o">=</span> <span class="mi">81</span>
+    <span class="n">REG_SOCTAB2</span> <span class="o">=</span> <span class="mi">82</span>
+    <span class="n">REG_SOCTAB3</span> <span class="o">=</span> <span class="mi">83</span>
+    <span class="n">REG_SOCTAB4</span> <span class="o">=</span> <span class="mi">84</span>
+    <span class="n">REG_SOCTAB5</span> <span class="o">=</span> <span class="mi">85</span>
+    <span class="n">REG_SOCTAB6</span> <span class="o">=</span> <span class="mi">86</span>
+    <span class="n">REG_SOCTAB7</span> <span class="o">=</span> <span class="mi">87</span>
+    <span class="n">REG_SOCTAB8</span> <span class="o">=</span> <span class="mi">88</span>
+    <span class="n">REG_SOCTAB9</span> <span class="o">=</span> <span class="mi">89</span>
+    <span class="n">REG_SOCTAB10</span> <span class="o">=</span> <span class="mi">90</span>
+    <span class="n">REG_SOCTAB11</span> <span class="o">=</span> <span class="mi">91</span>
+    <span class="n">REG_SOCTAB12</span> <span class="o">=</span> <span class="mi">92</span>
+    <span class="n">REG_SOCTAB13</span> <span class="o">=</span> <span class="mi">93</span>
+    <span class="n">REG_SOCTAB14</span> <span class="o">=</span> <span class="mi">94</span>
+    <span class="n">REG_SOCTAB15</span> <span class="o">=</span> <span class="mi">95</span>
+    <span class="n">SOC0_DEFAULT</span> <span class="o">=</span> <span class="mh">0x00</span>  <span class="c1"># 0 %</span>
+    <span class="n">SOC1_DEFAULT</span> <span class="o">=</span> <span class="mh">0x06</span>  <span class="c1"># 3 %</span>
+    <span class="n">SOC2_DEFAULT</span> <span class="o">=</span> <span class="mh">0x0C</span>  <span class="c1"># 6 %</span>
+    <span class="n">SOC3_DEFAULT</span> <span class="o">=</span> <span class="mh">0x14</span>  <span class="c1"># 10 %</span>
+    <span class="n">SOC4_DEFAULT</span> <span class="o">=</span> <span class="mh">0x1E</span>  <span class="c1"># 15 %</span>
+    <span class="n">SOC5_DEFAULT</span> <span class="o">=</span> <span class="mh">0x28</span>  <span class="c1"># 20 %</span>
+    <span class="n">SOC6_DEFAULT</span> <span class="o">=</span> <span class="mh">0x32</span>  <span class="c1"># 25 %</span>
+    <span class="n">SOC7_DEFAULT</span> <span class="o">=</span> <span class="mh">0x3C</span>  <span class="c1"># 30 %</span>
+    <span class="n">SOC8_DEFAULT</span> <span class="o">=</span> <span class="mh">0x50</span>  <span class="c1"># 40 %</span>
+    <span class="n">SOC9_DEFAULT</span> <span class="o">=</span> <span class="mh">0x64</span>  <span class="c1"># 50 %</span>
+    <span class="n">SOC10_DEFAULT</span> <span class="o">=</span> <span class="mh">0x7B</span>  <span class="c1"># 60 %</span>
+    <span class="n">SOC11_DEFAULT</span> <span class="o">=</span> <span class="mh">0x82</span>  <span class="c1"># 65 %</span>
+    <span class="n">SOC12_DEFAULT</span> <span class="o">=</span> <span class="mh">0x8C</span>  <span class="c1"># 70 %</span>
+    <span class="n">SOC13_DEFAULT</span> <span class="o">=</span> <span class="mh">0xA0</span>  <span class="c1"># 80 %</span>
+    <span class="n">SOC14_DEFAULT</span> <span class="o">=</span> <span class="mh">0xB4</span>  <span class="c1"># 90 %</span>
+    <span class="n">SOC15_DEFAULT</span> <span class="o">=</span> <span class="mh">0xC8</span>  <span class="c1"># 100 %</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">philander</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">philander</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023-2024, Oliver Maye.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>philander.sysfactory &#8212; philander 0.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=7f00635f"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for philander.sysfactory</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A system convergence layer for smbus, smbus2, periphery or simulative implementation.</span>
+
+<span class="sd">The factory class provides implementations for hardware resources like</span>
+<span class="sd">serial bus or GPIO pins. This unifies the APIs provided by packages</span>
+<span class="sd">like smbus, smbus2, periphery or gpiozero etc.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Oliver Maye&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1&quot;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SysProvider&quot;</span><span class="p">,</span> <span class="s2">&quot;SysFactory&quot;</span> <span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">philander.penum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span><span class="p">,</span> <span class="n">auto</span><span class="p">,</span> <span class="n">idiotypic</span>
+<span class="c1">#import warnings</span>
+
+<span class="kn">from</span> <span class="nn">philander.systypes</span> <span class="kn">import</span> <span class="n">ErrorCode</span>
+
+<div class="viewcode-block" id="SysProvider">
+<a class="viewcode-back" href="../../philander.html#philander.sysfactory.SysProvider">[docs]</a>
+<span class="nd">@unique</span>
+<span class="nd">@idiotypic</span>
+<span class="k">class</span> <span class="nc">SysProvider</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mnemonic designator for a lower-level lib, package or system\</span>
+<span class="sd">    environment to rely the implementation on.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">NONE</span>      <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;No low-level API available.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">AUTO</span>      <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto-detect best matching lib/package.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">SIM</span>       <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Built-in hardware simulation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">COMPOSITE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Supported by a matching upper-level driver API, such as ADC via SPI. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">GPIOZERO</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;GPIO zero implementation for raspberry pi (https://gpiozero.readthedocs.io/en/latest/).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">MICROPYTHON</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;MicroPython environment (https://docs.micropython.org).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">PERIPHERY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Python periphery lib (https://pypi.org/project/python-periphery/).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">RPIGPIO</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;RaspberryPi GPIO lib (https://pypi.org/project/RPi.GPIO/).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">SMBUS2</span>    <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;System Management Bus v2 (SMBUS2) implementation (https://pypi.org/project/smbus2/).</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="SysFactory">
+<a class="viewcode-back" href="../../philander.html#philander.sysfactory.SysFactory">[docs]</a>
+<span class="k">class</span> <span class="nc">SysFactory</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;As a factory, provide implementations for specific hardware resources.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SysFactory.autoDetectProvider">
+<a class="viewcode-back" href="../../philander.html#philander.sysfactory.SysFactory.autoDetectProvider">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">autoDetectProvider</span><span class="p">(</span> <span class="n">dependencies</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">NONE</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Automatically detect a eligible provider.</span>
+<span class="sd">        </span>
+<span class="sd">        Test the given dependencies and for the first available, return</span>
+<span class="sd">        the associated provider mnemonic.</span>
+<span class="sd">        </span>
+<span class="sd">        The dependencies are given as a list of constellations to check.</span>
+<span class="sd">        Each entry of that list is a tuple of (SysProvider Mnemonics, module name, class name)</span>
+<span class="sd">        such as in (SysProvider.PERIPHERY, &quot;periphery&quot;, &quot;I2C&quot;).</span>
+<span class="sd">        </span>
+<span class="sd">        The fallback parameter is to override SysProvider.NONE in case</span>
+<span class="sd">        none of the dependencies is fulfilled.</span>
+
+<span class="sd">        :param list dependencies: List of tuples describing the supported libs.</span>
+<span class="sd">        :param SysProvider fallback: Value to be returned, if none of</span>
+<span class="sd">            the dependencies is fulfilled.</span>
+<span class="sd">        :return: Mnemonic to identify the first dependency fulfilled.</span>
+<span class="sd">            SysProvider.NONE or the given fallback, if no matching dependency</span>
+<span class="sd">            could be found.</span>
+<span class="sd">        :rtype: SysProvider</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">fallback</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">dependencies</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1">#                    name,  globals, locals, fromlist</span>
+                <span class="n">module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span> <span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">entry</span><span class="p">[</span><span class="mi">2</span><span class="p">],]</span> <span class="p">)</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">entry</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>       <span class="c1"># class name</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                  <span class="c1"># Mnemonics</span>
+                    <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># log something</span>
+                    <span class="k">pass</span>
+            <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="SysFactory.createInstance">
+<a class="viewcode-back" href="../../philander.html#philander.sysfactory.SysFactory.createInstance">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">createInstance</span><span class="p">(</span> <span class="n">provider</span><span class="p">,</span> <span class="n">implementations</span> <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Instantiate a certain implementation.</span>
+<span class="sd">        </span>
+<span class="sd">        Create an instance of an implementation identified by a provider</span>
+<span class="sd">        mnemonics.</span>
+<span class="sd">        </span>
+<span class="sd">        The given provider parameter is the key argument into the</span>
+<span class="sd">        dictionary of the implementations. It could be the result of</span>
+<span class="sd">        calling :meth:`autoDetectProvider`.</span>
+<span class="sd">        </span>
+<span class="sd">        The implementations are given as a dictionary translating a</span>
+<span class="sd">        SysProvider type key into a tuple (pair) -value comprised of</span>
+<span class="sd">        module name and class name. For example:</span>
+<span class="sd">        </span>
+<span class="sd">        SysProvider.PERIPHERY:    (&quot;philander.serialbus_periphery&quot;, &quot;_SerialBus_Periphery&quot;)</span>
+<span class="sd">        </span>
+<span class="sd">        Instantiation is done by calling the empty constructor of the</span>
+<span class="sd">        identified class.</span>
+<span class="sd">        </span>
+<span class="sd">        :param SysProvider provider: The provider mnemonics identifying</span>
+<span class="sd">            the implementation to be instantiated.</span>
+<span class="sd">        :param dict implementations: The dictionary describing where to</span>
+<span class="sd">            find the specific class that must be instantiated, for a given</span>
+<span class="sd">            provider key.</span>
+<span class="sd">        :return: An object, which is an instance of the specific</span>
+<span class="sd">            implementation or None in case of an error.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">provider</span> <span class="ow">in</span> <span class="n">implementations</span><span class="p">:</span>
+            <span class="n">moduleName</span><span class="p">,</span> <span class="n">className</span> <span class="o">=</span> <span class="n">implementations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">provider</span> <span class="p">)</span>
+            <span class="n">module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">moduleName</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">className</span><span class="p">])</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span> <span class="n">module</span><span class="p">,</span> <span class="n">className</span> <span class="p">)</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#raise NotImplementedError(&#39;Driver module &#39; + str(provider) + &#39; is not supported.&#39;)</span>
+            <span class="c1"># warnings.warn(</span>
+            <span class="c1">#     &quot;Cannot find GPIO factory lib. Using SIM. Consider installing RPi.GPIO, gpiozero or periphery!&quot;</span>
+            <span class="c1"># )</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+        
+
+<div class="viewcode-block" id="SysFactory.getGPIO">
+<a class="viewcode-back" href="../../philander.html#philander.sysfactory.SysFactory.getGPIO">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getGPIO</span><span class="p">(</span> <span class="n">provider</span><span class="o">=</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">AUTO</span> <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generates a GPIO implementation according to the requested provider.</span>
+<span class="sd">        </span>
+<span class="sd">        :param SysProvider provider: The low-level lib to rely on, or AUTO\</span>
+<span class="sd">        for automatic detection.</span>
+<span class="sd">        :return: A GPIO implementation object, or None in case of an error.</span>
+<span class="sd">        :rtype: GPIO</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">deps</span> <span class="o">=</span> <span class="p">[(</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">RPIGPIO</span><span class="p">,</span> <span class="s2">&quot;RPi.GPIO&quot;</span><span class="p">,</span> <span class="s2">&quot;GPIO&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">GPIOZERO</span><span class="p">,</span> <span class="s2">&quot;gpiozero&quot;</span><span class="p">,</span> <span class="s2">&quot;DigitalOutputDevice&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">PERIPHERY</span><span class="p">,</span> <span class="s2">&quot;periphery&quot;</span><span class="p">,</span> <span class="s2">&quot;GPIO&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">SysProvider</span><span class="o">.</span><span class="n">MICROPYTHON</span><span class="p">,</span> <span class="s2">&quot;machine&quot;</span><span class="p">,</span> <span class="s2">&quot;Pin&quot;</span><span class="p">),</span>
+                <span class="p">]</span>
+        <span class="n">impls</span> <span class="o">=</span> <span class="p">{</span>
+                  <span class="n">SysProvider</span><span class="o">.</span><span class="n">GPIOZERO</span><span class="p">:</span>     <span class="p">(</span><span class="s2">&quot;philander.gpio_zero&quot;</span><span class="p">,</span> <span class="s2">&quot;_GPIO_Zero&quot;</span><span class="p">),</span>
+                  <span class="n">SysProvider</span><span class="o">.</span><span class="n">MICROPYTHON</span><span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;philander.gpio_micropython&quot;</span><span class="p">,</span> <span class="s2">&quot;_GPIO_Micropython&quot;</span><span class="p">),</span>
+                  <span class="n">SysProvider</span><span class="o">.</span><span class="n">PERIPHERY</span><span class="p">:</span>    <span class="p">(</span><span class="s2">&quot;philander.gpio_periphery&quot;</span><span class="p">,</span> <span class="s2">&quot;_GPIO_Periphery&quot;</span><span class="p">),</span>
+                  <span class="n">SysProvider</span><span class="o">.</span><span class="n">RPIGPIO</span><span class="p">:</span>      <span class="p">(</span><span class="s2">&quot;philander.gpio_rpi&quot;</span><span class="p">,</span> <span class="s2">&quot;_GPIO_RPi&quot;</span><span class="p">),</span>
+                  <span class="n">SysProvider</span><span class="o">.</span><span class="n">SIM</span><span class="p">:</span>          <span class="p">(</span><span class="s2">&quot;philander.gpio_sim&quot;</span><span class="p">,</span> <span class="s2">&quot;_GPIO_Sim&quot;</span><span class="p">),</span>
+                <span class="p">}</span>
+        <span class="k">if</span> <span class="n">provider</span> <span class="o">==</span> <span class="n">SysProvider</span><span class="o">.</span><span class="n">AUTO</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">SysFactory</span><span class="o">.</span><span class="n">autoDetectProvider</span><span class="p">(</span> <span class="n">deps</span><span class="p">,</span> <span class="n">SysProvider</span><span class="o">.</span><span class="n">SIM</span> <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">SysFactory</span><span class="o">.</span><span class="n">createInstance</span><span class="p">(</span> <span class="n">provider</span><span class="p">,</span> <span class="n">impls</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">philander</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">philander</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023-2025, Oliver Maye.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

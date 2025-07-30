@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>philander.stc3115_reg &#8212; philander 0.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=b489f392"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for philander.stc3115_reg</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Register definitions for the STC311x family battery gas gauges.</span>
+<span class="sd">    </span>
+<span class="sd">Definition of registers and default values for the</span>
+<span class="sd">above-mentioned chips.</span>
+<span class="sd">Externalized, just for clarity of the source code.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Carl Bellgardt&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1&quot;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;STC3115_Reg&quot;</span><span class="p">,</span> <span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">philander.stc311x_reg</span> <span class="kn">import</span> <span class="n">STC311x_Reg</span>
+
+<div class="viewcode-block" id="STC3115_Reg">
+<a class="viewcode-back" href="../../philander.html#philander.stc3115_reg.STC3115_Reg">[docs]</a>
+<span class="k">class</span> <span class="nc">STC3115_Reg</span><span class="p">(</span><span class="n">STC311x_Reg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Definition of the STC3115 exclusive registers and values.</span>
+<span class="sd">    </span>
+<span class="sd">    Registers and content interpretation specific to this chip. It</span>
+<span class="sd">    complements those definitions inherited from the base class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Register 0: REG_MODE</span>
+    <span class="n">MODE_CLR_VM_ADJ</span> <span class="o">=</span> <span class="mh">0x02</span>  <span class="c1"># Clear ACC_VM_ADJ and REG_VM_ADJ</span>
+    <span class="n">MODE_CLR_CC_ADJ</span> <span class="o">=</span> <span class="mh">0x04</span>  <span class="c1"># Clear ACC_CC_ADJ and REG_CC_ADJ</span>
+
+    <span class="c1"># Register 1: REG_CTRL</span>
+    <span class="c1"># Register 2: REG_SOC_L</span>
+    <span class="c1"># Register 3: REG_SOC_H</span>
+    <span class="c1"># Register 4: REG_COUNTER_L</span>
+    <span class="c1"># Register 5: REG_COUNTER_H</span>
+    <span class="c1"># Register 6: REG_CURRENT_L</span>
+    <span class="c1"># Register 7: REG_CURRENT_H</span>
+    <span class="c1"># Register 8: REG_VOLTAGE_L</span>
+    <span class="c1"># Register 9: REG_VOLTAGE_H</span>
+    <span class="c1"># Register 10: REG_TEMPERATURE</span>
+    
+    <span class="c1"># Register 11: REG_CC_ADJ_H</span>
+    <span class="n">REG_CC_ADJ_H</span> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># Coulomb counter adjustment factor (high)</span>
+    
+    <span class="c1"># Register 12: REG_VM_ADJ_H</span>
+    <span class="n">REG_VM_ADJ_H</span> <span class="o">=</span> <span class="mi">12</span>  <span class="c1"># Voltage mode adjustment factor (high)</span>
+    
+    <span class="c1"># Register 13: REG_OCV_L</span>
+    <span class="c1"># Register 14: REG_OCV_H</span>
+    <span class="c1"># Register 15: REG_CC_CNF_L</span>
+    <span class="c1"># Register 16: REG_CC_CNF_H</span>
+    <span class="c1"># Register 17: REG_VM_CNF_L</span>
+    <span class="c1"># Register 18: REG_VM_CNF_H</span>
+    <span class="c1"># Register 19: REG_ALARM_SOC</span>
+    <span class="c1"># Register 20: REG_ALARM_VOLTAGE</span>
+    <span class="c1"># Register 21: REG_CURRENT_THRES</span>
+    
+    <span class="c1"># Register 22: REG_RELAX_COUNT</span>
+    <span class="n">REG_RELAX_COUNT</span> <span class="o">=</span> <span class="mi">22</span>    <span class="c1"># Relaxation counter</span>
+
+    <span class="c1"># Register 23: REG_RELAX_MAX</span>
+    <span class="n">REG_RELAX_MAX</span> <span class="o">=</span> <span class="mi">23</span>  <span class="c1"># Relaxation counter max value</span>
+    <span class="n">RELAX_MAX_DEFAULT</span> <span class="o">=</span> <span class="mh">0x78</span>
+
+    <span class="c1"># Register 24: REG_ID</span>
+    <span class="n">CHIP_ID</span> <span class="o">=</span> <span class="mh">0x14</span>  <span class="c1"># Expected ID found in REG_ID</span>
+
+    <span class="c1"># Register 25: REG_CC_ADJ_L, see Reg#11 for high-part</span>
+    <span class="n">REG_CC_ADJ_L</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># Coulomb counter adjustment factor (low)</span>
+
+    <span class="c1"># Register 26: REG_VM_ADJ_L, see Reg#12 for high-part</span>
+    <span class="n">REG_VM_ADJ_L</span> <span class="o">=</span> <span class="mi">26</span>  <span class="c1"># Voltage mode adjustment factor (low)</span>
+    
+    <span class="c1"># Register 27/28: REG_ACC_CC_ADJ_L/H</span>
+    <span class="n">REG_ACC_CC_ADJ_L</span> <span class="o">=</span> <span class="mi">27</span>
+    <span class="n">REG_ACC_CC_ADJ_H</span> <span class="o">=</span> <span class="mi">28</span>
+    <span class="n">REG_ACC_CC_ADJ</span> <span class="o">=</span> <span class="n">REG_ACC_CC_ADJ_L</span>  <span class="c1"># Coulomb counter correction accumulator</span>
+
+    <span class="c1"># Register 29/30: REG_ACC_VM_ADJ_L/H</span>
+    <span class="n">REG_ACC_VM_ADJ_L</span> <span class="o">=</span> <span class="mi">29</span>
+    <span class="n">REG_ACC_VM_ADJ_H</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">REG_ACC_VM_ADJ</span> <span class="o">=</span> <span class="n">REG_ACC_VM_ADJ_L</span>  <span class="c1"># Voltage mode correction accumulator</span>
+
+    <span class="c1"># REG 31: not used</span>
+    <span class="c1"># REG 32-47: RAM registers, working registers for gas gauge</span>
+    <span class="c1"># REG 48-63: OCV adjustment registers</span>
+    <span class="c1"># OCV adjustment table, LSB=0.55mV</span>
+    <span class="n">REG_OCVTAB0</span> <span class="o">=</span> <span class="mi">48</span>
+    <span class="n">REG_OCVTAB1</span> <span class="o">=</span> <span class="mi">49</span>
+    <span class="n">REG_OCVTAB2</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">REG_OCVTAB3</span> <span class="o">=</span> <span class="mi">51</span>
+    <span class="n">REG_OCVTAB4</span> <span class="o">=</span> <span class="mi">52</span>
+    <span class="n">REG_OCVTAB5</span> <span class="o">=</span> <span class="mi">53</span>
+    <span class="n">REG_OCVTAB6</span> <span class="o">=</span> <span class="mi">54</span>
+    <span class="n">REG_OCVTAB7</span> <span class="o">=</span> <span class="mi">55</span>
+    <span class="n">REG_OCVTAB8</span> <span class="o">=</span> <span class="mi">56</span>
+    <span class="n">REG_OCVTAB9</span> <span class="o">=</span> <span class="mi">57</span>
+    <span class="n">REG_OCVTAB10</span> <span class="o">=</span> <span class="mi">58</span>
+    <span class="n">REG_OCVTAB11</span> <span class="o">=</span> <span class="mi">59</span>
+    <span class="n">REG_OCVTAB12</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="n">REG_OCVTAB13</span> <span class="o">=</span> <span class="mi">61</span>
+    <span class="n">REG_OCVTAB14</span> <span class="o">=</span> <span class="mi">62</span>
+    <span class="n">REG_OCVTAB15</span> <span class="o">=</span> <span class="mi">63</span>
+    <span class="n">OCV_DEFAULT</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">philander</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">philander</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023-2024, Oliver Maye.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

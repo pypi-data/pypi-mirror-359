@@ -1,0 +1,8 @@
+# Define requirements for building the doc. 
+sphinx
+sphinx_rtd_theme
+readthedocs-sphinx-search
+gpiozero
+pymitter
+python-periphery
+smbus2
