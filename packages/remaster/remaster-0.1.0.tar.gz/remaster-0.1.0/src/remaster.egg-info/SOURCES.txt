@@ -1,0 +1,5 @@
+pyproject.toml
+src/remaster.egg-info/PKG-INFO
+src/remaster.egg-info/SOURCES.txt
+src/remaster.egg-info/dependency_links.txt
+src/remaster.egg-info/top_level.txt
