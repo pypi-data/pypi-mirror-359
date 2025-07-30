@@ -1,0 +1,2 @@
+[console_scripts]
+promptops = src.cli.main:app
