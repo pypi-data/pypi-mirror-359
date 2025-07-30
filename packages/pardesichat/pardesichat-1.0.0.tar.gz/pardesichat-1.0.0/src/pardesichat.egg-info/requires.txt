@@ -1,0 +1,4 @@
+requests
+Pillow
+newspaper3k
+ollama
