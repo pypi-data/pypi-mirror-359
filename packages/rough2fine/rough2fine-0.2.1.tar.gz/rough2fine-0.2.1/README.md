@@ -1,0 +1,50 @@
+# rough2fine
+
+## 项目简介
+
+本项目旨在通过给定的资料，自动生成出版级的剧本细分场，辅助编剧高效完成从粗分场到细分场的创作工作。项目基于MCP服务框架，提供结构化的创作提示词生成服务。
+
+## 主要功能
+- 解析剧本相关资料（如粗分场、前情、人物小传、故事梗概等）
+- 自动生成细分场创作提示词
+- 支持通过API调用服务
+- 细分场输出严格遵循出版级格式
+
+## 服务接口说明
+
+### 1. `critical_thinking` 工具
+- **功能**：根据输入的剧本资料，生成结构化的细分场创作提示词。
+- **参数说明**：
+  - `fine`：本场剧本粗分场内容，若为空则自动读取`fine.txt`
+  - `person`：核心人物小传内容，若为空则自动读取`person.txt`
+  - `previous_events`：本场前情内容，若为空则自动读取`previous_events.txt`
+  - `screenplay_completed`：已完成剧本内容，若为空则自动读取`screenplay_completed.txt`
+  - `story_beat`：本集情节点内容，若为空则自动读取`story_beat.txt`
+  - `episode_summary`：本集故事梗概内容，若为空则自动读取`episode_summary.txt`
+- **返回值**：
+  - `response`：生成的结构化创作提示词（细分场内容）
+
+## 使用方法
+
+1. 安装依赖环境（建议使用 Python 3.8 及以上版本）：
+   ```bash
+   pip install poetry
+   poetry install
+   ```
+2. 启动服务：
+   ```bash
+   python server.py
+   ```
+3. 通过MCP客户端或API调用`critical_thinking`工具，传入相关参数即可获得细分场创作提示词。
+
+## 依赖环境
+- Python >= 3.8
+- poetry-core >= 2.0.0, <3.0.0
+
+## 文件说明
+- `server.py`：服务主程序，提供critical_thinking工具
+- `prompt.md`：创作提示词模板及详细说明
+- `pyproject.toml`：项目依赖与元数据
+
+## 致谢
+感谢所有为本项目提供灵感和支持的编剧、开发者与测试者。 
