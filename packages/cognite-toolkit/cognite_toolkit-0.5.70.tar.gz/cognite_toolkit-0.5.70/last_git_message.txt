@@ -1,0 +1,25 @@
+[CDF-24792] 🐛 Correct error message (#1705)
+
+# Description
+
+Incorrect error message:
+
+![image](https://github.com/user-attachments/assets/b886199a-9c1a-48f3-b082-d36f5f8d7e84)
+
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- When running `cdf deploy` with lacking capabilities, Toolkit no longer
+gives an error message that it is cleaning.
+
+## templates
+
+No changes.
