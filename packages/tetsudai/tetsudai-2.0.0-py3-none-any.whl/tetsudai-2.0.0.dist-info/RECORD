@@ -1,0 +1,7 @@
+tetsudai/__init__.py,sha256=DzbZFiREwvO1pt87WMgTQzAWibywq-JC9RMHqqW8xKE,82
+tetsudai/_codegen.py,sha256=e9u6HABr6XqmflnipSc2WGcc0dprrLS6BU4SCoR20X0,566
+tetsudai/_release.py,sha256=hoVAmU12vyJV9fSmVDKxYxcj7VMOF7DZv5jfrserv2s,3439
+tetsudai/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tetsudai-2.0.0.dist-info/METADATA,sha256=QquFcIEXeDIs3pSazb-52iCx7-whnUaIvOaFJQl5rSk,224
+tetsudai-2.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tetsudai-2.0.0.dist-info/RECORD,,
