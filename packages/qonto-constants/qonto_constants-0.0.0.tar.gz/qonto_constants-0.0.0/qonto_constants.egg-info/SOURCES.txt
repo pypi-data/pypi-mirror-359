@@ -1,0 +1,8 @@
+LICENSE.rtf
+README.md
+pyproject.toml
+qonto_constants/constants.py
+qonto_constants.egg-info/PKG-INFO
+qonto_constants.egg-info/SOURCES.txt
+qonto_constants.egg-info/dependency_links.txt
+qonto_constants.egg-info/top_level.txt
