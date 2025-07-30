@@ -1,0 +1,2 @@
+[console_scripts]
+dockr = highlighter.dockr:main
