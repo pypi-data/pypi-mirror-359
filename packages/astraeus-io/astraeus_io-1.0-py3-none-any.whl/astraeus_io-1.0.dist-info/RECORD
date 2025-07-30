@@ -1,0 +1,9 @@
+astraeus/__init__.py,sha256=34jRfXq4GrL95Gk5GVfdcVEF4Toq7jJ9geufZogBe7c,140
+astraeus/dataset.py,sha256=vY5_LZKN0SBeG35qRFH1zhHoJ7kddOGtc6_ZaRKJ1Jo,812
+astraeus/hdf5IO.py,sha256=EbcOHfkcYj1mIP8doDFKnCQdaeMJiWwim_9zJ962hMw,2821
+astraeus/xarrayIO.py,sha256=UJd7Xe0t8kKwRKdqVt1W79Tc1-JAYB6jw2evZDPE5OQ,8364
+astraeus_io-1.0.dist-info/licenses/LICENSE,sha256=7wZYyBgEWty6EyhwjKYtIeYK7RBRSTDCRsZxAUAEuU0,1543
+astraeus_io-1.0.dist-info/METADATA,sha256=1MLyd2zf7DaYsHU1Q3cKYWUYb6busqvF033Vq9uGLDU,2618
+astraeus_io-1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+astraeus_io-1.0.dist-info/top_level.txt,sha256=6iTqAA085rW-SXhT0enWlcpuU_Kn10y_OUZXbaSYpmM,9
+astraeus_io-1.0.dist-info/RECORD,,
