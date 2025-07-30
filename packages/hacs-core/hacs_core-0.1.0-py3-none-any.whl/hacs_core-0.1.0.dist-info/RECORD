@@ -1,0 +1,9 @@
+hacs_core/__init__.py,sha256=O44GR9egAKBC8i-NqFbF8TgMixqCHNba2n4sk7bjPbo,547
+hacs_core/actor.py,sha256=yHl_ljUTPmfhbwP3S4kyyyXHRjndsx68tewMrJwAOCk,13506
+hacs_core/base_resource.py,sha256=sUM5KbO2DEGiKNayV27bhocgfRPlsG2wz1lSV6W6L0U,3368
+hacs_core/evidence.py,sha256=Co5Xl5VBsUkeLki0p8KjK8T4N-J7D1TNF-v1B_xta5c,8354
+hacs_core/memory.py,sha256=1LJCdpkWqr0h59XOd5L5aD0MwKbMU4Ksph5ziVY7fU4,5788
+hacs_core/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hacs_core-0.1.0.dist-info/METADATA,sha256=gm_K2G4HeP3rOo1nSN7WxLbWZnyJx5yMn5HjGNsuRH0,3878
+hacs_core-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hacs_core-0.1.0.dist-info/RECORD,,
