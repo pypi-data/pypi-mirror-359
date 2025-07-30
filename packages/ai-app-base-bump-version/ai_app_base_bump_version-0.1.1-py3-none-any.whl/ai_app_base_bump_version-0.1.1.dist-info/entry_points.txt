@@ -1,0 +1,3 @@
+[console_scripts]
+bump-version-py = bump_version.cli:main
+bvp = bump_version.cli:main

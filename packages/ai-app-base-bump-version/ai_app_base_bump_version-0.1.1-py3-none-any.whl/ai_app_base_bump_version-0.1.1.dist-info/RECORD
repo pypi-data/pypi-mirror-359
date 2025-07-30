@@ -1,0 +1,10 @@
+bump_version/__init__.py,sha256=9JZeYgnlU85Ez0ICG7s53hT1zbQBLcxfq0Tde7D5luA,88
+bump_version/_version.py,sha256=ujz_bW464GO2RGAoI29NTtqomYnhHAl9ty0ldA7zvxQ,627
+bump_version/cli.py,sha256=Cx_wIZFLYxQlph41uprQoTQIt98yJi5O-IyxzAV_S8U,15515
+bump_version/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bump_version/version_manager.py,sha256=Q21-CUDC2t-7ETOTGvrg5jNInE4hVLic1ncI6Q04srU,6538
+ai_app_base_bump_version-0.1.1.dist-info/METADATA,sha256=leKZCKLLgmXGejGRBpnQinvaJlejwbq53h1nCQNJA9U,4250
+ai_app_base_bump_version-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ai_app_base_bump_version-0.1.1.dist-info/entry_points.txt,sha256=9rn9m4eEablnOyh799jtrXzbn6TpvV9n9d3U33bLheU,86
+ai_app_base_bump_version-0.1.1.dist-info/licenses/LICENSE,sha256=qYwUSEiCLT8NXzoNJId7feyQtrzkxcpZSqv0G3rFzsQ,741
+ai_app_base_bump_version-0.1.1.dist-info/RECORD,,
