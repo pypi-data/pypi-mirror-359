@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: mcp-master
+Version: 0.0.1
+Summary: A Python package for master MCP servers.
+Project-URL: Homepage, https://github.com/ashen-321/mcp-master/
+Project-URL: Issues, https://github.com/ashen-321/mcp-master/issues
+Author-email: Aaron Shen <aaron.shen321@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: automation,git,llm,mcp
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.12
+Requires-Dist: fastmcp>=2.8.1
+Requires-Dist: langchain-openai>=0.3.12
+Requires-Dist: langgraph>=0.3.27
+Requires-Dist: mcp>=1.9.4
+Requires-Dist: starlette>=0.46.1
+Requires-Dist: uvicorn>=0.34.0
+Description-Content-Type: text/markdown
+
+# mcp-master
+A Python package for master MCP servers.
