@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: eyw
+Version: 0.0.2
+Summary: Useful functions that are intended to be used with the Engineer Your World Computing Curriculum
+Project-URL: Homepage, https://engineeryourworld.utexas.edu
+Project-URL: Issues, https://engineeryourworld.utexas.edu
+Author-email: Engineer Your World <engineeryourworld@austin.utexas.edu>, Kyle Fricke <kyle.fricke@austinlutexas.edu>
+License-File: LICENSE.txt
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+
+# eyw library
+
+The EYW python library contains “streamlined” functions that incorporate and simplify functions from OpenCV, Numpy and more. It places several lines of less intuitive code from these other libraries inside easier-to-understand functions. It was created by Engineer Your World (EYW) at the University of Texas in order to be used with the *EYW: Computing* curriculum. It is only used when the class is doing the streamlined versions of Units 2 and 3 (“Images” and “Motion Capture”), and potentially when repurposing some of the Unit 3 code in Unit 5 (“CamChair”).
+
+The library requires opencv and numpy. 
+
+It has four functions:
+
+----------------------------------------------------------------------------
+
+**apply_mask(image, existing_mask)**
+
+This function returns a new image on which a mask has been applied. The mask’s black pixels’ locations are turned black on the resulting image, while the rest of the pixels remain the same colors as they are in the original image. (This function replaces the first usage of cv2.bitwise_or that is described above.)
+
+* *image* is the original image on which the mask will be applied.  
+
+* *existing_mask*   is the mask to be applied. This should have been created previously using eyw.create_mask().
+
+   Example:
+
+   ```
+   red_parts_of_image = eyw.apply_mask(red_paper, red_mask)
+   ```
+----------------------------------------------------------------------------
+
+**combine_images(image1, image2)**
+
+This function combines two images together. Note that if both images have non-zero b,g,r values at the same pixel location which shouldn't happen in typical use scenarios in the EYW curriculum) the larger value for b, g, and/or r will be used to color that pixel location. (This function replaces the second usage of cv2.bitwise_or that is described above.)
+
+* *image1* and *image2*   are the two images that you want to combine. 
+
+   Example:
+   ```
+   customized_image = eyw.combine_images(red_parts_of_image,yellow_parts_of_image)
+   ```
+----------------------------------------------------------------------------
+
+**create_colored_paper(original_image, b, g, r)**
+
+This function creates a new image with the same dimensions as the original image (in the first argument) where every pixel has the same color, which is determined by the second, third, and fourth (b,g,r) arguments. 
+
+* *original_image*  is the image that determines the dimensions to be used for the new image. When using this function in projects with images and videos, the dimensions will often be similar to this: (height, width, channels) where height and width are the pixel dimensions of the image or video, and channels is typically 3 (for b,g,r).
+
+* *b*   is the value that you want to apply to the first channel (e.g., the Blue channel). 
+
+* *g*   is the value that you want to apply to the second channel (e.g., the Green channel). 
+
+* *r*   is the value that you want to apply to the third channel (e.g., the Red channel).
+
+   Example:
+   ```
+   yellow_paper = eyw.create_colored_paper(original_image, 0,255,255)
+   ```
+----------------------------------------------------------------------------
+ 
+**create_mask(image, low_end_of_range, high_end_of_range)**
+
+This function returns a new image (mask) that is only made up of pure black and pure white pixels. The white pixels represent the pixels from the specified image (1st argument) whose channel values (e.g., [B,G,R] or [Gray,Gray,Gray]) fall within the range that is set by the second two arguments. Everything else is black. The resulting mask can then be used with the eyw.apply_mask() function. 
+
+* *image*   is the image whose pixels will be checked to see which ones fall within the desired range.
+
+* *low_end_of_range*    is the low end of the range of pixel channel values that you want to allow through. This is typically a list of three integers representing [B,G,R] or [Gray,Gray,Gray] values. 
+
+* *high_end_of_range*   is the high end of the range. This is typically a list of three integers representing [B,G,R] or [Gray,Gray,Gray] values. 
+
+   Example:
+   ```
+   red_mask = eyw.create_mask(grayscale_image, min_grayscale_for_red, max_grayscale_for_red)
+   ```
