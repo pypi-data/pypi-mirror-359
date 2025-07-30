@@ -1,0 +1,94 @@
+site_name: Intervals.icu to InfluxDB
+site_description: Intervals.icu to InfluxDB
+theme:
+  language: es
+  #logo: assets/images/logo.png
+  #favicon: assets/images/icon.png
+  name: material
+  #font:
+  #  text: Ubuntu
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.footer
+    - navigation.top
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.tracking
+    # - navigation.sections
+    - navigation.prune
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - navigation.footer
+    - toc.follow
+
+markdown_extensions:
+  - nl2br
+  - admonition
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+
+plugins:
+  - search
+  - callouts
+  # - obsidian-bridge
+# nav:
+#   - Home:
+#       - index.md
+
+# extra:
+#   # social:
+#   #   - icon: fontawesome/brands/mastodon
+#   #     link: https://fosstodon.org/@squidfunk
+#   #     name: squidfunk on Fosstodon
+#   consent:
+#     title: Lo de las galletas
+#     description: >-
+#       No usamos las Cookies para nada, no importa al botón que le des. Te mostramos esto porque así parece una página más seria.
+#     actions:
+#       - accept
+#       - reject
+
+# copyright: Copyright &copy; 2023 SogetiLabs Spain

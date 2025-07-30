@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intervalsicu-to-influxdb"
+# version = "0.1.1"
+authors = [{ name = "Toni Miquel Llull", email = "tonimiquel.llull@gmail.com" }]
+description = "A package to extract data from intervals.icu to influxDB"
+readme = "README.md"
+keywords = ["intervalsicu", "influxdb", "sport"]
+license = { text = "MIT License" }
+requires-python = ">=3.10"
+
+# Dynamic dependencies
+dynamic = ["dependencies", "version"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/tmllull/intervalsicu-to-influxdb"
+Repository = "https://github.com/tmllull/intervalsicu-to-influxdb"
+Issues = "https://github.com/tmllull/intervalsicu-to-influxdb/issues"
+Documentation = "https://intervalsicu-to-influxdb.readthedocs.io"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+# version = { attr = "auto_commit_ai._version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["auto_commit_ai*"]
+
+[tool.setuptools.package-data]
+auto_commit_ai = ["*.txt", "*.md"]
+
+[tool.setuptools_scm]
