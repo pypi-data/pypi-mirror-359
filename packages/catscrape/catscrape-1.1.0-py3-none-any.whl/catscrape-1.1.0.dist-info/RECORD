@@ -1,0 +1,10 @@
+catscrape/__init__.py,sha256=FAb8bZksuWIicZUnQ5GR60f_i4WqFOumOvl-hedrlFI,95
+catscrape/data.py,sha256=tTuWf3TuuQb9nOm3eXjBDcMgu2yONz3u22-O3Q-J68U,1699
+catscrape/scratcher.py,sha256=0_zejoN9a0czIHjNmoimnnx97P-6YN-IM4spGKYEWsY,9498
+catscrape/studio.py,sha256=xd4dLeD2YWltGx8hN6oBS8MsJEt30Qcns04WmGSzEdE,4959
+catscrape/web.py,sha256=B--N5OpRMGZYpyTCZqfg9EJ9KzypO1mGHdkRworE9Mo,1576
+catscrape/tests/tests.py,sha256=wVG19KXSv8kPIK2pUvGbPE9MRwx-ib5lAPxhELae2Ao,1292
+catscrape-1.1.0.dist-info/METADATA,sha256=hoVzQCPY2MkGvO0BbhIGT-a3fjz4VqPpGgNaaRy6-Lg,7188
+catscrape-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+catscrape-1.1.0.dist-info/licenses/LICENSE,sha256=po4J-nRA5v1OXrvW-1DorGDwAFDqpvJC71_8ALsUTes,1060
+catscrape-1.1.0.dist-info/RECORD,,
