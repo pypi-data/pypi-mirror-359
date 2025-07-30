@@ -1,0 +1,8 @@
+setup.py
+paulify/__init__.py
+paulify/cli.py
+paulify.egg-info/PKG-INFO
+paulify.egg-info/SOURCES.txt
+paulify.egg-info/dependency_links.txt
+paulify.egg-info/entry_points.txt
+paulify.egg-info/top_level.txt
