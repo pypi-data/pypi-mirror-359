@@ -1,0 +1,165 @@
+Metadata-Version: 2.3
+Name: nomos
+Version: 0.3.1
+Summary: Configurable multi-step agent framework for building advanced LLM-powered assistants
+License: MIT
+Author: chandralegend
+Author-email: irugalbandarachandra@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: anthropic
+Provides-Extra: cli
+Provides-Extra: google
+Provides-Extra: huggingface
+Provides-Extra: mistralai
+Provides-Extra: ollama
+Provides-Extra: openai
+Provides-Extra: serve
+Provides-Extra: traces
+Requires-Dist: anthropic (>=0.55.0,<0.56.0) ; extra == "anthropic"
+Requires-Dist: asyncpg (>=0.30.0,<0.31.0) ; extra == "serve"
+Requires-Dist: colorama (>=0.4.6,<0.5.0)
+Requires-Dist: docstring-parser (>=0.16,<0.17)
+Requires-Dist: fastapi (>=0.115.12,<0.116.0) ; extra == "serve"
+Requires-Dist: google-genai (>=1.12.1,<2.0.0) ; extra == "google"
+Requires-Dist: huggingface_hub (>=0.32.0) ; extra == "huggingface"
+Requires-Dist: loguru (>=0.7.3,<0.8.0)
+Requires-Dist: mistralai (>=1.7.0,<2.0.0) ; extra == "mistralai"
+Requires-Dist: ollama (>=0.5.1) ; extra == "ollama"
+Requires-Dist: openai (>=1.76.0,<2.0.0) ; extra == "openai"
+Requires-Dist: opentelemetry-api (>=1.33.0,<2.0.0) ; extra == "traces"
+Requires-Dist: opentelemetry-exporter-otlp (>=1.33.0,<2.0.0) ; extra == "traces"
+Requires-Dist: opentelemetry-instrumentation (>=0.54b0,<0.55) ; extra == "traces"
+Requires-Dist: opentelemetry-sdk (>=1.33.0,<2.0.0) ; extra == "traces"
+Requires-Dist: psycopg2-binary (>=2.9.10,<3.0.0) ; extra == "serve"
+Requires-Dist: pydantic (>=2.11.3,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.9.1,<3.0.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: redis (>=6.2.0,<7.0.0) ; extra == "serve"
+Requires-Dist: rich (>=13.0.0,<14.0.0) ; extra == "cli"
+Requires-Dist: sqlmodel (>=0.0.24,<0.0.25) ; extra == "serve"
+Requires-Dist: tiktoken (>=0.9.0,<0.10.0) ; extra == "openai"
+Requires-Dist: typer (>=0.16.0,<0.17.0) ; extra == "cli"
+Requires-Dist: uvicorn (>=0.34.3,<0.35.0) ; extra == "serve"
+Description-Content-Type: text/markdown
+
+<h1>
+  <a href="https://github.com/dowhiledev/nomos">
+    <img src="docs/assets/banner.jpg" alt="NOMOS">
+  </a>
+</h1>
+
+<div>
+
+![PyPI - Version](https://img.shields.io/pypi/v/nomos?style=flat-square)
+[![npm version](https://img.shields.io/npm/v/nomos-sdk.svg?style=flat-square)](https://www.npmjs.com/package/nomos-sdk)
+[![codecov](https://codecov.io/gh/dowhiledev/nomos/graph/badge.svg?token=MXRK9HGE5R&style=flat-square)](https://codecov.io/gh/dowhiledev/nomos)
+[![Test](https://github.com/dowhiledev/nomos/actions/workflows/test.yml/badge.svg?style=flat-square)](https://github.com/dowhiledev/nomos/actions/workflows/test.yml)
+[![Release](https://github.com/dowhiledev/nomos/actions/workflows/publish.yml/badge.svg?style=flat-square)](https://github.com/dowhiledev/nomos/actions/workflows/publish.yml)
+[![Docker Image Version](https://img.shields.io/docker/v/chandralegend/nomos-base?style=flat-square)](https://hub.docker.com/r/chandralegend/nomos-base)
+[![Open Issues](https://img.shields.io/github/issues-raw/dowhiledev/nomos?style=flat-square)](https://github.com/dowhiledev/nomos/issues)
+
+</div>
+
+> [!NOTE]
+> Looking for client-side integration? Check out our [TypeScript/JavaScript SDK](support/ts-sdk/README.md).
+
+**NOMOS** is a framework for building advanced LLM-powered assistants with structured, multi-step workflows. It helps you create sophisticated AI agents through configurable flows, tools, and integrations — making complex agent development accessible from no-code to full-code approaches.
+
+```bash
+pip install nomos[cli]
+```
+
+To learn more about NOMOS, check out [the documentation](docs/md/). If you're looking for quick prototyping, try our [Playground](https://nomos.dowhile.dev/playground) for drag-and-drop agent creation.
+
+<details>
+<summary>Table of Contents</summary>
+
+- [Why use NOMOS?](#why-use-nomos)
+- [NOMOS Ecosystem](#nomos-ecosystem)
+- [Key Features](#key-features)
+- [Documentation](#documentation)
+- [Additional Resources](#additional-resources)
+
+**[Complete Documentation](docs/md/) | [Try Playground](https://nomos.dowhile.dev/playground) | [Quick Start Guide](docs/md/getting-started.md)**
+
+</details>
+
+---
+
+## Why use NOMOS?
+
+NOMOS helps developers build sophisticated AI agents through structured workflows and configurable components, making complex agent development accessible to teams of all skill levels.
+
+Use NOMOS for:
+- **Multi-step agent workflows**. Create complex, stateful interactions with step-by-step flow definitions, each with specialized tools and intelligent routing between conversation states.
+- **Rapid prototyping to production**. Start with our Playground for no-code prototyping, then seamlessly transition to YAML configuration or full Python implementation as your needs evolve.
+- **Tool ecosystem integration**. Leverage your existing Python functions, or integrate with CrewAI, LangChain tools, and any Python package through our unified tool system with automatic documentation generation.
+- **Production-ready deployment**. Built-in session management, error handling, monitoring, and Docker deployment options make it easy to scale from prototype to production.
+
+## NOMOS Ecosystem
+
+While NOMOS can be used standalone, it integrates with a growing ecosystem of tools and services designed for agent development:
+
+- **[Playground](https://nomos.dowhile.dev/playground)** - Design and prototype agent flows with our drag-and-drop interface. Perfect for rapid iteration and collaboration between technical and non-technical team members.
+- **[TypeScript SDK](support/ts-sdk/README.md)** - Full-featured client library for web and Node.js applications, enabling seamless integration of NOMOS agents into your frontend applications.
+- **[Docker Base Images](docs/md/deployment.md#docker-base-image)** - Pre-configured containers for rapid deployment with built-in support for Redis, PostgreSQL, and monitoring integrations.
+- **[CLI Tools](docs/md/cli-usage.md)** - Comprehensive command-line interface for agent development, testing, and deployment with `nomos init`, `nomos run`, `nomos train`, `nomos serve`, `nomos test`, `nomos schema`, and `nomos --version` commands.
+
+## Key Features
+
+| Category | Feature | Description |
+|----------|---------|-------------|
+| **Architecture** | Step-based Flows | Define agent behavior as sequences of steps with tools and transitions |
+| | Advanced Flow Management | Organize steps into flows with shared context and components |
+| | Flow Memory | Each flow maintains context with intelligent cross-flow summarization |
+| **Development** | Multiple Config Options | Python API or declarative YAML configuration |
+| | Playground | Drag-and-drop interface for designing flows **[Try it live →](https://nomos.dowhile.dev/playground)** |
+| | Interactive CLI | Bootstrap agents with `nomos init`, run with `nomos run` |
+| **Tools & Integration** | Tool Integration | Register Python functions, packages, CrewAI, or LangChain tools |
+| | Auto Documentation | Tool descriptions generated from docstrings |
+| | External Packages | Reference any Python package function via configuration |
+| **LLM Support** | Multiple Providers | OpenAI, Mistral, Gemini, Ollama, and HuggingFace |
+| | Structured Responses | Step-level answer models for JSON/object responses |
+| | Persona-driven | Consistent, branded agent responses |
+| | Decision Examples | Retrieve relevant examples to guide step decisions |
+| **Production Ready** | Session Management | Redis/PostgreSQL storage for conversation persistence |
+| | Error Handling | Built-in recovery with configurable retry limits |
+| | API Integration | FastAPI endpoints for web and WebSocket interaction |
+| | Monitoring | Elastic APM tracing and distributed monitoring |
+| | Docker Deployment | Pre-built base image for rapid deployment |
+| **Extensibility** | Custom Components | Build your own tools, steps, and integrations |
+| | Scalable Design | Horizontal scaling with stateless architecture |
+
+
+## Documentation
+
+For detailed information, check out our comprehensive guides:
+
+| Guide | Description |
+|-------|-------------|
+| [Getting Started](docs/md/getting-started.md) | Installation, setup, and your first agent |
+| [CLI Usage](docs/md/cli-usage.md) | Complete command-line interface guide |
+| [Configuration](docs/md/configuration.md) | Python API and YAML configuration |
+| [Flow Management](docs/md/flow-management.md) | Advanced workflow organization |
+| [LLM Support](docs/md/llm-support.md) | Supported models and providers |
+| [Examples](docs/md/examples.md) | Real-world implementation examples |
+| [Deployment](docs/md/deployment.md) | Production deployment strategies |
+| [Community](docs/md/community.md) | Contributing, support, and project information |
+
+## Additional Resources
+
+- **[Tutorials](docs/md/getting-started.md)**: Step-by-step guides for getting started with NOMOS, from installation to your first agent.
+- **[How-to Guides](docs/md/)**: Quick, actionable code snippets for common tasks like tool integration, flow management, and deployment.
+- **[Examples](docs/md/examples.md)**: Real-world implementations including a barista ordering system, financial advisor, and travel planner.
+- **[API Reference](docs/md/configuration.md)**: Detailed documentation on Python API and YAML configuration options.
+- **[CLI Reference](docs/md/cli-usage.md)**: Complete command-line interface documentation for development and deployment.
+
+Join the NOMOS community! For roadmap, support, contributing guidelines, and more, see our [Community Guide](docs/md/community.md).
+
