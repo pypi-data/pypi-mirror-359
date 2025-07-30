@@ -1,0 +1,1328 @@
+# Notion ORM Library - Complete Tutorial
+
+Welcome to the comprehensive tutorial for the **Notion ORM Library** - a powerful Python library that provides both low-level client access and high-level ORM capabilities for working with Notion databases.
+
+## Table of Contents
+
+1. [Installation & Setup](#installation--setup)
+2. [Quick Start](#quick-start)
+3. [Core Concepts](#core-concepts)
+4. [Database Operations](#database-operations)
+5. [ORM-Style Models](#orm-style-models)
+6. [Querying & Filtering](#querying--filtering)
+7. [Advanced Features](#advanced-features)
+8. [Real-World Examples](#real-world-examples)
+9. [Best Practices](#best-practices)
+10. [Troubleshooting](#troubleshooting)
+11. [API Reference](#api-reference)
+
+---
+
+## Installation & Setup
+
+### Requirements
+
+- Python 3.10 or higher
+- Notion Integration Token
+- Parent Page ID in your Notion workspace
+
+### Installation
+
+```bash
+pip install notion-client
+# Install the viemind_notion_orm library (replace with actual installation method)
+```
+
+### Getting Your Notion Credentials
+
+1. **Create a Notion Integration:**
+   - Go to [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
+   - Click "New integration"
+   - Name your integration and select capabilities
+   - Copy the "Internal Integration Token"
+
+2. **Get Parent Page ID:**
+   - Create or navigate to a Notion page where you want to create databases
+   - Copy the page ID from the URL: `https://notion.so/workspace/PAGE_ID`
+   - The page ID is the 32-character string after the last `/`
+
+3. **Grant Access:**
+   - Share the parent page with your integration
+   - Click "Share" → "Invite" → Select your integration
+
+### Basic Setup
+
+```python
+from viemind_notion_orm import NotionClient
+
+# Initialize the client
+AUTH_TOKEN = "ntn_your_integration_token_here"
+PARENT_PAGE_ID = "your_parent_page_id_here"
+
+client = NotionClient(auth=AUTH_TOKEN)
+```
+
+---
+
+## Quick Start
+
+Here's a 5-minute example to get you up and running:
+
+```python
+from enum import Enum
+from viemind_notion_orm import (
+    NotionClient, NotionModel, TitleField, TextField, 
+    SelectField, BooleanField
+)
+
+# 1. Define an enum for status
+class TaskStatus(Enum):
+    TODO = "To Do"
+    IN_PROGRESS = "In Progress"
+    DONE = "Done"
+
+# 2. Define your model
+class Task(NotionModel):
+    title = TitleField()
+    description = TextField()
+    status = SelectField(TaskStatus)
+    completed = BooleanField()
+
+# 3. Setup
+AUTH_TOKEN = "your_token_here"
+PARENT_PAGE_ID = "your_page_id_here"
+client = NotionClient(auth=AUTH_TOKEN)
+
+# 4. Create the database
+Task.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+
+# 5. Create and save a task
+task = Task(
+    title="Learn Notion ORM",
+    description="Go through the tutorial",
+    status=TaskStatus.IN_PROGRESS.value,
+    completed=False
+)
+task.save()
+
+# 6. Query tasks
+all_tasks = Task.objects().all()
+for task in all_tasks:
+    print(f"📋 {task.title} - {task.status}")
+```
+
+---
+
+## Core Concepts
+
+### Architecture Overview
+
+The Notion ORM provides two main interfaces:
+
+1. **Low-Level Client API**: Direct database operations
+2. **ORM-Style Models**: Django/SQLAlchemy-like class-based interface
+
+### Property Types
+
+The library supports all major Notion property types:
+
+```python
+from viemind_notion_orm import NotionPropertyType, PropertyDefinition
+
+# Basic types
+NotionPropertyType.TITLE          # Required for every database
+NotionPropertyType.TEXT           # Rich text
+NotionPropertyType.NUMBER         # Numbers with formatting
+NotionPropertyType.BOOLEAN        # Checkbox
+NotionPropertyType.DATE           # Date and datetime
+NotionPropertyType.URL            # URL validation
+NotionPropertyType.EMAIL          # Email validation
+NotionPropertyType.PHONE          # Phone number
+
+# Advanced types
+NotionPropertyType.SELECT         # Single choice dropdown
+NotionPropertyType.MULTI_SELECT   # Multiple choice
+NotionPropertyType.STATUS         # Kanban-style status
+NotionPropertyType.PEOPLE         # User references
+NotionPropertyType.FILES          # File attachments
+NotionPropertyType.RELATION       # Database relations
+NotionPropertyType.UNIQUE_ID      # Auto-incrementing IDs
+```
+
+---
+
+## Database Operations
+
+### Creating Databases
+
+#### Method 1: Low-Level Client API
+
+```python
+from viemind_notion_orm import NotionClient, NotionPropertyType, PropertyDefinition, SelectOption
+
+client = NotionClient(auth=AUTH_TOKEN)
+
+# Define schema
+schema = {
+    "Name": NotionPropertyType.TITLE,
+    "Description": NotionPropertyType.TEXT,
+    "Priority": PropertyDefinition(
+        type=NotionPropertyType.SELECT,
+        options=[
+            SelectOption("High", "red"),
+            SelectOption("Medium", "yellow"),
+            SelectOption("Low", "green")
+        ]
+    ),
+    "Budget": PropertyDefinition(
+        type=NotionPropertyType.NUMBER,
+        number_format="dollar"
+    ),
+    "Due Date": NotionPropertyType.DATE,
+    "Active": NotionPropertyType.BOOLEAN,
+    "Project ID": PropertyDefinition(
+        type=NotionPropertyType.UNIQUE_ID,
+        unique_id_prefix="PROJ"
+    )
+}
+
+# Create database
+database = client.create_database(
+    parent_page_id=PARENT_PAGE_ID,
+    db_title="Projects",
+    schema=schema,
+    if_exists='return_existing'  # Options: 'error', 'skip', 'return_existing'
+)
+
+print(f"Database created with ID: {database['id']}")
+```
+
+#### Method 2: ORM Model Auto-Creation
+
+```python
+from viemind_notion_orm import NotionModel, TitleField, TextField, SelectField, NumberField
+
+class Project(NotionModel):
+    name = TitleField()
+    description = TextField()
+    priority = SelectField(["High", "Medium", "Low"])
+    budget = NumberField(number_format="dollar")
+    active = BooleanField()
+
+# Auto-create from model definition
+database = Project.create_table(
+    client=client,
+    parent_page_id=PARENT_PAGE_ID,
+    table_name="Projects",  # Optional custom name
+    if_exists='return_existing'
+)
+```
+
+### CRUD Operations
+
+#### Creating Records
+
+```python
+# Method 1: Direct client API
+properties = {
+    "Name": {"title": [{"text": {"content": "New Project"}}]},
+    "Description": {"rich_text": [{"text": {"content": "Project description"}}]},
+    "Priority": {"select": {"name": "High"}},
+    "Budget": {"number": 10000},
+    "Active": {"checkbox": True}
+}
+
+page = client.create_page_in_database(
+    database_id=database['id'],
+    properties=properties
+)
+
+# Method 2: ORM style
+project = Project(
+    name="New Project",
+    description="Project description",
+    priority="High",
+    budget=10000,
+    active=True
+)
+project.save()
+```
+
+#### Reading Records
+
+```python
+# Method 1: Client query
+results = client.query(database_id=database['id'])
+for page in results:
+    print(page['properties'])
+
+# Method 2: ORM query
+projects = Project.objects().all()
+for project in projects:
+    print(f"{project.name}: {project.priority}")
+```
+
+#### Updating Records
+
+```python
+# Method 1: Client update
+client.update_page_properties(
+    page_id=page['id'],
+    properties={"Priority": {"select": {"name": "Low"}}}
+)
+
+# Method 2: ORM update
+project.priority = "Low"
+project.save()
+```
+
+#### Deleting Records
+
+```python
+# Archive (soft delete)
+client.archive_page(page_id=page['id'])
+
+# ORM delete (archives the page)
+project.delete()
+```
+
+---
+
+## ORM-Style Models
+
+### Field Types
+
+```python
+from viemind_notion_orm import (
+    TitleField, TextField, NumberField, BooleanField, DateField,
+    EmailField, URLField, PhoneField, PeopleField, FilesField,
+    SelectField, MultiSelectField, StatusField, UniqueIDField,
+    RelationField
+)
+
+class ComprehensiveModel(NotionModel):
+    # Required title field
+    title = TitleField()
+    
+    # Text fields
+    description = TextField()
+    email = EmailField()
+    website = URLField()
+    phone = PhoneField()
+    
+    # Number and date fields
+    price = NumberField(number_format="dollar")
+    quantity = NumberField()
+    created_date = DateField()
+    
+    # Boolean
+    is_active = BooleanField()
+    
+    # Choice fields
+    category = SelectField(["A", "B", "C"])
+    tags = MultiSelectField(["tag1", "tag2", "tag3"])
+    status = StatusField(["Draft", "Review", "Published"])
+    
+    # Special fields
+    record_id = UniqueIDField(prefix="REC")
+    assignees = PeopleField()
+    attachments = FilesField()
+```
+
+### Using Enums for Better Type Safety
+
+```python
+from enum import Enum
+
+class Priority(Enum):
+    CRITICAL = "Critical"
+    HIGH = "High"
+    MEDIUM = "Medium"
+    LOW = "Low"
+
+class ProjectStatus(Enum):
+    PLANNING = "Planning"
+    ACTIVE = "Active"
+    ON_HOLD = "On Hold"
+    COMPLETED = "Completed"
+
+class Project(NotionModel):
+    name = TitleField()
+    priority = SelectField(Priority)
+    status = StatusField(ProjectStatus)
+    
+    # Usage
+    project = Project(
+        name="Important Project",
+        priority=Priority.HIGH.value,
+        status=ProjectStatus.ACTIVE.value
+    )
+```
+
+### Model Relations
+
+```python
+class Author(NotionModel):
+    name = TitleField()
+    email = EmailField()
+
+class Book(NotionModel):
+    title = TitleField()
+    author = RelationField(Author)  # Foreign key to Author
+    pages = NumberField()
+
+# Create tables (order matters for relations)
+Author.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+Book.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+
+# Create related records
+author = Author(name="John Doe", email="john@example.com")
+author.save()
+
+book = Book(title="Great Book", pages=300)
+# Note: Setting relations requires page IDs in current implementation
+book.save()
+```
+
+---
+
+## Querying & Filtering
+
+### Basic Queries
+
+```python
+# Get all records
+all_projects = Project.objects().all()
+
+# Count records
+total_count = Project.objects().count()
+
+# Check if records exist
+has_projects = Project.objects().exists()
+
+# Get first record
+first_project = Project.objects().first()
+
+# Limit results
+recent_projects = Project.objects().limit(5).all()
+```
+
+### Filtering with Field Conditions
+
+```python
+from viemind_notion_orm import Select, Number, Checkbox, Date, Text
+
+# Simple field filters
+active_projects = Project.objects().filter(is_active=True).all()
+high_priority = Project.objects().filter(priority="High").all()
+
+# Advanced filter objects
+from viemind_notion_orm.filters import Select, Number, Checkbox
+
+# Text contains
+name_filter = Project.objects().filter(
+    Text("description").contains("important")
+).all()
+
+# Number comparisons
+expensive_projects = Project.objects().filter(
+    Number("budget").greater_than(50000)
+).all()
+
+# Date filters
+recent_projects = Project.objects().filter(
+    Date("created_date").past_month()
+).all()
+
+# Boolean filters
+active_projects = Project.objects().filter(
+    Checkbox("is_active").equals(True)
+).all()
+```
+
+### Complex Filtering with AND/OR
+
+```python
+from viemind_notion_orm.filters import AndFilter, OrFilter, Select, Number
+
+# AND condition
+high_value_active = Project.objects().filter(
+    Select("priority").equals("High") & 
+    Number("budget").greater_than(10000) &
+    Checkbox("is_active").equals(True)
+).all()
+
+# OR condition
+important_projects = Project.objects().filter(
+    Select("priority").equals("Critical") |
+    Select("priority").equals("High")
+).all()
+
+# Mixed conditions
+complex_filter = Project.objects().filter(
+    (Select("status").equals("Active") | Select("status").equals("Planning")) &
+    Number("budget").greater_than(5000)
+).all()
+```
+
+### Sorting
+
+```python
+# Single field ascending
+projects_by_name = Project.objects().order_by('name').all()
+
+# Single field descending (prefix with -)
+projects_by_budget_desc = Project.objects().order_by('-budget').all()
+
+# Multiple fields
+projects_sorted = Project.objects().order_by('priority', '-budget', 'name').all()
+
+# Combined with filtering
+filtered_sorted = (Project.objects()
+                  .filter(is_active=True)
+                  .order_by('-priority', 'name')
+                  .limit(10)
+                  .all())
+```
+
+### Query Chaining
+
+```python
+# Build complex queries step by step
+query = Project.objects()
+query = query.filter(is_active=True)
+query = query.filter(Number("budget").greater_than(1000))
+query = query.order_by('-priority', 'name')
+query = query.limit(20)
+
+results = query.all()
+```
+
+---
+
+## Advanced Features
+
+### Joins and Relations
+
+```python
+# Join two databases
+join_results = client.join(
+    left_database_id=projects_db['id'],
+    right_database_id=tasks_db['id'],
+    on_relation="project",  # Relation field name in tasks
+    left_filters=Select("is_active").equals(True),
+    right_filters=Select("status").equals("In Progress")
+)
+
+# Process joined results
+for project_with_tasks in join_results:
+    project_name = project_with_tasks['properties']['title']['title'][0]['plain_text']
+    tasks = project_with_tasks.get('_joined_project', [])
+    print(f"Project: {project_name} has {len(tasks)} active tasks")
+```
+
+### Batch Operations
+
+```python
+# Bulk create using ORM
+projects_data = [
+    {"name": "Project 1", "priority": "High", "budget": 10000},
+    {"name": "Project 2", "priority": "Medium", "budget": 5000},
+    {"name": "Project 3", "priority": "Low", "budget": 2000},
+]
+
+for data in projects_data:
+    project = Project(**data)
+    project.save()
+
+# Bulk update
+high_priority_projects = Project.objects().filter(priority="High").all()
+for project in high_priority_projects:
+    project.is_active = True
+    project.save()
+```
+
+### Unique ID Configuration
+
+```python
+class Task(NotionModel):
+    title = TitleField()
+    
+    # Auto-incrementing IDs with different prefixes
+    task_id = UniqueIDField(prefix="TSK")      # TSK-1, TSK-2, TSK-3...
+    bug_id = UniqueIDField(prefix="BUG")       # BUG-1, BUG-2, BUG-3...
+    feature_id = UniqueIDField()               # 1, 2, 3... (no prefix)
+
+# Different ID formats in practice
+task = Task(title="Fix login bug")
+task.save()
+# Results in: task_id = "TSK-1", bug_id = "BUG-1", feature_id = "1"
+```
+
+### Working with Files and People
+
+```python
+class Document(NotionModel):
+    title = TitleField()
+    author = PeopleField()
+    attachments = FilesField()
+    reviewers = PeopleField()
+
+# Note: Files and People fields require special handling
+# Files: Upload to Notion and get URLs
+# People: Use user IDs from Notion workspace
+```
+
+---
+
+## Real-World Examples
+
+### Example 1: Project Management System
+
+```python
+from enum import Enum
+from datetime import datetime, date
+from viemind_notion_orm import *
+
+# Define enums
+class ProjectStatus(Enum):
+    PLANNING = "Planning"
+    ACTIVE = "Active"
+    ON_HOLD = "On Hold"
+    COMPLETED = "Completed"
+
+class Priority(Enum):
+    CRITICAL = "Critical"
+    HIGH = "High"
+    MEDIUM = "Medium"
+    LOW = "Low"
+
+class TaskStatus(Enum):
+    TODO = "To Do"
+    IN_PROGRESS = "In Progress"
+    REVIEW = "In Review"
+    DONE = "Done"
+
+# Define models
+class Project(NotionModel):
+    name = TitleField()
+    description = TextField()
+    status = StatusField(ProjectStatus)
+    priority = SelectField(Priority)
+    budget = NumberField(number_format="dollar")
+    start_date = DateField()
+    end_date = DateField()
+    is_active = BooleanField()
+    project_id = UniqueIDField(prefix="PROJ")
+    tags = MultiSelectField(["Frontend", "Backend", "Mobile", "DevOps"])
+
+class Task(NotionModel):
+    title = TitleField()
+    description = TextField()
+    project = RelationField(Project)
+    status = SelectField(TaskStatus)
+    priority = SelectField(Priority)
+    estimated_hours = NumberField()
+    due_date = DateField()
+    is_blocked = BooleanField()
+    task_id = UniqueIDField(prefix="TSK")
+
+# Setup and create tables
+client = NotionClient(auth=AUTH_TOKEN)
+
+projects_db = Project.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+tasks_db = Task.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+
+# Create sample project
+project = Project(
+    name="E-commerce Platform Redesign",
+    description="Complete overhaul of the e-commerce platform",
+    status=ProjectStatus.ACTIVE.value,
+    priority=Priority.HIGH.value,
+    budget=75000,
+    start_date="2024-01-15",
+    is_active=True,
+    tags=["Frontend", "Backend"]
+)
+project.save()
+
+# Create related tasks
+tasks_data = [
+    {
+        "title": "Design new UI components",
+        "description": "Create reusable UI components",
+        "status": TaskStatus.IN_PROGRESS.value,
+        "priority": Priority.HIGH.value,
+        "estimated_hours": 40,
+        "due_date": "2024-02-15",
+        "is_blocked": False,
+    },
+    {
+        "title": "Implement payment gateway",
+        "description": "Integrate Stripe payment processing",
+        "status": TaskStatus.TODO.value,
+        "priority": Priority.CRITICAL.value,
+        "estimated_hours": 60,
+        "due_date": "2024-03-01",
+        "is_blocked": False,
+    }
+]
+
+for task_data in tasks_data:
+    task = Task(**task_data)
+    task.save()
+
+# Query and analyze
+print("📊 Project Analytics")
+print("-" * 40)
+
+# Active projects
+active_projects = Project.objects().filter(
+    Checkbox("is_active").equals(True)
+).all()
+print(f"Active projects: {len(active_projects)}")
+
+# High priority tasks
+high_priority_tasks = Task.objects().filter(
+    Select("priority").equals(Priority.HIGH.value)
+).all()
+print(f"High priority tasks: {len(high_priority_tasks)}")
+
+# Tasks due this month
+import datetime
+current_month = datetime.datetime.now().strftime("%Y-%m")
+due_this_month = Task.objects().filter(
+    Date("due_date").on_or_after(f"{current_month}-01") &
+    Date("due_date").before(f"{current_month}-31")
+).all()
+print(f"Tasks due this month: {len(due_this_month)}")
+
+# Blocked tasks
+blocked_tasks = Task.objects().filter(
+    Checkbox("is_blocked").equals(True)
+).all()
+print(f"Blocked tasks: {len(blocked_tasks)}")
+```
+
+### Example 2: Customer Relationship Management (CRM)
+
+```python
+from enum import Enum
+from viemind_notion_orm import *
+
+class CustomerStatus(Enum):
+    LEAD = "Lead"
+    PROSPECT = "Prospect"
+    CUSTOMER = "Customer"
+    INACTIVE = "Inactive"
+
+class DealStage(Enum):
+    QUALIFICATION = "Qualification"
+    PROPOSAL = "Proposal"
+    NEGOTIATION = "Negotiation"
+    CLOSED_WON = "Closed Won"
+    CLOSED_LOST = "Closed Lost"
+
+class Customer(NotionModel):
+    company_name = TitleField()
+    contact_email = EmailField()
+    website = URLField()
+    phone = PhoneField()
+    status = StatusField(CustomerStatus)
+    industry = SelectField(["Technology", "Healthcare", "Finance", "Education", "Retail"])
+    annual_revenue = NumberField(number_format="dollar")
+    employee_count = NumberField()
+    customer_id = UniqueIDField(prefix="CUST")
+    is_active = BooleanField()
+
+class Deal(NotionModel):
+    deal_name = TitleField()
+    customer = RelationField(Customer)
+    stage = StatusField(DealStage)
+    amount = NumberField(number_format="dollar")
+    probability = NumberField()  # Percentage
+    close_date = DateField()
+    deal_id = UniqueIDField(prefix="DEAL")
+    notes = TextField()
+
+# CRM Analytics
+def crm_analytics():
+    # Sales pipeline
+    pipeline_value = 0
+    deals_by_stage = {}
+    
+    all_deals = Deal.objects().all()
+    
+    for deal in all_deals:
+        stage = deal.stage
+        amount = deal.amount if deal.amount else 0
+        
+        if stage not in deals_by_stage:
+            deals_by_stage[stage] = {"count": 0, "value": 0}
+        
+        deals_by_stage[stage]["count"] += 1
+        deals_by_stage[stage]["value"] += amount
+        
+        # Add to pipeline if not closed
+        if stage not in ["Closed Won", "Closed Lost"]:
+            pipeline_value += amount
+    
+    print("💰 Sales Pipeline Analytics")
+    print("-" * 40)
+    print(f"Total pipeline value: ${pipeline_value:,.2f}")
+    
+    for stage, data in deals_by_stage.items():
+        print(f"{stage}: {data['count']} deals, ${data['value']:,.2f}")
+    
+    # Customer analysis
+    customers_by_status = {}
+    total_revenue = 0
+    
+    customers = Customer.objects().all()
+    
+    for customer in customers:
+        status = customer.status
+        revenue = customer.annual_revenue if customer.annual_revenue else 0
+        
+        if status not in customers_by_status:
+            customers_by_status[status] = 0
+        customers_by_status[status] += 1
+        
+        if status == "Customer":
+            total_revenue += revenue
+    
+    print("\n👥 Customer Analytics")
+    print("-" * 40)
+    print(f"Total customer revenue: ${total_revenue:,.2f}")
+    
+    for status, count in customers_by_status.items():
+        print(f"{status}: {count} companies")
+```
+
+### Example 3: Inventory Management
+
+```python
+from enum import Enum
+from viemind_notion_orm import *
+
+class ProductCategory(Enum):
+    ELECTRONICS = "Electronics"
+    CLOTHING = "Clothing"
+    BOOKS = "Books"
+    HOME = "Home & Garden"
+    SPORTS = "Sports"
+
+class StockStatus(Enum):
+    IN_STOCK = "In Stock"
+    LOW_STOCK = "Low Stock"
+    OUT_OF_STOCK = "Out of Stock"
+    DISCONTINUED = "Discontinued"
+
+class Product(NotionModel):
+    name = TitleField()
+    description = TextField()
+    sku = UniqueIDField(prefix="SKU")
+    category = SelectField(ProductCategory)
+    price = NumberField(number_format="dollar")
+    cost = NumberField(number_format="dollar")
+    quantity_in_stock = NumberField()
+    reorder_level = NumberField()
+    supplier_email = EmailField()
+    status = StatusField(StockStatus)
+    is_active = BooleanField()
+
+class StockMovement(NotionModel):
+    movement_id = UniqueIDField(prefix="MOV")
+    product = RelationField(Product)
+    movement_type = SelectField(["Purchase", "Sale", "Adjustment", "Return"])
+    quantity = NumberField()
+    date = DateField()
+    notes = TextField()
+
+# Inventory analytics
+def inventory_analytics():
+    print("📦 Inventory Analytics")
+    print("-" * 40)
+    
+    # Low stock alerts
+    low_stock_products = Product.objects().filter(
+        Select("status").equals(StockStatus.LOW_STOCK.value) |
+        Select("status").equals(StockStatus.OUT_OF_STOCK.value)
+    ).all()
+    
+    print(f"🚨 Products needing attention: {len(low_stock_products)}")
+    
+    # Inventory value
+    all_products = Product.objects().all()
+    total_inventory_value = 0
+    total_products = len(all_products)
+    
+    for product in all_products:
+        if product.quantity_in_stock and product.cost:
+            total_inventory_value += product.quantity_in_stock * product.cost
+    
+    print(f"💰 Total inventory value: ${total_inventory_value:,.2f}")
+    print(f"📊 Total products: {total_products}")
+    
+    # Category breakdown
+    category_counts = {}
+    for product in all_products:
+        category = product.category
+        if category not in category_counts:
+            category_counts[category] = 0
+        category_counts[category] += 1
+    
+    print("\n📋 Products by category:")
+    for category, count in category_counts.items():
+        print(f"  {category}: {count}")
+```
+
+---
+
+## Best Practices
+
+### 1. Model Design
+
+```python
+# ✅ Good: Clear, descriptive names
+class CustomerOrder(NotionModel):
+    order_number = TitleField()
+    customer_email = EmailField()
+    order_date = DateField()
+    status = StatusField(OrderStatus)
+
+# ❌ Avoid: Vague names
+class Data(NotionModel):
+    name = TitleField()
+    value = TextField()
+```
+
+### 2. Enum Usage
+
+```python
+# ✅ Good: Use enums for consistency
+class OrderStatus(Enum):
+    PENDING = "Pending"
+    PROCESSING = "Processing"
+    SHIPPED = "Shipped"
+    DELIVERED = "Delivered"
+
+class Order(NotionModel):
+    status = StatusField(OrderStatus)
+
+# ❌ Avoid: Hard-coded strings
+class Order(NotionModel):
+    status = SelectField(["pending", "processing", "shipped"])  # Inconsistent casing
+```
+
+### 3. Error Handling
+
+```python
+from viemind_notion_orm.exceptions import NotionORMError, DatabaseExistsError
+
+try:
+    # Create database
+    db = Project.create_table(
+        client=client,
+        parent_page_id=PARENT_PAGE_ID,
+        if_exists='error'
+    )
+except DatabaseExistsError:
+    print("Database already exists, using existing one")
+    db = Project.create_table(
+        client=client,
+        parent_page_id=PARENT_PAGE_ID,
+        if_exists='return_existing'
+    )
+except NotionORMError as e:
+    print(f"Notion ORM error: {e}")
+except Exception as e:
+    print(f"Unexpected error: {e}")
+```
+
+### 4. Query Optimization
+
+```python
+# ✅ Good: Use specific filters
+active_high_priority = Project.objects().filter(
+    Checkbox("is_active").equals(True) &
+    Select("priority").equals("High")
+).limit(10).all()
+
+# ✅ Good: Chain operations efficiently
+query = (Project.objects()
+         .filter(is_active=True)
+         .order_by('-priority')
+         .limit(20))
+
+results = query.all()  # Execute once
+
+# ❌ Avoid: Multiple separate queries
+all_projects = Project.objects().all()  # Loads everything
+filtered = [p for p in all_projects if p.is_active]  # Filter in Python
+```
+
+### 5. Relation Handling
+
+```python
+# ✅ Good: Create parent tables first
+Author.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+Book.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+
+# ✅ Good: Use meaningful relation names
+class Task(NotionModel):
+    title = TitleField()
+    assigned_project = RelationField(Project)  # Clear relation name
+    
+# ❌ Avoid: Creating child tables before parents
+Book.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+Author.create_table(client=client, parent_page_id=PARENT_PAGE_ID)  # May fail
+```
+
+### 6. Data Validation
+
+```python
+# ✅ Good: Validate data before saving
+def create_project(name, budget, start_date):
+    if not name or len(name.strip()) == 0:
+        raise ValueError("Project name cannot be empty")
+    
+    if budget < 0:
+        raise ValueError("Budget cannot be negative")
+    
+    try:
+        from datetime import datetime
+        datetime.strptime(start_date, '%Y-%m-%d')
+    except ValueError:
+        raise ValueError("Invalid date format. Use YYYY-MM-DD")
+    
+    project = Project(
+        name=name.strip(),
+        budget=budget,
+        start_date=start_date,
+        is_active=True
+    )
+    project.save()
+    return project
+```
+
+---
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### 1. Authentication Errors
+
+**Problem**: `notion_client.errors.APIResponseError: Unauthorized`
+
+**Solutions**:
+- Verify your integration token is correct
+- Ensure the integration has access to the parent page
+- Check that the token hasn't expired
+
+```python
+# Test connection
+try:
+    client = NotionClient(auth=AUTH_TOKEN)
+    # Try a simple operation
+    databases = client.query(database_id="test_id")
+    print("✅ Connection successful")
+except Exception as e:
+    print(f"❌ Connection failed: {e}")
+```
+
+#### 2. Page/Database Not Found
+
+**Problem**: Database or page ID not found
+
+**Solutions**:
+- Verify the parent page ID is correct
+- Ensure the integration has access to the page
+- Check if the database was created successfully
+
+```python
+# Verify page access
+try:
+    response = client.client.pages.retrieve(page_id=PARENT_PAGE_ID)
+    print(f"✅ Page accessible: {response['properties']}")
+except Exception as e:
+    print(f"❌ Cannot access page: {e}")
+```
+
+#### 3. Schema Validation Errors
+
+**Problem**: `SchemaValidationError: Model must have exactly one TitleField`
+
+**Solutions**:
+- Ensure every model has exactly one `TitleField`
+- Check that field types match Notion's capabilities
+- Verify enum values are strings
+
+```python
+# ✅ Correct model definition
+class MyModel(NotionModel):
+    title = TitleField()  # Required
+    description = TextField()
+
+# ❌ Incorrect - no title field
+class BadModel(NotionModel):
+    description = TextField()
+
+# ❌ Incorrect - multiple title fields
+class BadModel2(NotionModel):
+    title1 = TitleField()
+    title2 = TitleField()
+```
+
+#### 4. Relation Issues
+
+**Problem**: Relations not working correctly
+
+**Solutions**:
+- Create parent tables before child tables
+- Ensure relation database IDs are correct
+- Check that both databases exist
+
+```python
+# Debug relation creation
+try:
+    # Create parent first
+    parent_db = ParentModel.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+    print(f"Parent DB ID: {parent_db['id']}")
+    
+    # Then create child
+    child_db = ChildModel.create_table(client=client, parent_page_id=PARENT_PAGE_ID)
+    print(f"Child DB ID: {child_db['id']}")
+    
+except Exception as e:
+    print(f"Relation creation failed: {e}")
+```
+
+#### 5. Query Performance Issues
+
+**Problem**: Slow or failing queries
+
+**Solutions**:
+- Use specific filters instead of loading all data
+- Limit result sets with `.limit()`
+- Check for rate limiting
+
+```python
+# ✅ Optimized query
+specific_results = MyModel.objects().filter(
+    Checkbox("is_active").equals(True)
+).limit(100).all()
+
+# ❌ Slow query
+all_data = MyModel.objects().all()  # Loads everything
+filtered = [item for item in all_data if item.is_active]
+```
+
+### Debug Mode
+
+```python
+# Enable debug logging
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Test individual components
+def debug_database_creation():
+    try:
+        # Test schema generation
+        schema = MyModel.get_schema()
+        print(f"Generated schema: {schema}")
+        
+        # Test database creation
+        db = client.create_database(
+            parent_page_id=PARENT_PAGE_ID,
+            db_title="Debug Test",
+            schema=schema
+        )
+        print(f"Database created: {db['id']}")
+        
+    except Exception as e:
+        print(f"Debug failed: {e}")
+        import traceback
+        traceback.print_exc()
+```
+
+---
+
+## API Reference
+
+### Core Classes
+
+#### `NotionClient`
+
+Main client for database operations.
+
+```python
+client = NotionClient(auth: str)
+
+# Methods
+client.create_database(parent_page_id, db_title, schema, if_exists='error')
+client.query(database_id, filters=None, sorts=None, page_size=100)
+client.join(left_database_id, right_database_id, on_relation, left_filters=None, right_filters=None)
+client.create_page_in_database(database_id, properties)
+client.update_page_properties(page_id, properties)
+client.archive_page(page_id)
+```
+
+#### `NotionModel`
+
+Base class for ORM models.
+
+```python
+class MyModel(NotionModel):
+    # Field definitions
+    
+# Class methods
+MyModel.create_table(client, parent_page_id, table_name=None, if_exists='error')
+MyModel.get_schema()
+MyModel.objects()
+
+# Instance methods
+instance.save()
+instance.delete()
+```
+
+#### `QueryManager`
+
+Handles database queries.
+
+```python
+# Access through Model.objects()
+query_manager = MyModel.objects()
+
+# Methods
+query_manager.all()
+query_manager.filter(filter_obj=None, **kwargs)
+query_manager.order_by(*field_names)
+query_manager.limit(count)
+query_manager.first()
+query_manager.count()
+query_manager.exists()
+query_manager.create(**kwargs)
+query_manager.get_or_create(defaults=None, **kwargs)
+query_manager.update(**kwargs)
+query_manager.delete()
+```
+
+### Field Types
+
+```python
+# Basic fields
+TitleField()                    # Required for every model
+TextField()                     # Rich text
+NumberField(number_format=None) # Numbers with optional formatting
+BooleanField()                  # Checkbox
+DateField()                     # Date and datetime
+
+# Contact fields
+EmailField()                    # Email validation
+URLField()                      # URL validation
+PhoneField()                    # Phone number
+
+# Advanced fields
+SelectField(choices)            # Single choice dropdown
+MultiSelectField(choices)       # Multiple choice
+StatusField(choices)            # Kanban-style status
+UniqueIDField(prefix=None)      # Auto-incrementing IDs
+RelationField(to, two_way_property=None)  # Database relations
+PeopleField()                   # User references
+FilesField()                    # File attachments
+```
+
+### Filter Classes
+
+```python
+from viemind_notion_orm.filters import *
+
+# Text filters
+Title("field_name").contains("value")
+Text("field_name").equals("value")
+Text("field_name").starts_with("prefix")
+
+# Number filters
+Number("field_name").equals(100)
+Number("field_name").greater_than(50)
+Number("field_name").less_than(200)
+
+# Boolean filters
+Checkbox("field_name").equals(True)
+
+# Choice filters
+Select("field_name").equals("option")
+MultiSelect("field_name").contains("option")
+Status("field_name").equals("status")
+
+# Date filters
+Date("field_name").equals("2024-01-15")
+Date("field_name").before("2024-12-31")
+Date("field_name").past_week()
+
+# Logical combinations
+filter1 & filter2  # AND
+filter1 | filter2  # OR
+```
+
+### Enums and Types
+
+```python
+from viemind_notion_orm import NotionPropertyType
+
+# Property types
+NotionPropertyType.TITLE
+NotionPropertyType.TEXT
+NotionPropertyType.NUMBER
+NotionPropertyType.BOOLEAN
+NotionPropertyType.DATE
+NotionPropertyType.SELECT
+NotionPropertyType.MULTI_SELECT
+NotionPropertyType.STATUS
+NotionPropertyType.URL
+NotionPropertyType.EMAIL
+NotionPropertyType.PHONE
+NotionPropertyType.PEOPLE
+NotionPropertyType.FILES
+NotionPropertyType.RELATION
+NotionPropertyType.UNIQUE_ID
+
+# Helper classes
+SelectOption(name, color=None)
+StatusOption(name, color=None)
+PropertyDefinition(type, options=None, relation_database_id=None, ...)
+```
+
+### Exception Classes
+
+```python
+from viemind_notion_orm.exceptions import *
+
+NotionORMError          # Base exception
+DatabaseExistsError     # Database already exists
+PropertyNotFoundError   # Property not found in schema
+InvalidPropertyTypeError # Invalid property type
+SchemaValidationError   # Schema validation failed
+```
+
+---
+
+## Conclusion
+
+The Notion ORM library provides a powerful and flexible way to work with Notion databases in Python. Whether you prefer the low-level client API for direct control or the high-level ORM interface for clean, object-oriented code, the library has you covered.
+
+Key benefits:
+- **Type safety** with enum support
+- **Clean syntax** with dot notation
+- **Powerful querying** with filter chaining
+- **Relation support** for complex data models
+- **Auto-incrementing IDs** with custom prefixes
+- **Comprehensive field types** matching Notion's capabilities
+
+Start with the quick start example and gradually explore the advanced features as your needs grow. The ORM interface makes it easy to build complex applications while maintaining clean, readable code.
+
+For additional support, check the troubleshooting section or refer to the comprehensive API reference above.
+
+Happy coding with Notion ORM! 🚀 

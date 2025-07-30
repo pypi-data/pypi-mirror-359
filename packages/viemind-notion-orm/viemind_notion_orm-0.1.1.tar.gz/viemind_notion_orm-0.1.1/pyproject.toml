@@ -1,0 +1,17 @@
+[project]
+name = "viemind_notion_orm"
+version = "0.1.1"
+description = "Viebo Notion ORM"
+authors = [
+    {name = "thanhduy",email = "thanhduy@viemind.ai"}
+]
+readme = "TUTORIAL.md"
+requires-python = ">=3.10,<4.0.0"
+dependencies = [
+    "notion-client (>=2.4.0,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
