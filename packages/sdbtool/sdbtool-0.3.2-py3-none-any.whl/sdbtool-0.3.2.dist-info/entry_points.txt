@@ -1,0 +1,2 @@
+[console_scripts]
+sdbtool = sdbtool.cli:cli
