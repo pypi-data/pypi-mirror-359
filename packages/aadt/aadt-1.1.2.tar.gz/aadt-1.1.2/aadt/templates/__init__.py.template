@@ -1,0 +1,12 @@
+"""
+{display_name} - Anki Add-on
+
+{author}
+"""
+
+from . import main
+
+# Entry point for Anki
+def init() -> None:
+    """Initialize the add-on."""
+    main.setup_addon()
