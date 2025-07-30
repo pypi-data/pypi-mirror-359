@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: cieloApi3Mon
+Version: 0.1.8
+Summary: SDK API-3.0 Python Cielo Atualizada
+Home-page: https://github.com/Monetizze/API-3.0-Python
+Author: Monetizze
+Author-email: suporte@monetizze.com.br
+License: MIT
+Keywords: api3.0 cielo python sdk ecommerce
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: requests
+Requires-Dist: future
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
