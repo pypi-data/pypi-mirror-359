@@ -1,0 +1,10 @@
+jax_ik/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jax_ik/hand_specification.py,sha256=za01OOS6IRK5bcDQfYX93SKxEeX3V6JLBrqtfF3iUD0,7509
+jax_ik/helper.py,sha256=yHig-W9S577hrRnnK1KjQ7BussBf5L7ucR6W8DJTvAk,27251
+jax_ik/ik.py,sha256=v2XK0RZwYMXdgL6295QkTAvKwkncqGF1VJORizyhDqE,33195
+jax_ik/objectives.py,sha256=MjUmMthhIInM8gq3e2XtT4ih2UwwpDWEDTGFcZNYyeo,25668
+jax_ik/smplx_statics.py,sha256=vRxQfyqsCwqCrZcVGpEw6REF6SxYunAwJsb7M8YF-0g,11233
+jax_ik-0.1.3.dist-info/METADATA,sha256=jp3_I5MZbK4M34PT-S7MfGT66Hg3RDiwwT9VVhocUAo,4145
+jax_ik-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jax_ik-0.1.3.dist-info/top_level.txt,sha256=A3Kh5tlodo8y3jdtxqE3dazH4WUOM4pHyK19zbgfvx0,7
+jax_ik-0.1.3.dist-info/RECORD,,
