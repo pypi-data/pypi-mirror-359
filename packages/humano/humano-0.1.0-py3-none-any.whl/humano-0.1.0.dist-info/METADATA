@@ -1,0 +1,91 @@
+Metadata-Version: 2.4
+Name: humano
+Version: 0.1.0
+Summary: A Python package for humanizing AI-generated or robotic text using techniques like DIPPER, HMGC, and ADAT.
+Author-email: Khushiyant <khushiyant2002@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/khushiyant/humano
+Project-URL: Repository, https://github.com/khushiyant/humano
+Project-URL: Documentation, https://github.com/khushiyant/humano#readme
+Project-URL: Bug Tracker, https://github.com/khushiyant/humano/issues
+Keywords: ai,text,humanization,nlp,detection,bypass
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: nltk>=3.8
+Requires-Dist: openai>=0.27.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: flake8>=5.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+Dynamic: license-file
+
+# Humano - AI Text Humanization
+
+A Python package for humanizing AI-generated text using research-proven techniques.
+
+## Features
+
+- **Research-Based**: Implements DIPPER, HMGC, and ADAT techniques
+- **Multiple Strength Levels**: Low, medium, or high humanization intensity
+- **Easy Integration**: Simple API and command-line interface
+
+## Installation
+
+```bash
+pip install humano
+```
+
+## Quick Start
+
+### Python API
+
+```python
+import humano
+
+result = humano.humanize("Your AI-generated text here", strength="medium")
+print(result['humanized_content'])
+```
+
+### Command Line
+
+```bash
+# Direct text input
+humano "Your AI-generated text here"
+
+# From file
+humano input.txt -o output.txt --strength high
+```
+
+## API Reference
+
+### `humanize(content, strength="medium")`
+
+**Parameters:**
+- `content` (str): Text to humanize (minimum 50 characters)
+- `strength` (str): Humanization level ("low", "medium", "high")
+
+**Returns:**
+```python
+{
+    "success": bool,
+    "humanized_content": str,  # If successful
+    "error": str,             # If failed
+    "message": str            # Status message
+}
+```
+
+## License
+
+MIT License - see LICENSE file for details.
