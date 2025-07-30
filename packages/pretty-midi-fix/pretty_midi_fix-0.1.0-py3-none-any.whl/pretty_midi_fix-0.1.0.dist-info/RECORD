@@ -1,0 +1,10 @@
+pretty_midi_fix/__init__.py,sha256=xSd90mwpvtPfugTnvNxqpSAKB__z4weZYSQkcL9A52w,128
+pretty_midi_fix/constants.py,sha256=xVl2quaIZZosoSe88dUGNn-ZEK6oyUQkAm051hr7808,4378
+pretty_midi_fix/containers.py,sha256=1_IX0S6t8F6z7yO2X4FkwrP9nsAMayM6nTsW6qpVPvo,6010
+pretty_midi_fix/instrument.py,sha256=tjot-zNhObvI-5U99m3iIpM7KBHnxC2ANXyIOrpcP5I,17504
+pretty_midi_fix/pretty_midi.py,sha256=L1QJXwCYah3cclse6ZSHvQrHNMD0xqEf-dguAzymM5A,68828
+pretty_midi_fix/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pretty_midi_fix/utilities.py,sha256=5S3StVyPXaJSek66GhcVLU2p6JgWMeCKuFMgZ9hQJWw,17691
+pretty_midi_fix-0.1.0.dist-info/METADATA,sha256=29I1YvEk7regH7wECQDhjCDA5iLPWR7kX1nTcn1jAt0,272
+pretty_midi_fix-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pretty_midi_fix-0.1.0.dist-info/RECORD,,
