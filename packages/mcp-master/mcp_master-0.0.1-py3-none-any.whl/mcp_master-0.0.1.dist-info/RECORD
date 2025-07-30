@@ -1,0 +1,16 @@
+mcp_master/__init__.py,sha256=djzHme26QZNeB4vQgFx-ZGMnDhy5hYYZIe10OQ9s7fA,361
+mcp_master/config.py,sha256=27B9iwDZZAeU-7_Q3vy4tO5SQqzMURbdpiKbqmhj5Fo,364
+mcp_master/demo-servers/medrxiv_server.py,sha256=WjtJU8skMt8J2eZyiyLElIwQBGVAL34WR0m9nDtAukE,5439
+mcp_master/demo-servers/medrxiv_web_search.py,sha256=PtQ0GjLBLamQwKJDJ-uO2inmwaZByEOO9g1yzVvSdtY,6718
+mcp_master/demo-servers/test_server_1.py,sha256=IIMSsv2k9gNa9Oim9fCrhgU47cpt9T0Rq1cBgf5Btg0,1867
+mcp_master/demo-servers/test_server_2.py,sha256=3HYBVSWu19GZn-ImyYqwq1jf19K28jHTO121hb_P0kQ,1869
+mcp_master/mcp/master_server.py,sha256=8GaR2eq9tO_3QXWIT9dQqWz5B_cYMlDzbKh4pFBjSp4,3657
+mcp_master/mcp/master_server_client.py,sha256=jJfZLH36GYkD40va-ZZRM7roAuT_mZ_boj-luGzdGYg,10855
+mcp_master/orchestration/agent_protocol.py,sha256=OQ5ZJTUl4E3FBJIxFvCLZV5hjkqof59rW8ptsM6UIIs,248
+mcp_master/orchestration/agents.py,sha256=z_yZBNYhMAzreSSiO7YsqNEBMRfxqNL7GVSIRN9X-vM,4098
+mcp_master/orchestration/orchestration.py,sha256=oYlCwRVnu7Xs7U2RYPHXoE3lAUCca8Owi8eI2vBnUpI,1245
+mcp_master/orchestration/tools.py,sha256=bCVGP2ajXPNIvhiim7PJTXnUpjuyXxMO2cpUjxhMsX0,1575
+mcp_master-0.0.1.dist-info/METADATA,sha256=eAdnNC51iJSLIBQUVx_8hwK3CO_9Hp8yKQyKz0ZSFwU,773
+mcp_master-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_master-0.0.1.dist-info/licenses/LICENSE,sha256=M5PbkwJewmA_aGW0spvxSZRHd3Uc6y0IItQedG-0l04,1067
+mcp_master-0.0.1.dist-info/RECORD,,
