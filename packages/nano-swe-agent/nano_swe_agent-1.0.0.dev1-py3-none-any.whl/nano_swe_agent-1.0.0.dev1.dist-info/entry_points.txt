@@ -1,0 +1,4 @@
+[console_scripts]
+nano-swe-agent = nanoswea.__main__:main
+nswea = nanoswea.run_local:app
+nswea-gh = nanoswea.run_github_issue:app
