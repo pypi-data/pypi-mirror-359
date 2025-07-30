@@ -1,0 +1,23 @@
+browser core/__init__.py,sha256=jOWuPkWxv_WgVeARmxlfzFroih8qJXsjNVyMvdZDrxg,1399
+browser core/browser.py,sha256=YzsCnxOISKEg0Fi5j3a-Z5SNBF0shm5wWaQjgNWHTQA,9112
+browser core/cli.py,sha256=2eniXZz0shtvtIaNK6GhgA3DS4O-MR7f1ZbKjO3lOOk,3511
+browser core/exceptions.py,sha256=RVgVyYzoOX1VwK5SvGG6GzTvLJVuThSgqE54a9rFyNY,3142
+browser core/logging.py,sha256=zafzAX4lAcTGxWMIXBYZDt86Z2Rdzup8jAayIVugOjY,5086
+browser core/profile.py,sha256=xS-vsvvwxqe8f0ZL_moAaNRVIonCuoOvojlNP3muyWQ,5816
+browser core/session.py,sha256=L2XC3jaFUof_QCnvu37rlnl7MT0wYygGTujILLquhqw,6683
+browser core/settings.py,sha256=H_U4Dc9BZl03dHQ9tH0SFyLiKO3C_rIkC7A6Cxg_tus,4336
+browser core/types.py,sha256=efJzOuHazI-xynNi3xzsZBUttK877OPStJAbmcEzX_8,6790
+browser core/utils.py,sha256=oPGEO5P1qYnRfBD9U6TGBbQxt3dgVHd4R6RJHPztTUo,4886
+browser core/drivers/__init__.py,sha256=diXvsdFdkCT1qGSYCbLVJdsiX62oj0VWI_adjTQ4Xow,64
+browser core/drivers/manager.py,sha256=HGJRQ1jWeR7Gty-p0d6MmuimOzxeRalGijzIP-Sbrhg,6855
+browser core/selectors/__init__.py,sha256=qFKcLY2jnp6nZ2xC2gJJAhWDBXacpNHJrzKocgP5YJE,161
+browser core/selectors/manager.py,sha256=sjHPpPZ4gXdyqs-XwHfGgCS7_sP7xsTNgmnzliOB76A,6974
+browser core/windows/__init__.py,sha256=3wEif3SNqfUUrQODWzw8OJaGboIX-c-yCr5w4EMfFmI,63
+browser core/windows/manager.py,sha256=lXWTGR-DRKZTsXd0uXEqiY2QAsYTsmCwDM0BaFpoFiY,5800
+browser core/windows/tab.py,sha256=xcSG_xr32PjjS7iZEFVk3vAFa3GGVI7NvlgA9ayJ2X4,1167
+browser_core-0.2.0.dist-info/licenses/LICENSE,sha256=2rM7y2I7OqJZ8dIvFuJFRuuT0iXZS0UCp0Cy9vSq4CA,1064
+browser_core-0.2.0.dist-info/METADATA,sha256=GvhQhyRfC81MCu38bRTPScG5auQ-EGWPUk9ft1N5gWQ,6570
+browser_core-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+browser_core-0.2.0.dist-info/entry_points.txt,sha256=4dWhC-OBrsFAu08Qy0pGRzYGqpAGHGxmL5cQVoTSA3c,54
+browser_core-0.2.0.dist-info/top_level.txt,sha256=Sf9QUdelDjaX33GMjcZ5sUtl1sr26JKFTsc2Mc84MWo,13
+browser_core-0.2.0.dist-info/RECORD,,
