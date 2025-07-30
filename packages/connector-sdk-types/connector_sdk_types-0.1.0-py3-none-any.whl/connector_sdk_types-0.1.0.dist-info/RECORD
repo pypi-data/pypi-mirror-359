@@ -1,0 +1,9 @@
+connector_sdk_types/__init__.py,sha256=LZYadujntWvcJVZI52P_0Jp1htRHqful5sa2ok3RZao,788
+connector_sdk_types/types.py,sha256=BJdOHryYpxKqlLNbpsVKw0SRugFaXwE1iwMCiajmmhw,912
+connector_sdk_types/utils.py,sha256=qBTDpdqFUtpZgyPMtzzfcJl_hnVJfm0l6BT5FJtDLzQ,1878
+tests/__init__.py,sha256=geqqrf_JT6AYWfX_mqMAPma-9PK49bjT55oHQwef3lE,40
+tests/test_basic.py,sha256=2YHicRhjcxBwbEpmFlwSKr6Kst1r6bGdKf1mQfJjlhc,801
+connector_sdk_types-0.1.0.dist-info/METADATA,sha256=4LFfnYoBZh7K9cihKj3onAA7fMVV7cAjjSlVyYA6GFo,2907
+connector_sdk_types-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+connector_sdk_types-0.1.0.dist-info/top_level.txt,sha256=_XBmQhsr7Hi3VYjP98s2LyhK26UFwwgLoyOJhiB2new,26
+connector_sdk_types-0.1.0.dist-info/RECORD,,
