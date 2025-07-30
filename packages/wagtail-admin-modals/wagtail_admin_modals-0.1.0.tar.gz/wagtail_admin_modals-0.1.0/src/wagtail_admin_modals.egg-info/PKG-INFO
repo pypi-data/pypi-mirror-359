@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: wagtail-admin-modals
+Version: 0.1.0
+Summary: Supports custom modal workflows for Wagtail admin
+Author-email: "Nicholas Roy / FormuLearn B.V." <nicholas.roy@formulearn.org>
+License-Expression: GPL-3.0-only
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=5.1
+Requires-Dist: wagtail>=6.2
+Dynamic: license-file
+
+# wagtail-admin-modals
+Intended to be an open source library that makes it easier to implement custom modal workflows within the wagtail admin. 
+
+## Example Site Demo
+
+login details:
+
+username: modals-example
+
+password: modals-example
