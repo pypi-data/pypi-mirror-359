@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+bocl/OCLWrapper.py
+bocl/__init__.py
+bocl/evaluator.py
+bocl.egg-info/PKG-INFO
+bocl.egg-info/SOURCES.txt
+bocl.egg-info/dependency_links.txt
+bocl.egg-info/requires.txt
+bocl.egg-info/top_level.txt
+models/__init__.py
+models/library_object.py
+models/researcher_object.py
+models/team_player_object.py
