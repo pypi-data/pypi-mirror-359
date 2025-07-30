@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: demo-cli-nahuel
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Nahuel Defossé <nahuel.deofsse@ibm.com>
+Requires-Python: >=3.13
