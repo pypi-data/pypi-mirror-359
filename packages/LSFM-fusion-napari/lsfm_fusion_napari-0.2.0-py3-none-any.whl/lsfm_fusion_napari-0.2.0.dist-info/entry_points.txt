@@ -1,0 +1,2 @@
+[napari.manifest]
+lsfm_fusion_napari = lsfm_fusion_napari:napari.yaml
