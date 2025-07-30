@@ -1,0 +1,2 @@
+[console_scripts]
+km-mcp-server = km_mcp.server:main
