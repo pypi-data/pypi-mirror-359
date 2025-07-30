@@ -1,0 +1,15 @@
+cloudpickle
+omegaconf
+iopath
+hydra-core
+scipy
+pydantic
+lzip
+colorlog
+rich
+thop
+
+[dev]
+pytest
+pytest-cov
+pytest-mock
