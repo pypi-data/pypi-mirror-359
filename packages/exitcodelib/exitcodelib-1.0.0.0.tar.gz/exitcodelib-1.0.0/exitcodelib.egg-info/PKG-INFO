@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: exitcodelib
+Version: 1.0.0
+Summary: Standardized exit code system with messages for Python programs
+Author: johny eldry
+Author-email: umyashinderu@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# exitcodelib: your new exit code standardization
+
+`exitcodelib` is a Python module for a new standardized exit code list.  
+It provides consistent, human-readable meanings for exit codes and tools to work with them safely in scripts or applications.
+
+For more information, view the table below:
+
+| Exit Code | Name                 | Description                                                                 |
+|-----------|----------------------|-----------------------------------------------------------------------------|
+| 0         | SUCCESS              | Program completed successfully.                                             |
+| 1         | UNHANDLED_ERROR      | An unhandled error caused the program to terminate.                         |
+| 5         | ABRUPT_TERMINATION   | Program ended without proper exit (e.g. killed, interrupted, panic).        |
+| 10        | UNHANDLEABLE_ERROR   | Error was caught by the program, but could not be resolved or recovered.    |
+
+---
+
+## Features
+
+- Human-readable labels for exit codes
+- Functions to retrieve messages or format exit output
+- Pythonic error handling (`ValueError`) for invalid codes
+- Easy integration into your CLI tools or scripts
+
+---
+
+## Installation
+
+```bash
+pip install exitcodelib
+```
+
+---
+
+## Usage
+
+```python
+import exitcodelib
+
+print(exitcodelib.format_exit_message(1))
+# Output: Exit code 1: Unhandled error
+
+# Catch invalid code
+try:
+    print(exitcodelib.message_for(99))
+except ValueError as e:
+    print("Invalid code:", e)
+```
+
+---
+
+## License
+
+MIT License — free for personal and commercial use.
+
+---
+
+## Contributing
+don't, this is just a small ai generated project which will probably never be updated again, I mean look at how tuilib turned out, garbage
