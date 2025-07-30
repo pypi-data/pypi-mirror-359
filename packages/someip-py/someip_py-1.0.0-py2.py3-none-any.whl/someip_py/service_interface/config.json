@@ -1,0 +1,3412 @@
+{
+    "V2x": {
+        "ADCU_HmiService": {
+            "service_id": "0x1001",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 14,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "SettingDrivingInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "SettingDrivingInfo",
+                        "request": "SettingDrivingInfo",
+                        "response": "SettingDrivingInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0012",
+                    "setter_id": "0x0001"
+                },
+                "SettingAEBInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "notification": "SettingAEBInfo",
+                        "request": "SettingAEBInfo",
+                        "response": "SettingAEBInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0013",
+                    "setter_id": "0x0002"
+                },
+                "SettingLKAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0003",
+                    "structures": {
+                        "notification": "SettingLKAInfo",
+                        "request": "SettingLKAInfo",
+                        "response": "SettingLKAInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0014",
+                    "setter_id": "0x0003"
+                },
+                "SettingFCTAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0004",
+                    "structures": {
+                        "notification": "SettingFCTAInfo",
+                        "request": "SettingFCTAInfo",
+                        "response": "SettingFCTAInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0015",
+                    "setter_id": "0x0004"
+                },
+                "SettingRCTAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0005",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0016",
+                    "setter_id": "0x0005"
+                },
+                "SettingDOWInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0006",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0017",
+                    "setter_id": "0x0006"
+                },
+                "SettingBSDInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0007",
+                    "structures": {
+                        "notification": "SettingBSDInfo",
+                        "request": "SettingBSDInfo",
+                        "response": "SettingBSDInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0018",
+                    "setter_id": "0x0007"
+                },
+                "SettingTSIInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0008",
+                    "structures": {
+                        "notification": "SettingTSIInfo",
+                        "request": "SettingTSIInfo",
+                        "response": "SettingTSIInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0019",
+                    "setter_id": "0x0008"
+                },
+                "SettingSRVInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0009",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001a",
+                    "setter_id": "0x0009"
+                },
+                "SettingEMAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000a",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001b",
+                    "setter_id": "0x000a"
+                },
+                "SettingTLAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000b",
+                    "structures": {
+                        "notification": "SettingTLAInfo",
+                        "request": "SettingTLAInfo",
+                        "response": "SettingTLAInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001c",
+                    "setter_id": "0x000b"
+                },
+                "SettingCMSRInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000c",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001d",
+                    "setter_id": "0x000c"
+                },
+                "SettingVoiceWarningInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000d",
+                    "structures": {
+                        "notification": "VoiceWarningOption",
+                        "request": "VoiceWarningOption",
+                        "response": "VoiceWarningOption"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001e",
+                    "setter_id": "0x000d"
+                },
+                "SettingAPAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000e",
+                    "structures": {
+                        "notification": "IdtSettingAPAInfo",
+                        "request": "IdtSettingAPAInfo",
+                        "response": "IdtSettingAPAInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x001f",
+                    "setter_id": "0x000e"
+                },
+                "SettingRPAInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x000f",
+                    "structures": {
+                        "notification": "SettingRPAInfo",
+                        "request": "SettingRPAInfo",
+                        "response": "SettingRPAInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0020",
+                    "setter_id": "0x000f"
+                },
+                "SettingLPInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0010",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0021",
+                    "setter_id": "0x0010"
+                },
+                "SelectedSlotIdInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0011",
+                    "structures": {
+                        "notification": "IdtSelectedSlotId",
+                        "request": "IdtSelectedSlotId",
+                        "response": "IdtSelectedSlotId"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0022",
+                    "setter_id": "0x0011"
+                },
+                "SpeedLimitTriggerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0023",
+                    "structures": {
+                        "request": "Trigger",
+                        "response": "IdtRet"
+                    }
+                },
+                "NavExitTriggerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0024",
+                    "structures": {
+                        "request": "Trigger",
+                        "response": "IdtRet"
+                    }
+                },
+                "NzpStateTriggerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0025",
+                    "structures": {
+                        "request": "Trigger",
+                        "response": "IdtRet"
+                    }
+                },
+                "CustomParkingInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0026",
+                    "structures": {
+                        "request": "CustomParking",
+                        "response": "IdtRet"
+                    }
+                },
+                "NavigationInfoInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0027",
+                    "structures": {
+                        "request": "NavigationInfo",
+                        "response": "IdtRet"
+                    }
+                },
+                "AlarmInfoInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0012",
+                    "structures": {
+                        "notification": "AlarmInfo",
+                        "request": "AlarmInfo",
+                        "response": "AlarmInfo"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0028"
+                },
+                "FaultListInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0013",
+                    "structures": {
+                        "notification": "FaultListInfo",
+                        "request": "FaultListInfo",
+                        "response": "FaultListInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0029"
+                },
+                "FeatureStateInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0014",
+                    "structures": {
+                        "notification": "FeatureState",
+                        "request": "FeatureState",
+                        "response": "FeatureState"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002a"
+                },
+                "HighDefinitionMapInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0015",
+                    "structures": {
+                        "notification": "HighDefinitionMap",
+                        "request": "HighDefinitionMap",
+                        "response": "HighDefinitionMap"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002b"
+                },
+                "PercepFusionObjsInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0016",
+                    "structures": {
+                        "notification": "PercepFusionObjs",
+                        "request": "PercepFusionObjs",
+                        "response": "PercepFusionObjs"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002c"
+                },
+                "PerceptionAPASlotsInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0017",
+                    "structures": {
+                        "notification": "PerceptionAPASlots",
+                        "request": "PerceptionAPASlots",
+                        "response": "PerceptionAPASlots"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002d"
+                },
+                "PercepTrafficLightsInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0018",
+                    "structures": {
+                        "notification": "PercepTrafficLights",
+                        "request": "PercepTrafficLights",
+                        "response": "PercepTrafficLights"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002e"
+                },
+                "PlanningTrajectoryInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0019",
+                    "structures": {
+                        "notification": "PlanningTrajectory",
+                        "request": "PlanningTrajectory",
+                        "response": "PlanningTrajectory"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x002f"
+                },
+                "RelativeLocalizationInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x001a",
+                    "structures": {
+                        "notification": "RelativeLocalization",
+                        "request": "RelativeLocalization",
+                        "response": "RelativeLocalization"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0030"
+                },
+                "AlignedSpeedSettingInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x003c",
+                    "structures": {
+                        "notification": "AlignedSpeedSelType",
+                        "request": "AlignedSpeedSelType",
+                        "response": "AlignedSpeedSelType"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0034",
+                    "setter_id": "0x0031"
+                },
+                "PebSwitchSettingInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x003d",
+                    "structures": {
+                        "notification": "PebSwitchType",
+                        "request": "PebSwitchType",
+                        "response": "PebSwitchType"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0036",
+                    "setter_id": "0x0033"
+                },
+                "OnlineCalibTriggerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0037",
+                    "structures": {
+                        "request": "IdtOnlineCalibTrigger",
+                        "response": "IdtRet"
+                    }
+                },
+                "LaneFunction": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x003e",
+                    "structures": {
+                        "notification": "LaneLines",
+                        "request": "LaneLines",
+                        "response": "LaneLines"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0039",
+                    "setter_id": "0x0038"
+                },
+                "AbsoluteLocalizationInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x003f",
+                    "structures": {
+                        "notification": "AbsoluteLocalization",
+                        "request": "AbsoluteLocalization",
+                        "response": "AbsoluteLocalization"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x003b",
+                    "setter_id": "0x003a"
+                },
+                "DHUInquireIssueLogInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0040",
+                    "structures": {
+                        "request": "IdtDHUInquireIssueLog",
+                        "response": "IdtRet"
+                    }
+                },
+                "SettingInitializationInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0041",
+                    "structures": {
+                        "request": "IdtSettingInitialization",
+                        "response": "IdtRet"
+                    }
+                },
+                "SettingSGWInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0040",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0043",
+                    "setter_id": "0x0042"
+                },
+                "SettingCheckInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0041",
+                    "structures": {
+                        "notification": "IdtSettingInfo",
+                        "request": "IdtSettingInfo",
+                        "response": "IdtSettingInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0044"
+                },
+                "SettingCheckReq": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0045",
+                    "structures": {
+                        "request": "IdtSettingCheck"
+                    }
+                },
+                "NavigationStsInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0046",
+                    "structures": {
+                        "request": "IdtNaviStsSeN",
+                        "response": "IdtRet"
+                    }
+                },
+                "EgoCarPositionCityInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0047",
+                    "structures": {
+                        "request": "ID32bit",
+                        "response": "IdtRet"
+                    }
+                },
+                "TLAMainActionInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0048",
+                    "structures": {
+                        "request": "IdtTLAMainAction",
+                        "response": "IdtRet"
+                    }
+                },
+                "ApaSlelectedSlotParkingmodeInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0042",
+                    "structures": {
+                        "notification": "ID32bit",
+                        "request": "ID32bit",
+                        "response": "ID32bit"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0050",
+                    "setter_id": "0x0049"
+                },
+                "CalibSensorGroupStateInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0043",
+                    "structures": {
+                        "notification": "CalibSensorGroupState",
+                        "request": "CalibSensorGroupState",
+                        "response": "CalibSensorGroupState"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0052",
+                    "setter_id": "0x0051"
+                },
+                "IntegAdpuConfigInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0044",
+                    "structures": {
+                        "notification": "IntegAdpuConfig",
+                        "request": "IntegAdpuConfig",
+                        "response": "IntegAdpuConfig"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0054",
+                    "setter_id": "0x0053"
+                },
+                "CalibStateAckInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0045",
+                    "structures": {
+                        "notification": "CalibStateAck",
+                        "request": "CalibStateAck",
+                        "response": "CalibStateAck"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0056",
+                    "setter_id": "0x0055"
+                },
+                "PathDirectionArrowInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0057",
+                    "structures": {
+                        "request": "IdtPathDirectionArrow",
+                        "response": "IdtRet"
+                    }
+                },
+                "LineInfoInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0058",
+                    "structures": {
+                        "request": "IdtLineInfo",
+                        "response": "IdtRet"
+                    }
+                },
+                "SDMapElectronicEyeInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0059",
+                    "structures": {
+                        "request": "IdtSDMapElectronicEye",
+                        "response": "IdtRet"
+                    }
+                },
+                "NavilntervalCameraDynamicInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0060",
+                    "structures": {
+                        "request": "IdtNavilntervalCameraDynamic",
+                        "response": "IdtRet"
+                    }
+                },
+                "TrafficLightStatusInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0061",
+                    "structures": {
+                        "request": "IdtTrafficLightStatus",
+                        "response": "IdtRet"
+                    }
+                },
+                "NaviGreenWaveCarSpeedInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0062",
+                    "structures": {
+                        "request": "IdtNaviGreenWaveCarSpeed",
+                        "response": "IdtRet"
+                    }
+                },
+                "AvoidJamAreaInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0063",
+                    "structures": {
+                        "request": "IdtAvoidJamArea",
+                        "response": "IdtRet"
+                    }
+                },
+                "GNSSMsgInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0046",
+                    "structures": {
+                        "notification": "IdtGNSSMsg",
+                        "request": "IdtGNSSMsg",
+                        "response": "IdtGNSSMsg"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0065",
+                    "setter_id": "0x0064"
+                },
+                "VoiceCommandsInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0066",
+                    "structures": {
+                        "request": "IdtVoiceCommands",
+                        "response": "IdtRet"
+                    }
+                },
+                "AvpEgoPositionInMapInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0047",
+                    "structures": {
+                        "notification": "IdtAvpEgoPositionInMap",
+                        "request": "IdtAvpEgoPositionInMap",
+                        "response": "IdtAvpEgoPositionInMap"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0069",
+                    "setter_id": "0x0068"
+                },
+                "AvpTfRelToMapInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0048",
+                    "structures": {
+                        "notification": "IdtAvpTfRelToMap",
+                        "request": "IdtAvpTfRelToMap",
+                        "response": "IdtAvpTfRelToMap"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0071",
+                    "setter_id": "0x0070"
+                },
+                "NavigationTargetInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0072",
+                    "structures": {
+                        "request": "IdtNavigationTarget",
+                        "response": "IdtRet"
+                    }
+                },
+                "ParkingInteractiveStatusInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0075",
+                    "structures": {
+                        "request": "IdtParkingInteractiveStatus",
+                        "response": "IdtRet"
+                    }
+                },
+                "SettingACPEInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0074",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0124",
+                    "setter_id": "0x0123"
+                },
+                "SDMapLinkRoadInfo": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0077",
+                    "structures": {
+                        "request": "IdtSDMapLinkRoad",
+                        "response": "IdtRet"
+                    }
+                },
+                "ParkingAPAInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0049",
+                    "structures": {
+                        "notification": "IdtParkingAPA",
+                        "request": "IdtParkingAPA",
+                        "response": "IdtParkingAPA"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0081",
+                    "setter_id": "0x0080"
+                },
+                "AVPMapButtonCmdInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0085",
+                    "structures": {
+                        "request": "MapButtonCmdType",
+                        "response": "IdtRet"
+                    }
+                },
+                "AVPMapManageCmdInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0087",
+                    "structures": {
+                        "request": "IdtAVPMapManageCmd",
+                        "response": "IdtRet"
+                    }
+                },
+                "ActionableAreaInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0050",
+                    "structures": {
+                        "notification": "IdtActionableArea",
+                        "request": "IdtActionableArea",
+                        "response": "IdtActionableArea"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0090",
+                    "setter_id": "0x0089"
+                },
+                "AVPMapInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0056",
+                    "structures": {
+                        "notification": "IdtMapForAVP",
+                        "request": "IdtMapForAVP",
+                        "response": "IdtMapForAVP"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0067"
+                },
+                "NavigationLineInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0057",
+                    "structures": {
+                        "notification": "IdtNavigationLine",
+                        "request": "IdtNavigationLine",
+                        "response": "IdtNavigationLine"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0073"
+                },
+                "ParkingInteractiveInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0058",
+                    "structures": {
+                        "notification": "IdtParkingInteractive",
+                        "request": "IdtParkingInteractive",
+                        "response": "IdtParkingInteractive"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0074"
+                },
+                "ApaParkingStatusInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0059",
+                    "structures": {
+                        "notification": "IdtApaParkingStatus",
+                        "request": "IdtApaParkingStatus",
+                        "response": "IdtApaParkingStatus"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0078"
+                },
+                "PDCWarningInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0060",
+                    "structures": {
+                        "notification": "IdtPDCWarningInfo",
+                        "request": "IdtPDCWarningInfo",
+                        "response": "IdtPDCWarningInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0079"
+                },
+                "AVPPopupInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0061",
+                    "structures": {
+                        "notification": "AVPPopupType",
+                        "request": "AVPPopupType",
+                        "response": "AVPPopupType"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0082"
+                },
+                "AVP3DMapInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0062",
+                    "structures": {
+                        "notification": "Idt3DMapForAVP",
+                        "request": "Idt3DMapForAVP",
+                        "response": "Idt3DMapForAVP"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0083"
+                },
+                "AVPCollectedDestinationCmdInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0063",
+                    "structures": {
+                        "notification": "IdtAVPCollectedDestinationCmd",
+                        "request": "IdtAVPCollectedDestinationCmd",
+                        "response": "IdtAVPCollectedDestinationCmd"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0084"
+                },
+                "AVPMapGenerateStatusInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0064",
+                    "structures": {
+                        "notification": "IdtAVPMapGenerateStatus",
+                        "request": "IdtAVPMapGenerateStatus",
+                        "response": "IdtAVPMapGenerateStatus"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0086"
+                },
+                "AVPMapListInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0065",
+                    "structures": {
+                        "notification": "IdtAVPMapListInfo",
+                        "request": "IdtAVPMapListInfo",
+                        "response": "IdtAVPMapListInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0088"
+                },
+                "ClearFaultInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0051",
+                    "structures": {
+                        "notification": "FaultClearState",
+                        "request": "FaultClearState",
+                        "response": "FaultClearState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0092",
+                    "setter_id": "0x0091"
+                },
+                "CommutingRoutesInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0052",
+                    "structures": {
+                        "notification": "IdtCommutingRoutesInfo",
+                        "request": "IdtCommutingRoutesInfo",
+                        "response": "IdtCommutingRoutesInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0094"
+                },
+                "MemoryRouteStatusInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0053",
+                    "structures": {
+                        "notification": "IdtMemoryRouteStatus",
+                        "request": "IdtMemoryRouteStatus",
+                        "response": "IdtMemoryRouteStatus"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0096"
+                },
+                "MrNaviRouteInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0054",
+                    "structures": {
+                        "notification": "IdtMrNaviRoute",
+                        "request": "IdtMrNaviRoute",
+                        "response": "IdtMrNaviRoute"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0098"
+                },
+                "AdasMileageInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0055",
+                    "structures": {
+                        "notification": "Uni32baseType",
+                        "request": "Uni32baseType",
+                        "response": "Uni32baseType"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0100"
+                },
+                "CustomerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0101",
+                    "structures": {
+                        "request": "IdtCustomer",
+                        "response": "IdtRet"
+                    }
+                },
+                "GuidanceStatusUpdateInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0102",
+                    "structures": {
+                        "request": "IdtGuidanceStatusUpdate",
+                        "response": "IdtRet"
+                    }
+                },
+                "FavoriteRouteInfoUpdateInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0103",
+                    "structures": {
+                        "request": "IdtFavoriteRouteInfoUpdate",
+                        "response": "IdtRet"
+                    }
+                },
+                "NavigationRouteInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0104",
+                    "structures": {
+                        "request": "IdtNavigationRoute",
+                        "response": "IdtRet"
+                    }
+                },
+                "NavigationDistreqInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0105",
+                    "structures": {
+                        "request": "IdtNavigationDistreq",
+                        "response": "IdtRet"
+                    }
+                },
+                "CancelSaveInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0106",
+                    "structures": {
+                        "request": "BaseUint8",
+                        "response": "IdtRet"
+                    }
+                },
+                "SettingAWWInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0066",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0108",
+                    "setter_id": "0x0107"
+                },
+                "TrafficRedWarningInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0067",
+                    "structures": {
+                        "notification": "TrafficRedWarningInfo",
+                        "request": "TrafficRedWarningInfo",
+                        "response": "TrafficRedWarningInfo"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0109"
+                },
+                "D2DRouteEndSwitchInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0110",
+                    "structures": {
+                        "request": "BaseUint8",
+                        "response": "IdtRet"
+                    }
+                },
+                "CurrentRoadSpeedInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0111",
+                    "structures": {
+                        "request": "Uni16baseType",
+                        "response": "IdtRet"
+                    }
+                },
+                "MemoryRouteControlInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0068",
+                    "structures": {
+                        "notification": "IdtMemoryRouteControl",
+                        "request": "IdtMemoryRouteControl",
+                        "response": "IdtMemoryRouteControl"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0113",
+                    "setter_id": "0x0112"
+                },
+                "CommutingRouteSelectionReqInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0114",
+                    "structures": {
+                        "request": "IdtCommutingRouteSelectionReq",
+                        "response": "IdtRet"
+                    }
+                },
+                "DLPSceneInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0069",
+                    "structures": {
+                        "notification": "IdtDLPScene",
+                        "request": "IdtDLPScene",
+                        "response": "IdtDLPScene"
+                    },
+                    "eventgroup_id": 1
+                },
+                "VehicleRegionInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0070",
+                    "structures": {
+                        "notification": "IdtVehicleRegion",
+                        "request": "IdtVehicleRegion",
+                        "response": "IdtVehicleRegion"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0116",
+                    "setter_id": "0x0115"
+                },
+                "CommutingRouteSelectionRspInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0071",
+                    "structures": {
+                        "notification": "IdtCommutingRouteSelectionRsp",
+                        "request": "IdtCommutingRouteSelectionRsp",
+                        "response": "IdtCommutingRouteSelectionRsp"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0118",
+                    "setter_id": "0x0117"
+                },
+                "SettingRMFInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0072",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0120",
+                    "setter_id": "0x0119"
+                },
+                "SettingAESInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0073",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0122",
+                    "setter_id": "0x0121"
+                },
+                "SettingFVSWInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0075",
+                    "structures": {
+                        "notification": "OnOff",
+                        "request": "OnOff",
+                        "response": "OnOff"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0126",
+                    "setter_id": "0x0125"
+                },
+                "AutoNaviSearchInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0129",
+                    "structures": {
+                        "notification": "AutoNaviSearchParam",
+                        "request": "AutoNaviSearchParam",
+                        "response": "AutoNaviSearchParam"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0128"
+                },
+                "PoiInfoInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0130",
+                    "structures": {
+                        "request": "IdtPoiInfo",
+                        "response": "IdtRet"
+                    }
+                },
+                "ADParkingInfoPB": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0133",
+                    "structures": {
+                        "notification": "IdtADParkingInfoPB",
+                        "request": "IdtADParkingInfoPB",
+                        "response": "IdtADParkingInfoPB"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0132",
+                    "setter_id": "0x0131"
+                },
+                "EstablishSomeIPConnectionInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0127",
+                    "structures": {
+                        "request": "BaseUint8",
+                        "response": "IdtRet"
+                    }
+                },
+                "SettingADASInfoInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0134",
+                    "structures": {
+                        "notification": "IdtADUSItems",
+                        "request": "IdtADUSItems",
+                        "response": "IdtADUSItems"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0133",
+                    "setter_id": "0x0136"
+                },
+                "FeatureStateInf2": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0136",
+                    "structures": {
+                        "notification": "FeatureState2",
+                        "request": "FeatureState2",
+                        "response": "FeatureState2"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x0135"
+                }
+            }
+        },
+        "ZID_Model_Service": {
+            "service_id": "0x1002",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 34560,
+            "udp_port": 34560,
+            "interface": {
+                "ZidForbidInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "notification": "IdtZidForbid",
+                        "request": "IdtZidForbid",
+                        "response": "IdtZidForbid"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0001"
+                }
+            }
+        },
+        "CamIntrinsicsService": {
+            "service_id": "0x1003",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 58098,
+            "udp_port": 58098,
+            "interface": {
+                "CameraIntInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0301",
+                    "structures": {
+                        "request": "IdtCameraIntInfRequest",
+                        "response": "IdtCameraIntInfRet"
+                    }
+                }
+            }
+        },
+        "ADDrivingService": {
+            "service_id": "0x1004",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 58100,
+            "udp_port": 58100,
+            "interface": {
+                "AsyALgtIndcr": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0401",
+                    "structures": {
+                        "notification": "IdtAsyALgtIndcr",
+                        "request": "IdtAsyALgtIndcr",
+                        "response": "IdtAsyALgtIndcr"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0401"
+                },
+                "AsyALatIndcr": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0402",
+                    "structures": {
+                        "notification": "IdtAsyALatIndcr",
+                        "request": "IdtAsyALatIndcr",
+                        "response": "IdtAsyALatIndcr"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0402"
+                },
+                "ADFunctionReq": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0403",
+                    "structures": {
+                        "request": "IdtADFunctionReq",
+                        "response": "IdtADFunctionRet"
+                    }
+                },
+                "ADTiGapAdj": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0404",
+                    "structures": {
+                        "request": "IdtADTiGapAdj",
+                        "response": "IdtADTiGapAdjRet"
+                    }
+                },
+                "ADSetSpeed": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0405",
+                    "structures": {
+                        "request": "IdtADSetSpeed",
+                        "response": "IdtADSetSpeedRet"
+                    }
+                },
+                "ADConfirmAndResume": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0406",
+                    "structures": {
+                        "request": "IdtADConfirmAndResume",
+                        "response": "IdtADConfirmAndResumeRet"
+                    }
+                }
+            }
+        },
+        "DMSInfoService": {
+            "service_id": "0x1005",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 58101,
+            "udp_port": 58101,
+            "interface": {
+                "DMSInfo": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x0301",
+                    "structures": {
+                        "notification": "IdtDMSInfo",
+                        "request": "IdtDMSInfo",
+                        "response": "IdtDMSInfo"
+                    },
+                    "eventgroup_id": 1
+                }
+            }
+        },
+        "ADHighDefinitionMapService": {
+            "service_id": "0x1006",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADHDMapSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADHDMapSts",
+                        "request": "IdtADHDMapSts",
+                        "response": "IdtADHDMapSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0001"
+                }
+            }
+        },
+        "ADLocationService": {
+            "service_id": "0x1007",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADLocationSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADLocation",
+                        "request": "IdtADLocation",
+                        "response": "IdtADLocation"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0001"
+                }
+            }
+        },
+        "ADPerceptionService": {
+            "service_id": "0x1008",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADPerceptionSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADPerception",
+                        "request": "IdtADPerception",
+                        "response": "IdtADPerception"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0001"
+                }
+            }
+        },
+        "ADPlanningService": {
+            "service_id": "0x1009",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADPlanningInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADPlanning",
+                        "request": "IdtADPlanning",
+                        "response": "IdtADPlanning"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0001"
+                }
+            }
+        },
+        "ADAVPOperService": {
+            "service_id": "0x1011",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADAVPOper": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtADAVPOperRequest",
+                        "response": "IdtADAVPOperRet"
+                    }
+                }
+            }
+        },
+        "ADStateService": {
+            "service_id": "0x1012",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 12,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "DrivingFeatureState": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0002",
+                    "setter_id": "0x0001"
+                }
+            }
+        },
+        "ADNZPUbStsService": {
+            "service_id": "0x1013",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 13,
+            "tcp_port": 58097,
+            "udp_port": 58097,
+            "interface": {
+                "ADNZPUbSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "notification": "IdtADNZPUbSts",
+                        "request": "IdtADNZPUbSts",
+                        "response": "IdtADNZPUbSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x0002",
+                    "setter_id": "0x0001"
+                }
+            }
+        }
+    },
+    "V30": {
+        "ADUserSettingService": {
+            "service_id": "0x405f",
+            "instance_id": 1,
+            "major_version": 6,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "GetAllParameters": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtADUSItems"
+                    }
+                },
+                "GetIntParameters": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtkeyIDs",
+                        "response": "IdtADUSItems"
+                    }
+                },
+                "ADUserSettingSts": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADUSItems",
+                        "request": "IdtADUSItems",
+                        "response": "IdtADUSItems"
+                    },
+                    "eventgroup_id": 1,
+                    "setter_id": "0x1001"
+                }
+            }
+        },
+        "ADAlertService": {
+            "service_id": "0x60ab",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADAlertFaultListInfoSts": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADAlertFaultInfSts",
+                        "request": "IdtADAlertFaultInfSts",
+                        "response": "IdtADAlertFaultInfSts"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1002",
+                    "setter_id": "0x1001"
+                },
+                "ADAlertAlarmInfoInfSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtADAlertAlarmInfoInfSts",
+                        "request": "IdtADAlertAlarmInfoInfSts",
+                        "response": "IdtADAlertAlarmInfoInfSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004",
+                    "setter_id": "0x1003"
+                },
+                "ClearFaultInf": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtADAlertClearFaultInfSts",
+                        "request": "IdtADAlertClearFaultInfSts",
+                        "response": "IdtADAlertClearFaultInfSts"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1006",
+                    "setter_id": "0x1005"
+                }
+            }
+        },
+        "ADUserOperationService": {
+            "service_id": "0x60b2",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 1,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADUOSelectedSlotIdInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtADUOSelectedSlotId",
+                        "response": "IdtADUORet"
+                    }
+                },
+                "ADUOSlelectedSlotParkingmodeInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtADUO32bit",
+                        "response": "IdtADUORet"
+                    }
+                },
+                "ADUOCustomParkingInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0003",
+                    "structures": {
+                        "request": "IdtADUOCustomParking",
+                        "response": "IdtADUORet"
+                    }
+                },
+                "ADUOOnlineCalibTriggerInf": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0004",
+                    "structures": {
+                        "request": "IdtADUOOnlineCalibTrigger",
+                        "response": "IdtADUORet"
+                    }
+                },
+                "ADUOCollectAndUpload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0005",
+                    "structures": {
+                        "request": "IdtADUOCollectAndUploadCommands",
+                        "response": "IdtADUORet"
+                    }
+                }
+            }
+        },
+        "ADSDMapNavigationService": {
+            "service_id": "0x5013",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 1,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "ADSDMapNavigationSts": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADSDMapNav",
+                        "request": "IdtADSDMapNav",
+                        "response": "IdtADSDMapNav"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADHighDefinitionMapService": {
+            "service_id": "0x60b1",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADHDMapSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADHDMapSts",
+                        "request": "IdtADHDMapSts",
+                        "response": "IdtADHDMapSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADLocationService": {
+            "service_id": "0x60b4",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADLocationSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtADLocation",
+                        "request": "IdtADLocation",
+                        "response": "IdtADLocation"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADPerceptionService": {
+            "service_id": "0x60af",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADPerceptionSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADPerception",
+                        "request": "IdtADPerception",
+                        "response": "IdtADPerception"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADPlanningService": {
+            "service_id": "0x60b0",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADPlanningInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADPlanning",
+                        "request": "IdtADPlanning",
+                        "response": "IdtADPlanning"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADStateService": {
+            "service_id": "0x60b5",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADSTSFeatureStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "ADSTSCalibSensorGroupState": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "ADSTSIntegAdpuConfig": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "ADSTSOnlineCalibInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "ADSTSCalibStateAckInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtADState",
+                        "request": "IdtADState",
+                        "response": "IdtADState"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1005"
+                },
+                "CalibSensorGroupState": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtCalibSensorGroupState",
+                        "request": "IdtCalibSensorGroupState",
+                        "response": "IdtCalibSensorGroupState"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1006"
+                }
+            }
+        },
+        "ADAVPStsService": {
+            "service_id": "0x60a6",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADAVPSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADAVPSts",
+                        "request": "IdtADAVPSts",
+                        "response": "IdtADAVPSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002",
+                    "setter_id": "0x1001"
+                }
+            }
+        },
+        "ADAVPOperService": {
+            "service_id": "0x60a8",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 1,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADAVPOper": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtADAVPOperRequest",
+                        "response": "IdtADAVPOperRet"
+                    }
+                }
+            }
+        },
+        "ADNZPUbStsService": {
+            "service_id": "0x60b3",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 2,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADNZPUbSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtADNZPUbSts",
+                        "request": "IdtADNZPUbSts",
+                        "response": "IdtADNZPUbSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002",
+                    "setter_id": "0x1001"
+                }
+            }
+        },
+        "ADNZPUbOperService": {
+            "service_id": "0x60ae",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 1,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ADNZPUbOper": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtADNZPUbOperRequest",
+                        "response": "IdtADNZPUbOperRet"
+                    }
+                }
+            }
+        },
+        "ADScenePerceiveService": {
+            "service_id": "0x60aa",
+            "instance_id": 1,
+            "major_version": 5,
+            "minor_version": 0,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "ScenePerceiveNotify": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtScenePerceiveSts",
+                        "request": "IdtScenePerceiveSts",
+                        "response": "IdtScenePerceiveSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "ADASMapService": {
+            "service_id": "0x5014",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "HznSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtHznSts",
+                        "request": "IdtHznSts",
+                        "response": "IdtHznSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "HznData": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtHznData",
+                        "request": "IdtHznData",
+                        "response": "IdtHznData"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "HznEdge": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtHznEdge",
+                        "request": "IdtHznEdge",
+                        "response": "IdtHznEdge"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1003"
+                },
+                "HznPosn": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtHznPosn",
+                        "request": "IdtHznPosn",
+                        "response": "IdtHznPosn"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "HznProfLong": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtHznProfLong",
+                        "request": "IdtHznProfLong",
+                        "response": "IdtHznProfLong"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1005"
+                },
+                "HznProfSho": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtHznProfSho",
+                        "request": "IdtHznProfSho",
+                        "response": "IdtHznProfSho"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1006"
+                },
+                "HznSeg": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1007",
+                    "structures": {
+                        "notification": "IdtHznSeg",
+                        "request": "IdtHznSeg",
+                        "response": "IdtHznSeg"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1007"
+                },
+                "HznProfLongLR": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1008",
+                    "structures": {
+                        "notification": "IdtHznProfLongLR",
+                        "request": "IdtHznProfLongLR",
+                        "response": "IdtHznProfLongLR"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1008"
+                },
+                "HznPosnLR": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1009",
+                    "structures": {
+                        "notification": "IdtHznPosnLR",
+                        "request": "IdtHznPosnLR",
+                        "response": "IdtHznPosnLR"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1009"
+                }
+            }
+        },
+        "CarConfigurationManagerService": {
+            "service_id": "0x0004",
+            "instance_id": 1,
+            "major_version": 2,
+            "minor_version": 2,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "getIntParameter": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtCfgIntValue",
+                        "response": "IdtCarCfgParameterValue"
+                    }
+                },
+                "getIntParameters": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtParameterIDs",
+                        "response": "IdtCarCfgValues"
+                    }
+                },
+                "getAllParameters": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0003",
+                    "structures": {
+                        "request": "IdtCarCfgValues"
+                    }
+                },
+                "getVin": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0004",
+                    "structures": {
+                        "request": "IdtVin"
+                    }
+                },
+                "setIntParameter": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0005",
+                    "structures": {
+                        "request": "IdtCfgIntValue",
+                        "response": "IdtCarCfgParameterValue"
+                    }
+                },
+                "setIntParameters": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0006",
+                    "structures": {
+                        "request": "IdtCarCfgValues",
+                        "response": "IdtCfgIntValue"
+                    }
+                },
+                "getOneofNode": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0007",
+                    "structures": {
+                        "request": "IdtNodeIntValue",
+                        "response": "IdtNodeParameterValue"
+                    }
+                },
+                "getListofNodes": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0008",
+                    "structures": {
+                        "request": "IdtNodeIDs",
+                        "response": "IdtNodeValues"
+                    }
+                },
+                "getAllofNodes": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0009",
+                    "structures": {
+                        "request": "IdtNodeValues"
+                    }
+                },
+                "updateCarconfig": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000a",
+                    "structures": {
+                        "request": "IdtUpdateState"
+                    }
+                },
+                "InstallCarconfig": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000b",
+                    "structures": {
+                        "request": "IdtUpdateState"
+                    }
+                },
+                "PrecheckCarconfig": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000c",
+                    "structures": {
+                        "request": "IdtUpdateState"
+                    }
+                },
+                "SwitchCarconfig": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000d",
+                    "structures": {
+                        "request": "IdtUpdateState"
+                    }
+                },
+                "RollbackCarconfig": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000e",
+                    "structures": {
+                        "request": "IdtUpdateState"
+                    }
+                },
+                "getPartNumber": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000f",
+                    "structures": {
+                        "request": "IdtCCLPartNumber"
+                    }
+                },
+                "CarConfigurationChangeEvent": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtCarCfgValues",
+                        "request": "IdtCarCfgValues",
+                        "response": "IdtCarCfgValues"
+                    },
+                    "eventgroup_id": 1
+                }
+            }
+        },
+        "ConnectedService": {
+            "service_id": "0x5009",
+            "instance_id": 1,
+            "major_version": 2,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "WeatherInforQueryReq": {
+                    "type": "method",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtPositionOfDestination",
+                        "response": "IdtReqCmdResp"
+                    }
+                },
+                "CurrentWeatherInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtWeatherInfor",
+                        "request": "IdtWeatherInfor",
+                        "response": "IdtWeatherInfor"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "RequiredWeatherInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtWeatherInfor1",
+                        "request": "IdtWeatherInfor1",
+                        "response": "IdtWeatherInfor1"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                }
+            }
+        },
+        "DistributeFotaService": {
+            "service_id": "0x2009",
+            "instance_id": 4,
+            "major_version": 6,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "TransferAssignmentInfo": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtAssignmentInfo",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "StartDownload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "PauseDownload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0003",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "ResumeDownload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0004",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "AbortDownload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0005",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "StartInstallation": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0006",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "AbortInstallation": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0007",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "StartDecryption": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0008",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "PrecheckSwitch": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0009",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "StartSwitch": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000a",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "Rollback": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000b",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                },
+                "GetAssignmentStatus": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000c",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtAssignmentStatusReply"
+                    }
+                },
+                "StartSensibleInstallation": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x000d",
+                    "structures": {
+                        "request": "IdtAssignmentID",
+                        "response": "IdtResultCode"
+                    }
+                }
+            }
+        },
+        "DriverMonitorService": {
+            "service_id": "0x4047",
+            "instance_id": 2,
+            "major_version": 2,
+            "minor_version": 2,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "DrvrPfmncSwitchsetting": {
+                    "type": "method",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtDrvrPfmncSwitch",
+                        "response": "IdtOnOff"
+                    }
+                },
+                "DrvrDistSwitchsetting": {
+                    "type": "method",
+                    "protocol": "udp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtDrvrDistSwitch",
+                        "response": "IdtOnOff"
+                    }
+                },
+                "DrvrPerformanceAlarmSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtDrvrPfmncAlrmSts",
+                        "request": "IdtDrvrPfmncAlrmSts",
+                        "response": "IdtDrvrPfmncAlrmSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "SnsrDrvrPerformanceSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtSnsrDrvrPfmncSts",
+                        "request": "IdtSnsrDrvrPfmncSts",
+                        "response": "IdtSnsrDrvrPfmncSts"
+                    },
+                    "eventgroup_id": 2,
+                    "getter_id": "0x1002"
+                },
+                "EyeGazeRegion": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtEyeGazeRegion",
+                        "request": "IdtEyeGazeRegion",
+                        "response": "IdtEyeGazeRegion"
+                    },
+                    "eventgroup_id": 3,
+                    "getter_id": "0x1003"
+                },
+                "DrvrMonrAlarmSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtDrvrMonrAlrmSts",
+                        "request": "IdtDrvrMonrAlrmSts",
+                        "response": "IdtDrvrMonrAlrmSts"
+                    },
+                    "eventgroup_id": 4,
+                    "getter_id": "0x1004"
+                },
+                "DrvrPfmncSwitchSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtOnOff",
+                        "request": "IdtOnOff",
+                        "response": "IdtOnOff"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x1005"
+                },
+                "DrvrDistSwitchSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtOnOff",
+                        "request": "IdtOnOff",
+                        "response": "IdtOnOff"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x1006"
+                },
+                "CamFltsStsToADCU": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1007",
+                    "structures": {
+                        "notification": "IdtCamFltsStsToADCU",
+                        "request": "IdtCamFltsStsToADCU",
+                        "response": "IdtCamFltsStsToADCU"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x1007"
+                },
+                "EyeOnRoad": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1008",
+                    "structures": {
+                        "notification": "IdtEyeOnRoad",
+                        "request": "IdtEyeOnRoad",
+                        "response": "IdtEyeOnRoad"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x1008"
+                },
+                "EyePosnValidSig": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1009",
+                    "structures": {
+                        "notification": "IdtEyePosnValidSig",
+                        "request": "IdtEyePosnValidSig",
+                        "response": "IdtEyePosnValidSig"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x1009"
+                },
+                "DrvrFatiLvl": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100a",
+                    "structures": {
+                        "notification": "IdtDrvrFatiLvl",
+                        "request": "IdtDrvrFatiLvl",
+                        "response": "IdtDrvrFatiLvl"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x100a"
+                },
+                "EyeOpenSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100b",
+                    "structures": {
+                        "notification": "IdtRiAndLeEyeOpenSts",
+                        "request": "IdtRiAndLeEyeOpenSts",
+                        "response": "IdtRiAndLeEyeOpenSts"
+                    },
+                    "eventgroup_id": 5,
+                    "getter_id": "0x100b"
+                }
+            }
+        },
+        "ESIMConnectionStatus": {
+            "service_id": "0x5005",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 3,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "MainCardSwitchReq": {
+                    "type": "method",
+                    "protocol": "udp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtSimNo",
+                        "response": "IdtCmdResp"
+                    }
+                },
+                "SignalLevelEvent": {
+                    "type": "event",
+                    "protocol": "udp",
+                    "method_id": "0x1007",
+                    "structures": {
+                        "notification": "IdtAllSigLevel"
+                    },
+                    "eventgroup_id": 1
+                },
+                "SimCardStsEvent": {
+                    "type": "event",
+                    "protocol": "udp",
+                    "method_id": "0x100f",
+                    "structures": {
+                        "notification": "IdtSimCardSts"
+                    },
+                    "eventgroup_id": 1
+                },
+                "ConnectionStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtAllCnctnSts",
+                        "request": "IdtAllCnctnSts",
+                        "response": "IdtAllCnctnSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "HiSpeedFun": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtAllHiSpdFun",
+                        "request": "IdtAllHiSpdFun",
+                        "response": "IdtAllHiSpdFun"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "NetworkAvailable": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtAllNetAvl",
+                        "request": "IdtAllNetAvl",
+                        "response": "IdtAllNetAvl"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "OperatorStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtAllOperatorSts",
+                        "request": "IdtAllOperatorSts",
+                        "response": "IdtAllOperatorSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "IPAddress": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtAllIPAdr",
+                        "request": "IdtAllIPAdr",
+                        "response": "IdtAllIPAdr"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1005"
+                },
+                "SignalStrength": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtAllSigStrength",
+                        "request": "IdtAllSigStrength",
+                        "response": "IdtAllSigStrength"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1006"
+                },
+                "SignalLevel": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "/",
+                    "structures": {
+                        "request": "IdtAllSigLevel",
+                        "response": "IdtAllSigLevel"
+                    },
+                    "getter_id": "0x1007"
+                },
+                "TrafficData": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1008",
+                    "structures": {
+                        "notification": "IdtAllTrfcData",
+                        "request": "IdtAllTrfcData",
+                        "response": "IdtAllTrfcData"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1008"
+                },
+                "DataConnectionStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1009",
+                    "structures": {
+                        "notification": "IdtAllDataCnctnSts",
+                        "request": "IdtAllDataCnctnSts",
+                        "response": "IdtAllDataCnctnSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1009"
+                },
+                "MSISDNInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100a",
+                    "structures": {
+                        "notification": "IdtAllMSISDNInfo",
+                        "request": "IdtAllMSISDNInfo",
+                        "response": "IdtAllMSISDNInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100a"
+                },
+                "ICCIDInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100b",
+                    "structures": {
+                        "notification": "IdtAllICCIDInfo",
+                        "request": "IdtAllICCIDInfo",
+                        "response": "IdtAllICCIDInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100b"
+                },
+                "IMSIInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100c",
+                    "structures": {
+                        "notification": "IdtAllIMSIInfo",
+                        "request": "IdtAllIMSIInfo",
+                        "response": "IdtAllIMSIInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100c"
+                },
+                "MainCardSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100d",
+                    "structures": {
+                        "notification": "IdtAllMainCardSts",
+                        "request": "IdtAllMainCardSts",
+                        "response": "IdtAllMainCardSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100d"
+                },
+                "IMEIInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100e",
+                    "structures": {
+                        "notification": "IdtAllIMEIInfo",
+                        "request": "IdtAllIMEIInfo",
+                        "response": "IdtAllIMEIInfo"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100e"
+                },
+                "SimCardSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "/",
+                    "structures": {
+                        "request": "IdtSimCardSts",
+                        "response": "IdtSimCardSts"
+                    },
+                    "getter_id": "0x100f"
+                },
+                "CardSwitchStsCode": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1010",
+                    "structures": {
+                        "notification": "IdtCardSwitchStsCode",
+                        "request": "IdtCardSwitchStsCode",
+                        "response": "IdtCardSwitchStsCode"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1010"
+                },
+                "AutoCardSwitchSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1011",
+                    "structures": {
+                        "notification": "IdtAutoCardSts",
+                        "request": "IdtAutoCardSts",
+                        "response": "IdtAutoCardSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1011"
+                }
+            }
+        },
+        "IDPSProcessLocalService": {
+            "service_id": "0x000e",
+            "instance_id": 1,
+            "major_version": 2,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "DeviceRegisterLocal": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0001",
+                    "structures": {
+                        "request": "IdtLocalModelDeviceCode",
+                        "response": "IdtDeviceRegisterLocalMessage"
+                    }
+                },
+                "RuleLocalUpdate": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0002",
+                    "structures": {
+                        "request": "IdtRuleLocalCmd",
+                        "response": "IdtRuleLocalResp"
+                    }
+                },
+                "FwRuleLocalUpdate": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0003",
+                    "structures": {
+                        "request": "IdtFwRuleLocalCmd",
+                        "response": "IdtFwRuleLocalResp"
+                    }
+                },
+                "CfigRuleLocalUpdate": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0004",
+                    "structures": {
+                        "request": "IdtCfigRuleLocalCmd",
+                        "response": "IdtCfigRuleLocalResp"
+                    }
+                },
+                "HealthLocalUpload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0005",
+                    "structures": {
+                        "request": "IdtHealthLocalCmd",
+                        "response": "IdtHealthLocalResult"
+                    }
+                },
+                "QSEvLocalUpLoad": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0006",
+                    "structures": {
+                        "request": "IdtQSEvLocalUpLoadCmd",
+                        "response": "IdtQSEvLocalUpLoadResult"
+                    }
+                },
+                "FlowLocalUpload": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0007",
+                    "structures": {
+                        "request": "IdtFlowLocalUploadCmd",
+                        "response": "IdtFlowLocalUploadResult"
+                    }
+                },
+                "VerifyIdentity": {
+                    "type": "method",
+                    "protocol": "tcp",
+                    "method_id": "0x0fff",
+                    "structures": {
+                        "request": "IdtZaidToken",
+                        "response": "IdtVerifyIdentityResult"
+                    }
+                }
+            }
+        },
+        "IDPSVehicleRegisterLocalService": {
+            "service_id": "0x000c",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "IDPSVehicleRegisterLocalSts": {
+                    "type": "field",
+                    "protocol": "tcp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtIDPSRegisterLocalSts",
+                        "request": "IdtIDPSRegisterLocalSts",
+                        "response": "IdtIDPSRegisterLocalSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "NavigationService": {
+            "service_id": "0x500c",
+            "instance_id": 1,
+            "major_version": 4,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "TypeToDestination": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtTypeToDestination",
+                        "request": "IdtTypeToDestination",
+                        "response": "IdtTypeToDestination"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "ChrgStationPwr": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtChrgStationPwr",
+                        "request": "IdtChrgStationPwr",
+                        "response": "IdtChrgStationPwr"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "TimeToDestination": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtTimeToDestination",
+                        "request": "IdtTimeToDestination",
+                        "response": "IdtTimeToDestination"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "DistanceToDestination": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtDistanceToDestination",
+                        "request": "IdtDistanceToDestination",
+                        "response": "IdtDistanceToDestination"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "EstimdLeftSOCToDestination": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtLeftSOC",
+                        "request": "IdtLeftSOC",
+                        "response": "IdtLeftSOC"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1005"
+                },
+                "NaviActiveSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtActiveSts",
+                        "request": "IdtActiveSts",
+                        "response": "IdtActiveSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1006"
+                },
+                "TotalRoadGroupInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1007",
+                    "structures": {
+                        "notification": "IdtTotalGroupInformation",
+                        "request": "IdtTotalGroupInformation",
+                        "response": "IdtTotalGroupInformation"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1007"
+                },
+                "PositionOfDestinationInfo": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1008",
+                    "structures": {
+                        "notification": "IdtPositionOfDestination",
+                        "request": "IdtPositionOfDestination",
+                        "response": "IdtPositionOfDestination"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1008"
+                },
+                "TrafficLightStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1009",
+                    "structures": {
+                        "notification": "IdtTrafficLightStatus",
+                        "request": "IdtTrafficLightStatus",
+                        "response": "IdtTrafficLightStatus"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1009"
+                },
+                "TLAMainActionInf": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100a",
+                    "structures": {
+                        "notification": "IdtTLAMainAction",
+                        "request": "IdtTLAMainAction",
+                        "response": "IdtTLAMainAction"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100a"
+                },
+                "VehicleRegion": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100b",
+                    "structures": {
+                        "notification": "IdtVehicleRegion",
+                        "request": "IdtVehicleRegion",
+                        "response": "IdtVehicleRegion"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100b"
+                }
+            }
+        },
+        "NightVisionModeUXCService": {
+            "service_id": "0x407e",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 1,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "NightVisionSnsrSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtNightVisionSnsrSts",
+                        "request": "IdtNightVisionSnsrSts",
+                        "response": "IdtNightVisionSnsrSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        },
+        "PerceptionObjectService": {
+            "service_id": "0x607c",
+            "instance_id": 1,
+            "major_version": 3,
+            "minor_version": 0,
+            "tcp_port": 56001,
+            "udp_port": 56001,
+            "interface": {
+                "CameraSts": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtCameraSts",
+                        "request": "IdtCameraSts",
+                        "response": "IdtCameraSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "HostVehInLitArea": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtHostVehInLitArea",
+                        "request": "IdtHostVehInLitArea",
+                        "response": "IdtHostVehInLitArea"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "TooManyCars": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtTooManyCars",
+                        "request": "IdtTooManyCars",
+                        "response": "IdtTooManyCars"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "TrafficSign1": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtTrafficSign",
+                        "request": "IdtTrafficSign",
+                        "response": "IdtTrafficSign"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "TrafficSign2": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtTrafficSign",
+                        "request": "IdtTrafficSign",
+                        "response": "IdtTrafficSign"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1005"
+                },
+                "VehObj1": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1006",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1006"
+                },
+                "VehObj2": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1007",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1007"
+                },
+                "VehObj3": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1008",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1008"
+                },
+                "VehObj4": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1009",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1009"
+                },
+                "VehObj5": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100a",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100a"
+                },
+                "VehObj6": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100b",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100b"
+                },
+                "VehObj7": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100c",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100c"
+                },
+                "VehObj8": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100d",
+                    "structures": {
+                        "notification": "IdtVehObj",
+                        "request": "IdtVehObj",
+                        "response": "IdtVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100d"
+                },
+                "NearestVehObj": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100e",
+                    "structures": {
+                        "notification": "IdtNearestVehObj",
+                        "request": "IdtNearestVehObj",
+                        "response": "IdtNearestVehObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100e"
+                },
+                "VRUObj1": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x100f",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x100f"
+                },
+                "VRUObj2": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1010",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1010"
+                },
+                "VRUObj3": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1011",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1011"
+                },
+                "VRUObj4": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1012",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1012"
+                },
+                "VRUObj5": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1013",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1013"
+                },
+                "VRUObj6": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1014",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1014"
+                },
+                "VRUObj7": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1015",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1015"
+                },
+                "VRUObj8": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1016",
+                    "structures": {
+                        "notification": "IdtVRUObj",
+                        "request": "IdtVRUObj",
+                        "response": "IdtVRUObj"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1016"
+                }
+            }
+        },
+        "VehicleModeManagementService": {
+            "service_id": "0x8001",
+            "instance_id": 1,
+            "major_version": 4,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "PowerModeState": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1001",
+                    "structures": {
+                        "notification": "IdtPwrModSts",
+                        "request": "IdtPwrModSts",
+                        "response": "IdtPwrModSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                },
+                "CarModeState": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtCarModSts",
+                        "request": "IdtCarModSts",
+                        "response": "IdtCarModSts"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1002"
+                },
+                "CarModeSubtype": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1003",
+                    "structures": {
+                        "notification": "IdtCarModSubtyp",
+                        "request": "IdtCarModSubtyp",
+                        "response": "IdtCarModSubtyp"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1003"
+                },
+                "EnergyLevelElectric": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1004",
+                    "structures": {
+                        "notification": "IdtEgyLvlEle",
+                        "request": "IdtEgyLvlEle",
+                        "response": "IdtEgyLvlEle"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1004"
+                },
+                "PowerLevelElectric": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1005",
+                    "structures": {
+                        "notification": "IdtPwrLvlEle",
+                        "request": "IdtPwrLvlEle",
+                        "response": "IdtPwrLvlEle"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1005"
+                }
+            }
+        },
+        "WIFIAvailabilityService": {
+            "service_id": "0x4084",
+            "instance_id": 1,
+            "major_version": 1,
+            "minor_version": 0,
+            "tcp_port": 54001,
+            "udp_port": 54001,
+            "interface": {
+                "AvailabilityStatus": {
+                    "type": "field",
+                    "protocol": "udp",
+                    "method_id": "0x1002",
+                    "structures": {
+                        "notification": "IdtAvailability",
+                        "request": "IdtAvailability",
+                        "response": "IdtAvailability"
+                    },
+                    "eventgroup_id": 1,
+                    "getter_id": "0x1001"
+                }
+            }
+        }
+    }
+}
