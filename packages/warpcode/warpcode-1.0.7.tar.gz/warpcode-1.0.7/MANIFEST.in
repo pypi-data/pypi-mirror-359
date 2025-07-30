@@ -1,0 +1,21 @@
+# Include the README and other documentation
+include README.md
+include LICENSE
+include prodspec.md
+
+# Include all package data
+recursive-include warpcode *.py
+recursive-include warpcode/ascii_art *.txt
+recursive-include warpcode/templates *.py *.ini *.feature *.md
+
+# Include requirements
+include warpcode/requirements.txt
+
+# Include package configuration
+include pyproject.toml
+include warpcode/setup.py
+
+# Exclude cache and build files
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
