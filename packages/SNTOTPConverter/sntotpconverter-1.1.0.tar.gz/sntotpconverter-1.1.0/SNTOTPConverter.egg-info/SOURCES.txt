@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+SNTOTPConverter/SNTOTPConverter.py
+SNTOTPConverter/__init__.py
+SNTOTPConverter/__main__.py
+SNTOTPConverter.egg-info/PKG-INFO
+SNTOTPConverter.egg-info/SOURCES.txt
+SNTOTPConverter.egg-info/dependency_links.txt
+SNTOTPConverter.egg-info/entry_points.txt
+SNTOTPConverter.egg-info/top_level.txt
