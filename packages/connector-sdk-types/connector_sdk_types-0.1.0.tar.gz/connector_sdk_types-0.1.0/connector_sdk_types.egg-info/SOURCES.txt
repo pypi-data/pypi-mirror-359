@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+connector_sdk_types/__init__.py
+connector_sdk_types/types.py
+connector_sdk_types/utils.py
+connector_sdk_types.egg-info/PKG-INFO
+connector_sdk_types.egg-info/SOURCES.txt
+connector_sdk_types.egg-info/dependency_links.txt
+connector_sdk_types.egg-info/not-zip-safe
+connector_sdk_types.egg-info/requires.txt
+connector_sdk_types.egg-info/top_level.txt
+tests/__init__.py
+tests/test_basic.py
