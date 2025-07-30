@@ -1,0 +1,12 @@
+jupdeck/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jupdeck/changelog.md,sha256=5H4Wg9BpkPJybBZREiyNbxOAcH0XDcSO-kwy7O9texA,603
+jupdeck/cli.py,sha256=hgHlq-S4ILMbyu55bnScx0n6BVqzkKuiSXXhhnDDb1Q,1472
+jupdeck/core/__init__.py,sha256=-a1y9gAJbm2d3k26paJtcmGrvMN_jxLkT4FXdxMbFuM,31
+jupdeck/core/models.py,sha256=-wMLgzdRbr1c17KKkZATja8-66xQoIGHCy6klTlvOKE,2621
+jupdeck/core/parser.py,sha256=R46UOQCfJkZJ2fDbNBE65lx0N-x1qo9OvUATZpxSIL8,4990
+jupdeck/core/renderer.py,sha256=voIyW3QfyX72lWGAvRKnBX2BqMtsG_tUetqgPSv28T4,9808
+jupdeck-0.1.0.dist-info/LICENSE,sha256=Jf1CvUgnO3N88PvUVvb8fCZNFc8S44sHpFDITgAOf3Q,686
+jupdeck-0.1.0.dist-info/METADATA,sha256=-tvSkDHt91VAPqKOkk-M-_merJaWK5n5jMiPkEYTOrY,5017
+jupdeck-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+jupdeck-0.1.0.dist-info/entry_points.txt,sha256=se_DTR4uvsfhJgQhyUUMjqQSZP22lAH2HC7crsQ_kkA,44
+jupdeck-0.1.0.dist-info/RECORD,,
