@@ -1,0 +1,41 @@
+# [1.0.0-beta.40](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.39...1.0.0-beta.40) (2025-07-02)
+
+
+### Bug Fixes
+
+* add deployment job to semantic release push ([a975127](https://github.com/phantomcyber/splunk-soar-sdk/commit/a975127275afde4cd74864c5c083338ed11e4b4f))
+* adding pre-commit hook to verify google docstrings are present ([09278a1](https://github.com/phantomcyber/splunk-soar-sdk/commit/09278a13fda53f1b446feca58dee2bfa5ed8f6b5))
+* changes after code review ([029d5d2](https://github.com/phantomcyber/splunk-soar-sdk/commit/029d5d2cc7c9155b026e3391965a54412268fe3d))
+* excluding certain files and modules from docs ([7bd38ee](https://github.com/phantomcyber/splunk-soar-sdk/commit/7bd38ee71b7ed6c9538e1bcca630fd6e50959a50))
+* make doc deployment its own manually tirggered workflow ([d7e7603](https://github.com/phantomcyber/splunk-soar-sdk/commit/d7e7603a076fa9e41ada84b29499c890f94f312c))
+* remove setup.py file ([2e46c9d](https://github.com/phantomcyber/splunk-soar-sdk/commit/2e46c9d2420b4f38a1a29da5e7d8e490372b89df))
+
+
+### Features
+
+* adding sphinx to generate docs ([f343404](https://github.com/phantomcyber/splunk-soar-sdk/commit/f34340405f10da386e17db876225e5956ea82c84))
+
+
+
+
+
+# [1.0.0-beta.40](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.39...1.0.0-beta.40) (2025-07-02)
+
+
+### Bug Fixes
+
+* add deployment job to semantic release push ([a975127](https://github.com/phantomcyber/splunk-soar-sdk/commit/a975127275afde4cd74864c5c083338ed11e4b4f))
+* adding pre-commit hook to verify google docstrings are present ([09278a1](https://github.com/phantomcyber/splunk-soar-sdk/commit/09278a13fda53f1b446feca58dee2bfa5ed8f6b5))
+* changes after code review ([029d5d2](https://github.com/phantomcyber/splunk-soar-sdk/commit/029d5d2cc7c9155b026e3391965a54412268fe3d))
+* excluding certain files and modules from docs ([7bd38ee](https://github.com/phantomcyber/splunk-soar-sdk/commit/7bd38ee71b7ed6c9538e1bcca630fd6e50959a50))
+* make doc deployment its own manually tirggered workflow ([d7e7603](https://github.com/phantomcyber/splunk-soar-sdk/commit/d7e7603a076fa9e41ada84b29499c890f94f312c))
+* remove setup.py file ([2e46c9d](https://github.com/phantomcyber/splunk-soar-sdk/commit/2e46c9d2420b4f38a1a29da5e7d8e490372b89df))
+
+
+### Features
+
+* adding sphinx to generate docs ([f343404](https://github.com/phantomcyber/splunk-soar-sdk/commit/f34340405f10da386e17db876225e5956ea82c84))
+
+
+
+
