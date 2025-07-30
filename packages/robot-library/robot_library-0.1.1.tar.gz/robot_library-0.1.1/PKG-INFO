@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: robot_library
+Version: 0.1.1
+Summary: TL Robot robotics helper library
+Author: Liu Yu
+Requires-Python: >=3.10
+License-File: LICENSE
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
