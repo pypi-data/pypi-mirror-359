@@ -1,0 +1,3 @@
+[console_scripts]
+rough2fine=rough2fine.server:main
+
