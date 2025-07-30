@@ -1,0 +1,4 @@
+[console_scripts]
+warp = warpcode.main:main
+warpcode = warpcode.main:main
+warptest1 = warpcode.test_claude_stream:main
