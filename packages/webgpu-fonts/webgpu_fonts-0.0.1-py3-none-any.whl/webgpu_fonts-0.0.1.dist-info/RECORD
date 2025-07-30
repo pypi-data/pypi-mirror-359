@@ -1,0 +1,9 @@
+webgpu_fonts/__init__.py,sha256=v_pVg68tn5FpFz3xF6uFYvT_a49LERoTBdpfESiwm74,120
+webgpu_fonts/__main__.py,sha256=V9PpH1AQXb8D4uUEnvOAtV9m6PuET2TsMObvXTM65Is,831
+webgpu_fonts/_version.py,sha256=vgltXBYF55vNcC2regxjGN0_cbebmm8VgcDdQaDapWQ,511
+webgpu_fonts/generate_font_file.py,sha256=PkAAnwVSKHEJ7qACz65K6Od762Nf8OC8KfXv-HaLfAM,3366
+webgpu_fonts/fonts/fira-regular.bin,sha256=55EvryS1dQdAlRsg3WHDZ5OWSlVSkku51qsBAty_ywA,3660892
+webgpu_fonts-0.0.1.dist-info/METADATA,sha256=QEfelsfOKRb58fJ31gTz-wVJzU35ZBS2ymzYPB82bZw,445
+webgpu_fonts-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+webgpu_fonts-0.0.1.dist-info/top_level.txt,sha256=jGKh4DIgVcFaSIu7jy-IgiJFKlPLqB_35cYcCohIDsc,13
+webgpu_fonts-0.0.1.dist-info/RECORD,,

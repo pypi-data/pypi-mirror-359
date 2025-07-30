@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: webgpu_fonts
+Version: 0.0.1
+Summary: MSDF Font files for webgpu package
+Author-email: Matthias Hochsteger <mhochsteger@cerbsim.com>, Christopher Lackner <clackner@cerbsim.com>
+License-Expression: LGPL-2.1-or-later
+Keywords: webgpu,font,msdf,computes graphics
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
