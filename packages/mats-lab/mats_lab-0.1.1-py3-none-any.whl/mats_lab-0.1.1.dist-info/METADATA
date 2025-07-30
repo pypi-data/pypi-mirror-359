@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: mats_lab
+Version: 0.1.1
+Summary: Merged AI Tools System - Developed by Assem Sabry
+Author: Assem Sabry
+Author-email: assem7sabry@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: torch
+Requires-Dist: joblib
+Requires-Dist: transformers
+Requires-Dist: kaggle
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
