@@ -1,0 +1,2 @@
+[console_scripts]
+fu-download = fu_downloader.cli:download_images
