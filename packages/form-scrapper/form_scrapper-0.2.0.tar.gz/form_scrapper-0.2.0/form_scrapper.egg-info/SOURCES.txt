@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+form_scrapper/__init__.py
+form_scrapper/config.py
+form_scrapper/form_scrapper.py
+form_scrapper/question.py
+form_scrapper/utils.py
+form_scrapper.egg-info/PKG-INFO
+form_scrapper.egg-info/SOURCES.txt
+form_scrapper.egg-info/dependency_links.txt
+form_scrapper.egg-info/requires.txt
+form_scrapper.egg-info/top_level.txt
