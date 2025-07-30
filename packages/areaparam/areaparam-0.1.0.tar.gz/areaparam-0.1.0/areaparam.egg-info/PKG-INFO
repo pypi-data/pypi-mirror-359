@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: areaparam
+Version: 0.1.0
+Summary: A python package to calculate areas and perimeters of shapes
+Home-page: https://rkoshore@bitbucket.org/rkishorep/areaparam.git
+Author: Rahul Kishore Paul
+Author-email: RKoshore@its.jnj.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+A simple python package to compute area and perimeter of circles, squares and rectangles.

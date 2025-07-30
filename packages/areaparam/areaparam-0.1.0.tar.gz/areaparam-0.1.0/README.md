@@ -1,0 +1,1 @@
+A simple python package to compute area and perimeter of circles, squares and rectangles.
