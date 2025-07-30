@@ -1,0 +1,7 @@
+miniduct/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miniduct/datasources.py,sha256=9gCzF7TFcd-tZqfuzA0BdJUWvUGyK5icvpqG-y0XbyQ,1147
+miniduct/outputs.py,sha256=zLMKg_qthGi3QYCvw2MFdMzVOSuul3IA_IfylWsJSkw,1085
+miniduct/pipeline.py,sha256=JNi4jCxC9CrCDYx8eDDiJ9XXrm8XsiJ_h8QdBM6u_RU,806
+miniduct-0.1.1.dist-info/METADATA,sha256=UyX79jAKGHqb0ahc2m7uoJOkactvUp1H0d5RNp8qAdI,423
+miniduct-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+miniduct-0.1.1.dist-info/RECORD,,
