@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: luccpy
+Version: 0.2.3
+Summary: LUCC & Climate Group for Personal Use
+Author-email: xfry <dhixuan@outlook.com>
+Project-URL: Homepage, https://github.com/lixuan-code/
+Keywords: climate
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dask
+Requires-Dist: jupyter
+Requires-Dist: openpyxl
+Requires-Dist: netcdf4
+Requires-Dist: geopandas
+Requires-Dist: salem
+Requires-Dist: shap
+Requires-Dist: scikit-learn
+Requires-Dist: rioxarray
+Requires-Dist: pingouin
+Requires-Dist: pymannkendall
+Requires-Dist: matplotlib
+Dynamic: license-file
+
+# luccpy
+
+## install
+**luccpy** is available on [PyPI](https://pypi.org/user/lixuan/), so to install it, run this command in your terminal:
+
+**With conda**
+```bash
+conda create -n luccpy_env 
+conda activate luccpy_env 
+pip install luccpy
+```
+
+**With uv**
+```bash
+uv venv
+uv add luccpy
+```
+
