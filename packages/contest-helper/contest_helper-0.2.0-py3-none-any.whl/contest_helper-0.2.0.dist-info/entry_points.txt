@@ -1,0 +1,3 @@
+[console_scripts]
+ch-make-postprocessor = contest_helper.cli.make_postprocessor:main
+ch-start-problem = contest_helper.cli.start_problem:main
