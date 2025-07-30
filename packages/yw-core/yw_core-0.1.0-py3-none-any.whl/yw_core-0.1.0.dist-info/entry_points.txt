@@ -1,0 +1,2 @@
+[console_scripts]
+yw = yw_core.cli:main
