@@ -1,0 +1,4 @@
+[console_scripts]
+sqlmesh = tobikodata.pypi_reserve.sqlmesh_enterprise.main:main
+sqlmesh_cicd = tobikodata.pypi_reserve.sqlmesh_enterprise.main:main
+sqlmesh_lsp = tobikodata.pypi_reserve.sqlmesh_enterprise.main:main

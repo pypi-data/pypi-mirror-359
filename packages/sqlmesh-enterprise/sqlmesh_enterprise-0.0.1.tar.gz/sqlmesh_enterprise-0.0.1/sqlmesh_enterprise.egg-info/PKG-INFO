@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: sqlmesh-enterprise
+Version: 0.0.1
+Author: TobikoData Inc.
+Author-email: engineering@tobikodata.com
+Requires-Python: <3.13,>=3.9
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+
+## SQLMesh Enterprise Package
+
+SQLMesh Enterprise is distributed as a private package and is not available on PyPI.
+It is installed automatically when using [tcloud](https://pypi.org/project/tcloud/).
+This package is needed to avoid a third party from hosting a package on pypi with the same name/version as the SQLMesh Enterprise package and having users accidentally install it.

@@ -1,0 +1,14 @@
+MANIFEST.in
+backend_shim.py
+setup.py
+sqlmesh_enterprise.egg-info/PKG-INFO
+sqlmesh_enterprise.egg-info/SOURCES.txt
+sqlmesh_enterprise.egg-info/dependency_links.txt
+sqlmesh_enterprise.egg-info/entry_points.txt
+sqlmesh_enterprise.egg-info/namespace_packages.txt
+sqlmesh_enterprise.egg-info/top_level.txt
+tobikodata/__init__.py
+tobikodata/pypi_reserve/__init__.py
+tobikodata/pypi_reserve/sqlmesh_enterprise/README.md
+tobikodata/pypi_reserve/sqlmesh_enterprise/__init__.py
+tobikodata/pypi_reserve/sqlmesh_enterprise/main.py
