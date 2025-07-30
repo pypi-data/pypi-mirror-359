@@ -1,0 +1,16 @@
+surquest/GCP/requirements.txt,sha256=y9aMeOHOTV7pQWtWwLxto6a-KXGi1yw3uam5YgxtD_Q,46
+surquest/GCP/dataform_cli/__init__.py,sha256=-NC_3TOtscM2SWV1VqZ_sOThx1vLcLGZRy98f9oln6g,26
+surquest/GCP/dataform_cli/__main__.py,sha256=ETj6EkDZ-vr31xu-a7r6zxm6E9XHeosdqFBJF79KVe8,2938
+surquest/GCP/dataform_cli/logger.py,sha256=kOAZHOTe76Z3D4UAFHfSqhLFX-UCdDD-59QlDCteUu0,1736
+surquest/GCP/dataform_cli/pull.py,sha256=WLr5H2z1tBLU59ObGx68CSM_7ugHau0pGW19s1k_BlA,3296
+surquest/GCP/dataform_cli/push.py,sha256=APJKj1CuPh05zTfPiP9avqWWh6x7VWe_Mw0RPCQ_2I8,4467
+surquest/GCP/dataform_cli/handlers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+surquest/GCP/dataform_cli/handlers/dataform_handler.py,sha256=9pV710eYkC1Iiy27tnvUtYiiwLfuwn1p-qa3LpGhmtI,579
+surquest/GCP/dataform_cli/handlers/gitignore_handler.py,sha256=ghQovLKnBk3loFmpeo-8gidvM_BKpni72n7szVQsALY,2489
+surquest/GCP/dataform_cli/handlers/pull_handler.py,sha256=fbKTGRfTjn-Ry6zlj6SzvntuM5VEfMVPFh-IuJplDo4,8316
+surquest/GCP/dataform_cli/handlers/push_handler.py,sha256=50F_sHtyfVuY-kw-sWDeVwKhecLo8Pi6K0awmSYts4o,4361
+surquest_gcp_dataform_cli-0.0.1rc2.dist-info/METADATA,sha256=G0Ls8x2Tt95JaasFqSd1r2UX0IEsqlZjkVLTkme2C00,4120
+surquest_gcp_dataform_cli-0.0.1rc2.dist-info/WHEEL,sha256=tkmg4JIqwd9H8mL30xA7crRmoStyCtGp0VWshokd1Jc,105
+surquest_gcp_dataform_cli-0.0.1rc2.dist-info/entry_points.txt,sha256=NscyEqz-00-ZbEFAa_0Tfp3xghnJshfGZTm0xBWu5k4,64
+surquest_gcp_dataform_cli-0.0.1rc2.dist-info/licenses/LICENSE,sha256=uo2H4YbDhH9y3o3zk0v8fHvJ7Ef5dXPwLOdgp0rzTLA,1065
+surquest_gcp_dataform_cli-0.0.1rc2.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+dataform_cli = surquest.GCP.dataform_cli:main
