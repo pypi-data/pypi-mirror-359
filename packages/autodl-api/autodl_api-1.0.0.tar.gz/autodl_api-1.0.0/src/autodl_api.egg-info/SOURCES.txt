@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/autodl/__init__.py
+src/autodl/autodl_elastic_deployment.py
+src/autodl_api.egg-info/PKG-INFO
+src/autodl_api.egg-info/SOURCES.txt
+src/autodl_api.egg-info/dependency_links.txt
+src/autodl_api.egg-info/not-zip-safe
+src/autodl_api.egg-info/requires.txt
+src/autodl_api.egg-info/top_level.txt
+tests/test_autodl.py
+tests/test_create_deployment_new.py

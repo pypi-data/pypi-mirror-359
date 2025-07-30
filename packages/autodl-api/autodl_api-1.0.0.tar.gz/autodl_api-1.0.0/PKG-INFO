@@ -1,0 +1,123 @@
+Metadata-Version: 2.4
+Name: autodl-api
+Version: 1.0.0
+Summary: AutoDL弹性部署API封装类，支持所有弹性部署相关功能
+Home-page: https://github.com/your-username/autodl-api
+Author: AutoDL API Wrapper
+Author-email: support@autodl.com
+License: MIT
+Project-URL: Homepage, https://github.com/your-username/autodl-api
+Project-URL: Documentation, https://github.com/your-username/autodl-api
+Project-URL: Repository, https://github.com/your-username/autodl-api
+Project-URL: Bug Tracker, https://github.com/your-username/autodl-api/issues
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# AutoDL API封装包
+
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+这是一个完整的AutoDL API封装包，支持所有弹性部署相关功能。
+
+## 📦 安装
+
+### PyPI安装
+
+```bash
+pip install autodl-api
+```
+
+### 从源码安装
+
+```bash
+git clone https://github.com/Rookie-Package/autodl.git
+cd autodl
+pip install -e .
+```
+
+### 依赖安装
+
+```bash
+pip install requests
+```
+
+## 🚀 快速开始
+
+```python
+from autodl import AutoDLElasticDeployment
+
+# 创建客户端
+client = AutoDLElasticDeployment("your_api_token")
+
+# 获取镜像列表
+images = client.get_images()
+
+# 获取部署列表
+deployments = client.get_deployments()
+
+# 获取GPU库存
+stock = client.get_gpu_stock("westDC2", 118)
+```
+
+## 📚 文档
+
+- [使用示例](examples/autodl_example.ipynb)
+- [官网API文档](https://www.autodl.com/docs/esd_api_doc/)
+- [弹性部署](https://www.autodl.com/docs/elastic_deploy/)
+- [弹性部署最佳实践](https://www.autodl.com/docs/elastic_deploy_practice/)
+## 🧪 测试
+
+```bash
+# 运行基本测试
+python tests/test_autodl.py
+
+# 运行单元测试
+python -m pytest tests/test_autodl.py -v
+
+```
+
+## 📄 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交Issue和Pull Request！
+
+## 📞 支持
+
+如有问题，请查看[文档](docs/)或提交Issue。
+
+## 🆕 最新更新
+
+### v1.0.0
+- ✅ 完整的AutoDL弹性部署API支持
+- ✅ 支持ReplicaSet、Job、Container三种部署类型
+- ✅ 容器管理和监控功能
+- ✅ GPU库存查询和时长包管理
+- ✅ 完整的错误处理和类型提示
+- ✅ 详细的文档和示例 
