@@ -1,0 +1,13 @@
+passagemath_primesieve_primecount-0.1.1.1.dist-info/RECORD,,
+passagemath_primesieve_primecount-0.1.1.1.dist-info/WHEEL,sha256=qxQkdhERtGxJzqnVOBnucx1aUmU2n3HmuzYdln_LyOw,109
+passagemath_primesieve_primecount-0.1.1.1.dist-info/top_level.txt,sha256=6y8t2DMtviUX8fE4_Ms7Q1RSChqx_Ml1bQtWzUiKUaQ,13
+passagemath_primesieve_primecount-0.1.1.1.dist-info/METADATA,sha256=gd9ZpeaOzDHW3FF1hs63kYQdOPpq4j2CnV9DBntDz8c,22837
+passagemath_primesieve_primecount-0.1.1.1.dist-info/licenses/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+passagemath_primesieve_primecount-0.1.1.1.dist-info/licenses/AUTHORS,sha256=gUVKk99IDA-78ESS89mJBKZXylJPdMKgOIDTGSCoIP0,122
+primecountpy/defs.pxd,sha256=ZTfuJhV6ImtXCGdEPlUTujbXh4Tr0kI2vdfDUNKRSik,522
+primecountpy/primecount.cpython-311-darwin.so,sha256=pgoTSot74YcI7Xr89E1c9nxlmpG_4DROWrgFAZeh9ms,124288
+primecountpy/primecount.pyx,sha256=4is17eqfWt677GCUvXHehMDNAKGRUWRuqwh3TAqVpKg,2759
+primecountpy/__init__.py,sha256=09IByjZgmgwaj8_jKl4bQTvLpBHKsmXoFehkGRxcVug,26
+primecountpy/primecount.cpp,sha256=jT-9Uz96B0FS0WpmR82_-vXucaiLemdRqomgcIv7kxc,382636
+primecountpy/.dylibs/libprimesieve.12.9.0.dylib,sha256=g4DFg--CUIug3ryq85MMPZ6CbAIp-XjwfpEcFMfxb_A,384576
+primecountpy/.dylibs/libprimecount.7.19.dylib,sha256=DQPNm6BOP042VQ30yWR1XtiToidanUBs438XD-U2pLE,418304
