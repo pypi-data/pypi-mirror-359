@@ -1,0 +1,2 @@
+[console_scripts]
+eolas-mech-mcp = eolas_mech_mcp.server:main
