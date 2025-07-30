@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xmesh-io"
+version = "0.1.0"
+description = "Unified entrypoint for XpectraNet Protocol: mesh cognition, protocol engine, and client SDK."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name="Xpectra Data Technologies Ltd", email="dev@xpectradata.com" }
+]
+license = { file = "LICENSE" }
+keywords = [
+    "XMesh", "XpectraNet", "mesh cognition", "protocol", "symbolic memory", "SVAF", "AI", "multi-agent", "cognitive infrastructure"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+Homepage = "https://xmesh.io"
+Documentation = "https://xmesh.io/docs"
+Source = "https://github.com/xmesh-io/xmesh"
+Changelog = "https://github.com/xmesh-io/xmesh/releases"
+

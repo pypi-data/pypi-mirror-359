@@ -1,0 +1,7 @@
+LICENSE
+README.md
+pyproject.toml
+src/xmesh_io.egg-info/PKG-INFO
+src/xmesh_io.egg-info/SOURCES.txt
+src/xmesh_io.egg-info/dependency_links.txt
+src/xmesh_io.egg-info/top_level.txt
