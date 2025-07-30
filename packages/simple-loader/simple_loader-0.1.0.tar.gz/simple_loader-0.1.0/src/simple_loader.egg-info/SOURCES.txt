@@ -1,0 +1,5 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/simple_loader/__init__.py

@@ -1,0 +1,18 @@
+[project]
+name = "simple-loader"
+version = "0.1.0"
+description = "A simple loader for .env, .json, and .yaml config files"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "redbean0721", email = "redbean0721@redbean0721.com"}
+]
+dependencies = [
+    "python-dotenv",
+    "pyyaml"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

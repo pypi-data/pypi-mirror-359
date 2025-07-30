@@ -1,0 +1,12 @@
+# 包含 src 目錄下所有 python 檔案
+graft src
+
+# 包含 LICENSE、README.md
+include LICENSE README.md
+
+# 排除測試資料夾
+prune test
+
+# 排除 egg-info 資料夾
+global-exclude *.egg-info
+prune src/simple_loader.egg-info
