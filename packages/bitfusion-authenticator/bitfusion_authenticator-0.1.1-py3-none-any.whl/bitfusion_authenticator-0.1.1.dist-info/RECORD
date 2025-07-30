@@ -1,0 +1,7 @@
+authenticator/__init__.py,sha256=b6xwekFuD-PmOBmDkpCpyJVfLqFI4BAd3TpklLkJQrs,147
+authenticator/auth_wrapper.py,sha256=-b055F6qwvqOxTxunzZ9SiYCM7JtruPedzLqcS4JbN0,1662
+authenticator/authenticator.py,sha256=dDJW90z24auH6NndEW_9ocdD1z3daF6_Ag1rxIUr1ss,1128
+bitfusion_authenticator-0.1.1.dist-info/METADATA,sha256=dojOiVasBqeNiBBKECZd-b2WiCa77-G27OHgXTltbRo,208
+bitfusion_authenticator-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bitfusion_authenticator-0.1.1.dist-info/top_level.txt,sha256=8ORDz0zH0-W8kIhBeQsXM5q0zgabdxK3FDa47WDfJC4,14
+bitfusion_authenticator-0.1.1.dist-info/RECORD,,
