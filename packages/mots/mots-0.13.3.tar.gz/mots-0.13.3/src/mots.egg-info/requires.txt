@@ -1,0 +1,5 @@
+ruamel.yaml==0.17.21
+importlib-resources>=5.4.0
+requests>=2.0.0
+packaging
+jinja2
