@@ -1,0 +1,65 @@
+Metadata-Version: 2.4
+Name: owlt-mcp-server
+Version: 0.2.0
+Summary: A translator named owlt mcp server powered by professional LLMs
+Author-email: jay <googcheng@qq.com>
+Requires-Python: >=3.11.8
+Requires-Dist: deepl>=1.22.0
+Requires-Dist: lara-sdk>=1.4.0
+Requires-Dist: mcp[cli]>=1.10.1
+Requires-Dist: openai>=1.93.0
+Description-Content-Type: text/markdown
+
+# owlt-mcp-server
+owlt-mcp-server is a mcp server which focus on TARGET language chinese and english translation. on the stage it is free to use. It intergates some LLMs translation power.
+
+
+## How to use
+you can use it by **uvx** on mainstream mcp client IDE.
+for example add below to mcp_config.json on Windsurf:
+```
+"translate_server":  {
+    "command":  "uvx",
+    "args":  [
+        "owlt-mcp-server"
+    ]
+}
+```
+example:
+```
+use youdao translate to chinese "everyday is a new day"
+```
+```
+use xx-tool translate to chinese "everyday is a new day"
+```
+translate document 翻译文档
+```
+translate document from chinese to english "C:\Users\dada\iran.pdf"
+```
+## Wanted api donate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
