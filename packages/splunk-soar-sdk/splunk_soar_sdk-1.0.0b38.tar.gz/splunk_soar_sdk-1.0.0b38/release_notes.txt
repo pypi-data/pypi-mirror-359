@@ -1,0 +1,59 @@
+# [1.0.0-beta.38](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.37...1.0.0-beta.38) (2025-07-01)
+
+
+### Bug Fixes
+
+* **actions:** add default for action versions field ([11b4542](https://github.com/phantomcyber/splunk-soar-sdk/commit/11b45428492a1a7b3d4517e392320ee4494bf5fb))
+* **cli:** actions that don't use an asset shouldn't need one to run ([c09ec45](https://github.com/phantomcyber/splunk-soar-sdk/commit/c09ec452ad3a9927b2ed2e1627cc4b48aa0c904e))
+* **convert:** ignore placeholder params ([48328da](https://github.com/phantomcyber/splunk-soar-sdk/commit/48328da8836e41907f5f3f8eaa60f5f6ebd87138))
+* **convert:** missing keywords in default asset class ([dbd1646](https://github.com/phantomcyber/splunk-soar-sdk/commit/dbd1646722ee0c783e9a1426d5a88a9408a8970e))
+* **convert:** support asset params with "file" type ([286ba09](https://github.com/phantomcyber/splunk-soar-sdk/commit/286ba092ba77518e6e55cad3d1d910e13667ee47))
+* edge case for empty asset config ([43ee1e2](https://github.com/phantomcyber/splunk-soar-sdk/commit/43ee1e26eb610732cf64079a5015692b3aded49b))
+* fix broken test for app template rendering ([a53f268](https://github.com/phantomcyber/splunk-soar-sdk/commit/a53f268da58b4fc44fd39e67aa3e69b6f9740161))
+* **outputs:** improve error handling when outputs try to use Optional fields ([198a6c5](https://github.com/phantomcyber/splunk-soar-sdk/commit/198a6c52d1a382cee03ffd19582ceb67b2663f3c))
+* support package[extras] when parsing requirements.txt ([b156113](https://github.com/phantomcyber/splunk-soar-sdk/commit/b1561135de38810be4475d25daa75c8171e456e6))
+* types for ast stubs ([06ead4a](https://github.com/phantomcyber/splunk-soar-sdk/commit/06ead4af64629619c2571b4d3f54190ca0119848))
+* types for ast stubs ([19c7e12](https://github.com/phantomcyber/splunk-soar-sdk/commit/19c7e1289af7c57ea8b2a84b749419dd8fa6677e))
+
+
+### Features
+
+* **cli:** added 'soarapps convert' command for converting apps to SDK ([1870e3e](https://github.com/phantomcyber/splunk-soar-sdk/commit/1870e3e6ff76087710de8887aea37c3039f7547e))
+* **cli:** added 'soarapps init' command for creating new apps ([09d1928](https://github.com/phantomcyber/splunk-soar-sdk/commit/09d1928d6370e720376249fed550cc4ea403d220))
+* **convert:** emit warnings if a converted app has custom views, REST, webhoks ([e92a8db](https://github.com/phantomcyber/splunk-soar-sdk/commit/e92a8db9448e346b1ef0d27f5149f768c06e82c6))
+* **init:** include a basic gitignore and precommit ([ccd82fc](https://github.com/phantomcyber/splunk-soar-sdk/commit/ccd82fc7fea4bcb442c9cdeca9ef2c069c180373))
+* **outputs:** add support for OutputField aliases ([d6387d3](https://github.com/phantomcyber/splunk-soar-sdk/commit/d6387d35a4873181e007d2dd43375f1c77460afe))
+
+
+
+
+
+# [1.0.0-beta.38](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.37...1.0.0-beta.38) (2025-07-01)
+
+
+### Bug Fixes
+
+* **actions:** add default for action versions field ([11b4542](https://github.com/phantomcyber/splunk-soar-sdk/commit/11b45428492a1a7b3d4517e392320ee4494bf5fb))
+* **cli:** actions that don't use an asset shouldn't need one to run ([c09ec45](https://github.com/phantomcyber/splunk-soar-sdk/commit/c09ec452ad3a9927b2ed2e1627cc4b48aa0c904e))
+* **convert:** ignore placeholder params ([48328da](https://github.com/phantomcyber/splunk-soar-sdk/commit/48328da8836e41907f5f3f8eaa60f5f6ebd87138))
+* **convert:** missing keywords in default asset class ([dbd1646](https://github.com/phantomcyber/splunk-soar-sdk/commit/dbd1646722ee0c783e9a1426d5a88a9408a8970e))
+* **convert:** support asset params with "file" type ([286ba09](https://github.com/phantomcyber/splunk-soar-sdk/commit/286ba092ba77518e6e55cad3d1d910e13667ee47))
+* edge case for empty asset config ([43ee1e2](https://github.com/phantomcyber/splunk-soar-sdk/commit/43ee1e26eb610732cf64079a5015692b3aded49b))
+* fix broken test for app template rendering ([a53f268](https://github.com/phantomcyber/splunk-soar-sdk/commit/a53f268da58b4fc44fd39e67aa3e69b6f9740161))
+* **outputs:** improve error handling when outputs try to use Optional fields ([198a6c5](https://github.com/phantomcyber/splunk-soar-sdk/commit/198a6c52d1a382cee03ffd19582ceb67b2663f3c))
+* support package[extras] when parsing requirements.txt ([b156113](https://github.com/phantomcyber/splunk-soar-sdk/commit/b1561135de38810be4475d25daa75c8171e456e6))
+* types for ast stubs ([06ead4a](https://github.com/phantomcyber/splunk-soar-sdk/commit/06ead4af64629619c2571b4d3f54190ca0119848))
+* types for ast stubs ([19c7e12](https://github.com/phantomcyber/splunk-soar-sdk/commit/19c7e1289af7c57ea8b2a84b749419dd8fa6677e))
+
+
+### Features
+
+* **cli:** added 'soarapps convert' command for converting apps to SDK ([1870e3e](https://github.com/phantomcyber/splunk-soar-sdk/commit/1870e3e6ff76087710de8887aea37c3039f7547e))
+* **cli:** added 'soarapps init' command for creating new apps ([09d1928](https://github.com/phantomcyber/splunk-soar-sdk/commit/09d1928d6370e720376249fed550cc4ea403d220))
+* **convert:** emit warnings if a converted app has custom views, REST, webhoks ([e92a8db](https://github.com/phantomcyber/splunk-soar-sdk/commit/e92a8db9448e346b1ef0d27f5149f768c06e82c6))
+* **init:** include a basic gitignore and precommit ([ccd82fc](https://github.com/phantomcyber/splunk-soar-sdk/commit/ccd82fc7fea4bcb442c9cdeca9ef2c069c180373))
+* **outputs:** add support for OutputField aliases ([d6387d3](https://github.com/phantomcyber/splunk-soar-sdk/commit/d6387d35a4873181e007d2dd43375f1c77460afe))
+
+
+
+
