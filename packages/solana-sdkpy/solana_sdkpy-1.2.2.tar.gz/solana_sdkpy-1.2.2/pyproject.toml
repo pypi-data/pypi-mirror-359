@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "solana-sdkpy"
+version = "1.2.2"
+description = "Utilities for Solana blockchain development and wallet management"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Solana Developer", email = "dev@example.com"},
+]
+keywords = ["solana", "blockchain", "crypto", "wallet"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "solana",
+    "solders",
+    "base58",
+    "requests",
+    "colorama",
+]
+
+[project.urls]
+Homepage = "https://github.com/example/solana-utils"
+Documentation = "https://solana-utils.readthedocs.io"
+Issues = "https://github.com/example/solana-utils/issues"
+Changelog = "https://github.com/example/solana-utils/blob/main/CHANGELOG.md"
+
+[project.scripts]
+solana-utils = "solana_utils.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/solana_utils"] 
