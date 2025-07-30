@@ -1,0 +1,21 @@
+[2025-07-02 16:30:10] [INFO] [fastapi-fastkit] Debug mode enabled. Logging to: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src/fastapi_fastkit/logs/fastkit_debug_20250702_163010.log
+[2025-07-02 16:30:10] [INFO] [fastapi-fastkit] FastAPI-fastkit CLI session started at 2025-07-02 16:30:10.195309
+[2025-07-02 16:30:10] [STDOUT] INFO     CLI invoked with debug mode:                                           
+         /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/.venv/
+         bin/pytest --cov=src/fastapi_fastkit --cov-report=term-missing         
+         --cov-report=html --cov-report=xml --cov-fail-under=70                 
+[2025-07-02 16:30:10] [INFO] [fastapi-fastkit] CLI invoked with debug mode: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/.venv/bin/pytest --cov=src/fastapi_fastkit --cov-report=term-missing --cov-report=html --cov-report=xml --cov-fail-under=70
+[2025-07-02 16:30:10] [STDOUT] ╭─────────────────────────── About FastAPI-fastkit ────────────────────────────╮
+│                                                                              │
+│     ⚡️ FastAPI fastkit - fastest FastAPI initializer. ⚡️                     │
+│                                                                              │
+│     Deploy FastAPI app foundation instantly at your local!                   │
+│                                                                              │
+│     ---                                                                      │
+│     - Project Maintainer : bnbong(JunHyeok Lee)                              │
+│     - Current Version : 1.0.2                                                │
+│     - Github : https://github.com/bnbong/FastAPI-fastkit                     │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[2025-07-02 16:30:10] [STDOUT] FASTKIT_PROJECT_ROOT: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/src
+USER_WORKSPACE: /Users/bnbong/Documents/WorkstationFiles/programming/FastAPI-kit/tests/temp_test_workspace
