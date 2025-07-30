@@ -1,0 +1,20 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+LogicTreeETC.egg-info/PKG-INFO
+LogicTreeETC.egg-info/SOURCES.txt
+LogicTreeETC.egg-info/dependency_links.txt
+LogicTreeETC.egg-info/requires.txt
+LogicTreeETC.egg-info/top_level.txt
+docs/conf.py
+examples/decisionTreeDSAExample.py
+examples/decisionTreeNTAExample.py
+examples/arrows/arrowExample.py
+logictree/ArrowETC.py
+logictree/LogicBoxETC.py
+logictree/LogicTreeETC.py
+logictree/__init__.py
+logictree/fonts/Leelawadee.ttf
+logictree/fonts/Times New Roman Regular.ttf
+tests/test_logic_tree.py
