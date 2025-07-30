@@ -1,0 +1,2 @@
+[console_scripts]
+elements-http-upload = elements_http_upload.__main__:main
