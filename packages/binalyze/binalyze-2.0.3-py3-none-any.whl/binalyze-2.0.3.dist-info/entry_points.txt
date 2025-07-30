@@ -1,0 +1,2 @@
+[console_scripts]
+binalyze-air = binalyze.air.cli:main
