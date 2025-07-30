@@ -1,0 +1,18 @@
+Testing
+---------
+ - use pyenv on OSX to manage multiple python versions
+ 
+``` pip install -r requirements-dev.txt
+    python -m unittest discover tests
+```
+
+Release
+---------
+ - bump version and release to pypi
+
+    make version-NEWVERSION
+    make release
+
+ - create release in GitHub
+
+    open https://github.com/sibson/redbeat/tags
