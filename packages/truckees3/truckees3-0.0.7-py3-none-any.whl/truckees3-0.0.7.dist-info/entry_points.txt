@@ -1,0 +1,2 @@
+[console_scripts]
+truckees3 = truckees3:truckees3
