@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: hivemind-mic-satellite
+Version: 0.7.1a1
+Summary: Remote microphone for HiveMind
+Home-page: https://github.com/JarbasHiveMind/hivemind-mic-satellite
+Author: jarbasAI
+Author-email: jarbasai@mailfence.com
+License: Apache2.0
