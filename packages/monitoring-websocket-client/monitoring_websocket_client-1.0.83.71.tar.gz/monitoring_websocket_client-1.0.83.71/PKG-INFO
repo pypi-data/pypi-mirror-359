@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: monitoring-websocket-client
+Version: 1.0.83.71
+Summary: Client WebSocket pour monitoring système en temps réel
+Author-email: NMicInvest <accueil@nmicinvest.com>
+License: GPL-3.0-or-later
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: System :: Monitoring
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: websockets
