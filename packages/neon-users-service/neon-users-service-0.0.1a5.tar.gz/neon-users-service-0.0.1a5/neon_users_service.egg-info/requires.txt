@@ -1,0 +1,15 @@
+pydantic~=2.0
+ovos-config~=0.1
+ovos-utils~=0.0
+neon-data-models>=0.0.0a4
+neon-utils[sentry]>=1.12.2a2,~=1.0
+
+[mongodb]
+pymongo~=4.0
+
+[mq]
+neon-mq-connector>=0.8.1a3,~=0.8
+
+[test]
+pytest
+mock
