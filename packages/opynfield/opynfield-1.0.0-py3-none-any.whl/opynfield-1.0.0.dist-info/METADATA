@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: opynfield
+Version: 1.0.0
+Summary: 
+Author: Ellen McMullen
+Author-email: 72088579+EllenMcMullen@users.noreply.github.com
+Requires-Python: >=3.9,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: jupyter (>=1.0.0,<2.0.0)
+Requires-Dist: matplotlib (>=3.7.1,<4.0.0)
+Requires-Dist: numba (>=0.57.0,<0.58.0)
+Requires-Dist: openpyxl (>=3.1.2,<4.0.0)
+Requires-Dist: pandas (>=2.0.1,<3.0.0)
+Requires-Dist: scipy (>=1.10.1,<2.0.0)
+Requires-Dist: statsmodels (>=0.14.0,<0.15.0)
+Requires-Dist: xlrd (>=2.0.1,<3.0.0)
+Description-Content-Type: text/markdown
+
+opynfield
+
+A Python package to analyze open field exploration data
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15794680.svg)](https://doi.org/10.5281/zenodo.15794680)
+
+See the documentation at: https://ellenmcmullen.github.io/opynfield/index.html
+
