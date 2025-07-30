@@ -1,0 +1,10 @@
+agent_society_mcp_client_wrapper-0.0.3.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcpwrap/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcpwrap/client.py,sha256=g-KzgQ9aPY9eDW-PVq3r3i8eGlMbtQLl0v1LESmctRQ,528
+mcpwrap/llm_integration.py,sha256=yuVCFeeW82RSl41QqxwgMQywO6JO9SoPH8NYkX1mtU0,3690
+mcpwrap/multi_mcp_model.py,sha256=6W7zQfZgcs9xvaOqXzIW85ZkWhlRpaigz26PLKWlHPs,3646
+mcpwrap/server_stub.py,sha256=asv5odQEQvfiJhUvnMFRzA_GYbGSI5_wdd7cFTK_G7k,4771
+agent_society_mcp_client_wrapper-0.0.3.dist-info/METADATA,sha256=lxoxIYuCh56SX0-H-UOcJrmKbWuId6t9SPNzaN23aEc,3102
+agent_society_mcp_client_wrapper-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+agent_society_mcp_client_wrapper-0.0.3.dist-info/top_level.txt,sha256=vCF0BBAlL_X2MPtrreWAcfvlzn3dK3GYGO67WBXcLk8,8
+agent_society_mcp_client_wrapper-0.0.3.dist-info/RECORD,,
