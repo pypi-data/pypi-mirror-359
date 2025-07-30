@@ -1,0 +1,57 @@
+# pyproject.toml for EQFE - modern PyPI build system
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eqfe"
+version = "0.1.0"
+description = "Environmental Quantum Field Effects (EQFE): Rigorous framework for modeling, simulation, and analysis of environmental quantum field effects in natural and engineered systems."
+authors = [
+    { name = "Justin Todd", email = "justin@pelicansperspective.com" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "matplotlib>=3.4.0",
+    "pandas>=1.3.0",
+    "qutip>=4.6.0",
+    "sympy>=1.8.0",
+    "seaborn>=0.11.0",
+    "plotly>=5.0.0",
+    "jupyter>=1.0.0",
+    "scikit-learn>=1.0.0",
+    "statsmodels>=0.12.0",
+    "pytest>=6.2.0",
+    "pytest-cov>=2.12.0",
+    "hypothesis>=6.14.0",
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=0.5.0",
+    "nbsphinx>=0.8.0",
+    "black>=21.0.0",
+    "flake8>=3.9.0",
+    "isort>=5.9.0",
+    "mypy>=0.910"
+]
+keywords = ["quantum", "field theory", "environmental", "simulation", "physics", "biology", "quantum information"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[project.urls]
+Homepage = "https://github.com/justin-todd/Environmental-Quantum-Field-Effects"
+Documentation = "https://pelicansperspective.github.io/Environmental-Quantum-Field-Effects/"
+Source = "https://github.com/justin-todd/Environmental-Quantum-Field-Effects"
+Issues = "https://github.com/justin-todd/Environmental-Quantum-Field-Effects/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*", "*.*"]
