@@ -1,0 +1,15 @@
+eheimdigital/__init__.py,sha256=_mhsitrBQt6QEbm-kP9IK1xZ4tqnkEGthd6Z9b5zbOc,56
+eheimdigital/autofeeder.py,sha256=TJeqvAzpes6YKL2DYymFs0Ffo_qVpsAylwfuvaPSva8,7428
+eheimdigital/classic_led_ctrl.py,sha256=7Jj0tqq2XxcFSXpxZHiAIYJQFNbAWDZABMD7hXqA9eI,15158
+eheimdigital/classic_vario.py,sha256=KBs0dtkwA_YkEwSicLJs1E7FFIYHhcOJfWyRAuzijpc,12208
+eheimdigital/device.py,sha256=RvcTkwHnAqEUt-OBDe4_nZQDBBLJZ-PgD8pGhUt-10E,2716
+eheimdigital/filter.py,sha256=7F_YmgEcmMUxW3KzMwRhOkcN928DZ84xD24UqedZRVQ,19192
+eheimdigital/heater.py,sha256=DwF-_5uO-A0ygqniqa515wwq638vJLAQFML1JzAxIwA,8780
+eheimdigital/hub.py,sha256=mqo1GThTw0UfH_wJo9230qg5LkY1CuitiIVC32sUmzY,9722
+eheimdigital/ph_control.py,sha256=ZSYgWkqc9xiHp9UtwBpAu4x7AgSVCbcMG72VguacZ6s,10873
+eheimdigital/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+eheimdigital/types.py,sha256=GYikj-ww5bgtbweXIstJRUA4a0k2fPpV28t-hskQvqA,10525
+eheimdigital-1.3.0.dist-info/METADATA,sha256=bIdbZiEPUcFmuxnhM-WmL-3G7O41FUdFGk3rEOI1GyY,332
+eheimdigital-1.3.0.dist-info/WHEEL,sha256=tkmg4JIqwd9H8mL30xA7crRmoStyCtGp0VWshokd1Jc,105
+eheimdigital-1.3.0.dist-info/licenses/LICENSE,sha256=8_SOcHL0FUe_0x_fQ_wQjA8F-5X5o6-zESDFTdQqYjI,1065
+eheimdigital-1.3.0.dist-info/RECORD,,
