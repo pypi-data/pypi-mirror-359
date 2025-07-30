@@ -1,0 +1,15 @@
+[project]
+name = "pydantic-autotag"
+version = "0.1.0"
+description = "Create Pydantic tagged unions without the boilerplate"
+readme = "README.md"
+authors = [{ name = "Eitan Mosenkis", email = "eitan@levro.com" }]
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2"]
+
+[build-system]
+requires = ["uv_build>=0.7.18,<0.8.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["mypy>=1.16.1", "ruff>=0.12.1"]
