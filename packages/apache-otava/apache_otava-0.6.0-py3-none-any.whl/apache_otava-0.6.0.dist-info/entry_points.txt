@@ -1,0 +1,3 @@
+[console_scripts]
+otava=otava.main:main
+
