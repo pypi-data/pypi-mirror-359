@@ -1,0 +1,7 @@
+beautifulsoup4
+Pillow
+numpy
+opencv_python
+PyYAML
+requests
+PyQt5
