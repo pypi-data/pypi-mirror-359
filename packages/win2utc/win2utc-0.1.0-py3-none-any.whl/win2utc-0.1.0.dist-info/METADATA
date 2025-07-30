@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: win2utc
+Version: 0.1.0
+Summary: Convert Windows timezone datetimes to UTC (with DST support)
+Author: Andrew Babu Augustine
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: backports.zoneinfo; python_version < "3.9"
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

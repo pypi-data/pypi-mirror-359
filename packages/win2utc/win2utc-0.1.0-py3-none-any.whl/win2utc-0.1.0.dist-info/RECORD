@@ -1,0 +1,9 @@
+win2utc/__init__.py,sha256=woGRiirULoOMegNroD5m4R1Do-VvHTPHLuaZImGUkBY,66
+win2utc/converter.py,sha256=Z6cmMyTuHK2GqjTblIdbID08R40C2ozHP-tUwcD7uGg,2586
+win2utc/data/timezones.json,sha256=iiRV6nZmclbEfBwPvZ6SAc9LBM0C0UtZxcg7iHkyAHM,36793
+win2utc/data/windowsZones.xml,sha256=nPPbajH7OC_uIbcL5v66HoJ2aw_NBuYmH7eTanPlN_8,49378
+win2utc-0.1.0.dist-info/licenses/LICENSE,sha256=VaBTVPISgfb9Wz3RZHhlyEpe2svyVg3JWiHJRW9NGzQ,1079
+win2utc-0.1.0.dist-info/METADATA,sha256=FKxuPbSxj5153-4YQFYiDt8sP7SFtdeMnFHT_va3W1A,357
+win2utc-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+win2utc-0.1.0.dist-info/top_level.txt,sha256=ydt9C2di4ssCpUNtfO1BOJo1nGi7D1XURoI29ggh8sA,8
+win2utc-0.1.0.dist-info/RECORD,,
