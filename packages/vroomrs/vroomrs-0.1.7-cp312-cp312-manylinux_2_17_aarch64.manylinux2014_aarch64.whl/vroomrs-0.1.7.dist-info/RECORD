@@ -1,0 +1,8 @@
+vroomrs-0.1.7.dist-info/METADATA,sha256=Bx86jbLaA7AYdMB2oETNMnCwoKxFYzPog2s6vuCc7DQ,1817
+vroomrs-0.1.7.dist-info/WHEEL,sha256=Qrl3darJZUdiTNkOZr3urArtwZ-TYUp_DHEzS7sFnDU,131
+vroomrs-0.1.7.dist-info/licenses/LICENSE.md,sha256=fL6zhKRYpzY2RDGnvKiSmlpzCDrrxi0dnuCnqXN-UJY,3784
+vroomrs/__init__.py,sha256=pq2GQrRrHd0nHLM81u5eO_bscHQ0yxTwWutIgYQtZ8g,111
+vroomrs/__init__.pyi,sha256=B-9exaqjBWE55JBF7v1nlwuuA_vZLi-WapSjQ29W8pI,15748
+vroomrs/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vroomrs/vroomrs.cpython-312-aarch64-linux-gnu.so,sha256=uTv8ohoM6j8eWZvYQmW0QWi30clN0npXY_FQ38hhpv0,4282368
+vroomrs-0.1.7.dist-info/RECORD,,
