@@ -1,0 +1,6 @@
+aiohttp
+qasync
+pandas
+numpy
+sklearn
+PyQt5
