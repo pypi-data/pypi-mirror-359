@@ -1,0 +1,2 @@
+[console_scripts]
+satplan = satplan.cli.main:main
