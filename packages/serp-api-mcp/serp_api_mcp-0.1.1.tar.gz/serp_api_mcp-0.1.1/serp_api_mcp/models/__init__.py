@@ -1,0 +1,1 @@
+"""Models package for SERP API MCP server."""

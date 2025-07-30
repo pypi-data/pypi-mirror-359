@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(poetry init:*)",
+      "Bash(touch:*)",
+      "Bash(rm:*)",
+      "Bash(poetry install:*)",
+      "Bash(poetry run:*)",
+      "Bash(ls:*)",
+      "Bash(poetry add:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(chmod:*)",
+      "Bash(pip install:*)",
+      "Bash(serp-api-mcp:*)",
+      "Bash(poetry lock:*)",
+      "Bash(echo $PATH)",
+      "Bash(poetry build:*)",
+      "Bash(poetry config:*)",
+      "Bash(poetry publish:*)",
+      "Bash(python:*)",
+      "Bash(poetry version:*)"
+    ],
+    "deny": []
+  }
+}
