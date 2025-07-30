@@ -1,0 +1,23 @@
+[project]
+name = "tidyout"
+version = "0.1.2"
+description = "Clean and parse messy LLM output into structured JSON"
+authors = [
+    { name = "Mayank Soni", email = "mayank.november@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = [
+    "rich"
+]
+
+[project.urls]
+Homepage = "https://github.com/mayanksoni20/tidyout"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
