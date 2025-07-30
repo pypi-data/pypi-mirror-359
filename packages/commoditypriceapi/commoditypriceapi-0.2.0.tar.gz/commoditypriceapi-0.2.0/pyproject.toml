@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commoditypriceapi"
+version = "0.2.0"
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+description = "Python SDK for CommodityPriceAPI"
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.28"
+]
