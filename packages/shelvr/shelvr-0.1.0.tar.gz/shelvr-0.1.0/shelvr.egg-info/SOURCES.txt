@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+shelvr/__init__.py
+shelvr/cli.py
+shelvr/log_config.py
+shelvr.egg-info/PKG-INFO
+shelvr.egg-info/SOURCES.txt
+shelvr.egg-info/dependency_links.txt
+shelvr.egg-info/entry_points.txt
+shelvr.egg-info/requires.txt
+shelvr.egg-info/top_level.txt

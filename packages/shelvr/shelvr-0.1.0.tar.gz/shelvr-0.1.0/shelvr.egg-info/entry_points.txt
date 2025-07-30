@@ -1,0 +1,2 @@
+[console_scripts]
+shelvr = shelvr.cli:main
