@@ -1,0 +1,65 @@
+Metadata-Version: 2.2
+Name: AsroNLP
+Version: 0.1.20
+Summary: Paket NLP untuk pengolahan teks Bahasa Indonesia
+Home-page: https://github.com/asroharun6/asronlp
+Author: Asro
+Author-email: 982024204@student.uksw.edu
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: Indonesian
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.0.0
+Requires-Dist: nltk>=3.5
+Requires-Dist: openpyxl>=3.0.0
+Requires-Dist: rich>=10.0.0
+Requires-Dist: regex>=2020.11.13
+Requires-Dist: swifter>=1.0.0
+Requires-Dist: Sastrawi>=1.0.1
+Requires-Dist: matplotlib>=3.1.0
+Requires-Dist: wordcloud>=1.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AsroNLP
+
+**AsroNLP** adalah paket Natural Language Processing (NLP) khusus untuk pengolahan teks Bahasa Indonesia. Paket ini menyediakan fitur preprocessing lengkap seperti pembersihan teks, tokenisasi, normalisasi, stemming, serta analisis sentimen berbasis kamus leksikon positif dan negatif.
+
+---
+
+## Fitur Utama
+
+- Pembersihan teks dari emoji, angka, simbol, URL, mention, dan duplikat data
+- Tokenisasi teks Bahasa Indonesia menggunakan NLTK
+- Penghapusan stopwords Bahasa Indonesia
+- Normalisasi kata menggunakan kamus kata baku
+- Stemming dengan algoritma Sastrawi
+- Analisis sentimen dengan kamus leksikon positif dan negatif
+- Deteksi sumber komentar (Media atau Individual)
+- Visualisasi hasil analisis: distribusi sentimen, wordcloud, dan frekuensi kata
+- Mendukung data dari YouTube (`comment`) dan Twitter (`full_text`)
+
+---
+
+## Instalasi
+
+Instalasi paket AsroNLP beserta dependensinya dapat dilakukan dengan:
+
+```bash
+pip install pandas openpyxl rich nltk Sastrawi regex matplotlib wordcloud swifter
+pip install asronlp==0.1.20
