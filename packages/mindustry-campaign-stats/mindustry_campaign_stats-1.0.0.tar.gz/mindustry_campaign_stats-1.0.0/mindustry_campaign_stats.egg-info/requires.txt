@@ -1,0 +1,9 @@
+tabulate~=0.9
+mutf8~=1.0
+py-ubjson~=0.16
+watchdog~=6.0
+
+[dev]
+build~=1.2
+twine~=6.0
+setuptools>=69

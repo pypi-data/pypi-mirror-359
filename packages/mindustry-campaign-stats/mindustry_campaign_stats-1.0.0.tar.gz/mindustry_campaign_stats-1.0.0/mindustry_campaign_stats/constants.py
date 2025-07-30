@@ -1,0 +1,95 @@
+from enum import StrEnum
+
+
+class Planet(StrEnum):
+    Serpulo = 'serpulo'
+    Erekir = 'erekir'
+
+
+SectorsName = {
+    Planet.Serpulo: {
+        1: 'Atolls',
+        3: 'Testing Grounds',
+        15: 'Ground Zero',
+        18: 'The Craters',
+        20: 'Stained Mountains',
+        21: 'Fungal Pass',
+        23: 'Tar Fields',
+        39: 'Weathered Channels',
+        47: 'Sea Port',
+        50: 'Frontier',
+        54: 'Cruxscape',
+        64: 'Facility 32M',
+        # 68: 'Polar Aerodrome',
+        81: 'Biomass Synthesis Facility',
+        86: 'Frozen Forest',
+        93: 'Planetary Launch Terminal',
+        101: 'Salt Flats',
+        108: 'Coastline',
+        123: 'Desolate Rift',
+        130: 'Nuclear Production Complex',
+        134: 'Overgrowth',
+        165: 'Extraction Outpost',
+        210: 'Infested Canyons',
+        213: 'Ruinous Shores',
+        216: 'Naval Fortress',
+        221: 'Tainted Woods',
+        227: 'Impact 0078',
+        246: 'Windswept Islands',
+        260: 'Mycelia Bastion',
+        264: 'Geothermal Stronghold',
+    },
+    Planet.Erekir: {
+        3: 'Crevice',
+        5: 'Karst',
+        10: 'The Onset',
+        12: 'Origin',
+        14: 'Atlas',
+        18: 'Stronghold',
+        19: 'Split',
+        25: 'Marsh',
+        29: 'Basin',
+        30: 'Peaks',
+        36: 'Intersect',
+        37: 'Crossroads',
+        39: 'Ravine',
+        41: 'Lake',
+        43: 'Caldera',
+        58: 'Siege',
+        88: 'Aegis',
+    },
+}
+
+ItemsId = {
+    Planet.Serpulo: [
+        'blast-compound',
+        'coal',
+        'copper',
+        'graphite',
+        'lead',
+        'metaglass',
+        'phase-fabric',
+        'plastanium',
+        'pyratite',
+        'scrap',
+        'sand',
+        'thorium',
+        'titanium',
+        'silicon',
+        'spore-pod',
+        'surge-alloy',
+    ],
+    Planet.Erekir: [
+        'beryllium',
+        'carbide',
+        # 'dormant-cyst',
+        # 'fissile-matter',
+        'graphite',
+        'oxide',
+        'phase-fabric',
+        'thorium',
+        'tungsten',
+        'silicon',
+        'surge-alloy',
+    ]
+}
