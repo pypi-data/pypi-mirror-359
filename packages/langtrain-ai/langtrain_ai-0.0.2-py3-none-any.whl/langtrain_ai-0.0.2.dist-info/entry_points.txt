@@ -1,0 +1,2 @@
+[console_scripts]
+langtrain-finetune = langtrain.cli.finetune:main
