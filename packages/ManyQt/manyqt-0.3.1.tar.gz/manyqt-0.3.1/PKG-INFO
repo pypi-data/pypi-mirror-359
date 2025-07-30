@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: ManyQt
+Version: 0.3.1
+Summary: PyQt/PyQt compatibility layer.
+Author: UsamaTN
+License: GPLv3
+Keywords: GUI,PyQt4,PyQt5,PySide,PySide2,compatibility
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Dynamic: author
+Dynamic: classifier
+Dynamic: keywords
+Dynamic: license
+Dynamic: summary
