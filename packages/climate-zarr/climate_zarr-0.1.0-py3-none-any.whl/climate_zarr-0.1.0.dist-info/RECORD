@@ -1,0 +1,14 @@
+climate_zarr/__init__.py,sha256=QBSbfzQWqUi0q7WNelBraxerTu7wV3G3SOH7cBVdhEc,900
+climate_zarr/_version.py,sha256=G5yYzuiE1MBTqktet5IrO9CS1Zzk8Z7pwecpRTMnjG0,74
+climate_zarr/calculate_county_stats.py,sha256=8xEqLXyHkK2MIllo1XeDHTqdLpiIHxjcTEgkpGMi_uk,53821
+climate_zarr/climate_cli.py,sha256=HQl-Vy-UbY2nPCkw4FWaCdMioN7aMRdeTAph0LY1IoU,31204
+climate_zarr/climate_config.py,sha256=MD-YTgO03wg2MfvwJlYfvQlhDofWuLlP_o8pGu5fwFE,7894
+climate_zarr/demo_cli.py,sha256=jJyw6ek0GbyLjXR_IwYjOPtdF8kn8-fFqo6U6DfVYzk,9389
+climate_zarr/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+climate_zarr/stack_nc_to_zarr.py,sha256=7qA3bQRlZiEY4JGviy_g6MgC0taNBddCf_nOPu0Ztu8,9466
+climate_zarr-0.1.0.dist-info/licenses/LICENSE,sha256=hfUeT2jnjvTx4X6kICk4nzDyk7SGiYLEggg76Y3o4iI,1068
+climate_zarr-0.1.0.dist-info/METADATA,sha256=nq5595ig8A1VixSVg2-vN9Ih7GOVhDnyaL7l3HcALJE,18583
+climate_zarr-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+climate_zarr-0.1.0.dist-info/entry_points.txt,sha256=cnic4DJrn9d-eLq9MeILWXiGm5qPX_3Nl-QU7ab7K2A,62
+climate_zarr-0.1.0.dist-info/top_level.txt,sha256=p5PyQRwA4emaRS73aH7A7wvJ1B0S9BSHuieXCp6d6E0,13
+climate_zarr-0.1.0.dist-info/RECORD,,
