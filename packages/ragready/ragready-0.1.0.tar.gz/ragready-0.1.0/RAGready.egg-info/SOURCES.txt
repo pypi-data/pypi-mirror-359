@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+RAGready.egg-info/PKG-INFO
+RAGready.egg-info/SOURCES.txt
+RAGready.egg-info/dependency_links.txt
+RAGready.egg-info/requires.txt
+RAGready.egg-info/top_level.txt
+ragready/__init__.py
+ragready/extractors.py
