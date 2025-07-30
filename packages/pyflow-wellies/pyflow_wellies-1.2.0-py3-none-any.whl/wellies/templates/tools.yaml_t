@@ -1,0 +1,31 @@
+# Put here configuration related to environment and tools
+# For a complete list of options, see:
+# https://pyflow-wellies.readthedocs.io/latest/config/tools_config/#tool-types
+ecflow_variables:
+  MODULES_VERSION: "new"
+
+tools:
+
+  # ---------- System modules ---------------------------------------------------
+  modules:
+    python:
+      name: python3
+      version: $MODULES_VERSION
+    ecmwf-toolbox:
+      version: $MODULES_VERSION
+      depends: [python]
+
+  # ---------- Extra installables -----------------------------------------------
+  packages:
+    earthkit:
+      type: git
+      source: git@github.com:ecmwf/earthkit-data.git
+      branch: develop
+      post_script: "pip install . --no-deps"
+
+  # --------Virtual envs --------------------------------------------------
+  environments:
+      suite_env:
+          type: system_venv
+          depends: [python, ecmwf-toolbox]
+          packages: [earthkit]
