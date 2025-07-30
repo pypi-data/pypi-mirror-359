@@ -1,0 +1,13 @@
+flask_modals2/__init__.py,sha256=WcYIgdnfHyiKp6kuCQ9nLOk_5q3EQHDnpmezt62xzlE,92
+flask_modals2/modal.py,sha256=bUSczV4AEfJaPM9KuVDBR7_DwWP6Ph-KA_V_c57OMJE,3589
+flask_modals2/partial.py,sha256=AVqOxqn1StfkiiF9pyh1fHnaPrtwS_TsUZTOLQSyXwY,871
+flask_modals2/static/css/progressBarStyle.css,sha256=6uVailcBQVMtF7Crq7a7rx3IF6ZEuI7v4ZgD-3XfDRk,160
+flask_modals2/static/js/main.js,sha256=pVU6CUAVxom6P9Kanb4iBuWH2hGAk0zhpbcM88XciA8,2328
+flask_modals2/templates/modals/jstemplate.html,sha256=jz6XR15t0kulCFAbDqVEtIO93hkE6EB5b4e9bDkDR5o,85
+flask_modals2/templates/modals/modalMessages.html,sha256=hc-bbSN3RleuEX-CkNj2lHvVkacaBjYeFTnvllGBXu8,281
+flask_modals2/templates/modals/nprogress.html,sha256=dLfWvOs3OnHMaM43ge3WFBxvQ7b-Mt3NLt4xCoqZvDw,252
+flask_modals2-0.6.0.dist-info/licenses/LICENSE,sha256=m82997amoM10P0KzOgqAcYMCjbiuXap8WeRPQv1w1zY,1093
+flask_modals2-0.6.0.dist-info/METADATA,sha256=Ss7QLpmZV-JlhaV6AlVhjLFKywTpdGEQ8yIhwB3wAos,4780
+flask_modals2-0.6.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flask_modals2-0.6.0.dist-info/top_level.txt,sha256=cmTFgTT4WmQtikqG8S3AP3G_CqjamR2Bhq7Zg37LeQ0,14
+flask_modals2-0.6.0.dist-info/RECORD,,
