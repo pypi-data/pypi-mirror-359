@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+humano/__init__.py
+humano/cli.py
+humano/main.py
+humano.egg-info/PKG-INFO
+humano.egg-info/SOURCES.txt
+humano.egg-info/dependency_links.txt
+humano.egg-info/entry_points.txt
+humano.egg-info/requires.txt
+humano.egg-info/top_level.txt
+tests/test_humano.py
