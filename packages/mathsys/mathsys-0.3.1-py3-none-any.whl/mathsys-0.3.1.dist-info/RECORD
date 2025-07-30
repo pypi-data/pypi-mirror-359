@@ -1,0 +1,10 @@
+mathsys/__init__.py,sha256=Jl-f1hCvSarJiSWefyNQms_zHR0apD7264Pgkd5IB_I,795
+mathsys/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mathsys/main/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mathsys/main/ir.py,sha256=psGbvqBrvpy2-u5Iri_d4cL_I1GEcYFHjUXJsUTVmpE,4154
+mathsys/main/parser.py,sha256=thjKn5BbDrig_DBJSe_JTFyFOYLYcmndlBJw5PscWsg,2962
+mathsys-0.3.1.dist-info/licenses/LICENSE,sha256=SKVSA4BVdQEkbZV4XjA3-yV3CQYDbvu9FDJX31vo6SM,1091
+mathsys-0.3.1.dist-info/METADATA,sha256=PhDvuJ52zyAes5sqqPgo98sHYv4huRuc3267E6rLjmg,529
+mathsys-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mathsys-0.3.1.dist-info/top_level.txt,sha256=j93xdwqopkNdxnhXQ63T63SRMofgshxmqIpjWSYpCo4,8
+mathsys-0.3.1.dist-info/RECORD,,
