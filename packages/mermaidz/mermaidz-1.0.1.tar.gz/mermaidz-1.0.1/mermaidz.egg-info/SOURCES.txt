@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+mermaidz/__init__.py
+mermaidz/core.py
+mermaidz/templater.py
+mermaidz.egg-info/PKG-INFO
+mermaidz.egg-info/SOURCES.txt
+mermaidz.egg-info/dependency_links.txt
+mermaidz.egg-info/requires.txt
+mermaidz.egg-info/top_level.txt

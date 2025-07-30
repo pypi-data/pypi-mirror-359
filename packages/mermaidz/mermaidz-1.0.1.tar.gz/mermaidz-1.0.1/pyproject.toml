@@ -1,0 +1,7 @@
+[project]
+name = "mermaidz"
+version = "1.0.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [ "toml>=0.10.2",]
