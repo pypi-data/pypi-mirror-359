@@ -1,0 +1,120 @@
+# Fourier Series Classification
+
+A package for classifying 1D signals using Fourier Series and Machine Learning.
+
+## Overview
+
+This package implements the methodology described in the paper "Using Fourier Series and Machine Learning to Classify 1D-Signals". It provides tools for:
+
+- Generating various types of 1D signals (Box, Sawtooth, Exponential, Sinusoidal, Gaussian)
+- Computing Fourier series and coefficients
+- Detecting jumps in signals using concentration factors
+- Training neural network models for signal classification
+- Visualizing signals, Fourier coefficients, and classification results
+
+## Installation
+
+### Requirements
+
+- Python 3.6 or higher
+- NumPy
+- TensorFlow 2.4 or higher
+- Matplotlib
+- Plotly
+- Pandas
+- scikit-learn
+
+### Install from source
+
+```bash
+git clone https://github.com/abbass12/FourierSeriesClassification.git
+cd FourierSeriesClassification
+pip install -e .
+```
+
+## Usage
+
+### Basic Example
+
+```python
+import numpy as np
+from fourier_classification.signals import box_signal
+from fourier_classification.fourier import fourier_series
+from fourier_classification.visualization import plot_signal_and_fourier
+
+# Create domain
+x = np.linspace(-np.pi, np.pi, 1500)
+
+# Generate a box signal
+signal = box_signal(x, a=2, b=5, normalized=True)
+
+# Compute Fourier coefficients
+fourier_coeffs = box_signal(x, a=2, b=5, normalized=True, fourier=True, n_modes=40)
+
+# Plot signal and Fourier coefficients
+fig = plot_signal_and_fourier(x, signal, fourier_coeffs, title="Box Signal")
+fig.savefig("box_signal.png")
+```
+
+### Signal Classification
+
+```python
+import numpy as np
+from fourier_classification.utils import create_domain, prepare_dataset
+from fourier_classification.models import (
+    create_feed_forward_model, 
+    train_model, 
+    evaluate_model,
+    prepare_data_for_model_b
+)
+
+# Create domain
+domain = create_domain(start=-np.pi, end=np.pi, num_points=1500)
+
+# Prepare dataset
+signal_types = ['Box', 'Saw', 'Exp', 'Sin', 'Gaus']
+signals, labels = prepare_dataset(
+    signal_types, 
+    num_per_type=100, 
+    domain=domain, 
+    fourier=True, 
+    n_modes=40
+)
+
+# Prepare data for Model B (Fourier coefficients)
+x_train, x_test, y_train, y_test = prepare_data_for_model_b(signals, labels)
+
+# Create and train model
+model = create_feed_forward_model(input_shape=(x_train.shape[1],))
+model, history = train_model(model, x_train, y_train, epochs=100)
+
+# Evaluate model
+results = evaluate_model(model, x_test, y_test, class_names=signal_types)
+print(f"Test accuracy: {results['accuracy']:.4f}")
+```
+
+## Module Structure
+
+- `signals.py`: Functions for generating various types of 1D signals
+- `fourier.py`: Functions for Fourier series calculations and transformations
+- `operations.py`: Functions for signal operations (noise, jumps)
+- `models.py`: Neural network models for signal classification
+- `visualization.py`: Functions for visualizing signals and results
+- `utils.py`: Utility functions for data handling and preprocessing
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```
+@article{srour2023fourier,
+  title={Using Fourier Series and Machine Learning to Classify 1D-Signals},
+  author={Srour, Abbass},
+  journal={},
+  year={2023}
+}
+```
