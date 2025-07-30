@@ -1,0 +1,15 @@
+pyyaml
+requests
+jinja2
+litellm
+tenacity
+datasets
+rich
+python-dotenv
+typer
+
+[dev]
+pytest
+pytest-cov
+pre-commit
+ruff
