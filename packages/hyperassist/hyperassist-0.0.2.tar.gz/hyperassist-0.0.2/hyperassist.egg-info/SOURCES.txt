@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+hyperassist/__init__.py
+hyperassist.egg-info/PKG-INFO
+hyperassist.egg-info/SOURCES.txt
+hyperassist.egg-info/dependency_links.txt
+hyperassist.egg-info/requires.txt
+hyperassist.egg-info/top_level.txt
+hyperassist/log_assist/__init__.py
+hyperassist/log_assist/analyzer.py
+hyperassist/parameter_assist/__init__.py
+hyperassist/parameter_assist/suggestor.py
+test/test.py
