@@ -1,0 +1,17 @@
+todo/__init__.py,sha256=GSdCx1_rJH94QzT7IP_mcEYJoYg1_migo0lqyeJyi4c,196
+todo/main.py,sha256=9F4kKzMZQIi-_fZqjnZcxNk1A-UKPCsGR7HrNKEKJJI,2860
+todo/models.py,sha256=qDR-gmvAzpQGRmIionCaKqW-Esd7uxC3u7zf6EZ-_5I,2642
+todo/storage.py,sha256=9FzaAnA35ri5-PiuAZQlDmdlxHNbaxoaQh6FLEWO1sI,5062
+todo/commands/__init__.py,sha256=8EojYDZLYLHpssiaSKC-cxpame34Ei3gfRRBw7J7Tyk,48
+todo/commands/add.py,sha256=87hmi0C95SKB_bSmPTkYXYcGJ897MOUtiVi709ayd3E,4297
+todo/commands/complete.py,sha256=ahWHDAuf4D_O7v0-WNmsoLVWQl--wNJNCyyqKS4ByAA,2570
+todo/commands/delete.py,sha256=cqVIqciwwtEov0bAwo_CTwbS4RE4A3NH8LUiSUpL44U,2950
+todo/commands/edit.py,sha256=9eYovUaFHe6TUxm4zPGbkqhwWTG6sN0I5wb2bcmo348,5417
+todo/commands/init.py,sha256=8xVrYuW-IOmeNtDZasNDyYZOvKOtAlrYb0Ge5OR8v9k,2118
+todo/commands/list.py,sha256=8rhSj18BcdV48CqfBgyKg-yoYmheF4tyqRYm2NbZ_TM,6903
+todo/commands/show.py,sha256=GY2R9WEFaMThD7LQEgJr4s08_CtSXJWE7PsQjTcikDg,2909
+todo_oio-0.1.0.dist-info/METADATA,sha256=yNhQizdLxBknOM6tSIA2daiCds6bTLQO3oV2rCRoIAE,6105
+todo_oio-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+todo_oio-0.1.0.dist-info/entry_points.txt,sha256=sblq_3pB8lPPPr2jFgYgRq4d5Wir4V1zvyCfwaRNRAs,39
+todo_oio-0.1.0.dist-info/licenses/LICENSE,sha256=yenB7v499MZ6K7sQe9wfztUJBk3fJCvlyyhmU9Z6Vbw,1064
+todo_oio-0.1.0.dist-info/RECORD,,
