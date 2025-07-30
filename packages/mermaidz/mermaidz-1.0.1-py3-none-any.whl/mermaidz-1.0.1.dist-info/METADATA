@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mermaidz
+Version: 1.0.1
+Summary: Add your description here
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: toml>=0.10.2
+
+# mermaidz
+所有的自有仓库都加Z尾缀
