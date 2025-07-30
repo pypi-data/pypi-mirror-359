@@ -1,0 +1,17 @@
+LICENCE
+MANIFEST.in
+README.md
+setup.py
+babydb/__init__.py
+babydb/cli.py
+babydb/core.py
+babydb/test.py
+babydb/web.py
+babydb.egg-info/PKG-INFO
+babydb.egg-info/SOURCES.txt
+babydb.egg-info/dependency_links.txt
+babydb.egg-info/entry_points.txt
+babydb.egg-info/requires.txt
+babydb.egg-info/top_level.txt
+tests/__init__.py
+tests/test_simpledb.py
