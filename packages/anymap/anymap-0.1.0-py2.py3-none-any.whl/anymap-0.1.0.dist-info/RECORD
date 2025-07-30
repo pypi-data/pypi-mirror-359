@@ -1,0 +1,15 @@
+anymap/__init__.py,sha256=RA9Ea7wemtKmLeXQ5kkuPj60MVwv-Pw5Cg1obOCz7d8,253
+anymap/anymap.py,sha256=mx_BniWbE4j4cPTvU0PkrCF90VDy7iIVmVUQ-QNLPJA,35197
+anymap/common.py,sha256=Rw6d9qmZDu3dUGTyJto1Y97S7-QA-m2p-pbCNvMDrm4,184
+anymap/static/cesium_widget.css,sha256=zmGFc1NTKpFUDXX-stP23ZtCnk3f1-RLt84Ap3_tx-Y,213
+anymap/static/cesium_widget.js,sha256=cEieTdC1O7E3daheVAicdShQAkZOvRpIVY-qRvY9bV0,14245
+anymap/static/mapbox_widget.css,sha256=8eLWns9aiw54cnrm7RobTHQQHvOo2Fw7sH8qskVuByA,3401
+anymap/static/mapbox_widget.js,sha256=8jO7bgMpM9eQ5VugMFQhgGz4_Zg2u_dL3U9kLy540cU,10208
+anymap/static/maplibre_widget.css,sha256=_me2yjLQPAGF9Uh3lhYG9dIzwxbbFuedOs40M6xFtVs,1747
+anymap/static/maplibre_widget.js,sha256=QZK0cLBQX-WoZIzlnxdkexX1wrEs2dYivzSvSrXJplw,8614
+anymap-0.1.0.dist-info/licenses/LICENSE,sha256=_BktjO_lZVQtxUpieKTALScgneY3NXwhCqduJoxCAW4,1070
+anymap-0.1.0.dist-info/METADATA,sha256=p_feAjshvlBIpCbb2mMPxFmIuiyxevuiakk-Hdwq4DE,5448
+anymap-0.1.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+anymap-0.1.0.dist-info/entry_points.txt,sha256=0O3DxRIMtuyN7fATUbCH5IdAa-cxkPZfzQYz9urT4hY,43
+anymap-0.1.0.dist-info/top_level.txt,sha256=7Y_Ia7SToBMrOM-aCQDVT2FJv6DxZYOM3ugk_ah0xu0,7
+anymap-0.1.0.dist-info/RECORD,,
