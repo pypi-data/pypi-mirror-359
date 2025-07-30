@@ -1,0 +1,10 @@
+mulch/__init__.py,sha256=juAiPOD8Gbow6gNTV72UukFgocjxAkkkzI-6g2yS8y4,138
+mulch/cli.py,sha256=BkZNjk23SkMsj1_JnLyAxMBnKM2zoI2P8viXBPR9DVY,1954
+mulch/cli_.py,sha256=BiSMN0wku4s5L1S_UWza1XzLgsRq-gUFCuB0inBfOOw,1756
+mulch/scaffold.json,sha256=0uDiraZUaJ9vCT9U3Y8wk2CJobWi323dPQJjPSPGqr4,261
+mulch/workspace_factory.py,sha256=JZpsT_QIDc0rAFP-_6Ea-czxdOXieG-6otmMMthfsiA,4833
+mulch-0.1.18.dist-info/entry_points.txt,sha256=m7RTgtiBlWSCDiLkAJXLiGq9mS-g7zBDm43nrhnZMHw,39
+mulch-0.1.18.dist-info/LICENSE,sha256=rQbXGp4qaMfXk_8pkK6rewRqW_EwCSPhHyuP7hj1rYA,1100
+mulch-0.1.18.dist-info/METADATA,sha256=Rb1bNTg0xfzfeyQqB_CdFHkTLu_UdHcM4to9wlHnmzA,1830
+mulch-0.1.18.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+mulch-0.1.18.dist-info/RECORD,,
