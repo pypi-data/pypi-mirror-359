@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SimpleDB Web Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .record { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        img { max-width: 200px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>SimpleDB Records</h1>
+    <div id="records"></div>
+    <script>
+        async function loadRecords() {
+            await fetch('/api/login/user/user123');
+            const response = await fetch('/api/list');
+            const data = await response.json();
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            const recordsDiv = document.getElementById('records');
+            data.records.forEach(record => {
+                const div = document.createElement('div');
+                div.className = 'record';
+                div.innerHTML = `<h3>${record.key}</h3><p>${JSON.stringify(record.value)}</p>`;
+                if (record.value.file_paths) {
+                    record.value.file_paths.forEach((file, index) => {
+                        const ext = file.original_ext.slice(1).toLowerCase();
+                        if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
+                            div.innerHTML += `<img src="/files/${file.path.split('/').pop()}" alt="${record.key} file ${index}">`;
+                        } else {
+                            div.innerHTML += `<a href="/files/${file.path.split('/').pop()}" download>Download ${file.path.split('/').pop()}</a><br>`;
+                        }
+                    });
+                }
+                recordsDiv.appendChild(div);
+            });
+        }
+        loadRecords();
+    </script>
+</body>
+</html>
