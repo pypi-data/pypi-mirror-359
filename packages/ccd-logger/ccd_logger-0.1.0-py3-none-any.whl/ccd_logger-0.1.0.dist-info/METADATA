@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: ccd-logger
+Version: 0.1.0
+Summary: Biblioteca padrão de logging estruturado para as aplicações da Conta Comigo Digital. Oferece suporte para logs de APIs, Lambdas e outros serviços, com integração ao AWS CloudWatch e suporte a JSON para SIEMs.
+Author-email: Iago Santana <iago.gomes@contacomigo.digital>
+License: MIT
+Keywords: logging,structured-logging,json-logger,siem,lambda,django
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-json-logger>=2.0.7
+Requires-Dist: typing-extensions>=4.0.0
+Dynamic: license-file
+
+# 📦 Conta Comigo Digital Logger
+
+Biblioteca de **logging estruturado** em formato JSON para as aplicações da fintech **Conta Comigo Digital**.  
+Compatível com ambientes `Django`, `AWS Lambda`, e scripts genéricos, com foco em integração com **SIEMs** e observabilidade.
+
+---
+
+## 🚀 Instalação
+
+Instale diretamente do GitHub:
+
+```bash
+pip install ccd-logger
+```
