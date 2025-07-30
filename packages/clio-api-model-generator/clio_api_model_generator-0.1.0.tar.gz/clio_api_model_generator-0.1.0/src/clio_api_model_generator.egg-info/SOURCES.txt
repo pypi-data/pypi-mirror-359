@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/clio_api_model_generator.egg-info/PKG-INFO
+src/clio_api_model_generator.egg-info/SOURCES.txt
+src/clio_api_model_generator.egg-info/dependency_links.txt
+src/clio_api_model_generator.egg-info/requires.txt
+src/clio_api_model_generator.egg-info/top_level.txt
+src/generators/components.py
+src/generators/endpoints.py
+src/generators/fields.py
+src/generators/query.py
+src/generators/request_body.py
+src/static/__init__.py
+src/static/models_registry.py
+src/utils/__init__.py
+src/utils/sort_schema.py
