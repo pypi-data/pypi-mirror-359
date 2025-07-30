@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools_scm>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+[project]
+name = "personalinfo"
+version = "0.0.0"
+description = "A comprehensive Python utility to save and retrieve personal, family, professional, vehicle, education, bank, and contact information."
+authors = [
+    { name = "prabaharan", email = "prabaharanpython@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml",
+    "pandas",
+    "openpyxl>=3.1.5",
+]
+
