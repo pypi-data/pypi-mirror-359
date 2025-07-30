@@ -1,0 +1,6 @@
+[console_scripts]
+c-c = app.main:main
+c-c-c = app.classic_main:main
+chat = app.main:main
+chat-console = app.main:main
+chat-console-classic = app.classic_main:main
