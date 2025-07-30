@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: NUcmd
+Version: 0.1
+Summary: cmd工具
+Home-page: 
+Author: Wu_Ziqi
+Author-email: bcm_copilot@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9, <3.14
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: Pillow>=5.1.0
+Requires-Dist: numpy==1.26.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# NUcmd
+
+
+
+`NUcmd
+` 是一个为开发者提供基本cmd控制的库错库会打开在cmd上
+
+### 使用
+```
+ NUcmd.cmd("         ")括号内写cmd指令
+```
+
+### 安装
+
+```
+pip install NUcmd
+```
+
+
+### License
