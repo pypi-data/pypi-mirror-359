@@ -1,0 +1,18 @@
+[project]
+name = "fortidlp"
+version = "0.92"
+authors = [
+  { name="Rafael Foster", email="rafaelgfoster@gmail.com" }
+]
+description = "This FortiDLP module is an open-source Python library that simplifies interaction with the FortiDLP Cloud API."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/rafaelfoster/fortiedr"
+Issues = "https://github.com/rafaelfoster/fortiedr/issues"
