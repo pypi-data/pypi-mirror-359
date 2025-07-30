@@ -1,0 +1,10 @@
+spot2vector/__init__.py,sha256=UaprEm4F7xNEkK7_LdWB58TGLZT9S264cNYusf4qtGU,139
+spot2vector/lossfunctions.py,sha256=bZsPJC57ZPzBrz-YvX81Kdmxnh6v2q792PATKRLaqJg,953
+spot2vector/models.py,sha256=KKou3PQzoGkjiS4wAFmtE7oSB7NxMb2GdO-723l_NNg,3052
+spot2vector/spot2vector.py,sha256=qDAJyHCyqDeYR9cBlXoaaPDn-uh7YspU7Q73nvBsBfY,7473
+spot2vector/utils.py,sha256=aHt1wKxMKQtlCZ13uGYHD3nbbzro8-aXyVJNQALKFSs,7659
+spot2vector-1.0.dist-info/licenses/LICENSE,sha256=T293RopXXexRKZ4eAc0NvEhAYwuzpoAa69FwQ7fDgqU,1064
+spot2vector-1.0.dist-info/METADATA,sha256=Iex-7kGm-AgsRsfCNWUDEnkix_QhUwHblzX-0fqQT3I,97
+spot2vector-1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spot2vector-1.0.dist-info/top_level.txt,sha256=MNI10OcaXyD7hgxafsK5UKLUpC_leQNxjZ5r1sO-08A,12
+spot2vector-1.0.dist-info/RECORD,,
