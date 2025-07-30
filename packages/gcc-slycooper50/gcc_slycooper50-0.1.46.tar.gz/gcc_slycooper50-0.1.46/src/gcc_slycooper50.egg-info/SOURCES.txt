@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/gcc_slycooper50/lua-5.4.8.tar.gz
+src/gcc_slycooper50/wayland-1.23.93.tar.bz2
+src/gcc_slycooper50/wayland-protocols-1.45.tar.bz2
+src/gcc_slycooper50.egg-info/PKG-INFO
+src/gcc_slycooper50.egg-info/SOURCES.txt
+src/gcc_slycooper50.egg-info/dependency_links.txt
+src/gcc_slycooper50.egg-info/top_level.txt
