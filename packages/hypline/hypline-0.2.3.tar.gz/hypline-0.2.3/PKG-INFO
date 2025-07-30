@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: hypline
+Version: 0.2.3
+Summary: Data Cleaning and Analysis Pipeline for Hyperscanning Research
+Project-URL: Repository, https://github.com/princeton-ddss/hypline
+Project-URL: Documentation, https://princeton-ddss.github.io/hypline/
+Author-email: Sangyoon Park <datumvitae@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: dill>=0.3.9
+Requires-Dist: nibabel>=5.3.2
+Requires-Dist: nilearn>=0.11.1
+Requires-Dist: numpy>=2.2.4
+Requires-Dist: polars>=1.26.0
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: rich>=14.0.0
+Requires-Dist: typer>=0.15.2
+Description-Content-Type: text/markdown
+
+# Hypline
+
+Hypline is a Python package that provides a CLI tool for cleaning and analyzing data from hyperscanning studies involving dyadic conversations.
+
+## Installation
+
+Hypline can be installed using `pip`:
+
+```bash
+pip install hypline
+```
+
+It can also be installed using other package managers such as [`uv`](https://docs.astral.sh/uv/) and [`poetry`](https://python-poetry.org/docs/).
+
+## Quick Start
+
+Once the package is installed, `hypline` command will be available, like so:
+
+```bash
+hypline --help
+```
+
+Running the above will display an overview of the tool, including supported subcommands.
+
+For instance, `clean` is a subcommand for performing confound regression to clean BOLD outputs from [fMRIPrep](https://fmriprep.org/en/stable/index.html), and its details can be viewed by running:
+
+```bash
+hypline clean --help
+```
+
+## What Next
+
+If you want to learn more about Hypline, please check out the official project [documentation](https://princeton-ddss.github.io/hypline/).
