@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body.dark-mode {
+            background-color: #181a1b !important;
+            color: #f8f9fa !important;
+        }
+        .dark-mode .card, .dark-mode .navbar, .dark-mode .bg-white {
+            background-color: #23272b !important;
+            color: #f8f9fa !important;
+        }
+        .dark-mode .card-title, .dark-mode .navbar-brand {
+            color: #f8f9fa !important;
+        }
+        .theme-toggle {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-light" id="body">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container-fluid">
+        {% if brand_logo %}
+            <a class="navbar-brand" href="#"><img src="/{{ brand_logo }}" alt="Logo" height="32"></a>
+        {% else %}
+            <a class="navbar-brand" href="#">{{ site_title }}</a>
+        {% endif %}
+        <button class="btn btn-outline-secondary ms-auto theme-toggle" id="themeToggle" title="Сменить тему">
+            <span id="themeIcon" class="bi bi-moon"></span> Тема
+        </button>
+    </div>
+</nav>
+<div class="container py-4">
+    <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'easyboard:dashboard' %}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/easyboard/crud/auth/user/">CRUD: Users</a>
+        </li>
+        {% if has_import_export %}
+        <li class="nav-item">
+            <a class="nav-link" href="/easyboard/integration/import_export/">Import/Export</a>
+        </li>
+        {% endif %}
+        {% if has_mptt %}
+        <li class="nav-item">
+            <a class="nav-link" href="/easyboard/integration/mptt/">MPTT</a>
+        </li>
+        {% endif %}
+        {% if has_constance or has_dynamic_preferences %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'easyboard:settings' %}">Настройки</a>
+        </li>
+        {% endif %}
+        {% if has_drf %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'easyboard:api_docs' %}">API Docs</a>
+        </li>
+        {% endif %}
+    </ul>
+    <h1 class="mb-4">{{ site_title }}</h1>
+    {% if show_stats %}
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Пользователи</h5>
+                    <p class="card-text display-6">{{ users_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Заказы</h5>
+                    <p class="card-text display-6">{{ orders_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Товары</h5>
+                    <p class="card-text display-6">{{ products_count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">График активности</h5>
+                    <canvas id="mainChart" height="80"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% for card in custom_cards %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ card }}</h5>
+                    <p class="card-text">Здесь будет ваша метрика.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% for metric in custom_metrics %}
+        <div class="col-md-4 mb-3">
+            <div class="card border-info">
+                <div class="card-body">
+                    <h5 class="card-title">{{ metric.title }}</h5>
+                    <p class="card-text display-6">{{ metric.value }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+<script>
+    // Light/Dark theme toggle
+    const body = document.getElementById('body');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    function setTheme(mode) {
+        if (mode === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.className = 'bi bi-sun';
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.className = 'bi bi-moon';
+        }
+        localStorage.setItem('easyboard-theme', mode);
+    }
+    themeToggle.addEventListener('click', function() {
+        const isDark = body.classList.contains('dark-mode');
+        setTheme(isDark ? 'light' : 'dark');
+    });
+    // On load
+    (function() {
+        const saved = localStorage.getItem('easyboard-theme');
+        if (saved === 'dark') setTheme('dark');
+        else setTheme('light');
+    })();
+
+    // Chart.js
+    const ctx = document.getElementById('mainChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+            datasets: [{
+                label: 'Активность',
+                data: [12, 19, 3, 5, 2, 3, 7],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+</script>
+</body>
+</html> 

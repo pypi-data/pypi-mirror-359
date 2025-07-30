@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include easyboard/templates *
+recursive-include easyboard/static * 
