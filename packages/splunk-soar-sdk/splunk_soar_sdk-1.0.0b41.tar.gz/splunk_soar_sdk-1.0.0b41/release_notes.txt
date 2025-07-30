@@ -1,0 +1,37 @@
+# [1.0.0-beta.41](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.40...1.0.0-beta.41) (2025-07-02)
+
+
+### Bug Fixes
+
+* deploy github pages on push events to main and beta as well ([ed5a8ef](https://github.com/phantomcyber/splunk-soar-sdk/commit/ed5a8ef1e0a8b71095acf56f733abb36af4240a5))
+* more review fixes ([8b2c7c5](https://github.com/phantomcyber/splunk-soar-sdk/commit/8b2c7c5bc05116d4be54e6752f072eea7cee29fe))
+* review fixes ([2d7e57b](https://github.com/phantomcyber/splunk-soar-sdk/commit/2d7e57bd251a1a8fac0f0d1c62a3bd0014c93e7a))
+* test issues ([75bbce6](https://github.com/phantomcyber/splunk-soar-sdk/commit/75bbce6b09cd76480cdc2a3cdbdffa4aac344cbd))
+
+
+### Features
+
+* async sdk functionality added to actions and other handlers ([d552b61](https://github.com/phantomcyber/splunk-soar-sdk/commit/d552b61a15f5f63261501ec27a52d9a5b09e90ff))
+
+
+
+
+
+# [1.0.0-beta.41](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.0.0-beta.40...1.0.0-beta.41) (2025-07-02)
+
+
+### Bug Fixes
+
+* deploy github pages on push events to main and beta as well ([ed5a8ef](https://github.com/phantomcyber/splunk-soar-sdk/commit/ed5a8ef1e0a8b71095acf56f733abb36af4240a5))
+* more review fixes ([8b2c7c5](https://github.com/phantomcyber/splunk-soar-sdk/commit/8b2c7c5bc05116d4be54e6752f072eea7cee29fe))
+* review fixes ([2d7e57b](https://github.com/phantomcyber/splunk-soar-sdk/commit/2d7e57bd251a1a8fac0f0d1c62a3bd0014c93e7a))
+* test issues ([75bbce6](https://github.com/phantomcyber/splunk-soar-sdk/commit/75bbce6b09cd76480cdc2a3cdbdffa4aac344cbd))
+
+
+### Features
+
+* async sdk functionality added to actions and other handlers ([d552b61](https://github.com/phantomcyber/splunk-soar-sdk/commit/d552b61a15f5f63261501ec27a52d9a5b09e90ff))
+
+
+
+
