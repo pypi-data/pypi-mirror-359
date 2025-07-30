@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply text-neutral-900;
+  }
+}
+
+/* Slide-specific utilities */
+@layer utilities {
+  .slide-enter {
+    animation: slideEnter 0.5s ease-out;
+  }
+  
+  .slide-exit {
+    animation: slideExit 0.5s ease-in;
+  }
+  
+  @keyframes slideEnter {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideExit {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+}
