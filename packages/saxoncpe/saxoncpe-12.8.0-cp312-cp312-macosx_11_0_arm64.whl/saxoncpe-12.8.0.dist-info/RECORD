@@ -1,0 +1,9 @@
+saxoncpe.cpython-312-darwin.so,sha256=rYeMluc68T8qC3ecDvwZKDUahWBZ2lE-99IlanU9Flw,1038448
+saxoncpe-12.8.0.dist-info/RECORD,,
+saxoncpe-12.8.0.dist-info/WHEEL,sha256=V1loQ6TpxABu1APUg0MoTRBOzSKT5xVc3skizX-ovCU,136
+saxoncpe-12.8.0.dist-info/top_level.txt,sha256=ZbWEHprZQUe7EVra5eqAIvzs2pp9hc8CPI7OiZUuOHw,20
+saxoncpe-12.8.0.dist-info/METADATA,sha256=Uij24xBZ7U7WYyA3NcohaMYYGShnqCMqJJuuyOmClbs,5857
+saxoncpe.dylibs/libsaxonc-pe.12.8.0.dylib,sha256=GycLBwxppQasXqNUXirrkTQoMPanITeg_xQl6fKtB_M,282592
+saxoncpe.dylibs/libsaxonc-core-pe.12.8.0.dylib,sha256=HDnpOHy9twX99sxsRxU3B71XMhg12q-zUiT52JcegoQ,105190800
+saxonc/saxonc.cpp,sha256=kq7AJHSN5pM0m6BJdM4HNuhsgoIiBj3R_06_g2Ukuwc,4123029
+cpp/include/CythonExceptionHandler.h,sha256=B6ipCUyooT-aOEzxd3f3b8XdX5mRVj6YlyDGxAngApU,3380
