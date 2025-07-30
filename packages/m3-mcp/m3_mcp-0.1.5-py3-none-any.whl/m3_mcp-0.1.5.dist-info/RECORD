@@ -1,0 +1,15 @@
+m3/__init__.py,sha256=2wKLdnxZxJvD0d49jIYnoQ2u5yMPhMYoy8pQg1F2USI,122
+m3/auth.py,sha256=QFu-z4gwled9D3Elk6wDSGrFDIpws4dwdj8x9a10lQg,12851
+m3/cli.py,sha256=9TcqAEIXgQDQ9BllTgx69sCRhpHbncG6rqhs0QR75sE,14744
+m3/config.py,sha256=tKNuXFdjxrfvYBDJqyQhTvbYB4MdkCUbtvpjYK5RjrI,2988
+m3/data_io.py,sha256=Wp90JzPk8MNkERrHV_PXEL5N6Tdr96HLBiPm8ExRcdo,13100
+m3/mcp_server.py,sha256=FxCMsvuelmi-z0uM306mgLWn0SdOixsdC6W1Su2zoBY,26670
+m3/mcp_client_configs/__init__.py,sha256=1ZTeN-b3JTXTp5l4p3jwDOf3DAnpL5Zde57m-8dmgTk,131
+m3/mcp_client_configs/dynamic_mcp_config.py,sha256=JWFyiZ5hIkAkrUNYy5098yfJgmL98RodVDeZGmNpAjM,15554
+m3/mcp_client_configs/setup_claude_desktop.py,sha256=69mWoaMRuxpGeyLPBkut7JQjlecA-tXzPDtUHJEViiU,9280
+m3_mcp-0.1.5.dist-info/licenses/LICENSE,sha256=VItayeWjwSN9DFl9usU_vYcAabOm3UnJPUZpAliymmU,1099
+m3_mcp-0.1.5.dist-info/METADATA,sha256=WgiTYwFkpt0j-_NdoNqM6IcBF7li15emogo4rt-BRZ0,12786
+m3_mcp-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+m3_mcp-0.1.5.dist-info/entry_points.txt,sha256=b3fQumrreo73vchBq7etb6fahpmZSf_4nDi--iQVd-M,69
+m3_mcp-0.1.5.dist-info/top_level.txt,sha256=ODFWFYm53oMUXTWuv50rVamEOgnot3VL7dVhc-JbOqY,3
+m3_mcp-0.1.5.dist-info/RECORD,,
