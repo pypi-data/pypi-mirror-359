@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: ha_conversation_api_forwarder
+Version: 0.0.1
+Summary: Module to forward commands from HA to your custom outside service
+Author-email: MafiaCoconut <alex.kach.2000@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/MafiaCoconut/ha-conversation-api-forwarder
+Project-URL: Issues, https://github.com/MafiaCoconut/ha-conversation-api-forwarder/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# ha-conversation-api-forwarder
+It is PyPi project for my custom HA conversation service

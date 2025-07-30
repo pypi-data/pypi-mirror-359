@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ha_conversation_api_forwarder"
+version = "0.0.1"
+authors = [
+  { name="MafiaCoconut", email="alex.kach.2000@gmail.com" },
+]
+description = "Module to forward commands from HA to your custom outside service"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/MafiaCoconut/ha-conversation-api-forwarder"
+Issues = "https://github.com/MafiaCoconut/ha-conversation-api-forwarder/issues"
