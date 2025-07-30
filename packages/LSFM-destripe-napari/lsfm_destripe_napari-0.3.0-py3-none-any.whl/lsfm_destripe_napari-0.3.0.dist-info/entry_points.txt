@@ -1,0 +1,2 @@
+[napari.manifest]
+lsfm_destripe_napari = lsfm_destripe_napari:napari.yaml
