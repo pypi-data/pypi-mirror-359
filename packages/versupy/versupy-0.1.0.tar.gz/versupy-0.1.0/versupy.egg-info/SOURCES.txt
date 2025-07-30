@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+versupy/__init__.py
+versupy/competitor.py
+versupy/double_elim.py
+versupy/match.py
+versupy/round_robin.py
+versupy/single_elim.py
+versupy/swiss.py
+versupy/tournament.py
+versupy.egg-info/PKG-INFO
+versupy.egg-info/SOURCES.txt
+versupy.egg-info/dependency_links.txt
+versupy.egg-info/requires.txt
+versupy.egg-info/top_level.txt
