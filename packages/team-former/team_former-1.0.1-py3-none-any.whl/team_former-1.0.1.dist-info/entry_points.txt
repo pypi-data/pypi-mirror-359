@@ -1,0 +1,2 @@
+[console_scripts]
+team_former = team_former.make_teams:main
