@@ -1,0 +1,35 @@
+# Fichier : pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rostaing-ocr"
+version = "0.2.1"
+authors = [
+  { name="Davila Rostaing", email="rostaingdavila@gmail.com" },
+]
+description = "An OCR tool to extract text from scanned and non-scanned images and PDFs."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing",
+    "Intended Audience :: Developers",
+    "Development Status :: 4 - Beta",
+]
+
+# Dependencies with the crucial fix for MarkItDown
+dependencies = [
+    "PyMuPDF",
+    "pytesseract",
+    "markitdown[all]",  # <-- THE FIX
+    "Pillow"
+]
+
+[project.urls]
+Homepage = "https://github.com/Rostaing/rostaing-ocr"
+"Bug Tracker" = "https://github.com/Rostaing/rostaing-ocr/issues"
