@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: ppi_clustering_algorithms
+Version: 0.1.0
+Summary: A library of clustering algorithms for Protein-Protein Interaction (PPI) networks.
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Requires-Dist: networkx
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: plotly
+Requires-Dist: python-louvain
+Requires-Dist: markov-clustering
+Requires-Dist: python-igraph
+Requires-Dist: leidenalg
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
