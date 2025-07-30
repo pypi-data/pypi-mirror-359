@@ -1,0 +1,2 @@
+[console_scripts]
+ec2ctl = ec2ctl.cli:cli
