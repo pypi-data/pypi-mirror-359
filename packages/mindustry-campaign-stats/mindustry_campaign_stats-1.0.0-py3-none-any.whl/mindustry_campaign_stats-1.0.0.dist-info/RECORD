@@ -1,0 +1,13 @@
+mindustry_campaign_stats/__init__.py,sha256=1k44_m1kTewoZOzGTiNFEavG6NWgOETuO8nBMV46VE4,294
+mindustry_campaign_stats/__version__.py,sha256=crlYURA_2Ujkpz7iVPHovvxZRtvt4QBXF5AAFJzRfz0,23
+mindustry_campaign_stats/cli.py,sha256=fNDPXTZG7fNn_dZYYBGgqanLAtcIE6OR3YqtcTqlQio,2772
+mindustry_campaign_stats/constants.py,sha256=1md5vaVHGEJ-v8z9hbCqC0LstpP3TWfAmqM2S67Of9g,2185
+mindustry_campaign_stats/presenters.py,sha256=Am-OKTdqHKXsz7iQrJiezBoFke1HIPEaOFI-2CFi4KQ,4515
+mindustry_campaign_stats/settings.py,sha256=gyRFJF7R3zJHfpAo3oZJz3MT0XfMQSFeOleFOsQ7ugQ,2954
+mindustry_campaign_stats/stats.py,sha256=uvOl0bX61UT6TpHJhFR11P2URPVXTYaKreMs1hIX-f0,4033
+mindustry_campaign_stats-1.0.0.dist-info/licenses/LICENSE.md,sha256=IQsMaLrfH0vSTwMFkYvmHaHaj5Ri9SE_00870se6cTg,1161
+mindustry_campaign_stats-1.0.0.dist-info/METADATA,sha256=oEAJ1UWxExcR7V7N-ijO3AV3I0PzXOQq84fIholOjq4,6996
+mindustry_campaign_stats-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mindustry_campaign_stats-1.0.0.dist-info/entry_points.txt,sha256=NAz0yQrUi2byb5ttxJ5G2XxrmbQwrYi4s9uaNSmWbb4,78
+mindustry_campaign_stats-1.0.0.dist-info/top_level.txt,sha256=Co2S5bkwUMOdOibm-VNLifTJeckUAfa273bJueqXyoc,25
+mindustry_campaign_stats-1.0.0.dist-info/RECORD,,
