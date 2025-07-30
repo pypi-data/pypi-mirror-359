@@ -1,0 +1,3 @@
+[console_scripts]
+siard-convert = siard_sqlite:main
+siard2sqlite = siard_sqlite:main
