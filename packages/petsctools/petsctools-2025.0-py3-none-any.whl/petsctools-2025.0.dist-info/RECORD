@@ -1,0 +1,11 @@
+petsctools/__init__.py,sha256=FgUR7R5uVFmUU6ufwVXjMQYUOxBHMq4U8PaYlJu00Y0,698
+petsctools/config.py,sha256=-6IA8vFN4x3SKpeGe2D9j93e7mpeE_OvhqR592e3DnM,3846
+petsctools/exceptions.py,sha256=QstSTGhlS1plmWtxpXNca-4XceCKeh9XMxkwYjyu6SA,231
+petsctools/init.py,sha256=xOYJI1W-6cces6jEjI7H7z0WExliX3QxyJmVj6hpw-A,2444
+petsctools/options.py,sha256=VERshzvooF1lk_ihYnckibJB9VDaGfltjHMwZgFtVQA,7570
+petsctools/utils.py,sha256=BtREZIdaW-wsMVIpDCxPw759v3DiS33sn_cywMEnOY0,121
+petsctools-2025.0.dist-info/licenses/LICENSE,sha256=46mU2C5kSwOnkqkw9XQAJlhBL2JAf1_uCD8lVcXyMRg,7652
+petsctools-2025.0.dist-info/METADATA,sha256=AExTlzgtPZPDIBEUrqwdElXP36cKC9zqa9RuzCcHnYY,1442
+petsctools-2025.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+petsctools-2025.0.dist-info/top_level.txt,sha256=2U7nDj6FpuV4QVcx5gIRLDoOEage3wWCmPnU4jKTkno,11
+petsctools-2025.0.dist-info/RECORD,,
