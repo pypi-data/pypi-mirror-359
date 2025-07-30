@@ -1,0 +1,11 @@
+livekit/plugins/aliyun/__init__.py,sha256=68JB2ei2JZYoks5tVBpj1Vl_203pzlkvoECMcwMRAFA,537
+livekit/plugins/aliyun/llm.py,sha256=mmZooLcSgv-A69jHXN1S7L1XYdNWa277K83yAdItNoo,10726
+livekit/plugins/aliyun/log.py,sha256=JHf2r9qYiDoq4isMcgI1UQk7nTEN60FBq6309Mqeg10,76
+livekit/plugins/aliyun/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+livekit/plugins/aliyun/stt.py,sha256=KDKTJh3JnNiD9CgGVChLhNid5yuHGEPaBNXwIgo4TAs,12648
+livekit/plugins/aliyun/tts.py,sha256=e-zLZwlp_EFF4t2FuMTTdSXxgNjJrYvajbiv_iVqjYQ,8953
+livekit/plugins/aliyun/utils.py,sha256=9_45xxNAGEIveUXD8UX9N8EeVVDVYxWDcZE4CtH8DAw,4797
+livekit/plugins/aliyun/version.py,sha256=n7UY_qC51pcocXq78pA57QU-Ybz-ARCL8FVSzL5_gF0,27
+livekit_plugins_aliyun-1.1.5.post0.dist-info/METADATA,sha256=qjrzy0VpnuFPhhx8hftkltSwOPHSdvt9cMisP_Qn9aQ,2794
+livekit_plugins_aliyun-1.1.5.post0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+livekit_plugins_aliyun-1.1.5.post0.dist-info/RECORD,,
