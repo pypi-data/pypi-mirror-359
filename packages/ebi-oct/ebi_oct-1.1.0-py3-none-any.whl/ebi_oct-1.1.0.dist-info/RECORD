@@ -1,0 +1,11 @@
+ebi_oct/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ebi_oct/napari_plugin/__init__.py,sha256=tYQnG9yHj_Z8Xa-bcT056iAANalSIu0Z1rSf1mPRxSk,942
+ebi_oct/napari_plugin/napari.yaml,sha256=ptI-FXJevGFPDirQ1Z5kr62RX-94WbZ0yNu2rX9B3pY,250
+ebi_oct/napari_plugin/widgets.py,sha256=aBlvKpHLIQ1GKuBVa95H_tIGuRveXpAcIOtYuIkBRAE,6865
+ebi_oct/octools/__init__.py,sha256=uumRInc4C3bPqoDh4zGWVxkxP2vNVC5ZMksBFOaV-4g,714
+ebi_oct/octools/processing_functions.py,sha256=dD6LiHGWUhjPCtMAP_zdzg3VwhkCn0AJBW_6_NaoTUU,41198
+ebi_oct-1.1.0.dist-info/METADATA,sha256=D97llL4QyGzo4knCBLQ4XZlwgPQV3UNBuxT68VsMwE4,4773
+ebi_oct-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ebi_oct-1.1.0.dist-info/entry_points.txt,sha256=meOP3s1W3vodL5D0JMkZH99yWU3L7G_7f_5BXQPruew,61
+ebi_oct-1.1.0.dist-info/licenses/LICENSE,sha256=BLwtFXwyO1HZglxTFabRAlkmXVZ9Fy0sWK_iPGq2r7w,1071
+ebi_oct-1.1.0.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[napari.manifest]
+OCTool = ebi_oct.napari_plugin:napari.yaml
