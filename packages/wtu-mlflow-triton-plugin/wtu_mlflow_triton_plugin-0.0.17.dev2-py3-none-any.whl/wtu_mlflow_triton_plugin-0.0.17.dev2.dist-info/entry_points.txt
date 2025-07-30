@@ -1,0 +1,2 @@
+[console_scripts]
+keynet = wtu_mlflow_triton_plugin.cli:main
