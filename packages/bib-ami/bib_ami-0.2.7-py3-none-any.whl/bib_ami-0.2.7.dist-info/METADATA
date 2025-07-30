@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: bib-ami
+Version: 0.2.7
+Summary: A tool to merge, deduplicate, and clean BibTeX files with DOI validation.
+Home-page: https://github.com/yourusername/bib-ami
+Author: Rolf Carlson
+Author-email: hrolfrc@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bibtexparser (>=1.4.1)
+Requires-Dist: requests (>=2.31.0)
+Requires-Dist: fuzzywuzzy (>=0.18.0)
+Requires-Dist: python-Levenshtein (>=0.25.0)
+
+# bib-ami
+
+[![CircleCI](https://circleci.com/gh/hrolfrc/bib-ami.svg?style=shield)](https://circleci.com/gh/hrolfrc/bib-ami)
+[![ReadTheDocs](https://readthedocs.org/projects/bib-ami/badge/?version=latest)](https://bib-ami.readthedocs.io/en/latest/)
+[![Codecov](https://codecov.io/gh/hrolfrc/bib-ami/branch/main/graph/badge.svg)](https://codecov.io/gh/hrolfrc/bib-ami)
+
+A Python tool to merge, deduplicate, and clean BibTeX files. It consolidates `.bib` files from a directory, removes duplicate entries, validates DOIs, scrapes missing DOIs using CrossRef/DataCite APIs, and refreshes metadata for accurate citations, especially for AI-generated references.
+
+## Installation
+
+```bash
+pip install bib-ami
