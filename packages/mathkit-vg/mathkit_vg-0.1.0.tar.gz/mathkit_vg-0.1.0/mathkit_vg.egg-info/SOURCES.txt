@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+mathkit_vg/__init__.py
+mathkit_vg/core.py
+mathkit_vg.egg-info/PKG-INFO
+mathkit_vg.egg-info/SOURCES.txt
+mathkit_vg.egg-info/dependency_links.txt
+mathkit_vg.egg-info/top_level.txt
