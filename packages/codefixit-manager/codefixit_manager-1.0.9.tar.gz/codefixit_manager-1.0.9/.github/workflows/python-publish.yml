@@ -1,0 +1,35 @@
+name: 📦 Release to PyPI
+
+on:
+  push:
+    branches:
+      - main  # 🔁 triggers every time you push to main
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi-release  # ✅ optional, set this up in GitHub > Settings > Environments
+
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 📦 Install build tools
+        run: pip install build
+
+      - name: 🛠️ Build distribution
+        run: python -m build
+
+      - name: 🚀 Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          attestations: true

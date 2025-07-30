@@ -1,0 +1,30 @@
+name: CodeFixit Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  codefixit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Git tags (required by setuptools-scm)
+        run: git fetch --tags
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package (editable mode + [ai] extras)
+        run: |
+          pip install --upgrade pip
+          pip install -e .[ai]
+
+      - name: Run CodeFixit dry-run
+        run: |
+          cfm dry-run --lang cpp --rule qt5to6 --path ./src --diff --report json
