@@ -1,0 +1,10 @@
+invenio_celery/__init__.py,sha256=8AUjhKcZOx56iw6Rf05Wz5iljqTy5Rzt6PT5aXr3_wY,2755
+invenio_celery/config.py,sha256=zQnrbVMotsKksSarJOIL3A43nOmOtQIYdigdOGplWCQ,940
+invenio_celery/ext.py,sha256=aCLpRJ187o6lyMHDVY2geM-goricLwxcfmnstmNXf_U,4272
+invenio_celery-2.2.0.dist-info/licenses/AUTHORS.rst,sha256=OIpvOCWB_Xs2Pj1MHw64elSvuIHpnCBVL20PG3ZkWxA,437
+invenio_celery-2.2.0.dist-info/licenses/LICENSE,sha256=7NdusrwW2CBXoBZXOYFnEKLE736o9LpcXGBRdwj0lQg,1067
+invenio_celery-2.2.0.dist-info/METADATA,sha256=0q36OSPdzR1Y-so-pjyIUZZm30mDqDYfPmv39jqIg-s,4965
+invenio_celery-2.2.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+invenio_celery-2.2.0.dist-info/entry_points.txt,sha256=DzS_Tkg1-QulHrF-Kmpwki1q_-SkUNCWSDn0cpzIRYs,137
+invenio_celery-2.2.0.dist-info/top_level.txt,sha256=hINGJUz0oMz0aePAcSHgE9Zqp4gqbuIMsQQlUmdsIys,15
+invenio_celery-2.2.0.dist-info/RECORD,,
