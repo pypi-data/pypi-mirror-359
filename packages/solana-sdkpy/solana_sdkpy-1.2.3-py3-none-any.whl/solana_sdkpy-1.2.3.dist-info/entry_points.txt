@@ -1,0 +1,5 @@
+[console_scripts]
+solana-utils = solana_utils.cli:main
+
+[distutils.commands]
+post_install = solana_utils.setup_post:run
