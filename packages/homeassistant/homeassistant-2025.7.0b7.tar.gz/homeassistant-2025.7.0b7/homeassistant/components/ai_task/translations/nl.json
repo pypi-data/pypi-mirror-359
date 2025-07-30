@@ -1,0 +1,11 @@
+{
+    "services": {
+        "generate_data": {
+            "fields": {
+                "instructions": {
+                    "name": "Instructies"
+                }
+            }
+        }
+    }
+}
