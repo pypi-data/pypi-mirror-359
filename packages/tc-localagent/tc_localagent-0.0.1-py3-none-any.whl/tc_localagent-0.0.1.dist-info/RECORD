@@ -1,0 +1,11 @@
+tc_localagent/agent_runner.py,sha256=dy_4myEMeVFwksNDBCVicQzb7qWdyNpQEbkjpDzngrs,1518
+tc_localagent/browser_context.py,sha256=WSd0ZdSRxLDg5Ip4ku4TJqN2cw3g1dun7J-ANTCnG1s,1510
+tc_localagent/cli.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tc_localagent/datas.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tc_localagent/main.py,sha256=6h_1Wpt04sP5t5sJXiCjj8XSCKiHEhQpTUG3t0Kbn2s,839
+tc_localagent/server.py,sha256=qpGpkKQyOeqIZ_ufhsZIV3ovum_1uYdsiUVRURf2nDI,1145
+tc_localagent-0.0.1.dist-info/METADATA,sha256=zyM_Ri-JMR3yiSdjOhH_NJOkh9cScPxVk7Ca6nCxtIs,611
+tc_localagent-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tc_localagent-0.0.1.dist-info/entry_points.txt,sha256=UYyeDkaRDflTD9ihA0cahae3wV0E9g0-cD4dkBLKPbE,58
+tc_localagent-0.0.1.dist-info/top_level.txt,sha256=bNk2NIiXAAXf_9CVF4Zw9eesNQinzfxYMHPQjEboUfc,14
+tc_localagent-0.0.1.dist-info/RECORD,,
