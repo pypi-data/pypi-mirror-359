@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: sensirion-i2c-scd4x
+Version: 1.1.0
+Summary: I2C driver for the Sensirion SCD4X sensor family
+Author: Sensirion
+Author-email: info@sensirion.com
+License: BSD
+Project-URL: Documentation, https://sensirion.github.io/python-i2c-scd4x
+Project-URL: Repository, https://github.com/Sensirion/python-i2c-scd4x
+Project-URL: Changelog, https://github.com/Sensirion/python-i2c-scd4x/blob/master/CHANGELOG.md
+Keywords: Sensirion SCD4X
+        I2C
+        SCD40
+        SCD41
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sensirion-i2c-driver<2.0,>=1.0.0
+Requires-Dist: sensirion-driver-adapters<3.0,>=2.1.9
+Requires-Dist: sensirion-driver-support-types<2.0,>=1.1.0
+Requires-Dist: sensirion-shdlc-sensorbridge<0.3.0,>=0.1.0
+Provides-Extra: test
+Requires-Dist: flake8~=3.7.8; extra == "test"
+Requires-Dist: pytest~=6.2.5; extra == "test"
+Requires-Dist: pytest-cov~=3.0.0; extra == "test"
+
+# Python I2C Driver for Sensirion SCD4X
+
+This repository contains the Python driver to communicate with a Sensirion sensor of the SCD4X family over I2C.
+
+<img src="https://raw.githubusercontent.com/Sensirion/python-i2c-scd4x/master/images/SCD41.png"
+    width="300px" alt="SCD4X picture">
+
+
+Click [here](https://sensirion.com/products/catalog/SEK-SCD41) to learn more about the Sensirion SCD4X sensor family.
+
+
+Not all sensors of this driver family support all measurements.
+In case a measurement is not supported by all sensors, the products that
+support it are listed in the API description.
+
+
+
+## Supported sensor types
+
+| Sensor name   | IÂ²C Addresses  |
+| ------------- | -------------- |
+|[SCD40](https://sensirion.com/products/catalog/SCD40)| **0x62**|
+|[SCD41](https://sensirion.com/products/catalog/SCD41)| **0x62**|
+|[SCD43](https://sensirion.com/products/catalog/SCD43)| **0x62**|
+
+The following instructions and examples use a *SCD41*.
+
+
+
+## Connect the sensor
+
+You can connect your sensor over a [SEK-SensorBridge](https://developer.sensirion.com/product-support/sek-sensorbridge/).
+For special setups you find the sensor pinout in the section below.
+
+<details><summary>Sensor pinout</summary>
+<p>
+<img src="https://raw.githubusercontent.com/Sensirion/python-i2c-scd4x/master/images/SCD41_pinout.png"
+     width="300px" alt="sensor wiring picture">
+
+| *Pin* | *Cable Color* | *Name* | *Description*  | *Comments* |
+|-------|---------------|:------:|----------------|------------|
+| 1 | yellow | SCL | I2C: Serial clock input |
+| 2 | black | GND | Ground |
+| 3 | red | VDD | Supply Voltage | 2.4V to 5.5V
+| 4 | green | SDA | I2C: Serial data input / output |
+
+
+</p>
+</details>
+
+
+## Documentation & Quickstart
+
+See the [documentation page](https://sensirion.github.io/python-i2c-scd4x) for an API description and a
+[quickstart](https://sensirion.github.io/python-i2c-scd4x/execute-measurements.html) example.
+
+
+## Contributing
+
+### Check coding style
+
+The coding style can be checked with [`flake8`](http://flake8.pycqa.org/):
+
+```bash
+pip install -e .[test]  # Install requirements
+flake8                  # Run style check
+```
+
+In addition, we check the formatting of files with
+[`editorconfig-checker`](https://editorconfig-checker.github.io/):
+
+```bash
+pip install editorconfig-checker==2.0.3   # Install requirements
+editorconfig-checker                      # Run check
+```
+
+## License
+
+See [LICENSE](LICENSE).
