@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zta-devtools"
+version = "0.4.0"
+description = "A developer CLI tool for Python package management, virtualenvs, scanning, and automation."
+authors = [
+    { name="ZtaMDev", email="manuelitoricardo3@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "rich",
+    "watchdog",
+    "safety"
+]
+
+[project.scripts]
+zta_devtools = "zta_devtools.cli:main"
