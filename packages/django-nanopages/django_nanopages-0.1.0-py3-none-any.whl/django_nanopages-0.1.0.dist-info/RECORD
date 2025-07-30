@@ -1,0 +1,11 @@
+django_nanopages/__init__.py,sha256=WsI34vi9luqUT1svSeluMkcxYdnNEE0c-CuuPTVTOhw,88
+django_nanopages/nanodjango.py,sha256=qQgry5DR26VEtLMdg8OuTmVj0uJapvsxe7x8rX9sk90,855
+django_nanopages/pages.py,sha256=sV5JhjaBjyYl9VzutmcNzUgDoytCNxE3WoYQNqEwQ3c,3847
+django_nanopages/views.py,sha256=kNtf4pNeco0HYGzd84uTztWRMWrRJwLZTOtLZmmt5oY,3993
+django_nanopages/templates/django_nanopages/page.html,sha256=q5VxTH1f8qID3fO47V1soW55GTeVQrmWLBarCJuW_ak,72
+django_nanopages-0.1.0.dist-info/licenses/LICENSE.md,sha256=HjHE6MknBJcvi_Cfd6r5y3IVf1W7PHFsaPXbOz9Ba8k,1500
+django_nanopages-0.1.0.dist-info/METADATA,sha256=jL_HmIN-fhvP4pUroAS18gjaXvQ0JRolki0MBopVYJ0,3352
+django_nanopages-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_nanopages-0.1.0.dist-info/entry_points.txt,sha256=m2lmc7huv-LHdbr7vLr2A3pJAmtkDv0bwk3lAhlcVX0,60
+django_nanopages-0.1.0.dist-info/top_level.txt,sha256=puybuoycKcH95NHEaoEWsx6ojupDsj6VLJBIAFOEFdw,17
+django_nanopages-0.1.0.dist-info/RECORD,,
