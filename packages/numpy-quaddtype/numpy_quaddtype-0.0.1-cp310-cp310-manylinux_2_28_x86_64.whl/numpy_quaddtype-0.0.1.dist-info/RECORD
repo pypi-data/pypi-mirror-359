@@ -1,0 +1,6 @@
+numpy_quaddtype.libs/libsleefquad-74a193b3.so.3.8.0,sha256=DdXTRX0NBacXTBYEGC33ao5RZhM_p7Z8hP_KO658oes,2085001
+numpy_quaddtype-0.0.1.dist-info/WHEEL,sha256=iUYUrxT79Yz6BnmsyUXTLC5SLM9_b4y2OAVDhrJ3Rtk,99
+numpy_quaddtype-0.0.1.dist-info/RECORD,,
+numpy_quaddtype-0.0.1.dist-info/METADATA,sha256=NDKWunrpSUlJpBpdFdsY2zutEOlUefYz-dV-PB9r1D4,1892
+numpy_quaddtype/__init__.py,sha256=joPVM981Omx64TPH3qKUvi6FvHtO2_gESY_Peb37jmE,1023
+numpy_quaddtype/_quaddtype_main.cpython-310-x86_64-linux-gnu.so,sha256=bgBhdgDEFsJasIlHbp3EjSnaxfQfCLWYZuTgJ6chmu4,190865
