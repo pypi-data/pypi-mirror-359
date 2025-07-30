@@ -1,0 +1,2 @@
+[console_scripts]
+ccr-modules = ccr_modules:main
