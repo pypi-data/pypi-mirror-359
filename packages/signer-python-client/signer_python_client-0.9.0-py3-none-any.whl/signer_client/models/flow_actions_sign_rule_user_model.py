@@ -1,0 +1,346 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class FlowActionsSignRuleUserModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'id': 'str',
+        'name': 'str',
+        'identifier': 'str',
+        'email': 'str',
+        'phone': 'str',
+        'signature_date': 'datetime',
+        'is_electronic': 'bool',
+        'refusal_date': 'datetime',
+        'has_refused': 'bool',
+        'refusal_reason': 'str'
+    }
+
+    attribute_map = {
+        'id': 'id',
+        'name': 'name',
+        'identifier': 'identifier',
+        'email': 'email',
+        'phone': 'phone',
+        'signature_date': 'signatureDate',
+        'is_electronic': 'isElectronic',
+        'refusal_date': 'refusalDate',
+        'has_refused': 'hasRefused',
+        'refusal_reason': 'refusalReason'
+    }
+
+    def __init__(self, id=None, name=None, identifier=None, email=None, phone=None, signature_date=None, is_electronic=None, refusal_date=None, has_refused=None, refusal_reason=None):  # noqa: E501
+        """FlowActionsSignRuleUserModel - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._name = None
+        self._identifier = None
+        self._email = None
+        self._phone = None
+        self._signature_date = None
+        self._is_electronic = None
+        self._refusal_date = None
+        self._has_refused = None
+        self._refusal_reason = None
+        self.discriminator = None
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if identifier is not None:
+            self.identifier = identifier
+        if email is not None:
+            self.email = email
+        if phone is not None:
+            self.phone = phone
+        if signature_date is not None:
+            self.signature_date = signature_date
+        if is_electronic is not None:
+            self.is_electronic = is_electronic
+        if refusal_date is not None:
+            self.refusal_date = refusal_date
+        if has_refused is not None:
+            self.has_refused = has_refused
+        if refusal_reason is not None:
+            self.refusal_reason = refusal_reason
+
+    @property
+    def id(self):
+        """Gets the id of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The id of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this FlowActionsSignRuleUserModel.
+
+
+        :param id: The id of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The name of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this FlowActionsSignRuleUserModel.
+
+
+        :param name: The name of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+        The user identifier (CPF in Brazil or Cédula de Identidad in Ecuador/Paraguay).  # noqa: E501
+
+        :return: The identifier of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this FlowActionsSignRuleUserModel.
+
+        The user identifier (CPF in Brazil or Cédula de Identidad in Ecuador/Paraguay).  # noqa: E501
+
+        :param identifier: The identifier of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def email(self):
+        """Gets the email of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The email of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this FlowActionsSignRuleUserModel.
+
+
+        :param email: The email of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._email = email
+
+    @property
+    def phone(self):
+        """Gets the phone of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The phone of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this FlowActionsSignRuleUserModel.
+
+
+        :param phone: The phone of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._phone = phone
+
+    @property
+    def signature_date(self):
+        """Gets the signature_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The signature_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._signature_date
+
+    @signature_date.setter
+    def signature_date(self, signature_date):
+        """Sets the signature_date of this FlowActionsSignRuleUserModel.
+
+
+        :param signature_date: The signature_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._signature_date = signature_date
+
+    @property
+    def is_electronic(self):
+        """Gets the is_electronic of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The is_electronic of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_electronic
+
+    @is_electronic.setter
+    def is_electronic(self, is_electronic):
+        """Sets the is_electronic of this FlowActionsSignRuleUserModel.
+
+
+        :param is_electronic: The is_electronic of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_electronic = is_electronic
+
+    @property
+    def refusal_date(self):
+        """Gets the refusal_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The refusal_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._refusal_date
+
+    @refusal_date.setter
+    def refusal_date(self, refusal_date):
+        """Sets the refusal_date of this FlowActionsSignRuleUserModel.
+
+
+        :param refusal_date: The refusal_date of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._refusal_date = refusal_date
+
+    @property
+    def has_refused(self):
+        """Gets the has_refused of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The has_refused of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_refused
+
+    @has_refused.setter
+    def has_refused(self, has_refused):
+        """Sets the has_refused of this FlowActionsSignRuleUserModel.
+
+
+        :param has_refused: The has_refused of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_refused = has_refused
+
+    @property
+    def refusal_reason(self):
+        """Gets the refusal_reason of this FlowActionsSignRuleUserModel.  # noqa: E501
+
+
+        :return: The refusal_reason of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._refusal_reason
+
+    @refusal_reason.setter
+    def refusal_reason(self, refusal_reason):
+        """Sets the refusal_reason of this FlowActionsSignRuleUserModel.
+
+
+        :param refusal_reason: The refusal_reason of this FlowActionsSignRuleUserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._refusal_reason = refusal_reason
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(FlowActionsSignRuleUserModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, FlowActionsSignRuleUserModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

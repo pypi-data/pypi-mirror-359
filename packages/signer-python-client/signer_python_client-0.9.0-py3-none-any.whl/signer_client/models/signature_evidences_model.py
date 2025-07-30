@@ -1,0 +1,490 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class SignatureEvidencesModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'ip_address': 'str',
+        'authentication_types': 'list[AuthenticationTypes]',
+        'account_verified_email': 'str',
+        'authenticated_email': 'str',
+        'authenticated_phone_number_last_digits': 'str',
+        'authenticated_application': 'ApplicationsApplicationDisplayModel',
+        'authenticated_selfie': 'SignatureSelfieModel',
+        'authenticated_pix': 'SignaturePixAuthenticationModel',
+        'liveness_data': 'SignatureLiveness3dAuthenticationModel',
+        'geolocation': 'SignatureGeolocationModel',
+        'timestamp': 'datetime',
+        'evidences_sha256': 'str',
+        'authenticated_phone_number': 'str',
+        'file': 'str',
+        'file_ticket': 'str'
+    }
+
+    attribute_map = {
+        'ip_address': 'ipAddress',
+        'authentication_types': 'authenticationTypes',
+        'account_verified_email': 'accountVerifiedEmail',
+        'authenticated_email': 'authenticatedEmail',
+        'authenticated_phone_number_last_digits': 'authenticatedPhoneNumberLastDigits',
+        'authenticated_application': 'authenticatedApplication',
+        'authenticated_selfie': 'authenticatedSelfie',
+        'authenticated_pix': 'authenticatedPix',
+        'liveness_data': 'livenessData',
+        'geolocation': 'geolocation',
+        'timestamp': 'timestamp',
+        'evidences_sha256': 'evidencesSha256',
+        'authenticated_phone_number': 'authenticatedPhoneNumber',
+        'file': 'file',
+        'file_ticket': 'fileTicket'
+    }
+
+    def __init__(self, ip_address=None, authentication_types=None, account_verified_email=None, authenticated_email=None, authenticated_phone_number_last_digits=None, authenticated_application=None, authenticated_selfie=None, authenticated_pix=None, liveness_data=None, geolocation=None, timestamp=None, evidences_sha256=None, authenticated_phone_number=None, file=None, file_ticket=None):  # noqa: E501
+        """SignatureEvidencesModel - a model defined in Swagger"""  # noqa: E501
+        self._ip_address = None
+        self._authentication_types = None
+        self._account_verified_email = None
+        self._authenticated_email = None
+        self._authenticated_phone_number_last_digits = None
+        self._authenticated_application = None
+        self._authenticated_selfie = None
+        self._authenticated_pix = None
+        self._liveness_data = None
+        self._geolocation = None
+        self._timestamp = None
+        self._evidences_sha256 = None
+        self._authenticated_phone_number = None
+        self._file = None
+        self._file_ticket = None
+        self.discriminator = None
+        if ip_address is not None:
+            self.ip_address = ip_address
+        if authentication_types is not None:
+            self.authentication_types = authentication_types
+        if account_verified_email is not None:
+            self.account_verified_email = account_verified_email
+        if authenticated_email is not None:
+            self.authenticated_email = authenticated_email
+        if authenticated_phone_number_last_digits is not None:
+            self.authenticated_phone_number_last_digits = authenticated_phone_number_last_digits
+        if authenticated_application is not None:
+            self.authenticated_application = authenticated_application
+        if authenticated_selfie is not None:
+            self.authenticated_selfie = authenticated_selfie
+        if authenticated_pix is not None:
+            self.authenticated_pix = authenticated_pix
+        if liveness_data is not None:
+            self.liveness_data = liveness_data
+        if geolocation is not None:
+            self.geolocation = geolocation
+        if timestamp is not None:
+            self.timestamp = timestamp
+        if evidences_sha256 is not None:
+            self.evidences_sha256 = evidences_sha256
+        if authenticated_phone_number is not None:
+            self.authenticated_phone_number = authenticated_phone_number
+        if file is not None:
+            self.file = file
+        if file_ticket is not None:
+            self.file_ticket = file_ticket
+
+    @property
+    def ip_address(self):
+        """Gets the ip_address of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The ip_address of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._ip_address
+
+    @ip_address.setter
+    def ip_address(self, ip_address):
+        """Sets the ip_address of this SignatureEvidencesModel.
+
+
+        :param ip_address: The ip_address of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._ip_address = ip_address
+
+    @property
+    def authentication_types(self):
+        """Gets the authentication_types of this SignatureEvidencesModel.  # noqa: E501
+
+        A list containing the the authentication types used when signing the document.  # noqa: E501
+
+        :return: The authentication_types of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: list[AuthenticationTypes]
+        """
+        return self._authentication_types
+
+    @authentication_types.setter
+    def authentication_types(self, authentication_types):
+        """Sets the authentication_types of this SignatureEvidencesModel.
+
+        A list containing the the authentication types used when signing the document.  # noqa: E501
+
+        :param authentication_types: The authentication_types of this SignatureEvidencesModel.  # noqa: E501
+        :type: list[AuthenticationTypes]
+        """
+
+        self._authentication_types = authentication_types
+
+    @property
+    def account_verified_email(self):
+        """Gets the account_verified_email of this SignatureEvidencesModel.  # noqa: E501
+
+        If the user was logged-in when he signed the document this is the verified email of his account.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.Login this will be null.  # noqa: E501
+
+        :return: The account_verified_email of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_verified_email
+
+    @account_verified_email.setter
+    def account_verified_email(self, account_verified_email):
+        """Sets the account_verified_email of this SignatureEvidencesModel.
+
+        If the user was logged-in when he signed the document this is the verified email of his account.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.Login this will be null.  # noqa: E501
+
+        :param account_verified_email: The account_verified_email of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._account_verified_email = account_verified_email
+
+    @property
+    def authenticated_email(self):
+        """Gets the authenticated_email of this SignatureEvidencesModel.  # noqa: E501
+
+        The email to which the notification to sign the document was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.Email this will be null.  # noqa: E501
+
+        :return: The authenticated_email of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._authenticated_email
+
+    @authenticated_email.setter
+    def authenticated_email(self, authenticated_email):
+        """Sets the authenticated_email of this SignatureEvidencesModel.
+
+        The email to which the notification to sign the document was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.Email this will be null.  # noqa: E501
+
+        :param authenticated_email: The authenticated_email of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._authenticated_email = authenticated_email
+
+    @property
+    def authenticated_phone_number_last_digits(self):
+        """Gets the authenticated_phone_number_last_digits of this SignatureEvidencesModel.  # noqa: E501
+
+        The last four digits of the phone number to which the SMS confirmation code was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.SMS this will be null.  # noqa: E501
+
+        :return: The authenticated_phone_number_last_digits of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._authenticated_phone_number_last_digits
+
+    @authenticated_phone_number_last_digits.setter
+    def authenticated_phone_number_last_digits(self, authenticated_phone_number_last_digits):
+        """Sets the authenticated_phone_number_last_digits of this SignatureEvidencesModel.
+
+        The last four digits of the phone number to which the SMS confirmation code was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.SMS this will be null.  # noqa: E501
+
+        :param authenticated_phone_number_last_digits: The authenticated_phone_number_last_digits of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._authenticated_phone_number_last_digits = authenticated_phone_number_last_digits
+
+    @property
+    def authenticated_application(self):
+        """Gets the authenticated_application of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The authenticated_application of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: ApplicationsApplicationDisplayModel
+        """
+        return self._authenticated_application
+
+    @authenticated_application.setter
+    def authenticated_application(self, authenticated_application):
+        """Sets the authenticated_application of this SignatureEvidencesModel.
+
+
+        :param authenticated_application: The authenticated_application of this SignatureEvidencesModel.  # noqa: E501
+        :type: ApplicationsApplicationDisplayModel
+        """
+
+        self._authenticated_application = authenticated_application
+
+    @property
+    def authenticated_selfie(self):
+        """Gets the authenticated_selfie of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The authenticated_selfie of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: SignatureSelfieModel
+        """
+        return self._authenticated_selfie
+
+    @authenticated_selfie.setter
+    def authenticated_selfie(self, authenticated_selfie):
+        """Sets the authenticated_selfie of this SignatureEvidencesModel.
+
+
+        :param authenticated_selfie: The authenticated_selfie of this SignatureEvidencesModel.  # noqa: E501
+        :type: SignatureSelfieModel
+        """
+
+        self._authenticated_selfie = authenticated_selfie
+
+    @property
+    def authenticated_pix(self):
+        """Gets the authenticated_pix of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The authenticated_pix of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: SignaturePixAuthenticationModel
+        """
+        return self._authenticated_pix
+
+    @authenticated_pix.setter
+    def authenticated_pix(self, authenticated_pix):
+        """Sets the authenticated_pix of this SignatureEvidencesModel.
+
+
+        :param authenticated_pix: The authenticated_pix of this SignatureEvidencesModel.  # noqa: E501
+        :type: SignaturePixAuthenticationModel
+        """
+
+        self._authenticated_pix = authenticated_pix
+
+    @property
+    def liveness_data(self):
+        """Gets the liveness_data of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The liveness_data of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: SignatureLiveness3dAuthenticationModel
+        """
+        return self._liveness_data
+
+    @liveness_data.setter
+    def liveness_data(self, liveness_data):
+        """Sets the liveness_data of this SignatureEvidencesModel.
+
+
+        :param liveness_data: The liveness_data of this SignatureEvidencesModel.  # noqa: E501
+        :type: SignatureLiveness3dAuthenticationModel
+        """
+
+        self._liveness_data = liveness_data
+
+    @property
+    def geolocation(self):
+        """Gets the geolocation of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The geolocation of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: SignatureGeolocationModel
+        """
+        return self._geolocation
+
+    @geolocation.setter
+    def geolocation(self, geolocation):
+        """Sets the geolocation of this SignatureEvidencesModel.
+
+
+        :param geolocation: The geolocation of this SignatureEvidencesModel.  # noqa: E501
+        :type: SignatureGeolocationModel
+        """
+
+        self._geolocation = geolocation
+
+    @property
+    def timestamp(self):
+        """Gets the timestamp of this SignatureEvidencesModel.  # noqa: E501
+
+
+        :return: The timestamp of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._timestamp
+
+    @timestamp.setter
+    def timestamp(self, timestamp):
+        """Sets the timestamp of this SignatureEvidencesModel.
+
+
+        :param timestamp: The timestamp of this SignatureEvidencesModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._timestamp = timestamp
+
+    @property
+    def evidences_sha256(self):
+        """Gets the evidences_sha256 of this SignatureEvidencesModel.  # noqa: E501
+
+        SHA-256 Hash (Base64 encoded) of the evidences JSON file  # noqa: E501
+
+        :return: The evidences_sha256 of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._evidences_sha256
+
+    @evidences_sha256.setter
+    def evidences_sha256(self, evidences_sha256):
+        """Sets the evidences_sha256 of this SignatureEvidencesModel.
+
+        SHA-256 Hash (Base64 encoded) of the evidences JSON file  # noqa: E501
+
+        :param evidences_sha256: The evidences_sha256 of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._evidences_sha256 = evidences_sha256
+
+    @property
+    def authenticated_phone_number(self):
+        """Gets the authenticated_phone_number of this SignatureEvidencesModel.  # noqa: E501
+
+        The phone number to which the SMS confirmation code was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.SMS this will be null.  # noqa: E501
+
+        :return: The authenticated_phone_number of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._authenticated_phone_number
+
+    @authenticated_phone_number.setter
+    def authenticated_phone_number(self, authenticated_phone_number):
+        """Sets the authenticated_phone_number of this SignatureEvidencesModel.
+
+        The phone number to which the SMS confirmation code was sent.  If Lacuna.Signer.Api.Signature.EvidencesModel.AuthenticationTypes doesn't contains Lacuna.Signer.Api.AuthenticationTypes.SMS this will be null.  # noqa: E501
+
+        :param authenticated_phone_number: The authenticated_phone_number of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._authenticated_phone_number = authenticated_phone_number
+
+    @property
+    def file(self):
+        """Gets the file of this SignatureEvidencesModel.  # noqa: E501
+
+        The evidences JSON file in bytes.  # noqa: E501
+
+        :return: The file of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._file
+
+    @file.setter
+    def file(self, file):
+        """Sets the file of this SignatureEvidencesModel.
+
+        The evidences JSON file in bytes.  # noqa: E501
+
+        :param file: The file of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._file = file
+
+    @property
+    def file_ticket(self):
+        """Gets the file_ticket of this SignatureEvidencesModel.  # noqa: E501
+
+        Ticket to download the evidences JSON file.  # noqa: E501
+
+        :return: The file_ticket of this SignatureEvidencesModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_ticket
+
+    @file_ticket.setter
+    def file_ticket(self, file_ticket):
+        """Sets the file_ticket of this SignatureEvidencesModel.
+
+        Ticket to download the evidences JSON file.  # noqa: E501
+
+        :param file_ticket: The file_ticket of this SignatureEvidencesModel.  # noqa: E501
+        :type: str
+        """
+
+        self._file_ticket = file_ticket
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(SignatureEvidencesModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, SignatureEvidencesModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

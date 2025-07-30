@@ -1,0 +1,266 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class DocumentMarkFlowActionPositionModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'id': 'str',
+        'type': 'FlowActionType',
+        'user': 'UsersParticipantUserModel',
+        'signature_initials_mode': 'SignatureInitialsModes',
+        'rule_name': 'str',
+        'number_required_signatures': 'int',
+        'pre_positioned_marks': 'list[DocumentMarkPrePositionedDocumentMarkModel]'
+    }
+
+    attribute_map = {
+        'id': 'id',
+        'type': 'type',
+        'user': 'user',
+        'signature_initials_mode': 'signatureInitialsMode',
+        'rule_name': 'ruleName',
+        'number_required_signatures': 'numberRequiredSignatures',
+        'pre_positioned_marks': 'prePositionedMarks'
+    }
+
+    def __init__(self, id=None, type=None, user=None, signature_initials_mode=None, rule_name=None, number_required_signatures=None, pre_positioned_marks=None):  # noqa: E501
+        """DocumentMarkFlowActionPositionModel - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._type = None
+        self._user = None
+        self._signature_initials_mode = None
+        self._rule_name = None
+        self._number_required_signatures = None
+        self._pre_positioned_marks = None
+        self.discriminator = None
+        if id is not None:
+            self.id = id
+        if type is not None:
+            self.type = type
+        if user is not None:
+            self.user = user
+        if signature_initials_mode is not None:
+            self.signature_initials_mode = signature_initials_mode
+        if rule_name is not None:
+            self.rule_name = rule_name
+        if number_required_signatures is not None:
+            self.number_required_signatures = number_required_signatures
+        if pre_positioned_marks is not None:
+            self.pre_positioned_marks = pre_positioned_marks
+
+    @property
+    def id(self):
+        """Gets the id of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The id of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DocumentMarkFlowActionPositionModel.
+
+
+        :param id: The id of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def type(self):
+        """Gets the type of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The type of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: FlowActionType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this DocumentMarkFlowActionPositionModel.
+
+
+        :param type: The type of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: FlowActionType
+        """
+
+        self._type = type
+
+    @property
+    def user(self):
+        """Gets the user of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The user of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: UsersParticipantUserModel
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """Sets the user of this DocumentMarkFlowActionPositionModel.
+
+
+        :param user: The user of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: UsersParticipantUserModel
+        """
+
+        self._user = user
+
+    @property
+    def signature_initials_mode(self):
+        """Gets the signature_initials_mode of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The signature_initials_mode of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: SignatureInitialsModes
+        """
+        return self._signature_initials_mode
+
+    @signature_initials_mode.setter
+    def signature_initials_mode(self, signature_initials_mode):
+        """Sets the signature_initials_mode of this DocumentMarkFlowActionPositionModel.
+
+
+        :param signature_initials_mode: The signature_initials_mode of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: SignatureInitialsModes
+        """
+
+        self._signature_initials_mode = signature_initials_mode
+
+    @property
+    def rule_name(self):
+        """Gets the rule_name of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The rule_name of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """Sets the rule_name of this DocumentMarkFlowActionPositionModel.
+
+
+        :param rule_name: The rule_name of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: str
+        """
+
+        self._rule_name = rule_name
+
+    @property
+    def number_required_signatures(self):
+        """Gets the number_required_signatures of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The number_required_signatures of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_required_signatures
+
+    @number_required_signatures.setter
+    def number_required_signatures(self, number_required_signatures):
+        """Sets the number_required_signatures of this DocumentMarkFlowActionPositionModel.
+
+
+        :param number_required_signatures: The number_required_signatures of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: int
+        """
+
+        self._number_required_signatures = number_required_signatures
+
+    @property
+    def pre_positioned_marks(self):
+        """Gets the pre_positioned_marks of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+
+
+        :return: The pre_positioned_marks of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :rtype: list[DocumentMarkPrePositionedDocumentMarkModel]
+        """
+        return self._pre_positioned_marks
+
+    @pre_positioned_marks.setter
+    def pre_positioned_marks(self, pre_positioned_marks):
+        """Sets the pre_positioned_marks of this DocumentMarkFlowActionPositionModel.
+
+
+        :param pre_positioned_marks: The pre_positioned_marks of this DocumentMarkFlowActionPositionModel.  # noqa: E501
+        :type: list[DocumentMarkPrePositionedDocumentMarkModel]
+        """
+
+        self._pre_positioned_marks = pre_positioned_marks
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(DocumentMarkFlowActionPositionModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, DocumentMarkFlowActionPositionModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

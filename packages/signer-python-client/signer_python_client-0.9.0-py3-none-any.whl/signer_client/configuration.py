@@ -1,0 +1,254 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+from __future__ import absolute_import
+
+import copy
+import logging
+import multiprocessing
+import sys
+import urllib3
+
+import six
+from six.moves import http_client as httplib
+
+
+class TypeWithDefault(type):
+    def __init__(cls, name, bases, dct):
+        super(TypeWithDefault, cls).__init__(name, bases, dct)
+        cls._default = None
+
+    def __call__(cls):
+        if cls._default is None:
+            cls._default = type.__call__(cls)
+        return copy.copy(cls._default)
+
+    def set_default(cls, default):
+        cls._default = copy.copy(default)
+
+
+class Configuration(six.with_metaclass(TypeWithDefault, object)):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Ref: https://github.com/swagger-api/swagger-codegen
+    Do not edit the class manually.
+    """
+
+    def __init__(self):
+        """Constructor"""
+        # Default Base url
+        self.host = "/"
+        # Temp file folder for downloading files
+        self.temp_folder_path = None
+
+        # Authentication Settings
+        # dict to store API key(s)
+        self.api_key = {}
+        # dict to store API prefix (e.g. Bearer)
+        self.api_key_prefix = {}
+        # function to refresh API key if expired
+        self.refresh_api_key_hook = None
+        # Username for HTTP basic authentication
+        self.username = ""
+        # Password for HTTP basic authentication
+        self.password = ""
+        # Logging Settings
+        self.logger = {}
+        self.logger["package_logger"] = logging.getLogger("signer_client")
+        self.logger["urllib3_logger"] = logging.getLogger("urllib3")
+        # Log format
+        self.logger_format = '%(asctime)s %(levelname)s %(message)s'
+        # Log stream handler
+        self.logger_stream_handler = None
+        # Log file handler
+        self.logger_file_handler = None
+        # Debug file location
+        self.logger_file = None
+        # Debug switch
+        self.debug = False
+
+        # SSL/TLS verification
+        # Set this to false to skip verifying SSL certificate when calling API
+        # from https server.
+        self.verify_ssl = True
+        # Set this to customize the certificate file to verify the peer.
+        self.ssl_ca_cert = None
+        # client certificate file
+        self.cert_file = None
+        # client key file
+        self.key_file = None
+        # Set this to True/False to enable/disable SSL hostname verification.
+        self.assert_hostname = None
+
+        # urllib3 connection pool's maximum number of connections saved
+        # per pool. urllib3 uses 1 connection as default value, but this is
+        # not the best value when you are making a lot of possibly parallel
+        # requests to the same host, which is often the case here.
+        # cpu_count * 5 is used as default value to increase performance.
+        self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
+
+        # Proxy URL
+        self.proxy = None
+        # Safe chars for path_param
+        self.safe_chars_for_path_param = ''
+
+    @property
+    def logger_file(self):
+        """The logger file.
+
+        If the logger_file is None, then add stream handler and remove file
+        handler. Otherwise, add file handler and remove stream handler.
+
+        :param value: The logger_file path.
+        :type: str
+        """
+        return self.__logger_file
+
+    @logger_file.setter
+    def logger_file(self, value):
+        """The logger file.
+
+        If the logger_file is None, then add stream handler and remove file
+        handler. Otherwise, add file handler and remove stream handler.
+
+        :param value: The logger_file path.
+        :type: str
+        """
+        self.__logger_file = value
+        if self.__logger_file:
+            # If set logging file,
+            # then add file handler and remove stream handler.
+            self.logger_file_handler = logging.FileHandler(self.__logger_file)
+            self.logger_file_handler.setFormatter(self.logger_formatter)
+            for _, logger in six.iteritems(self.logger):
+                logger.addHandler(self.logger_file_handler)
+                if self.logger_stream_handler:
+                    logger.removeHandler(self.logger_stream_handler)
+        else:
+            # If not set logging file,
+            # then add stream handler and remove file handler.
+            self.logger_stream_handler = logging.StreamHandler()
+            self.logger_stream_handler.setFormatter(self.logger_formatter)
+            for _, logger in six.iteritems(self.logger):
+                logger.addHandler(self.logger_stream_handler)
+                if self.logger_file_handler:
+                    logger.removeHandler(self.logger_file_handler)
+
+    @property
+    def debug(self):
+        """Debug status
+
+        :param value: The debug status, True or False.
+        :type: bool
+        """
+        return self.__debug
+
+    @debug.setter
+    def debug(self, value):
+        """Debug status
+
+        :param value: The debug status, True or False.
+        :type: bool
+        """
+        self.__debug = value
+        if self.__debug:
+            # if debug status is True, turn on debug logging
+            for _, logger in six.iteritems(self.logger):
+                logger.setLevel(logging.DEBUG)
+            # turn on httplib debug
+            httplib.HTTPConnection.debuglevel = 1
+        else:
+            # if debug status is False, turn off debug logging,
+            # setting log level to default `logging.WARNING`
+            for _, logger in six.iteritems(self.logger):
+                logger.setLevel(logging.WARNING)
+            # turn off httplib debug
+            httplib.HTTPConnection.debuglevel = 0
+
+    @property
+    def logger_format(self):
+        """The logger format.
+
+        The logger_formatter will be updated when sets logger_format.
+
+        :param value: The format string.
+        :type: str
+        """
+        return self.__logger_format
+
+    @logger_format.setter
+    def logger_format(self, value):
+        """The logger format.
+
+        The logger_formatter will be updated when sets logger_format.
+
+        :param value: The format string.
+        :type: str
+        """
+        self.__logger_format = value
+        self.logger_formatter = logging.Formatter(self.__logger_format)
+
+    def get_api_key_with_prefix(self, identifier):
+        """Gets API key (with prefix if set).
+
+        :param identifier: The identifier of apiKey.
+        :return: The token for api key authentication.
+        """
+        if self.refresh_api_key_hook:
+            self.refresh_api_key_hook(self)
+
+        key = self.api_key.get(identifier)
+        if key:
+            prefix = self.api_key_prefix.get(identifier)
+            if prefix:
+                return "%s %s" % (prefix, key)
+            else:
+                return key
+
+    def get_basic_auth_token(self):
+        """Gets HTTP basic authentication header (string).
+
+        :return: The token for basic HTTP authentication.
+        """
+        token = ""
+        if self.username or self.password:
+            token = urllib3.util.make_headers(
+                basic_auth=self.username + ':' + self.password
+            ).get('authorization')
+        return token
+
+    def auth_settings(self):
+        """Gets Auth Settings dict for api client.
+
+        :return: The Auth Settings information dict.
+        """
+        return {
+            'ApiKey':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'X-Api-Key',
+                    'value': self.get_api_key_with_prefix('X-Api-Key')
+                },
+        }
+
+    def to_debug_report(self):
+        """Gets the essential information for debugging.
+
+        :return: The report for debugging.
+        """
+        return "Python SDK Debug Report:\n"\
+               "OS: {env}\n"\
+               "Python Version: {pyversion}\n"\
+               "Version of the API: 2.1.1\n"\
+               "SDK Package Version: 0.9.0".\
+               format(env=sys.platform, pyversion=sys.version)

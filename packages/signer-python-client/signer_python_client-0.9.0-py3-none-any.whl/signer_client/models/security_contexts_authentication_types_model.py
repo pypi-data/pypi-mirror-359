@@ -1,0 +1,318 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class SecurityContextsAuthenticationTypesModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'sms': 'bool',
+        'whatsapp': 'bool',
+        'otp': 'bool',
+        'selfie': 'bool',
+        'datavalid': 'bool',
+        'pix': 'bool',
+        'email': 'bool',
+        'liveness': 'bool',
+        'id_scan': 'bool'
+    }
+
+    attribute_map = {
+        'sms': 'sms',
+        'whatsapp': 'whatsapp',
+        'otp': 'otp',
+        'selfie': 'selfie',
+        'datavalid': 'datavalid',
+        'pix': 'pix',
+        'email': 'email',
+        'liveness': 'liveness',
+        'id_scan': 'idScan'
+    }
+
+    def __init__(self, sms=None, whatsapp=None, otp=None, selfie=None, datavalid=None, pix=None, email=None, liveness=None, id_scan=None):  # noqa: E501
+        """SecurityContextsAuthenticationTypesModel - a model defined in Swagger"""  # noqa: E501
+        self._sms = None
+        self._whatsapp = None
+        self._otp = None
+        self._selfie = None
+        self._datavalid = None
+        self._pix = None
+        self._email = None
+        self._liveness = None
+        self._id_scan = None
+        self.discriminator = None
+        if sms is not None:
+            self.sms = sms
+        if whatsapp is not None:
+            self.whatsapp = whatsapp
+        if otp is not None:
+            self.otp = otp
+        if selfie is not None:
+            self.selfie = selfie
+        if datavalid is not None:
+            self.datavalid = datavalid
+        if pix is not None:
+            self.pix = pix
+        if email is not None:
+            self.email = email
+        if liveness is not None:
+            self.liveness = liveness
+        if id_scan is not None:
+            self.id_scan = id_scan
+
+    @property
+    def sms(self):
+        """Gets the sms of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The sms of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sms
+
+    @sms.setter
+    def sms(self, sms):
+        """Sets the sms of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param sms: The sms of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._sms = sms
+
+    @property
+    def whatsapp(self):
+        """Gets the whatsapp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The whatsapp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._whatsapp
+
+    @whatsapp.setter
+    def whatsapp(self, whatsapp):
+        """Sets the whatsapp of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param whatsapp: The whatsapp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._whatsapp = whatsapp
+
+    @property
+    def otp(self):
+        """Gets the otp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The otp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._otp
+
+    @otp.setter
+    def otp(self, otp):
+        """Sets the otp of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param otp: The otp of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._otp = otp
+
+    @property
+    def selfie(self):
+        """Gets the selfie of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The selfie of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._selfie
+
+    @selfie.setter
+    def selfie(self, selfie):
+        """Sets the selfie of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param selfie: The selfie of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._selfie = selfie
+
+    @property
+    def datavalid(self):
+        """Gets the datavalid of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The datavalid of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._datavalid
+
+    @datavalid.setter
+    def datavalid(self, datavalid):
+        """Sets the datavalid of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param datavalid: The datavalid of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._datavalid = datavalid
+
+    @property
+    def pix(self):
+        """Gets the pix of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The pix of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pix
+
+    @pix.setter
+    def pix(self, pix):
+        """Sets the pix of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param pix: The pix of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._pix = pix
+
+    @property
+    def email(self):
+        """Gets the email of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The email of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param email: The email of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._email = email
+
+    @property
+    def liveness(self):
+        """Gets the liveness of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The liveness of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._liveness
+
+    @liveness.setter
+    def liveness(self, liveness):
+        """Sets the liveness of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param liveness: The liveness of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._liveness = liveness
+
+    @property
+    def id_scan(self):
+        """Gets the id_scan of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+
+
+        :return: The id_scan of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._id_scan
+
+    @id_scan.setter
+    def id_scan(self, id_scan):
+        """Sets the id_scan of this SecurityContextsAuthenticationTypesModel.
+
+
+        :param id_scan: The id_scan of this SecurityContextsAuthenticationTypesModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._id_scan = id_scan
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(SecurityContextsAuthenticationTypesModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, SecurityContextsAuthenticationTypesModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

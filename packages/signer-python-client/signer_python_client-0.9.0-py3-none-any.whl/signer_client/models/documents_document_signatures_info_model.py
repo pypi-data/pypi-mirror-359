@@ -1,0 +1,478 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class DocumentsDocumentSignaturesInfoModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'id': 'str',
+        'name': 'str',
+        'filename': 'str',
+        'mime_type': 'str',
+        'created_by': 'DocumentsCreatorModel',
+        'is_concluded': 'bool',
+        'is_file': 'bool',
+        'is_envelope': 'bool',
+        'creation_date': 'datetime',
+        'update_date': 'datetime',
+        'signers': 'list[SignerModel]',
+        'status': 'DocumentStatus',
+        'type': 'DocumentTypes',
+        'signature_type': 'SignatureTypes',
+        'security_context': 'SecurityContextsSecurityContextSimpleModel'
+    }
+
+    attribute_map = {
+        'id': 'id',
+        'name': 'name',
+        'filename': 'filename',
+        'mime_type': 'mimeType',
+        'created_by': 'createdBy',
+        'is_concluded': 'isConcluded',
+        'is_file': 'isFile',
+        'is_envelope': 'isEnvelope',
+        'creation_date': 'creationDate',
+        'update_date': 'updateDate',
+        'signers': 'signers',
+        'status': 'status',
+        'type': 'type',
+        'signature_type': 'signatureType',
+        'security_context': 'securityContext'
+    }
+
+    def __init__(self, id=None, name=None, filename=None, mime_type=None, created_by=None, is_concluded=None, is_file=None, is_envelope=None, creation_date=None, update_date=None, signers=None, status=None, type=None, signature_type=None, security_context=None):  # noqa: E501
+        """DocumentsDocumentSignaturesInfoModel - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._name = None
+        self._filename = None
+        self._mime_type = None
+        self._created_by = None
+        self._is_concluded = None
+        self._is_file = None
+        self._is_envelope = None
+        self._creation_date = None
+        self._update_date = None
+        self._signers = None
+        self._status = None
+        self._type = None
+        self._signature_type = None
+        self._security_context = None
+        self.discriminator = None
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if filename is not None:
+            self.filename = filename
+        if mime_type is not None:
+            self.mime_type = mime_type
+        if created_by is not None:
+            self.created_by = created_by
+        if is_concluded is not None:
+            self.is_concluded = is_concluded
+        if is_file is not None:
+            self.is_file = is_file
+        if is_envelope is not None:
+            self.is_envelope = is_envelope
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if update_date is not None:
+            self.update_date = update_date
+        if signers is not None:
+            self.signers = signers
+        if status is not None:
+            self.status = status
+        if type is not None:
+            self.type = type
+        if signature_type is not None:
+            self.signature_type = signature_type
+        if security_context is not None:
+            self.security_context = security_context
+
+    @property
+    def id(self):
+        """Gets the id of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The id of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param id: The id of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The name of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param name: The name of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def filename(self):
+        """Gets the filename of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The filename of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._filename
+
+    @filename.setter
+    def filename(self, filename):
+        """Sets the filename of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param filename: The filename of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: str
+        """
+
+        self._filename = filename
+
+    @property
+    def mime_type(self):
+        """Gets the mime_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The mime_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._mime_type
+
+    @mime_type.setter
+    def mime_type(self, mime_type):
+        """Sets the mime_type of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param mime_type: The mime_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: str
+        """
+
+        self._mime_type = mime_type
+
+    @property
+    def created_by(self):
+        """Gets the created_by of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The created_by of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: DocumentsCreatorModel
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param created_by: The created_by of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: DocumentsCreatorModel
+        """
+
+        self._created_by = created_by
+
+    @property
+    def is_concluded(self):
+        """Gets the is_concluded of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+        True if all actions requested in the document are concluded.  # noqa: E501
+
+        :return: The is_concluded of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_concluded
+
+    @is_concluded.setter
+    def is_concluded(self, is_concluded):
+        """Sets the is_concluded of this DocumentsDocumentSignaturesInfoModel.
+
+        True if all actions requested in the document are concluded.  # noqa: E501
+
+        :param is_concluded: The is_concluded of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_concluded = is_concluded
+
+    @property
+    def is_file(self):
+        """Gets the is_file of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The is_file of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_file
+
+    @is_file.setter
+    def is_file(self, is_file):
+        """Sets the is_file of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param is_file: The is_file of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_file = is_file
+
+    @property
+    def is_envelope(self):
+        """Gets the is_envelope of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The is_envelope of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_envelope
+
+    @is_envelope.setter
+    def is_envelope(self, is_envelope):
+        """Sets the is_envelope of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param is_envelope: The is_envelope of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_envelope = is_envelope
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The creation_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param creation_date: The creation_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def update_date(self):
+        """Gets the update_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The update_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._update_date
+
+    @update_date.setter
+    def update_date(self, update_date):
+        """Sets the update_date of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param update_date: The update_date of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._update_date = update_date
+
+    @property
+    def signers(self):
+        """Gets the signers of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+        List of who signed the document.  Each element in the list contains a validation result.  # noqa: E501
+
+        :return: The signers of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: list[SignerModel]
+        """
+        return self._signers
+
+    @signers.setter
+    def signers(self, signers):
+        """Sets the signers of this DocumentsDocumentSignaturesInfoModel.
+
+        List of who signed the document.  Each element in the list contains a validation result.  # noqa: E501
+
+        :param signers: The signers of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: list[SignerModel]
+        """
+
+        self._signers = signers
+
+    @property
+    def status(self):
+        """Gets the status of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The status of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: DocumentStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param status: The status of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: DocumentStatus
+        """
+
+        self._status = status
+
+    @property
+    def type(self):
+        """Gets the type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: DocumentTypes
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param type: The type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: DocumentTypes
+        """
+
+        self._type = type
+
+    @property
+    def signature_type(self):
+        """Gets the signature_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The signature_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: SignatureTypes
+        """
+        return self._signature_type
+
+    @signature_type.setter
+    def signature_type(self, signature_type):
+        """Sets the signature_type of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param signature_type: The signature_type of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: SignatureTypes
+        """
+
+        self._signature_type = signature_type
+
+    @property
+    def security_context(self):
+        """Gets the security_context of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+
+
+        :return: The security_context of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :rtype: SecurityContextsSecurityContextSimpleModel
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """Sets the security_context of this DocumentsDocumentSignaturesInfoModel.
+
+
+        :param security_context: The security_context of this DocumentsDocumentSignaturesInfoModel.  # noqa: E501
+        :type: SecurityContextsSecurityContextSimpleModel
+        """
+
+        self._security_context = security_context
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(DocumentsDocumentSignaturesInfoModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, DocumentsDocumentSignaturesInfoModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

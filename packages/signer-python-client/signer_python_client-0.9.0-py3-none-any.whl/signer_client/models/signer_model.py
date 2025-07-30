@@ -1,0 +1,526 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class SignerModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'subject_name': 'str',
+        'email_address': 'str',
+        'issuer_name': 'str',
+        'identifier': 'str',
+        'company_name': 'str',
+        'company_identifier': 'str',
+        'is_electronic': 'bool',
+        'is_timestamp': 'bool',
+        'signing_time': 'datetime',
+        'certificate_thumbprint': 'str',
+        'evidences': 'SignatureEvidencesModel',
+        'attribute_certificates': 'list[CertificatesAttributeCertificateInfoModel]',
+        'validation_results': 'ValidationResultsModel',
+        'validity_start': 'datetime',
+        'validity_end': 'datetime',
+        'signature_timestamps': 'list[TimestampModel]',
+        'archive_timestamps': 'list[TimestampModel]'
+    }
+
+    attribute_map = {
+        'subject_name': 'subjectName',
+        'email_address': 'emailAddress',
+        'issuer_name': 'issuerName',
+        'identifier': 'identifier',
+        'company_name': 'companyName',
+        'company_identifier': 'companyIdentifier',
+        'is_electronic': 'isElectronic',
+        'is_timestamp': 'isTimestamp',
+        'signing_time': 'signingTime',
+        'certificate_thumbprint': 'certificateThumbprint',
+        'evidences': 'evidences',
+        'attribute_certificates': 'attributeCertificates',
+        'validation_results': 'validationResults',
+        'validity_start': 'validityStart',
+        'validity_end': 'validityEnd',
+        'signature_timestamps': 'signatureTimestamps',
+        'archive_timestamps': 'archiveTimestamps'
+    }
+
+    def __init__(self, subject_name=None, email_address=None, issuer_name=None, identifier=None, company_name=None, company_identifier=None, is_electronic=None, is_timestamp=None, signing_time=None, certificate_thumbprint=None, evidences=None, attribute_certificates=None, validation_results=None, validity_start=None, validity_end=None, signature_timestamps=None, archive_timestamps=None):  # noqa: E501
+        """SignerModel - a model defined in Swagger"""  # noqa: E501
+        self._subject_name = None
+        self._email_address = None
+        self._issuer_name = None
+        self._identifier = None
+        self._company_name = None
+        self._company_identifier = None
+        self._is_electronic = None
+        self._is_timestamp = None
+        self._signing_time = None
+        self._certificate_thumbprint = None
+        self._evidences = None
+        self._attribute_certificates = None
+        self._validation_results = None
+        self._validity_start = None
+        self._validity_end = None
+        self._signature_timestamps = None
+        self._archive_timestamps = None
+        self.discriminator = None
+        if subject_name is not None:
+            self.subject_name = subject_name
+        if email_address is not None:
+            self.email_address = email_address
+        if issuer_name is not None:
+            self.issuer_name = issuer_name
+        if identifier is not None:
+            self.identifier = identifier
+        if company_name is not None:
+            self.company_name = company_name
+        if company_identifier is not None:
+            self.company_identifier = company_identifier
+        if is_electronic is not None:
+            self.is_electronic = is_electronic
+        if is_timestamp is not None:
+            self.is_timestamp = is_timestamp
+        if signing_time is not None:
+            self.signing_time = signing_time
+        if certificate_thumbprint is not None:
+            self.certificate_thumbprint = certificate_thumbprint
+        if evidences is not None:
+            self.evidences = evidences
+        if attribute_certificates is not None:
+            self.attribute_certificates = attribute_certificates
+        if validation_results is not None:
+            self.validation_results = validation_results
+        if validity_start is not None:
+            self.validity_start = validity_start
+        if validity_end is not None:
+            self.validity_end = validity_end
+        if signature_timestamps is not None:
+            self.signature_timestamps = signature_timestamps
+        if archive_timestamps is not None:
+            self.archive_timestamps = archive_timestamps
+
+    @property
+    def subject_name(self):
+        """Gets the subject_name of this SignerModel.  # noqa: E501
+
+
+        :return: The subject_name of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_name
+
+    @subject_name.setter
+    def subject_name(self, subject_name):
+        """Sets the subject_name of this SignerModel.
+
+
+        :param subject_name: The subject_name of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_name = subject_name
+
+    @property
+    def email_address(self):
+        """Gets the email_address of this SignerModel.  # noqa: E501
+
+
+        :return: The email_address of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._email_address
+
+    @email_address.setter
+    def email_address(self, email_address):
+        """Sets the email_address of this SignerModel.
+
+
+        :param email_address: The email_address of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._email_address = email_address
+
+    @property
+    def issuer_name(self):
+        """Gets the issuer_name of this SignerModel.  # noqa: E501
+
+
+        :return: The issuer_name of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._issuer_name
+
+    @issuer_name.setter
+    def issuer_name(self, issuer_name):
+        """Sets the issuer_name of this SignerModel.
+
+
+        :param issuer_name: The issuer_name of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._issuer_name = issuer_name
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this SignerModel.  # noqa: E501
+
+
+        :return: The identifier of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this SignerModel.
+
+
+        :param identifier: The identifier of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def company_name(self):
+        """Gets the company_name of this SignerModel.  # noqa: E501
+
+
+        :return: The company_name of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_name
+
+    @company_name.setter
+    def company_name(self, company_name):
+        """Sets the company_name of this SignerModel.
+
+
+        :param company_name: The company_name of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._company_name = company_name
+
+    @property
+    def company_identifier(self):
+        """Gets the company_identifier of this SignerModel.  # noqa: E501
+
+
+        :return: The company_identifier of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_identifier
+
+    @company_identifier.setter
+    def company_identifier(self, company_identifier):
+        """Sets the company_identifier of this SignerModel.
+
+
+        :param company_identifier: The company_identifier of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._company_identifier = company_identifier
+
+    @property
+    def is_electronic(self):
+        """Gets the is_electronic of this SignerModel.  # noqa: E501
+
+
+        :return: The is_electronic of this SignerModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_electronic
+
+    @is_electronic.setter
+    def is_electronic(self, is_electronic):
+        """Sets the is_electronic of this SignerModel.
+
+
+        :param is_electronic: The is_electronic of this SignerModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_electronic = is_electronic
+
+    @property
+    def is_timestamp(self):
+        """Gets the is_timestamp of this SignerModel.  # noqa: E501
+
+
+        :return: The is_timestamp of this SignerModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_timestamp
+
+    @is_timestamp.setter
+    def is_timestamp(self, is_timestamp):
+        """Sets the is_timestamp of this SignerModel.
+
+
+        :param is_timestamp: The is_timestamp of this SignerModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_timestamp = is_timestamp
+
+    @property
+    def signing_time(self):
+        """Gets the signing_time of this SignerModel.  # noqa: E501
+
+
+        :return: The signing_time of this SignerModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._signing_time
+
+    @signing_time.setter
+    def signing_time(self, signing_time):
+        """Sets the signing_time of this SignerModel.
+
+
+        :param signing_time: The signing_time of this SignerModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._signing_time = signing_time
+
+    @property
+    def certificate_thumbprint(self):
+        """Gets the certificate_thumbprint of this SignerModel.  # noqa: E501
+
+
+        :return: The certificate_thumbprint of this SignerModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_thumbprint
+
+    @certificate_thumbprint.setter
+    def certificate_thumbprint(self, certificate_thumbprint):
+        """Sets the certificate_thumbprint of this SignerModel.
+
+
+        :param certificate_thumbprint: The certificate_thumbprint of this SignerModel.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_thumbprint = certificate_thumbprint
+
+    @property
+    def evidences(self):
+        """Gets the evidences of this SignerModel.  # noqa: E501
+
+
+        :return: The evidences of this SignerModel.  # noqa: E501
+        :rtype: SignatureEvidencesModel
+        """
+        return self._evidences
+
+    @evidences.setter
+    def evidences(self, evidences):
+        """Sets the evidences of this SignerModel.
+
+
+        :param evidences: The evidences of this SignerModel.  # noqa: E501
+        :type: SignatureEvidencesModel
+        """
+
+        self._evidences = evidences
+
+    @property
+    def attribute_certificates(self):
+        """Gets the attribute_certificates of this SignerModel.  # noqa: E501
+
+
+        :return: The attribute_certificates of this SignerModel.  # noqa: E501
+        :rtype: list[CertificatesAttributeCertificateInfoModel]
+        """
+        return self._attribute_certificates
+
+    @attribute_certificates.setter
+    def attribute_certificates(self, attribute_certificates):
+        """Sets the attribute_certificates of this SignerModel.
+
+
+        :param attribute_certificates: The attribute_certificates of this SignerModel.  # noqa: E501
+        :type: list[CertificatesAttributeCertificateInfoModel]
+        """
+
+        self._attribute_certificates = attribute_certificates
+
+    @property
+    def validation_results(self):
+        """Gets the validation_results of this SignerModel.  # noqa: E501
+
+
+        :return: The validation_results of this SignerModel.  # noqa: E501
+        :rtype: ValidationResultsModel
+        """
+        return self._validation_results
+
+    @validation_results.setter
+    def validation_results(self, validation_results):
+        """Sets the validation_results of this SignerModel.
+
+
+        :param validation_results: The validation_results of this SignerModel.  # noqa: E501
+        :type: ValidationResultsModel
+        """
+
+        self._validation_results = validation_results
+
+    @property
+    def validity_start(self):
+        """Gets the validity_start of this SignerModel.  # noqa: E501
+
+
+        :return: The validity_start of this SignerModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._validity_start
+
+    @validity_start.setter
+    def validity_start(self, validity_start):
+        """Sets the validity_start of this SignerModel.
+
+
+        :param validity_start: The validity_start of this SignerModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._validity_start = validity_start
+
+    @property
+    def validity_end(self):
+        """Gets the validity_end of this SignerModel.  # noqa: E501
+
+
+        :return: The validity_end of this SignerModel.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._validity_end
+
+    @validity_end.setter
+    def validity_end(self, validity_end):
+        """Sets the validity_end of this SignerModel.
+
+
+        :param validity_end: The validity_end of this SignerModel.  # noqa: E501
+        :type: datetime
+        """
+
+        self._validity_end = validity_end
+
+    @property
+    def signature_timestamps(self):
+        """Gets the signature_timestamps of this SignerModel.  # noqa: E501
+
+
+        :return: The signature_timestamps of this SignerModel.  # noqa: E501
+        :rtype: list[TimestampModel]
+        """
+        return self._signature_timestamps
+
+    @signature_timestamps.setter
+    def signature_timestamps(self, signature_timestamps):
+        """Sets the signature_timestamps of this SignerModel.
+
+
+        :param signature_timestamps: The signature_timestamps of this SignerModel.  # noqa: E501
+        :type: list[TimestampModel]
+        """
+
+        self._signature_timestamps = signature_timestamps
+
+    @property
+    def archive_timestamps(self):
+        """Gets the archive_timestamps of this SignerModel.  # noqa: E501
+
+
+        :return: The archive_timestamps of this SignerModel.  # noqa: E501
+        :rtype: list[TimestampModel]
+        """
+        return self._archive_timestamps
+
+    @archive_timestamps.setter
+    def archive_timestamps(self, archive_timestamps):
+        """Sets the archive_timestamps of this SignerModel.
+
+
+        :param archive_timestamps: The archive_timestamps of this SignerModel.  # noqa: E501
+        :type: list[TimestampModel]
+        """
+
+        self._archive_timestamps = archive_timestamps
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(SignerModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, SignerModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

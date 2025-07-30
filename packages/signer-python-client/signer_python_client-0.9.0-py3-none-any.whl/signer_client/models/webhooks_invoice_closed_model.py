@@ -1,0 +1,266 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class WebhooksInvoiceClosedModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'id': 'int',
+        'month': 'int',
+        'year': 'int',
+        'value': 'float',
+        'invoice_totals': 'list[InvoicesInvoiceTotalModel]',
+        'organization': 'OrganizationsOrganizationInfoModel',
+        'billing_information': 'BillingBillingInformationModel'
+    }
+
+    attribute_map = {
+        'id': 'id',
+        'month': 'month',
+        'year': 'year',
+        'value': 'value',
+        'invoice_totals': 'invoiceTotals',
+        'organization': 'organization',
+        'billing_information': 'billingInformation'
+    }
+
+    def __init__(self, id=None, month=None, year=None, value=None, invoice_totals=None, organization=None, billing_information=None):  # noqa: E501
+        """WebhooksInvoiceClosedModel - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._month = None
+        self._year = None
+        self._value = None
+        self._invoice_totals = None
+        self._organization = None
+        self._billing_information = None
+        self.discriminator = None
+        if id is not None:
+            self.id = id
+        if month is not None:
+            self.month = month
+        if year is not None:
+            self.year = year
+        if value is not None:
+            self.value = value
+        if invoice_totals is not None:
+            self.invoice_totals = invoice_totals
+        if organization is not None:
+            self.organization = organization
+        if billing_information is not None:
+            self.billing_information = billing_information
+
+    @property
+    def id(self):
+        """Gets the id of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The id of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this WebhooksInvoiceClosedModel.
+
+
+        :param id: The id of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def month(self):
+        """Gets the month of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The month of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._month
+
+    @month.setter
+    def month(self, month):
+        """Sets the month of this WebhooksInvoiceClosedModel.
+
+
+        :param month: The month of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._month = month
+
+    @property
+    def year(self):
+        """Gets the year of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The year of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._year
+
+    @year.setter
+    def year(self, year):
+        """Sets the year of this WebhooksInvoiceClosedModel.
+
+
+        :param year: The year of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._year = year
+
+    @property
+    def value(self):
+        """Gets the value of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The value of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this WebhooksInvoiceClosedModel.
+
+
+        :param value: The value of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: float
+        """
+
+        self._value = value
+
+    @property
+    def invoice_totals(self):
+        """Gets the invoice_totals of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The invoice_totals of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: list[InvoicesInvoiceTotalModel]
+        """
+        return self._invoice_totals
+
+    @invoice_totals.setter
+    def invoice_totals(self, invoice_totals):
+        """Sets the invoice_totals of this WebhooksInvoiceClosedModel.
+
+
+        :param invoice_totals: The invoice_totals of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: list[InvoicesInvoiceTotalModel]
+        """
+
+        self._invoice_totals = invoice_totals
+
+    @property
+    def organization(self):
+        """Gets the organization of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The organization of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: OrganizationsOrganizationInfoModel
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this WebhooksInvoiceClosedModel.
+
+
+        :param organization: The organization of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: OrganizationsOrganizationInfoModel
+        """
+
+        self._organization = organization
+
+    @property
+    def billing_information(self):
+        """Gets the billing_information of this WebhooksInvoiceClosedModel.  # noqa: E501
+
+
+        :return: The billing_information of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :rtype: BillingBillingInformationModel
+        """
+        return self._billing_information
+
+    @billing_information.setter
+    def billing_information(self, billing_information):
+        """Sets the billing_information of this WebhooksInvoiceClosedModel.
+
+
+        :param billing_information: The billing_information of this WebhooksInvoiceClosedModel.  # noqa: E501
+        :type: BillingBillingInformationModel
+        """
+
+        self._billing_information = billing_information
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(WebhooksInvoiceClosedModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, WebhooksInvoiceClosedModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

@@ -1,0 +1,218 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class FlowActionsXadesOptionsModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'signature_type': 'XadesSignatureTypes',
+        'element_to_sign_identifier_type': 'XadesElementIdentifierTypes',
+        'element_to_sign_identifier': 'str',
+        'insertion_option': 'XadesInsertionOptions',
+        'disable_x_path_transformation': 'bool'
+    }
+
+    attribute_map = {
+        'signature_type': 'signatureType',
+        'element_to_sign_identifier_type': 'elementToSignIdentifierType',
+        'element_to_sign_identifier': 'elementToSignIdentifier',
+        'insertion_option': 'insertionOption',
+        'disable_x_path_transformation': 'disableXPathTransformation'
+    }
+
+    def __init__(self, signature_type=None, element_to_sign_identifier_type=None, element_to_sign_identifier=None, insertion_option=None, disable_x_path_transformation=None):  # noqa: E501
+        """FlowActionsXadesOptionsModel - a model defined in Swagger"""  # noqa: E501
+        self._signature_type = None
+        self._element_to_sign_identifier_type = None
+        self._element_to_sign_identifier = None
+        self._insertion_option = None
+        self._disable_x_path_transformation = None
+        self.discriminator = None
+        if signature_type is not None:
+            self.signature_type = signature_type
+        if element_to_sign_identifier_type is not None:
+            self.element_to_sign_identifier_type = element_to_sign_identifier_type
+        if element_to_sign_identifier is not None:
+            self.element_to_sign_identifier = element_to_sign_identifier
+        if insertion_option is not None:
+            self.insertion_option = insertion_option
+        if disable_x_path_transformation is not None:
+            self.disable_x_path_transformation = disable_x_path_transformation
+
+    @property
+    def signature_type(self):
+        """Gets the signature_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+
+
+        :return: The signature_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :rtype: XadesSignatureTypes
+        """
+        return self._signature_type
+
+    @signature_type.setter
+    def signature_type(self, signature_type):
+        """Sets the signature_type of this FlowActionsXadesOptionsModel.
+
+
+        :param signature_type: The signature_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :type: XadesSignatureTypes
+        """
+
+        self._signature_type = signature_type
+
+    @property
+    def element_to_sign_identifier_type(self):
+        """Gets the element_to_sign_identifier_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+
+
+        :return: The element_to_sign_identifier_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :rtype: XadesElementIdentifierTypes
+        """
+        return self._element_to_sign_identifier_type
+
+    @element_to_sign_identifier_type.setter
+    def element_to_sign_identifier_type(self, element_to_sign_identifier_type):
+        """Sets the element_to_sign_identifier_type of this FlowActionsXadesOptionsModel.
+
+
+        :param element_to_sign_identifier_type: The element_to_sign_identifier_type of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :type: XadesElementIdentifierTypes
+        """
+
+        self._element_to_sign_identifier_type = element_to_sign_identifier_type
+
+    @property
+    def element_to_sign_identifier(self):
+        """Gets the element_to_sign_identifier of this FlowActionsXadesOptionsModel.  # noqa: E501
+
+        A string used to identify the element that should be signed.  If the Lacuna.Signer.Api.FlowActions.XadesOptionsModel.ElementToSignIdentifierType is Lacuna.Signer.Api.XadesElementIdentifierTypes.Id, this string is the Id of the element to be signed.  If the Lacuna.Signer.Api.FlowActions.XadesOptionsModel.ElementToSignIdentifierType is Lacuna.Signer.Api.XadesElementIdentifierTypes.XPath, this string is the XPath to the element to be signed.  # noqa: E501
+
+        :return: The element_to_sign_identifier of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._element_to_sign_identifier
+
+    @element_to_sign_identifier.setter
+    def element_to_sign_identifier(self, element_to_sign_identifier):
+        """Sets the element_to_sign_identifier of this FlowActionsXadesOptionsModel.
+
+        A string used to identify the element that should be signed.  If the Lacuna.Signer.Api.FlowActions.XadesOptionsModel.ElementToSignIdentifierType is Lacuna.Signer.Api.XadesElementIdentifierTypes.Id, this string is the Id of the element to be signed.  If the Lacuna.Signer.Api.FlowActions.XadesOptionsModel.ElementToSignIdentifierType is Lacuna.Signer.Api.XadesElementIdentifierTypes.XPath, this string is the XPath to the element to be signed.  # noqa: E501
+
+        :param element_to_sign_identifier: The element_to_sign_identifier of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :type: str
+        """
+
+        self._element_to_sign_identifier = element_to_sign_identifier
+
+    @property
+    def insertion_option(self):
+        """Gets the insertion_option of this FlowActionsXadesOptionsModel.  # noqa: E501
+
+
+        :return: The insertion_option of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :rtype: XadesInsertionOptions
+        """
+        return self._insertion_option
+
+    @insertion_option.setter
+    def insertion_option(self, insertion_option):
+        """Sets the insertion_option of this FlowActionsXadesOptionsModel.
+
+
+        :param insertion_option: The insertion_option of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :type: XadesInsertionOptions
+        """
+
+        self._insertion_option = insertion_option
+
+    @property
+    def disable_x_path_transformation(self):
+        """Gets the disable_x_path_transformation of this FlowActionsXadesOptionsModel.  # noqa: E501
+
+        By default the XPath transformation is applied in all XAdES signatures. You can set a flow action to not apply the transformation by setting this option to true.  WARNING: If you disable the XPath transformation the signatures might be considered invalid in some validators if the same XML element is signed multiple times.  # noqa: E501
+
+        :return: The disable_x_path_transformation of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_x_path_transformation
+
+    @disable_x_path_transformation.setter
+    def disable_x_path_transformation(self, disable_x_path_transformation):
+        """Sets the disable_x_path_transformation of this FlowActionsXadesOptionsModel.
+
+        By default the XPath transformation is applied in all XAdES signatures. You can set a flow action to not apply the transformation by setting this option to true.  WARNING: If you disable the XPath transformation the signatures might be considered invalid in some validators if the same XML element is signed multiple times.  # noqa: E501
+
+        :param disable_x_path_transformation: The disable_x_path_transformation of this FlowActionsXadesOptionsModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_x_path_transformation = disable_x_path_transformation
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(FlowActionsXadesOptionsModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, FlowActionsXadesOptionsModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

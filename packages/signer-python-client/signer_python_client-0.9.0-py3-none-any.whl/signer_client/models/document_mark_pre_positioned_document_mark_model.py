@@ -1,0 +1,306 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class DocumentMarkPrePositionedDocumentMarkModel(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'type': 'DocumentMarkType',
+        'upload_id': 'str',
+        'top_left_x': 'float',
+        'top_left_y': 'float',
+        'width': 'float',
+        'height': 'float',
+        'page_number': 'int',
+        'font_size': 'float'
+    }
+
+    attribute_map = {
+        'type': 'type',
+        'upload_id': 'uploadId',
+        'top_left_x': 'topLeftX',
+        'top_left_y': 'topLeftY',
+        'width': 'width',
+        'height': 'height',
+        'page_number': 'pageNumber',
+        'font_size': 'fontSize'
+    }
+
+    def __init__(self, type=None, upload_id=None, top_left_x=None, top_left_y=None, width=None, height=None, page_number=None, font_size=None):  # noqa: E501
+        """DocumentMarkPrePositionedDocumentMarkModel - a model defined in Swagger"""  # noqa: E501
+        self._type = None
+        self._upload_id = None
+        self._top_left_x = None
+        self._top_left_y = None
+        self._width = None
+        self._height = None
+        self._page_number = None
+        self._font_size = None
+        self.discriminator = None
+        if type is not None:
+            self.type = type
+        if upload_id is not None:
+            self.upload_id = upload_id
+        if top_left_x is not None:
+            self.top_left_x = top_left_x
+        if top_left_y is not None:
+            self.top_left_y = top_left_y
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if page_number is not None:
+            self.page_number = page_number
+        if font_size is not None:
+            self.font_size = font_size
+
+    @property
+    def type(self):
+        """Gets the type of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+
+        :return: The type of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: DocumentMarkType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this DocumentMarkPrePositionedDocumentMarkModel.
+
+
+        :param type: The type of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: DocumentMarkType
+        """
+
+        self._type = type
+
+    @property
+    def upload_id(self):
+        """Gets the upload_id of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        The file to which this mark should be applied.  If null it will be applied to all sent files.  # noqa: E501
+
+        :return: The upload_id of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._upload_id
+
+    @upload_id.setter
+    def upload_id(self, upload_id):
+        """Sets the upload_id of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        The file to which this mark should be applied.  If null it will be applied to all sent files.  # noqa: E501
+
+        :param upload_id: The upload_id of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: str
+        """
+
+        self._upload_id = upload_id
+
+    @property
+    def top_left_x(self):
+        """Gets the top_left_x of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        X position of the top left point of the mark (in PDF points).  # noqa: E501
+
+        :return: The top_left_x of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._top_left_x
+
+    @top_left_x.setter
+    def top_left_x(self, top_left_x):
+        """Sets the top_left_x of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        X position of the top left point of the mark (in PDF points).  # noqa: E501
+
+        :param top_left_x: The top_left_x of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: float
+        """
+
+        self._top_left_x = top_left_x
+
+    @property
+    def top_left_y(self):
+        """Gets the top_left_y of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        Y position of the top left point of the mark (in PDF points).  # noqa: E501
+
+        :return: The top_left_y of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._top_left_y
+
+    @top_left_y.setter
+    def top_left_y(self, top_left_y):
+        """Sets the top_left_y of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        Y position of the top left point of the mark (in PDF points).  # noqa: E501
+
+        :param top_left_y: The top_left_y of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: float
+        """
+
+        self._top_left_y = top_left_y
+
+    @property
+    def width(self):
+        """Gets the width of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        Width of the mark (in PDF points).  # noqa: E501
+
+        :return: The width of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """Sets the width of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        Width of the mark (in PDF points).  # noqa: E501
+
+        :param width: The width of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: float
+        """
+
+        self._width = width
+
+    @property
+    def height(self):
+        """Gets the height of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        Height of the mark (in PDF points).  # noqa: E501
+
+        :return: The height of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        """Sets the height of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        Height of the mark (in PDF points).  # noqa: E501
+
+        :param height: The height of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: float
+        """
+
+        self._height = height
+
+    @property
+    def page_number(self):
+        """Gets the page_number of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        The page number of the mark.  # noqa: E501
+
+        :return: The page_number of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """Sets the page_number of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        The page number of the mark.  # noqa: E501
+
+        :param page_number: The page_number of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: int
+        """
+
+        self._page_number = page_number
+
+    @property
+    def font_size(self):
+        """Gets the font_size of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+
+        The font size of the mark.  The font size adapts dynamically to fit within the dimensions of the mark rectangle.  # noqa: E501
+
+        :return: The font_size of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._font_size
+
+    @font_size.setter
+    def font_size(self, font_size):
+        """Sets the font_size of this DocumentMarkPrePositionedDocumentMarkModel.
+
+        The font size of the mark.  The font size adapts dynamically to fit within the dimensions of the mark rectangle.  # noqa: E501
+
+        :param font_size: The font_size of this DocumentMarkPrePositionedDocumentMarkModel.  # noqa: E501
+        :type: float
+        """
+
+        self._font_size = font_size
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(DocumentMarkPrePositionedDocumentMarkModel, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, DocumentMarkPrePositionedDocumentMarkModel):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other

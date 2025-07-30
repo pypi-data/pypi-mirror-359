@@ -1,0 +1,715 @@
+# coding: utf-8
+
+"""
+    Dropsigner (HML)
+
+    <!--------------------------------------------------------------------------------------------------------------------->  <h2>Authentication</h2>  <p>  In order to call this APIs, you will need an <strong>API key</strong>. Set the API key in the header <span class=\"code\">X-Api-Key</span>: </p>  <pre>X-Api-Key: your-app|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>  <!---------------------------------------------------------------------------------------------------------------------> <br />  <h2>HTTP Codes</h2>  <p>  The APIs will return the following HTTP codes: </p>  <table>  <thead>   <tr>    <th>Code</th>    <th>Description</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">200 (OK)</strong></td>    <td>Request processed successfully. The response is different for each API, please refer to the operation's documentation</td>   </tr>   <tr>    <td><strong class=\"model-title\">400 (Bad Request)</strong></td>    <td>Syntax error. For instance, when a required field was not provided</td>   </tr>   <tr>    <td><strong class=\"model-title\">401 (Unauthorized)</strong></td>    <td>API key not provided or invalid</td>   </tr>   <tr>    <td><strong class=\"model-title\">403 (Forbidden)</strong></td>    <td>API key is valid, but the application has insufficient permissions to complete the requested operation</td>   </tr>   <tr>    <td><strong class=\"model-title\">422 (Unprocessable Entity)</strong></td>    <td>API error. The response is as defined in <a href=\"#model-ErrorModel\">ErrorModel</a></td>   </tr>  </tbody> </table>  <br />  <h3>Error Codes</h3>  <p>Some of the error codes returned in a 422 response are provided bellow*:</p>  <ul>  <li>CertificateNotFound</li>  <li>DocumentNotFound</li>  <li>FolderNotFound</li>  <li>CpfMismatch</li>  <li>CpfNotExpected</li>  <li>InvalidFlowAction</li>  <li>DocumentInvalidKey</li> </ul>  <p style=\"font-size: 0.9em\">  *The codes shown above are the main error codes. Nonetheless, this list is not comprehensive. New codes may be added anytime without previous warning. </p>  <!--------------------------------------------------------------------------------------------------------------------->  <br />  <h2>Webhooks</h2>  <p>  It is recomended to subscribe to Webhook events <strong>instead</strong> of polling APIs. To do so, enable webhooks and register an URL that will receive a POST request  whenever one of the events bellow occur. </p> <p>  All requests have the format described in <a href=\"#model-Webhooks.WebhookModel\">Webhooks.WebhookModel</a>.  The data field varies according to the webhook event type: </p>   <table>  <thead>   <tr>    <th>Event type</th>    <th>Description</th>    <th>Payload</th>   </tr>  </thead>  <tbody>   <tr>    <td><strong class=\"model-title\">DocumentSigned</strong></td>    <td>Triggered when a document is signed.</td>    <td><a href=\"#model-Webhooks.DocumentSignedModel\">Webhooks.DocumentSignedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentApproved</strong></td>    <td>Triggered when a document is approved.</td>    <td><a href=\"#model-Webhooks.DocumentApprovedModel\">Webhooks.DocumentApprovedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentRefused</strong></td>    <td>Triggered when a document is refused.</td>    <td><a href=\"#model-Webhooks.DocumentRefusedModel\">Webhooks.DocumentRefusedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentConcluded</strong></td>    <td>Triggered when the flow of a document is concluded.</td>    <td><a href=\"#model-Webhooks.DocumentConcludedModel\">Webhooks.DocumentConcludedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentCanceled</strong></td>    <td>Triggered when the document is canceled.</td>    <td><a href=\"#model-Webhooks.DocumentCanceledModel\">Webhooks.DocumentCanceledModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentExpired (v1.33.0)</strong></td>    <td>Triggered when the document is expired.</td>    <td><a href=\"#model-Webhooks.DocumentExpiredModel\">Webhooks.DocumentExpiredModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsCreated (v1.50.0)</strong></td>    <td>Triggered when one or more documents are created.</td>    <td><a href=\"#model-Webhooks.DocumentsCreatedModel\">Webhooks.DocumentsCreatedModel</a></td>   </tr>   <tr>    <td><strong class=\"model-title\">DocumentsDeleted (v1.78.0)</strong></td>    <td>Triggered when one or more documents are deleted.</td>    <td><a href=\"#model-Webhooks.DocumentsDeletedModel\">Webhooks.DocumentsDeletedModel</a></td>   </tr>  </tbody> </table>  <p>  To register your application URL and enable Webhooks, access the integrations section in your <a href=\"/private/organizations\" target=\"_blank\">organization's details page</a>. </p>   # noqa: E501
+
+    OpenAPI spec version: 2.1.1
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+class DocumentsCreateDocumentRequest(object):
+    """NOTE: This class is auto generated by the swagger code generator program.
+
+    Do not edit the class manually.
+    """
+    """
+    Attributes:
+      swagger_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    swagger_types = {
+        'files': 'list[FileUploadModel]',
+        'attachments': 'list[AttachmentsAttachmentUploadModel]',
+        'xml_namespaces': 'list[XmlNamespaceModel]',
+        'is_envelope': 'bool',
+        'envelope_name': 'str',
+        'participants_data_file': 'UploadModel',
+        'template_field_values': 'dict(str, str)',
+        'folder_id': 'str',
+        'description': 'str',
+        'flow_actions': 'list[FlowActionsFlowActionCreateModel]',
+        'observers': 'list[ObserversObserverCreateModel]',
+        'disable_pending_action_notifications': 'bool',
+        'disable_notifications': 'bool',
+        'new_folder_name': 'str',
+        'force_cades_signature': 'bool',
+        'notified_emails': 'list[str]',
+        'additional_info': 'DocumentsDocumentAdditionalInfoData',
+        'tags': 'list[DocumentsDocumentTagData]',
+        'signature_type': 'SignatureTypes',
+        'security_context_id': 'str',
+        'template_id': 'str',
+        'expiration_date': 'datetime',
+        'type': 'str'
+    }
+
+    attribute_map = {
+        'files': 'files',
+        'attachments': 'attachments',
+        'xml_namespaces': 'xmlNamespaces',
+        'is_envelope': 'isEnvelope',
+        'envelope_name': 'envelopeName',
+        'participants_data_file': 'participantsDataFile',
+        'template_field_values': 'templateFieldValues',
+        'folder_id': 'folderId',
+        'description': 'description',
+        'flow_actions': 'flowActions',
+        'observers': 'observers',
+        'disable_pending_action_notifications': 'disablePendingActionNotifications',
+        'disable_notifications': 'disableNotifications',
+        'new_folder_name': 'newFolderName',
+        'force_cades_signature': 'forceCadesSignature',
+        'notified_emails': 'notifiedEmails',
+        'additional_info': 'additionalInfo',
+        'tags': 'tags',
+        'signature_type': 'signatureType',
+        'security_context_id': 'securityContextId',
+        'template_id': 'templateId',
+        'expiration_date': 'expirationDate',
+        'type': 'type'
+    }
+
+    def __init__(self, files=None, attachments=None, xml_namespaces=None, is_envelope=None, envelope_name=None, participants_data_file=None, template_field_values=None, folder_id=None, description=None, flow_actions=None, observers=None, disable_pending_action_notifications=None, disable_notifications=None, new_folder_name=None, force_cades_signature=None, notified_emails=None, additional_info=None, tags=None, signature_type=None, security_context_id=None, template_id=None, expiration_date=None, type=None):  # noqa: E501
+        """DocumentsCreateDocumentRequest - a model defined in Swagger"""  # noqa: E501
+        self._files = None
+        self._attachments = None
+        self._xml_namespaces = None
+        self._is_envelope = None
+        self._envelope_name = None
+        self._participants_data_file = None
+        self._template_field_values = None
+        self._folder_id = None
+        self._description = None
+        self._flow_actions = None
+        self._observers = None
+        self._disable_pending_action_notifications = None
+        self._disable_notifications = None
+        self._new_folder_name = None
+        self._force_cades_signature = None
+        self._notified_emails = None
+        self._additional_info = None
+        self._tags = None
+        self._signature_type = None
+        self._security_context_id = None
+        self._template_id = None
+        self._expiration_date = None
+        self._type = None
+        self.discriminator = None
+        self.files = files
+        self.type = type
+        if attachments is not None:
+            self.attachments = attachments
+        if xml_namespaces is not None:
+            self.xml_namespaces = xml_namespaces
+        if is_envelope is not None:
+            self.is_envelope = is_envelope
+        if envelope_name is not None:
+            self.envelope_name = envelope_name
+        if participants_data_file is not None:
+            self.participants_data_file = participants_data_file
+        if template_field_values is not None:
+            self.template_field_values = template_field_values
+        if folder_id is not None:
+            self.folder_id = folder_id
+        if description is not None:
+            self.description = description
+        self.flow_actions = flow_actions
+        if observers is not None:
+            self.observers = observers
+        if disable_pending_action_notifications is not None:
+            self.disable_pending_action_notifications = disable_pending_action_notifications
+        if disable_notifications is not None:
+            self.disable_notifications = disable_notifications
+        if new_folder_name is not None:
+            self.new_folder_name = new_folder_name
+        if force_cades_signature is not None:
+            self.force_cades_signature = force_cades_signature
+        if notified_emails is not None:
+            self.notified_emails = notified_emails
+        if additional_info is not None:
+            self.additional_info = additional_info
+        if tags is not None:
+            self.tags = tags
+        if signature_type is not None:
+            self.signature_type = signature_type
+        if security_context_id is not None:
+            self.security_context_id = security_context_id
+        if template_id is not None:
+            self.template_id = template_id
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
+        if type is not None:
+            self.type = type
+
+    @property
+    def files(self):
+        """Gets the files of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The files to submit. Each file will create a document.  # noqa: E501
+
+        :return: The files of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[FileUploadModel]
+        """
+        return self._files
+
+    @files.setter
+    def files(self, files):
+        """Sets the files of this DocumentsCreateDocumentRequest.
+
+        The files to submit. Each file will create a document.  # noqa: E501
+
+        :param files: The files of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[FileUploadModel]
+        """
+        if files is None:
+            raise ValueError("Invalid value for `files`, must not be `None`")  # noqa: E501
+
+        self._files = files
+
+    @property
+    def attachments(self):
+        """Gets the attachments of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The attachments to submit. Each document will have the same attachments.  # noqa: E501
+
+        :return: The attachments of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[AttachmentsAttachmentUploadModel]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """Sets the attachments of this DocumentsCreateDocumentRequest.
+
+        The attachments to submit. Each document will have the same attachments.  # noqa: E501
+
+        :param attachments: The attachments of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[AttachmentsAttachmentUploadModel]
+        """
+
+        self._attachments = attachments
+
+    @property
+    def xml_namespaces(self):
+        """Gets the xml_namespaces of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        Optional parameter for XML documents. This namespace will be used by all files in Lacuna.Signer.Api.Documents.CreateDocumentRequest.Files.  # noqa: E501
+
+        :return: The xml_namespaces of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[XmlNamespaceModel]
+        """
+        return self._xml_namespaces
+
+    @xml_namespaces.setter
+    def xml_namespaces(self, xml_namespaces):
+        """Sets the xml_namespaces of this DocumentsCreateDocumentRequest.
+
+        Optional parameter for XML documents. This namespace will be used by all files in Lacuna.Signer.Api.Documents.CreateDocumentRequest.Files.  # noqa: E501
+
+        :param xml_namespaces: The xml_namespaces of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[XmlNamespaceModel]
+        """
+
+        self._xml_namespaces = xml_namespaces
+
+    @property
+    def is_envelope(self):
+        """Gets the is_envelope of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        If true, groups all files into a single document (the envelope). All files must be in PDF format.  # noqa: E501
+
+        :return: The is_envelope of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_envelope
+
+    @is_envelope.setter
+    def is_envelope(self, is_envelope):
+        """Sets the is_envelope of this DocumentsCreateDocumentRequest.
+
+        If true, groups all files into a single document (the envelope). All files must be in PDF format.  # noqa: E501
+
+        :param is_envelope: The is_envelope of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_envelope = is_envelope
+
+    @property
+    def envelope_name(self):
+        """Gets the envelope_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The name of the document if the envelope option is enabled (see \"IsEnvelope\" property).  # noqa: E501
+
+        :return: The envelope_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._envelope_name
+
+    @envelope_name.setter
+    def envelope_name(self, envelope_name):
+        """Sets the envelope_name of this DocumentsCreateDocumentRequest.
+
+        The name of the document if the envelope option is enabled (see \"IsEnvelope\" property).  # noqa: E501
+
+        :param envelope_name: The envelope_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._envelope_name = envelope_name
+
+    @property
+    def participants_data_file(self):
+        """Gets the participants_data_file of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The participants_data_file of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: UploadModel
+        """
+        return self._participants_data_file
+
+    @participants_data_file.setter
+    def participants_data_file(self, participants_data_file):
+        """Sets the participants_data_file of this DocumentsCreateDocumentRequest.
+
+
+        :param participants_data_file: The participants_data_file of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: UploadModel
+        """
+
+        self._participants_data_file = participants_data_file
+
+    @property
+    def template_field_values(self):
+        """Gets the template_field_values of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The template_field_values of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._template_field_values
+
+    @template_field_values.setter
+    def template_field_values(self, template_field_values):
+        """Sets the template_field_values of this DocumentsCreateDocumentRequest.
+
+
+        :param template_field_values: The template_field_values of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._template_field_values = template_field_values
+
+    @property
+    def folder_id(self):
+        """Gets the folder_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The id of the folder in which the document should be placed or null if it should not be placed in any specific folder.  # noqa: E501
+
+        :return: The folder_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._folder_id
+
+    @folder_id.setter
+    def folder_id(self, folder_id):
+        """Sets the folder_id of this DocumentsCreateDocumentRequest.
+
+        The id of the folder in which the document should be placed or null if it should not be placed in any specific folder.  # noqa: E501
+
+        :param folder_id: The folder_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._folder_id = folder_id
+
+    @property
+    def description(self):
+        """Gets the description of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        A description to be added to the document(s). This will be presented to all participants in the document details screen and   in pending action notifications.  # noqa: E501
+
+        :return: The description of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this DocumentsCreateDocumentRequest.
+
+        A description to be added to the document(s). This will be presented to all participants in the document details screen and   in pending action notifications.  # noqa: E501
+
+        :param description: The description of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def flow_actions(self):
+        """Gets the flow_actions of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The list of actions (signers and approvers) that will be in the document.  # noqa: E501
+
+        :return: The flow_actions of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[FlowActionsFlowActionCreateModel]
+        """
+        return self._flow_actions
+
+    @flow_actions.setter
+    def flow_actions(self, flow_actions):
+        """Sets the flow_actions of this DocumentsCreateDocumentRequest.
+
+        The list of actions (signers and approvers) that will be in the document.  # noqa: E501
+
+        :param flow_actions: The flow_actions of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[FlowActionsFlowActionCreateModel]
+        """
+        if flow_actions is None:
+            raise ValueError("Invalid value for `flow_actions`, must not be `None`")  # noqa: E501
+
+        self._flow_actions = flow_actions
+
+    @property
+    def observers(self):
+        """Gets the observers of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The observers of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[ObserversObserverCreateModel]
+        """
+        return self._observers
+
+    @observers.setter
+    def observers(self, observers):
+        """Sets the observers of this DocumentsCreateDocumentRequest.
+
+
+        :param observers: The observers of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[ObserversObserverCreateModel]
+        """
+
+        self._observers = observers
+
+    @property
+    def disable_pending_action_notifications(self):
+        """Gets the disable_pending_action_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        If true the notifications of pending actions won't be sent to the participants of the first step.  # noqa: E501
+
+        :return: The disable_pending_action_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_pending_action_notifications
+
+    @disable_pending_action_notifications.setter
+    def disable_pending_action_notifications(self, disable_pending_action_notifications):
+        """Sets the disable_pending_action_notifications of this DocumentsCreateDocumentRequest.
+
+        If true the notifications of pending actions won't be sent to the participants of the first step.  # noqa: E501
+
+        :param disable_pending_action_notifications: The disable_pending_action_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_pending_action_notifications = disable_pending_action_notifications
+
+    @property
+    def disable_notifications(self):
+        """Gets the disable_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        If true, no notifications will be sent to participants of this document.  # noqa: E501
+
+        :return: The disable_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_notifications
+
+    @disable_notifications.setter
+    def disable_notifications(self, disable_notifications):
+        """Sets the disable_notifications of this DocumentsCreateDocumentRequest.
+
+        If true, no notifications will be sent to participants of this document.  # noqa: E501
+
+        :param disable_notifications: The disable_notifications of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_notifications = disable_notifications
+
+    @property
+    def new_folder_name(self):
+        """Gets the new_folder_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The name of a new folder to be created and associated to the document. If you do not wish to create a new folder you may set this as null.  # noqa: E501
+
+        :return: The new_folder_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_folder_name
+
+    @new_folder_name.setter
+    def new_folder_name(self, new_folder_name):
+        """Sets the new_folder_name of this DocumentsCreateDocumentRequest.
+
+        The name of a new folder to be created and associated to the document. If you do not wish to create a new folder you may set this as null.  # noqa: E501
+
+        :param new_folder_name: The new_folder_name of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._new_folder_name = new_folder_name
+
+    @property
+    def force_cades_signature(self):
+        """Gets the force_cades_signature of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        If this property is set to true, then the document will be signed using the CAdES format.  # noqa: E501
+
+        :return: The force_cades_signature of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_cades_signature
+
+    @force_cades_signature.setter
+    def force_cades_signature(self, force_cades_signature):
+        """Sets the force_cades_signature of this DocumentsCreateDocumentRequest.
+
+        If this property is set to true, then the document will be signed using the CAdES format.  # noqa: E501
+
+        :param force_cades_signature: The force_cades_signature of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_cades_signature = force_cades_signature
+
+    @property
+    def notified_emails(self):
+        """Gets the notified_emails of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The emails to notify when the document is concluded.  # noqa: E501
+
+        :return: The notified_emails of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._notified_emails
+
+    @notified_emails.setter
+    def notified_emails(self, notified_emails):
+        """Sets the notified_emails of this DocumentsCreateDocumentRequest.
+
+        The emails to notify when the document is concluded.  # noqa: E501
+
+        :param notified_emails: The notified_emails of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._notified_emails = notified_emails
+
+    @property
+    def additional_info(self):
+        """Gets the additional_info of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The additional_info of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: DocumentsDocumentAdditionalInfoData
+        """
+        return self._additional_info
+
+    @additional_info.setter
+    def additional_info(self, additional_info):
+        """Sets the additional_info of this DocumentsCreateDocumentRequest.
+
+
+        :param additional_info: The additional_info of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: DocumentsDocumentAdditionalInfoData
+        """
+
+        self._additional_info = additional_info
+
+    @property
+    def tags(self):
+        """Gets the tags of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The tags of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: list[DocumentsDocumentTagData]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this DocumentsCreateDocumentRequest.
+
+
+        :param tags: The tags of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: list[DocumentsDocumentTagData]
+        """
+
+        self._tags = tags
+
+    @property
+    def signature_type(self):
+        """Gets the signature_type of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The signature_type of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: SignatureTypes
+        """
+        return self._signature_type
+
+    @signature_type.setter
+    def signature_type(self, signature_type):
+        """Sets the signature_type of this DocumentsCreateDocumentRequest.
+
+
+        :param signature_type: The signature_type of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: SignatureTypes
+        """
+
+        self._signature_type = signature_type
+
+    @property
+    def security_context_id(self):
+        """Gets the security_context_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The security_context_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._security_context_id
+
+    @security_context_id.setter
+    def security_context_id(self, security_context_id):
+        """Sets the security_context_id of this DocumentsCreateDocumentRequest.
+
+
+        :param security_context_id: The security_context_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._security_context_id = security_context_id
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+
+        :return: The template_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this DocumentsCreateDocumentRequest.
+
+
+        :param template_id: The template_id of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._template_id = template_id
+
+    @property
+    def expiration_date(self):
+        """Gets the expiration_date of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The expiration date of the document. Any time information will be discarded, as the expiration will be set   to the last time available for the chosen date in the default timezone.  # noqa: E501
+
+        :return: The expiration_date of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_date
+
+    @expiration_date.setter
+    def expiration_date(self, expiration_date):
+        """Sets the expiration_date of this DocumentsCreateDocumentRequest.
+
+        The expiration date of the document. Any time information will be discarded, as the expiration will be set   to the last time available for the chosen date in the default timezone.  # noqa: E501
+
+        :param expiration_date: The expiration_date of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_date = expiration_date
+
+    @property
+    def type(self):
+        """Gets the type of this DocumentsCreateDocumentRequest.  # noqa: E501
+
+        The type of the document.  # noqa: E501
+
+        :return: The type of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this DocumentsCreateDocumentRequest.
+
+        The type of the document.  # noqa: E501
+
+        :param type: The type of this DocumentsCreateDocumentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    def to_dict(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+        if issubclass(DocumentsCreateDocumentRequest, dict):
+            for key, value in self.items():
+                result[key] = value
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, DocumentsCreateDocumentRequest):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        return not self == other
