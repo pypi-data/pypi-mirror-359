@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: ckanext-admin-panel
+Version: 2.0.2
+Summary: Custom admin panel for CKAN to expand default functionality
+Author-email: DataShades <datashades@linkdigital.com.au>, Oleksandr Cherniavskyi <mutantsan@gmail.com>
+Maintainer-email: DataShades <datashades@linkdigital.com.au>
+License: AGPL
+Project-URL: Homepage, https://github.com/DataShades/ckanext-admin-panel
+Keywords: CKAN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing-extensions
+Requires-Dist: ckanext-toolbelt
+Requires-Dist: croniter<3.0.0,>=2.0.1
+Requires-Dist: cron-descriptor<2.0.0,>=1.4.0
+Requires-Dist: ckanext-editable-config==0.0.7
+Provides-Extra: test
+Requires-Dist: pytest-ckan; extra == "test"
+Requires-Dist: git-changelog; extra == "test"
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == "docs"
+Requires-Dist: mkdocs-material; extra == "docs"
+Requires-Dist: mkdocstrings; extra == "docs"
+Requires-Dist: mkdocstrings-python; extra == "docs"
+Requires-Dist: mkdocs-include-markdown-plugin; extra == "docs"
+Provides-Extra: wysiwyg
+Requires-Dist: ckanext-wysiwyg<1.0.0,>=0.1.0; extra == "wysiwyg"
+Provides-Extra: doi
+Requires-Dist: ckanext-doi<5.0.0,>=4.0.0; extra == "doi"
+Dynamic: license-file
+
+
+[![Tests](https://github.com/DataShades/ckanext-admin-panel/actions/workflows/test.yml/badge.svg)](https://github.com/DataShades/ckanext-admin-panel/actions/workflows/test.yml)
+
+# ckanext-admin-panel
+
+Next generation admin interface for CKAN. See the [extended documentation](https://datashades.github.io/ckanext-admin-panel/) for more information.
+
+> [!WARNING]
+> This extension is under active development. Expect breaking changes.
+
+## License
+
+[AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
