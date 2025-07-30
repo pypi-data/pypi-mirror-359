@@ -1,0 +1,56 @@
+[project]
+name = "analytics_tasks"
+version = "0.1.0"
+description = "Automation including file search and slide deck preparation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "art>=6.5",
+    "bs4>=0.0.2",
+    "docx>=0.2.4",
+    "ebooklib>=0.19",
+    "extract-msg>=0.54.1",
+    "faker>=37.4.0",
+    "importlib>=1.0.4",
+    "matplotlib>=3.10.3",
+    "numpy>=2.3.0",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.0",
+    "polars>=1.30.0",
+    "psutil>=7.0.0",
+    "pyarrow>=20.0.0",
+    "pypdf2>=3.0.1",
+    "python-docx>=1.1.2",
+    "python-pptx>=1.0.2",
+    "pywin32>=310",
+    "reportlab>=4.4.1",
+    "scikit-learn>=1.7.0",
+    # "twine>=6.1.0",
+]
+
+authors = [
+    {name = "AshutoshGaur", email = "ashutoshgaur@live.com"},
+]
+keywords = ["automation", "analytics", "search", "file search", "indexing", "text mining", "presentations", "slides", "vba", "office automation", "powerpoint automation", "visualization", "data processing"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["*.png", "*.jpg", "*.jpeg", "*.bas", "*.txt", "*.R", "*.csv", "*.xlsx", "*.xlsm", ".jfif"]  # Include all these file types
+# Or specify per-package:
+"mypackage" = ["data/*.dat", "images/*.png"]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+
+[project.urls]
+homepage = "https://ashugaur.github.io/analytics_tasks/"
+repository = "https://github.com/ashugaur/analytics_tasks.git"
