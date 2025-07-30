@@ -1,0 +1,104 @@
+[project]
+name = "gg_mcp_os"
+version = "0.3.1"
+description = "OpenSearch MCP Server с поддержкой Dashboards API - форк с дополнительной функциональностью для подключения через OpenSearch Dashboards"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "VladMain"}
+]
+maintainers = [
+    {name = "VladMain"}
+]
+keywords = ["opensearch", "mcp", "ai", "assistant", "dashboards", "search"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = [
+    "aiohttp>=3.11.18",
+    "boto3>=1.38.3",
+    "mcp[cli]>=1.9.4",
+    "opensearch-py>=2.8.0",
+    "pydantic>=2.11.3",
+    "pyyaml>=6.0.2",
+    "requests-aws4auth>=1.3.1",
+    "semver>=3.0.4",
+]
+
+license = "Apache-2.0"
+license-files = ["LICENSE.txt", "NOTICE.txt"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.9.7",
+]
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 99
+extend-include = ["*.ipynb"]
+exclude = [
+    ".venv",
+    "**/__pycache__",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/env",
+    "**/.ruff_cache",
+    "**/.venv",
+    "**/.ipynb_checkpoints"
+]
+force-exclude = true
+
+[tool.ruff.lint]
+exclude = ["__init__.py"]
+select = ["C", "D", "E", "F", "I", "W"]
+ignore = ["C901", "E501", "E741", "F402", "F823", "D100", "D106"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+no-sections = true
+
+[tool.ruff.lint.per-file-ignores]
+"**/*.ipynb" = ["F704"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+
+[project.scripts]
+gg-mcp-os = "mcp_server_opensearch:main"  # Importable path
+mcp-server-opensearch = "mcp_server_opensearch.__main__:main"  # Entry point for uv
+
+[project.urls]
+Homepage = "https://github.com/VladMain/opensearch-mcp-server-py"
+Documentation = "https://github.com/VladMain/opensearch-mcp-server-py/blob/main/QUICK_START.md"
+Source = "https://github.com/VladMain/opensearch-mcp-server-py.git"
+"Bug Tracker" = "https://github.com/VladMain/opensearch-mcp-server-py/issues"
+Changelog = "https://github.com/opensearch-project/opensearch-mcp-server-py/blob/main/CHANGELOG.md"
