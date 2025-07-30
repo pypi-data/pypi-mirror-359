@@ -1,0 +1,9 @@
+README.md
+setup.py
+dankert/__init__.py
+dankert/__main__.py
+dankert.egg-info/PKG-INFO
+dankert.egg-info/SOURCES.txt
+dankert.egg-info/dependency_links.txt
+dankert.egg-info/entry_points.txt
+dankert.egg-info/top_level.txt
