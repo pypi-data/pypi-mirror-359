@@ -1,0 +1,8 @@
+vectra/__init__.py,sha256=wrjDOwZYPFT6hvU1QjyEixy-29gAJHi15IIE7_8tccQ,379
+vectra/berendsen.py,sha256=YTJVxYKkcB59KjT-PtZM19DU0t8dEIAMCDRxlz79VeA,9039
+vectra/decompose.py,sha256=8SrHJ8oGXyXYR9daIaDK8TCm_VyvDj7Ewk8fZHf9dZc,2795
+vectra/math.py,sha256=Up-f_WOKW7eygVc5vccby4J-IG5wCND_AhdITBgDmmM,2164
+vectra-0.1.2.dist-info/METADATA,sha256=87jm95Fsa1op8RhLfJ-9_b69bmRfndeVWmM856FyD0s,3033
+vectra-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+vectra-0.1.2.dist-info/licenses/LICENSE,sha256=T1VCPVi4nExJ9PQDXKoYwCAZNVBkXXXH4EPEkdhNfZU,1069
+vectra-0.1.2.dist-info/RECORD,,
