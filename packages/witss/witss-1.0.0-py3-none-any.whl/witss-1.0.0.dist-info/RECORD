@@ -1,0 +1,13 @@
+witss/__init__.py,sha256=IWIFR4PijxJMJWp3aVzrPoNw25JM9FNFEXQ5Vna-N6Y,97
+witss/signature/__init__.py,sha256=ck_hUlF7SPG7rzNk8hX3e-wyqPrVZYUFRCRWHJw_Ij0,34
+witss/signature/base.py,sha256=Wtuh36Z4z4ojeNgfARFHQv19BWpbYBJ6M19cSF80wsI,16552
+witss/signature/compute.py,sha256=v23UGWFVNQZFMJVyki6K7fPVhShOq4ejV415k83rhZI,15772
+witss/signature/semiring.py,sha256=xG4Gc2Wjk4alXOr24bnOloFp3E4AEM3kW8m-h6f_NsA,1820
+witss/signature/weighting.py,sha256=9YuZKRRgR6OxoE552C2FhcGmz23IxzdibY8RCb6b34Y,3703
+witss/words/__init__.py,sha256=YrnzFxQ-M7TxtPQ5ZFZXEeETkb2uqY7oFz5luVBGllM,83
+witss/words/generate.py,sha256=V6ZuPjCTEI22jnkfWV2vh2Nb0cnP6FBY0sKRx4Z-Ntg,2123
+witss/words/word.py,sha256=N2VlZYRipT6mUB_L0ibbB0Tr7sfay2p9X8vbp9_EBaA,9624
+witss-1.0.0.dist-info/LICENSE,sha256=zGh6WwETqkmP83x1jJZVTn7K_dWcgu_nSgVEHjZ3jCo,1091
+witss-1.0.0.dist-info/METADATA,sha256=2btdt7T8cGaWHDOJ0_bQdg14u2LNdid0-vFnl1e18_s,598
+witss-1.0.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+witss-1.0.0.dist-info/RECORD,,
