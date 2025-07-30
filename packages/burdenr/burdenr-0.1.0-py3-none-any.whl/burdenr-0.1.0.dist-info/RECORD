@@ -1,0 +1,10 @@
+burdenr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+burdenr/cli.py,sha256=qE-0TkktkP9MPfI2tLaC2JZ5dgtfZLTCAcQlrj6iuz0,10641
+burdenr/tools/callrisk.py,sha256=0o70922C4Pwx4ONUr57qslczTxjF9oiiGdfZE9R3biI,8477
+burdenr/tools/handle_data.py,sha256=BfpCjbC7FybX4JRFBJ5glyL7Zz3IPhy1KMfmZUfEvew,4667
+burdenr/tools/handle_data_vcf.py,sha256=vGZbLLNjrMdawOQOHgoAM1ev1X4-j_LjgYTx5PMhTaE,4661
+burdenr-0.1.0.dist-info/METADATA,sha256=XxcYWEonyHW5pTPZQDyHgn1oanb5QHrkeEpsYoETkHU,205
+burdenr-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+burdenr-0.1.0.dist-info/entry_points.txt,sha256=uex8wuUTUlzXNc73759bNKAhI0WMkf5QTnP4l84iIXQ,45
+burdenr-0.1.0.dist-info/top_level.txt,sha256=I_UFd8Gy_L6HeRpvN7340djvhtixAb52PBmNHVRJKa4,8
+burdenr-0.1.0.dist-info/RECORD,,
