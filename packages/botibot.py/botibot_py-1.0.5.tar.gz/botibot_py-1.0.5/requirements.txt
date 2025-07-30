@@ -1,0 +1,36 @@
+# Requirements for Raspberry Pi Modules
+# Install with: pip install -r requirements.txt
+
+# For OLED Display
+adafruit-circuitpython-ssd1306
+adafruit-blinka
+Pillow
+
+# For GPIO Control (Servo, Relay, Motors, Sensors)
+RPi.GPIO
+gpiozero
+
+# For Web Server
+Flask
+Flask-CORS
+requests
+
+# For IR Temperature Sensor (MLX90614)
+adafruit-circuitpython-mlx90614
+adafruit-blinka
+# smbus2  # Not needed with Adafruit library
+# mlx90614  # Not needed with Adafruit library
+
+# For GSM Module
+pyserial
+
+# General utilities
+python-dateutil
+
+# For Scheduler
+schedule
+apscheduler
+sqlite3
+
+# For GSM Module (SIM800L)
+pyserial
