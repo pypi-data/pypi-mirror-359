@@ -1,0 +1,2 @@
+[console_scripts]
+php-app-lib-classifier = php_app_lib_classifier.cli:app
