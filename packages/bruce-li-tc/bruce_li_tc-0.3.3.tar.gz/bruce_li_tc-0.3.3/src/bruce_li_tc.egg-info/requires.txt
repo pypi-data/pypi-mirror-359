@@ -1,0 +1,17 @@
+requests
+pytz
+python-dateutil
+loguru
+pymysql
+redis
+datetime
+dbutils
+
+[async]
+aiohttp
+
+[excel]
+openpyxl
+
+[loguru]
+loguru
