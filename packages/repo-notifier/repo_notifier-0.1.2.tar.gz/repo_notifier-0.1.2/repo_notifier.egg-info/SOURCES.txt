@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+notifier/__init__.py
+notifier/notifier.py
+repo_notifier.egg-info/PKG-INFO
+repo_notifier.egg-info/SOURCES.txt
+repo_notifier.egg-info/dependency_links.txt
+repo_notifier.egg-info/entry_points.txt
+repo_notifier.egg-info/requires.txt
+repo_notifier.egg-info/top_level.txt
