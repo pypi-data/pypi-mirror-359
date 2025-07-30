@@ -1,0 +1,2 @@
+[console_scripts]
+dotdiff = dotdiff.all_diffs:run_on_all_changed_dot_files

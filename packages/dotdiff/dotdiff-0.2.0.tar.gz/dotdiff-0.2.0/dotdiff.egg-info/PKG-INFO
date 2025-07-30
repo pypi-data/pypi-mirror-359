@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: dotdiff
+Version: 0.2.0
+Summary: Generate semantic visual diffs for DOT graph files in Git repos
+Author-email: Austin Song <austinjsong19@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydot
+Requires-Dist: GitPython
+Dynamic: license-file
+
+# dotdiff
+
+A tool to compute semantic differences between `.dot` files in Git repos and generate visual diagrams.
+
+## Installation
+
+```bash
+python -m pip install dotdiff
+```
+
+## Usage
+Coming soon...
