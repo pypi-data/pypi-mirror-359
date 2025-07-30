@@ -1,0 +1,11 @@
+cryptography>=45.0.4
+fastapi>=0.115.12
+google-genai>=1.13.0
+httpx[http2]>=0.28.1
+llama-index>=0.12.28
+openai>=1.70.0
+python-dotenv>=1.1.0
+sse-starlette>=2.3.3
+toml>=0.10.2
+uvicorn>=0.34.2
+volcengine-python-sdk[ark]>=1.1.3
