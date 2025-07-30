@@ -1,0 +1,572 @@
+frameworks:
+- id: nist_rmf
+  name: nist:ai:measure
+  title: "NIST AI RMF"
+  description: "NIST Artificial Intelligence Risk Management Framework"
+  sections:
+  - id: nist:ai:measure:1.1
+    name: nist:ai:measure:1.1
+    title: "Measure 1.1"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful:misinformation-disinformation
+    tactics:
+    - jailbreak
+    - defense_bypass:prompt_injection:direct_injection
+  - id: nist:ai:measure:1.2
+    name: nist:ai:measure:1.2
+    title: "Measure 1.2"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful:misinformation-disinformation
+    tactics:
+    - jailbreak
+    - defense_bypass:prompt_injection:direct_injection
+  - id: nist:ai:measure:2.1
+    name: nist:ai:measure:2.1
+    title: "Measure 2.1"
+    description: ""
+    plugins:
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics: []
+  - id: nist:ai:measure:2.2
+    name: nist:ai:measure:2.2
+    title: "Measure 2.2"
+    description: ""
+    plugins:
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics: []
+  - id: nist:ai:measure:2.3
+    name: nist:ai:measure:2.3
+    title: "Measure 2.3"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:2.4
+    name: nist:ai:measure:2.4
+    title: "Measure 2.4"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful:misinformation-disinformation
+    tactics:
+    - jailbreak
+    - defense_bypass:prompt_injection:direct_injection
+  - id: nist:ai:measure:2.5
+    name: nist:ai:measure:2.5
+    title: "Measure 2.5"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:2.6
+    name: nist:ai:measure:2.6
+    title: "Measure 2.6"
+    description: ""
+    plugins:
+    - harmful:chemical-biological-weapons
+    - harmful:indiscriminate-weapons
+    - misinformation:unsafe_health_practices:unsafe-practices
+    tactics: []
+  - id: nist:ai:measure:2.7
+    name: nist:ai:measure:2.7
+    title: "Measure 2.7"
+    description: ""
+    plugins:
+    - malicious_use:cybercrime:assistance
+    - defense_bypass:hacking:shell_injection
+    - defense_bypass:hacking:sqli
+    tactics:
+    - jailbreak
+    - defense_bypass:prompt_injection:direct_injection
+  - id: nist:ai:measure:2.8
+    name: nist:ai:measure:2.8
+    title: "Measure 2.8"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:bfla
+    - defense_bypass:security_evasion:bola
+    - rbac
+    tactics: []
+  - id: nist:ai:measure:2.9
+    name: nist:ai:measure:2.9
+    title: "Measure 2.9"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:2.10
+    name: nist:ai:measure:2.10
+    title: "Measure 2.10"
+    description: ""
+    plugins:
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics: []
+  - id: nist:ai:measure:2.11
+    name: nist:ai:measure:2.11
+    title: "Measure 2.11"
+    description: ""
+    plugins:
+    - toxicity:hate_speech:harassment
+    - toxicity:hate_speech:discrimination
+    - toxicity:severe_toxicity:insults
+    tactics: []
+  - id: nist:ai:measure:2.12
+    name: nist:ai:measure:2.12
+    title: "Measure 2.12"
+    description: ""
+    plugins: []
+    tactics: []
+  - id: nist:ai:measure:2.13
+    name: nist:ai:measure:2.13
+    title: "Measure 2.13"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:3.1
+    name: nist:ai:measure:3.1
+    title: "Measure 3.1"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful:misinformation-disinformation
+    tactics:
+    - jailbreak
+    - defense_bypass:prompt_injection:direct_injection
+  - id: nist:ai:measure:3.2
+    name: nist:ai:measure:3.2
+    title: "Measure 3.2"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:3.3
+    name: nist:ai:measure:3.3
+    title: "Measure 3.3"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:4.1
+    name: nist:ai:measure:4.1
+    title: "Measure 4.1"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+  - id: nist:ai:measure:4.2
+    name: nist:ai:measure:4.2
+    title: "Measure 4.2"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful:misinformation-disinformation
+    tactics: []
+  - id: nist:ai:measure:4.3
+    name: nist:ai:measure:4.3
+    title: "Measure 4.3"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    tactics: []
+- id: eu_ai_act
+  name: eu:ai-act
+  title: "EU AI Act"
+  description: "European Union Artificial Intelligence Act"
+  sections:
+  - id: eu:ai-act:art5:subliminal-manipulation
+    name: eu:ai-act:art5:subliminal-manipulation
+    title: "Subliminal Manipulation"
+    description: ""
+    plugins:
+    - hijacking
+    - intent
+    - malicious_use:excessive_agency:functionality
+    tactics:
+    - jailbreak
+    - jailbreak:tree
+    - jailbreak:composite
+    - defense_bypass:prompt_injection:direct_injection
+  - id: eu:ai-act:art5:exploitation-of-vulnerabilities
+    name: eu:ai-act:art5:exploitation-of-vulnerabilities
+    title: "Exploitation of Vulnerabilities"
+    description: ""
+    plugins:
+    - hijacking
+    - imitation
+    - harmful:misinformation-disinformation
+    tactics: []
+  - id: eu:ai-act:art5:social-scoring
+    name: eu:ai-act:art5:social-scoring
+    title: "Social Scoring"
+    description: ""
+    plugins:
+    - harmful:misinformation-disinformation
+    - human_computer_interaction:overreliance:interaction-harm
+    tactics: []
+  - id: eu:ai-act:art5:biometric-categorisation
+    name: eu:ai-act:art5:biometric-categorisation
+    title: "Biometric Categorisation"
+    description: ""
+    plugins:
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - harmful:privacy
+    tactics: []
+  - id: eu:ai-act:art5:remote-biometric-id-live
+    name: eu:ai-act:art5:remote-biometric-id-live
+    title: "Remote Biometric ID (Live)"
+    description: ""
+    plugins:
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:direct-exposure
+    - harmful:privacy
+    tactics: []
+  - id: eu:ai-act:art5:remote-biometric-id-post
+    name: eu:ai-act:art5:remote-biometric-id-post
+    title: "Remote Biometric ID (Post)"
+    description: ""
+    plugins:
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - harmful:privacy
+    tactics: []
+  - id: eu:ai-act:annex3:biometric-id
+    name: eu:ai-act:annex3:biometric-id
+    title: "Annex III: Biometric ID"
+    description: ""
+    plugins:
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - harmful:privacy
+    tactics: []
+- id: mitre_atlas
+  name: mitre:atlas
+  title: "MITRE ATLAS"
+  description: "MITRE Adversarial Tactics for LLM Systems (ATLAS)"
+  sections:
+  - id: mitre:atlas:exfiltration
+    name: mitre:atlas:exfiltration
+    title: "Exfiltration"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:ascii_smuggling
+    - harmful:privacy
+    - defense_bypass:prompt_injection:indirect_injection
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics: []
+  - id: mitre:atlas:impact
+    name: mitre:atlas:impact
+    title: "Impact"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - harmful
+    - hijacking
+    - imitation
+    tactics:
+    - crescendo
+  - id: mitre:atlas:initial-access
+    name: mitre:atlas:initial-access
+    title: "Initial Access"
+    description: ""
+    plugins:
+    - debug-access
+    - malicious_use:cybercrime:assistance
+    - defense_bypass:hacking:shell_injection
+    - defense_bypass:hacking:sqli
+    - defense_bypass:hacking:ssrf
+    tactics:
+    - base64
+    - jailbreak
+    - leetspeak
+    - prompt-injection
+    - rot13
+  - id: mitre:atlas:ml-attack-staging
+    name: mitre:atlas:ml-attack-staging
+    title: "ML Attack Staging"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:ascii_smuggling
+    - malicious_use:excessive_agency:functionality
+    - misinformation:hallucination:knowledge-gaps
+    - defense_bypass:prompt_injection:indirect_injection
+    tactics:
+    - jailbreak
+    - jailbreak:tree
+  - id: mitre:atlas:reconnaissance
+    name: mitre:atlas:reconnaissance
+    title: "Reconnaissance"
+    description: ""
+    plugins:
+    - competitors
+    - policy
+    - defense_bypass:prompt_injection:prompt_extraction
+    - rbac
+    tactics:
+    - multilingual
+  - id: mitre:atlas:resource-development
+    name: mitre:atlas:resource-development
+    title: "Resource Development"
+    description: ""
+    plugins:
+    - malicious_use:cybercrime:assistance
+    - malicious_use:illegal_activities:illegal_drugs
+    - harmful:indiscriminate-weapons
+    tactics: []
+- id: owasp_llm
+  name: owasp:llm
+  title: "OWASP LLM Top 10"
+  description: "OWASP Top 10 for LLMs"
+  sections:
+  - id: owasp:llm:01
+    name: owasp:llm:01
+    title: "Prompt Injection"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:ascii_smuggling
+    - defense_bypass:prompt_injection:indirect_injection
+    - defense_bypass:prompt_injection:prompt_extraction
+    - malicious_use:harmless
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:02
+    name: owasp:llm:02
+    title: "Sensitive Information Disclosure"
+    description: ""
+    plugins:
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    - harmful:privacy
+    - defense_bypass:cybercrime:session_leak
+    - defense_bypass:prompt_injection:prompt_extraction
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:03
+    name: owasp:llm:03
+    title: "Supply Chain"
+    description: ""
+    plugins: []
+    tactics: []
+  - id: owasp:llm:04
+    name: owasp:llm:04
+    title: "Data and Model Poisoning"
+    description: ""
+    plugins:
+    - harmful:misinformation-disinformation
+    - toxicity:hate_speech:discrimination
+    - bias:age
+    - bias:disability
+    - bias:gender
+    - bias:race
+    - toxicity:discrimination:radicalization
+    - misinformation:unreliable_experts:specialized
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:05
+    name: owasp:llm:05
+    title: "Improper Output Handling"
+    description: ""
+    plugins:
+    - defense_bypass:hacking:shell_injection
+    - defense_bypass:hacking:sqli
+    - defense_bypass:hacking:ssrf
+    - debug-access
+    tactics:
+    - jailbreak
+    - prompt-injection
+  - id: owasp:llm:06
+    name: owasp:llm:06
+    title: "Excessive Agency"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - rbac
+    - defense_bypass:security_evasion:bfla
+    - defense_bypass:security_evasion:bola
+    - defense_bypass:hacking:shell_injection
+    - defense_bypass:hacking:sqli
+    - defense_bypass:hacking:ssrf
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:07
+    name: owasp:llm:07
+    title: "System Prompt Leakage"
+    description: ""
+    plugins:
+    - defense_bypass:prompt_injection:prompt_extraction
+    - rbac
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:08
+    name: owasp:llm:08
+    title: "Vector and Embedding Weaknesses"
+    description: ""
+    plugins:
+    - defense_bypass:cybercrime:session_leak
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:personal_identification:direct-exposure
+    - information_hazard:private_information:session_leak
+    - information_hazard:personal_identification:social-engineering
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:09
+    name: owasp:llm:09
+    title: "Misinformation"
+    description: ""
+    plugins:
+    - misinformation:hallucination:knowledge-gaps
+    - human_computer_interaction:overreliance:interaction-harm
+    - harmful:misinformation-disinformation
+    - misinformation:unreliable_experts:specialized
+    tactics:
+    - jailbreak
+    - prompt-injection
+    - jailbreak:composite
+  - id: owasp:llm:10
+    name: owasp:llm:10
+    title: "Unbounded Consumption"
+    description: ""
+    plugins:
+    - reasoning-dos
+    - divergent-repetition
+    tactics: []
+- id: owasp_apis
+  name: owasp:api
+  title: "OWASP API Top 10"
+  description: "OWASP Top 10 for APIs"
+  sections:
+  - id: owasp:api:01
+    name: owasp:api:01
+    title: "Broken Object Level Authorization"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:bola
+    - rbac
+    tactics: []
+  - id: owasp:api:02
+    name: owasp:api:02
+    title: "Broken Authentication"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:bfla
+    - rbac
+    tactics: []
+  - id: owasp:api:03
+    name: owasp:api:03
+    title: "Broken Object Property Level Authorization"
+    description: ""
+    plugins:
+    - malicious_use:excessive_agency:functionality
+    - human_computer_interaction:overreliance:interaction-harm
+    tactics: []
+  - id: owasp:api:04
+    name: owasp:api:04
+    title: "Unrestricted Resource Consumption"
+    description: ""
+    plugins:
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:private_information:session_leak
+    tactics: []
+  - id: owasp:api:05
+    name: owasp:api:05
+    title: "Broken Function Level Authorization"
+    description: ""
+    plugins:
+    - defense_bypass:security_evasion:bfla
+    - defense_bypass:security_evasion:bola
+    - rbac
+    tactics: []
+  - id: owasp:api:06
+    name: owasp:api:06
+    title: "Unrestricted Access to Sensitive Business Flows"
+    description: ""
+    plugins:
+    - harmful:misinformation-disinformation
+    - human_computer_interaction:overreliance:interaction-harm
+    tactics: []
+  - id: owasp:api:07
+    name: owasp:api:07
+    title: "Server Side Request Forgery"
+    description: ""
+    plugins:
+    - defense_bypass:hacking:shell_injection
+    - defense_bypass:hacking:sqli
+    tactics: []
+  - id: owasp:api:08
+    name: owasp:api:08
+    title: "Security Misconfiguration"
+    description: ""
+    plugins:
+    - harmful:privacy
+    - information_hazard:personal_identification:api-db-leak
+    - information_hazard:private_information:session_leak
+    tactics: []
+  - id: owasp:api:09
+    name: owasp:api:09
+    title: "Improper Inventory Management"
+    description: ""
+    plugins:
+    - misinformation:unreliable_experts:specialized
+    - human_computer_interaction:overreliance:interaction-harm
+    tactics: []
+  - id: owasp:api:10
+    name: owasp:api:10
+    title: "Unsafe Consumption of APIs"
+    description: ""
+    plugins:
+    - debug-access
+    - harmful:privacy
+    tactics: []
+- id: owasp_agents
+  name: owasp:agentic
+  title: "OWASP Agentic v1.0"
+  description: "OWASP Agentic v1.0"
+  sections:
+  - id: owasp:agentic:t01
+    name: owasp:agentic:t01
+    title: "T1: Memory Poisoning"
+    description: ""
+    plugins:
+    - MEMORY_POISONING_PLUGIN_ID
+    tactics: []
