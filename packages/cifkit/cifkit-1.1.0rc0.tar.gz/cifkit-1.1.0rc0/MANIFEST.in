@@ -1,0 +1,18 @@
+# Include your source code and essentials
+graft src
+graft requirements
+graft tests
+
+# Optional: exclude specific files
+prune tests/data/cif  # Or use recursive-exclude tests *.cif
+
+# Include important top-level files
+include AUTHORS.rst LICENSE*.rst README.rst
+
+# Global excludes
+global-exclude *.py[cod]
+global-exclude __pycache__/
+global-exclude .DS_Store
+global-exclude .git*
+global-exclude .idea
+prune **/.mypy_cache
