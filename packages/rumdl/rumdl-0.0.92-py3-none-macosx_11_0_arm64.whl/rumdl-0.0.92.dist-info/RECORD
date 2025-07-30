@@ -1,0 +1,11 @@
+python/rumdl/__init__.py,sha256=En6tBgSj-MMeUcBAV7HlMjfstzY6npWxZtsRa30hIj0,90
+python/rumdl/__main__.py,sha256=DQ-es4rlJ-iiHUeoTruvZzp-YV6rGShOWZYN4zBx_Iw,1903
+python/rumdl/py.typed,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+rumdl-0.0.92.data/scripts/benchmark,sha256=UCtFJx1-uisuv0SLfOQZNIl15T4KqtfmlRhiOQk-KQY,2049696
+rumdl-0.0.92.data/scripts/file_parallel_benchmark,sha256=Cg_TZqjmlaUzI3BkwIrnlTUJx3UfKPJUfuepw0c2Ab0,2366000
+rumdl-0.0.92.data/scripts/measure_code_span_performance,sha256=jWL5ZQk7ZSw-Olmc7Z80T1uo_BIRZGKuDNlPmXhBbW0,1299248
+rumdl-0.0.92.data/scripts/rumdl,sha256=w7wx3jPtiWnphrAGXMUaepo7S7rbW2L-1LcZWdvMAZ8,4449312
+rumdl-0.0.92.dist-info/METADATA,sha256=wVdiUuspZi45lNKplSkAURG3cVBciejImHBQqd1hCeI,20035
+rumdl-0.0.92.dist-info/WHEEL,sha256=xXrZFUZdUx5dZHQRUyNYMU2_RR2PioJ5KlyzYJq5nRk,101
+rumdl-0.0.92.dist-info/licenses/LICENSE,sha256=xXY7jFvuEmObzRovm2RZmB7KR1sldVYWZLtcKIqlh3E,1073
+rumdl-0.0.92.dist-info/RECORD,,
