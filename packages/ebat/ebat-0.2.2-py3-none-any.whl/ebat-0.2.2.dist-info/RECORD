@@ -1,0 +1,13 @@
+ebat/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ebat/sample_authenticator.py,sha256=Q7fWNHvRwFJYy1Pw20frPiZtA7c0UlZlWxvYBBpQDno,5783
+ebat/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ebat/data/suppliers.py,sha256=BRtpjFN51o34YTr9KJxJKLss_v56N1rA022mt8G1rNU,41411
+ebat/evaluation/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ebat/evaluation/evaluator.py,sha256=MZnamhaIkPCyCKb7IXZdz2vVQIX-HACgL3niiRZDYgI,9711
+ebat/evaluation/metrics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ebat/evaluation/metrics/frequency_count_of_scores.py,sha256=sqaXm1lUZ3BBtBHFglYd23CfpwTT5NdXswygL5W4wu8,1375
+ebat-0.2.2.dist-info/METADATA,sha256=MXZTDqoyBnjW5OV648ExpS5u64XO16BY5BB-UetUZOs,1247
+ebat-0.2.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ebat-0.2.2.dist-info/licenses/LICENSE,sha256=jxatFCrZZuXcv8Gq-mFepRbvseRHBZpLvp9NDigI1ak,628
+ebat-0.2.2.dist-info/licenses/NOTICE,sha256=9bnqsvcegsWzIWExE3Wa--zq_k-cEMXRIF_MwfbOhM8,70292
+ebat-0.2.2.dist-info/RECORD,,
