@@ -1,0 +1,44 @@
+[project]
+name = "dattos_data_engine_common"
+dynamic = ["version"]
+description = "Common classes and methods for data engine projects"
+authors = [
+    { name = "Matheus Gaspar", email = "matheus.oliveira@dattos.com.br" },
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["dattos_data_engine_common"]
+
+[tool.setuptools.package-data]
+"dattos_data_engine_common" = ["py.typed"]
+
+[project.urls]
+Homepage = "https://dattos.com.br"
+
+[project.optional-dependencies]
+dev = [
+    "pandas",
+    "bumpver",
+    "twine",
+    "wheel",
+    "build",
+    "adlfs",
+    "s3fs",
+    "gcsfs",
+    "pydantic",
+    "structlog",
+]
+docs = ["sphinx", "furo"]
