@@ -1,0 +1,69 @@
+[tool.poetry]
+# https://python-poetry.org/docs/pyproject/
+# https://github.com/python-poetry/poetry/blob/master/pyproject.toml
+name = "nessvec"
+version = "0.2.0"
+description = "Word embeddings with meaningful dimensions for better explainability."
+license = "GPLv3"
+readme = "README.md"
+authors = [
+    "Hobson Lane <hobson@tangibleai.com>",
+    "Hobson Lane <hobson@tangibleai.com>",
+    "Maria Dyshel <maria@tangibleai.com>",
+    "Leo Hepis <leo@leohepis.com>",
+    "Geoffrey Marshal",
+    "Sylvia Lee",
+    "Winnie Yeung @dcvionwinnie",
+    "Mohammed Dala Ali <mms.dala@gmail.com>",
+    "Alex Rosengarten @alxrsngrtn",
+    "Jose Robins @jorobins",
+    ]
+homepage = "https://gitlab.com/tangibleai/nessvec"
+# repository = "https://gitlab.com/tangibleai/nessvec"
+documentation = "https://gitlab.com/tangibleai/nessvec"
+exclude = [ "bigdata",]
+include = [ "data/datasets.yml", "data/constants/nltk_stopwords_english.json", "data/*", "data/constants/*",]
+keywords = [ "NLP", "Natural Language Processing", "Virtual Assistant", "chatbot", "Text Processing", "Machine Learning", "Text Mining", "Deep Learning",]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[tool.poetry.dependencies]
+beautifulsoup4 = "^4.12"
+dask = "*"
+datatable = "*"
+django = "^4.2.4"
+# editdistance = "^0.6.2"
+edit-distance = "^1.0.6"
+h5py = "^3.9.0"
+jupyter = "==1.0.0"
+jsonschema = ">=4.10.0,<4.18.0"  # poetry limits versions to this range
+meilisearch = "^0.28.2"
+pandas = "^2.1.4"
+# pandas-gbq = ">0.19.2"  # pandas oauthlib requests google-auth requests-oathlib proto-plus urllib3 pyarrow pytz python-dateutil
+pyarrow = "*"
+pynndescent = "*"  # ^0.5.10"
+python = ">=3.9"
+python-dotenv = "^1.0.0"
+seaborn = "^0.13.0"  # pandas fonttools matplotlib numpy contourpy cycler pillow packaging python-dateutil pytz tzdata six
+sentence-transformers = ">=2.2.2"  # transformers>=4.6,<5.0 tokenizers>=0.10.3 tqdm torch>=1.6.0 torchvision>=0.16.0 numpy scikit-learn scipy nltk sentencepiece huggingface-hub -> joblib typing-extensions jinja2 urllib3 Pillow pyyaml regex MarkupSafe
+spacy = "*"  # coreferre requires spacy<3.6 and textacy requires > 3.5
+# spacy-experimental = "*"
+nlpia2-wikipedia = "^1.5.14"
+xmltodict = "^0.13.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+pytest = "^7.4.0"
+
+# FIXME
+# [tool.poetry.scripts]
+# nessvec = "nessvec.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
