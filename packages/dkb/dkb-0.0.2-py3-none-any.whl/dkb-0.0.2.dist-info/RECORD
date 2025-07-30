@@ -1,0 +1,11 @@
+./.gitignore,sha256=pwjD-8IzPkSnVvW_M2TMQs3V96uzBlyzCsVTHdjQCPw,86
+./PKG-INFO,sha256=efcxVzIcIM4L-AnuJzLnu3Pq75araDr4fFoJxvw95Ro,2610
+./README.md,sha256=0cdMT7tGHKILsD9wdPXcmiKMrhY8WWXViAFQS-s8bAw,1640
+./dkb.py,sha256=KdidYZknrYYjoK1tqzpEjbvIf_EiONyP5Z4gfyjiXeQ,9071
+./pyproject.toml,sha256=19LDUodrcJqOjuZSAmz2pGAPuj7qAQ0HjAPhgE7TIT8,1208
+./uv.lock,sha256=hzJdGe14PCcQFH_PTr356zN8UrL5yhSGN-NqhdoTlyQ,124
+./.github/workflows/release.yml,sha256=4_7j8lHZVDTjbiC8N_W-2BU9wtgUWLQNEnFDFMrx6G0,1933
+dkb-0.0.2.dist-info/METADATA,sha256=efcxVzIcIM4L-AnuJzLnu3Pq75araDr4fFoJxvw95Ro,2610
+dkb-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dkb-0.0.2.dist-info/entry_points.txt,sha256=_eOctOQA3y71iM7WLA0KDsaXPOjWp8LdvkkzfzlK1Z4,33
+dkb-0.0.2.dist-info/RECORD,,
