@@ -1,0 +1,24 @@
+[project]
+name = "openbase"
+version = "0.1.0"
+description = "Openbase Django Meta-Server"
+authors = [{ name = "Gabe Montague", email = "gabemontague@outlook.com" }]
+dependencies = [
+    "Django>=4.2.0",
+    "djangorestframework>=3.14.0",
+    "django-cors-headers>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.2.1",
+    "gunicorn>=21.0.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.scripts]
+openbase = "openbase.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["openbase"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
