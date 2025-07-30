@@ -1,0 +1,262 @@
+site_name: histolytics docs
+site_description: Documentation for Histolytics, a library for panoptic histopathology WSI analysis
+site_author: Oskari Lehtonen
+site_url: https://HautaniemiLab.github.io/histolytics/
+repo_url: https://github.com/HautaniemiLab/histolytics
+repo_name: histolytics
+
+theme:
+  name: "material"
+  logo: img/histolytics_thumbnail_logo.png
+  favicon: img/favicon.ico
+  palette:
+    primary: black
+    accent: cyan
+  font:
+    text: Raleway
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+
+plugins:
+  - search
+  - social
+  - autorefs
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          selection:
+            docstring_style: google
+            filters: ["!^_[^_]", "!^__init__$"]
+          rendering:
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+          options:
+            members_order: source
+            separate_signature: true
+            show_signature_annotations: true
+            inherited_members: true
+            merge_init_into_class: false
+            preload_modules:
+            - cellseg_models_pytorch
+            docstring_options:
+              ignore_init_summary: false
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+        permalink: true
+  - codehilite
+  - markdown.extensions.def_list
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - tables
+  - footnotes
+
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Segmentation:
+    - Getting Started: user_guide/seg/getting_started_seg.md
+    - Model Backbones: user_guide/seg/backbones.ipynb
+    - Model Fine-tuning: user_guide/seg/finetuning.ipynb
+    - Tile Selection: user_guide/seg/selecting_tiles.ipynb
+    - WSI Segmentation: user_guide/seg/panoptic_segmentation.ipynb
+  - Spatial Analysis:
+    - Spatial Querying and Partitioning: user_guide/spatial/indexing_partitioning.ipynb
+    - Nuclear Morphology: user_guide/spatial/morphology.ipynb
+    - Spatial Neighborhoods: user_guide/spatial/nhood_analysis.ipynb
+    - Spatial Clustering: user_guide/spatial/clustering.ipynb
+    - Chromatin Patterns: user_guide/spatial/chromatin_patterns.ipynb
+    - Collagen Fibers & Stromal Features: user_guide/spatial/collagen_fibers.ipynb
+  - API Reference:
+    - Overview: api/index.md
+    - data:
+      - cervix_nuclei: api/data/cervix_nuclei.md
+      - cervix_tissue: api/data/cervix_tissue.md
+      - cervix_nuclei_crop: api/data/cervix_nuclei_crop.md
+      - cervix_tissue_crop: api/data/cervix_tissue_crop.md
+      - hgsc_nuclei_wsi: api/data/hgsc_nuclei_wsi.md
+      - hgsc_tissue_wsi: api/data/hgsc_tissue_wsi.md
+      - hgsc_cancer_nuclei: api/data/hgsc_cancer_nuclei.md
+      - hgsc_cancer_he: api/data/hgsc_cancer_he.md
+      - hgsc_cancer_inst_mask: api/data/hgsc_cancer_inst_mask.md
+      - hgsc_cancer_type_mask: api/data/hgsc_cancer_type_mask.md
+      - hgsc_stroma_nuclei: api/data/hgsc_stroma_nuclei.md
+      - hgsc_stroma_he: api/data/hgsc_stroma_he.md
+    - losses:
+      - BCELoss: api/losses/bce.md
+      - CELoss: api/losses/ce.md
+      - DiceLoss: api/losses/dice.md
+      - FocalLoss: api/losses/focal.md
+      - JointLoss: api/losses/joint_loss.md
+      - MSE: api/losses/mse.md
+      - MAE: api/losses/mae.md
+      - MultiTaskLoss: api/losses/multi_task_loss.md
+      - SSIM: api/losses/ssim.md
+      - TverskyLoss: api/losses/tversky_loss.md
+    - metrics:
+      - accuracy_multiclass: api/metrics/accuracy_multiclass.md
+      - aggregated_jaccard_index: api/metrics/aggregated_jaccard_index.md
+      - average_precision: api/metrics/average_precision.md
+      - dice2: api/metrics/dice2.md
+      - dice_multiclass: api/metrics/dice_multiclass.md
+      - f1score_multiclass: api/metrics/f1score_multiclass.md
+      - iou_multiclass: api/metrics/iou_multiclass.md
+      - pairwise_object_stats: api/metrics/pairwise_object_stats.md
+      - pairwise_pixel_stats: api/metrics/pairwise_pixel_stats.md
+      - panoptic_quality: api/metrics/panoptic_quality.md
+      - sensitivity_multiclass: api/metrics/sensitivity_multiclass.md
+      - specificity_multiclass: api/metrics/specificity_multiclass.md
+    - models:
+      - CellposePanoptic: api/models/cellpose_panoptic.md
+      - CellVitPanoptic: api/models/cellvit_panoptic.md
+      - CPPNetPanoptic: api/models/cppnet_panoptic.md
+      - HoverNetPanoptic: api/models/hovernet_panoptic.md
+      - StarDistPanoptic: api/models/stardist_panoptic.md
+    - nuc_feats:
+      - chromatin_clumps: api/nuc_feats/chromatin_clumps.md
+      - grayscale_intensity: api/nuc_feats/grayscale_intensity.md
+      - rgb_intensity: api/nuc_feats/rgb_intensity.md
+    - spatial_agg:
+      - local_character: api/spatial_agg/local_character.md
+      - local_distances: api/spatial_agg/local_distances.md
+      - local_diversity: api/spatial_agg/local_diversity.md
+      - local_vals: api/spatial_agg/local_vals.md
+      - local_type_counts: api/spatial_agg/local_type_counts.md
+      - grid_agg: api/spatial_agg/grid_agg.md
+      - diversity:
+        - shannon_index: api/spatial_agg/shannon_index.md
+        - simpson_index: api/spatial_agg/simpson_index.md
+        - gini_index: api/spatial_agg/gini_index.md
+        - theil_index: api/spatial_agg/theil_index.md
+        - theil_between_group: api/spatial_agg/theil_between_group.md
+        - theil_within_group: api/spatial_agg/theil_within_group.md
+    - spatial_clust:
+      - cluster_feats: api/spatial_clust/cluster_feats.md
+      - cluster_tendency: api/spatial_clust/cluster_tendency.md
+      - density_clustering: api/spatial_clust/density_clustering.md
+      - lisa_clustering: api/spatial_clust/lisa_clustering.md
+      - local_autocorr: api/spatial_clust/local_autocorr.md
+      - global_autocorr: api/spatial_clust/global_autocorr.md
+      - ripley_test: api/spatial_clust/ripley_test.md
+      - centrography:
+        - mean_center: api/spatial_clust/mean_center.md
+        - median_center: api/spatial_clust/median_center.md
+        - weighted_mean_center: api/spatial_clust/weighted_mean_center.md
+        - std_distance: api/spatial_clust/std_distance.md
+      - clust_metrics:
+        - cluster_orientation: api/spatial_clust/cluster_orientation.md
+        - cluster_dispersion: api/spatial_clust/cluster_dispersion.md
+        - cluster_area: api/spatial_clust/cluster_area.md
+        - cluster_size: api/spatial_clust/cluster_size.md
+    - spatial_geom:
+      - shape_metric: api/spatial_geom/shape_metrics.md
+      - line_metric: api/spatial_geom/line_metrics.md
+      - medial_lines: api/spatial_geom/medial_lines.md
+      - hull: api/spatial_geom/hull.md
+      - morphometrics:
+        - average_turning_angle: api/spatial_geom/average_turning_angle.md
+        - circularity: api/spatial_geom/circularity.md
+        - compactness: api/spatial_geom/compactness.md
+        - convexity: api/spatial_geom/convexity.md
+        - eccentricity: api/spatial_geom/eccentricity.md
+        - elongation: api/spatial_geom/elongation.md
+        - equivalent_rectangular_index: api/spatial_geom/equivalent_rectangular_index.md
+        - fractal_dimension: api/spatial_geom/fractal_dimension.md
+        - major_axis_angle: api/spatial_geom/major_axis_angle.md
+        - major_axis_len: api/spatial_geom/major_axis_len.md
+        - minor_axis_angle: api/spatial_geom/minor_axis_angle.md
+        - minor_axis_len: api/spatial_geom/minor_axis_len.md
+        - rectangularity: api/spatial_geom/rectangularity.md
+        - shape_index: api/spatial_geom/shape_index.md
+        - solidity: api/spatial_geom/solidity.md
+        - squareness: api/spatial_geom/squareness.md
+        - tortuosity: api/spatial_geom/tortuosity.md
+    - spatial_graph:
+      - fit_graph: api/spatial_graph/graph.md
+      - utils:
+          - connected_components: api/spatial_graph/connected_components.md
+          - weights2gdf: api/spatial_graph/weights2gdf.md
+    - spatial_ops:
+      - get_objs: api/spatial_ops/get_objs.md
+      - get_interfaces: api/spatial_ops/get_interfaces.md
+      - h3_grid: api/spatial_ops/h3_grid.md
+      - quadbin_grid: api/spatial_ops/quadbin_grid.md
+      - rect_grid: api/spatial_ops/rect_grid.md
+    - stroma_feats:
+      - extract_collagen_fibers: api/stroma_feats/collagen.md
+      - stromal_intensity_features: api/stroma_feats/stroma_feats.md
+      - utils:
+        - get_hematoxylin_mask: api/stroma_feats/get_hematoxylin_mask.md
+        - get_eosin_mask: api/stroma_feats/get_eosin_mask.md
+        - tissue_components: api/stroma_feats/tissue_components.md
+        - kmeans_img: api/stroma_feats/kmeans_img.md
+        - hed_decompose: api/stroma_feats/hed_decompose.md
+    - transforms:
+      - AlbuStrongAugment: api/transforms/strong_augment.md
+      - ApplyEach: api/transforms/apply_each.md
+      - BinarizeTransform: api/transforms/binarize.md
+      - CellposeTransform: api/transforms/cellpose.md
+      - ContourTransform: api/transforms/contour.md
+      - DistTransform: api/transforms/dist.md
+      - EdgeWeightTransform: api/transforms/edge_weight.md
+      - HoverNetTransform: api/transforms/hovernet.md
+      - MinMaxNormalization: api/transforms/minmax.md
+      - Normalization: api/transforms/norm.md
+      - PercentileNormalization: api/transforms/percentile.md
+      - SmoothDistTransform: api/transforms/smooth_dist.md
+      - StardistTransform: api/transforms/stardist.md
+    - utils:
+      - gdf:
+        - gdf_apply: api/utils/gdf_apply.md
+        - gdf_to_polars: api/utils/gdf_to_polars.md
+        - get_centroid_numpy: api/utils/get_centroid_numpy.md
+        - set_geom_precision: api/utils/set_geom_precision.md
+        - set_uid: api/utils/set_uid.md
+      - raster:
+        - sem2gdf: api/utils/sem2gdf.md
+        - inst2gdf: api/utils/inst2gdf.md
+        - gdf2inst: api/utils/gdf2inst.md
+        - gdf2sem: api/utils/gdf2sem.md
+      - plot:
+        - draw_thing_contours: api/utils/draw_thing_contours.md
+        - legendgram: api/utils/legendgram.md
+    - wsi:
+      - SlideReader: api/wsi/slide_reader.md
+      - WSIPanopticSegmenter: api/wsi/wsi_segmenter.md
+      - utils:
+        - get_sub_grids: api/wsi/get_sub_grids.md
