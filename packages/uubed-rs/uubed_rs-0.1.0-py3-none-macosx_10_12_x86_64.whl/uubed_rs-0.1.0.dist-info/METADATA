@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: uubed-rs
+Version: 0.1.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Archiving :: Compression
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: pytest>=7.0 ; extra == 'dev'
+Requires-Dist: pytest-benchmark>=4.0 ; extra == 'dev'
+Requires-Dist: numpy>=1.20.0 ; extra == 'dev'
+Requires-Dist: maturin>=1.0,<2.0 ; extra == 'dev'
+Provides-Extra: dev
+Summary: High-performance Rust core for position-safe embedding encoding (QuadB64 family)
+Keywords: encoding,embeddings,base64,rust,performance
+Author: Adam Twardoch <adam+github@twardoch.com>
+Author-email: Adam Twardoch <adam+github@twardoch.com>
+Maintainer-email: Adam Twardoch <adam+github@twardoch.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Homepage, https://github.com/twardoch/uubed-rs
+Project-URL: Repository, https://github.com/twardoch/uubed-rs
+Project-URL: Documentation, https://uubed.readthedocs.io/
+Project-URL: Issues, https://github.com/twardoch/uubed-rs/issues
+Project-URL: Changelog, https://github.com/twardoch/uubed-rs/blob/main/CHANGELOG.md
+
+# uubed-rs
+
+High-performance Rust core for position-safe embedding encoding (QuadB64 family).
+
+## Overview
+
+This repository contains the Rust implementation of the uubed encoding library, providing:
+
+- **Q64 Encoding**: Core position-safe encoding algorithm
+- **SIMD Optimizations**: AVX2/AVX-512/NEON acceleration for maximum performance  
+- **Zero-Copy Operations**: Direct buffer access for minimal overhead
+- **Multiple Encoding Methods**: SimHash, Top-k, Z-order variants
+- **PyO3 Bindings**: High-performance Python integration
+
+## Features
+
+- **Position-Safe Encoding**: Eliminates substring pollution in embeddings
+- **Multiple Variants**: Eq64, Shq64, T8q64, Zoq64 for different use cases
+- **High Performance**: 40-105x speedup over pure Python implementations
+- **Memory Efficient**: Buffer pooling and zero-copy operations
+- **Cross-Platform**: Linux, macOS, Windows support
+- **Multi-Architecture**: x86_64, ARM64 with optimized SIMD
+
+## Installation
+
+Install via pip:
+
+```bash
+pip install uubed-rs
+```
+
+Or build from source:
+
+```bash
+maturin build --release --features simd
+```
+
+## Usage
+
+```python
+import uubed_rs
+
+# Basic encoding
+data = b"hello world"
+encoded = uubed_rs.q64_encode_native(data)
+
+# Zero-copy with buffers
+import numpy as np
+input_buffer = np.frombuffer(data, dtype=np.uint8)
+output_buffer = np.zeros(len(data) * 2, dtype=np.uint8)
+written = uubed_rs.q64_encode_inplace_native(input_buffer, output_buffer)
+```
+
+## Performance
+
+- **Q64 Encoding**: Up to 105x faster than Python
+- **SimHash**: 1.7-9.7x speedup with Rust implementation
+- **Z-order**: 60-1600x performance improvement
+- **Memory Usage**: 50-90% reduction through buffer pooling
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Related Projects
+
+- [uubed](https://github.com/twardoch/uubed) - Main project coordination
+- [uubed-py](https://github.com/twardoch/uubed-py) - Python implementation
+- [uubed-docs](https://github.com/twardoch/uubed-docs) - Comprehensive documentation

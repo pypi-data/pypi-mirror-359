@@ -1,0 +1,6 @@
+uubed_native/__init__.py,sha256=s4sUdqQi2hTI7Q1la0kGeTittCHSjhqTVn-x4vI9Kv4,148
+uubed_native/ffi.py,sha256=DAVNs-CfjXX_xvANI9hzLpPSnGuItWGZyD4MG4Gz7Pk,2323
+uubed_native/libuubed_native.dylib,sha256=0Z4o28aalhxN9PFbXaKMWs8sRxuPuMUZkqE0oF276Pk,4152
+uubed_rs-0.1.0.dist-info/METADATA,sha256=q0PTeIym70wiZwNNoe4fzeFoG6T3XyZAQiAgnc25OdU,3754
+uubed_rs-0.1.0.dist-info/WHEEL,sha256=_ftC59G2lUDVh6DjVQid1lXOEswHzpmZBvGibXyRtww,103
+uubed_rs-0.1.0.dist-info/RECORD,,
