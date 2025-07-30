@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__voyager__run_shell_command",
+      "Bash(git commit:*)",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}
