@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/openlog/__init__.py
+src/openlog/config.toml
+src/openlog/logger.py
+src/openlog.egg-info/PKG-INFO
+src/openlog.egg-info/SOURCES.txt
+src/openlog.egg-info/dependency_links.txt
+src/openlog.egg-info/requires.txt
+src/openlog.egg-info/top_level.txt
+tests/test_cli_log.py
+tests/test_file_log.py
