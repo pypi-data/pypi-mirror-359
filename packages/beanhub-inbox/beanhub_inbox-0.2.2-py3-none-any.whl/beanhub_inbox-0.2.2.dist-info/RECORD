@@ -1,0 +1,11 @@
+beanhub_inbox/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+beanhub_inbox/data_types.py,sha256=bGaVeHjpoZ0WEsydHxq3jkXCNvFNY9lbCTFyuaOC3Ac,3021
+beanhub_inbox/llm.py,sha256=NqAzZ-Pl9QsCi8H8hORQsocSNgaQOCCKbryTfkz4OBM,5033
+beanhub_inbox/processor.py,sha256=6CfnwtYZKO0oXDKbVfr8xce6ns69AGncb9dX2GpS0Zo,20970
+beanhub_inbox/templates.py,sha256=p_lZaDpMz4YSeYmhDx6scfqiPlcdbMCHIia8Ic8hMHM,276
+beanhub_inbox/utils.py,sha256=tOznYVx978lkUB3XGFM6YMjnM5DK8e8cr7toOlYDI-c,808
+beanhub_inbox-0.2.2.dist-info/licenses/LICENSE,sha256=Ron5tKQTwQ6AwaRN7eyvc-2ioK2jifMJAeOawXN9JPM,1072
+beanhub_inbox-0.2.2.dist-info/METADATA,sha256=e2-yFBrrLrUO369GuSr8aM2rUDP4bl4DTLTDmrfzGeA,1607
+beanhub_inbox-0.2.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+beanhub_inbox-0.2.2.dist-info/top_level.txt,sha256=IIYcYYixX_3QpXiQUQngAByjmGdHVXscwO-pVImc0Vc,14
+beanhub_inbox-0.2.2.dist-info/RECORD,,
