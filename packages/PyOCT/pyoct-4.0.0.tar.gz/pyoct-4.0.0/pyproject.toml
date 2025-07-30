@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PyOCT"
+version = "4.0.0"
+authors = [
+  { name="Yuechuan Lin", email="linyuechuan1989@gmail.com" },
+]
+description = "Python package for data processing in coherent microscopy"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE.txt"]
+
+[project.urls]
+Homepage = "https://github.com/yuechuanlin-cw/PyOCT.git"
