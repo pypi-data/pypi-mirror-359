@@ -1,0 +1,91 @@
+CloudThat Proprietary License
+
+Copyright (c) 2024 CloudThat Technologies Pvt. Ltd.
+All rights reserved.
+
+Jenkins MCP Server
+Author: Saurabh Kumar Jain (skj@cloudthat.com) - CSA - Projects Head, DevOps and Kubernetes
+Repository: https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git
+
+PROPRIETARY SOFTWARE LICENSE AGREEMENT
+
+This software and associated documentation files (the "Software") are proprietary 
+to CloudThat Technologies Pvt. Ltd. ("CloudThat") and are protected by copyright 
+laws and international copyright treaties, as well as other intellectual property 
+laws and treaties.
+
+GRANT OF LICENSE:
+Subject to the terms and conditions of this Agreement, CloudThat hereby grants 
+you a limited, non-exclusive, non-transferable license to use the Software solely 
+for your internal business purposes, subject to the following restrictions:
+
+RESTRICTIONS:
+1. You may not copy, modify, adapt, alter, translate, or create derivative works 
+   based upon the Software or any part thereof.
+
+2. You may not distribute, license, lease, sell, resell, transfer, assign, or 
+   otherwise commercially exploit or make available the Software to any third party.
+
+3. You may not reverse engineer, disassemble, decompile, or otherwise attempt to 
+   derive the source code of the Software.
+
+4. You may not remove or alter any proprietary legends or notices contained in 
+   the Software.
+
+5. You may not use the Software for any unlawful purpose or in any manner that 
+   could damage, disable, overburden, or impair CloudThat's systems or networks.
+
+OPEN SOURCE CONTRIBUTION:
+This Software is made available as part of CloudThat's open-source initiative. 
+While the source code is publicly accessible for review, modification, and 
+contribution, all intellectual property rights remain with CloudThat Technologies 
+Pvt. Ltd.
+
+Contributors to this project agree that:
+- All contributions become the property of CloudThat Technologies Pvt. Ltd.
+- CloudThat retains the right to relicense contributions under different terms
+- Contributors grant CloudThat perpetual, worldwide, non-exclusive, royalty-free 
+  rights to use, modify, and distribute their contributions
+
+DISCLAIMER OF WARRANTIES:
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL CLOUDTHAT BE LIABLE FOR 
+ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+OTHER DEALINGS IN THE SOFTWARE.
+
+LIMITATION OF LIABILITY:
+IN NO EVENT SHALL CLOUDTHAT BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR 
+CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS 
+OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY 
+OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, 
+EVEN IF CLOUDTHAT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+TERMINATION:
+This license is effective until terminated. Your rights under this license will 
+terminate automatically without notice from CloudThat if you fail to comply with 
+any term(s) of this Agreement. Upon termination of the license, you shall cease 
+all use of the Software and destroy all copies, full or partial, of the Software.
+
+GOVERNING LAW:
+This Agreement shall be governed by and construed in accordance with the laws of 
+India, without regard to its conflict of laws principles. Any disputes arising 
+under this Agreement shall be subject to the exclusive jurisdiction of the courts 
+in Bengaluru, Karnataka, India.
+
+CONTACT INFORMATION:
+For licensing inquiries, support, or questions about this Agreement, please contact:
+
+CloudThat Technologies Pvt. Ltd.
+Email: info@cloudthat.com
+Website: https://cloudthat.com
+Repository: https://gitlab.cloudthat.com/cloudthat-oss/jenkins_mcp.git
+
+Author Contact:
+Saurabh Kumar Jain
+Email: skj@cloudthat.com
+Title: CSA - Projects Head, DevOps and Kubernetes
+
+By using this Software, you acknowledge that you have read this Agreement, 
+understand it, and agree to be bound by its terms and conditions.
