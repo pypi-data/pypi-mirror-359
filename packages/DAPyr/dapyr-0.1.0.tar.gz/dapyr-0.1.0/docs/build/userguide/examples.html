@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; DAPyr 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Guide" href="../refguide/index.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DAPyr
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#basic-usage">Basic usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#plotting-experiments-onto-multiple-axes">Plotting Experiments onto Multiple Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ensuring-same-starting-state-between-experiments">Ensuring Same Starting State between Experiments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../refguide/index.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../refguide/expt.html">Configuring an Experiment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/expt.html#DAPyr.Expt"><code class="docutils literal notranslate"><span class="pre">Expt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/expt.html#configurable-paramters">Configurable Paramters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../refguide/runda.html">Running a Data Assimilation Experiment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/runda.html#DAPyr.runDA"><code class="docutils literal notranslate"><span class="pre">runDA</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../refguide/helper.html">Helper Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/helper.html#basic-helper-functions">Basic Helper Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/helper.html#saving-and-reading-experiments">Saving and Reading Experiments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../refguide/helper.html#plotting-and-visualization">Plotting and Visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/DAPyr.html">DAPyr</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DAPyr</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">User Guide</a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/userguide/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<section id="plotting-experiments-onto-multiple-axes">
+<h2>Plotting Experiments onto Multiple Axes<a class="headerlink" href="#plotting-experiments-onto-multiple-axes" title="Link to this heading"></a></h2>
+<p>In order to allow for generated more complicated figures, the <a class="reference internal" href="../refguide/helper.html#DAPyr.plotExpt" title="DAPyr.plotExpt"><code class="xref py py-func docutils literal notranslate"><span class="pre">plotExpt</span></code></a> function supports passing an instance <cite>matplotlib.pyplot.Axes</cite> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">DAPyr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">expt</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;Plotting_example&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;model_flag&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">dap</span><span class="o">.</span><span class="n">runDA</span><span class="p">(</span><span class="n">expt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#Create a Figure and Axes instance, make sure to specify a 3d projection</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">subplot_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;3d&#39;</span><span class="p">})</span>
+<span class="n">T1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">150</span>
+<span class="n">dap</span><span class="o">.</span><span class="n">plotExpt</span><span class="p">(</span><span class="n">expt</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">T1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">dap</span><span class="o">.</span><span class="n">plotExpt</span><span class="p">(</span><span class="n">expt</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">T2</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Experiment at time T = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T1</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Experiment at time T = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T2</span><span class="p">))</span>
+
+<span class="c1">#You many then modify the Axes instance to adjust for axes limits</span>
+<span class="n">new_xlim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">9.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.0</span><span class="p">)</span>
+<span class="n">new_ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">9.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.0</span><span class="p">)</span>
+<span class="n">new_zlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+      <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">new_xlim</span><span class="p">)</span>
+      <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">new_ylim</span><span class="p">)</span>
+      <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="n">new_zlim</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<img alt="Figure with multiple plotExpt instances" src="../_images/plotting-figure.png" />
+<figcaption>
+<p><span class="caption-text">A figure with multiple plotExpt instances at different time steps in the experiment.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ensuring-same-starting-state-between-experiments">
+<h2>Ensuring Same Starting State between Experiments<a class="headerlink" href="#ensuring-same-starting-state-between-experiments" title="Link to this heading"></a></h2>
+<p>When setting up experiments, you may want to ensure that two experiments with different parameter configuration have the same states. As in, the same model truth (<span class="math notranslate nohighlight">\(x_t\)</span>), observations (<span class="math notranslate nohighlight">\(Y\)</span>), and initial ensemble state (<span class="math notranslate nohighlight">\(x_f^0\)</span>).</p>
+<section id="using-the-seed-parameter">
+<h3>Using the <em>seed</em> parameter<a class="headerlink" href="#using-the-seed-parameter" title="Link to this heading"></a></h3>
+<p>The <em>seed</em> parameter in the <a class="reference internal" href="../refguide/expt.html#DAPyr.Expt" title="DAPyr.Expt"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expt</span></code></a> class sets the seed of the random number generator used to spin up the initial ensemble state, <span class="math notranslate nohighlight">\(x_f^0\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">DAPyr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">expt1</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;enkf_run&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="n">expt2</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;lpf_run&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expt1</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">),</span> <span class="n">expt2</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting the <em>seed</em> parameter will only ensure equal ensemble initial states if <strong>ensemble sizes are equal between experiments</strong>. Additionally, the <em>seed</em> parameter does not enfore equality for either model truth or observation state vectors.</p>
+</div>
+</section>
+<section id="using-the-copystates-method">
+<h3>Using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">copyStates</span></code> method<a class="headerlink" href="#using-the-copystates-method" title="Link to this heading"></a></h3>
+<p>The <a class="reference internal" href="../refguide/expt.html#DAPyr.Expt.copyStates" title="DAPyr.Expt.copyStates"><code class="xref py py-meth docutils literal notranslate"><span class="pre">copyStates</span></code></a> method ensures all three state vectors are copied from another experiment. However, one must be careful when copying states to another experiment with different modified parameters, as many parameters directly influence the state vectors. Major differences between experiment will be caught and raise exceptions. For example, attempting to copy the state vectors from an experiment where <cite>h_flag = 0</cite> to an experiment with <cite>h_flag = 1</cite> will throw an exception. On the contrary, copying the state vectors from an experiment where <cite>l05_I = 1</cite> to an experiment where <cite>l05_I = 12</cite> will result in incorrect model integration.</p>
+<figure class="align-default" id="id2">
+<img alt="A graph showcasing state vector dependencies on parameter" src="../_images/param-graph.png" />
+<figcaption>
+<p><span class="caption-text">State vector dependency based on parameter. Edges point to what parameters influence what state vectors during spinup.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">DAPyr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">expt1</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;enkf_run&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+<span class="n">expt2</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;lpf_run&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expt1</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">),</span> <span class="n">expt2</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">))</span>
+<span class="kc">False</span>
+<span class="c1">#Copy states of expt1 onto expt2</span>
+<span class="n">expt2</span><span class="o">.</span><span class="n">copyStates</span><span class="p">(</span><span class="n">expt1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expt1</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">),</span> <span class="n">expt2</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xf_0&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expt1</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xt&#39;</span><span class="p">),</span> <span class="n">expt2</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;xt&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expt1</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">),</span> <span class="n">expt2</span><span class="o">.</span><span class="n">getParam</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="directly-modifying-the-expt-states-attribute">
+<h3>Directly modifying the <a class="reference internal" href="../refguide/expt.html#DAPyr.Expt.states" title="DAPyr.Expt.states"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Expt.states</span></code></a> attribute<a class="headerlink" href="#directly-modifying-the-expt-states-attribute" title="Link to this heading"></a></h3>
+<p>For more complex modifications and edit you can directly access the state vectors through the <a class="reference internal" href="../refguide/expt.html#DAPyr.Expt.states" title="DAPyr.Expt.states"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Expt.states</span></code></a> attribute. The <cite>states</cite> attribute is a dictionary containing the model truth (<cite>xt</cite>), observations (<cite>Y</cite>), and initial ensemble state (<cite>xf_0</cite>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">DAPyr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">expt</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">Expt</span><span class="p">(</span><span class="s1">&#39;enkf_run&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expt_flag&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+
+<span class="c1">#Add additional noise to initial ensemble state vector</span>
+<span class="n">Nx</span><span class="p">,</span> <span class="n">Ne</span> <span class="o">=</span> <span class="n">expt</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;xf_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">expt</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;xf_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">expt</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;xf_0&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ne</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../refguide/index.html" class="btn btn-neutral float-right" title="Reference Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Maria Nikolaitchik.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
