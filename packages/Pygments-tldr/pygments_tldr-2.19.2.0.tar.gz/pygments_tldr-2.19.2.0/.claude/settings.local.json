@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/test_tldr_formatter.py -v)",
+      "Bash(python -m pytest tests/test_tldr_formatter.py::TestTLDRFormatter::test_tldr_formatter_with_hardcoded_file -v -s)",
+      "Bash(python3:*)",
+      "Bash(python -m pytest tests/test_tldr_formatter.py::TestTLDRFormatter::test_tldr_formatter_with_hardcoded_file -s --log-cli-level=DEBUG)",
+      "Bash(grep:*)",
+      "Bash(python -m pytest tests/test_swift_tldr_formatter.py::TestSwiftTLDRFormatter::test_swift_function_detection_via_highlight_api -v)",
+      "Bash(sed:*)",
+      "Bash(rg:*)"
+    ],
+    "deny": []
+  }
+}
