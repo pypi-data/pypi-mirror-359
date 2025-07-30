@@ -1,0 +1,8 @@
+
+[test]
+factory-boy
+flake8
+pyflakes
+pytest-cov
+pytest-django
+pytest
