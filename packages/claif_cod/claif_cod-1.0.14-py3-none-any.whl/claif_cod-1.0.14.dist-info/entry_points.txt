@@ -1,0 +1,5 @@
+[console_scripts]
+claif-cod = claif_cod.cli:main
+
+[claif.plugins]
+cod = claif_cod
