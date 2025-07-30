@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+latexit.egg-info/PKG-INFO
+latexit.egg-info/SOURCES.txt
+latexit.egg-info/dependency_links.txt
+latexit.egg-info/entry_points.txt
+latexit.egg-info/not-zip-safe
+latexit.egg-info/requires.txt
+latexit.egg-info/top_level.txt
+src/__init__.py
+src/__main__.py
+src/cli.py
