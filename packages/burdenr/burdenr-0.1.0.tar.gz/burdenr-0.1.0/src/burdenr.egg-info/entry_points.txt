@@ -1,0 +1,2 @@
+[console_scripts]
+burdenr = burdenr.cli:main

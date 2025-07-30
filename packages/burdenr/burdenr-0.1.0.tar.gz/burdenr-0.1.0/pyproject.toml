@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64.0.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "burdenr"
+version = "0.1.0"
+description = "Burden Relative Risk CLI tool"
+authors = [{name = "Chenqing Zheng"}]
+dependencies = [
+  "click",
+  "pandas",
+  'matplotlib',
+  'seaborn'
+]
+
+
+[project.scripts]
+burdenr = "burdenr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

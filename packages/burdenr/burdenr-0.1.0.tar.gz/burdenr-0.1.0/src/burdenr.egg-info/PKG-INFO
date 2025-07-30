@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: burdenr
+Version: 0.1.0
+Summary: Burden Relative Risk CLI tool
+Author: Chenqing Zheng
+Requires-Dist: click
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
