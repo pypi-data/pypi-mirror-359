@@ -1,0 +1,28 @@
+{
+    "cSpell.words": [
+        "ALLCLASSES",
+        "DEVINFO",
+        "DEVPROP",
+        "DEVPROPKEY",
+        "DEVPROPTYPE",
+        "DICLASSPROP",
+        "DIGCF",
+        "filetimes",
+        "fmtid",
+        "guids",
+        "HDEVINFO",
+        "HTREE",
+        "itertools",
+        "ntdll",
+        "NTSTATUS",
+        "Pnp",
+        "pytest",
+        "setupapi",
+        "setupdi",
+        "SYSTEMTIME",
+        "typecode",
+        "TYPEMOD",
+        "winerror",
+        "winpnp"
+    ]
+}
