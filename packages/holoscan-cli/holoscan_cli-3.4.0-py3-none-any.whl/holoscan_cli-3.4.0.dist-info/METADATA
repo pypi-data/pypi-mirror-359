@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: holoscan-cli
+Version: 3.4.0
+Summary: 
+Requires-Python: >=3.9,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: Jinja2 (>=3.1.6,<4.0.0)
+Requires-Dist: packaging (>=25.0,<26.0)
+Requires-Dist: pip (>25.1.0)
+Requires-Dist: psutil (>=7.0.0,<8.0)
+Requires-Dist: python-on-whales (>=0.77.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: requests (>=2.32,<3.0)
