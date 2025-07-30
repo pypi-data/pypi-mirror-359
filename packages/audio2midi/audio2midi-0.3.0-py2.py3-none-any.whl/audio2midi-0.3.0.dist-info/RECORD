@@ -1,0 +1,11 @@
+audio2midi/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+audio2midi/basic_pitch_pitch_detector.py,sha256=6ZH4SKL9qAj6ODSr84qr_QmNvDYOuZRUrbVCOB9430E,30663
+audio2midi/crepe_pitch_detector.py,sha256=UgyN9oJOrRsWrbtsyD1r4OiX8StRg5o_HrMq0JDKj4o,7605
+audio2midi/librosa_pitch_detector.py,sha256=CdPDt72zYRjr3u7dVBdq3wrGoi96i2PV-LLvqWvHmpI,7790
+audio2midi/melodia_pitch_detector.py,sha256=YFt9NKyZ_Dyt_3ltInUz6QZgovmmPK6gR9EPlL_aV5Y,2402
+audio2midi/pop2piano.py,sha256=kBAF1kY-5Ctu92etNLo4Clr1hkW1B5OCvd-XT7SrI8g,125685
+audio2midi/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+audio2midi/violin_pitch_detector.py,sha256=C0--R0NaYcIyAFELGgebbs3yjAnQeVdtpk4iZ2NbUIA,61650
+audio2midi-0.3.0.dist-info/METADATA,sha256=kgJtW1RMkRqLbO3Do2XNVNaTs0CvRjWii6R2trW6Afg,4887
+audio2midi-0.3.0.dist-info/WHEEL,sha256=tkmg4JIqwd9H8mL30xA7crRmoStyCtGp0VWshokd1Jc,105
+audio2midi-0.3.0.dist-info/RECORD,,
