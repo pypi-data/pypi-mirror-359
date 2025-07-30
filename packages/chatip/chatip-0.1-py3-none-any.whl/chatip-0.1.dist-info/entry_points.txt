@@ -1,0 +1,2 @@
+[console_scripts]
+chatip = chatip.converter:main
