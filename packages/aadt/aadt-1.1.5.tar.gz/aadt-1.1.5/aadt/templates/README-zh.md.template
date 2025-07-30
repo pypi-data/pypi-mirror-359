@@ -1,0 +1,127 @@
+# {display_name}
+
+使用 [Anki Add-on Developer Tools (AADT)](https://github.com/libukai/aadt) 创建的 Anki 插件。
+
+## 描述
+
+TODO: 在此添加插件的详细描述。
+
+## 安装
+
+### 从 AnkiWeb 安装
+
+TODO: 插件发布后添加 AnkiWeb 安装说明。
+
+### 手动安装
+
+1. 从 GitHub 下载最新版本
+2. 在 Anki 中，转到 工具 → 插件 → 从文件安装
+3. 选择下载的 .ankiaddon 文件
+
+## 开发
+
+本项目使用 [AADT](https://github.com/libukai/aadt) 进行现代化的 Anki 插件开发，支持 Qt6。
+
+### 快速开始
+
+```bash
+# 创建新的插件项目（推荐使用 uvx）
+mkdir {repo_name} && cd {repo_name}
+uvx aadt init
+
+# 依赖会在初始化时自动安装
+# 包括：Anki/AQT、MyPy、Ruff、Pytest 和 AADT
+
+# 开始开发！
+python run_anki.py
+```
+
+### 开发工作流
+
+```bash
+# 初始化设置（一次性）
+uvx aadt init                    # 初始化项目及所有依赖
+
+# 日常开发（使用本地 aadt）
+uv run aadt ui                   # 编译 UI 文件
+uv run aadt build -d local       # 构建测试版本
+uv run aadt build -d ankiweb     # 构建 AnkiWeb 发布版本
+uv run aadt clean                # 清理构建文件
+```
+
+### 依赖管理
+
+本项目使用单一的 `dev` 组管理所有开发依赖：
+
+```bash
+# 安装/更新所有开发依赖
+uv sync --group dev
+
+# 包含的依赖：
+# - aqt>=25.2.7                 # Anki Qt 界面（包含 anki、pyqt6 和所有界面依赖）
+# - aadt>=1.1.0                 # 构建工具（包含额外的 PyQt6 用于 UI 编译）
+# - mypy>=1.16.1                # 静态类型检查
+# - ruff>=0.12.1                # 快速代码检查和格式化
+# - pytest>=8.0.0               # 测试框架
+```
+
+**注意：** `aqt` 自动包含 `anki` 和 `pyqt6` 依赖。AADT 提供额外的 PyQt6 用于 UI 编译工具。
+
+### 构建
+
+```bash
+# 构建本地测试版本
+uv run aadt build -d local
+
+# 构建 AnkiWeb 提交版本
+uv run aadt build -d ankiweb
+```
+
+### 测试
+
+```bash
+# 快速启动 Anki 进行测试
+python run_anki.py
+
+# 或使用 uv
+uv run python run_anki.py
+
+# 运行测试（如果有）
+uv run pytest
+```
+
+### 代码质量
+
+```bash
+# 检查代码风格和类型
+uv run ruff check .              # 代码检查
+uv run ruff format .             # 自动格式化
+uv run mypy src/                 # 类型检查
+```
+
+### 项目结构
+
+- `src/{module_name}/` - 主 Python 包（src-layout 结构）
+- `ui/designer/` - Qt Designer .ui 文件
+- `ui/resources/` - UI 资源文件（图标、样式等）
+- `addon.json` - 插件配置文件
+- `pyproject.toml` - 项目配置和依赖
+- `run_anki.py` - 快速 Anki 启动器（用于测试）
+- `.python-version` - Python 版本规范
+
+## 特性
+
+- **现代 Python 3.10+** 支持类型提示
+- **仅支持 Qt6** - 不包含 Qt5 遗留代码
+- **src-layout 结构** - 最佳实践项目布局
+- **基于 uv** - 快速依赖管理
+- **完整工具链** - 包含 MyPy、Ruff、Pytest
+- **直接资源路径** - 无需 QRC 编译
+
+## 许可证
+
+TODO: 添加许可证信息。
+
+## 作者
+
+{author}
