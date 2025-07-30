@@ -1,0 +1,15 @@
+# Optional dependencies for full functionality
+# Install with: pip install finpull[full]
+
+# For web scraping (Finviz)
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+
+# For Yahoo Finance data
+yfinance>=0.1.63
+
+# For Excel export
+openpyxl>=3.0.7
+
+# GUI functionality uses tkinter which comes with Python
+# No additional installation needed for tkinter 
