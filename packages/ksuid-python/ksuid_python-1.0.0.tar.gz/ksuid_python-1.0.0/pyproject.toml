@@ -1,0 +1,145 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ksuid-python"
+version = "1.0.0"
+authors = [
+  {name = "Tototheo Development Team", email = "anton.z@tototheo.com"},
+]
+maintainers = [
+  {name = "Tototheo Development Team", email = "anton.z@tototheo.com"},
+]
+description = "K-Sortable Unique Identifier (KSUID) implementation for Python 3.13+"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.13"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: Database",
+]
+keywords = ["ksuid", "identifier", "unique", "sortable", "timestamp", "uuid", "id"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "pytest-benchmark>=3.4.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "isort>=5.0",
+    "mypy>=0.910",
+    "pre-commit>=2.15.0",
+]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "pytest-benchmark>=3.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/geneseas/ksuid-python"
+Documentation = "https://github.com/geneseas/ksuid-python/blob/main/README.md"
+Repository = "https://github.com/geneseas/ksuid-python.git"
+"Bug Reports" = "https://github.com/geneseas/ksuid-python/issues"
+Changelog = "https://github.com/geneseas/ksuid-python/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ksuid = "ksuid.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ksuid"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src/ksuid",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+    "/pyproject.toml",
+]
+
+# Development tool configurations
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["ksuid"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+
+[tool.coverage.run]
+source = ["ksuid"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+] 

@@ -1,0 +1,74 @@
+.cursor/
+.env
+__pycache__/
+postgres_data_/
+postgres_data/
+node_modules/
+npm-debug.log
+yarn-error.log
+static/dist/
+logs/
+*.log
+#*.sql
+local/
+starlink/data/starlink_cache.json
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Docker
+.docker/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+/config/config.json
+/radius3/
+
+# Ignore large files
+app/static/files/*.dmg
+app/static/files/*.msi
+app/static/files/*.exe
+app/static/files/*.zip
+
+# Ignore database data
+postgres_data/
+radius_data/
+
+# Environment variables
+.env.local
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+starlink/data/starlink_cache.json
+map/BUILD_README.md
+map/build-and-push.sh
+map/README.md
+map/data/*
