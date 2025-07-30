@@ -1,0 +1,3 @@
+[console_scripts]
+nsp-ntfy=nsp_ntfy.entry:nsp_ntfy
+
