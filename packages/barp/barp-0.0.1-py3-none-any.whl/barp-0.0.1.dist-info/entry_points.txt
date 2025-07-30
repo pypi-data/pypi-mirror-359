@@ -1,0 +1,6 @@
+[console_scripts]
+barp = barp.cli.main:cmd_group_main
+
+[barp.arg_builders]
+command = barp.arg_builders.system_command:SystemCommandArgBuilder
+docker = barp.arg_builders.docker:DockerArgBuilder
