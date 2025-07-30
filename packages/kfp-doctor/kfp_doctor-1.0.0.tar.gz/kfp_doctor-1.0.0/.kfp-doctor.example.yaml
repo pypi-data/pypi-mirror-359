@@ -1,0 +1,71 @@
+# Example kfp-doctor configuration file
+# Copy this to .kfp-doctor.yaml in your project root and customize as needed
+
+checks:
+  # Resource validation checks
+  MISSING_RESOURCES:
+    enabled: true
+    severity: ERROR
+
+  EXCESSIVE_RESOURCES:
+    enabled: true
+    severity: WARNING
+    max_cpu: "8"        # Maximum CPU request allowed
+    max_memory: "16Gi"  # Maximum memory request allowed
+
+  MISSING_LIMITS:
+    enabled: true
+    severity: WARNING
+
+  # Image and deployment checks
+  LATEST_IMAGE_TAG:
+    enabled: true
+    severity: WARNING
+
+  INSECURE_IMAGE_REGISTRY:
+    enabled: false      # Enable if you want to restrict image registries
+    severity: WARNING
+    allowed_registries:
+      - "gcr.io"
+      - "us-docker.pkg.dev"
+      - "docker.io"
+      - "quay.io"
+      # Add your organization's trusted registries here
+
+  # Reliability checks
+  NO_RETRY_POLICY:
+    enabled: true
+    severity: WARNING
+
+  # Security checks
+  PRIVILEGED_CONTAINER:
+    enabled: true
+    severity: ERROR
+
+  RUN_AS_ROOT:
+    enabled: true
+    severity: WARNING
+
+  HARDCODED_SECRET:
+    enabled: true
+    severity: ERROR
+
+  # Pipeline structure checks
+  UNUSED_COMPONENT:
+    enabled: true
+    severity: WARNING
+
+# Example: Disable specific checks for development environments
+# MISSING_RESOURCES:
+#   enabled: false
+
+# Example: Make warnings into errors for stricter CI/CD
+# LATEST_IMAGE_TAG:
+#   severity: ERROR
+# NO_RETRY_POLICY:
+#   severity: ERROR
+
+# Example: Custom resource limits for different environments
+# EXCESSIVE_RESOURCES:
+#   max_cpu: "4"      # Lower limits for dev/test
+#   max_memory: "8Gi" 
