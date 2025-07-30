@@ -1,0 +1,15 @@
+numpy>=1.0
+scipy>=1.0
+matplotlib>=2.0
+python-dateutil
+torch>=2.3.0
+h5py>=2.1
+
+[docs]
+sphinx>=4.3.0
+sphinx-argparse
+sphinx_rtd_theme>=0.5.1
+
+[tests]
+pytest
+pooch

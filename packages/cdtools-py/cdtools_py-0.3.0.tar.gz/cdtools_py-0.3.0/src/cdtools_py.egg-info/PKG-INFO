@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: cdtools-py
+Version: 0.3.0
+Summary: Tools for coherent diffractive imaging and ptychography
+Home-page: https://github.mit.edu/scattering/CDTools.git
+Author: Abe Levitan
+Author-email: abraham.levitan@psi.ch
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy>=1.0
+Requires-Dist: scipy>=1.0
+Requires-Dist: matplotlib>=2.0
+Requires-Dist: python-dateutil
+Requires-Dist: torch>=2.3.0
+Requires-Dist: h5py>=2.1
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pooch; extra == "tests"
+Provides-Extra: docs
+Requires-Dist: sphinx>=4.3.0; extra == "docs"
+Requires-Dist: sphinx-argparse; extra == "docs"
+Requires-Dist: sphinx_rtd_theme>=0.5.1; extra == "docs"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CDTools
+
+CDTools is a python library for ptychography and CDI reconstructions, using an Automatic Differentiation based approach.
+
+```python
+from matplotlib import pyplot as plt
+from cdtools.datasets import Ptycho2DDataset
+from cdtools.models import FancyPtycho
+
+# Load a data file
+dataset = Ptycho2DDataset.from_cxi('ptycho_data.cxi')
+
+# Initialize a model from the data
+model = FancyPtycho.from_dataset(dataset)
+
+# Run a reconstruction
+for loss in model.Adam_optimize(10, dataset):
+    print(model.report())
+
+# Save the results
+model.save_to_h5('ptycho_results.h5', dataset)
+
+# And look at them!
+model.inspect(dataset) # See the reconstructed object, probe, etc.
+model.compare(dataset) # See how the simulated and measured patterns compare
+plt.show()
+```
+
+Full installation instructions and documentation can be found [here](https://cdtools-developers.github.io/cdtools/).
+
+
+CDTools was developed in the [photon scattering lab](https://scattering.mit.edu/) at MIT, and further development took place within the [computational x-ray imaging group](https://www.psi.ch/en/cxi) at PSI. The code is distributed under an MIT (a.k.a. Expat) license. If you would like to publish any work that uses CDTools, please contact [Abe Levitan](mailto:abraham.levitan@psi.ch).
+
+Have a wonderful day!
