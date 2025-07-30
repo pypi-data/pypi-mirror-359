@@ -1,0 +1,55 @@
+# Complex configuration with nested structures
+services:
+  - name: "auth_service"
+    port: 8001
+    enabled: true
+    endpoints:
+      - "/login"
+      - "/logout"
+      - "/verify"
+    config:
+      jwt_secret: "secret123"
+      token_expiry: 3600
+      rate_limit: 1000
+
+  - name: "api_service"
+    port: 8002
+    enabled: true
+    endpoints:
+      - "/api/v1"
+      - "/api/v2"
+    config:
+      cors_origins:
+        - "https://example.com"
+        - "https://app.example.com"
+      max_payload_size: 1048576
+
+environments:
+  development:
+    database_url: "postgresql://localhost:5432/dev"
+    debug: true
+    log_level: "DEBUG"
+
+  staging:
+    database_url: "postgresql://staging-db:5432/staging"
+    debug: false
+    log_level: "INFO"
+
+  production:
+    database_url: "postgresql://prod-db:5432/prod"
+    debug: false
+    log_level: "WARNING"
+
+monitoring:
+  enabled: true
+  metrics_port: 9090
+  health_checks:
+    - endpoint: "/health"
+      interval: 30
+    - endpoint: "/ready"
+      interval: 10
+  alerts:
+    webhook_url: "https://hooks.slack.com/services/..."
+    channels:
+      - "#alerts"
+      - "#ops"

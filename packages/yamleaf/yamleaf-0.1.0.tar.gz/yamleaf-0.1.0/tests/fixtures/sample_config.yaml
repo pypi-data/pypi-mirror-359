@@ -1,0 +1,29 @@
+# Sample configuration file
+app:
+  name: "SampleApp"
+  version: "1.0.0"
+  debug: false
+
+database:
+  host: "localhost"
+  port: 5432
+  name: "sampledb"
+  username: "user"
+  password: "password"
+  ssl: true
+
+api:
+  base_url: "https://api.example.com"
+  timeout: 30
+  retries: 3
+  rate_limit: 100
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "app.log"
+
+features:
+  new_ui: true
+  beta_features: false
+  analytics: true

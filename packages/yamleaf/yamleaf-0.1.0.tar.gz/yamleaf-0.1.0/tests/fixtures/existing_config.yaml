@@ -1,0 +1,55 @@
+# Existing production configuration
+# Database settings
+database:
+  host: "production-db.example.com"
+  port: 5432
+  name: "myapp_production"
+  # SSL is required in production
+  ssl: true
+  pool:
+    min_connections: 5
+    max_connections: 20
+    timeout: 30
+
+# API configuration
+api:
+  base_url: "https://api.production.com"
+  timeout: 45
+  rate_limit: 2000
+  version: "v2"
+
+# Application settings
+app:
+  name: "ProductionApp"
+  environment: "production"
+  workers: 8
+
+# Feature flags
+features:
+  new_dashboard: true
+  beta_features: false
+  maintenance_mode: false
+
+# Logging configuration
+logging:
+  level: "INFO"
+  file: "/var/log/myapp/app.log"
+  max_size: 104857600  # 100MB
+  backup_count: 10
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+
+# Cache settings
+cache:
+  enabled: true
+  backend: "redis"
+  host: "redis.production.com"
+  port: 6379
+  ttl: 3600
+  prefix: "myapp:"
+
+# Security settings
+security:
+  secret_key: "prod-secret-key-change-me"
+  jwt_expiry: 7200
+  max_login_attempts: 3
+  session_timeout: 1800
