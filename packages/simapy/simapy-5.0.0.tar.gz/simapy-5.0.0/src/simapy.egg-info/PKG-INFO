@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: simapy
+Version: 5.0.0
+Summary: Python utilities for SIMA
+Author: SINTEF Ocean
+License: MIT License
+Project-URL: Homepage, https://github.com/SINTEF/simapy
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dmtpy==0.3.5
+Requires-Dist: numpy
+Requires-Dist: tqdm
+Dynamic: license-file
+
+SIMAPy - Python utilities for SIMA
+=================================================================
+
+This Python library can be used to interact with [SIMA](https://sima.sintef.no)
+
+Parts of the library is generated from [data models](https://github.com/SINTEF/sima-dmt-models) using a [Python code generator](https://github.com/SINTEF/dmt-gen-py)
+
+Please examine the tests for ways to interact
+
+Also check out the examples in [simapy-examples](https://github.com/SINTEF/simapy-examples)
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install simapy.
+
+```bash
+pip install simapy
+```
+
+## Dependencies
+
+* [DMTPY](https://github.com/SINTEF/dmtpy)
+
+## Authors
+
+* **Lasse Bjermeland** - [lassebje](https://github.com/lassebje)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

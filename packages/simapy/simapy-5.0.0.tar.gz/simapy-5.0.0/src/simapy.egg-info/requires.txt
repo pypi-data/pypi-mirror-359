@@ -1,0 +1,3 @@
+dmtpy==0.3.5
+numpy
+tqdm
