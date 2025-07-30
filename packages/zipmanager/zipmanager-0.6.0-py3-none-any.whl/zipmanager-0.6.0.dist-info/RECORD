@@ -1,0 +1,10 @@
+zipmanager/Exceptions.py,sha256=oVuVJaXoA2dJmf-nv2a1SG5hrm_sAMc_rr7Wj2SG6qQ,2301
+zipmanager/File.py,sha256=MWkBySjym1PKPuieb4pMtKrJ71qCmsd9Il0FSYixtrs,4596
+zipmanager/__init__.py,sha256=HUBmdkCY4OYcpR9Xxp8-pZ0NpfdFdTa5MY8_arWNvk0,60
+zipmanager/files.py,sha256=9rTHtqtabPgsfzC8rsqIgFGyVr-Cto2B1xIymS78Ec0,5050
+zipmanager/main.py,sha256=wneFenKND0O0SNIDeha95EDAbvdAh9ZFjXTPGJYCA-U,22643
+zipmanager-0.6.0.dist-info/licenses/LICENSE,sha256=xrDWzcrTw-Fgn6rawrlP68H5R4QMIkg8n0NSYcfaqiU,1074
+zipmanager-0.6.0.dist-info/METADATA,sha256=Qq3CtviFeBoTvEnUPK0UV03o6KSRSVRELUg9W4fX-GY,3213
+zipmanager-0.6.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+zipmanager-0.6.0.dist-info/top_level.txt,sha256=sH7NjK-oltI-81ZX31m4A-YMHpz-gy9aNJOUzim5A9U,11
+zipmanager-0.6.0.dist-info/RECORD,,
