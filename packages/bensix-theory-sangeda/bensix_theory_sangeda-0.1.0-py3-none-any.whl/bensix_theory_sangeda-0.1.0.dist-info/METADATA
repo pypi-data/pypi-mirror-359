@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: bensix-theory-sangeda
+Version: 0.1.0
+Summary: 一个用于计算苯分子群论的Python包
+Home-page: https://github.com/sangeda/bensix-theory
+Author: aaa
+Author-email: aaa <1821724720@qq.com>
+Project-URL: Homepage, https://github.com/sangeda/bensix-theory
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Hello World Package
+
+A simple Hello World package for demonstration purposes.
+
+## Installation
+
+```bash
+pip install hello-world-sangeda
+```
+
+## Usage
+
+```python
+from hello_world.main import main
+main()
+```
+
+## License
+
+This project is licensed under the MIT License. 
