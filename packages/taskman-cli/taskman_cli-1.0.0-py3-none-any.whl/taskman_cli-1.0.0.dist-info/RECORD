@@ -1,0 +1,9 @@
+taskman_cli/__init__.py,sha256=zebTSAM-YN8T9ap2Yk_52GrsacYnExaDcTko1vbrEng,30
+taskman_cli/helper_functions.py,sha256=2pW_sWZA1hroeAaev2cp-t7e-gi2Liclpl_bN5t93MY,6293
+taskman_cli/main.py,sha256=Moxyt0XTXTEsNVOof5LQsOKPxwuJyLIqLJTiWDexDiE,6098
+taskman_cli-1.0.0.dist-info/licenses/LICENSE,sha256=SewoMCxAFIThnJ_SJt0nFt3y6Qv66BT4PZ25-2yH1QM,1074
+taskman_cli-1.0.0.dist-info/METADATA,sha256=zCGU3vlNDX62VhLCcNPJ2X_JDPbb-x5xAwiMget9A-g,5277
+taskman_cli-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+taskman_cli-1.0.0.dist-info/entry_points.txt,sha256=saOtZuqN8JDl5lEcvrWr8RJMSZtsOz7sjfiP8lw73zg,50
+taskman_cli-1.0.0.dist-info/top_level.txt,sha256=t2bcgZQyS2Ns3Foa6NnZ-4idTMoot0cTU66bu5mpkew,12
+taskman_cli-1.0.0.dist-info/RECORD,,
