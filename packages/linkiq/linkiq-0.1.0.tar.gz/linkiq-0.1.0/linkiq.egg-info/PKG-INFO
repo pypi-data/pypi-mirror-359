@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: linkiq
+Version: 0.1.0
+Summary: linkIQ - LinkedIn Copilot for founder-led growth
+Author-email: Arvind Soni <arvind@gitmoxi.io>
+Requires-Dist: fastapi
+Requires-Dist: playwright
+Requires-Dist: python-dotenv
+Requires-Dist: rich
+Requires-Dist: pydantic
+Requires-Dist: grok
+Requires-Dist: openai
+Requires-Dist: anthropic
+Requires-Dist: uvicorn
