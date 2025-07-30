@@ -1,0 +1,10 @@
+fds/sdk/utils/__init__.py,sha256=DlSyxhTQGnfaMSsv5_gX_aALQ3Xn6-QpcP8G-dhllGw,253
+fds/sdk/utils/authentication/__init__.py,sha256=ik7Z35lDYfSeT0FeMCwdeD89qV_WZWK3sQTOOLfJaM4,273
+fds/sdk/utils/authentication/confidential.py,sha256=TwzjzbzPAC49_k_j8aIDQOF9_2CPpYLI6TeDpUgkN08,12717
+fds/sdk/utils/authentication/constants.py,sha256=tFWjd3UKJRRwq2ci-JyVGvSwoZwuNV6QY2aBcHS8aVE,880
+fds/sdk/utils/authentication/exceptions.py,sha256=AfyYA1Nn1L7L_cSHM0_RiC2aBoEjHcteYrFIzCbxzdM,724
+fds/sdk/utils/authentication/oauth2client.py,sha256=Ev3woNdBrVMp4uU162_xbHiOMFUZMrIVdHG4DpvzeYM,332
+fds_sdk_utils-2.1.2.dist-info/LICENSE,sha256=WNHhf_5RCaeuKWyq_K39vmp9F28LxKsB4SpomwSZ2L0,11357
+fds_sdk_utils-2.1.2.dist-info/METADATA,sha256=98uSZyQbW8IVGbIivgFvkXP2y9H0Bp4-_Mv-1gyqduU,7555
+fds_sdk_utils-2.1.2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+fds_sdk_utils-2.1.2.dist-info/RECORD,,
