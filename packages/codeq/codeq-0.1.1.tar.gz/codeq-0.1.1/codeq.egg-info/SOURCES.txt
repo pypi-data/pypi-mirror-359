@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+analyzer/__init__.py
+analyzer/formatter.py
+analyzer/metrics.py
+analyzer/smells.py
+codeq/__init__.py
+codeq/cli.py
+codeq.egg-info/PKG-INFO
+codeq.egg-info/SOURCES.txt
+codeq.egg-info/dependency_links.txt
+codeq.egg-info/entry_points.txt
+codeq.egg-info/requires.txt
+codeq.egg-info/top_level.txt
+tests/test_smells.py
