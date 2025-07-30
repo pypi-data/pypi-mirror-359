@@ -1,0 +1,6 @@
+tutor~=20.0
+tutor-mfe~=20.0
+
+[dev]
+build
+python-semantic-release
