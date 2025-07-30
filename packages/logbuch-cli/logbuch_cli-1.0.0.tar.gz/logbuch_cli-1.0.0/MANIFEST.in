@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+recursive-include logbuch *.py
+recursive-include logbuch *.txt
+recursive-include logbuch *.md
+recursive-include docs *.md
+recursive-include docs *.rst
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.backup
+global-exclude .pytest_cache
+global-exclude .git*
