@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+pyproject.toml
+cloudquery/__init__.py
+cloudquery/__main__.py
+cloudquery/bin/cloudquery
+py_cloudquery_mac_arm64.egg-info/PKG-INFO
+py_cloudquery_mac_arm64.egg-info/SOURCES.txt
+py_cloudquery_mac_arm64.egg-info/dependency_links.txt
+py_cloudquery_mac_arm64.egg-info/top_level.txt
