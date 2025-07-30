@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: simplygame
+Version: 1.0
+Summary: A package to create games more easily
+Home-page: https://github.com/cedzeedev/simplygame
+Author: CEDZEE
+Author-email: cedzee.contact@gmail.com
+Requires-Python: >=3.10
+Requires-Dist: pygame
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
