@@ -1,0 +1,6 @@
+*.egg*
+__pycache__/
+.python-version
+.coverage
+*.mp4
+.vscode
