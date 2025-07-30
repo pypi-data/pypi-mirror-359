@@ -1,0 +1,2 @@
+[console_scripts]
+geocode-mcp = geocode_mcp.server:run_server
