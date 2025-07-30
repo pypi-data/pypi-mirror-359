@@ -1,0 +1,12 @@
+redis[async]
+eons
+asyncmy
+sqlalchemy
+psutil
+aiohttp
+eot
+libtruckeefs
+redis
+aiofiles
+cryptography
+sqlalchemy[asyncio]
