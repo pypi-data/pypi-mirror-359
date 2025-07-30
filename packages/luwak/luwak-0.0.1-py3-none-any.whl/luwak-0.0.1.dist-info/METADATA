@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: luwak
+Version: 0.0.1
+Summary: DICOM anonymization
+Author-email: Simlomb <simona.lombardo@radixlabmedical.com>
+License-Expression: MIT
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# luwak
+
+**luwak** is a package for anonymizing DICOM files (medical imaging data).  
+This is a work in progress. Functionality is not implemented yet.
