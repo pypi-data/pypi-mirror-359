@@ -1,0 +1,26 @@
+from fastapi import Request
+from src.entity.{{ entity_file_name }} import {{ entity_class_name }}
+
+from framefox.core.routing.decorator.route import Route
+from framefox.core.orm.entity_manager import EntityManager
+from framefox.core.security.password.password_hasher import PasswordHasher
+from framefox.core.controller.abstract_controller import AbstractController
+
+class RegisterController(AbstractController):
+
+    @Route("/register", "security.register", methods=["GET", "POST"])
+    async def register(self, request: Request,entity_manager:EntityManager):
+        user = {{ entity_class_name }}()
+
+        if request.method == "POST":
+            form = await request.form()
+            user = {{ entity_class_name }}()
+            user.email = form.get("email")
+            user.password = PasswordHasher().hash(form.get("password"))
+
+            entity_manager.persist(user)
+            entity_manager.commit()
+            return self.redirect("/login")
+
+        return self.render("security/register.html")
+{% raw %}{% endraw %}
