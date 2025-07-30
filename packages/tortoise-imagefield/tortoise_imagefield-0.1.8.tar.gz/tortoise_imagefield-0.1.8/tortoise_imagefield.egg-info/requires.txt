@@ -1,0 +1,10 @@
+tortoise-orm==0.24.2
+pillow
+python-dotenv
+starlette
+asgiref
+python-slugify
+aiohttp
+aiofiles
+aioboto3
+aiocache
