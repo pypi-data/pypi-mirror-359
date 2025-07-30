@@ -1,0 +1,2 @@
+[console_scripts]
+devtools_cli = devtools_cli.cli:main
