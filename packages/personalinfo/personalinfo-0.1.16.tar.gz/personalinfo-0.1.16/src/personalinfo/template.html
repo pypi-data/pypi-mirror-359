@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - Personal Info</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
+        h2 { color: #2c3e50; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+        .section { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #eee; margin-bottom: 2em; padding: 1em 2em; }
+        .item-list { margin: 0; padding: 0; list-style: none; }
+        .item-list li { margin-bottom: 0.3em; }
+        .subsection { margin-left: 1.5em; margin-bottom: 1em; }
+        .label { font-weight: bold; color: #34495e; }
+    </style>
+</head>
+<body>
+    <h1>Personal Information: {{ name }}</h1>
+    {% for title, items in sections %}
+        {% if items %}
+            <div class="section">
+                <h2>{{ title }}</h2>
+                {% if items is mapping %}
+                    <ul class="item-list">
+                    {% for k, v in items.items() %}
+                        <li><span class="label">{{ k }}:</span> {{ v }}</li>
+                    {% endfor %}
+                    </ul>
+                {% elif items is iterable %}
+                    {% set idx = 1 %}
+                    {% for entry in items %}
+                        <div class="subsection"><span class="label">{{ title[:-1] if title.endswith('s') else title }} {{ idx }}:</span>
+                            <ul class="item-list">
+                            {% for k, v in entry.items() %}
+                                <li><span class="label">{{ k }}:</span> {{ v }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                        {% set idx = idx + 1 %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
