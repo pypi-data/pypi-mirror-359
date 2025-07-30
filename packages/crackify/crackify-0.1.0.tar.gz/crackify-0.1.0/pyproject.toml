@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crackify"
+version = "0.1.0"
+description = "Terminal-based Spotify artist autostreamer (headless, requires librespot)"
+readme = "README.md"
+authors = [
+    { name="DriizzyyB", email="driizzyyboosts@gmail.com" }
+]
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+dependencies = [
+    "spotipy>=2.23.0"
+]
+keywords = [
+    "spotify",
+    "streaming",
+    "librespot",
+    "music",
+    "headless"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Sound/Audio :: Players",
+]
+
+[project.urls]
+Homepage = "https://github.com/driizzyy"
+Repository = "https://github.com/driizzyy/crackify"
+Issues = "https://github.com/driizzyy/crackify/issues"
