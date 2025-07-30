@@ -1,0 +1,2 @@
+[opentelemetry_distro]
+odigos = otel_custom_distro.distro:OdigosDistro
