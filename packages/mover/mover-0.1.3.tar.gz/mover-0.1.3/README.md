@@ -1,0 +1,55 @@
+# MoVer: Motion Verification for Motion Graphics Animations
+
+[Jiaju Ma](https://majiaju.io) and
+[Maneesh Agrawala](https://graphics.stanford.edu/~maneesh/)
+<br />
+In ACM Transactions on Graphics (SIGGRAPH), 44(4), August 2025. To Appear.
+<br />
+
+[[arXiv](https://arxiv.org/abs/2502.13372)]  [[project page](https://mover-dsl.github.io/)]
+
+
+## Dataset
+The test prompt dataset used in the paper can be found in `mover_dataset`
+
+
+## Setup
+
+### MoVer
+1. Set up a virtual environment with your favorite tool. It is recommended to use `uv` because it is very fast.
+2. Make sure you have the right version of `pytorch` installed for your system.
+3. Install MoVer with `pip` (works without "uv" in front of "pip")
+```bash
+uv pip install git+https://github.com/vacancy/Jacinle.git && \
+uv pip install git+https://github.com/jama1017/Concepts.git@main && \
+uv pip install mover
+```
+
+or, to install MoVer for development, clone this repository and run
+```bash
+uv pip install -r requirements.txt && \
+uv pip install -e .
+```
+
+4. Store your API keys as environment variables (e.g., `OPENAI_API_KEY`, `GEMINI_API_KEY`, `GROQ_API_KEY`).
+    - MoVer includes APIs to interface with OpenAI, Gemini (via OpenAI), and Groq by default.
+
+5. (Optional) If you plan to run locally-hosted models, install the following dependencies:
+    - Install `ollama` if you plan to use ollama with `ollama-python`
+    - Install `vLLM` if you plan to use vLLM
+
+6. (Optional) We support rendering to video with OpenCV, but the video produced might have limited compatibility. If you optionally install `ffmpeg`, our converter will automatically use it to convert rendered videos.
+
+
+## Usage
+Check out the `tutorial.ipynb` for a tutorial of the motion graphics animation generation with MoVer verification pipeline.
+
+
+## Release Checklist
+- [x] MoVer DSL and verifier
+- [x] JavaScript animation to MoVer data format converter
+- [x] LLM-based animation synthesizer
+- [x] LLM-based MoVer synthesizer
+- [x] Scripts to run the full pipeline
+- [ ] Web app for creating animations with MoVer
+- [ ] Scripts for generating animation prompts
