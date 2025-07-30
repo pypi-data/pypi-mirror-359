@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: autodw
+Version: 0.1.1
+Summary: Database schema serialization with LLM integration for metadata generation and SQL parsing
+Author: Shaobin Shi
+Author-email: shaobin shi <d7inshi@gmail.com>
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mysql-connector-python>=8.0.0
+Requires-Dist: psycopg2-binary>=2.9.0
+Requires-Dist: openai>=0.27.0
+Requires-Dist: sqlparse>=0.4.0
+Requires-Dist: tqdm>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Provides-Extra: llm
+Requires-Dist: langchain>=0.1.0; extra == "llm"
+Requires-Dist: transformers>=4.0.0; extra == "llm"
+
+# AutoDW: Data Warehouse Intelligence Agent 🚀
+> **Bridge Databases, Data Warehouses, and LLMs with Automated Schema Processing**
+
+AutoDW is an intelligent agent designed to automate interactions between databases, data warehouses, and Large Language Models (LLMs). It provides tools for **parsing sequential SQL into JSON**, **serializing database schemas**, and **generating schema annotations automatically**, supporting SQLite, MySQL, PostgreSQL, and more.
+
+---
+
+## ✨ Key Features
+| Feature Category          | Functionality                          | Supported Databases |
+|---------------------------|----------------------------------------|---------------------|
+| **SQL → JSON Parser**     | Convert sequential SQL to structured JSON | SQLite, MySQL, PostgreSQL |
+| **Schema Serialization**  | Extract and serialize database schema metadata | All supported DBs |
+| **Auto Schema Annotation**| Generate human-readable schema comments | All supported DBs |
+| **Multi-DB Compatibility**| Unified interface for SQLite/MySQL/PostgreSQL | ✅ |
+
+---
+
+## 🚧 Function Roadmap
+| Implemented Features                      | Planned Features |
+|-------------------------------------------|------------------|
+| SQL → JSON conversion                      | **LLM-based query optimization** |
+| Schema metadata extraction (tables, columns)| **Automated ETL script generation** |
+| Basic schema annotation generation        | **Schema diff visualization** |
+| CLI for local DB interaction               | **Cloud DB support (BigQuery, Snowflake)** |
+| JSON output for integration with LLM tools | **REST API for remote access** |
+
+---
+
+## ⚙️ Installation
+```bash
+pip install autodw
