@@ -1,0 +1,8 @@
+Flask>=0.11.1
+invenio-base<3.0.0,>=2.3.0
+
+[tests]
+pytest-black-ng>=0.4.0
+pytest-invenio<3.0.0,>=2.1.0
+mock>=2.0.0
+Sphinx>=1.8.0
