@@ -1,0 +1,40 @@
+"""
+Dataset augmentation package for Braintrust datasets.
+
+This package provides tools for intelligently augmenting Braintrust datasets
+with synthetic data using LLM analysis and generation.
+
+Main modules:
+- cli: Enhanced CLI interface with iterative workflows
+- models: Pydantic models for data structures
+- braintrust_client: Braintrust API client
+- augmentation_service: LLM-based augmentation service
+- dataset_helper: Main entry point (backward compatible)
+"""
+
+from .models import (
+    DatasetSample,
+    GapAnalysisSuggestion,
+    GapAnalysisResult,
+    InferredSchema,
+    GeneratedSample,
+    CaseAbstract,
+    CaseAbstractList
+)
+
+from .braintrust_client import BraintrustClient
+from .augmentation_service import DatasetAugmentationService
+from .cli import DatasetAugmentationCLI
+
+__all__ = [
+    'DatasetSample',
+    'GapAnalysisSuggestion', 
+    'GapAnalysisResult',
+    'InferredSchema',
+    'GeneratedSample',
+    'CaseAbstract',
+    'CaseAbstractList',
+    'BraintrustClient',
+    'DatasetAugmentationService',
+    'DatasetAugmentationCLI'
+] 
