@@ -1,0 +1,23 @@
+# Augmenting Integrations
+
+![ci status](https://github.com/svange/augint-test/actions/workflows/pipeline.yaml/badge.svg?branch=main)
+![PyPI - Version](https://img.shields.io/pypi/v/augint-test)
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat-square&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Made with GH Actions](https://img.shields.io/badge/CI-GitHub_Actions-blue?logo=github-actions&logoColor=white)](https://github.com/features/actions "Go to GitHub Actions homepage")
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+Add a README, you lazy bastard!
+
+Powershell to source the .env file:
+```powershell
+get-content .env | foreach {
+    $name, $value = $_.split('=')
+    if ([string]::IsNullOrWhiteSpace($name) -or $name.Contains('#')) {
+        # skip empty or comment line in ENV file
+        return
+    }
+    set-content env:\$name $value
+}
+```
