@@ -1,0 +1,68 @@
+import re
+import logging
+
+logger = logging.getLogger(__file__)
+
+SENTRY_IGNORED_ERRORS = {{SENTRY_IGNORED_ERRORS}}
+
+def validate_exc(method, value, exc_value, exc_class_name):
+    if method == 'exc_class':
+        # exc_class_name = value
+        return exc_class_name == value
+
+    elif method == 'exc_text':
+        exc_text_expr = value
+        for expr in exc_text_expr:
+            if re.search(expr, exc_value):
+                return True
+
+        return False
+
+
+def should_ignore_by_rule(rule, exc_value, exc_class_name):
+    """
+    Validates if a given ignored exception rule matches the current exception
+    """
+    for method, value in rule.items():
+        result = validate_exc(method, value, exc_value, exc_class_name)
+        if not result:
+            return False
+    return True
+
+def exception_filter_hook(event, hint):
+    """
+    Calls the proper method to verify which exceptions are ignored
+    for sentry
+    """
+    exc_text = ''
+    exc_value = None
+
+    if 'log_record' in hint:
+        exc_text = hint['log_record'].message
+    if 'exc_info' in hint:
+        _exc_type, exc_value, _tb = hint['exc_info']
+        exc_class_name = _exc_type.__name__
+        exc_text += str(exc_value)
+
+    for rule in SENTRY_IGNORED_ERRORS:
+        ignore_event = should_ignore_by_rule(rule, exc_text, exc_class_name)
+        if ignore_event:
+            return None
+
+    return event
+
+try:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn="{{SENTRY_DSN}}",
+        integrations=[
+            DjangoIntegration(),
+        ],
+        before_send=exception_filter_hook,
+        send_default_pii=True,
+        **{{SENTRY_EXTRA_ARGS}},
+    )
+except ImportError:
+    logger.error("Sentry SDK is not installed.")

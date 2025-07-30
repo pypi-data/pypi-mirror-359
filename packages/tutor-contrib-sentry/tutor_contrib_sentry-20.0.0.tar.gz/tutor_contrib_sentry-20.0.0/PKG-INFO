@@ -1,0 +1,88 @@
+Metadata-Version: 2.4
+Name: tutor-contrib-sentry
+Version: 20.0.0
+Summary: Sentry Integration for Open edX
+Author-email: eduNEXT <technical@edunext.co>
+License: AGPLv3
+Project-URL: homepage, https://github.com/eduNEXT/tutor-contrib-sentry
+Project-URL: repository, https://github.com/eduNEXT/tutor-contrib-sentry
+Project-URL: Issue tracker, https://github.com/eduNEXT/tutor-contrib-sentry/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: tutor~=20.0
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pylint; extra == "dev"
+Requires-Dist: python-semantic-release; extra == "dev"
+Dynamic: license-file
+
+# Sentry plugin for [Tutor](https://docs.tutor.edly.io)
+
+A tutor plugin to integration Open edX with Sentry.
+
+## Installation
+
+```shell
+pip install tutor-contrib-sentry
+```
+
+## Usage
+
+```shell
+tutor plugins enable sentry
+```
+
+Make sure to rebuld the openedx docker image to install the sentry SDK
+
+## Configuration
+
+This plugin supports the following settings:
+
+- `SENTRY_DSN`: The sentry DSN used for ingestion.
+- `SENTRY_IGNORED_ERRORS`: A list of rules with exceptions types to ignore, optionally
+  you can ignore only specific exceptions that matches a list of regex.
+
+```yaml
+SENTRY_IGNORED_ERRORS:
+# Ignore all AuthFailedError exceptions
+- exc_class: AuthFailedError
+# Ignore all exceptions that match a regex
+- exc_text:
+  - .*Email or password is incorrect
+# Ignore all exceptions of type AuthFailedError that matches: .*Email or password is incorrect
+- exc_class: AuthFailedError
+  exc_text:
+  - .*Email or password is incorrect
+```
+
+- `SENTRY_ENVIRONMENT`: The sentry environment. Defaults to `production`.
+- `SENTRY_EXTRA_ARGS`: A dictionary with extra arguments for the sentry SDK. e.g:
+
+```yaml
+SENTRY_EXTRA_ARGS:
+  traces_sample_rate: 1.0
+  profiles_sample_rate: 0.0
+```
+
+### Recommendations
+
+On production we recommend adjusting both `traces_sample_rate` and `profiles_sample_rate` as those
+can impact performance. See the [sentry configuration options](https://docs.sentry.io/platforms/python/configuration/options/) for more information.
+
+
+### License
+
+This software is licensed under the terms of the AGPLv3.
