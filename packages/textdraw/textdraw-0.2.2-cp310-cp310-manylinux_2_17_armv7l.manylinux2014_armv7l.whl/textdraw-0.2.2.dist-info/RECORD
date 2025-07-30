@@ -1,0 +1,8 @@
+textdraw-0.2.2.dist-info/METADATA,sha256=cFq27B3QgyIECpZBgN0e8z3xM3Ht-peUwA12ufPQJ0M,8603
+textdraw-0.2.2.dist-info/WHEEL,sha256=g2M-UrSTes85IB6X3r_Tm186yyBADB2GJ3Q8rJyLBH4,129
+textdraw-0.2.2.dist-info/licenses/LICENSE-APACHE,sha256=ZfNfhtepXrahd5fVs0PcjFNTTbVG8onYfEhgfGDn624,11351
+textdraw-0.2.2.dist-info/licenses/LICENSE-MIT,sha256=YDjd3rMkMY7xW0k438LWlYjA_p0_GUy1X8bDTZqCtYg,1077
+textdraw/__init__.py,sha256=sbAdwEf_yDWLAA9bw2JWn9Vat80P_RJk0ztupf0QNq0,385
+textdraw/__init__.pyi,sha256=2q3J8F1YrHA2Mrgewqa9MZv_bV7o9Pmo7ISdH9o6gY8,6799
+textdraw/textdraw.cpython-310-arm-linux-gnueabihf.so,sha256=YJG0s4QswCkio3jex2ytvE5IJPsNzAw481RGHoGPCyY,3108676
+textdraw-0.2.2.dist-info/RECORD,,
