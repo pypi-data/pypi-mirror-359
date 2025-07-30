@@ -1,0 +1,12 @@
+quark_plugin_bp/__init__.py,sha256=O6Bs8aahY-ELP-uJHeL54VPNB7MaJ_Lf5G11yyzoFyQ,821
+quark_plugin_bp/bp_mip_mapping.py,sha256=aSQV5N8Z98c_w4BQdgisMfqaXS57r03iiVqdpaRb1XM,496
+quark_plugin_bp/bp_problem_provider.py,sha256=G1xx2QO_dBBRE-NZLKhIjJemMHT_wYOgF0mAe8VvaMA,7837
+quark_plugin_bp/bp_qubo_mapping.py,sha256=kjEaYnDsSX2-1-i-WRvRtuJb8VLMr7H08vNM9sjxXao,3055
+quark_plugin_bp/mip_classical_solver_bp.py,sha256=wDhKqzxDVbobdcNw5RZF82XxMjKvtQKDw1OzijHPVH0,2406
+quark_plugin_bp/utils.py,sha256=mHYdGlrCI2MWznQAAfedHdN850UMM-hkjtqnhhkgiK0,3468
+quark_plugin_bp-0.1.dist-info/licenses/LICENSE,sha256=FookcIBBJAe4V3i8duiXlJ5hAaEwH590Qllf7FaUQwM,11352
+quark_plugin_bp-0.1.dist-info/licenses/NOTICE,sha256=WkxZtP1A8qFb-pbH3MOd6_pBtqQk48Tdo4Ddqkl_IBw,168
+quark_plugin_bp-0.1.dist-info/METADATA,sha256=L5rulEG4RMlPPK0HH8aPNoaqLhlVRHzgm4zL8BdF3q0,1638
+quark_plugin_bp-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quark_plugin_bp-0.1.dist-info/top_level.txt,sha256=ziYF_dLUOUaM0R1BVt-UgEGK2VCGNx-7kfs7tRAC2nc,16
+quark_plugin_bp-0.1.dist-info/RECORD,,
