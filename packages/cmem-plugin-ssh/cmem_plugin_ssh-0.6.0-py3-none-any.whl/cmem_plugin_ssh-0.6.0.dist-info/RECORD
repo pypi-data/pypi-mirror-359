@@ -1,0 +1,13 @@
+cmem_plugin_ssh/__init__.py,sha256=Y1ZrFiRV6NhhjJbNBqCZBtowxxKMnQimbuygcVqZxsU,22
+cmem_plugin_ssh/autocompletion.py,sha256=qS6JW6YN75OOcwh_UrEUMkQbyuGv6fJK5gtcxrBYX9k,6294
+cmem_plugin_ssh/download.py,sha256=otsqlbiDYosngV6BosXbr5NbSxGuS4uw5bYbalzqGDI,15719
+cmem_plugin_ssh/execute_commands.py,sha256=hgm7jnu3jsBiiIbEnkAzmDjOUxV27yhU_xdClzTW1QE,13524
+cmem_plugin_ssh/list.py,sha256=7wBSVRTU837mfFkZLKWMH-ETwwBQXtyEHsb6c7Q_sPA,12392
+cmem_plugin_ssh/retrieval.py,sha256=6iXHJJyHx2lzFYLmukjvzIPLjh6aUWR3ExtrfaYAOzc,6163
+cmem_plugin_ssh/ssh-icon.svg,sha256=Lz0QWJ3sEsfn7jJOlb_uKTX3IoA_CEYD24NlYU_ezXI,318
+cmem_plugin_ssh/upload.py,sha256=xjMWx3Axasc7FAC7oLcrqd4J7dfAwQ9zQsCx_i-QMTM,7324
+cmem_plugin_ssh/utils.py,sha256=LXhzy9bsxC0LZhyojme4UUFso3rc57BwO9xkHQ9EHe0,4110
+cmem_plugin_ssh-0.6.0.dist-info/LICENSE,sha256=5t6lcWcFU3TBO5wwq9PYNbgzfVfFUuL-80v5BTGuuMQ,11334
+cmem_plugin_ssh-0.6.0.dist-info/METADATA,sha256=o9eY0MoXHOC69iAw3kqY5VnGB9fn_UkiaTrT7Yh67PY,2495
+cmem_plugin_ssh-0.6.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+cmem_plugin_ssh-0.6.0.dist-info/RECORD,,
