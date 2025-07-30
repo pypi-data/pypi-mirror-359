@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: updogfx
+Version: 0.2.1
+Summary: A Flask-based file upload server with Cloudflare Tunnel integration.
+Home-page: https://github.com/efxtv/updogfx
+Author: EFXTv
+License: MIT
+Project-URL: Bug Tracker, https://github.com/efxtv/updogfx/issues
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Flask
+Requires-Dist: requests
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# UpdogFX
+
+A simple HTTP file server with reverse SSH tunneling, inspired by Updog.
+
+## Features
+- Upload and download files via HTTP
+- Reverse SSH tunneling support using Serveo
+- Lightweight and Termux/Linux compatible
+
+## Installation
+
+```bash
+pip install updogfx
