@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+example/README.md
+example/test_example.py
+example/src/servicer.py
+example/src/test.proto
+example/src/stub/.keepdir
+pytest_grpc_aio/__init__.py
+pytest_grpc_aio/plugin.py
+pytest_grpc_aio.egg-info/PKG-INFO
+pytest_grpc_aio.egg-info/SOURCES.txt
+pytest_grpc_aio.egg-info/dependency_links.txt
+pytest_grpc_aio.egg-info/entry_points.txt
+pytest_grpc_aio.egg-info/requires.txt
+pytest_grpc_aio.egg-info/top_level.txt
