@@ -1,0 +1,29 @@
+[project]
+name = "flightdata"
+version = "0.3.4"
+description = "Python tools for handling flight data"
+readme = "README.md"
+authors = [{ name = "Thomas David", email = "thomasdavid0@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.1.3",
+    "pandas>=2.2.3",
+    "pfc-geometry>=0.2.19",
+    "pfcschemas>=0.1.12",
+    "simplejson>=3.20.1",
+]
+
+[project.scripts]
+collect_logs = "flightdata.scripts.collect_logs:main"
+flightline = "flightdata.scripts.flightline:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project.optional-dependencies]
+dataflash = ["ardupilot_log_reader"]
+
+[dependency-groups]
+dev = ["pytest>=8.3.3"]
