@@ -1,0 +1,9 @@
+py_virion_data/__about__.py,sha256=fyo8Qr9eLRauc4Vh0V_n7ThcIf480z2g-9LYfcY0J1c,138
+py_virion_data/__init__.py,sha256=GLM3W1o_mAnUs0naF-ZDou5H_zgxorJOh6HgzkK_TkI,116
+py_virion_data/deposit.py,sha256=_WYUVW-ecoIZI4iSXD1k-sY-3WzToh5kqpnpScF1Y_s,12709
+py_virion_data/get_json.py,sha256=mtiCKH3ZnI_HCGu15V_qTkr_Cc5sQ1bp0dDC_5I6UgM,665
+py_virion_data/sanitize_id.py,sha256=BIqFqx0VnxsLwteQioON5JcQJArpnWIQBXPJ3vENIaA,746
+py_virion_data-0.1.1.dist-info/METADATA,sha256=bIcBLuVBhds7PiqA0bds7BOQxxV1rPxQ95QzBVGfoFo,1637
+py_virion_data-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+py_virion_data-0.1.1.dist-info/licenses/LICENSE.txt,sha256=SEKKmB24zS3x4a7DWfZGzgbjGGSM30BZCrGeFtHG8iU,1108
+py_virion_data-0.1.1.dist-info/RECORD,,
