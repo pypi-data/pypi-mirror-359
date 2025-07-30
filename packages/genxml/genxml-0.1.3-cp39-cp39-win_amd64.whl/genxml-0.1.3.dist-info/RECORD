@@ -1,0 +1,8 @@
+genxml/__init__.py,sha256=EmttkzEhNHAk6dkJ1jF8ATDGzOVazqDx5leVivM3rco,516
+genxml/core.c,sha256=cYUQj04GQurG7WoHk5MEj2K6drmzOu23NFbXFdYTotY,1147095
+genxml/core.cp39-win_amd64.pyd,sha256=Ov_Xgfb9eqWXjd1lyLSbdXZYcfCA4qbkma6oAJcYBBg,177664
+genxml/core.py,sha256=0emDWpkICV2n4d9PW_-skla636tibjrZWWfG0VXg_Ec,25691
+genxml-0.1.3.dist-info/METADATA,sha256=uOgdYM5y69PjWIyejI_KwuUU88d74KZKPSX20z4cvr8,154
+genxml-0.1.3.dist-info/WHEEL,sha256=yA7mxgqX2UV73NtJdMh2AAmdb628loM81912H3s5r00,100
+genxml-0.1.3.dist-info/top_level.txt,sha256=A7LUGqWNnGEBbs3aUyuFaze0xqzVbrFBHMySWqMPTs4,7
+genxml-0.1.3.dist-info/RECORD,,
