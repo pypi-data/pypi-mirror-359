@@ -1,0 +1,5 @@
+numpy
+nibabel
+opencv-python
+tensorflow>=2.0
+matplotlib
