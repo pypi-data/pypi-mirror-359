@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: ByteBunny
+Version: 1.0.0
+Summary: A modular package for registering custom scripts in Discord selfbots.
+Author: DriizzyyB
+Author-email: DriizzyyB <driizzyyboosts@gmail.com>
+Project-URL: Homepage, https://github.com/driizzyy
+Project-URL: Repository, https://github.com/driizzyy/ByteBunny-Module
+Project-URL: Documentation, https://github.com/driizzyy/ByteBunny-Module#readme
+Project-URL: Issues, https://github.com/driizzyy/ByteBunny-Module/issues
+Keywords: discord,selfbot,modular,scripts,plugin
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: author
+
+# ByteBunny
+
+[![PyPI version](https://badge.fury.io/py/ByteBunny.svg)](https://pypi.org/project/ByteBunny/)
+
+ByteBunny is a modular Python package designed for Discord selfbots, allowing seamless registration and management of custom user scripts. Users can extend their selfbot's functionality by simply importing Byte and registering their scripts.
+
+---
+
+## Features
+
+- Easy script registration for modular Discord selfbots
+- Minimal, intuitive API: `from ByteBunny import Byte`
+- Script discovery and management for bot frameworks
+
+---
+
+## Installation
+
+```bash
+pip install ByteBunny
