@@ -1,0 +1,2 @@
+[gil.nodes]
+OpenAI-GenerateText = gil_node_text.openai_text_generation:OpenAIGenerateTextNode
