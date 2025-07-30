@@ -1,0 +1,2 @@
+[console_scripts]
+locopilot = locopilot.cli.app:app
