@@ -1,0 +1,2 @@
+[console_scripts]
+SS_GCJ02toWGS84 = mcpServer.server:main
