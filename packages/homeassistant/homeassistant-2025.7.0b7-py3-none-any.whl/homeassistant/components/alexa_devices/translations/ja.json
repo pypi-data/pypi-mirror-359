@@ -1,0 +1,29 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "baby_cry_detection": {
+                "name": "\u8d64\u3061\u3083\u3093\u306e\u6ce3\u304d\u58f0"
+            },
+            "beeping_appliance_detection": {
+                "name": "\u30d3\u30fc\u30d7\u97f3\u6a5f\u5668"
+            },
+            "cough_detection": {
+                "name": "\u54b3"
+            },
+            "dog_bark_detection": {
+                "name": "\u72ac\u306e\u5420\u3048\u58f0"
+            },
+            "water_sounds_detection": {
+                "name": "\u6c34\u306e\u97f3"
+            }
+        }
+    },
+    "exceptions": {
+        "cannot_connect": {
+            "message": "\u63a5\u7d9a\u30a8\u30e9\u30fc: {error}"
+        },
+        "cannot_retrieve_data": {
+            "message": "\u30c7\u30fc\u30bf\u306e\u53d6\u5f97\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f: {error}"
+        }
+    }
+}
