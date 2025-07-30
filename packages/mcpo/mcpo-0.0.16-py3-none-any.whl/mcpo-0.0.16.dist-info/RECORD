@@ -1,0 +1,11 @@
+mcpo/__init__.py,sha256=GVvAyZlBDd_dGVjFh7e5nLnIxQnLmLLcEa-VsAnKK98,4536
+mcpo/main.py,sha256=IJoMz0_L9YXFfwAg-62odqPvg2raR5PwEG153DrmrRE,14076
+mcpo/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcpo/tests/test_main.py,sha256=05lejMhtO9699ZMuPQSVnWLh3mU4-CckQ8ZLxoe7uOg,11096
+mcpo/utils/auth.py,sha256=7gW146HsRaftMcIc7G4zFlqVaKU7r0AVUZT7IKtKM8g,4478
+mcpo/utils/main.py,sha256=hdXERk2ex5mYKtPJ8_EgJrXPshaN8k26HiRT_o0Ke10,14729
+mcpo-0.0.16.dist-info/METADATA,sha256=8M4CFJEUA5RK4RTOm2LfZLSax9s9v4tfZmV00Ud9jwQ,6723
+mcpo-0.0.16.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcpo-0.0.16.dist-info/entry_points.txt,sha256=j-ij685X87TgdjfomwHlfEKnc3OLvriE_Q5pldtWdSc,34
+mcpo-0.0.16.dist-info/licenses/LICENSE,sha256=lF7dDLjYk4ueNIZgYSP8BuR2Wd4olRIjBGMjNSo78Lw,1090
+mcpo-0.0.16.dist-info/RECORD,,
