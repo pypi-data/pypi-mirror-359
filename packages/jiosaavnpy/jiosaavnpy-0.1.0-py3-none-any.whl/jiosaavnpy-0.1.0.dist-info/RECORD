@@ -1,0 +1,12 @@
+jiosaavnpy/__init__.py,sha256=VbQj1FR-h8iGmIhbEIMBJqwXoKj8p0Zby684Nr6dvIQ,85
+jiosaavnpy/endpoints.py,sha256=8llRXQmUiUH3hYQHjoiTejTVJ_PFt8Fx48dhZDjRxCA,989
+jiosaavnpy/functions.py,sha256=sVlZ4uSB069iDlyPA8I74V9EuwnFiYY6k9fTpKEn5wc,2730
+jiosaavnpy/jiosaavn.py,sha256=cYmzC1NuHwhSJ-EgpsWWrSLMO2R7uu_qT0Ii39sc2D0,1102
+jiosaavnpy/albums/albums.py,sha256=7vsNTeUiGf9sjegmaQRVG0HiyMeABEfomJYpUhdqp3U,3385
+jiosaavnpy/artists/artists.py,sha256=pIHblhwOdf6gxD76kifY0kUYTDszgcrf9eEDuLfcTr8,1356
+jiosaavnpy/playlists/playlists.py,sha256=ltqMVYLUOH1CEMtHJTE_P6XeNQi8h6jp_ClxS2S7808,2985
+jiosaavnpy/songs/songs.py,sha256=nV-TePQ7sos9TIRZSLjuYUObZscboCsipA7JbJi5LEg,5629
+jiosaavnpy-0.1.0.dist-info/METADATA,sha256=BuHqd8o6Q5KrINHsXMkq0o3oJmgca4N6Z5iApsjmuR0,47365
+jiosaavnpy-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jiosaavnpy-0.1.0.dist-info/licenses/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+jiosaavnpy-0.1.0.dist-info/RECORD,,
