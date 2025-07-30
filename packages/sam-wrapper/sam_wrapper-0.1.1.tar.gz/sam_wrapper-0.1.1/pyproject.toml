@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sam-wrapper" 
+version = "0.1.1"
+description = "A Python package wrapping Meta's Segment Anything Model (SAM)."
+authors = [
+    { name = "Nicholas McCarty", email = "nick@upskilled.consulting" }
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+keywords = ["segment anything", "computer vision", "wrapper", "sam"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
+]
+dependencies = [
+    "torch>=1.7",
+    "torchvision>=0.8"
+    # add any other dependencies needed
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "isort>=5.0",
+    "pytest>=7.0",
+    "build",
+    "twine"
+]
+
+[project.urls]
+Homepage = "https://github.com/upskilled-consulting/sam-wrapper"
+Repository = "https://github.com/upskilled-consulting/sam-wrapper"
+Issues = "https://github.com/upskilled-consulting/sam-wrapper/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]

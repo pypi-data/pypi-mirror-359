@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: sam-wrapper
+Version: 0.1.1
+Summary: A Python package wrapping Meta's Segment Anything Model (SAM).
+Author-email: Nicholas McCarty <nick@upskilled.consulting>
+Project-URL: Homepage, https://github.com/upskilled-consulting/sam-wrapper
+Project-URL: Repository, https://github.com/upskilled-consulting/sam-wrapper
+Project-URL: Issues, https://github.com/upskilled-consulting/sam-wrapper/issues
+Keywords: segment anything,computer vision,wrapper,sam
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=1.7
+Requires-Dist: torchvision>=0.8
+Provides-Extra: dev
+Requires-Dist: black>=24.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Dynamic: license-file
+
+# sam-wrapper
