@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/renovosolutions.aws_cdk_aspects_encryption_enforcement.egg-info/PKG-INFO
+src/renovosolutions.aws_cdk_aspects_encryption_enforcement.egg-info/SOURCES.txt
+src/renovosolutions.aws_cdk_aspects_encryption_enforcement.egg-info/dependency_links.txt
+src/renovosolutions.aws_cdk_aspects_encryption_enforcement.egg-info/requires.txt
+src/renovosolutions.aws_cdk_aspects_encryption_enforcement.egg-info/top_level.txt
+src/renovosolutions_aspects_encryption_enforcement/__init__.py
+src/renovosolutions_aspects_encryption_enforcement/py.typed
+src/renovosolutions_aspects_encryption_enforcement/_jsii/__init__.py
+src/renovosolutions_aspects_encryption_enforcement/_jsii/cdk-aspects-library-encryption-enforcement@0.0.1.jsii.tgz
