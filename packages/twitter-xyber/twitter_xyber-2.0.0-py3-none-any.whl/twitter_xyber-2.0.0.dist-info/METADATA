@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: twitter-xyber
+Version: 2.0.0
+Summary: Twitter xyber merupakan library untuk melakukan scraping data twitter. Project ini disupport oleh XYBER.
+Home-page: https://github.com/xyberid/twitter-xyber
+Author: Xyber Team
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# twitter-xyber
+
+Twitter xyber merupakan library untuk melakukan scraping data Twitter. Project ini disupport oleh XYBER.
+
+## Instalasi
+
+```bash
+pip install twitter-xyber
+```
+
+## Penggunaan
+
+```python
+from twitter_xyber.scraper import TwitterScraper
+
+scraper = TwitterScraper(headless=True, username='your_username', password='your_password')
+# scraper.login()
+result = scraper.search_user("nama user")
+print(result)
+```
