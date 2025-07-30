@@ -1,0 +1,10 @@
+nvidia_mig_py-0.1.0.dist-info/licenses/LICENSE,sha256=FvAMCewW5tWwYguDA27EqiTsBHNY39t_j1zEq38xCXA,1058
+pynvmig/__init__.py,sha256=0d7NvFZda2sgZ62w6LMTztHVwbRfIlr-qOJZeM62nNY,476
+pynvmig/cmd_util.py,sha256=v3sg3GiL4sV0alPu9trt5zrO05p2mf0TSH4pfTuaGzI,609
+pynvmig/mig_allocator.py,sha256=kbBfC7gRJdFkk0-alqV4wNnIXeoZPELWJ8Wm9s3yLTc,17820
+pynvmig/mig_manager.py,sha256=Cg68-FGHOBKeqRSarLGccLdeQHf1daitP0SepVEKkFM,23689
+pynvmig/mig_monitor.py,sha256=xs5F-Kt3GW0sFNpQEEtB0TpGCgg8Hr94LCJZpXcf3RU,4284
+nvidia_mig_py-0.1.0.dist-info/METADATA,sha256=HCXdmT3iAlu_3V-gLOqMJM7mPKfegs2bUxr83sJXrMk,1688
+nvidia_mig_py-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nvidia_mig_py-0.1.0.dist-info/top_level.txt,sha256=09OiLqrf-ULbcx4mvYGkD_p-GUzDCfTHaaDBoaBEhwk,8
+nvidia_mig_py-0.1.0.dist-info/RECORD,,
