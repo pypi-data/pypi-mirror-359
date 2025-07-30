@@ -1,0 +1,8 @@
+popsy_cli/__init__.py,sha256=FOpyUgG3AQ4DwQeiemcytE9NHK38QAZzncW7m9uEQ5A,137
+popsy_cli/api.py,sha256=X0O354raE-dIonZcIN0OAMPOJTQf1ULUJY89wVLNZSM,19886
+popsy_cli/dm_automation.py,sha256=fAAq3Yb5MaGGAYT6CXQcBR21qOybuNniih7r5-R3_Fk,4193
+popsy_cli/main.py,sha256=77nEA2o83PS73YCt0bESTxYhQo41mJ5_o8ERXp17STc,10586
+popsy_ai-0.0.1.dist-info/METADATA,sha256=XWjb2BZMd8J45-tOFUSYQBQtoOBZE2RGjyOtLE96Rlg,10188
+popsy_ai-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+popsy_ai-0.0.1.dist-info/entry_points.txt,sha256=8K49T77AvtK2vdh97xbXGAbU4-gE6cI14VJjSX5hG0w,78
+popsy_ai-0.0.1.dist-info/RECORD,,
