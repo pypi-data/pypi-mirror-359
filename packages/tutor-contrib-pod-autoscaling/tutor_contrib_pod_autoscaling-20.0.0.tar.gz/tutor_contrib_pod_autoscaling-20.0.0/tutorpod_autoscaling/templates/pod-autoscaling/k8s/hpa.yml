@@ -1,0 +1,34 @@
+{% set autoscaling_config = dict(iter_autoscaling_config().items(), **POD_AUTOSCALING_EXTRA_SERVICES) %}
+{% for service, autoscaling in autoscaling_config.items() if autoscaling.get("enable_hpa") %}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{service}}-hpa
+  labels:
+    app.kubernetes.io/name: {{service}}-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{service}}
+  minReplicas: {{ autoscaling["min_replicas"] }}
+  maxReplicas: {{ autoscaling["max_replicas"] }}
+  metrics:
+  {%- if autoscaling["avg_cpu"] > 0 %}
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: {{ autoscaling["avg_cpu"] }}
+  {%- endif %}
+  {%- if autoscaling["avg_memory"]|length %}
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: AverageValue
+        averageValue: {{ autoscaling["avg_memory"] }}
+  {%- endif %}
+{% endfor %}

@@ -1,0 +1,2 @@
+[tutor.plugin.v1]
+pod-autoscaling = tutorpod_autoscaling.plugin
