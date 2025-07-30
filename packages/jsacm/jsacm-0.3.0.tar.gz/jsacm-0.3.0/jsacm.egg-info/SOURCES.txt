@@ -1,0 +1,9 @@
+setup.py
+jsacm/__init__.py
+jsacm/jsacm.py
+jsacm/test.py
+jsacm.egg-info/PKG-INFO
+jsacm.egg-info/SOURCES.txt
+jsacm.egg-info/dependency_links.txt
+jsacm.egg-info/requires.txt
+jsacm.egg-info/top_level.txt
