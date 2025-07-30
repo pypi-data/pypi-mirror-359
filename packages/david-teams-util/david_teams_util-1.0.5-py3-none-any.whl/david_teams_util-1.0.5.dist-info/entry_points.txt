@@ -1,0 +1,2 @@
+[console_scripts]
+send_teams = teams_util.teams:send_teams_workflow_webhook
