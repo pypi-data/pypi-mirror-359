@@ -1,0 +1,115 @@
+Metadata-Version: 2.4
+Name: sheetpicturefinder
+Version: 1.1.0
+Summary: SheetPictureFinder is a pure Python utility for extracting images from Excel .xlsx files — specifically from worksheets and cell addresses. It parses the internal XML structure of Excel files and maps embedded images to their anchor locations.
+Author-email: Samprit Sarkar <samprits5@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/samprits5/
+Requires-Python: ==3.8.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow==11.0.0
+Dynamic: license-file
+
+# 📦 SheetPictureFinder
+
+`SheetPictureFinder` is a pure Python utility for extracting images from Excel `.xlsx` files — specifically from worksheets and cell addresses. It parses the internal XML structure of Excel files and maps embedded images to their anchor locations.
+
+---
+
+## ✨ Features
+
+- ✅ Extract images anchored to specific cells (e.g., `H2`, `H3`)
+- ✅ Supports file paths and `io.BytesIO` streams
+- ✅ Lazy image loading — images loaded only when requested
+- ✅ List image-bearing cells by sheet or across workbook
+- ✅ Cross-platform temporary file handling
+- ✅ `cleanup()` method for managing resources
+
+---
+
+## 📦 Dependency
+No need for `openpyxl` or `openpyxl-image-loader`. Just have your `pillow` installed.
+
+```bash
+pip install pillow
+```
+
+•	Python 3.8+
+
+## 📦 Installation
+
+```bash
+pip install sheetpicturefinder
+```
+
+## 🚀 Usage Example
+
+```python
+
+from PIL import Image
+from sheetpicturefinder import XLSXPictureFinder  # Replace with actual import path
+
+# Load XLSX from file path
+finder = XLSXPictureFinder("/Users/ss/Downloads/SampleFile.xlsx")
+
+# 1. List all image cells in 'EXTERIOR' sheet
+image_cells = finder.list_image_cells("EXTERIOR")
+print("Image cells in 'EXTERIOR':", image_cells)
+
+# 2. Load and display an image at a specific cell
+if 'H2' in image_cells:
+    image = finder.get_image("EXTERIOR", "H2")
+    if image:
+        image.show()
+    else:
+        print("No image found at EXTERIOR!H2")
+else:
+    print("H2 not in image cells for EXTERIOR")
+
+# 3. List all image-containing cells across all sheets
+all_images = finder.list_all_sheet_image_cells()
+print("\nAll image cells in workbook:")
+for sheet, cells in all_images.items():
+    print(f"  {sheet}: {cells}")
+
+# 4. Clean up temporary files
+finder.cleanup()
+```
+
+## 🧰 API Reference
+
+`XLSXPictureFinder(xlsx_source)`
+	•	xlsx_source: Path to .xlsx file or io.BytesIO stream
+
+⸻
+
+`get_image(sheet_name, cell_address)` → `PIL.Image` or `None`
+
+Loads and returns the image anchored at cell_address in sheet_name.
+
+⸻
+
+`list_image_cells(sheet_name)` → `List[str]`
+
+Returns a list of cell addresses that contain images in the given sheet.
+
+⸻
+
+`list_all_sheet_image_cells()` → `Dict[str, List[str]]`
+
+Returns all sheets and their image-bearing cells:
+```
+{
+    'EXTERIOR': ['H2', 'H3'],
+    'APPLIANCES': ['H4']
+}
+```
+
+## 📘 License
+
+MIT License — free to use, modify, and distribute.
+
+## 🧠 Author’s Note
+
+This library bypasses heavyweight Excel parsing and directly inspects the underlying structure of .xlsx files. It’s optimized for performance, memory, and flexibility — ideal for image extraction in automation pipelines or reporting tools.
