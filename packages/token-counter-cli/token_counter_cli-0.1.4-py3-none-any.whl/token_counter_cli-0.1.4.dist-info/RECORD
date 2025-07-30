@@ -1,0 +1,12 @@
+token_counter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+token_counter/__main__.py,sha256=9EWrxQzLhIBqXyk1GYGUWd2r2SJbYiELB387sdpNo4w,187
+token_counter/cli.py,sha256=Wbgto6dftYe6KBqY5d_DWDpPw8LzTDJZ1bcoQMp1k3c,19626
+token_counter/counter.py,sha256=gDbg7DQoeF3mLicL2PytlF4i3zpBCyfJVGo_g-asw0I,1537
+token_counter/config/allowed_extensions.json,sha256=jshepvr9cGcKba_37_Y1jzZWfXzqRl-ZtzrfCGhDJ1k,126
+token_counter/config/llm_limits.json,sha256=H280ab4iZy_fB_p3mRicWWjrgMK8nqUeIVZo9octAFQ,822
+token_counter_cli-0.1.4.dist-info/licenses/LICENSE,sha256=ZSfJnZzgjfdCPSq6o5cDY_8VP0OMwjfL4kkeZXfjYiY,1060
+token_counter_cli-0.1.4.dist-info/METADATA,sha256=p3SCOANTuPnntac0bGJyyFUkO3xPxYEsmXqiaGxHMWc,9794
+token_counter_cli-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+token_counter_cli-0.1.4.dist-info/entry_points.txt,sha256=jWOrcpSUV-EEUAP8tVVO1qb9Cosch0K18JFqBa272tY,56
+token_counter_cli-0.1.4.dist-info/top_level.txt,sha256=-Z6MXDlNPQSVzdVItnnsZSi-IoVDS9vwlr7X0LTI7kg,14
+token_counter_cli-0.1.4.dist-info/RECORD,,
