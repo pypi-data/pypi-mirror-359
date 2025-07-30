@@ -1,0 +1,32 @@
+[project]
+name = "nodesty-api-client"
+version = "1.0.0"
+authors = [
+    { name = "Staticius", email = "astaticdev@gmail.com" }
+]
+description = "nodesty.com için Python API istemci kütüphanesi"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "httpx",
+    "pydantic>=2.0",
+]
+license = "MIT"
+
+[project.urls]
+"Homepage" = "https://github.com/nodestycom/python-api-client"
+"Bug Tracker" = "https://github.com/nodestycom/python-api-client/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
