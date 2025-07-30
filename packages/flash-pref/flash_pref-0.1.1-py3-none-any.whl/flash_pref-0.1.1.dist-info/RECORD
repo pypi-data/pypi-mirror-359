@@ -1,0 +1,9 @@
+flash_pref/__init__.py,sha256=ja2Sh4ZVM2CT3r6gtd4A2rJdvf_mmJAuSNfxPbTIqEU,264
+flash_pref/flash_dpo_trainer.py,sha256=Kn08-MJ5Xv01PTzktWBxmNLz717YqJX9jxxjrrD7fA8,2404
+flash_pref/flash_reward_trainer.py,sha256=MfDf68s4IbN1zneJoI5rAuAjJ4xbmGhq1uSoNVM66Ic,3447
+flash_pref/shared_prefix.py,sha256=Jv0QRZGs0gVxdS568dEpwNaN2lQ9ld04rUhQ_LOeDw0,20301
+flash_pref-0.1.1.dist-info/licenses/LICENSE,sha256=4uQYwHbaWlT0MOVww923eY3lgFQ-7l1sKUk9RYF_RNI,1066
+flash_pref-0.1.1.dist-info/METADATA,sha256=zJgVF_qEo97e4DAFyjcg52eWk4NoaBsKGO3zYqQWRNY,5073
+flash_pref-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flash_pref-0.1.1.dist-info/top_level.txt,sha256=UzJT-RmYYn-XlML0OgbQ7IhDdtQH2_wr_c6CJjKT8gQ,11
+flash_pref-0.1.1.dist-info/RECORD,,
