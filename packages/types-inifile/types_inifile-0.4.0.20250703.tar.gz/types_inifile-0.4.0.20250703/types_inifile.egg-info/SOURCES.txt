@@ -1,0 +1,13 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+inifile-stubs/METADATA.toml
+inifile-stubs/__init__.pyi
+inifile-stubs/py.typed
+types_inifile.egg-info/PKG-INFO
+types_inifile.egg-info/SOURCES.txt
+types_inifile.egg-info/dependency_links.txt
+types_inifile.egg-info/top_level.txt
