@@ -1,0 +1,2 @@
+[console_scripts]
+acs = sky.cli:cli
