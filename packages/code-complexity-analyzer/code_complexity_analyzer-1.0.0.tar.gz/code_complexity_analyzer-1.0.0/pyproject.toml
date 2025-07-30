@@ -1,0 +1,38 @@
+# ====================
+# 2. pyproject.toml
+# ====================
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code-complexity-analyzer"
+version = "1.0.0"
+description = "A comprehensive Python code complexity analyzer"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+keywords = ["code", "analysis", "complexity", "metrics", "quality"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/code-complexity-analyzer"
+Documentation = "https://github.com/yourusername/code-complexity-analyzer#readme"
+Repository = "https://github.com/yourusername/code-complexity-analyzer"
+"Bug Tracker" = "https://github.com/yourusername/code-complexity-analyzer/issues"

@@ -1,0 +1,191 @@
+# ====================
+# 4. README.md
+# ====================
+
+# Code Complexity Analyzer
+<!-- Author :- Kodukulla.V.K.Phani Kumar Sharma   -->
+A comprehensive Python package for analyzing code complexity, performance metrics, and code quality without external dependencies.
+
+## Features
+
+🔍 **Comprehensive Analysis**
+- Time and Space Complexity estimation
+- Cyclomatic Complexity calculation
+- Halstead Metrics
+- Maintainability Index
+- Code smell detection
+- Security issue identification
+
+⚡ **Easy to Use**
+- Simple file-based analysis
+- Directory analysis for entire projects
+- No external dependencies
+- Rich formatted output
+
+🛠️ **Detailed Metrics**
+- Function-level analysis
+- Class-level analysis
+- Import dependency tracking
+- Line counting (logical, comments, blank)
+
+## Installation
+
+```bash
+pip install code-complexity-analyzer
+```
+
+## Quick Start
+
+### Basic Usage
+
+```python
+import code_analyzer
+
+# Analyze a single file
+code_analyzer.analyze_file('main.py')
+
+# Quick analysis with minimal output
+code_analyzer.quick_analyze('main.py')
+
+# Analyze entire directory
+code_analyzer.analyze_directory('src/')
+```
+
+### Advanced Usage
+
+```python
+from code_analyzer import CodeAnalyzer
+
+# Create analyzer instance
+analyzer = CodeAnalyzer()
+
+# Analyze file and get metrics object
+metrics = analyzer.analyze_file('main.py', print_report=False)
+
+# Access specific metrics
+print(f"Time Complexity: {metrics.time_complexity}")
+print(f"Space Complexity: {metrics.space_complexity}")
+print(f"Maintainability Index: {metrics.maintainability_index}")
+
+# Check for issues
+if metrics.code_smells:
+    print("Code smells detected:", metrics.code_smells)
+```
+
+## Usage Examples
+
+### In your config.py or analysis script:
+
+```python
+# config.py
+import code_analyzer
+
+# Analyze your main application file
+code_analyzer.analyze_file('main.py')
+
+# Analyze specific modules
+code_analyzer.analyze_file('utils.py')
+code_analyzer.analyze_file('models.py')
+
+# Or analyze entire project
+code_analyzer.analyze_directory('src/')
+```
+
+### For project quality assessment:
+
+```python
+# quality_check.py
+import code_analyzer
+
+# List of files to analyze
+files_to_analyze = [
+    'main.py',
+    'database.py',
+    'api.py',
+    'utils.py'
+]
+
+print("🔍 Running code quality analysis...")
+for file_path in files_to_analyze:
+    print(f"\n📁 Analyzing: {file_path}")
+    code_analyzer.analyze_file(file_path)
+```
+
+## Metrics Explained
+
+### Complexity Metrics
+- **Time Complexity**: Estimated Big O notation for algorithm performance
+- **Space Complexity**: Estimated memory usage complexity
+- **Cyclomatic Complexity**: Measures code branching and decision points
+- **Maintainability Index**: Overall code maintainability score (0-100)
+
+### Halstead Metrics
+- **Vocabulary**: Number of distinct operators and operands
+- **Length**: Total number of operators and operands
+- **Volume**: Information content of the code
+- **Difficulty**: How difficult the code is to understand
+- **Effort**: Mental effort required to understand the code
+
+### Code Quality Indicators
+- **Code Smells**: Common anti-patterns and issues
+- **Security Issues**: Potential security vulnerabilities
+- **Function Metrics**: Per-function analysis including complexity and parameters
+- **Class Metrics**: Per-class analysis including methods and attributes
+
+## Output Example
+
+```
+🔍 ======================================================================
+📊 PYTHON CODE COMPLEXITY ANALYSIS REPORT
+🔍 ======================================================================
+📁 File: main.py
+📂 Path: /path/to/main.py
+
+📈 BASIC METRICS:
+  📏 Lines of Code: 150
+  💻 Logical Lines: 120
+  💬 Comment Lines: 20
+  📄 Blank Lines: 10
+
+⚡ COMPLEXITY METRICS:
+  ⏱️  Time Complexity: O(n²)
+  💾 Space Complexity: O(n)
+  🔄 Cyclomatic Complexity: 8
+  🛠️  Maintainability Index: 65.5
+
+🔧 FUNCTION ANALYSIS:
+  📝 bubble_sort:
+    📏 Lines: 8
+    ⚙️  Parameters: 1
+    🔄 Complexity: 3
+    🔁 Recursive: No
+    📚 Has Docstring: Yes
+
+💡 RECOMMENDATIONS:
+  💡 Code quality looks good! 🎉
+```
+
+## Requirements
+
+- Python 3.7+
+- No external dependencies (uses only built-in Python libraries)
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+If you encounter any issues or have questions, please file an issue on the GitHub repository.
+
+---
+
+**Made with ❤️ for better code quality**
