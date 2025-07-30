@@ -1,0 +1,3 @@
+[console_scripts]
+draft2inspiration=draft2inspiration.server:main
+
