@@ -1,0 +1,6 @@
+geomet
+trytond<7.7,>=7.6
+psycopg2>=2.0.14
+
+[test]
+trytond[test]<7.7,>=7.6
