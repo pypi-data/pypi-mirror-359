@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/renovosolutions.aws_cdk_elbv2_redirect.egg-info/PKG-INFO
+src/renovosolutions.aws_cdk_elbv2_redirect.egg-info/SOURCES.txt
+src/renovosolutions.aws_cdk_elbv2_redirect.egg-info/dependency_links.txt
+src/renovosolutions.aws_cdk_elbv2_redirect.egg-info/requires.txt
+src/renovosolutions.aws_cdk_elbv2_redirect.egg-info/top_level.txt
+src/renovosolutions_elbv2_redirect/__init__.py
+src/renovosolutions_elbv2_redirect/py.typed
+src/renovosolutions_elbv2_redirect/_jsii/__init__.py
+src/renovosolutions_elbv2_redirect/_jsii/cdk-library-elbv2-redirect@0.0.270.jsii.tgz
