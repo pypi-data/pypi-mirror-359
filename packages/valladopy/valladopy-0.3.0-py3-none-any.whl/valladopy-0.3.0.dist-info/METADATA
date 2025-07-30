@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: valladopy
+Version: 0.3.0
+Summary: Routines from Fundamentals of Astrodynamics and Applications by David Vallado
+Author-email: David Vallado <davallado@gmail.com>
+License: AGPL-3.0
+Description-Content-Type: text/markdown
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pydantic==2.9.2
+Requires-Dist: scipy==1.13.1
+
+# valladopy
+
+`valladopy` is a Python library offering validated astrodynamics routines from the well-known textbook "Fundaments of Astrodynamics and Applications" by David Vallado.
+
+---
+
+## Installation
+
+Install the package via pip:
+```bash
+pip install valladopy
+```
+
+---
+
+## Contributing
+
+We appreciate interest in contributing to this project! However, as we are still figuring this process out, we ask contributors to first [submit an issue in GitHub](https://github.com/CelesTrak/fundamentals-of-astrodynamics/issues).
+
+---
+
+## License
+
+`valladopy` is licensed under the GNU Affero General Public License v3.0 (AGPLv3). See the [LICENSE](https://github.com/CelesTrak/fundamentals-of-astrodynamics/blob/main/LICENSE) file for details.
