@@ -1,0 +1,138 @@
+Metadata-Version: 2.1
+Name: bagcheck
+Version: 0.2.13
+Summary: A pipeline validation tool for Concourse and GitHub Actions
+Home-page: https://github.com/jfcarter2358/bagcheck
+License: MIT
+Keywords: concourse,github-actions,bagcheck
+Author: John Carter
+Author-email: jfcarter2358@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: jsonpath-ng (>=1.5.3,<2.0.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: requests (>=2.32.4,<3.0.0)
+Requires-Dist: rich-click (>=1.5.2,<2.0.0)
+Project-URL: Repository, https://github.com/jfcarter2358/bagcheck
+Description-Content-Type: text/markdown
+
+# BagCheck
+
+## About
+
+`bagcheck` is a relatively simply command line utility developed to make validating Concourse pipelines simpler. To accomplish this, `bagcheck` has the following functionality:
+
+## Checking a pipeline
+
+### Concourse
+
+To check your pipeline, simply run:
+
+```bash
+bagcheck check -f /path/to/your/concourse/pipeline.yaml
+```
+
+at which point `bagcheck` will proceed to check for the following conditions:
+
+- All git resources are pointed at the `main` branch
+- All PR resource puts in the same job have the same context
+- All PR statuses are accounted for in a job (success, failure, error, pending)
+- All jobs have a timeout set
+
+### GitHub Actions
+
+To check your pipeline, run:
+
+```bash
+bagcheck check -f /path/to/your/github/workflow-or-action.yaml
+```
+
+at which point `bagcheck` will proceed to check for the following conditions:
+
+- All jobs have timeouts set
+- All jobs have the required `runs-on` field set
+- All workflow calls pass the required inputs
+- All action calls pass the required inputs
+- All output references reference an output that actually exists
+- All input references reference an input that actually exists
+- All `needs.<job>...` references reference a job that is:
+  - Present in the needs block of the job referencing it
+  - Actually outputs the output specified
+- All external action/workflow references use the allowed ref format
+  - Defaults to checking the pattern `v[0-9](\.[0-9]){0,2}"`
+  - To change the regex pattern, configure the `config.ref_regex` block as shown in the configuration below
+
+
+## Configuring Bagcheck
+
+> To pull remote actions/workflows from a private repository, set `BAGCHECK_GITHUB_TOKEN` to your GitHub access token
+
+Sometimes you want to skip a check across the board (e.g. you don't want timeouts in a specific pipeline) or you only want to disable a check for a specific job/resource. To do this, you'll use a `.bagcheck` file. 
+
+An example file looks something like this:
+
+```yaml
+config:
+  ref_regex: v[0-9](\.[0-9]){0,2}
+disable:
+  global:
+    - concourse-check-main-branch
+    - ...
+  local:
+    - path: '$.jobs[?(@.name = "job-name-1")]'
+      tests:
+        - concourse-check-pr-statuses
+        - ...
+    - path: '$.jobs[?(@.name = "job-name-2")]'
+      tests:
+        - concourse-check-timeout
+        - ...
+    - ...
+warn:
+  global:
+    - github-check-ref
+    - ...
+  local:
+    - path: '$.jobs[?(@.name = "job-name-1")]'
+      tests:
+        - github-check-action-calls
+        - ...
+    - ...
+```
+
+with any check listed under the `disable.global` key being completely disabled and the tests under each path being disabled when the job meets that JSONPath criteria (the ellipsis denote that you can include as many as you want in each section).
+
+Additionally, adding any check to `warn.global` will result in all errors being ignored for that check and warning statements being printed instead of errors. Additionally, you can configure the same thing locally in the same manner as the local disables
+
+Currently the following tests are run and as a consequence can be disabled:
+
+- `concourse-check-main-branch`
+- `concourse-check-timeout`
+- `concourse-check-pr-statuses`
+- `concourse-check-pr-contexts`
+- `github-check-timeout`
+- `github-check-runs-on`
+- `github-check-workflow-calls`
+- `github-check-action-calls`
+- `github-check-output-wiring`
+- `github-check-needs-wiring`
+- `github-check-input-wiring`
+- `github-check-ref`
+
+One thing to note is that `bagcheck` will first attempt to read a file located at `~/.bagcheck` and then will attempt to read one at the current working directory, combining the values with whatever is located in your `~/.bagcheck` file.
+
+## Summarizing a pipeline
+
+Having to read through a 1000+ line YAML file can make it hard to understand what the pipeline is doing on a conceptual level as well as how everything ties together. To help with this, you can run:
+
+```bash
+bagcheck summary -f /path/to/your/pipeline.yaml
+```
+
+at which point `bagcheck` will print out a summarized version of your pipeline
+
