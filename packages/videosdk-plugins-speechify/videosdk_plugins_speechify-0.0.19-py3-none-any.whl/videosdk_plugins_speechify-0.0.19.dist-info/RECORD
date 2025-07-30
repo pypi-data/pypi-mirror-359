@@ -1,0 +1,6 @@
+videosdk/plugins/speechify/__init__.py,sha256=t8fvmm02VpgfGRlOexTX2hL0IQwrUxPwLXEXQX6ToIo,65
+videosdk/plugins/speechify/tts.py,sha256=1QTFnhezk1jpkbE2Ff1rspx5pDR20r7GPxImzfI_RHk,5330
+videosdk/plugins/speechify/version.py,sha256=t2ESZXMHiQN58q9Bo0UBQqSt6syeATooB2yMARxEW24,23
+videosdk_plugins_speechify-0.0.19.dist-info/METADATA,sha256=29JdVzRvow_dm_x2Vu1I4Ua4FgP_1JB7NL5YRNu631Q,843
+videosdk_plugins_speechify-0.0.19.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+videosdk_plugins_speechify-0.0.19.dist-info/RECORD,,
