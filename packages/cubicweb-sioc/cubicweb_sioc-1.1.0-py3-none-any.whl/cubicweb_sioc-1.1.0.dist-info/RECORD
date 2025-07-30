@@ -1,0 +1,12 @@
+cubicweb_sioc/__init__.py,sha256=jBP9oiEhcxEGuf3KI_hdOeqknxMLkOjlatBX2pYbXic,112
+cubicweb_sioc/__pkginfo__.py,sha256=l0646WzClCfmCoPSWL14YVDAqVblNdEAGkAK4WkrYYM,744
+cubicweb_sioc/site_cubicweb.py,sha256=Ul6uOSvA9UAlAmTuovuIHKGYjbghfHXgVohlY-X8nUY,76
+cubicweb_sioc/views.py,sha256=KizUOY6zqU4X0hTE1O0i9EaOJZyv1FdgpevPP8CZLx0,5699
+cubicweb_sioc/i18n/en.po,sha256=PczXiFFfvJJV0QriryPaFF2YjD8LhPRe3XAGcF-kLP0,203
+cubicweb_sioc/i18n/es.po,sha256=PczXiFFfvJJV0QriryPaFF2YjD8LhPRe3XAGcF-kLP0,203
+cubicweb_sioc/i18n/fr.po,sha256=PczXiFFfvJJV0QriryPaFF2YjD8LhPRe3XAGcF-kLP0,203
+cubicweb_sioc-1.1.0.dist-info/METADATA,sha256=cGqj7szM7OzNxxIMQqgwtVXdXmtpZGuG92cU-2pLPts,848
+cubicweb_sioc-1.1.0.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+cubicweb_sioc-1.1.0.dist-info/entry_points.txt,sha256=KMfqGyA9IazwxYfafVvF8EcvdZQ890t97_3oxzY_8Oc,38
+cubicweb_sioc-1.1.0.dist-info/top_level.txt,sha256=nbYKvDtNSiwGWNVRGZgV0FW4vjWMKMy9NCaavMne1OY,14
+cubicweb_sioc-1.1.0.dist-info/RECORD,,
