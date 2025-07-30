@@ -1,0 +1,8 @@
+beautifulsoup4
+bs4
+requests
+selenium
+
+[dev]
+pytest>7.0
+twine>4.0.2
