@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsst"
+version = "0.8.2"
+description = "TSST is an integration platform for Taiwan brokerage Python APIs, enabling quick switching between different brokerage APIs using a unified trading logic."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "blinker>=1.9.0",
+    "click>=8.1.7",
+    "comtypes>=1.4.8",
+    "pandas>=2.2.3",
+    "polars-talib>=0.1.4",
+    "polars>=1.15.0",
+    "pyarrow>=20.0.0",
+    "pydantic>=2.9.2",
+    "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
+    "redis>=5.2.0",
+    "rich>=13.9.4",
+    "setuptools>=75.6.0",
+    "shioaji>=1.2.5",
+    "tabulate>=0.9.0",
+    "tsst-sino-backtest-v2==0.2.0",
+    "tornado>=6.1",
+]
+
+[project.scripts]
+tsst-cli = "tsst.cli:cli"
+
+[dependency-groups]
+dev = []
+windows = ["pywin32>=308"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"tsst" = ["static/**/*"]
