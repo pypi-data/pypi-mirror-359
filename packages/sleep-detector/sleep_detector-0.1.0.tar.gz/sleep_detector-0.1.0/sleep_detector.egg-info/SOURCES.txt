@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+sleep_detector/__init__.py
+sleep_detector/cli.py
+sleep_detector/config.py
+sleep_detector/core.py
+sleep_detector.egg-info/PKG-INFO
+sleep_detector.egg-info/SOURCES.txt
+sleep_detector.egg-info/dependency_links.txt
+sleep_detector.egg-info/entry_points.txt
+sleep_detector.egg-info/requires.txt
+sleep_detector.egg-info/top_level.txt
