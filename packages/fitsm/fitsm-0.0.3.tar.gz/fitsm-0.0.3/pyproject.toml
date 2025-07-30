@@ -1,0 +1,36 @@
+[project]
+name = "fitsm"
+version = "0.0.3"
+description = "Raw FITS parser"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "astropy",
+    "ipykernel",
+    "tqdm",
+    "pyyaml",
+]
+
+[project.license]
+text = "MIT"
+
+[project.scripts]
+fitsm = "fitsm.main:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "jaxoplanet>=0.1.0",
+    "pytest-xdist",
+]
+
+[tool.pdm.build]
+includes = [
+    "src/fitsm/*.sql",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
