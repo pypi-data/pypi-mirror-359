@@ -1,0 +1,14 @@
+CLAUDE.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+svg2png_clipboard/__init__.py
+svg2png_clipboard/cli.py
+svg2png_clipboard/core.py
+svg2png_clipboard.egg-info/PKG-INFO
+svg2png_clipboard.egg-info/SOURCES.txt
+svg2png_clipboard.egg-info/dependency_links.txt
+svg2png_clipboard.egg-info/entry_points.txt
+svg2png_clipboard.egg-info/requires.txt
+svg2png_clipboard.egg-info/top_level.txt

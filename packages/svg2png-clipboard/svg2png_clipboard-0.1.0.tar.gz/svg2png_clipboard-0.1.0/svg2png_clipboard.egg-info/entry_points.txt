@@ -1,0 +1,2 @@
+[console_scripts]
+svg2png-clipboard = svg2png_clipboard.cli:main
