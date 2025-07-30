@@ -1,0 +1,7 @@
+{% load static djhk_templatetags %}
+<script type="text/javascript">
+ const DJDTK_DATATABLES_DEFAULTS = JSON.parse('{{ settings.DJDTK_DATATABLES_DEFAULTS|djhk_json_dumps|safe }}');
+ const DJDTK_DATATABLES_CONFIG = JSON.parse('{{ settings.DJDTK_DATATABLES_CONFIG|djhk_json_dumps|safe }}');
+</script>
+<script src="{% static 'js/django-datatables-defaults.js' %}"></script>
+<script src="{% static 'js/django-datatables-init.js' %}"></script>
