@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: advssdkpy
+Version: 0.8.1a3
+Keywords: Advascope,AdvsSdkPy
+Description-Content-Type: text/markdown
+
+# Advascope Python Sdk
+
+The official Python SDK for interacting with AdvaScope devices.
+
+- **Documentation:** https://advascope.gitlab.io/sdk/advssdkdocs/
+- **Website:** https://advascope.cz/
+
+`pip install advssdkpy`
+
+
+
+
+
+
