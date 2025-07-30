@@ -1,0 +1,66 @@
+
+
+---
+
+## `decitobin` 1.1.1 – Binary for Everyone  
+**Convert decimal numbers and text to binary easily and intuitively.**
+
+![Version badge](https://img.shields.io/badge/version-1.1-blue)  
+![Status badge](https://img.shields.io/badge/stability-stable-success)  
+![Python badge](https://img.shields.io/badge/python-3.10%2B-blue)
+
+---
+
+### 🧑‍💻 About the Developer
+
+> `decitobin` was created by **Thái Lâm**, an 8-year-old developer from Vietnam with a passion for programming and binary codes.
+
+At just 8 years old, Thái Lâm:
+
+- Designed a full graphical interface using **Tkinter**
+- Built smart conversion functions from scratch
+- Released daily builds including alpha previews
+- Collaborated like a true software engineer—splitting roles and managing deployment
+
+His enthusiasm shows that coding is for everyone, no matter the age!
+
+---
+
+### 🚀 Features
+
+- 🔢 Convert **decimal numbers** to binary  
+- 🔤 Convert **ASCII text** to binary (each character encoded as 8-bit)  
+- 🧠 Auto-detect input type: number or text  
+- 🖥️ Intuitive GUI built with Tkinter  
+- 📦 Simple and clean API for developers
+
+---
+
+### 📦 Installation
+
+```bash
+pip install decitobin
+```
+
+---
+
+### 🧪 Example Usage
+
+#### ➤ Convert decimal:
+
+```python
+from decitobin import convert
+
+print(dec2bin("42"))  # Output: 101010
+```
+
+#### ➤ Convert text:
+
+```python
+import decitobin
+print(asciitobin("A")) # Output: 01000001
+```
+#### ➤ Versions
+1.0: 2025/07/02 11:20 PM
+1.1 Alpha Insider: 2025/07/03 11:45 PM
+1.1 Official: 2025/07/04 11:00 AM
