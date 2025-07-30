@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: livepeek
+Version: 0.0.1
+Summary: Live API response viewer in terminal
+Author-email: Nuhman PK <nuhmanpk7@gmail.com>
+License: GNU
+Keywords: api,cli,json,terminal,developer-tools
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typer[all]
+Requires-Dist: httpx
+Requires-Dist: rich
+Dynamic: license-file
+
+# livepeek
+[![PyPI version](https://badge.fury.io/py/livepeek.svg)](https://pypi.org/project/livepeek/)

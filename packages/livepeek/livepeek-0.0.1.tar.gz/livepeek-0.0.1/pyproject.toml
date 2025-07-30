@@ -1,0 +1,21 @@
+[project]
+name = "livepeek"
+version = "0.0.1"
+description = "Live API response viewer in terminal"
+authors = [{ name="Nuhman PK", email="nuhmanpk7@gmail.com"}]
+readme = "README.md"
+license = {text = "GNU"}
+keywords = ["api", "cli", "json", "terminal", "developer-tools"]
+dependencies = [
+    "typer[all]",
+    "httpx",
+    "rich"
+]
+requires-python = ">=3.7"
+
+[project.scripts]
+livepeek = "livepeek.cli:app"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
