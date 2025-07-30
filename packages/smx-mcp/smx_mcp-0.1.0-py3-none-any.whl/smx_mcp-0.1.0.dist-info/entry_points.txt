@@ -1,0 +1,2 @@
+[console_scripts]
+smx-mcp = src.server:start

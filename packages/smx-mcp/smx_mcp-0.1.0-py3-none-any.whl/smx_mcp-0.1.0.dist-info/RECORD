@@ -1,0 +1,13 @@
+src/__init__.py,sha256=U4S_2y3zgLZVfMenHRaJFBW8yqh2mUBuI291LGQVOJ8,35
+src/_auth.py,sha256=gEtNe-2fFGSmRX7eFkIRxZktiBVS6mfqVWuRPjTCRzI,3311
+src/_client.py,sha256=y7E-5Wce3kfHaNLL-f4P8zrK59sy7sGvODbHH-eI54A,11170
+src/_settings.py,sha256=XZ93DfLEMl6Sezc8XJRFIaJvm3eBzQBD8mkQpN8WNN0,975
+src/_types.py,sha256=UxKn72NrpbFi9Kqppv1MqVPtd2wee4PAcP8aDxFNDNY,7056
+src/server.py,sha256=-W_oilUO4NpZP1J9S8fhzyVxIRlIcdzDompkQZntPiQ,4121
+src/tools.py,sha256=nn6dXxYmeJenCgcYY5NbYSPV5BjMqJo3Sv9PavI6LKI,18627
+src/version.py,sha256=xJE6TwaGVa_u0wuehOqddmrAsQdo0gB2VGxPxe7NhEs,110
+smx_mcp-0.1.0.dist-info/METADATA,sha256=AjwFL7RwhIfV1R_eredmzdIMz31Hu1BU0WK8brHifNk,13591
+smx_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+smx_mcp-0.1.0.dist-info/entry_points.txt,sha256=tf7c4KPYBoLVYiKmDCEXBM1U5cUlM7ZEswD5qE15-_A,45
+smx_mcp-0.1.0.dist-info/licenses/LICENSE,sha256=g8NRP0ALMAwwdgzusLfIH6lQm9ZcBTcBYhuCUCxwFa8,1099
+smx_mcp-0.1.0.dist-info/RECORD,,
