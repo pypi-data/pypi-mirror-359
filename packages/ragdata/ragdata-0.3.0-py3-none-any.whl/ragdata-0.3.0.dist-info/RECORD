@@ -1,0 +1,12 @@
+ragdata/__init__.py,sha256=1RqhFJP-i52Ud6Oade-KG0olFKMrsVOsx2vltoLvTJA,43
+ragdata/base.py,sha256=NCniq7QuAqy58Hr-tayLgXGuxu-xbXKQzqIHzZn6oQo,2158
+ragdata/arxiv/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ragdata/arxiv/index.py,sha256=YP7PTgStFj8pXUuh5cTS7TqBJ2Bzn0D-XZIP3QshHUs,2835
+ragdata/wikipedia/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ragdata/wikipedia/index.py,sha256=sQkYkI1ref0iwinUhXlm1TxRYtlmGLC31SMX_tNYAa0,6156
+ragdata/wikipedia/views.py,sha256=41KfNsXd3I2ZpdUWkqjlEwx6StewyocWWJoraHEeqaY,6281
+ragdata-0.3.0.dist-info/LICENSE,sha256=6gllEr1T94N-SCwH3VheWOtBAt1_8FGQMmhNdeRwJp4,10754
+ragdata-0.3.0.dist-info/METADATA,sha256=zZkMt8vvxCHlhLZ7Q_vgUdjsQ9oy2ml94o3pRMrXy_U,2676
+ragdata-0.3.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ragdata-0.3.0.dist-info/top_level.txt,sha256=bCuchiMafXxFH1ic9PE9mlRmeWsOprFvrLqDrCNi0z4,8
+ragdata-0.3.0.dist-info/RECORD,,
