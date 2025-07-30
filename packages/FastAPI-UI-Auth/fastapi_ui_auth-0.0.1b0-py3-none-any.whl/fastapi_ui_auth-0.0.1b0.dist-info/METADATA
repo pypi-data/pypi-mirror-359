@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: FastAPI-UI-Auth
+Version: 0.0.1b0
+Summary: Python module to add username and password authentication to specific FastAPI routes
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi==0.115.*
+Requires-Dist: jinja2==3.1.*
+Requires-Dist: pydantic==2.11.*
+Requires-Dist: python-dotenv==1.1.*
+Provides-Extra: dev
+Requires-Dist: websockets==15.0.*; extra == "dev"
+Requires-Dist: pre-commit==4.2.*; extra == "dev"
+Requires-Dist: uvicorn==0.34.*; extra == "dev"
+Dynamic: license-file
+
+# FastAPIAuthenticator
