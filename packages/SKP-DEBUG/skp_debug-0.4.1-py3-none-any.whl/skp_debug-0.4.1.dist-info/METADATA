@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: SKP_DEBUG
+Version: 0.4.1
+Summary: テスト
+Home-page: https://github.com/xfiletouhou/SKP_DEBUG
+Author: noname
+Author-email: hogehoge@hoge.hoge
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
