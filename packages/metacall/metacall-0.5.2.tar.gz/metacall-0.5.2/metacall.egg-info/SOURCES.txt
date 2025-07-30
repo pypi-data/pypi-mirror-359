@@ -1,0 +1,9 @@
+README.rst
+pyproject.toml
+metacall/__init__.py
+metacall/api.py
+metacall.egg-info/PKG-INFO
+metacall.egg-info/SOURCES.txt
+metacall.egg-info/dependency_links.txt
+metacall.egg-info/top_level.txt
+test/test_simple.py
