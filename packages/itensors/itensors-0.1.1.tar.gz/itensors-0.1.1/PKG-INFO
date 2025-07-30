@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: itensors
+Version: 0.1.1
+Summary: Python port of the ITensors framework
+Author: Miguel Costa
+Author-email: miguelptcosta1995@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+
+> [!WARNING]
+> This project is an independent Python Port of the [Julia project](https://github.com/ITensor/ITensors.jl). We are not officially affiliated with Flatiron nor the authors of ITensor.
+
+![PyPI - Version](https://img.shields.io/pypi/v/itensors)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/itensors)
+![PyPI - Format](https://img.shields.io/pypi/format/itensors)
+
+# Publish the wheel to [PyPI](https://pypi.org/project/itensors/)
+
+```bash
+poetry publish --build
+```
