@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langvision"
+version = "0.0.2"
+description = "A package for finetuning vision models."
+authors = [
+    { name = "Pritesh Raj", email = "priteshraj10@gmail.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=1.10",
+    "numpy",
+    "tqdm",
+    "pyyaml",
+    "scipy",
+    "matplotlib",
+    "pillow"
+]
+
+[project.urls]
+Homepage = "https://github.com/langtrain-ai/langtrain"
+Documentation = "https://github.com/langtrain-ai/langtrain/tree/main/docs"
+Source = "https://github.com/langtrain-ai/langtrain"
+Tracker = "https://github.com/langtrain-ai/langtrain/issues"
+
+[project.scripts]
+langvision-finetune = "langvision.cli.finetune:main"
+
+[bumpver]
+current_version = "0.1.10"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "Bump version: {old_version} → {new_version}"
+tag_message = "v{new_version}" 
