@@ -1,0 +1,8 @@
+geode_hybrid_geosciences/__init__.py,sha256=iSD4onJ4NgiuSNhPmfxkBKMiJHDtbZPiasPWUP94pTQ,68
+geode_hybrid_geosciences/pillar.py,sha256=_FV3O6608w5vzATgDs8LKUVR7xOTEuY9nzCs4XWi8ok,287
+geode_hybrid_geosciences/lib64/geode_hybrid_geosciences_py_pillar.cpython-311-x86_64-linux-gnu.so,sha256=V-B6CT5LvljD1JdjB5vaznJho5WQHUv7_OeEuLuwJzQ,5630632
+geode_hybrid_geosciences/lib64/libGeode-Hybrid_Geosciences_pillar.so,sha256=_74RD3N6DnCXeKevuXOOTfx3zMI_mQkreM2isx8m1ik,229768
+geode_hybrid_geosciences-1.4.0rc1.dist-info/METADATA,sha256=xVll5EOl7uZrwZyl12RSMS6vPvz98WEOUOrNQ5jlN44,2053
+geode_hybrid_geosciences-1.4.0rc1.dist-info/WHEEL,sha256=ITVdYpiTGnryqIbOR0i1wcdISo8YPJzlx8rAyocabzM,104
+geode_hybrid_geosciences-1.4.0rc1.dist-info/top_level.txt,sha256=Ncqf3Lkf2dplwQL8n3JIclYV1Bew7hqNHuFiu8Omxrw,25
+geode_hybrid_geosciences-1.4.0rc1.dist-info/RECORD,,
