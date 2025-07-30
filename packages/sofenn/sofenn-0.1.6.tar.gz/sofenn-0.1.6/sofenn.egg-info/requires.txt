@@ -1,0 +1,13 @@
+keras==3.10.0
+
+[:sys_platform == "darwin"]
+tensorflow==2.16.2
+
+[:sys_platform == "win32" or sys_platform == "linux"]
+tensorflow==2.19.0
+
+[build]
+pytest==8.4.1
+coverage==7.9.1
+pandas==2.3.0
+scikit-learn==1.5.2
