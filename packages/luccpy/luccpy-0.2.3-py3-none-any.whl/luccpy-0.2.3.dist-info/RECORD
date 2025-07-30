@@ -1,0 +1,10 @@
+luccpy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+luccpy/calc.py,sha256=pkuxPDc_Y4nON5vRpiR-CHE-3LcAd8qsnwbHlkTO4aQ,10635
+luccpy/calc_deterministic.py,sha256=FRChyvpmaQGNFYpcuXNdBYZwdT33J-8nZEgkWZkRedA,7345
+luccpy/geoutils.py,sha256=WpW3GIn6_2Is7R-T5SeFVl1Npg_r34DxCsYotCrcvVQ,2174
+luccpy/transformer.py,sha256=MR7pFaSVYR7js2u-MKKOrB1j_J91ewF8TP4M6zqOEUk,4173
+luccpy-0.2.3.dist-info/licenses/LICENSE,sha256=RlhcHqeibsemBvohe1ee3ox355KJu5tSwJDV3EhK4oI,1090
+luccpy-0.2.3.dist-info/METADATA,sha256=xbdT3Iwae18Y31QCz5__ROQdyrAEZEO0ZBP2KKSU6jU,1088
+luccpy-0.2.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+luccpy-0.2.3.dist-info/top_level.txt,sha256=TLVANSU_3k2rFUsAOfQxOSDVhDtCUIPDqer8JSkn1gA,7
+luccpy-0.2.3.dist-info/RECORD,,
