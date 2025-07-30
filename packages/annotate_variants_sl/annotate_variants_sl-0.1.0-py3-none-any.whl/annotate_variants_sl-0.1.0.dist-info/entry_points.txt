@@ -1,0 +1,3 @@
+[console_scripts]
+annotate-variants-sl=annotate_variants_sl.main:run_cli
+
