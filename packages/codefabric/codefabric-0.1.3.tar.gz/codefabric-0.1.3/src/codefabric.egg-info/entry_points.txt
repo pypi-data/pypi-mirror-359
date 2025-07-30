@@ -1,0 +1,2 @@
+[console_scripts]
+codefabric = codefabric.cli:main
