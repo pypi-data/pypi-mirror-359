@@ -1,0 +1,289 @@
+Metadata-Version: 2.1
+Name: solcore
+Version: 5.10.1
+Summary: Python-based solar cell simulator
+Keywords: photovoltaics,modelling,physics
+Author-Email: The Quantum Photovoltaics Group <nekins@unsw.edu.au>
+License:                    GNU LESSER GENERAL PUBLIC LICENSE
+                                Version 3, 29 June 2007
+         
+          Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+          Everyone is permitted to copy and distribute verbatim copies
+          of this license document, but changing it is not allowed.
+         
+         
+           This version of the GNU Lesser General Public License incorporates
+         the terms and conditions of version 3 of the GNU General Public
+         License, supplemented by the additional permissions listed below.
+         
+           0. Additional Definitions.
+         
+           As used herein, "this License" refers to version 3 of the GNU Lesser
+         General Public License, and the "GNU GPL" refers to version 3 of the GNU
+         General Public License.
+         
+           "The Library" refers to a covered work governed by this License,
+         other than an Application or a Combined Work as defined below.
+         
+           An "Application" is any work that makes use of an interface provided
+         by the Library, but which is not otherwise based on the Library.
+         Defining a subclass of a class defined by the Library is deemed a mode
+         of using an interface provided by the Library.
+         
+           A "Combined Work" is a work produced by combining or linking an
+         Application with the Library.  The particular version of the Library
+         with which the Combined Work was made is also called the "Linked
+         Version".
+         
+           The "Minimal Corresponding Source" for a Combined Work means the
+         Corresponding Source for the Combined Work, excluding any source code
+         for portions of the Combined Work that, considered in isolation, are
+         based on the Application, and not on the Linked Version.
+         
+           The "Corresponding Application Code" for a Combined Work means the
+         object code and/or source code for the Application, including any data
+         and utility programs needed for reproducing the Combined Work from the
+         Application, but excluding the System Libraries of the Combined Work.
+         
+           1. Exception to Section 3 of the GNU GPL.
+         
+           You may convey a covered work under sections 3 and 4 of this License
+         without being bound by section 3 of the GNU GPL.
+         
+           2. Conveying Modified Versions.
+         
+           If you modify a copy of the Library, and, in your modifications, a
+         facility refers to a function or data to be supplied by an Application
+         that uses the facility (other than as an argument passed when the
+         facility is invoked), then you may convey a copy of the modified
+         version:
+         
+            a) under this License, provided that you make a good faith effort to
+            ensure that, in the event an Application does not supply the
+            function or data, the facility still operates, and performs
+            whatever part of its purpose remains meaningful, or
+         
+            b) under the GNU GPL, with none of the additional permissions of
+            this License applicable to that copy.
+         
+           3. Object Code Incorporating Material from Library Header Files.
+         
+           The object code form of an Application may incorporate material from
+         a header file that is part of the Library.  You may convey such object
+         code under terms of your choice, provided that, if the incorporated
+         material is not limited to numerical parameters, data structure
+         layouts and accessors, or small macros, inline functions and templates
+         (ten or fewer lines in length), you do both of the following:
+         
+            a) Give prominent notice with each copy of the object code that the
+            Library is used in it and that the Library and its use are
+            covered by this License.
+         
+            b) Accompany the object code with a copy of the GNU GPL and this license
+            document.
+         
+           4. Combined Works.
+         
+           You may convey a Combined Work under terms of your choice that,
+         taken together, effectively do not restrict modification of the
+         portions of the Library contained in the Combined Work and reverse
+         engineering for debugging such modifications, if you also do each of
+         the following:
+         
+            a) Give prominent notice with each copy of the Combined Work that
+            the Library is used in it and that the Library and its use are
+            covered by this License.
+         
+            b) Accompany the Combined Work with a copy of the GNU GPL and this license
+            document.
+         
+            c) For a Combined Work that displays copyright notices during
+            execution, include the copyright notice for the Library among
+            these notices, as well as a reference directing the user to the
+            copies of the GNU GPL and this license document.
+         
+            d) Do one of the following:
+         
+                0) Convey the Minimal Corresponding Source under the terms of this
+                License, and the Corresponding Application Code in a form
+                suitable for, and under terms that permit, the user to
+                recombine or relink the Application with a modified version of
+                the Linked Version to produce a modified Combined Work, in the
+                manner specified by section 6 of the GNU GPL for conveying
+                Corresponding Source.
+         
+                1) Use a suitable shared library mechanism for linking with the
+                Library.  A suitable mechanism is one that (a) uses at run time
+                a copy of the Library already present on the user's computer
+                system, and (b) will operate properly with a modified version
+                of the Library that is interface-compatible with the Linked
+                Version.
+         
+            e) Provide Installation Information, but only if you would otherwise
+            be required to provide such information under section 6 of the
+            GNU GPL, and only to the extent that such information is
+            necessary to install and execute a modified version of the
+            Combined Work produced by recombining or relinking the
+            Application with a modified version of the Linked Version. (If
+            you use option 4d0, the Installation Information must accompany
+            the Minimal Corresponding Source and Corresponding Application
+            Code. If you use option 4d1, you must provide the Installation
+            Information in the manner specified by section 6 of the GNU GPL
+            for conveying Corresponding Source.)
+         
+           5. Combined Libraries.
+         
+           You may place library facilities that are a work based on the
+         Library side by side in a single library together with other library
+         facilities that are not Applications and are not covered by this
+         License, and convey such a combined library under terms of your
+         choice, if you do both of the following:
+         
+            a) Accompany the combined library with a copy of the same work based
+            on the Library, uncombined with any other library facilities,
+            conveyed under the terms of this License.
+         
+            b) Give prominent notice with the combined library that part of it
+            is a work based on the Library, and explaining where to find the
+            accompanying uncombined form of the same work.
+         
+           6. Revised Versions of the GNU Lesser General Public License.
+         
+           The Free Software Foundation may publish revised and/or new versions
+         of the GNU Lesser General Public License from time to time. Such new
+         versions will be similar in spirit to the present version, but may
+         differ in detail to address new problems or concerns.
+         
+           Each version is given a distinguishing version number. If the
+         Library as you received it specifies that a certain numbered version
+         of the GNU Lesser General Public License "or any later version"
+         applies to it, you have the option of following the terms and
+         conditions either of that published version or of any later version
+         published by the Free Software Foundation. If the Library as you
+         received it does not specify a version number of the GNU Lesser
+         General Public License, you may choose any version of the GNU Lesser
+         General Public License ever published by the Free Software Foundation.
+         
+           If the Library as you received it specifies that a proxy can decide
+         whether future versions of the GNU Lesser General Public License shall
+         apply, that proxy's public statement of acceptance of any version is
+         permanent authorization for you to choose that version for the
+         Library.
+         
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Project-URL: homepage, https://www.solcore.solar/
+Project-URL: documentation, http://solcore5.readthedocs.io
+Project-URL: repository, https://github.com/qpv-research-group/solcore5
+Project-URL: changelog, https://github.com/me/spam/blob/master/CHANGELOG.md
+Requires-Python: >=3.9
+Requires-Dist: numpy>=2.0.0
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: tmm
+Requires-Dist: natsort
+Requires-Dist: regex
+Requires-Dist: cycler
+Requires-Dist: pyyaml
+Requires-Dist: yabox
+Requires-Dist: joblib
+Requires-Dist: solsesame==2.1a1
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-mock; extra == "test"
+Requires-Dist: nbconvert; extra == "test"
+Requires-Dist: nbformat; extra == "test"
+Requires-Dist: pytest-rerunfailures; extra == "test"
+Requires-Dist: pytest-xdist; extra == "test"
+Provides-Extra: doc
+Requires-Dist: Sphinx; extra == "doc"
+Requires-Dist: recommonmark; extra == "doc"
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Description-Content-Type: text/markdown
+
+[![image](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/qpv-research-group/solcore5/develop?urlpath=lab)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![image](https://zenodo.org/badge/DOI/10.5281/zenodo.1185316.svg)](https://doi.org/10.5281/zenodo.1185316)
+[![image](https://img.shields.io/badge/License-LGPLv3-blue.svg)](http://www.gnu.org/licenses/lgpl.html)
+[![Documentation Status](http://readthedocs.org/projects/solcore5/badge/?version=latest)](http://solcore5.readthedocs.io/en/latest/?badge=latest)
+![Solcore](https://github.com/qpv-research-group/solcore5/actions/workflows/test_unit_and_examples.yml/badge.svg)
+[![codecov](https://codecov.io/gh/qpv-research-group/solcore5/branch/develop/graph/badge.svg)](https://codecov.io/gh/qpv-research-group/solcore5)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a1d2e6f702e64d878a67dcf85ce9b3b7)](https://app.codacy.com/gh/qpv-research-group/solcore5?utm_source=github.com&utm_medium=referral&utm_content=qpv-research-group/solcore5&utm_campaign=Badge_Grade_Settings)
+
+Solcore
+=======
+
+**Solcore** was born as a modular set of tools, written (almost) entirely in Python 3, to address some of the task we had to solve more. With time, however, it has evolved as a complete semiconductor solver able of modelling the optical and electrical properties of a wide range of solar cells, from quantum well devices to multi-junction solar cells.
+
+Please, visit [Solcore\'s Documentation](http://docs.solcore.solar), the [Tutorial](docs/source/Examples/tutorial.rst) for a step-by-step example of how to use *Solcore* to model a solar cell and also check the [Examples folder](examples) for more specific information and examples of usage.
+ 
+If you would like to be kept up to date on (important) releases and new features, please join the Solcore/RayFlare mailing list 
+[here](https://www.solcore.solar/mailing-list).
+
+![](docs/source/Infographics.jpg)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/research-software-engineering/"><img src="https://avatars.githubusercontent.com/u/6095790?v=4?s=100" width="100px;" alt="Diego Alonso Álvarez"/><br /><sub><b>Diego Alonso Álvarez</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=dalonsoa" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Adalonsoa" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=dalonsoa" title="Documentation">📖</a> <a href="#example-dalonsoa" title="Examples">💡</a> <a href="#ideas-dalonsoa" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-dalonsoa" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-dalonsoa" title="Maintenance">🚧</a> <a href="https://github.com/qpv-research-group/solcore5/pulls?q=is%3Apr+reviewed-by%3Adalonsoa" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=dalonsoa" title="Tests">⚠️</a> <a href="#data-dalonsoa" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.qpvgroup.org/phoebe-pearce"><img src="https://avatars.githubusercontent.com/u/25822065?v=4?s=100" width="100px;" alt="Phoebe Pearce"/><br /><sub><b>Phoebe Pearce</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=phoebe-p" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Aphoebe-p" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=phoebe-p" title="Documentation">📖</a> <a href="#example-phoebe-p" title="Examples">💡</a> <a href="#ideas-phoebe-p" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-phoebe-p" title="Maintenance">🚧</a> <a href="https://github.com/qpv-research-group/solcore5/pulls?q=is%3Apr+reviewed-by%3Aphoebe-p" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=phoebe-p" title="Tests">⚠️</a> <a href="#data-phoebe-p" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/twmwilson"><img src="https://avatars.githubusercontent.com/u/11062839?v=4?s=100" width="100px;" alt="Tom Wilson"/><br /><sub><b>Tom Wilson</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=twmwilson" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Atwmwilson" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=twmwilson" title="Documentation">📖</a> <a href="#example-twmwilson" title="Examples">💡</a> <a href="#ideas-twmwilson" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/qpv-research-group/solcore5/pulls?q=is%3Apr+reviewed-by%3Atwmwilson" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=twmwilson" title="Tests">⚠️</a> <a href="#data-twmwilson" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.qpvgroup.org"><img src="https://avatars.githubusercontent.com/u/128552?v=4?s=100" width="100px;" alt="Ned Ekins-Daukes"/><br /><sub><b>Ned Ekins-Daukes</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=iclned" title="Documentation">📖</a> <a href="#example-iclned" title="Examples">💡</a> <a href="#ideas-iclned" title="Ideas, Planning, & Feedback">🤔</a> <a href="#financial-iclned" title="Financial">💵</a> <a href="https://github.com/qpv-research-group/solcore5/pulls?q=is%3Apr+reviewed-by%3Aiclned" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=iclned" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MarkusFF"><img src="https://avatars.githubusercontent.com/u/1842361?v=4?s=100" width="100px;" alt="MarkusFF"/><br /><sub><b>MarkusFF</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=MarkusFF" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3AMarkusFF" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=MarkusFF" title="Documentation">📖</a> <a href="#example-MarkusFF" title="Examples">💡</a> <a href="#ideas-MarkusFF" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-MarkusFF" title="Design">🎨</a> <a href="#data-MarkusFF" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jcohen02"><img src="https://avatars.githubusercontent.com/u/8027703?v=4?s=100" width="100px;" alt="Jeremy Cohen"/><br /><sub><b>Jeremy Cohen</b></sub></a><br /><a href="#infra-jcohen02" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/PieceMaker"><img src="https://avatars.githubusercontent.com/u/4616735?v=4?s=100" width="100px;" alt="Jonathan Adams"/><br /><sub><b>Jonathan Adams</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=PieceMaker" title="Tests">⚠️</a> <a href="https://github.com/qpv-research-group/solcore5/pulls?q=is%3Apr+reviewed-by%3APieceMaker" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mhrownaghi"><img src="https://avatars.githubusercontent.com/u/56091044?v=4?s=100" width="100px;" alt="Mohammad Hosein Ronaghi"/><br /><sub><b>Mohammad Hosein Ronaghi</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=mhrownaghi" title="Tests">⚠️</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=mhrownaghi" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/federikovi"><img src="https://avatars.githubusercontent.com/u/17218213?v=4?s=100" width="100px;" alt="Federica Trevisan"/><br /><sub><b>Federica Trevisan</b></sub></a><br /><a href="#example-federikovi" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Artyko"><img src="https://avatars.githubusercontent.com/u/30906495?v=4?s=100" width="100px;" alt="Artyko"/><br /><sub><b>Artyko</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=Artyko" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/emmanuel-carreira"><img src="https://avatars.githubusercontent.com/u/30865344?v=4?s=100" width="100px;" alt="Emmanuel Carreira"/><br /><sub><b>Emmanuel Carreira</b></sub></a><br /><a href="#example-emmanuel-carreira" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://nimishverma.medium.com/"><img src="https://avatars.githubusercontent.com/u/17747722?v=4?s=100" width="100px;" alt="Nimish Verma"/><br /><sub><b>Nimish Verma</b></sub></a><br /><a href="#example-NimishVerma" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/P-Tillmann"><img src="https://avatars.githubusercontent.com/u/23280737?v=4?s=100" width="100px;" alt="Peter Tillmann"/><br /><sub><b>Peter Tillmann</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=P-Tillmann" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3AP-Tillmann" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=P-Tillmann" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jmllorens"><img src="https://avatars.githubusercontent.com/u/1357438?v=4?s=100" width="100px;" alt="jmllorens"/><br /><sub><b>jmllorens</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=jmllorens" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Ajmllorens" title="Bug reports">🐛</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=jmllorens" title="Tests">⚠️</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Abelarm"><img src="https://avatars.githubusercontent.com/u/6976921?v=4?s=100" width="100px;" alt="Luigi Giugliano"/><br /><sub><b>Luigi Giugliano</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=Abelarm" title="Code">💻</a> <a href="#infra-Abelarm" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/qpv-research-group/solcore5/commits?author=Abelarm" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MichaelNOz"><img src="https://avatars.githubusercontent.com/u/39320219?v=4?s=100" width="100px;" alt="michael_oz"/><br /><sub><b>michael_oz</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=MichaelNOz" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/hrishikesh-suresh-881020136"><img src="https://avatars.githubusercontent.com/u/30840337?v=4?s=100" width="100px;" alt="Hrishikesh Suresh"/><br /><sub><b>Hrishikesh Suresh</b></sub></a><br /><a href="#example-hrishikeshSuresh" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jscooksey"><img src="https://avatars.githubusercontent.com/u/18700514?v=4?s=100" width="100px;" alt="Justin Cooksey"/><br /><sub><b>Justin Cooksey</b></sub></a><br /><a href="#example-jscooksey" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yuriy-os"><img src="https://avatars.githubusercontent.com/u/12021598?v=4?s=100" width="100px;" alt="Yura Osychenko"/><br /><sub><b>Yura Osychenko</b></sub></a><br /><a href="#design-yuriy-os" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/canns99"><img src="https://avatars.githubusercontent.com/u/70144228?v=4?s=100" width="100px;" alt="canns99"/><br /><sub><b>canns99</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Acanns99" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AndiPOz"><img src="https://avatars.githubusercontent.com/u/66819562?v=4?s=100" width="100px;" alt="AndiPOz"/><br /><sub><b>AndiPOz</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3AAndiPOz" title="Bug reports">🐛</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://jaib.home.blog"><img src="https://avatars.githubusercontent.com/u/31744868?v=4?s=100" width="100px;" alt="Jai Agarwal"/><br /><sub><b>Jai Agarwal</b></sub></a><br /><a href="#example-jaibhageria" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jkrich"><img src="https://avatars.githubusercontent.com/u/29390895?v=4?s=100" width="100px;" alt="jkrich"/><br /><sub><b>jkrich</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/commits?author=jkrich" title="Code">💻</a> <a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Ajkrich" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Rushil17D070020"><img src="https://avatars.githubusercontent.com/u/89643859?v=4?s=100" width="100px;" alt="Rushil17D070020"/><br /><sub><b>Rushil17D070020</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3ARushil17D070020" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/etervo"><img src="https://avatars.githubusercontent.com/u/51174646?v=4?s=100" width="100px;" alt="Eric Tervo"/><br /><sub><b>Eric Tervo</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Aetervo" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eli-schwartz"><img src="https://avatars.githubusercontent.com/u/6551424?v=4?s=100" width="100px;" alt="Eli Schwartz"/><br /><sub><b>Eli Schwartz</b></sub></a><br /><a href="#infra-eli-schwartz" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sbhasan"><img src="https://avatars.githubusercontent.com/u/61343218?v=4?s=100" width="100px;" alt="sbhasan"/><br /><sub><b>sbhasan</b></sub></a><br /><a href="https://github.com/qpv-research-group/solcore5/issues?q=author%3Asbhasan" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
