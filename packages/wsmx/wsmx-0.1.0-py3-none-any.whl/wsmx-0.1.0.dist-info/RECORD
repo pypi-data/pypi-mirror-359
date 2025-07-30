@@ -1,0 +1,9 @@
+wsmx/__init_.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wsmx/cli.py,sha256=sVHXzcy_DoSTRWNHvJ5Tnpp8o6S-OATAJp0CNO8yy0E,1163
+wsmx/scaffold.json,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wsmx/workspace_manager.py,sha256=gpyjG15PEY2lFPeXyvyEBoaz8hhaNXXiqV49p2rbQD4,2754
+wsmx-0.1.0.dist-info/entry_points.txt,sha256=rywZkIcyhew5NunvoRvpOWreuhW-JJk3Jl2wwQPmDus,37
+wsmx-0.1.0.dist-info/LICENSE,sha256=rQbXGp4qaMfXk_8pkK6rewRqW_EwCSPhHyuP7hj1rYA,1100
+wsmx-0.1.0.dist-info/METADATA,sha256=DExVv3Coqu_8Bl-NtGnNlEBfIBrjcqunVtVDA8cKUy8,503
+wsmx-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+wsmx-0.1.0.dist-info/RECORD,,
