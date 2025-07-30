@@ -1,0 +1,3 @@
+[console_scripts]
+progress=progress.__main__:main
+
