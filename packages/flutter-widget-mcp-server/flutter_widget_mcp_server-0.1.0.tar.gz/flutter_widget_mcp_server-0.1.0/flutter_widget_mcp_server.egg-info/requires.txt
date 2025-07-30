@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+fastapi-mcp
+pydantic
+starlette
+typing-extensions

@@ -1,0 +1,3 @@
+include README.md
+include LICENSE
+recursive-include flutter_widget_mcp_server/data *.json
