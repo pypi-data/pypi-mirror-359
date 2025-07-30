@@ -1,0 +1,6 @@
+
+[dev]
+pytest
+fastapi
+uvicorn[standard]
+httpx
