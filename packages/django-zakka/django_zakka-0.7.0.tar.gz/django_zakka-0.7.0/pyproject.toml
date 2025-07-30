@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-zakka"
+version = "0.7.0"
+requires-python = ">=3.9"
+license = { text = "MIT License" }
+authors = [{ name = "Paul Traylor" }]
+keywords = ["django"]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Internet :: WWW/HTTP",
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+dependencies = [
+    "Django>=3.2",
+    "importlib-metadata>=1.0; python_version < \"3.8\"",
+]
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[project.urls]
+Issues = "http://github.com/kfdm/django-zakka/issues"
+"Source Code" = "http://github.com/kfdm/django-zakka"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint] # https://beta.ruff.rs/docs/rules/
+
+select = [
+    "C",       # complexity
+    "E",       # pycodestyle
+    "F",       # Unused imports
+    "I",       # isort
+    "PGH004",  # Use specific rule codes when using noqa
+    "PLC0414", # Useless import alias. Import alias does not rename original package.
+    "S103",    # bad-file-permissions
+    "TRY004",  # Prefer TypeError exception for invalid type
+    "UP",      # pyupgrade
+    "W",       # pycodestyle
+]
+ignore = [
+    "E501", # Don't enforce line length for now
+    "E741", # Ambiguous variable name
+]
+
+[project.optional-dependencies]
+requests = [
+    "requests",
+]
