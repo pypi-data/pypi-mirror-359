@@ -1,0 +1,14 @@
+django_workspaces/__init__.py,sha256=hp5hUNZij9nR2iukGqbZAyxWMZxG2w3LCRxyfvNPG9o,2806
+django_workspaces/_compat.py,sha256=vLgdGvaSApBvHJZ3JK7S-dRk1v_TcFf81zyxHzE6NIE,384
+django_workspaces/apps.py,sha256=z6wVAXJjYHEg2UpyfDZY-YciGc4T46VxcBxHKXyRNkQ,365
+django_workspaces/middleware.py,sha256=-RSe99WOUk2fs32znJ9fuUdFGY-ZZFdzNWreub3WwHg,1504
+django_workspaces/models.py,sha256=EALgPW4gGw6CMMKqzagbzWLPO4I06-u6MLXa6BL_ymM,829
+django_workspaces/py.typed,sha256=Qn1PtAFCQCHxVY6FV1vsRH98Re39dTxwl3lQRksOGpY,20
+django_workspaces/signals.py,sha256=aspua_A38H-QSym7qiZ5SOE7jB50SY3S3m2N4Tzxj5w,471
+django_workspaces/types.py,sha256=JawPN4lIPKDERS4pm83z44sy7ea2MmOUFJbjAwQQ4YA,589
+django_workspaces/migrations/0001_initial.py,sha256=FKwAb9uyrYVhBi6PznmG9skoXLV2bwO0SKw-mUUGfVA,833
+django_workspaces/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_workspaces-0.0.1a1.dist-info/METADATA,sha256=A--DX4jj1QKAc6ssZXfYW0fRHVbUXNLG8QXUkE_6DD8,1930
+django_workspaces-0.0.1a1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+django_workspaces-0.0.1a1.dist-info/licenses/LICENSE.txt,sha256=kw90zQM3KTw6c7cenDnJY8bGSv6MM46DpIXHiU9g_h8,1101
+django_workspaces-0.0.1a1.dist-info/RECORD,,
