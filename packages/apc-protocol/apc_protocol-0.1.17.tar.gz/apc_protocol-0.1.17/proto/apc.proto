@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package apc;
+
+message BaseMessage {
+  string batch_id = 1;
+  string sender_id = 2;
+  int64 timestamp = 3;
+}
+
+message ProposeTaskRequest {
+  BaseMessage base = 1;
+  string step_name = 2;
+  map<string, string> params = 3;
+  string role = 4; // always "conductor"
+}
+
+message AcceptResponse {
+  BaseMessage base = 1;
+  string step_name = 2;
+}
+
+message RejectResponse {
+  BaseMessage base = 1;
+  string step_name = 2;
+  string reason = 3;
+}
+
+message CompletedNotification {
+  BaseMessage base = 1;
+  string step_name = 2;
+  bool success = 3;
+  map<string, string> result = 4;
+}
+
+message FailedNotification {
+  BaseMessage base = 1;
+  string step_name = 2;
+  string error_code = 3;
+  string error_msg = 4;
+}
+
+message TakeOverRequest {
+  BaseMessage base = 1;
+  string new_conductor_id = 2;
+}
+
+message Response {
+  BaseMessage base = 1;
+  bool success = 2;
+  string message = 3;
+}
+
+// APC Service definition for gRPC communication
+service APCService {
+  rpc ProposeTask(ProposeTaskRequest) returns (Response);
+  rpc SendAccept(AcceptResponse) returns (Response);
+  rpc SendCompleted(CompletedNotification) returns (Response);
+  rpc SendFailed(FailedNotification) returns (Response);
+  rpc SendReject(RejectResponse) returns (Response);
+  rpc SendTakeOver(TakeOverRequest) returns (Response);
+}

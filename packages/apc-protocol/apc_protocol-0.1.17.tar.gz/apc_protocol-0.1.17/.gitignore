@@ -1,0 +1,203 @@
+# =============================================================================
+# APC (Agent Protocol Conductor) - .gitignore
+# =============================================================================
+# This file excludes build artifacts, runtime data, and sensitive files
+# from version control for the APC project.
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.so
+*.dll
+*.dylib
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+test-output/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.spyderproject
+.spyproject
+.ropeproject
+.settings/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+Thumbs.db:encryptable
+Icon?
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
+.secrets
+secrets.txt
+config.ini
+*.key
+*.pem
+*.p12
+*.p8
+*.crt
+*.cert
+apikeys.txt
+
+# APC Protocol specific files
+checkpoints/
+reports/
+logs/
+*.log
+*.tmp
+temp/
+tmp/
+
+# Generated protobuf files (can be regenerated)
+src/apc/messages/apc_pb2.py
+src/apc/messages/apc_pb2_grpc.py
+
+# Documentation build artifacts
+docs/_build/
+docs/build/
+site/
+
+# Package build artifacts
+*.tar.gz
+*.whl
+*.zip
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# pyenv
+.python-version
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Redis dump files
+dump.rdb
+
+# Node.js (if any future JavaScript/TypeScript components)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
