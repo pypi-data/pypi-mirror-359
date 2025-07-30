@@ -1,0 +1,8 @@
+gil_node_openai/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gil_node_openai/openai_connector.py,sha256=-g54ft8jhwWQrmYCnbaKEOiU3CYK4Z0EF3Y73kjU0S0,1850
+gil_node_openai/openai_image_generator.py,sha256=qmF-GQcemsVkZBWn33PxJHHYwGck2TQub1MjoikVo0c,2058
+gil_node_openai-0.1.0.dist-info/METADATA,sha256=PAPigVUVgXAe-JkH_f6YLTtqMnCpP6v3brJLVRiT8XA,675
+gil_node_openai-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gil_node_openai-0.1.0.dist-info/entry_points.txt,sha256=twOzH0u7jKL5h-Mno1O9j8ODaI_9TGWDsQAkIxPpoNY,170
+gil_node_openai-0.1.0.dist-info/top_level.txt,sha256=Jl04P_FwaYbclmTYXREiDkTLUbv2PVM8Y3iLO--T46E,16
+gil_node_openai-0.1.0.dist-info/RECORD,,

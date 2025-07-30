@@ -1,0 +1,3 @@
+[gil.nodes]
+OpenAI-Connector = gil_node_openai.openai_connector:OpenAIConnectorNode
+OpenAI-GenerateImage = gil_node_openai.openai_image_generator:OpenAIGenerateImageNode
