@@ -1,0 +1,6 @@
+main.py
+pyproject.toml
+additive_manufacturing.egg-info/PKG-INFO
+additive_manufacturing.egg-info/SOURCES.txt
+additive_manufacturing.egg-info/dependency_links.txt
+additive_manufacturing.egg-info/top_level.txt
