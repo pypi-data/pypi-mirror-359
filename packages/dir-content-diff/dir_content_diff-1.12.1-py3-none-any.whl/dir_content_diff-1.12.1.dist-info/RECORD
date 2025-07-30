@@ -1,0 +1,17 @@
+dir_content_diff/__init__.py,sha256=pRziO_II1u2QCJRvjrroc9QNKMCbE05lVY4rk33Dfbw,15830
+dir_content_diff/base_comparators.py,sha256=KXTBjao6txYfWISJNcdQi-BejtfRhAG-8tW_yn35wqE,26309
+dir_content_diff/pytest_plugin.py,sha256=ehSEuxYs3cRsMNsCXEh7bWqof43Gggk2nzMr251Le1s,1961
+dir_content_diff/util.py,sha256=InGfULKvlrald76rhXSRoKieEgxtHnGpupVSsswi4s4,6108
+dir_content_diff/cli/__init__.py,sha256=MBB9Coyisral-61RQoJSemiqyai-WLL1Yc2GuGG2c2g,5969
+dir_content_diff/comparators/__init__.py,sha256=l3e3COww_Ybw0-JmUeU0cAYBR-xzVKsZ0ty8zMspKPk,364
+dir_content_diff/comparators/dependencies.json,sha256=0crgRwt4bhzG7bwamRlRQC_9LJiun6g_KKJyjHDTXec,203
+dir_content_diff/comparators/morphio.py,sha256=xfrOnqZV4YaEej2RhFPLLvMGaKxUqhgArFbOy95kS5U,1929
+dir_content_diff/comparators/pandas.py,sha256=anPJVdI-raNmpl3vqLrTzkbjVHndxYIoznPKAX58FFo,7661
+dir_content_diff/comparators/voxcell.py,sha256=EADKmZ9APkWA3lRRYX2Ff784kTPgx6eRT7UgmjPY31w,5346
+dir_content_diff-1.12.1.dist-info/licenses/AUTHORS.md,sha256=wye_V3N5cVTP5JONqhHkC6ws6cTLbN3oPWwGGbYIkRY,63
+dir_content_diff-1.12.1.dist-info/licenses/LICENSE.txt,sha256=6-wE4HB12BeS7zmz-3sz0Xc1mye72b32feAyxBAyLDs,11354
+dir_content_diff-1.12.1.dist-info/METADATA,sha256=mxkc11nabi6WC-0U1WcNEhi4wQmrCQYFL9X4awLT_9Q,10217
+dir_content_diff-1.12.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dir_content_diff-1.12.1.dist-info/entry_points.txt,sha256=jbf28zYeCSBj1hI3mii2O_hN7X6AfS5X8H5vysjXTKQ,125
+dir_content_diff-1.12.1.dist-info/top_level.txt,sha256=YYKrmU6v4oXoD0vkgEq86rpAuAJq4eeilgQcLzZj1a8,17
+dir_content_diff-1.12.1.dist-info/RECORD,,

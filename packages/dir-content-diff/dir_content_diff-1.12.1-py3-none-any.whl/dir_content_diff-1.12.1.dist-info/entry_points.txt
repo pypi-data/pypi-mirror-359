@@ -1,0 +1,5 @@
+[console_scripts]
+dir-content-diff = dir_content_diff.cli:main
+
+[pytest11]
+dir-content-diff = dir_content_diff.pytest_plugin
