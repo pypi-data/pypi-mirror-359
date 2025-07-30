@@ -1,0 +1,129 @@
+name: Publish to PyPI / Github
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:  
+    inputs:
+      test_only:
+        description: 'Only publish to TestPyPI (for testing)'
+        required: false
+        default: false
+        type: boolean
+      version:
+        description: 'Version to publish (e.g., 0.1.0)'
+        required: true
+        type: string
+
+jobs:
+  build-and-publish-pypi:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Extract version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION=$(echo $GITHUB_REF | sed -n 's/refs\/tags\/v//p')
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Update version in pyproject.toml
+        run: sed -i "s/version = \".*\"/version = \"$VERSION\"/" pyproject.toml
+
+      - name: Build package
+        run: uv build
+
+      - name: Publish to TestPyPI
+        if: github.event_name == 'workflow_dispatch' && inputs.test_only
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.TEST_PYPI_API_KEY }}
+        run: |
+          if [ -z "$UV_PUBLISH_TOKEN" ]; then
+            echo "❌ TEST_PYPI_API_KEY secret not found"
+            exit 1
+          fi
+          uv publish --publish-url https://test.pypi.org/legacy/
+
+      - name: Publish to PyPI
+        if: |
+          (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')) ||
+          (github.event_name == 'workflow_dispatch' && !inputs.test_only)
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_KEY }}
+        run: |
+          if [ -z "$UV_PUBLISH_TOKEN" ]; then
+            echo "❌ PYPI_API_KEY secret not found"
+            exit 1
+          fi
+          uv publish --publish-url https://upload.pypi.org/legacy/
+
+      - name: Upload built artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+  create-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: build-and-publish-pypi
+    if: |
+      (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')) ||
+      (github.event_name == 'workflow_dispatch' && !inputs.test_only)
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download built artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Check tag for pre-release
+        id: prerelease_check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # 手动触发时，根据版本号判断是否为预发布版本
+            if [[ "${{ inputs.version }}" == *"alpha"* ]] || [[ "${{ inputs.version }}" == *"beta"* ]] || [[ "${{ inputs.version }}" == *"rc"* ]]; then
+              echo "prerelease=true" >> $GITHUB_OUTPUT
+            else
+              echo "prerelease=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            # Git 标签触发时，根据标签名判断
+            if [[ "${{ github.ref_name }}" == *"alpha"* ]] || [[ "${{ github.ref_name }}" == *"beta"* ]] || [[ "${{ github.ref_name }}" == *"rc"* ]]; then
+              echo "prerelease=true" >> $GITHUB_OUTPUT
+            else
+              echo "prerelease=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Release to GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && format('v{0}', inputs.version) || github.ref_name }}
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ steps.prerelease_check.outputs.prerelease }}
+          files: dist/*
