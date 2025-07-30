@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: xmesh-io
+Version: 0.1.0
+Summary: Unified entrypoint for XpectraNet Protocol: mesh cognition, protocol engine, and client SDK.
+Author-email: Xpectra Data Technologies Ltd <dev@xpectradata.com>
+License: Business Source License 1.1 – XpectraNet Derivative (BSL-1.1-XD)
+        
+        Copyright (c) 2025 Xpectra Data Technologies Ltd
+        
+        
+Project-URL: Homepage, https://xmesh.io
+Project-URL: Documentation, https://xmesh.io/docs
+Project-URL: Source, https://github.com/xmesh-io/xmesh
+Project-URL: Changelog, https://github.com/xmesh-io/xmesh/releases
+Keywords: XMesh,XpectraNet,mesh cognition,protocol,symbolic memory,SVAF,AI,multi-agent,cognitive infrastructure
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# XMesh
+
+This is the meta-package for the XMesh Protocol, providing the unified namespace for mesh cognition engines, APIs, and SDKs.
+
+> **Note:** This is a placeholder package.  
+Install `xmesh-protocol`, `xmesh-client`, or other XMesh modules for functionality.
+
+See [https://xmesh.io](https://xmesh.io) for more information.
