@@ -1,0 +1,30 @@
+Metadata-Version: 2.3
+Name: f-lib
+Version: 0.4.3
+Summary: Python library created by Kyle Finley, for Kyle Finley.
+License: Apache-2.0
+Author: Kyle Finley
+Author-email: kyle@finley.sh
+Maintainer: Kyle Finley
+Maintainer-email: kyle@finley.sh
+Requires-Python: >=3.11, <4
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Dist: platformdirs (>=4.1.0,<5.0.0)
+Requires-Dist: pydantic (>=2.7.4,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.3.4,<3.0.0)
+Requires-Dist: rich (>=14.0.0,<15.0.0)
+Project-URL: Documentation, https://f-lib.readthedocs.io
+Project-URL: Homepage, https://f-lib.readthedocs.io
+Project-URL: changelog, https://github.com/finleyfamily/f-lib/releases
+Project-URL: issues, https://github.com/finleyfamily/f-lib/issues
+Project-URL: source, https://github.com/finleyfamily/f-lib
