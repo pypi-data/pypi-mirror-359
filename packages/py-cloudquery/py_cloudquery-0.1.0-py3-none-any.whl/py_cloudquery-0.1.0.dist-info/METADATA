@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: py-cloudquery
+Version: 0.1.0
+Summary: Meta package for cloudquery CLI, selects the right binary for your platform.
+Author-email: CloudQuery <info@cloudquery.io>
+Requires-Python: >=3.7
+Requires-Dist: py-cloudquery-mac-arm64; platform_system == "Darwin" and platform_machine == "arm64"
