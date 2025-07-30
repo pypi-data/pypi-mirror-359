@@ -1,0 +1,18 @@
+[project]
+name = "php-framework-detector"
+version = "0.1.0"
+description = "A modern, async PHP framework detector."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.11.7",
+    "rich>=14.0.0",
+    "structlog>=25.4.0",
+    "typer>=0.16.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
