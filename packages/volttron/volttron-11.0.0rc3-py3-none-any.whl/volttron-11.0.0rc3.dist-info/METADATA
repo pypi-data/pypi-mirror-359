@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: volttron
+Version: 11.0.0rc3
+Summary: VOLTTORN wrapper library to bundle volttron-core voltron-lib-auth and volttron-lib-zmq.
+License: Apache-2.0
+Author: volttron
+Author-email: volttron@pnnl.gov
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: volttron-core (>=2.0.0rc13,<3.0.0)
+Requires-Dist: volttron-lib-auth (>=2.0.0rc3,<3.0.0)
+Requires-Dist: volttron-lib-zmq (>=2.0.0rc6,<3.0.0)
+Project-URL: Documentation, https://volttron.readthedocs.org
+Project-URL: Homepage, https://volttron.org
+Project-URL: Repository, https://github.com/eclipse-volttron/volttron-zmq
+Description-Content-Type: text/markdown
+
+# volttron-zmq
+
+This is a wrapper or convenience package that installs volttron-core, volttron-lib-auth, and volttron-lib-zmq.  All 
+three packages are required to start the modular volttron platform (>=10.0.0)
+
