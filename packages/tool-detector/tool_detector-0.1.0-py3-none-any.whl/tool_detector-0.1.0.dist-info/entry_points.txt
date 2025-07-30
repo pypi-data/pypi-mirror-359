@@ -1,0 +1,2 @@
+[console_scripts]
+tool-detector = tool_detector.cli:main
