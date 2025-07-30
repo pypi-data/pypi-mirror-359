@@ -1,0 +1,3 @@
+cubicweb-card
+#https://hg.logilab.org/master/cubes/card/archive/default.tar.bz2
+git+https://github.com/psycojoker/pytest-capture-deprecatedwarnings
