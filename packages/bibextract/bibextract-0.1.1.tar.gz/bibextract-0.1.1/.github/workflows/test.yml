@@ -1,0 +1,80 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    name: Coverage for ${{ matrix.os }} with Python ${{ matrix.python-version }}
+    strategy:
+      matrix:
+        os: ["ubuntu"]
+        python-version: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install cargo-llvm-cov
+        uses: taiki-e/install-action@cargo-llvm-cov
+      - uses: Swatinem/rust-cache@v2.8.0
+        with:
+          key: coverage-cargo-${{ matrix.os }}-py${{ matrix.python-version }}
+        continue-on-error: true
+      - name: Install Python dependencies
+        run: uv sync --all-extras
+
+      - name: Run coverage
+        run: |
+          # Get Python paths from uv
+          PYTHON_PATH=$(uv run python -c "import sys; print(sys.executable)")
+          PYTHON_HOME=$(dirname $(dirname $PYTHON_PATH))
+          PYTHON_VERSION=$(uv run python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+          
+          # Find the actual Python library location
+          PYTHON_LIB_DIR=$(uv run python -c "import sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
+          PYTHON_INCLUDE_DIR=$(uv run python -c "import sysconfig; print(sysconfig.get_path('include'))")
+
+          # Set library paths for PyO3 - try multiple possible locations
+          export LD_LIBRARY_PATH="$PYTHON_LIB_DIR:$PYTHON_HOME/lib:$LD_LIBRARY_PATH"
+          export PKG_CONFIG_PATH="$PYTHON_HOME/lib/pkgconfig:$PKG_CONFIG_PATH"
+          export PYTHONPATH="$PYTHON_HOME/lib/python$PYTHON_VERSION/site-packages:$PYTHONPATH"
+
+          # Set PyO3 environment variables
+          export PYO3_PYTHON=$PYTHON_PATH
+          export PYTHON_SYS_EXECUTABLE=$PYTHON_PATH
+
+          # Coverage setup
+          source <(cargo llvm-cov show-env --export-prefix)
+          export CARGO_TARGET_DIR=$CARGO_LLVM_COV_TARGET_DIR
+          export CARGO_INCREMENTAL=1
+
+          # Run Rust tests with coverage
+          cargo llvm-cov clean --workspace
+          cargo test
+          cargo llvm-cov report --lcov --output-path coverage.lcov
+
+          # Run Python tests with coverage
+          uv run maturin develop
+          uv run pytest tests --cov=bpeasy --cov-report xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.lcov,coverage.xml
+          name: ${{ matrix.os }}-py${{ matrix.python-version }}
