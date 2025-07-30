@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "test-pypi-package3-toby"
+version = "0.1.0"
+description = ""
+authors = ["caow <caow@eetrust.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
