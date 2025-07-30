@@ -1,0 +1,2 @@
+requests>=2.32.3
+shipyard-templates>=0.9.0
