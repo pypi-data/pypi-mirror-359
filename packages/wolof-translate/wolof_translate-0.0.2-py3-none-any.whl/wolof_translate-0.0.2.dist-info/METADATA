@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: wolof-translate
+Version: 0.0.2
+Summary: Contain function and classes to process corpora for making translation between wolof text and other languages.
+Author: Oumar Kane
+Author-email: oumar.kane@univ-thies.sn
+Requires-Dist: accelerate
+Requires-Dist: torch
+Requires-Dist: spacy
+Requires-Dist: nltk
+Requires-Dist: gensim
+Requires-Dist: furo
+Requires-Dist: streamlit
+Requires-Dist: tokenizers
+Requires-Dist: tensorboard
+Requires-Dist: evaluate
+Requires-Dist: transformers
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: plotly
+Requires-Dist: sacrebleu
+Requires-Dist: nlpaug
+Requires-Dist: wandb
+Requires-Dist: pytorch-lightning
+Requires-Dist: selenium
+Requires-Dist: sentencepiece
+Requires-Dist: peft
+Requires-Dist: rouge-score
+
