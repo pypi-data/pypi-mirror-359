@@ -1,0 +1,2 @@
+[console_scripts]
+ml-drift-detection = ml_drift_detection.cli:main
