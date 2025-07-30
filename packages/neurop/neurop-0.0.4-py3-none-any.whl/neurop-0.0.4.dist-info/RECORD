@@ -1,0 +1,11 @@
+neurop/__init__.py,sha256=GmNSLjU-N0CWPxsc7FGC7p8tiu6qlb2tYP3CVS7zsPs,380
+neurop/base.py,sha256=Opr-Cav6B47nscL33nhzgpxvDVXD45i4gxXbEpYK6VQ,2757
+neurop/layers/__init__.py,sha256=8kX5aviJ3tXzOD8j3qDi2cIpHSdBkMUnaROCqdd9Jeg,308
+neurop/layers/iolayers.py,sha256=uhCYISZO25JTx-EuhfuzpnJvoF4qZ8Kp3bChnxhcV4U,1915
+neurop/layers/spectralconv.py,sha256=dVaPCY3CGUWT0UF6fwqb26Wvb87XLQvYS9ygc6lMltU,7366
+neurop/operators/__init__.py,sha256=JFDMpU0IoVLeMtuxJooZMx53v7x2lgjdhjw1OFYkYXY,55
+neurop/operators/fourier.py,sha256=Wi5TYVE9Z9pjJsfMnzDQTpB1m9idfmYywEHP-gpHfUo,3039
+neurop-0.0.4.dist-info/METADATA,sha256=XU-K_VPxyHuG8rkpjIXotjIRsjD2H8PYb0TtgEIwCCg,2313
+neurop-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+neurop-0.0.4.dist-info/licenses/LICENSE,sha256=DQZcgOR9oRGTXlnTT4Bf5ftICa3XuqR9Djp42z1_TzM,1076
+neurop-0.0.4.dist-info/RECORD,,
