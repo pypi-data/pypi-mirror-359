@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+Devkek.egg-info/PKG-INFO
+Devkek.egg-info/SOURCES.txt
+Devkek.egg-info/dependency_links.txt
+Devkek.egg-info/top_level.txt
+xys/Devil.py
+xys/__init__.py
