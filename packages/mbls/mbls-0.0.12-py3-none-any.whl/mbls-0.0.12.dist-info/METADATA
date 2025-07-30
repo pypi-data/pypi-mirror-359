@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: mbls
+Version: 0.0.12
+Summary: Model-Based Local Search algorithm designer built on Routix
+Project-URL: Repository, https://github.com/junetech/mbls.git
+Author-email: JuneTech <junetech0@gmail.com>
+License-Expression: MIT
+Requires-Python: ==3.11.*
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: routix==0.0.12
+Description-Content-Type: text/markdown
+
+# mbls
+
+A Python toolkit for **Model-Based Local Search** (MBLS) algorithm design, built on top of [Routix](https://pypi.org/project/routix/). This library provides a modular framework for orchestrating subroutines, managing experimental runs, and integrating mathematical models into heuristic search routines, with a focus on CP-SAT (OR-Tools) integration.
+
+## Features
+
+- **Modular Architecture**: Compose and extend LNS-style or hybrid metaheuristics using reusable subroutine components.
+- **CP-SAT Integration**: Ready-to-use classes for fixed and optional interval scheduling, custom CP models, and modern solution progress logging.
+- **Experiment Management**: Leverage Routix for structured routine execution, logging, timers, and experiment summarization.
+- **Extensible Modeling Layer**: Easily add custom models, constraints, or solvers for new problem domains.
+- **Objective Tracking**: Built-in utilities for tracking objective values and bounds over time, with type-safe callback recorders.
+- **Visualization Tools**: Painter module for objective value and time series plotting.
+
+## Installation
+
+```sh
+pip install mbls
+```
+
+- Requires Python 3.11
+- Core dependency: `routix`
+- For CP-SAT features: `ortools`
+
+## Quick Example
+
+```python
+from mbls.cpsat import CustomCpModel, ObjectiveValueRecorder, ObjectiveBoundRecorder
+
+model = CustomCpModel()
+# Define variables, constraints, and objective
+# ...
+
+# Attach recorders for progress logging
+model.init_solver(computational_time=10.0, num_workers=4) # recorders are attached automatically
+cp_solver_status = model.solver.solve(
+    model, solution_callback=model.obj_value_recorder
+)
+
+# Access logs:
+print(model.obj_value_recorder.elapsed_time_and_value)
+print(model.obj_bound_recorder.elapsed_time_and_bound)
+```
+
+## Extending mbls
+
+`mbls` is designed for research and experimentation. You can:
+
+- Subclass `CpSubroutineController` to define custom LNS or hybrid metaheuristics
+- Extend `CustomCpModel` or use `CpModelWithFixedInterval` / `CpModelWithOptionalFixedInterval` for new scheduling domains
+- Compose repeatable flows with structured routine names and modular inputs
+
+## Project Structure
+
+```text
+src/mbls/
+    __init__.py
+    solver_status.py
+    cpsat/
+        __init__.py
+        callbacks/
+            __init__.py
+            objective_value_recorder.py
+            objective_bound_recorder.py
+            search_stopper.py
+        cp_model_with_fixed_interval.py
+        cp_model_with_optional_fixed_interval.py
+        cp_subroutine_controller.py
+        custom_cp_model.py
+        obj_value_bound_store.py
+        solver_report.py
+        status.py
+        solution_progress_logger.py  # (deprecated)
+    painter/
+        __init__.py
+        obj_value_bound_plotter.py
+        time_series_plotter.py
+
+tests/
+    test_custom_cp_model.py
+    test_cp_subroutine_controller.py
+    test_objective_recorders.py
+    test_obj_value_bound_store.py
+    test_solver_report.py
+    ...
+```
+
+## Notes
+
+- All progress logging and callback utilities are now routed through `ObjectiveValueRecorder` and `ObjectiveBoundRecorder`.
+- The legacy `SolutionProgressLogger` is deprecated. `solution_progress_logger.py` is retained for reference only.
+- The codebase is fully type-annotated and tested with `pytest`.
+
+## License
+
+MIT License
