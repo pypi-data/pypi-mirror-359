@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/fitsm/__init__.py
+src/fitsm/core.py
+src/fitsm/db.py
+src/fitsm/main.py
+src/fitsm.egg-info/PKG-INFO
+src/fitsm.egg-info/SOURCES.txt
+src/fitsm.egg-info/dependency_links.txt
+src/fitsm.egg-info/entry_points.txt
+src/fitsm.egg-info/requires.txt
+src/fitsm.egg-info/top_level.txt
+tests/test_main.py

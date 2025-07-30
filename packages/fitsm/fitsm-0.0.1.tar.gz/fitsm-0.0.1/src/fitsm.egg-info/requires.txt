@@ -1,0 +1,9 @@
+astropy
+ipykernel
+tqdm
+pyyaml
+
+[test]
+pytest
+jaxoplanet>=0.1.0
+pytest-xdist

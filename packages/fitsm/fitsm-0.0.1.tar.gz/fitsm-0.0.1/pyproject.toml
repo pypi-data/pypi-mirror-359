@@ -1,0 +1,14 @@
+[project]
+name = "fitsm"
+version = "0.0.1"
+description = "Raw FITS parser"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["astropy", "ipykernel", "tqdm", "pyyaml"]
+license = { text = "MIT" }
+
+[project.scripts]
+fitsm = "fitsm.main:main"
+
+[project.optional-dependencies]
+test = ["pytest", "jaxoplanet>=0.1.0", "pytest-xdist"]
