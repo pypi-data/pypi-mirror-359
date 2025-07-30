@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: mental1104
+Version: 0.1.1
+Summary: A custom package with useful functions
+Author-email: mental1104 <mental1104@gmail.com>
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: aiohttp
+Dynamic: license-file
