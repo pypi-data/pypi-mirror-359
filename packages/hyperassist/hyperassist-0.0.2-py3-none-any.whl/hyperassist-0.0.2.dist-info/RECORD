@@ -1,0 +1,11 @@
+hyperassist/__init__.py,sha256=brdx9pCBUK8Ej9ln2vwEEe4qJShX9iif0-iqL5eIUkQ,43
+hyperassist/log_assist/__init__.py,sha256=y0c6M6Ky5BgnK_U3YiH2hgZrAijasSnkRFsIiItaSnw,1497
+hyperassist/log_assist/analyzer.py,sha256=E9BzQ1ixpc7nzBGkHFJGq6o2oyleRRQ16JBoUovGAHE,6544
+hyperassist/parameter_assist/__init__.py,sha256=CYT1P9VetVzDN6tGrevcCywSWVp7mAw-KlQdK7OISRE,2412
+hyperassist/parameter_assist/suggestor.py,sha256=qNVIcXHrvby3mPPLBMygkgYTZkJmT__rdLfEJL63c60,5093
+hyperassist-0.0.2.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+test/test.py,sha256=NegeEYlOPbSd8OKatC_PVkLiwt7yJBvaZNYmT2DR_80,2442
+hyperassist-0.0.2.dist-info/METADATA,sha256=ekJ1JTU0cfdx6LpqObkd9NQwyLWtDDWWNGTPIrDVUN8,3722
+hyperassist-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hyperassist-0.0.2.dist-info/top_level.txt,sha256=DM6-CTIzLbP0xpJznQQO3nqTbNuUwS9v5oSnP7jdziE,17
+hyperassist-0.0.2.dist-info/RECORD,,
