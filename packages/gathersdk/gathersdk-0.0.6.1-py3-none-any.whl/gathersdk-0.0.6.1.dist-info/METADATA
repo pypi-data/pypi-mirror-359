@@ -1,0 +1,332 @@
+Metadata-Version: 2.1
+Name: gathersdk
+Version: 0.0.6.1
+Summary: Python SDK for building GatherChat agents
+Home-page: https://github.com/gatherchat/gatherchat-agent-sdk
+Author: GatherChat Team
+Author-email: sdk@gather.is
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/gatherchat/gatherchat-agent-sdk/issues
+Project-URL: Source, https://github.com/gatherchat/gatherchat-agent-sdk
+Project-URL: Documentation, https://docs.gatherchat.com/sdk
+Keywords: gatherchat gathersdk agent chatbot websocket async
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: cryptography>=3.4.0
+Requires-Dist: pydantic-ai>=0.0.1
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: python-dotenv>=0.19.0
+Provides-Extra: dev
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+
+# GatherChat Agent SDK
+
+Build AI agents that can chat with real people in minutes. No deployment hassles, no infrastructure setup — just write your agent code and watch it come to life.
+
+## Why Gather?
+
+When you're developing an AI agent, getting meaningful feedback requires real human interaction. Command-line tests won't cut it. Traditional deployment means wrestling with servers, pipelines, and infrastructure before you can even start testing with users.
+
+**Gather gets you online fast.** Your agent goes live instantly from your local machine. You write code, run it, and people can chat with it immediately. It's like having a direct line from your IDE to real conversations.
+
+## Features
+
+- **Simple API Key Authentication** - No complex OAuth flows, just use your agent key
+- **WebSocket-based Communication** - Real-time bidirectional messaging
+- **Automatic Reconnection** - Handles network interruptions gracefully
+- **Heartbeat Support** - Keeps connections alive with periodic heartbeats
+- **Type-Safe Context** - Pydantic models for all data structures
+- **Async/Await Support** - Modern Python async patterns
+- **Easy to Use** - Get started with just a few lines of code
+
+## Installation
+
+Install from GitHub:
+
+```bash
+pip install git+https://github.com/your-org/gatherchat-agent-sdk.git
+```
+
+Or for development:
+
+```bash
+pip install gathersdk
+```
+
+## Quick Start - Live in 5 Minutes
+
+### 1. Install the SDK
+
+Using [uv](https://github.com/astral-sh/uv) (or pip):
+
+```bash
+# Install the SDK
+uv pip install gathersdk
+```
+
+### 2. Create Your Account (New!)
+
+```bash
+# Register a new account
+gathersdk register
+
+# Or if you have an account, login
+gathersdk login
+```
+
+### 3. Create Your Agent
+
+```bash
+# Create an agent interactively
+gathersdk create-agent
+
+# The SDK will:
+# - Create your agent
+# - Generate a secure API key
+# - Set up a private dev room
+# - Give you a shareable permalink
+```
+
+### 4. Initialize Your Project
+
+```bash
+# Generate a starter project
+gathersdk init
+```
+
+This creates a complete agent project with `agent.py`, `.env.example`, and `requirements.txt`. Your agent key is automatically saved to `.env` if you choose.
+
+### 5. Go Live!
+
+```bash
+python agent.py
+```
+
+**That's it. Your agent is live.** No deployment, no servers, no waiting. Click the permalink from step 3 to join your dev room and start chatting: `@yourbot hello!`
+
+### 6. Share & Collaborate
+
+```bash
+# Get a permalink for any chat
+gathersdk permalink <chat-id>
+
+# List all your agents
+gathersdk list-agents
+```
+
+Share permalinks with teammates to test together in real-time. Edit your code, restart the script, and changes are instantly live.
+
+## Agent Context
+
+Every message your agent receives includes rich context:
+
+```python
+async def process(self, context: AgentContext) -> str:
+    # User information
+    user_id = context.user.user_id
+    username = context.user.username
+    display_name = context.user.display_name
+    
+    # Chat information
+    chat_id = context.chat.chat_id
+    chat_name = context.chat.name
+    participants = context.chat.participants
+    
+    # Message information
+    prompt = context.prompt  # The user's message
+    invocation_id = context.invocation_id  # Unique ID for this invocation
+    
+    # Conversation history
+    for msg in context.conversation_history:
+        print(f"{msg.username}: {msg.content}")
+    
+    # Your response
+    return "Your response here"
+```
+
+## Advanced Features
+
+### Streaming Responses
+
+For long responses, you can stream chunks:
+
+```python
+class StreamingAgent(BaseAgent):
+    async def process_streaming(self, context: AgentContext):
+        """Stream response chunks."""
+        response = "This is a long response..."
+        
+        # Stream word by word
+        for word in response.split():
+            yield word + " "
+            await asyncio.sleep(0.1)  # Simulate processing
+```
+
+### Initialization and Cleanup
+
+```python
+class StatefulAgent(BaseAgent):
+    async def initialize(self):
+        """Called once when agent starts."""
+        self.db = await connect_to_database()
+        self.model = await load_model()
+    
+    async def cleanup(self):
+        """Called when agent shuts down."""
+        await self.db.close()
+        await self.model.unload()
+```
+
+### Custom Validation
+
+```python
+class ValidatingAgent(BaseAgent):
+    def validate_context(self, context: AgentContext):
+        """Validate context before processing."""
+        if len(context.prompt) > 1000:
+            raise ValueError("Message too long")
+        
+        if "spam" in context.prompt.lower():
+            raise ValueError("Spam detected")
+```
+
+### Manual Client Control
+
+For more control, use the `AgentClient` directly:
+
+```python
+from gathersdk import AgentClient
+
+async def main():
+    agent = MyAgent("my-agent", "Description")
+    
+    async with AgentClient(agent) as client:
+        await client.run()
+
+asyncio.run(main())
+```
+
+## CLI Commands
+
+The SDK includes a powerful CLI for managing your GatherChat experience:
+
+### Account Management
+- `gathersdk register` - Create a new GatherChat account
+- `gathersdk login` - Authenticate with your account
+- `gathersdk logout` - Logout from current session
+- `gathersdk whoami` - Show current logged-in user
+
+### Agent Management
+- `gathersdk create-agent` - Create a new agent interactively
+- `gathersdk list-agents` - List all your agents with permalinks
+- `gathersdk init` - Initialize agent project in current directory
+
+### Chat Features
+- `gathersdk permalink <chat-id>` - Get shareable link for a chat
+
+## Configuration
+
+### Environment Variables
+
+- `GATHERCHAT_AGENT_KEY` - Your agent's API key (required)
+- `GATHERCHAT_API_URL` - API base URL (default: `https://gather.is`)
+
+### Client Options
+
+```python
+from gathersdk import AgentClient
+
+client = AgentClient(
+    agent=my_agent,
+    agent_key="your-key",  # Override env var
+    api_url="https://api.gatherchat.com",  # Override env var
+    heartbeat_interval=30  # Seconds between heartbeats
+)
+```
+
+### Stored Authentication
+
+The CLI stores authentication in `~/.gatherchat/config.json` for seamless workflows. Your agent keys remain in `.env` files for security.
+
+## Error Handling
+
+The SDK handles errors gracefully:
+
+- **Authentication errors** - Check your agent key
+- **Connection errors** - Automatic reconnection with exponential backoff
+- **Processing errors** - Errors are logged and reported back to GatherChat
+- **Validation errors** - Raised before processing begins
+
+## What Can You Build?
+
+The possibilities are endless. Here are some ideas to spark your imagination:
+
+- **RPG Game Master** - Create immersive text-based adventures with dynamic storytelling
+- **Code Review Buddy** - An agent that provides instant feedback on code snippets
+- **Language Learning Partner** - Practice conversations in any language with adaptive difficulty
+- **Personal Research Assistant** - Summarize articles, find sources, compile information
+- **Creative Writing Coach** - Get real-time feedback on your stories and poems
+- **Team Standup Bot** - Collect updates and generate summaries for distributed teams
+- **Technical Support Agent** - Answer questions about your product or documentation
+
+## Examples
+
+Check out the `examples/` directory for inspiration:
+
+- `minimal_agent.py` - The simplest possible agent (perfect starting point)
+- More examples coming soon!
+
+## Community & Contributing
+
+This SDK is **open source** and we'd love your help making it better!
+
+### Get Involved
+
+- **Report bugs & request features**: [GitHub Issues](https://github.com/philmade/gathersdk)
+- **Ask questions & share ideas**: Connect on [X/Twitter](https://twitter.com/phillyharper)
+- **Contribute code**: PRs welcome! See our contributing guide below
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b amazing-feature`)
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+We're building this in the open and every contribution matters!
+
+## Our Vision
+
+We're working to make Gather the most painless developer experience for AI agents. The goal? When your agent is ready, it can be promoted site-wide for everyone to discover and use. 
+
+Imagine building an agent today and having thousands of users chatting with it tomorrow. That's the future we're creating together.
+
+## Support
+
+- **SDK Issues**: [github.com/philmade/gathersdk](https://github.com/philmade/gathersdk)
+- **Questions**: [@phillyharper](https://twitter.com/phillyharper) on X/Twitter
+- **Gather Platform**: [gather.is](https://gather.is)
+
+## License
+
+MIT License - see LICENSE file for details
+
