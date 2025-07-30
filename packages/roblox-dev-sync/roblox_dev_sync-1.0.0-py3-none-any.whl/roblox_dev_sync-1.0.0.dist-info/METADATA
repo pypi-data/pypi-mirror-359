@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: roblox-dev-sync
+Version: 1.0.0
+Summary: Sync server between Roblox Studio and an external IDE
+Home-page: https://github.com/janxhg/roblox-dev-sync
+Author: Joaquín Stürtz
+Author-email: NetechAI@proton.me
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Requires-Dist: Flask>=2.0.0
+Requires-Dist: Flask-Cors>=4.0.0
+Requires-Dist: watchdog>=2.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+A server that enables two-way file synchronization between Roblox Studio and an external IDE.
+Allows you to edit Roblox files directly in your preferred IDE while maintaining a connection to Roblox Studio.
