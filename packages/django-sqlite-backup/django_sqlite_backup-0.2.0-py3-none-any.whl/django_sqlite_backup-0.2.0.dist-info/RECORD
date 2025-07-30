@@ -1,0 +1,15 @@
+django_sqlite_backup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_sqlite_backup/apps.py,sha256=hr_VWttIN8RVXzXXG2Vo-SjuNgCFDE5POwycNww-ixo,450
+django_sqlite_backup/aws.py,sha256=tpyJpF46JxUvR6PpThUgl_iWRnEj-Su4BacfpyjqrUo,1535
+django_sqlite_backup/backup.py,sha256=4OpDYUgNz3MTPL3lUp7u2LQ8l5oK_ggt-daPXLzKBFE,756
+django_sqlite_backup/restore.py,sha256=jvrCp4dnRIuiCrhMN1q1AKA4s06bGndygycumB5_kCs,717
+django_sqlite_backup/urls.py,sha256=ve4fRC0VSPi235hDc9_n973ii_jrIpeE4tPrJTBSNCA,150
+django_sqlite_backup/views.py,sha256=1UKV4iRhvdTub5WKT3KUh0CefYIh9QgOMo3N4Dik3DE,234
+django_sqlite_backup/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_sqlite_backup/management/commands/backup.py,sha256=X1BcIh3WBWVUu6o-U6JLY_ONgg04nPbZ9HurJbFiZBw,240
+django_sqlite_backup/management/commands/restore.py,sha256=bQH3yEGVVeSKMWuL-KaEJv-Ztq4UNZ2pz9aYfNflqPM,622
+django_sqlite_backup-0.2.0.dist-info/licenses/LICENSE,sha256=bwE4PTk0_zgY2rrrldsrBocfua-bkc_IUxH1pr1rCFA,1070
+django_sqlite_backup-0.2.0.dist-info/METADATA,sha256=7lzrFNfNY818M_z3EKOe8m-2L4h4pzILF0f8HnBkFz0,4922
+django_sqlite_backup-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_sqlite_backup-0.2.0.dist-info/top_level.txt,sha256=hpNLepZbcHqSqEC92LAtpsd7uaey2g64SD0C0NWEDqM,21
+django_sqlite_backup-0.2.0.dist-info/RECORD,,
