@@ -1,0 +1,2 @@
+[console_scripts]
+m2m-mcp-server-ssh-server = m2m_mcp_server_ssh_server:main
