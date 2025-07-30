@@ -1,0 +1,105 @@
+Metadata-Version: 2.4
+Name: maxs
+Version: 0.1.1
+Summary: Minimalist Strands agent with Ollama support - like a rock-solid blade
+Author-email: Cagatay Cali <cagataycali@icloud.com>
+License: MIT
+Project-URL: Homepage, https://github.com/cagataycali/maxs
+Project-URL: Repository, https://github.com/cagataycali/maxs
+Project-URL: Issues, https://github.com/cagataycali/maxs/issues
+Project-URL: Changelog, https://github.com/cagataycali/maxs/blob/main/CHANGELOG.md
+Keywords: ai,agent,ollama,strands,local,minimalist
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: strands-agents[ollama]>=0.1.0
+Requires-Dist: prompt_toolkit>=3.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+Requires-Dist: flake8>=4.0; extra == "dev"
+Requires-Dist: mypy>=0.950; extra == "dev"
+Provides-Extra: binary
+Requires-Dist: pyinstaller>=5.0; extra == "binary"
+Dynamic: license-file
+
+# maxs
+
+minimalist ai agent using local ollama models
+
+## install
+
+```bash
+pipx install maxs
+maxs
+```
+
+## prerequisites
+
+- ollama installed and running
+- model pulled: `ollama pull qwen3:1.7b`
+
+## usage
+
+```bash
+# basic
+maxs
+
+# custom model
+MODEL_ID=llama3.2:3b maxs
+
+# custom host
+OLLAMA_HOST=http://192.168.1.100:11434 maxs
+```
+
+## custom tools
+
+create python files in `./tools/`:
+
+```python
+# ./tools/tip.py
+from strands import tool
+
+@tool
+def calculate_tip(amount: float, percentage: float = 15.0) -> dict:
+    tip = amount * (percentage / 100)
+    return {
+        "status": "success",
+        "content": [{"text": f"tip: ${tip:.2f}, total: ${amount + tip:.2f}"}]
+    }
+```
+
+tools are immediately available.
+
+## configuration
+
+| variable | default | description |
+|----------|---------|-------------|
+| MODEL_ID | qwen3:1.7b | ollama model |
+| OLLAMA_HOST | http://localhost:11434 | ollama server |
+
+## build binary
+
+```bash
+pip install maxs[binary]
+pyinstaller --onefile --name maxs -m maxs.main
+```
+
+binary in `./dist/maxs`
+
+## license
+
+mit

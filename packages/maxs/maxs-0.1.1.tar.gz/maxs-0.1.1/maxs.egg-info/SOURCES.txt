@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+maxs/__init__.py
+maxs/__main__.py
+maxs/main.py
+maxs.egg-info/PKG-INFO
+maxs.egg-info/SOURCES.txt
+maxs.egg-info/dependency_links.txt
+maxs.egg-info/entry_points.txt
+maxs.egg-info/requires.txt
+maxs.egg-info/top_level.txt
+maxs/tools/bash.py
+maxs/tools/file_ops.py
