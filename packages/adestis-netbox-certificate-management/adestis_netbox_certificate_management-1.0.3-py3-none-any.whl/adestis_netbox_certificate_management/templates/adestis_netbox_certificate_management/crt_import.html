@@ -1,0 +1,12 @@
+{% extends 'generic/object_edit.html' %}
+{% load helpers %}
+{% load i18n %}
+{% load buttons %}
+{% load plugins %}
+{% load static %}
+
+{% block content %}
+    {{ block.super }}
+    {% comment %} {% url 'plugins:adestis_netbox_certificate_management:certificate_list' as return_url %}
+    <a href="{{ return_url }}" class="btn btn-outline-secondary">Cancel</a> {% endcomment %}
+{% endblock %}
