@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: astra-rl
+Version: 0.0.1
+Summary: Tools for training, evaluating, and improving language models.
+Author-email: Duncan Eddy <deddy@stanford.edu>, Max Lamparth <lamparth@stanford.edu>, Kiana Jafari <kjafari@stanford.edu>, Houjun Liu <houjun@stanford.edu>, Allie Griffith <allie11@stanford.edu>, Marc Schlichting <mschl@stanford.edu>
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: typer>=0.16.0
+Dynamic: license-file
