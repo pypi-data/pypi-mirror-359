@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: narada
+Version: 0.1.0
+Summary: Python client SDK for Narada
+Author-email: Narada <support@narada.ai>
+License-Expression: Apache-2.0
+Requires-Python: >=3.11
+Requires-Dist: aiohttp>=3.12.13
+Requires-Dist: playwright>=1.53.0
