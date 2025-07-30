@@ -1,0 +1,13 @@
+companies_house_codegen/__init__.py,sha256=EoASd0guNFS113lX_V_OCaMlDZ6pf7I2eG9fHNkAFzo,5224
+companies_house_codegen/__main__.py,sha256=YY3Jf05-LdebnI75PmYxQQ23nRjKzgVpwVI2UXQN05M,1327
+companies_house_codegen/argument.py,sha256=P95UhXw9ZfaXnz44CvDNR-MqbMEqdvYKnn43bk3mXr4,9489
+companies_house_codegen/codegen.py,sha256=W3DoO8STCYp0WdGwImmHvhO8qpoS1sUSs3dE_exrOgs,29877
+companies_house_codegen/constants.py,sha256=g7mEzVAg5LFZOYJpxD_FOGNhy4rBLwk5jG_AdvfPu6A,8952
+companies_house_codegen/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+companies_house_codegen/types.py,sha256=QYx2Jstp_OAGTiSXb59bBQthW2vnrr646oNsN6KlrTE,4033
+companies_house_codegen/utils.py,sha256=llrY4Lx6ClpQU-YlCYbc9kM_P_BmAlctPhW2kJw-73U,3625
+companies_house_codegen-0.2.1.dist-info/METADATA,sha256=g7sIH0BSFvgFdm0xAoqn6ELHdhpQP2YNxoGBA5WZ6gg,8673
+companies_house_codegen-0.2.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+companies_house_codegen-0.2.1.dist-info/entry_points.txt,sha256=uLvZwMST44iQTeL_Ndy80Uo04qS7Uy8tGRUFWi_x6qM,73
+companies_house_codegen-0.2.1.dist-info/licenses/LICENSE,sha256=WcP5V4sSCvwJBLTNZteHan8h4a8lsvxF4mrx6A3oCL4,1101
+companies_house_codegen-0.2.1.dist-info/RECORD,,
