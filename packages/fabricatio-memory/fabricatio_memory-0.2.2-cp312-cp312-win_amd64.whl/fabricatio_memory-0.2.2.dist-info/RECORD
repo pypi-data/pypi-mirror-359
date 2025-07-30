@@ -1,0 +1,16 @@
+fabricatio_memory-0.2.2.dist-info/METADATA,sha256=NsSmcIM36yn4jOPDuJ3z5PRh5mIzybUzqV0nvtny8e4,3437
+fabricatio_memory-0.2.2.dist-info/WHEEL,sha256=0ua6B-UmXPKizyn4Mhcu6S66EB8t6wxm_Wsw5H1bZYs,96
+fabricatio_memory-0.2.2.dist-info/licenses/LICENSE,sha256=do7J7EiCGbq0QPbMAL_FqLYufXpHnCnXBOuqVPwSV8Y,1088
+fabricatio_memory/__init__.py,sha256=PGZe7gjaEN1_dSou3tZetX-x8iml6IsPy3av9MboUt0,82
+fabricatio_memory/actions/__init__.py,sha256=m0YBK5PgHR6vQa_Xcf7q3yfDDm5n9VJ3O5m7csIwwXo,45
+fabricatio_memory/capabilities/__init__.py,sha256=TSmWyH0cwrqKrCOsT_qOproW6e_TiOs9UhzZiH5BKXs,50
+fabricatio_memory/capabilities/remember.py,sha256=pjuC_3XkRXLMF4FDl78aVzaTw8F64XB1A2ThFq--HFY,3132
+fabricatio_memory/capabilities/selective_remember.py,sha256=xWJVag6qzqF-FNaLgDuQVKqV0lJnjvh27Wx7bU9mzoY,1641
+fabricatio_memory/config.py,sha256=PIUEeK0uukRCOxdLut0cjSOFgpMBAzlsGEVYBmPSpzA,607
+fabricatio_memory/models/__init__.py,sha256=uFmnk05Fkh9wFtyI_tCCEAK_yfdVPUIdmTBYmHnl40E,44
+fabricatio_memory/models/note.py,sha256=0fACWrfOJvLmM0wsEpAtcdSlf1mEhNU_8HyxaVK5JHM,736
+fabricatio_memory/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricatio_memory/rust.cp312-win_amd64.pyd,sha256=cBgHP5fv55rOnyiQ4M_2y_C16OphHg_XqEFm3HOAOPE,12587008
+fabricatio_memory/rust.pyi,sha256=8_L_du2hGbq7QfMHpGBWCBWU1s1EsvxOxbHfxeMJPHM,7674
+fabricatio_memory/workflows/__init__.py,sha256=2Z2bo8_HU-IR73D2zFIvvSwCOU03FaEEG81QodyrWX8,47
+fabricatio_memory-0.2.2.dist-info/RECORD,,
