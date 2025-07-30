@@ -1,0 +1,17 @@
+biql/__init__.py,sha256=PGACpyCed3EdioqDL06HJdYh4cvvaXkA33S8W6SRJhs,564
+biql/__main__.py,sha256=LlW2O5hTbB2TXaf-Cbsdf1Jgr4bG0TtaTJ4IQlD9edQ,146
+biql/ast_nodes.py,sha256=XOvkById0_dVXIAAJxuQ6ZRhTg_1Wt4IOyU9gVwUK7U,2432
+biql/cli.py,sha256=_T7WKCBERsEESfNywJO5Z20TTGg16Hkv_r4RLgG0WWY,12080
+biql/dataset.py,sha256=3RQj9Prut17vFiE36ZH0P3VvXTn5SH0T_o_PQtOqC4k,10865
+biql/evaluator.py,sha256=HfJTRL04x6yIbwGyYPEHRmrU5llanIhUN0ttRj0wfiI,40612
+biql/formatter.py,sha256=elbsGM5jUbet77cuDeBsSObOJkhCzk7-sJX26Cr0hRg,11448
+biql/lexer.py,sha256=cui7651Z-PcfUfLVT4NC99mzpIXzoApwwE220LA8Mp8,8701
+biql/parser.py,sha256=ARU-3MoHUAT-P2WgGEJfYtcFr0pDlITMHWsGbCv23EQ,19658
+biql/query.py,sha256=LB55j0-i5yBpDLH6w2UhRCVRu5KmAYHxCgBGjBMLW1Q,6855
+biql/utils.py,sha256=d5UBDSCKAfseZ25otyhZX85HCEExFxQ0wIXPrGlheC4,5114
+biql-0.3.0.dist-info/licenses/LICENSE,sha256=MS3elXUua-4UAXM8d7UJeyzbjHY1bU_Z2_tY9KJ2NM4,1078
+biql-0.3.0.dist-info/METADATA,sha256=nNe2-0nPQCl9fH3pMIxmrpzlyfXfgxapGA9wHcmfVtg,3343
+biql-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+biql-0.3.0.dist-info/entry_points.txt,sha256=6BzD149RoWZ5UAkjFBFy7NrWtCLLWEWRizABGUtmEmY,39
+biql-0.3.0.dist-info/top_level.txt,sha256=Oz1jfYmolEjptc2VOmT0F42s1BPy_WX4R1Be0c8K9zQ,5
+biql-0.3.0.dist-info/RECORD,,
