@@ -1,0 +1,10 @@
+pyrulefilter/__init__.py,sha256=ly1KnhOyJbjN4EYzLCWiT1vXHpgiznu4Rv48CYJe5ds,2939
+pyrulefilter/_version.py,sha256=N2U3TRgLfYxjXfoF4Dy9PxAbZq24zjCym3P3cwuxKP8,511
+pyrulefilter/categories.csv,sha256=K09GKql9iuCA5UftR4HMn0VQuB06AoyJnq0H8rKxzdo,6634
+pyrulefilter/enums.py,sha256=z-0AKBGJ0B1ia6Eg4z5fRpds657LvGM9RCaVyv6hleg,1620
+pyrulefilter/operators.py,sha256=xaLE4kuCJv-uhK0YIoyIR3wsIpe0O7QQ3npsPDHbBQY,3142
+pyrulefilter/schemas.py,sha256=xoeZAewtdcsbs9BE9gtWPVcXZxiAR0jNdxvW15Kg3q0,3426
+pyrulefilter-0.5.0.dist-info/METADATA,sha256=00iFbwxZb_BTtr0Y-YMay-FgP0fNXiGmxyIBO7PrtvA,253
+pyrulefilter-0.5.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pyrulefilter-0.5.0.dist-info/licenses/licenses/BSD-3-Clause.txt,sha256=-0vkRCqQjzeS_FcMEdseehYhEP9zRnS3-tv9-uAum0k,1644
+pyrulefilter-0.5.0.dist-info/RECORD,,
