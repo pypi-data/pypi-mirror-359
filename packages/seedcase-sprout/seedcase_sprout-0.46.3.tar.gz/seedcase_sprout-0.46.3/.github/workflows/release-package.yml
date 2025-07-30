@@ -1,0 +1,47 @@
+name: Release package
+
+on:
+  push:
+    branches:
+      - main
+
+# Limit token permissions for security
+permissions: read-all
+
+jobs:
+  release-package:
+    # This job outputs a env variable called `has_released` that is `true` if the release was successful.
+    # Only give permissions for this job.
+    permissions:
+      contents: write
+    uses: seedcase-project/.github/.github/workflows/reusable-release-package.yml@main
+    with:
+      app-id: ${{ vars.UPDATE_VERSION_APP_ID }}
+    secrets:
+      update-version-gh-token: ${{ secrets.UPDATE_VERSION_TOKEN }}
+
+  pypi-publish:
+    name: Publish to PyPI
+    runs-on: ubuntu-latest
+    # Only give permissions for this job.
+    permissions:
+      # IMPORTANT: mandatory for trusted publishing.
+      id-token: write
+    environment:
+      name: pypi
+    needs:
+      - release-package
+    if: ${{ needs.release-package.outputs.has_released == 'true' }}
+    steps:
+      - name: Download built distributions
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: release-dists
+          path: dist/
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba # v6.3.1
+
+      - name: Publish 📦 to PyPI
+        # Only publish if the option is explicitly set in the calling workflow.
+        run: uv publish --trusted-publishing always
