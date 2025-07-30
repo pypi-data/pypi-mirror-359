@@ -1,0 +1,36 @@
+# Include important root files
+include README.md
+include LICENSE
+include DEPLOYMENT_GUIDE.md
+include pyproject.toml
+include *.py
+
+# Include all Python packages and modules
+recursive-include core *.py
+recursive-include tools *.py
+recursive-include templates *.py
+recursive-include utils *.py
+
+# Include any data files
+recursive-include core *.json *.yaml *.yml *.txt
+recursive-include tools *.json *.yaml *.yml *.txt
+recursive-include templates *.json *.yaml *.yml *.txt
+recursive-include utils *.json *.yaml *.yml *.txt
+
+# Include documentation
+recursive-include docs *.md *.rst *.txt
+
+# Exclude development and build files
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude .tox
+global-exclude .coverage
+global-exclude .pytest_cache
+global-exclude build
+global-exclude dist
+global-exclude *.egg-info
+global-exclude .idea
+global-exclude .vscode 
