@@ -1,0 +1,11 @@
+teracrafts_huefy/__init__.py,sha256=7R4C0QIT2TudxqwvlLKWRn7KNaVlw7a7ANbqkBiIzQw,1777
+teracrafts_huefy/client.py,sha256=f0eIOwUl9om4aVsX0Jnx8hij2bKl8Aj8tj-yQIsbUNc,8626
+teracrafts_huefy/config.py,sha256=1PGJFChwM6WvFl-BSJqZuI_KhVR7qB9VitmneCpKuaM,4133
+teracrafts_huefy/exceptions.py,sha256=gQ5DplH8lbieN92gfpk0ONTWEBpLUGvXAppCWFtpU9I,8886
+teracrafts_huefy/models.py,sha256=ifsKZ7UbAFoBtouRP5b7ruxUXthF3fJ4F8tvDuDck6s,6786
+teracrafts_huefy/py.typed,sha256=Lf4mR9cpxGIFcQwTRTrh_NCqhl5NJ8HVB3eG9h9GQgI,82
+teracrafts_huefy-1.0.0b9.dist-info/METADATA,sha256=kH1z8C3B5Pm8K1uUi69C2vIlDUbQJ0ImYW8wRdRHFoM,13503
+teracrafts_huefy-1.0.0b9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+teracrafts_huefy-1.0.0b9.dist-info/entry_points.txt,sha256=WXZ9yDU8Obhz6CZ5m6pjPS14m-atuBblAxN614K8tUo,52
+teracrafts_huefy-1.0.0b9.dist-info/top_level.txt,sha256=0aZmloc5jlnyKR5rZ5uh3TKHPpQbnyuiALwzgzLjR2o,17
+teracrafts_huefy-1.0.0b9.dist-info/RECORD,,
