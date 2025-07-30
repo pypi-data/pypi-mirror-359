@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dmtpy"
+version = "0.3.5"
+authors = [
+    {name = "SINTEF Ocean"},
+]
+description = "Python runtime library for SIMOS based DMT models"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "h5py>=3.7.0",
+    "numpy>=1.21.0,<1.25.0; python_version<'3.9'",
+    "numpy>=1.25.0; python_version>='3.9'",
+]
+
+[project.urls]
+Homepage = "https://github.com/SINTEF/dmtpy"
+Repository = "https://github.com/SINTEF/dmtpy"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dmt"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.git",
+    "/.github",
+    "/tests",
+    "/.dockerignore",
+    "/Dockerfile",
+    "/docker-compose.yml",
+    "/publish.sh",
+]
+
+[dependency-groups]
+dev = [
+    "setuptools>=65.5.1",
+    "wheel>=0.38.1",
+    "twine>=3.2.0",
+    "pytest>=7.1.1",
+    "pylint>=2.15.4",
+]
