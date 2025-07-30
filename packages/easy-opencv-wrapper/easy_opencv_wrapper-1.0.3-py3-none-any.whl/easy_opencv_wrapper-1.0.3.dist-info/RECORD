@@ -1,0 +1,15 @@
+easy_opencv/__init__.py,sha256=iZLM1ix6b7IJjPcmwEP8u4QN-HuFtwu0VkOxTMFgCpo,9067
+easy_opencv/drawing_operations.py,sha256=X7n0pp5A_b2m2zfFVateNF3_mQh0Y_jtdCKqVBwwX1I,9619
+easy_opencv/feature_detection.py,sha256=qXpFeBs0aLDCvKrX5OxB3-l4qlBIgKYLmrKfulK4Xzs,8892
+easy_opencv/filters.py,sha256=hOP6c6FvdT0yDx5GUA_HryLWFoecF3JITNeVIcC0794,8926
+easy_opencv/image_operations.py,sha256=3cPJEt1krclWd1De-_vcRSdpLR9uHKVcDstiBxCe7gU,21842
+easy_opencv/image_processing.py,sha256=SgdewaSkvppvTf7ZfQOvDIID_EvQKc5ZHm5OHoracn4,6804
+easy_opencv/object_detection.py,sha256=N6OOBHbojmmg6LSED0xgbEsskGYaFXN1rx4HJBjvLAo,41287
+easy_opencv/transformations.py,sha256=I8Km8kcwxtdq5c78TvvvDuYQHH4RNVWEHguusjzSaTE,10990
+easy_opencv/utils.py,sha256=w6Mf8CbK8oA9jzydS63Illh0hMBNcqRh96U09inakDg,11394
+easy_opencv/video_operations.py,sha256=f-PonebWeDLQW95x12PF78JzfqCIB1aXOyynvNh_StU,30404
+easy_opencv_wrapper-1.0.3.dist-info/licenses/LICENSE,sha256=xKLk8XAqvbTishEDuSmhbaSYmYsfwHsUE-HHBRMZuN0,1090
+easy_opencv_wrapper-1.0.3.dist-info/METADATA,sha256=rEell4EMtU69Y-nuc7PMx8J_S1RMOVjt-vjQxL29wzA,41067
+easy_opencv_wrapper-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+easy_opencv_wrapper-1.0.3.dist-info/top_level.txt,sha256=IKXjTVTjafK5xDnutFdKWLIMj4sqk67d4aocSV3AzcQ,12
+easy_opencv_wrapper-1.0.3.dist-info/RECORD,,
