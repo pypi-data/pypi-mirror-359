@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: tensorrt_yolo_isarsoft
+Version: 6.2.0
+Summary: 🚀 Easier & Faster YOLO Deployment Toolkit for NVIDIA 🛠️
+Author-email: laugh12321 <laugh12321@vip.qq.com>
+Maintainer: laugh12321
+Project-URL: Bug Reports, https://github.com/laugh12321/TensorRT-YOLO/issues
+Project-URL: Funding, https://github.com/laugh12321
+Project-URL: Source, https://github.com/laugh12321/TensorRT-YOLO
+Keywords: ML,DL,AI,YOLO,YOLOv3,YOLOv5,YOLOv6,YOLOv7,YOLOv8,YOLOv9,YOLOv10,YOLO11,YOLO12,YOLO-World,YOLOE,PP-YOLOE,TensorRT,CUDA,ONNX,computer-vision,image-classification,object-detection,pose-estimation,instance-segmentation,rotated-object-detection,ultralytics
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Environment :: GPU :: NVIDIA CUDA :: 11
+Classifier: Environment :: GPU :: NVIDIA CUDA :: 12
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: loguru
+Requires-Dist: rich_click
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Provides-Extra: export
+Requires-Dist: onnxsim>=0.4.1; extra == "export"
+Requires-Dist: onnxruntime>=1.6.0; extra == "export"
+Requires-Dist: onnx_graphsurgeon; extra == "export"
+Requires-Dist: onnx>=1.12.0; extra == "export"
+Requires-Dist: ultralytics; extra == "export"
