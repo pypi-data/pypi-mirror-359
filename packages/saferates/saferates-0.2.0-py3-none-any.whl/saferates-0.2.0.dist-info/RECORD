@@ -1,0 +1,17 @@
+saferates/__init__.py,sha256=0qxATo-frc6JB9AxI-fcKtcqME-Q7-3w0eCT6ZlcqZg,389
+saferates/account.py,sha256=xs3ksXHaXL5AowFB0sELjSObcUPsToEcnAmIdHFi3yg,1020
+saferates/api.py,sha256=Ap_EqPY6iC2NaV9Q1M2KQgzbLVLzt22Dsw0B57Y4axU,1451
+saferates/channels.py,sha256=kUy_YQlO6949EgL39Lla82KW6GDFZPPW4sM8haItXt0,1977
+saferates/dms.py,sha256=wFUaMvBCPxBNqTsAdiQUYIAEzG9jo994MhjeQMTrwHA,1125
+saferates/friends.py,sha256=6npJeeCLKd46KzH7Wn5n9cZdoCpc4aI7f4_vQehh0qk,956
+saferates/guilds.py,sha256=jIQAVic6Vv85Iyles8c0nVVOgcdnq2yQ-sJfpq6j1G0,901
+saferates/logger.py,sha256=9wkvlmB2xsLOX03OHISwNM5uer0hvkoymncp9OEUyTE,1018
+saferates/messaging.py,sha256=Jy8QOAFJrqHIfaFVILzdpaxa33oQWzyk_jCxb6uxIfQ,3023
+saferates/reactions.py,sha256=x1HcTRAiJhtxJYSr2I6fFDNd4vIMCtLYYcvqwqt9BHc,790
+saferates/user.py,sha256=UjKq07QQ-E4881gWGFta4sLPAcHExhYzII9Uve3nVcY,498
+saferates/utils.py,sha256=XVVoazQ4p727SZbInIxEuvQ6LAH0TpNZ4Av-q5b1pmw,651
+saferates/webhook.py,sha256=wWAS7iLI3z9oiAWia64glV4jUhMGBJCb7X4cey3FkP8,1213
+saferates-0.2.0.dist-info/METADATA,sha256=QsbI3uSfWyTjLCrdbeym5216jl5ZKuYvcgHE7j7V5Qg,1224
+saferates-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+saferates-0.2.0.dist-info/top_level.txt,sha256=EOnM-8lQ5Pfu_Ga8iN5T02m6Eim0km0fRThaQUNPXyg,10
+saferates-0.2.0.dist-info/RECORD,,
