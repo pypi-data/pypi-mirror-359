@@ -1,0 +1,12 @@
+go.mod,sha256=VIEzcw7J9CWHh2Vuw-PK5bBqnw6-tNhUwOKOg9wSEvw,371
+go.sum,sha256=skvJ_DwdOJh3T8ejutKiqgEabLt5QvQN_9Ub-h12nHU,1592
+main.go,sha256=OQ1G5Tew-1oNRxOjohS-rrNPBvkaOtABd606NuTcJ5M,3645
+completion/completion.go,sha256=5d7jq9-sQATbG2jqEnhmLvoBBKpkP0HrCs2B9EeTwDM,2055
+git/git.go,sha256=QQhkushqvYcgHFN70ShWmKuwLZ2awdXllZQS82L16tw,3366
+semver/semver.go,sha256=fssn9PcN7LhkseUrgJStsqb7Uicc5VQp9Fiieqgeitw,3340
+semver/semver_test.go,sha256=o3YYfOebL09s_cf6gUI9fW4HtKOwQhPwYd7iiYFdCgE,5991
+release_tag-0.3.3.data/scripts/tag,sha256=F7Unu2_TAUeCkW6RXeRa5CT9p4hiV7ZVBCdpumRDLEc,2563984
+release_tag-0.3.3.dist-info/METADATA,sha256=vIrTyw2z6FE8UEXKW4Vlu32A-_pjg6TlKVvejoZ2NlE,4378
+release_tag-0.3.3.dist-info/WHEEL,sha256=2munu__SSEdH4KKT3ORUABO4Ptqz_EtZKTDmU8gHXvg,104
+release_tag-0.3.3.dist-info/licenses/LICENSE,sha256=P_te03YIieIzk4EnP3-blVrdJGbhityi_YcHwxaL7gk,1071
+release_tag-0.3.3.dist-info/RECORD,,
