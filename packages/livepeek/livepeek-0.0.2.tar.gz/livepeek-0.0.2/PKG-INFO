@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: livepeek
+Version: 0.0.2
+Summary: Live API response viewer in terminal
+Author-email: Nuhman PK <nuhmanpk7@gmail.com>
+License: GNU
+Keywords: api,cli,json,terminal,developer-tools
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typer[all]
+Requires-Dist: httpx
+Requires-Dist: rich
+Dynamic: license-file
+
+# livepeek
+[![PyPI version](https://badge.fury.io/py/livepeek.svg)](https://pypi.org/project/livepeek/)
+
+# 🛰️ livepeek
+
+ **The JSON viewer your terminal’s been waiting for.**  
+ Peek into APIs. Refresh in real time. All from your CLI.
+
+---
+
+
+```sh
+livepeek https://api.github.com/users/nuhmanpk
+```
+
+## 💡 What is it?
+
+`livepeek` is a terminal tool that lets you fetch and **visually explore JSON** data from any API endpoint — with collapsible trees, syntax highlighting, and optional live auto-refresh.
+
+---
+
+## 🚀 Features
+
+- 🔍 Fetch and pretty-print JSON from URLs
+- 🌲 Rich collapsible tree view
+- ⏱️ `--watch` mode to refresh every N seconds
+- 📦 Lightweight and fast (Python + Rich)
+- 🧠 Optional: headers, auth tokens, etc.
+
+---
+
+## ⚙️ Installation
+
+```sh
+pip install livepeek
+```
+
+
+## Usage
+
+### Demo 
+
+```sh
+# Basic fetch
+livepeek https://jsonplaceholder.typicode.com/todos/1
+
+# Auto-refresh
+livepeek https://jsonplaceholder.typicode.com/todos/1 --watch 5
+
+# With fake header
+livepeek https://jsonplaceholder.typicode.com/todos/1 --header "X-Test: Demo"
+```
+### Crypto watch
+
+```sh
+livepeek https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd --watch 10
+```
+
+## Weather watch 
+```sh
+livepeek "https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&current_weather=true"
+```
+
+### Examples
+
+|  # | Command                                                                                                  | What it Does                            | Why It's Useful                   |
+| -: | -------------------------------------------------------------------------------------------------------- | --------------------------------------- | --------------------------------- |
+|  1 | `livepeek https://api.github.com/users/torvalds`                                                         | Shows GitHub profile for Linus Torvalds | Profile lookup, GitHub metadata   |
+|  2 | `livepeek https://api.github.com/repos/python/cpython`                                                   | Repo info for Python’s source code      | Contributor stats, stars, forks   |
+|  3 | `livepeek https://api.github.com/repos/openai/openai-python/issues?state=open`                           | OpenAI Python SDK issues                | Track open-source issues          |
+|  4 | `livepeek https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd`          | BTC & ETH prices                        | Live crypto price tracker         |
+|  5 | `livepeek https://api.coindesk.com/v1/bpi/currentprice.json`                                             | Bitcoin price in multiple currencies    | Financial dashboards              |
+|  6 | `livepeek https://hn.algolia.com/api/v1/search?tags=front_page`                                          | Hacker News top stories                 | Live tech news for devs           |
+|  7 | `livepeek "https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true"` | NYC weather                             | Location-based weather report     |
+|  8 | `livepeek "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"`                                        | NASA Astronomy Photo of the Day         | Fun space data for everyone       |
+|  9 | `livepeek https://catfact.ninja/fact`                                                                    | Random cat fact                         | Demo/showcase for APIs            |
+| 10 | `livepeek https://dog.ceo/api/breeds/image/random`                                                       | Random dog image (JSON URL)             | Quick fun test with media links   |
+| 11 | `livepeek https://www.boredapi.com/api/activity`                                                         | Suggests a random activity              | Useful in UIs or Slack bots       |
+| 12 | `livepeek https://httpbin.org/ip`                                                                        | Returns your IP address                 | Network, VPN, proxy check         |
+| 13 | `livepeek https://httpbin.org/headers --header "Authorization: Bearer testtoken123"`                     | Echoes sent headers                     | Debug token-based APIs            |
+| 14 | `livepeek https://httpbin.org/user-agent`                                                                | Shows your user agent                   | Debugging client identity         |
+| 15 | `livepeek https://api.agify.io?name=michael`                                                             | Predicts age by name                    | Quick JSON structure parser       |
+| 16 | `livepeek https://api.genderize.io?name=emma`                                                            | Predicts gender by name                 | NLP demo or profile enrichment    |
+| 17 | `livepeek https://api.nationalize.io?name=abdul`                                                         | Predicts nationality by name            | Geo enrichment from input         |
+| 18 | `livepeek https://jsonplaceholder.typicode.com/posts/1`                                                  | Fake post data                          | Fake blog/backend testing         |
+| 19 | `livepeek https://jsonplaceholder.typicode.com/comments?postId=1`                                        | Fake comments list                      | Demo for pagination/list data     |
+| 20 | `livepeek https://api.spacexdata.com/v4/launches/latest`                                                 | Latest SpaceX launch info               | Space tech feeds & alerts         |
+| 21 | `livepeek https://randomuser.me/api/`                                                                    | Random fake user data                   | Perfect for mock testing UI/UX    |
+| 22 | `livepeek https://fakerapi.it/api/v1/books?_quantity=1`                                                  | Fake book metadata                      | Simulate library or inventory app |
+| 23 | `livepeek https://json.geoiplookup.io/`                                                                  | Geolocation based on IP                 | Geo debugging, auto-region        |
+| 24 | `livepeek https://api.adviceslip.com/advice`                                                             | Random advice in JSON                   | Microcontent idea API             |
+| 25 | `livepeek https://datausa.io/api/data?drilldowns=Nation&measures=Population`                             | US population trends                    | Visualize trends in dashboards    |
+
+### Tips for Usage
+
+| Tip                        | Example                                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------------------- |
+| 🔄 Auto-refresh every 10s  | `livepeek https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd --watch 10` |
+| 🔐 Custom auth header      | `livepeek https://httpbin.org/headers --header "Authorization: Bearer xyz"`                       |
+| 📂 Collapsible nested data | `livepeek https://api.spacexdata.com/v4/launches/latest`                                          |
+| 🧪 Try search/filter APIs  | `livepeek https://hn.algolia.com/api/v1/search?query=AI`                                          |

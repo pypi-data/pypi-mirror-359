@@ -1,0 +1,2 @@
+[console_scripts]
+livepeek = livepeek.cli:app
