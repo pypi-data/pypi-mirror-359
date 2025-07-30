@@ -1,0 +1,2 @@
+[console_scripts]
+astral = astra_rl.cli.main:main
