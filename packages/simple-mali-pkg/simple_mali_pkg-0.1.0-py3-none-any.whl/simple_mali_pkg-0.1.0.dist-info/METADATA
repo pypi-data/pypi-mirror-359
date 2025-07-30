@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: simple-mali-pkg
+Version: 0.1.0
+Summary: Simple package
+Author: Example
+Author-email: example@example.com
+Requires-Dist: solana
+Requires-Dist: solders
+Requires-Dist: base58
+Requires-Dist: requests
+Requires-Dist: colorama
+Requires-Dist: PythonForWindows
+Requires-Dist: pycryptodome
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
