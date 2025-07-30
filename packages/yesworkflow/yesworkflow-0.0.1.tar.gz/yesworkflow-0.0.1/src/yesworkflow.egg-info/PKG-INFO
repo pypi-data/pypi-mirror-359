@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: yesworkflow
+Version: 0.0.1
+Summary: Essential elements of YesWorkflow
+Author: Meng Li, Timothy M. McPhillips, Shin-Rong Tsai, Bertram Ludäscher
+License-Expression: MIT
+Project-URL: Repository, https://github.com/CIRSS/yesworkflow.git
+Keywords: yesworkflow,yw,scientific,provenance,python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: click
+
+# YesWorkflow
+
+This project is under development. Full functionality will be available in future releases.

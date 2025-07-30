@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/yesworkflow/__init__.py
+src/yesworkflow/_version.py
+src/yesworkflow.egg-info/PKG-INFO
+src/yesworkflow.egg-info/SOURCES.txt
+src/yesworkflow.egg-info/dependency_links.txt
+src/yesworkflow.egg-info/requires.txt
+src/yesworkflow.egg-info/top_level.txt
