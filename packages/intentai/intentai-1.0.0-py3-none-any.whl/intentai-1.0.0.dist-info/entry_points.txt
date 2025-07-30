@@ -1,0 +1,5 @@
+[console_scripts]
+intentai = intentai.cli:main
+
+[gui_scripts]
+intentai-gui = intentai.gui:main
