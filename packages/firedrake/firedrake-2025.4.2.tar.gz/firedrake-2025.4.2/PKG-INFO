@@ -1,0 +1,105 @@
+Metadata-Version: 2.4
+Name: firedrake
+Version: 2025.4.2
+Summary: An automated system for the portable solution of partial differential equations using the finite element method
+Maintainer: Pablo D. Brubeck, Daiane I. Dolci, Josh Hope-Collins, Koki Sagiyama
+Maintainer-email: "David A. Ham" <david.ham@imperial.ac.uk>, "Connor J. Ward" <c.ward20@imperial.ac.uk>
+License-Expression: LGPL-3.0-or-later
+Project-URL: Homepage, https://firedrakeproject.org
+Project-URL: Repository, https://github.com/firedrakeproject/firedrake
+Project-URL: Issues, https://github.com/firedrakeproject/firedrake/issues/new/choose
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: Unix
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: cachetools
+Requires-Dist: decorator<=4.4.2
+Requires-Dist: mpi4py>3; python_version >= "3.13"
+Requires-Dist: mpi4py; python_version < "3.13"
+Requires-Dist: fenics-ufl>=2025.1.0
+Requires-Dist: firedrake-fiat>=2025.4.0
+Requires-Dist: h5py>3.12.1
+Requires-Dist: libsupermesh
+Requires-Dist: loopy>2024.1
+Requires-Dist: petsc4py==3.23.4
+Requires-Dist: numpy
+Requires-Dist: packaging
+Requires-Dist: pkgconfig
+Requires-Dist: progress
+Requires-Dist: pyadjoint-ad>=2025.04.1
+Requires-Dist: pycparser
+Requires-Dist: pytools[siphash]
+Requires-Dist: requests
+Requires-Dist: rtree>=1.2
+Requires-Dist: scipy
+Requires-Dist: sympy
+Requires-Dist: islpy>=2025.1.5; sys_platform == "darwin"
+Provides-Extra: check
+Requires-Dist: mpi-pytest; extra == "check"
+Requires-Dist: pytest; extra == "check"
+Provides-Extra: docs
+Requires-Dist: bibtexparser; extra == "docs"
+Requires-Dist: matplotlib; extra == "docs"
+Requires-Dist: numpydoc; extra == "docs"
+Requires-Dist: pylit; extra == "docs"
+Requires-Dist: sphinx<8.2.0; extra == "docs"
+Requires-Dist: sphinx-autobuild; extra == "docs"
+Requires-Dist: sphinx-reredirects; extra == "docs"
+Requires-Dist: sphinxcontrib-bibtex; extra == "docs"
+Requires-Dist: sphinxcontrib-jquery; extra == "docs"
+Requires-Dist: sphinxcontrib-svg2pdfconverter; extra == "docs"
+Requires-Dist: sphinxcontrib-youtube; extra == "docs"
+Requires-Dist: vtk; extra == "docs"
+Provides-Extra: jax
+Requires-Dist: jax; extra == "jax"
+Provides-Extra: netgen
+Requires-Dist: ngsPETSc; extra == "netgen"
+Provides-Extra: slepc
+Requires-Dist: slepc4py==3.23.2; extra == "slepc"
+Provides-Extra: torch
+Requires-Dist: torch; extra == "torch"
+Provides-Extra: vtk
+Requires-Dist: vtk; extra == "vtk"
+Provides-Extra: ci
+Requires-Dist: ipympl; extra == "ci"
+Requires-Dist: jax; extra == "ci"
+Requires-Dist: matplotlib; extra == "ci"
+Requires-Dist: mpi-pytest; extra == "ci"
+Requires-Dist: nbval; extra == "ci"
+Requires-Dist: ngsPETSc; extra == "ci"
+Requires-Dist: pylit; extra == "ci"
+Requires-Dist: pytest; extra == "ci"
+Requires-Dist: pytest-split; extra == "ci"
+Requires-Dist: pytest-timeout; extra == "ci"
+Requires-Dist: pytest-xdist; extra == "ci"
+Requires-Dist: slepc4py==3.23.2; extra == "ci"
+Requires-Dist: torch; extra == "ci"
+Requires-Dist: vtk; extra == "ci"
+Provides-Extra: docker
+Requires-Dist: ipympl; extra == "docker"
+Requires-Dist: matplotlib; extra == "docker"
+Requires-Dist: mpi-pytest; extra == "docker"
+Requires-Dist: nbval; extra == "docker"
+Requires-Dist: pylit; extra == "docker"
+Requires-Dist: pytest; extra == "docker"
+Requires-Dist: pytest-split; extra == "docker"
+Requires-Dist: pytest-timeout; extra == "docker"
+Requires-Dist: pytest-xdist; extra == "docker"
+Requires-Dist: slepc4py==3.23.2; extra == "docker"
+Dynamic: license-file
+
+Firedrake is an automated system for the portable solution of partial
+differential equations using the finite element method (FEM). Firedrake
+enables users to employ a wide range of discretisations to an infinite
+variety of PDEs and obtain high performance code on CPUs.
+
+For more information on Firedrake, please see https://www.firedrakeproject.org.
