@@ -1,0 +1,8 @@
+ChatBotModule.py
+LICENSE
+README.md
+setup.py
+decoderbot.egg-info/PKG-INFO
+decoderbot.egg-info/SOURCES.txt
+decoderbot.egg-info/dependency_links.txt
+decoderbot.egg-info/top_level.txt
