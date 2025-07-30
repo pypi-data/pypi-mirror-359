@@ -1,0 +1,16 @@
+[project]
+name = "SS_GCJ02toWGS84"
+version = "0.1.14"
+description = "SS GCJ02toWGS84"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.8.0",
+    "fastmcp>=1.9.0"
+]
+
+[tool.uv.workspace]
+members = ["venv"]
+
+[project.scripts]
+SS_GCJ02toWGS84 = "mcpServer.server:main"
