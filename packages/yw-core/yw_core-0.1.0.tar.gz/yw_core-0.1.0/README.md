@@ -1,0 +1,131 @@
+# yw_core
+
+Core elements of YesWorkflow in Python.
+
+## Installation
+
+```bash
+git clone <url>
+cd yw_core
+pip install .
+```
+
+## An example using a Python notebook with 3 code cells
+Here is the example Python notebook that will be used as the running example to explain the CLI and Python API.
+```python
+# cell 1
+x = 1
+
+# cell 2
+func(x)
+
+# cell 3
+x
+```
+
+### CLI
+
+```python
+Usage: yw [OPTIONS]
+
+Options:
+  -f, --filepath TEXT  Path of a Python notebook to extract YesWorkflow
+                       annotations  [required]
+  -u, --upper          Extract upper estimate of cell I/O sets for YesWorkflow
+                       annotations
+  --help               Show this message and exit.
+```
+
+#### Lower estimate
+
+```bash
+yw -f YOUR_PYTHON_NOTEBOOK_PATH
+```
+
+Expected output for lower estimate:
+```text
+# @BEGIN cell-1
+# @OUT x
+# @END cell-1
+
+# @BEGIN cell-2
+# @IN x
+# @END cell-2
+
+# @BEGIN cell-3
+# @IN x
+# @END cell-3
+```
+
+#### Upper estimate
+
+```bash
+yw -f YOUR_PYTHON_NOTEBOOK_PATH -u
+```
+
+Expected output for upper estimate:
+```
+# @BEGIN cell-1
+# @OUT x
+# @END cell-1
+
+# @BEGIN cell-2
+# @IN x
+# @OUT x @AS x-1
+# @END cell-2
+
+# @BEGIN cell-3
+# @IN x @AS x-1
+# @END cell-3
+```
+
+### Python API
+
+#### Lower estimate
+```python
+from yw_core.yw_core import extract_code_cells, extract_records, records2annotations
+code_cells = extract_code_cells("YOUR_PYTHON_NOTEBOOK_PATH")
+records = extract_records(code_cells, is_upper_estimate=False)
+annotations = records2annotations(records)
+```
+
+Expected outputs for lower estimate:
+```python
+code_cells = ['x = 1', 'func(x)', 'x']
+records = [
+  {'inputs': set(), 'output_candidates': {'x'}, 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': {'x'}}, 
+  {'inputs': {'x'}, 'output_candidates': set(), 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': set()}, 
+  {'inputs': {'x'}, 'output_candidates': set(), 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': set()}
+]
+annotations = '# @BEGIN cell-1\n# @OUT x\n# @END cell-1\n\n# @BEGIN cell-2\n# @IN x\n# @END cell-2\n\n# @BEGIN cell-3\n# @IN x\n# @END cell-3'
+```
+
+#### Upper estimate
+```python
+from yw_core.yw_core import extract_code_cells, extract_records, records2annotations
+code_cells = extract_code_cells("YOUR_PYTHON_NOTEBOOK_PATH")
+records = extract_records(code_cells, is_upper_estimate=True)
+annotations = records2annotations(records)
+```
+
+Expected outputs for upper estimate:
+```python
+code_cells = ['x = 1', 'func(x)', 'x']
+records = [
+  {'inputs': set(), 'output_candidates': {'x'}, 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': {'x'}}, 
+  {'inputs': {'x'}, 'output_candidates': {'x'}, 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': {'x-1'}}, 
+  {'inputs': {'x-1'}, 'output_candidates': set(), 'refers_code': set(), 'defines_code': set(), 'alias_stmt': None, 'alias_vars': set(), 'outputs': set()}
+]
+annotations = '# @BEGIN cell-1\n# @OUT x\n# @END cell-1\n\n# @BEGIN cell-2\n# @IN x\n# @OUT x @AS x-1\n# @END cell-2\n\n# @BEGIN cell-3\n# @IN x @AS x-1\n# @END cell-3'
+```
+
+## Tests
+
+We use [`tox`](https://tox.wiki/en/4.11.3/installation.html) to run Python unit test ([`pytest`](https://docs.pytest.org/en/7.4.x/)):
+```bash
+# If you the tox package is not installed
+pip install tox
+
+# Run unit test
+tox
+```

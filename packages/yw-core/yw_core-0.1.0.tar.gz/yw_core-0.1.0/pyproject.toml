@@ -1,0 +1,52 @@
+[project]
+name = "yw-core"
+dynamic = ["version", "scripts"]
+dependencies = [
+    "nbformat", 
+    "click"
+]
+authors = [
+    {name = "Meng Li"},
+    {name = "Timothy M. McPhillips"},
+    {name = "Shin-Rong Tsai"},
+    {name = "Bertram Ludäscher"}
+]
+description = "Essential elements of YesWorkflow"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7"
+keywords = ["yesworkflow", "yw", "scientific", "provenance", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+Repository = "https://github.com/CIRSS/yw-core.git"
+
+[tool.setuptools.dynamic]
+version = {attr = "yw_core._version.__version__"}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+combine_as_imports = true
+skip_gitignore = true
+#skip = [""]  # use default settings for now
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+yw_core = ["builtin_funcs_and_vars.txt"]
