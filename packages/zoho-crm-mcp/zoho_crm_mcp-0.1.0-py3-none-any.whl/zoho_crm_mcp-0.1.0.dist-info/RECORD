@@ -1,0 +1,10 @@
+zoho_mcp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zoho_mcp/auth_cli.py,sha256=8j3kVhPvx4MUxujrwr2eFKlxJ2l_x2TUFTudzIse-bY,660
+zoho_mcp/server.py,sha256=793kzxqePLwLUvcbUEYhrRTW12npxl1IQXv3ae9vZ3Q,6728
+zoho_mcp/zoho_auth.py,sha256=yYEiiQa2kO5EVWuI_wGt3AEJ5MfB-v33_4Xhn6Lkxxg,7060
+zoho_mcp/zoho_tools.py,sha256=06Y5mIcYVzVbTsjEOfqNf68D_q9oJW9fNhjHWlAchPc,12700
+zoho_crm_mcp-0.1.0.dist-info/METADATA,sha256=O94dwOSR0hcj4gJf77IWRZN3-FnFA641kTQ-ZIGLKG8,10817
+zoho_crm_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+zoho_crm_mcp-0.1.0.dist-info/entry_points.txt,sha256=rcA1KOhhtiFjh7UmRRp4ZVF63gaK2e_v1Luc1MoPPIo,89
+zoho_crm_mcp-0.1.0.dist-info/licenses/LICENSE,sha256=Msmi4xK6eJo20hBVRKgFx3Va1AZSEtnhuqWva-OU4eo,1070
+zoho_crm_mcp-0.1.0.dist-info/RECORD,,
