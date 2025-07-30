@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-society-mcp-client-wrapper"
+version = "0.0.3"
+authors = [
+  { name = "Agent Society" }
+]
+description = "A Python library which wraps around Anthropic's low-level MCP client"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12.8"
+dependencies = [
+    "mcp==1.9.4",
+    "langchain==0.3.26",
+    "jsonref==1.1.0",
+    "pydantic==2.11.7"
+]  # For example
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent"
+]
+[tool.setuptools]
+packages = ["mcpwrap"]

@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+agent_society_mcp_client_wrapper.egg-info/PKG-INFO
+agent_society_mcp_client_wrapper.egg-info/SOURCES.txt
+agent_society_mcp_client_wrapper.egg-info/dependency_links.txt
+agent_society_mcp_client_wrapper.egg-info/requires.txt
+agent_society_mcp_client_wrapper.egg-info/top_level.txt
+mcpwrap/__init__.py
+mcpwrap/client.py
+mcpwrap/llm_integration.py
+mcpwrap/multi_mcp_model.py
+mcpwrap/server_stub.py
